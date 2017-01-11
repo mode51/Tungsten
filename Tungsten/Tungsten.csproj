@@ -52,7 +52,7 @@
     <Compile Include="Property\IProperty.cs" />
     <Compile Include="Property\Property.cs" />
     <Compile Include="Property\PropertyBase.cs" />
-    <Compile Include="Property\PropertyHost.cs" />
+    <None Include="Archive\PropertyHost.cs" />
     <Compile Include="Property\PropertyHostMethods.cs" />
     <Compile Include="Property\PropertyMethods.cs" />
   </ItemGroup>

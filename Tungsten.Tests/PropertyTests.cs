@@ -29,26 +29,26 @@ namespace W.Tests
         }
 
         [Test]
-        public void ConstructionTest()
+        public void Construction_Test()
         {
             var someInt = new Property<int>();
             Assert.IsTrue(someInt.Value == 0);
         }
         [Test]
-        public void DefaultValueTest()
+        public void DefaultValue_Test()
         {
             var someInt = new Property<int>(1);
             Assert.IsTrue(someInt.DefaultValue == 1);
             Assert.IsTrue(someInt.Value == 1);
         }
         [Test]
-        public void AssignmentTest()
+        public void Assignment_Test()
         {
             var someInt = new Property<int> {Value = 5};
             Assert.IsTrue(someInt.Value == 5);
         }
         [Test]
-        public void PropertyChangedTest()
+        public void PropertyChanged_Test()
         {
             var temp = 0;
             var someInt = new Property<int>();
@@ -60,7 +60,7 @@ namespace W.Tests
             Assert.IsTrue(temp == 1);
         }
         [Test]
-        public void PropertyValueChangedTest()
+        public void PropertyValueChanged_Test()
         {
             var temp = 0;
             var someInt = new Property<int>();
@@ -72,7 +72,7 @@ namespace W.Tests
             Assert.IsTrue(temp == 1);
         }
         [Test]
-        public void OnValueChangedTest()
+        public void OnValueChanged_Test()
         {
             var temp = 0;
             var someInt = new Property<int>((o, oldValue, newValue) =>
@@ -84,7 +84,7 @@ namespace W.Tests
         }
 
         [Test]
-        public void PropertyChangedSenderTest()
+        public void PropertyChangedSender_Test()
         {
             Property<int> temp = null;
             var someInt = new Property<int>();
@@ -98,7 +98,7 @@ namespace W.Tests
             Assert.IsTrue(temp == someInt);
         }
         [Test]
-        public void PropertyValueChangedSenderTest2()
+        public void PropertyValueChangedSender_Test()
         {
             Property<int> temp = null;
             var someInt = new Property<int>();
@@ -112,27 +112,27 @@ namespace W.Tests
 
 
         [Test]
-        public void OwnedConstructionTest()
+        public void Owned_Construction_Test()
         {
             var someOwnedInt = new Property<PropertyTests, int>(this);
             Assert.IsTrue(someOwnedInt.Value == 0);
         }
         [Test]
-        public void OwnedDefaultValutTest()
+        public void Owned_DefaultValut_Test()
         {
             var someOwnedInt = new Property<PropertyTests, int>(this, 3);
             Assert.IsTrue(someOwnedInt.DefaultValue == 3);
             Assert.IsTrue(someOwnedInt.Value == 3);
         }
         [Test]
-        public void OwnedAssignmentTest()
+        public void Owned_Assignment_Test()
         {
             var someOwnedInt = new Property<PropertyTests, int>(this);
             someOwnedInt.Value = 2;
             Assert.IsTrue(someOwnedInt.Value == 2);
         }
         [Test]
-        public void OwnedPropertyChangedTest()
+        public void Owned_PropertyChanged_Test()
         {
             var temp = 0;
             var someOwnedInt = new Property<PropertyTests, int>(this);
@@ -144,7 +144,7 @@ namespace W.Tests
             Assert.IsTrue(temp == 1);
         }
         [Test]
-        public void OwnedPropertyValueChangedTest()
+        public void Owned_PropertyValueChanged_Test()
         {
             var temp = 0;
             var someOwnedInt = new Property<PropertyTests, int>(this);
@@ -156,7 +156,7 @@ namespace W.Tests
             Assert.IsTrue(temp == 1);
         }
         [Test]
-        public void OwnedOnValueChangedTest()
+        public void Owned_OnValueChanged_Test()
         {
             var temp = 0;
             var someOwnedInt = new Property<PropertyTests, int>(this, (tests, oldValue, newValue) =>
@@ -167,7 +167,7 @@ namespace W.Tests
             Assert.IsTrue(temp == 1);
         }
         [Test]
-        public void OwnedPropertyChangedSenderTest()
+        public void Owned_PropertyChangedSender_Test()
         {
             PropertyTests temp = null;
             var someOwnedInt = new Property<PropertyTests, int>(this);
@@ -180,7 +180,7 @@ namespace W.Tests
             Assert.IsTrue(temp == this);
         }
         [Test]
-        public void OwnedPropertyValueChangedSenderTest()
+        public void Owned_PropertyValueChangedSender_Test()
         {
             PropertyTests temp = null;
             var someOwnedInt = new Property<PropertyTests, int>(this);
@@ -193,7 +193,7 @@ namespace W.Tests
             Assert.IsTrue(temp == this);
         }
         [Test]
-        public void OwnedSetOwnerTest()
+        public void Owned_SetOwner_Test()
         {
             PropertyTests temp = null;
             var someOwnedInt = new Property<PropertyTests, int>();
@@ -208,26 +208,26 @@ namespace W.Tests
         }
 
         [Test]
-        public void IsDirty_On_Initialized_With_DefaultValue_Test()
+        public void IsDirty_On_Initialized_With_DefaultValue__Test()
         {
             var someInt = new Property<int>(5);
             Assert.IsFalse(someInt.IsDirty);
         }
         [Test]
-        public void IsDirty_On_Object_Initializer_Test()
+        public void IsDirty_On_Object_Initializer__Test()
         {
             var someInt = new Property<int>() { Value = 5 };
             Assert.IsTrue(someInt.IsDirty);
         }
         [Test]
-        public void IsDirty_On_LoadValue_Test()
+        public void IsDirty_On_LoadValue__Test()
         {
             var someInt = new Property<int>();
             someInt.LoadValue(5);
             Assert.IsFalse(someInt.IsDirty);
         }
         [Test]
-        public void IsDirty_On_Assignment_Test()
+        public void IsDirty_On_Assignment__Test()
         {
             var someInt = new Property<int>();
             someInt.Value = 5;
