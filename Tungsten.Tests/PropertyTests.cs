@@ -52,7 +52,7 @@ namespace W.Tests
         {
             var temp = 0;
             var someInt = new Property<int>();
-            someInt.PropertyChanged += (sender, args) =>
+            someInt.PropertyChanged += (sender, propertyName) =>
             {
                 temp = 1;
             };
@@ -88,7 +88,7 @@ namespace W.Tests
         {
             Property<int> temp = null;
             var someInt = new Property<int>();
-            someInt.PropertyChanged += (sender, args) =>
+            someInt.PropertyChanged += (sender, propertyName) =>
             {
                 Console.WriteLine("temp assigning to sender");
                 temp = sender as Property<int>;
@@ -136,7 +136,7 @@ namespace W.Tests
         {
             var temp = 0;
             var someOwnedInt = new Property<PropertyTests, int>(this);
-            someOwnedInt.PropertyChanged += (sender, args) =>
+            someOwnedInt.PropertyChanged += (sender, propertyName) =>
             {
                 temp = 1;
             };
@@ -171,7 +171,7 @@ namespace W.Tests
         {
             PropertyTests temp = null;
             var someOwnedInt = new Property<PropertyTests, int>(this);
-            someOwnedInt.PropertyChanged += (sender, args) =>
+            someOwnedInt.PropertyChanged += (sender, propertyName) =>
             {
                 //the sender of PropertyChanged should always be the class having the property
                 temp = sender as PropertyTests;
