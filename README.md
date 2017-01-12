@@ -1,6 +1,8 @@
 # Tungsten
 A C# library to make Windows Forms and WPF application development easier.  See the Wiki page for details and use.
 
+Tungsten is built with .Net Framework 4.5
+
 # Classes
 * Lockable\<TValue\> - A generic class to wrap a value in a thread-safe manner
 * Property\<TValue\> - A generic class providing a number of enhancements to a Lockable\<TValue\> value
