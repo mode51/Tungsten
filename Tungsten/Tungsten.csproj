@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CallResult.cs" />
     <Compile Include="InvokeExtensions.cs" />
     <Compile Include="Lockable.cs" />
     <Compile Include="PropertyChangedNotifier.cs" />

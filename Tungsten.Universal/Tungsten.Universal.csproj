@@ -107,6 +107,9 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Tungsten\CallResult.cs">
+      <Link>CallResult.cs</Link>
+    </Compile>
     <Compile Include="..\Tungsten\InvokeExtensions.cs">
       <Link>InvokeExtensions.cs</Link>
     </Compile>
