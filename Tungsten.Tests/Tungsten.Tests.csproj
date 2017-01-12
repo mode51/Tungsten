@@ -55,6 +55,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyHostMethodsTests.cs" />
+    <Compile Include="PropertyHostTests.cs" />
     <Compile Include="PropertyTests.cs" />
   </ItemGroup>
   <ItemGroup>

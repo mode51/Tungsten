@@ -33,6 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Tungsten.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -52,9 +53,12 @@
     <Compile Include="Property\IProperty.cs" />
     <Compile Include="Property\Property.cs" />
     <Compile Include="Property\PropertyBase.cs" />
-    <None Include="Archive\PropertyHost.cs" />
+    <Compile Include="PropertyHost.cs" />
     <Compile Include="Property\PropertyHostMethods.cs" />
     <Compile Include="Property\PropertyMethods.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Archive\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
