@@ -11,4 +11,4 @@ Tungsten is built with .Net Framework 4.5
     * Supports a callback handler in the constructor so you don't have to use events
 * Property\<TOwner, TValue\> - Like Property\<TValue\> except that you can specify an Owner
     * Events and callback have type-strict sender (which is the Owner you specify)
-* [PropertyHost](PropertyHost) - a base class which automates the IsDirty, MarkAsClean and InitializeProperties so you don't have to.
+* [PropertyHost](https://github.com/mode51/Tungsten/wiki/PropertyHost) - a base class which automates the IsDirty, MarkAsClean and InitializeProperties so you don't have to.
