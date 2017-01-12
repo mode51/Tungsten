@@ -23,7 +23,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>Tungsten</Id>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Title>Tungsten</Title>
     <Authors>Jordan Duerksen</Authors>
     <Owners>Jordan Duerksen</Owners>
@@ -37,6 +37,7 @@
     <Copyright>Copyright © 2017 Jordan Duerksen</Copyright>
     <Tags>Tungsten.NuGet, Tungsten, W</Tags>
     <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
+    <IconUrl>http://www.duerksen.us/images/Tungsten.ico</IconUrl>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Readme.txt" />

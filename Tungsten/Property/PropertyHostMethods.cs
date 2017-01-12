@@ -9,7 +9,11 @@ namespace W
     {
         private static IOwnedProperty GetProperty(FieldInfo fieldInfo, object owner)
         {
+#if WINDOWS_UWP
+            if (fieldInfo?.FieldType.GetTypeInfo().IsClass ?? false)
+#else
             if (fieldInfo?.FieldType?.IsClass ?? false)
+#endif
             {
                 var value = fieldInfo.GetValue(owner);
                 var property = value as IOwnedProperty;
@@ -19,7 +23,11 @@ namespace W
         }
         private static IOwnedProperty GetProperty(PropertyInfo propertyInfo, object owner)
         {
+#if WINDOWS_UWP
+            if (propertyInfo?.PropertyType.GetTypeInfo().IsClass ?? false)
+#else
             if (propertyInfo?.PropertyType?.IsClass ?? false)
+#endif
             {
                 var value = propertyInfo.GetValue(owner);
                 var property = value as IOwnedProperty;

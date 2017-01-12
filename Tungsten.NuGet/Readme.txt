@@ -5,7 +5,8 @@ Initial Release 1/11/2017
 Lockable<TValue>
 Property<TValue>
 Property<TOwner, TValue>
-
+PropertyHost
+Invoke (InvokeExtensions)
 
 
 Thanks for using Tungsten,
