@@ -18,7 +18,7 @@ namespace W
     public static class InvokeExtensions
     {
 #if WINDOWS_UWP
-        public static void Invoke<T>(this T @this, Action action)
+        public static void InvokeEx<T>(this T @this, Action action)
         {
             CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => action?.Invoke()).GetResults();
         }
@@ -27,7 +27,7 @@ namespace W
             await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => action?.Invoke());
         }
 #else
-        public static void Invoke<T>(this T @this, Action<T> action) where T : ISynchronizeInvoke
+        public static void InvokeEx<T>(this T @this, Action<T> action) where T : ISynchronizeInvoke
         {
             //use:  this.InvokeEx(f => pbProgress.Value = 0);
             if (@this.InvokeRequired)
@@ -39,7 +39,7 @@ namespace W
                 action(@this);
             }
         }
-        public static U Invoke<T, U>(this T @this, Func<T, U> f) where T : ISynchronizeInvoke
+        public static U InvokeEx<T, U>(this T @this, Func<T, U> f) where T : ISynchronizeInvoke
         {
             //use:  this.InvokeEx((o) => lstProjects.SelectionItem as string);
             if (@this.InvokeRequired)
@@ -51,7 +51,7 @@ namespace W
                 return (U)f(@this);
             }
         }
-        public static object Invoke<T>(this T @this, Func<T, object> f) where T : ISynchronizeInvoke
+        public static object InvokeEx<T>(this T @this, Func<T, object> f) where T : ISynchronizeInvoke
         {
             //use:  this.InvokeEx((o) => lstProjects.SelectionItem as string);
             if (@this.InvokeRequired)
