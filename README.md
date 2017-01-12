@@ -17,6 +17,8 @@ Tungsten.Universal is built on Windows 10 (10.0; Build 10240)
 * [Property](https://github.com/mode51/Tungsten/wiki/Property-TOwner,-TValue)\<TOwner, TValue\> - Like Property\<TValue\> except that you can specify an Owner
     * Events and callback have type-strict sender (which is the Owner you specify)
 * [PropertyHost](https://github.com/mode51/Tungsten/wiki/PropertyHost) - a base class which automates the IsDirty, MarkAsClean and InitializeProperties so you don't have to.
+* CallResult - a non-generic class which can be used to return true/false and an exception from a function
+* CallResult\<TResult\> - like CallResult except that you can also specify a result
 
 #Sample 1
 
