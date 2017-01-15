@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6280C716-960A-4588-8123-D96B30271C22}</ProjectGuid>
+    <ProjectGuid>{CA403171-6EC0-4A85-89C2-10D7CE784EAE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tungsten.Universal</RootNamespace>
-    <AssemblyName>Tungsten.Universal</AssemblyName>
+    <RootNamespace>Tungsten.Universal.Tests</RootNamespace>
+    <AssemblyName>Tungsten.Universal.Tests</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
@@ -35,7 +35,6 @@
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Tungsten.Universal.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -108,52 +107,17 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Tungsten\CallResult.cs">
-      <Link>CallResult.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten\InvokeExtensions.cs">
-      <Link>InvokeExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten\Lockable.cs">
-      <Link>Lockable.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten\PropertyChangedNotifier.cs">
-      <Link>PropertyChangedNotifier.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten\PropertyHost.cs">
-      <Link>PropertyHost.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten\Property\IOwnedProperty.cs">
-      <Link>Property\IOwnedProperty.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten\Property\IProperty.cs">
-      <Link>Property\IProperty.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten\Property\Property.cs">
-      <Link>Property\Property.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten\Property\PropertyBase.cs">
-      <Link>Property\PropertyBase.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten\Property\PropertyHostMethods.cs">
-      <Link>Property\PropertyHostMethods.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten\Property\PropertyMethods.cs">
-      <Link>Property\PropertyMethods.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten\ThreadExtensions.cs">
-      <Link>ThreadExtensions.cs</Link>
+    <Compile Include="..\Tungsten.Tests\CallResultTests.cs">
+      <Link>CallResultTests.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\Tungsten.Universal.rd.xml" />
+    <EmbeddedResource Include="Properties\Tungsten.Universal.Tests.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Archive\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\Tungsten\Tungsten.ico">
-      <Link>Tungsten.ico</Link>
-    </Content>
+    <ProjectReference Include="..\Tungsten.Universal\Tungsten.Universal.csproj">
+      <Project>{6280c716-960a-4588-8123-d96b30271c22}</Project>
+      <Name>Tungsten.Universal</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

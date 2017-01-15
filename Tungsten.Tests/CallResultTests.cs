@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework.Internal;
+using W;
+
+using Assert = NUnit.Framework.Assert;
 using NUnit.Framework;
 
 namespace W.Tests

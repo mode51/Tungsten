@@ -61,6 +61,7 @@
     <Compile Include="PropertyHost.cs" />
     <Compile Include="Property\PropertyHostMethods.cs" />
     <Compile Include="Property\PropertyMethods.cs" />
+    <Compile Include="ThreadExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Archive\" />
