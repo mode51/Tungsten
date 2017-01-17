@@ -37,5 +37,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Tungsten.Universal\Tungsten.Universal.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Tungsten.NuGet\Readme.txt">
+      <Link>Readme.txt</Link>
+    </Content>
+  </ItemGroup>
   <Import Project="$(NuProjPath)\NuProj.targets" />
 </Project>
