@@ -35,9 +35,6 @@
     <IconUrl>http://www.duerksen.us/images/Tungsten.ico</IconUrl>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Tungsten.Universal\Tungsten.Universal.csproj" />
   </ItemGroup>
   <Import Project="$(NuProjPath)\NuProj.targets" />
