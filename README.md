@@ -1,8 +1,8 @@
 #Tungsten
 
-Platforms: WinForms, WPF, Windows Universal
+Platforms: WinForms, WPF, Windows Universal, Windows Portable (PCL)
 
-A C# library to make Windows Forms, WPF and Windows Universal application development easier.  See the Wiki page for details and use.
+A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable application development easier.  See the Wiki page for details and use.
 
 Tungsten is built with .Net Framework 4.5
 Tungsten.Universal is built on Windows 10 (10.0; Build 10240)
@@ -20,6 +20,11 @@ Tungsten.Universal is built on Windows 10 (10.0; Build 10240)
 * InvokeExtensions - A static class exposing InvokeEx extension methods (to ease InvokeRequired handling)
 * CallResult - A non-generic class which can be used to return true/false and an exception from a function
 * CallResult\<TResult\> - Like CallResult except that you can also specify a result
+* Thread - automates creating a thread with an Action
+* Thread\<T\> - like Thread, except Action is now Action\<T\>
+* Gate - similar to Thread, a Gate can be started some time after creation
+* Gate\<T\> - like Gate, exception Action is now Action\<T\>
+* ActionQueue\<T\> - Merges a Thread with a ConcurrentQueue.  Executes the provided Action\<T\> or Func\<T, bool\> whenever an item is added to the ConcurrentQueue
 
 #Sample 1
 
