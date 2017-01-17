@@ -108,6 +108,9 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Tungsten\ActionQueue.cs">
+      <Link>ActionQueue.cs</Link>
+    </Compile>
     <Compile Include="..\Tungsten\CallResult.cs">
       <Link>CallResult.cs</Link>
     </Compile>
@@ -143,6 +146,18 @@
     </Compile>
     <Compile Include="..\Tungsten\ThreadExtensions.cs">
       <Link>ThreadExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten\Threading\Gate.cs">
+      <Link>Threading\Gate.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten\Threading\GateExtensions.cs">
+      <Link>Threading\GateExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten\Threading\Thread.cs">
+      <Link>Threading\Thread.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten\Threading\ThreadBase.cs">
+      <Link>Threading\ThreadBase.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Tungsten.Universal.rd.xml" />

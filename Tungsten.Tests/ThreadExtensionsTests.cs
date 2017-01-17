@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using W.Threading;
 
 namespace W.Tests
 {
@@ -16,10 +17,12 @@ namespace W.Tests
             var age = new Lockable<int>();
             var name = "Jordan";
 
-            var result = name.Thread((n) =>
+            var result = name.CreateThread((n, cts) =>
             {
                 for (; age.Value < 47; age.Value++)
                 {
+                    if (cts.IsCancellationRequested)
+                        return;
                     System.Threading.Thread.Sleep(0);
                 }
             }, (b, exception) =>
@@ -36,8 +39,25 @@ namespace W.Tests
         {
             Exception e = null;
 
-            var result = this.Thread((tests) =>
+            var result = this.CreateThread((tests, cts) =>
             {
+                throw new ArgumentNullException("Value");
+            }, (b, exception) =>
+            {
+                e = exception;
+            }).Join(1000);
+
+            Assert.IsTrue(result);
+            Assert.IsTrue(e != null);
+        }
+        [Test]
+        public void CancelThread()
+        {
+            Exception e = null;
+
+            var result = this.CreateThread((tests, cts) =>
+            {
+                cts.Cancel();
                 throw new ArgumentNullException("Value");
             }, (b, exception) =>
             {

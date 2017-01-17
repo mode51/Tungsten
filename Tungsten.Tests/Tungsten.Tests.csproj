@@ -59,6 +59,7 @@
     <Compile Include="PropertyHostTests.cs" />
     <Compile Include="PropertyTests.cs" />
     <Compile Include="ThreadExtensionsTests.cs" />
+    <Compile Include="ThreadTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

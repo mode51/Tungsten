@@ -7,7 +7,7 @@
     <ProjectGuid>{46040E3B-AE52-42F9-9C1B-8566FC6765C5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>w</RootNamespace>
+    <RootNamespace>W</RootNamespace>
     <AssemblyName>Tungsten</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionQueue.cs" />
     <Compile Include="CallResult.cs" />
     <Compile Include="InvokeExtensions.cs" />
     <Compile Include="Lockable.cs" />
@@ -61,12 +62,16 @@
     <Compile Include="PropertyHost.cs" />
     <Compile Include="Property\PropertyHostMethods.cs" />
     <Compile Include="Property\PropertyMethods.cs" />
+    <Compile Include="Threading\Gate.cs" />
+    <Compile Include="Threading\Thread.cs" />
+    <Compile Include="Threading\ThreadBase.cs" />
     <Compile Include="ThreadExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Archive\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Threading\GateExtensions.cs" />
     <Content Include="Tungsten.ico" />
     <Content Include="Tungsten.png" />
   </ItemGroup>

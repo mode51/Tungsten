@@ -18,21 +18,21 @@
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
-    <Id>Tungsten.Universal.NuGet</Id>
-    <Version>1.0.0</Version>
-    <Title>Tungsten.Universal.NuGet</Title>
-    <Authors>Jordan</Authors>
-    <Owners>Jordan</Owners>
-    <Summary>Tungsten.Universal.NuGet</Summary>
-    <Description>Tungsten.Universal.NuGet</Description>
+    <Id>Tungsten.Universal</Id>
+    <Version>1.0.5</Version>
+    <Title>Tungsten.Universal</Title>
+    <Authors>Jordan Duerksen</Authors>
+    <Owners>Jordan Duerksen</Owners>
+    <Summary>Tungsten.Universal</Summary>
+    <Description>Tungsten is a C# library to make application development easier.</Description>
     <ReleaseNotes>
     </ReleaseNotes>
-    <ProjectUrl>
-    </ProjectUrl>
+    <ProjectUrl>https://github.com/mode51/Tungsten</ProjectUrl>
     <LicenseUrl>
     </LicenseUrl>
-    <Copyright>Copyright © Jordan</Copyright>
-    <Tags>Tungsten.Universal.NuGet</Tags>
+    <Copyright>Copyright © 2017 Jordan Duerksen</Copyright>
+    <Tags>Tungsten.Universal.NuGet, Tungsten.Universal, Tungsten, W</Tags>
+    <IconUrl>http://www.duerksen.us/images/Tungsten.ico</IconUrl>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Readme.txt" />

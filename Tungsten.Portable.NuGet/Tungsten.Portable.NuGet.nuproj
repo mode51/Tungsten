@@ -10,24 +10,28 @@
       <Platform>AnyCPU</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Tungsten.NuGet\Readme.txt">
+      <Link>Readme.txt</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tungsten.Portable\Tungsten.Portable.csproj" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>7a8e4ca2-65d8-4e50-a092-b1952b4aba74</ProjectGuid>
-    <SccProjectName>SAK</SccProjectName>
-    <SccProvider>SAK</SccProvider>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccLocalPath>SAK</SccLocalPath>
+    <ProjectGuid>0597a57f-4f7d-48e1-81a5-6e1eaba40fb2</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
     <NuProjPath Condition=" '$(NuProjPath)' == '' ">$(MSBuildExtensionsPath)\NuProj\</NuProjPath>
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
-    <Id>Tungsten</Id>
+    <Id>Tungsten.Portable</Id>
     <Version>1.0.5</Version>
-    <Title>Tungsten</Title>
+    <Title>Tungsten.Portable</Title>
     <Authors>Jordan Duerksen</Authors>
     <Owners>Jordan Duerksen</Owners>
-    <Summary>Tungsten</Summary>
+    <Summary>Tungsten.Portable</Summary>
     <Description>Tungsten is a C# library to make application development easier.</Description>
     <ReleaseNotes>
     </ReleaseNotes>
@@ -35,15 +39,8 @@
     <LicenseUrl>
     </LicenseUrl>
     <Copyright>Copyright © 2017 Jordan Duerksen</Copyright>
-    <Tags>Tungsten.NuGet, Tungsten, W</Tags>
-    <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
+    <Tags>Tungsten.Portable.NuGet, Tungsten.Portable, Tungsten, W</Tags>
     <IconUrl>http://www.duerksen.us/images/Tungsten.ico</IconUrl>
   </PropertyGroup>
-  <ItemGroup>
-    <Content Include="Readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Tungsten\Tungsten.csproj" />
-  </ItemGroup>
   <Import Project="$(NuProjPath)\NuProj.targets" />
 </Project>
