@@ -26,7 +26,7 @@ namespace W
         /// Places an item in the queue
         /// </summary>
         /// <param name="item"></param>
-        public void Post(T item)
+        public void Enqueue(T item)
         {
             _queue.Enqueue(item);
         }
