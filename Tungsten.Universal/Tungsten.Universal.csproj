@@ -120,6 +120,9 @@
     <Compile Include="..\Tungsten\Lockable.cs">
       <Link>Lockable.cs</Link>
     </Compile>
+    <Compile Include="..\Tungsten\Logging.cs">
+      <Link>Logging.cs</Link>
+    </Compile>
     <Compile Include="..\Tungsten\PropertyChangedNotifier.cs">
       <Link>PropertyChangedNotifier.cs</Link>
     </Compile>

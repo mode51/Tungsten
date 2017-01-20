@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Tungsten\ActionQueue.cs">
@@ -48,6 +49,9 @@
     </Compile>
     <Compile Include="..\Tungsten\Lockable.cs">
       <Link>Lockable.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten\Logging.cs">
+      <Link>Logging.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten\PropertyChangedNotifier.cs">
       <Link>PropertyChangedNotifier.cs</Link>
