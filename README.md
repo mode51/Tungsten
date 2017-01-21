@@ -39,12 +39,9 @@ Tungsten.Universal is built on Windows 10 (10.0; Build 10240)
 * W.RPC.Server - An RPC server (see Tungsten.RPC.ServerDemo for use)
 * W.RPC.Client - An RPC client (see Tungsten.RPC.ClientDemo for use)
 
+##Declaring Properties in your code
 
-
-
-#Declaring Properties in your code
-
-If you can inherit from PropertyHost
+If you inherit from PropertyHost, the properties will be initialized in the default constructor.
 
     public class MyClass : PropertyHost
     {
@@ -52,7 +49,9 @@ If you can inherit from PropertyHost
         public Property<MyClass, string> First {get; } = new Property<MyClass, string>();
     }
 
-#CallResult, Property and PropertyHost Sample
+##CallResult, Property and PropertyHost Sample
+
+This sample does not inherit PropertyHost, so it must call PropertyHostMethods.InitializeProperties in the constructor
 
     public class MyClass : MyBaseClass
     {
