@@ -1,3 +1,5 @@
+using System.Threading;
+
 namespace W
 {
     public abstract class PropertyBase<TOwner, TValue> : PropertyChangedNotifier, IProperty<TValue>, IOwnedProperty where TOwner : class
@@ -12,6 +14,7 @@ namespace W
         protected OnValueChangedDelegate OnValueChanged; //Callback for use in the constructor (non-event-based callback)
 
         private readonly Lockable<bool> _isDirty = new Lockable<bool>();
+        private readonly ManualResetEvent _mre = new ManualResetEvent(false);
 
         #region IProperty
         public bool IsDirty
@@ -66,6 +69,26 @@ namespace W
         }
         #endregion
 
+        /// <summary>
+        /// Allows the caller to suspend it's thread until Value changes
+        /// </summary>
+        /// <param name="msTimeout"></param>
+        /// <returns></returns>
+        public bool WaitForChanged(int msTimeout = 0)
+        {
+            bool result = false;
+            if (msTimeout > 0)
+                result = _mre.WaitOne(msTimeout);
+            else
+                result = _mre.WaitOne();
+            return result;
+        }
+
+        /// <summary>
+        /// Loads Value without raising events or calling the OnValueChanged callback
+        /// </summary>
+        /// <remarks>Calling LoadValue sets IsDirty to false</remarks>
+        /// <param name="value">The new value</param>
         public void LoadValue(TValue value)
         {
             PropertyMethods.LoadValue(_value, value);
@@ -90,6 +113,8 @@ namespace W
                 base.SetValue(value, callerMemberName);
                 //now call our callback
                 ExecuteOnValueChanged(oldValue, (TValue)value);
+                _mre.Set();
+                _mre.Reset();
             }
         }
         protected override void OnPropertyChanged(string propertyName = null)
