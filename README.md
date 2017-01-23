@@ -45,8 +45,8 @@ If you inherit from PropertyHost, the properties will be initialized in the defa
 
     public class MyClass : PropertyHost
     {
-        public Property<MyClass, string> Last {get; } = new Property<MyClass, string>();
-        public Property<MyClass, string> First {get; } = new Property<MyClass, string>();
+        public Property<MyClass, string> Last { get; } = new Property<MyClass, string>();
+        public Property<MyClass, string> First { get; } = new Property<MyClass, string>();
     }
 
 ##CallResult, Property and PropertyHost Sample
