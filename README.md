@@ -70,6 +70,7 @@ This sample does not inherit PropertyHost, so it must call PropertyHostMethods.I
             {
               result.Exception = e;
             }
+            return result;
         }
         public MyClass()
         {
