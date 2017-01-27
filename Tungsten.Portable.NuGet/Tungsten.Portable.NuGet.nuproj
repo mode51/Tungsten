@@ -27,12 +27,12 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>Tungsten.Portable</Id>
-    <Version>1.0.7</Version>
+    <Version>1.0.8</Version>
     <Title>Tungsten.Portable</Title>
     <Authors>Jordan Duerksen</Authors>
     <Owners>Jordan Duerksen</Owners>
     <Summary>Tungsten.Portable</Summary>
-    <Description>Tungsten is a C# library to make application development easier.</Description>
+    <Description>Tungsten is a C# library of classes which make application development easier</Description>
     <ReleaseNotes>
     </ReleaseNotes>
     <ProjectUrl>https://github.com/mode51/Tungsten</ProjectUrl>

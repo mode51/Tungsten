@@ -2,14 +2,20 @@ using System.Threading;
 
 namespace W
 {
-    public abstract class PropertyBase<TOwner, TValue> : PropertyChangedNotifier, IProperty<TValue>, IOwnedProperty where TOwner : class
+    public abstract class PropertyBase<TOwner, TValue> : PropertyChangedNotifier, IProperty<TValue> where TOwner : class
     {
         //These delegates/events require the base class to support TOwner (otherwise, the owner parameter would have to be of object type)
         public delegate void PropertyValueChangingDelegate(TOwner owner, TValue oldValue, TValue newValue, ref bool cancel);
         public delegate void PropertyValueChangedDelegate(TOwner sender, TValue oldValue, TValue newValue);
         public delegate void OnValueChangedDelegate(TOwner owner, TValue oldValue, TValue newValue);
 
+        /// <summary>
+        /// Raised after Value has changed
+        /// </summary>
         public event PropertyValueChangedDelegate ValueChanged;
+        /// <summary>
+        /// Raised before Value has changed.  To prevent Value from changing set cancel to true.
+        /// </summary>
         public event PropertyValueChangingDelegate ValueChanging;
         protected OnValueChangedDelegate OnValueChanged; //Callback for use in the constructor (non-event-based callback)
 
@@ -30,13 +36,6 @@ namespace W
         {
             get { return _owner.Value; }
             set { _owner.Value = value; }
-        }
-        #endregion
-
-        #region IOwnedProperty
-        void IOwnedProperty.SetOwner(object owner)
-        {
-            Owner = owner as TOwner;
         }
         #endregion
 

@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace W
 {
-    public static class PropertyMethods
+    internal static class PropertyMethods
     {
         /// <summary>
         /// Provides thread-safe assignment of a variable and invoking a handler when the change occurs

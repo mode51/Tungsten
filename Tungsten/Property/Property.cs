@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
 namespace W
 {
-    public class Property<TOwner, TValue> : PropertyBase<TOwner, TValue> where TOwner : class
+    public class Property<TOwner, TValue> : PropertyBase<TOwner, TValue>, IOwnedProperty where TOwner : class
     {
+        #region IOwnedProperty
+        void IOwnedProperty.SetOwner(object owner)
+        {
+            Owner = owner as TOwner;
+        }
+        #endregion
+
         public Property() : this(default(TOwner), default(TValue), null) { }
         public Property(TValue defaultValue) : this(default(TOwner), defaultValue, null) { }
         public Property(OnValueChangedDelegate onValueChanged = null) : this(default(TOwner), default(TValue), onValueChanged) { }

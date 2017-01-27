@@ -5,6 +5,9 @@ Tungsten (NuGet)
 Newtonsoft.Json (NuGet)
 
 
+1.27.2017
+Rebuilt with Tungsten 1.0.8
+
 1.21.2017 - Initial Release
 
 

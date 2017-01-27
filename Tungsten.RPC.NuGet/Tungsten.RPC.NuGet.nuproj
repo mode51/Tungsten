@@ -19,12 +19,12 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>Tungsten.RPC</Id>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Title>Tungsten.RPC</Title>
     <Authors>Jordan Duerksen</Authors>
     <Owners>Jordan Duerksen</Owners>
     <Summary>Tungsten.RPC</Summary>
-    <Description>Tungsten.RPC provides secure yet simple client/server RPC</Description>
+    <Description>Tungsten.RPC is a socket library which allows clients to execute functionality (with or without return values) on a server.  Tungsten.RPC uses two-way encryption via public/private key pairs to secure the transmission.</Description>
     <ReleaseNotes>
     </ReleaseNotes>
     <ProjectUrl>https://github.com/mode51/Tungsten</ProjectUrl>
