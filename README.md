@@ -14,6 +14,7 @@ Tungsten.Universal is built on Windows 10 (10.0; Build 10240)
 * Tungsten.RPC - A classic class library
 
 # Demos
+* Tungsten.Demo.WPF - Illustrates how to use Tungsten in a WPF application
 * Tungsten.RPC.Server - Illustrates how to create an RPC server with Tungsten.RPC
 * Tungsten.RPC.Client - Illustrates how to create an RPC client with Tungsten.RPC
 
@@ -26,6 +27,7 @@ Tungsten.Universal is built on Windows 10 (10.0; Build 10240)
 * [W.Property](https://github.com/mode51/Tungsten/wiki/Property-TOwner,-TValue)\<TOwner, TValue\> - Like Property\<TValue\> except that you can specify an Owner
 * Events and callback have type-strict sender (which is the Owner you specify)
 * [W.PropertyHost](https://github.com/mode51/Tungsten/wiki/PropertyHost) - a base class which automates the IsDirty, MarkAsClean and InitializeProperties so you don't have to.
+* W.PropertyHostNotifier - aggregates PropertyHost and PropertyChangedNotifier
 * W.InvokeExtensions - A static class exposing InvokeEx extension methods (to ease InvokeRequired handling)
 * W.CallResult - A non-generic class which can be used to return true/false and an exception from a function
 * W.CallResult\<TResult\> - Like CallResult except that you can also specify a result
