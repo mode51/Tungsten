@@ -20,6 +20,10 @@
                 <Label Content="Random #2" HorizontalAlignment="Left" />
                 <TextBlock Text="{Binding Path=RandomNumber2.Value}" HorizontalAlignment="Right" Height="24" />
             </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Count" HorizontalAlignment="Left" />
+                <TextBlock Text="{Binding Path=Count.Value}" HorizontalAlignment="Right" Height="24" />
+            </StackPanel>
             <Button x:Name="btnGenerateNewRandomNumber" Content="Generate New Random Number" Click="BtnGenerateNewRandomNumber_OnClick" HorizontalAlignment="Center" Width="200" Height="24" />
         </StackPanel>
     </Grid>

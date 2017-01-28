@@ -4442,6 +4442,7 @@
         </element>
         <element api="M:W.Threading.Thread.#ctor(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" />
         <element api="M:W.Threading.Thread.CallInvokeAction" />
+        <element api="M:W.Threading.Thread.Cancel(System.Int32)" />
         <element api="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" />
         <element api="Overload:W.Threading.Thread.Join">
           <element api="M:W.Threading.Thread.Join" />
@@ -4502,6 +4503,7 @@
           </containers>
         </element>
         <element api="M:W.Threading.Thread.CallInvokeAction" />
+        <element api="M:W.Threading.Thread.Cancel(System.Int32)" />
         <element api="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" />
         <element api="Overload:W.Threading.Thread.Join">
           <element api="M:W.Threading.Thread.Join" />
@@ -4578,6 +4580,29 @@
       <returns>
         <type api="T:System.Exception" ref="true" />
       </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0 (1.0.0.0)" />
+          <noAptca />
+        </library>
+        <namespace api="N:W.Threading" />
+        <type api="T:W.Threading.Thread" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Threading.Thread.Cancel(System.Int32)">
+      <topicdata group="api" />
+      <apidata name="Cancel" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="msForceAbortDelay" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>5000</value>
+          </argument>
+        </parameter>
+      </parameters>
       <containers>
         <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary">
           <assemblydata version="1.0.0.0 (1.0.0.0)" />
@@ -5233,7 +5258,7 @@
       <topicdata group="api" />
       <apidata name="Cancel" group="member" subgroup="method" />
       <memberdata visibility="public" />
-      <proceduredata virtual="false" />
+      <proceduredata virtual="true" />
       <containers>
         <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary">
           <assemblydata version="1.0.0.0 (1.0.0.0)" />

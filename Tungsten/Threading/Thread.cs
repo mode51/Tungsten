@@ -224,11 +224,27 @@ namespace W.Threading
         }
 
         /// <summary>
+        /// <para>
+        /// Cancels the thread by calling Cancel on the CancellationTokenSource.  The value should be checked in the code in the specified Action parameter.
+        /// </para>
+        /// </summary>
+        /// <param name="msForceAbortDelay">Abort the thread if it doesn't terminate before the specified number of milliseconds elapse</param>
+        public void Cancel(int msForceAbortDelay = 5000)
+        {
+            base.Cancel();
+
+            if (!Join(msForceAbortDelay)) //give the thread 5 seconds to close down, otherwise force it
+            {
+                _thread?.Abort();
+            }
+        }
+
+        /// <summary>
         /// Blocks the calling thread until the thread terminates
         /// </summary>
         public override void Join()
         {
-            _thread.Join();
+            _thread?.Join();
         }
         /// <summary>
         /// Blocks the calling thread until either the thread terminates or the specified milliseconds elapse
@@ -237,7 +253,7 @@ namespace W.Threading
         /// <returns>True if the thread terminates within the timeout specified, otherwise false</returns>
         public override bool Join(int msTimeout)
         {
-            return _thread.Join(msTimeout);
+            return _thread?.Join(msTimeout) ?? true;
         }
 
         /// <summary>

@@ -68,6 +68,7 @@
   <HelpKINode Title="CallResult&lt;TResult&gt;.Result property" Url="html/P_W_CallResult_1_Result.htm" />
   <HelpKINode Title="Cancel method">
     <HelpKINode Title="ActionQueue(T).Cancel Method " Url="html/M_W_ActionQueue_1_Cancel.htm" />
+    <HelpKINode Title="Thread.Cancel Method " Url="html/M_W_Threading_Thread_Cancel.htm" />
     <HelpKINode Title="ThreadBase.Cancel Method " Url="html/M_W_Threading_ThreadBase_Cancel.htm" />
   </HelpKINode>
   <HelpKINode Title="Count property" Url="html/P_W_ActionQueue_1_Count.htm" />
@@ -391,6 +392,7 @@
   <HelpKINode Title="Thread(Of T).InvokeAction method" Url="html/M_W_Threading_Thread_1_InvokeAction.htm" />
   <HelpKINode Title="Thread(Of T).Thread constructor" Url="html/M_W_Threading_Thread_1__ctor.htm" />
   <HelpKINode Title="Thread.CallInvokeAction method" Url="html/M_W_Threading_Thread_CallInvokeAction.htm" />
+  <HelpKINode Title="Thread.Cancel method" Url="html/M_W_Threading_Thread_Cancel.htm" />
   <HelpKINode Title="Thread.Create method" Url="html/M_W_Threading_Thread_Create.htm" />
   <HelpKINode Title="Thread.Join method" Url="html/Overload_W_Threading_Thread_Join.htm" />
   <HelpKINode Title="Thread.Thread constructor" Url="html/M_W_Threading_Thread__ctor.htm" />

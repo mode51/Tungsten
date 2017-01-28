@@ -937,6 +937,12 @@
           </UL>
           <UL>
             <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Cancel Method ">
+              <param name="Local" value="html\M_W_Threading_Thread_Cancel.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
               <param name="Name" value="Create Method ">
               <param name="Local" value="html\M_W_Threading_Thread_Create.htm">
             </OBJECT></LI>

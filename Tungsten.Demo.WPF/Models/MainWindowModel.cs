@@ -7,15 +7,20 @@ using W;
 
 namespace Tungsten.Demo.WPF.Models
 {
+    //this is a sample viewmodel
+
     //public class MainWindowModel : PropertyChangedNotifier //(must call PropertyHostMethods.InitializeProperties)
     //or
-    public class MainWindowModel : PropertyHostNotifier //or PropertyChangedNotifier(with call to PropertyHostMethods.InitializeProperties)
+    public class MainWindowModel : PropertyHostNotifier, IDisposable //or PropertyChangedNotifier(with call to PropertyHostMethods.InitializeProperties)
     {
         private W.Threading.Thread _thread;
 
         //not owned properties
         public Property<string> Title { get; } = new Property<string>();
-        public Property<int> RandomNumber { get; } = new Property<int>();
+        public Property<int> RandomNumber { get; } = new Property<int>((owner, value, newValue) =>
+        {
+            System.Diagnostics.Trace.WriteLine($"RandomNumber = {newValue}");
+        });
         public Property<int> Count { get; } = new Property<int>();
 
         //owned properties (MainWindowModel must support INotifyPropertyChanged)
@@ -29,20 +34,29 @@ namespace Tungsten.Demo.WPF.Models
             RandomNumber2.Value = r.Next(1, 20000);
         }
 
+        /// <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        public void Dispose()
+        {
+            _thread?.Cancel(1000);
+        }
         ~MainWindowModel()
         {
-            _thread?.Cancel();
+            Dispose();
         }
         public MainWindowModel()
         {
-            //this is a sample viewmodel
             Title.Value = "Tungsten";
+            
+            //just demonstrate a background thread
             _thread = W.Threading.Thread.Create(cts =>
             {
                 while (!cts.IsCancellationRequested)
                 {
-                    if (RandomNumber.WaitForChanged())
+                    //technically, the value could change while we're looping and we'd never know (so mitigate this in production code)
+                    if (RandomNumber.WaitForChanged()) //dont' block indefinitely
+                    {
                         Count.Value += 1;
+                    }
                 }
             });
         }

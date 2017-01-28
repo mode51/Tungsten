@@ -48,7 +48,7 @@ namespace W.Threading
         /// Cancels the thread by calling Cancel on the CancellationTokenSource.  The value should be checked in the code in the specified Action parameter.
         /// </para>
         /// </summary>
-        public void Cancel()
+        public virtual void Cancel()
         {
             Cts.Cancel();
         }
@@ -81,7 +81,6 @@ namespace W.Threading
             Cts = new CancellationTokenSource();
             Action = action;
             OnComplete = onComplete;
-            Cts = new CancellationTokenSource();
             IsBusy.Value = true;
         }
 

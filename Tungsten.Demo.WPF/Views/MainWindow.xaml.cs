@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,14 @@ namespace Tungsten.Demo.WPF
         {
             InitializeComponent();
             DataContext = vm;
+        }
+
+        /// <summary>Raises the <see cref="E:System.Windows.Window.Closing" /> event.</summary>
+        /// <param name="e">A <see cref="T:System.ComponentModel.CancelEventArgs" /> that contains the event data.</param>
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            vm?.Dispose();
+            base.OnClosing(e);
         }
 
         private void BtnGenerateNewRandomNumber_OnClick(object sender, RoutedEventArgs e)
