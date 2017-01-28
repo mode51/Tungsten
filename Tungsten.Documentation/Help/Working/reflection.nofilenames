@@ -4442,7 +4442,10 @@
         </element>
         <element api="M:W.Threading.Thread.#ctor(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" />
         <element api="M:W.Threading.Thread.CallInvokeAction" />
-        <element api="M:W.Threading.Thread.Cancel(System.Int32)" />
+        <element api="Overload:W.Threading.Thread.Cancel">
+          <element api="M:W.Threading.Thread.Cancel" />
+          <element api="M:W.Threading.Thread.Cancel(System.Int32)" />
+        </element>
         <element api="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" />
         <element api="Overload:W.Threading.Thread.Join">
           <element api="M:W.Threading.Thread.Join" />
@@ -4503,7 +4506,10 @@
           </containers>
         </element>
         <element api="M:W.Threading.Thread.CallInvokeAction" />
-        <element api="M:W.Threading.Thread.Cancel(System.Int32)" />
+        <element api="Overload:W.Threading.Thread.Cancel">
+          <element api="M:W.Threading.Thread.Cancel" />
+          <element api="M:W.Threading.Thread.Cancel(System.Int32)" />
+        </element>
         <element api="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" />
         <element api="Overload:W.Threading.Thread.Join">
           <element api="M:W.Threading.Thread.Join" />
@@ -4516,6 +4522,21 @@
         </library>
         <namespace api="N:W.Threading" />
         <type api="T:W.Threading.Thread" />
+      </containers>
+    </api>
+    <api id="Overload:W.Threading.Thread.Cancel">
+      <topicdata name="Cancel" group="list" subgroup="overload" memberSubgroup="method" pseudo="true" allMembersTopicId="" />
+      <apidata name="Cancel" group="member" subgroup="method" />
+      <elements>
+        <element api="M:W.Threading.Thread.Cancel" />
+        <element api="M:W.Threading.Thread.Cancel(System.Int32)" />
+      </elements>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0 (1.0.0.0)" />
+        </library>
+        <namespace api="N:W.Threading" />
+        <type api="T:W.Threading.Thread" ref="true" />
       </containers>
     </api>
     <api id="Overload:W.Threading.Thread.Join">
@@ -4589,18 +4610,33 @@
         <type api="T:W.Threading.Thread" ref="true" />
       </containers>
     </api>
+    <api id="M:W.Threading.Thread.Cancel">
+      <topicdata group="api" />
+      <apidata name="Cancel" group="member" subgroup="method" />
+      <memberdata visibility="public" overload="Overload:W.Threading.Thread.Cancel" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:W.Threading.ThreadBase.Cancel">
+          <type api="T:W.Threading.ThreadBase" ref="true" />
+        </member>
+      </overrides>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0 (1.0.0.0)" />
+          <noAptca />
+        </library>
+        <namespace api="N:W.Threading" />
+        <type api="T:W.Threading.Thread" ref="true" />
+      </containers>
+    </api>
     <api id="M:W.Threading.Thread.Cancel(System.Int32)">
       <topicdata group="api" />
       <apidata name="Cancel" group="member" subgroup="method" />
-      <memberdata visibility="public" />
+      <memberdata visibility="public" overload="Overload:W.Threading.Thread.Cancel" />
       <proceduredata virtual="false" />
       <parameters>
-        <parameter name="msForceAbortDelay" optional="true">
+        <parameter name="msForceAbortDelay">
           <type api="T:System.Int32" ref="false" />
-          <argument>
-            <type api="T:System.Int32" ref="false" />
-            <value>5000</value>
-          </argument>
         </parameter>
       </parameters>
       <containers>

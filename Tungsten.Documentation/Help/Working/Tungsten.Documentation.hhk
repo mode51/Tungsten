@@ -263,7 +263,7 @@
         </OBJECT></LI>
         <LI><OBJECT type="text/sitemap">
           <param name="Name" value="Thread.Cancel Method ">
-          <param name="Local" value="html/M_W_Threading_Thread_Cancel.htm">
+          <param name="Local" value="html/Overload_W_Threading_Thread_Cancel.htm">
         </OBJECT></LI>
         <LI><OBJECT type="text/sitemap">
           <param name="Name" value="ThreadBase.Cancel Method ">
@@ -1486,7 +1486,7 @@
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Thread.Cancel method">
-        <param name="Local" value="html/M_W_Threading_Thread_Cancel.htm">
+        <param name="Local" value="html/Overload_W_Threading_Thread_Cancel.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Thread.Create method">

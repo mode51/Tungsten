@@ -11,26 +11,17 @@ Syntax
 ------
 
 ```csharp
-public void Cancel(
-	int msForceAbortDelay = 5000
-)
+public override void Cancel()
 ```
-
-#### Parameters
-
-##### *msForceAbortDelay* (Optional)
-Type: [System.Int32][2]  
-Abort the thread if it doesn't terminate before the specified number of milliseconds elapse
 
 
 See Also
 --------
 
 #### Reference
-[Thread Class][3]  
+[Thread Class][2]  
 [W.Threading Namespace][1]  
 
 [1]: ../README.md
-[2]: http://msdn.microsoft.com/en-us/library/td2s409d
-[3]: README.md
-[4]: ../../_icons/Help.png
+[2]: README.md
+[3]: ../../_icons/Help.png

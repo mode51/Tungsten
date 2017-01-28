@@ -938,8 +938,20 @@
           <UL>
             <LI><OBJECT type="text/sitemap">
               <param name="Name" value="Cancel Method ">
-              <param name="Local" value="html\M_W_Threading_Thread_Cancel.htm">
+              <param name="Local" value="html\Overload_W_Threading_Thread_Cancel.htm">
             </OBJECT></LI>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="Cancel Method ">
+                <param name="Local" value="html\M_W_Threading_Thread_Cancel.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="Cancel Method (Int32)">
+                <param name="Local" value="html\M_W_Threading_Thread_Cancel_1.htm">
+              </OBJECT></LI>
+            </UL>
           </UL>
           <UL>
             <LI><OBJECT type="text/sitemap">

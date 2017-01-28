@@ -211,7 +211,10 @@
         <topic id="M:W.Threading.Thread.#ctor(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" project="Tungsten" file="M_W_Threading_Thread__ctor" />
         <topic id="Methods.T:W.Threading.Thread" project="Tungsten" file="Methods_T_W_Threading_Thread">
           <topic id="M:W.Threading.Thread.CallInvokeAction" project="Tungsten" file="M_W_Threading_Thread_CallInvokeAction" />
-          <topic id="M:W.Threading.Thread.Cancel(System.Int32)" project="Tungsten" file="M_W_Threading_Thread_Cancel" />
+          <topic id="Overload:W.Threading.Thread.Cancel" project="Tungsten" file="Overload_W_Threading_Thread_Cancel">
+            <topic id="M:W.Threading.Thread.Cancel" project="Tungsten" file="M_W_Threading_Thread_Cancel" />
+            <topic id="M:W.Threading.Thread.Cancel(System.Int32)" project="Tungsten" file="M_W_Threading_Thread_Cancel_1" />
+          </topic>
           <topic id="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" project="Tungsten" file="M_W_Threading_Thread_Create" />
           <topic id="Overload:W.Threading.Thread.Join" project="Tungsten" file="Overload_W_Threading_Thread_Join">
             <topic id="M:W.Threading.Thread.Join" project="Tungsten" file="M_W_Threading_Thread_Join" />

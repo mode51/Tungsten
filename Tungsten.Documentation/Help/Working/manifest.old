@@ -153,9 +153,11 @@
   <topic id="M:W.Threading.GateMethods.CreateGate``1(System.Action{``0,System.Threading.CancellationTokenSource})" type="API" />
   <topic id="T:W.Threading.Thread" type="API" />
   <topic id="Methods.T:W.Threading.Thread" type="API" />
+  <topic id="Overload:W.Threading.Thread.Cancel" type="API" />
   <topic id="Overload:W.Threading.Thread.Join" type="API" />
   <topic id="M:W.Threading.Thread.#ctor(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" type="API" />
   <topic id="M:W.Threading.Thread.CallInvokeAction" type="API" />
+  <topic id="M:W.Threading.Thread.Cancel" type="API" />
   <topic id="M:W.Threading.Thread.Cancel(System.Int32)" type="API" />
   <topic id="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" type="API" />
   <topic id="M:W.Threading.Thread.Join" type="API" />

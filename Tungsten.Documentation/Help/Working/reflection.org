@@ -2770,6 +2770,7 @@
       </family>
       <elements>
         <element api="M:W.Threading.Thread.CallInvokeAction" />
+        <element api="M:W.Threading.Thread.Cancel" />
         <element api="M:W.Threading.Thread.Cancel(System.Int32)" />
         <element api="M:W.Threading.Thread.Join" />
         <element api="M:W.Threading.Thread.Join(System.Int32)" />
@@ -2870,17 +2871,28 @@
         <type api="T:W.Threading.Thread" ref="true" />
       </containers>
     </api>
+    <api id="M:W.Threading.Thread.Cancel">
+      <apidata name="Cancel" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:W.Threading.ThreadBase.Cancel">
+          <type api="T:W.Threading.ThreadBase" ref="true" />
+        </member>
+      </overrides>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Threading" />
+        <type api="T:W.Threading.Thread" ref="true" />
+      </containers>
+    </api>
     <api id="M:W.Threading.Thread.Cancel(System.Int32)">
       <apidata name="Cancel" group="member" subgroup="method" />
       <memberdata visibility="public" />
       <proceduredata virtual="false" />
       <parameters>
-        <parameter name="msForceAbortDelay" optional="true">
+        <parameter name="msForceAbortDelay">
           <type api="T:System.Int32" ref="false" />
-          <argument>
-            <type api="T:System.Int32" ref="false" />
-            <value>5000</value>
-          </argument>
         </parameter>
       </parameters>
       <containers>

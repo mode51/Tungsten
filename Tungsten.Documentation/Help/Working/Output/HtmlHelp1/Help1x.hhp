@@ -124,6 +124,7 @@ html\M_W_Threading_Thread_1_InvokeAction.htm
 html\M_W_Threading_Thread_1__ctor.htm
 html\M_W_Threading_Thread_CallInvokeAction.htm
 html\M_W_Threading_Thread_Cancel.htm
+html\M_W_Threading_Thread_Cancel_1.htm
 html\M_W_Threading_Thread_Create.htm
 html\M_W_Threading_Thread_Join.htm
 html\M_W_Threading_Thread_Join_1.htm
@@ -142,6 +143,7 @@ html\Overload_W_Property_2__ctor.htm
 html\Overload_W_Threading_GateMethods_CreateGate.htm
 html\Overload_W_Threading_ThreadBase_Join.htm
 html\Overload_W_Threading_ThreadExtensions_CreateThread.htm
+html\Overload_W_Threading_Thread_Cancel.htm
 html\Overload_W_Threading_Thread_Join.htm
 html\Properties_T_W_ActionQueue_1.htm
 html\Properties_T_W_CallResult.htm
