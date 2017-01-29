@@ -156,6 +156,11 @@
             </summary>
       <param name="value">The initial value for Value</param>
     </member>
+    <member name="T:W.Logging.Log">
+      <summary>
+            Exposes static methods for logging.  LogTheMessage can be assigned a new value for customized logging.
+            </summary>
+    </member>
     <member name="P:W.Logging.Log.LogTheMessage">
       <summary>
             Configure this Action to log messages the way you like to
@@ -163,8 +168,42 @@
     </member>
     <member name="T:W.Logging.Log.LogMessageCategory">
       <summary>
-            A message type
+            The log message type
             </summary>
+    </member>
+    <member name="M:W.Logging.Log.e(System.Exception)">
+      <summary>
+            Log an Exception
+            </summary>
+      <param name="e">The exception to log.  This will be boxed with ToString().</param>
+    </member>
+    <member name="M:W.Logging.Log.e(System.String,System.Object[])">
+      <summary>
+            Log a formatted exception message. This method uses string.Format to format the message.
+            </summary>
+      <param name="format">Format of the message</param>
+      <param name="args">Parameters to be passed during message formatting</param>
+    </member>
+    <member name="M:W.Logging.Log.w(System.String,System.Object[])">
+      <summary>
+            Log a formatted warning message. This method uses string.Format to format the message.
+            </summary>
+      <param name="format">Format of the message</param>
+      <param name="args">Parameters to be passed during message formatting</param>
+    </member>
+    <member name="M:W.Logging.Log.i(System.String,System.Object[])">
+      <summary>
+            Log a formatted informational message. This method uses string.Format to format the message.
+            </summary>
+      <param name="format">Format of the message</param>
+      <param name="args">Parameters to be passed during message formatting</param>
+    </member>
+    <member name="M:W.Logging.Log.v(System.String,System.Object[])">
+      <summary>
+            Log a formatted verbose message. This method uses string.Format to format the message.
+            </summary>
+      <param name="format">Format of the message</param>
+      <param name="args">Parameters to be passed during message formatting</param>
     </member>
     <member name="T:W.PropertyChangedNotifier">
       <summary>

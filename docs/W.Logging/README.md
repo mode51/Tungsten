@@ -8,17 +8,17 @@ W.Logging Namespace
 Classes
 -------
 
-                | Class    | Description 
---------------- | -------- | ----------- 
-![Public class] | [Log][1] |             
+                | Class    | Description                                                                                           
+--------------- | -------- | ----------------------------------------------------------------------------------------------------- 
+![Public class] | [Log][1] | Exposes static methods for logging. LogTheMessage can be assigned a new value for customized logging. 
 
 
 Enumerations
 ------------
 
-                      | Enumeration                 | Description    
---------------------- | --------------------------- | -------------- 
-![Public enumeration] | [Log.LogMessageCategory][2] | A message type 
+                      | Enumeration                 | Description          
+--------------------- | --------------------------- | -------------------- 
+![Public enumeration] | [Log.LogMessageCategory][2] | The log message type 
 
 [1]: Log/README.md
 [2]: Log_LogMessageCategory/README.md
