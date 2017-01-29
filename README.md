@@ -51,7 +51,7 @@ If you inherit from PropertyHost, the properties will be initialized in the defa
         public Property<MyClass, string> First { get; } = new Property<MyClass, string>();
     }
 
-##CallResult, Property and PropertyHost Sample
+##CallResult and Property Sample
 
 This sample does not inherit PropertyHost, so it must call PropertyHostMethods.InitializeProperties in the constructor
 
@@ -78,5 +78,17 @@ This sample does not inherit PropertyHost, so it must call PropertyHostMethods.I
         {
             PropertyHostMethods.InitializeProperties(this);
             //or this.InitializeProperties();            
+        }
+    }
+
+##PropertyHostNotifier Sample
+
+    public class MyClass : PropertyHostNotifier
+    {
+        public Property<MyClass, string> Name {get; } = new Property<MyClass, string>();
+        
+        public MyClass()
+        {
+            //Don't need to call PropertyHostMethods.InitializeProperties because it's called in the base class
         }
     }
