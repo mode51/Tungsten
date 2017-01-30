@@ -7,7 +7,7 @@ A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable 
 Tungsten is built with .Net Framework 4.5
 Tungsten.Universal is built on Windows 10 (10.0; Build 10240)
 
-To build Tungsten.Documentaiton, you will need to install the SHFB Visual Studio extension from NuGet.
+To build Tungsten.Documentation, you will need to install the SHFB Visual Studio extension from NuGet.
 
 # Projects
 * Tungsten - A classic class library
