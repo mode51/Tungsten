@@ -28,7 +28,7 @@ Tungsten.Universal is built on Windows 10 (10.0; Build 10240)
 * Events and callback have type-strict sender (which is the Owner you specify)
 * [W.PropertyHost](https://github.com/mode51/Tungsten/wiki/PropertyHost) - a base class which automates the IsDirty, MarkAsClean and InitializeProperties so you don't have to.
 * W.PropertyHostNotifier - aggregates PropertyHost and PropertyChangedNotifier
-* W.InvokeExtensions - A static class exposing InvokeEx extension methods (to ease InvokeRequired handling)
+* [W.InvokeExtensions](https://github.com/mode51/Tungsten/wiki/InvokeExtensions) - A static class exposing InvokeEx extension methods (to ease InvokeRequired handling)
 * W.CallResult - A non-generic class which can be used to return true/false and an exception from a function
 * W.CallResult\<TResult\> - Like CallResult except that you can also specify a result
 * W.Threading.Thread - automates creating a thread with an Action
@@ -51,7 +51,7 @@ If you inherit from PropertyHost, the properties will be initialized in the defa
         public Property<MyClass, string> First { get; } = new Property<MyClass, string>();
     }
 
-##CallResult, Property and PropertyHost Sample
+##CallResult and Property Sample
 
 This sample does not inherit PropertyHost, so it must call PropertyHostMethods.InitializeProperties in the constructor
 
@@ -78,5 +78,17 @@ This sample does not inherit PropertyHost, so it must call PropertyHostMethods.I
         {
             PropertyHostMethods.InitializeProperties(this);
             //or this.InitializeProperties();            
+        }
+    }
+
+##PropertyHostNotifier Sample
+
+    public class MyClass : PropertyHostNotifier
+    {
+        public Property<MyClass, string> Name {get; } = new Property<MyClass, string>();
+        
+        public MyClass()
+        {
+            //Don't need to call PropertyHostMethods.InitializeProperties because it's called in the base class
         }
     }
