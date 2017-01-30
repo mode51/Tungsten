@@ -16,6 +16,7 @@ To build Tungsten.Documentaiton, you will need to install the SHFB Visual Studio
 * Tungsten.RPC - A classic class library
 
 # Demos
+* Tungsten.Demo.Winforms - Uses tasks, Property and Gate to provide a responsive UI while handling background tasks
 * Tungsten.Demo.WPF - Illustrates how to use Tungsten in a WPF application
 * Tungsten.RPC.Server - Illustrates how to create an RPC server with Tungsten.RPC
 * Tungsten.RPC.Client - Illustrates how to create an RPC client with Tungsten.RPC
