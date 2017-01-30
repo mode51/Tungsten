@@ -52,9 +52,18 @@ Cancels the thread by calling Cancel on the CancellationTokenSource. The value s
 Extension Methods
 -----------------
 
-                           | Name                     | Description                                              
--------------------------- | ------------------------ | -------------------------------------------------------- 
-![Public Extension Method] | [CreateThread&lt;T>][17] | Starts a new thread (Defined by [ThreadExtensions][18].) 
+                           | Name                       | Description                                                                                                                                                                                                                      
+-------------------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+![Public Extension Method] | [CreateThread&lt;T>][17]   | Starts a new thread (Defined by [ThreadExtensions][18].)                                                                                                                                                                         
+![Public Extension Method] | [InitializeProperties][19] | 
+Scans the fields and properties of "owner" and sets the member's Owner property to "owner" This method should be called in the constructor of any class which has IOwnedProperty members
+ (Defined by [PropertyHostMethods][20].) 
+![Public Extension Method] | [IsDirty][21]              | 
+Scans the IsDirty value of each field and property of type IProperty
+ (Defined by [PropertyHostMethods][20].)                                                                                                                 
+![Public Extension Method] | [MarkAsClean][22]          | 
+Scans each field and property of type IProperty and sets it's IsDirty flag to false
+ (Defined by [PropertyHostMethods][20].)                                                                                                  
 
 
 See Also
@@ -81,7 +90,11 @@ See Also
 [16]: ../ThreadBase/Join_1.md
 [17]: ../ThreadExtensions/CreateThread__1.md
 [18]: ../ThreadExtensions/README.md
-[19]: ../../_icons/Help.png
+[19]: ../../W/PropertyHostMethods/InitializeProperties.md
+[20]: ../../W/PropertyHostMethods/README.md
+[21]: ../../W/PropertyHostMethods/IsDirty.md
+[22]: ../../W/PropertyHostMethods/MarkAsClean.md
+[23]: ../../_icons/Help.png
 [Public method]: ../../_icons/pubmethod.gif "Public method"
 [Protected method]: ../../_icons/protmethod.gif "Protected method"
 [Static member]: ../../_icons/static.gif "Static member"

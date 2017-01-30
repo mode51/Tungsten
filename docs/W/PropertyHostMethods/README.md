@@ -1,8 +1,6 @@
 PropertyHostMethods Class
 =========================
-  
-[Missing &lt;summary> documentation for "T:W.PropertyHostMethods"]
-
+  Exposes static PropertyHost extension methods
 
 
 Inheritance Hierarchy

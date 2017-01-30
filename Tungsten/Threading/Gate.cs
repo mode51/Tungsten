@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -138,7 +139,7 @@ namespace W.Threading
         /// </summary>
         /// <param name="action"></param>
         /// <param name="onComplete"></param>
-        public Gate(Action<T, CancellationTokenSource> action, Action<bool, Exception> onComplete = null) : base(action, onComplete)
+        public Gate(Action<T, CancellationTokenSource> action, Action<bool, Exception> onComplete = null, T args = default(T)) : base(action, onComplete, args)
         {
         }
     }

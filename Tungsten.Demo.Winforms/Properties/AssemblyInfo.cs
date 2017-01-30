@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Tungsten.IO")]
+[assembly: AssemblyTitle("Tungsten.Demo.Winforms")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Tungsten.IO")]
+[assembly: AssemblyProduct("Tungsten.Demo.Winforms")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("91d25d4e-b8cb-40df-8b84-1ed121752a91")]
+[assembly: Guid("9c270fc0-1e2f-4b27-aaec-4e51c9c8397f")]
 
 // Version information for an assembly consists of the following four values:
 //

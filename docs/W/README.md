@@ -28,7 +28,7 @@ This is a base class for supporting INotifyPropertyChanged
 ![Public class] | [PropertyHost][10]                   | 
 Provides a base class to automate the IsDirty, MarkAsClean and InitializeProperties functionality Note that this class does not support INotifyPropertyChanged and is not intented to host owned properties (though nothing prevents you from doing so)
  
-![Public class] | [PropertyHostMethods][11]            |                                                                                                                                                                                                                                                         
+![Public class] | [PropertyHostMethods][11]            | Exposes static PropertyHost extension methods                                                                                                                                                                                                           
 ![Public class] | [PropertyHostNotifier][12]           | 
 Provides a base class to automate the IsDirty, MarkAsClean and InitializeProperties functionality Note that this class inherits PropertyChangedNotifier for INotifyPropertyChanged support
                                                           

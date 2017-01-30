@@ -27,6 +27,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Tungsten.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -64,7 +65,7 @@
     <Compile Include="Property\Property.cs" />
     <Compile Include="Property\PropertyBase.cs" />
     <Compile Include="PropertyHost.cs" />
-    <Compile Include="Property\PropertyHostMethods.cs" />
+    <Compile Include="PropertyHostMethods.cs" />
     <Compile Include="Property\PropertyMethods.cs" />
     <Compile Include="Threading\Gate.cs" />
     <Compile Include="Threading\Thread.cs" />

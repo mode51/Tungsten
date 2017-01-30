@@ -129,6 +129,9 @@
     <Compile Include="..\Tungsten\PropertyHost.cs">
       <Link>PropertyHost.cs</Link>
     </Compile>
+    <Compile Include="..\Tungsten\PropertyHostMethods.cs">
+      <Link>PropertyHostMethods.cs</Link>
+    </Compile>
     <Compile Include="..\Tungsten\Property\IOwnedProperty.cs">
       <Link>Property\IOwnedProperty.cs</Link>
     </Compile>
@@ -140,9 +143,6 @@
     </Compile>
     <Compile Include="..\Tungsten\Property\PropertyBase.cs">
       <Link>Property\PropertyBase.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten\Property\PropertyHostMethods.cs">
-      <Link>Property\PropertyHostMethods.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten\Property\PropertyMethods.cs">
       <Link>Property\PropertyMethods.cs</Link>

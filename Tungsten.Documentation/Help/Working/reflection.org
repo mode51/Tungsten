@@ -59,6 +59,39 @@
         <element api="M:W.ActionQueue`1.#ctor(System.Action{`0},System.String)" />
         <element api="P:W.ActionQueue`1.Count" />
         <element api="P:W.ActionQueue`1.Queue" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -234,6 +267,39 @@
         <element api="P:W.CallResult.Success" />
         <element api="P:W.CallResult.Exception" />
         <element api="P:W.CallResult.Empty" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -387,6 +453,39 @@
         <element api="M:W.CallResult`1.#ctor(System.Boolean,`0,System.Exception)" />
         <element api="P:W.CallResult`1.Result" />
         <element api="P:W.CallResult`1.Empty" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -782,6 +881,39 @@
         <element api="P:W.Lockable`1.LockObject" />
         <element api="P:W.Lockable`1.Value" />
         <element api="P:W.Lockable`1.UnlockedValue" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -926,6 +1058,39 @@
         <element api="M:W.Property`1.#ctor(`0)" />
         <element api="M:W.Property`1.#ctor(W.PropertyBase{W.Property{`0},`0}.OnValueChangedDelegate)" />
         <element api="M:W.Property`1.#ctor(`0,W.PropertyBase{W.Property{`0},`0}.OnValueChangedDelegate)" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -1081,6 +1246,39 @@
         <element api="M:W.Property`2.#ctor(`0,`1)" />
         <element api="M:W.Property`2.#ctor(`0,W.PropertyBase{`0,`1}.OnValueChangedDelegate)" />
         <element api="M:W.Property`2.#ctor(`0,`1,W.PropertyBase{`0,`1}.OnValueChangedDelegate)" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -1307,6 +1505,39 @@
         <element api="P:W.PropertyBase`2.Value" />
         <element api="E:W.PropertyBase`2.ValueChanged" />
         <element api="E:W.PropertyBase`2.ValueChanging" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -1774,6 +2005,39 @@
         <element api="M:W.PropertyChangedNotifier.RaiseOnPropertyChanged(System.Object,System.String)" />
         <element api="M:W.PropertyChangedNotifier.#ctor" />
         <element api="E:W.PropertyChangedNotifier.PropertyChanged" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -1938,6 +2202,39 @@
         <element api="M:W.PropertyHost.MarkAsClean" />
         <element api="M:W.PropertyHost.#ctor" />
         <element api="P:W.PropertyHost.IsDirty" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -2036,13 +2333,18 @@
         <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:W" />
       </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
     </api>
     <api id="M:W.PropertyHostMethods.InitializeProperties(System.Object)">
       <apidata name="InitializeProperties" group="member" subgroup="method" />
       <memberdata visibility="public" static="true" />
       <proceduredata virtual="false" />
       <parameters>
-        <parameter name="owner">
+        <parameter name="this">
           <type api="T:System.Object" ref="true" />
         </parameter>
       </parameters>
@@ -2051,13 +2353,18 @@
         <namespace api="N:W" />
         <type api="T:W.PropertyHostMethods" ref="true" />
       </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
     </api>
     <api id="M:W.PropertyHostMethods.IsDirty(System.Object)">
       <apidata name="IsDirty" group="member" subgroup="method" />
       <memberdata visibility="public" static="true" />
       <proceduredata virtual="false" />
       <parameters>
-        <parameter name="owner">
+        <parameter name="this">
           <type api="T:System.Object" ref="true" />
         </parameter>
       </parameters>
@@ -2069,13 +2376,18 @@
         <namespace api="N:W" />
         <type api="T:W.PropertyHostMethods" ref="true" />
       </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
     </api>
     <api id="M:W.PropertyHostMethods.MarkAsClean(System.Object)">
       <apidata name="MarkAsClean" group="member" subgroup="method" />
       <memberdata visibility="public" static="true" />
       <proceduredata virtual="false" />
       <parameters>
-        <parameter name="owner">
+        <parameter name="this">
           <type api="T:System.Object" ref="true" />
         </parameter>
       </parameters>
@@ -2084,6 +2396,11 @@
         <namespace api="N:W" />
         <type api="T:W.PropertyHostMethods" ref="true" />
       </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
     </api>
     <api id="T:W.PropertyHostNotifier">
       <apidata name="PropertyHostNotifier" group="type" subgroup="class" />
@@ -2098,6 +2415,39 @@
         <element api="M:W.PropertyHostNotifier.MarkAsClean" />
         <element api="M:W.PropertyHostNotifier.#ctor" />
         <element api="P:W.PropertyHostNotifier.IsDirty" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -2438,6 +2788,39 @@
         <element api="M:W.Threading.Gate.CallInvokeAction" />
         <element api="M:W.Threading.Gate.Run" />
         <element api="M:W.Threading.Gate.#ctor(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -2565,6 +2948,39 @@
         <element api="M:W.Threading.Gate`1.CallInvokeAction" />
         <element api="M:W.Threading.Gate`1.Run" />
         <element api="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -2776,6 +3192,39 @@
         <element api="M:W.Threading.Thread.Join(System.Int32)" />
         <element api="M:W.Threading.Thread.#ctor(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" />
         <element api="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -2994,6 +3443,39 @@
         <element api="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)" />
         <element api="M:W.Threading.Thread`1.Create(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)" />
         <element api="P:W.Threading.Thread`1.Action" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -3188,6 +3670,39 @@
         <element api="P:W.Threading.ThreadBase.IsBusy" />
         <element api="P:W.Threading.ThreadBase.Success" />
         <element api="P:W.Threading.ThreadBase.IsRunning" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />

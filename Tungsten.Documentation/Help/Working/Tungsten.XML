@@ -322,6 +322,11 @@
             Calls PropertyHostMethods.InitializeProperties so you don't have to
             </summary>
     </member>
+    <member name="T:W.PropertyHostMethods">
+      <summary>
+            Exposes static PropertyHost extension methods
+            </summary>
+    </member>
     <member name="M:W.PropertyHostMethods.InitializeProperties(System.Object)">
       <summary>
         <para>
@@ -329,7 +334,7 @@
             This method should be called in the constructor of any class which has IOwnedProperty members
             </para>
       </summary>
-      <param name="owner">
+      <param name="this">
       </param>
     </member>
     <member name="M:W.PropertyHostMethods.IsDirty(System.Object)">

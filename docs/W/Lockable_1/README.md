@@ -59,9 +59,18 @@ Provides automatic locking during read/writes
 Extension Methods
 -----------------
 
-                           | Name                    | Description                                             
--------------------------- | ----------------------- | ------------------------------------------------------- 
-![Public Extension Method] | [CreateThread&lt;T>][8] | Starts a new thread (Defined by [ThreadExtensions][9].) 
+                           | Name                       | Description                                                                                                                                                                                                                      
+-------------------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+![Public Extension Method] | [CreateThread&lt;T>][8]    | Starts a new thread (Defined by [ThreadExtensions][9].)                                                                                                                                                                          
+![Public Extension Method] | [InitializeProperties][10] | 
+Scans the fields and properties of "owner" and sets the member's Owner property to "owner" This method should be called in the constructor of any class which has IOwnedProperty members
+ (Defined by [PropertyHostMethods][11].) 
+![Public Extension Method] | [IsDirty][12]              | 
+Scans the IsDirty value of each field and property of type IProperty
+ (Defined by [PropertyHostMethods][11].)                                                                                                                 
+![Public Extension Method] | [MarkAsClean][13]          | 
+Scans each field and property of type IProperty and sets it's IsDirty flag to false
+ (Defined by [PropertyHostMethods][11].)                                                                                                  
 
 
 See Also
@@ -79,7 +88,11 @@ See Also
 [7]: Value.md
 [8]: ../../W.Threading/ThreadExtensions/CreateThread__1.md
 [9]: ../../W.Threading/ThreadExtensions/README.md
-[10]: ../../_icons/Help.png
+[10]: ../PropertyHostMethods/InitializeProperties.md
+[11]: ../PropertyHostMethods/README.md
+[12]: ../PropertyHostMethods/IsDirty.md
+[13]: ../PropertyHostMethods/MarkAsClean.md
+[14]: ../../_icons/Help.png
 [Public method]: ../../_icons/pubmethod.gif "Public method"
 [Public property]: ../../_icons/pubproperty.gif "Public property"
 [Public Extension Method]: ../../_icons/pubextension.gif "Public Extension Method"

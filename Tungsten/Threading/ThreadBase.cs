@@ -6,7 +6,7 @@ namespace W.Threading
     /// <summary>
     /// A base class for Thread which should work for all compiler Target types
     /// </summary>
-    public abstract class ThreadBase
+    public abstract class ThreadBase : IDisposable
     {
         protected Action<CancellationTokenSource> Action { get; set; }
         protected Action<bool, Exception> OnComplete { get; set; }
@@ -14,15 +14,26 @@ namespace W.Threading
         protected Lockable<bool> IsBusy { get; set; } = new Lockable<bool>();
         protected Lockable<bool> Success { get; set; } = new Lockable<bool>();
 
+        /// <summary>
+        /// Invokes the Action. Virtual for customization.
+        /// </summary>
         protected virtual void InvokeAction()
         {
             Action?.Invoke(Cts);
         }
+        /// <summary>
+        /// Invokes the OnComplete action.  Virtual for customization.
+        /// </summary>
+        /// <param name="e"></param>
         protected virtual void InvokeOnComplete(Exception e)
         {
             OnComplete?.Invoke(Success.Value, e);
         }
 
+        /// <summary>
+        /// Must be overridden to provide exception handling
+        /// </summary>
+        /// <returns></returns>
         protected abstract Exception CallInvokeAction();
 
         protected virtual void CallInvokeOnComplete(Exception e)
@@ -82,6 +93,17 @@ namespace W.Threading
             Action = action;
             OnComplete = onComplete;
             IsBusy.Value = true;
+        }
+
+        ~ThreadBase()
+        {
+            Dispose();
+        }
+
+        /// <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        public virtual void Dispose()
+        {
+            Cancel();
         }
 
         //moved to each version of Thread (so that references would be Thread instead of ThreadBase

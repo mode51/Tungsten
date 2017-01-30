@@ -96,9 +96,18 @@ Fields
 Extension Methods
 -----------------
 
-                           | Name                     | Description                                              
--------------------------- | ------------------------ | -------------------------------------------------------- 
-![Public Extension Method] | [CreateThread&lt;T>][26] | Starts a new thread (Defined by [ThreadExtensions][27].) 
+                           | Name                       | Description                                                                                                                                                                                                                      
+-------------------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+![Public Extension Method] | [CreateThread&lt;T>][26]   | Starts a new thread (Defined by [ThreadExtensions][27].)                                                                                                                                                                         
+![Public Extension Method] | [InitializeProperties][28] | 
+Scans the fields and properties of "owner" and sets the member's Owner property to "owner" This method should be called in the constructor of any class which has IOwnedProperty members
+ (Defined by [PropertyHostMethods][29].) 
+![Public Extension Method] | [IsDirty][30]              | 
+Scans the IsDirty value of each field and property of type IProperty
+ (Defined by [PropertyHostMethods][29].)                                                                                                                 
+![Public Extension Method] | [MarkAsClean][31]          | 
+Scans each field and property of type IProperty and sets it's IsDirty flag to false
+ (Defined by [PropertyHostMethods][29].)                                                                                                  
 
 
 See Also
@@ -134,7 +143,11 @@ See Also
 [25]: OnValueChanged.md
 [26]: ../../W.Threading/ThreadExtensions/CreateThread__1.md
 [27]: ../../W.Threading/ThreadExtensions/README.md
-[28]: ../../_icons/Help.png
+[28]: ../PropertyHostMethods/InitializeProperties.md
+[29]: ../PropertyHostMethods/README.md
+[30]: ../PropertyHostMethods/IsDirty.md
+[31]: ../PropertyHostMethods/MarkAsClean.md
+[32]: ../../_icons/Help.png
 [Protected method]: ../../_icons/protmethod.gif "Protected method"
 [Public property]: ../../_icons/pubproperty.gif "Public property"
 [Public method]: ../../_icons/pubmethod.gif "Public method"

@@ -203,6 +203,10 @@ namespace W.Threading
     {
         private readonly System.Threading.Thread _thread = null;
 
+        /// <summary>
+        /// Wraps the call to InvokeAction with try/catch block to catch exceptions
+        /// </summary>
+        /// <returns></returns>
         protected override Exception CallInvokeAction()
         {
             Exception ex = null;
@@ -282,6 +286,11 @@ namespace W.Threading
             _thread = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
             _thread.Start();
         }
+        /// <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        public override void Dispose()
+        {
+            Cancel(3000);
+        }
 
         /// <summary>
         /// Starts a new thread
@@ -308,13 +317,14 @@ namespace W.Threading
         //    return thread;
         //}
     }
+
     /// <summary>
     /// A thread wrapper which makes multi-threading easier
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class Thread<T> : Thread
     {
-        private T CustomData { get; set; }
+        public Lockable<T> CustomData { get; }
         protected new Action<T, CancellationTokenSource> Action { get; set; }
 
         /// <summary>
@@ -322,7 +332,7 @@ namespace W.Threading
         /// </summary>
         protected override void InvokeAction()
         {
-            Action?.Invoke(CustomData, Cts);
+            Action?.Invoke(CustomData.Value, Cts);
         }
 
         /// <summary>
@@ -335,7 +345,7 @@ namespace W.Threading
         public Thread(Action<T, System.Threading.CancellationTokenSource> action, Action<bool, Exception> onComplete = null, T customData = default(T)) : base(null, onComplete)
         {
             Action = action;
-            CustomData = customData;
+            CustomData = new Lockable<T>(customData);
         }
 
         /// <summary>

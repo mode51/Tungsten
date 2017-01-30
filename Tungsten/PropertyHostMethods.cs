@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace W
 {
+
+    /// <summary>
+    /// Exposes static PropertyHost extension methods
+    /// </summary>
     public static class PropertyHostMethods
     {
         //1.20.2017 - removed Parallel implementations because this causes cross-thread exceptions on UI objects
@@ -48,49 +52,50 @@ namespace W
             var property = GetProperty(pi, owner);
             property?.SetOwner(owner);
         }
+
         /// <summary>
         /// <para>
         /// Scans the fields and properties of "owner" and sets the member's Owner property to "owner"
         /// This method should be called in the constructor of any class which has IOwnedProperty members
         /// </para>
         /// </summary>
-        /// <param name="owner"></param>
-        public static void InitializeProperties(object owner)// where TOwner : class
+        /// <param name="this"></param>
+        public static void InitializeProperties(this object @this)// where TOwner : class
         {
 #if WINDOWS_PORTABLE
-            var fieldInfos = owner.GetType().GetTypeInfo().DeclaredFields.ToList();
+            var fieldInfos = @this.GetType().GetTypeInfo().DeclaredFields.ToList();
             foreach (var fieldInfo in fieldInfos)
             {
-               SetOwner(fieldInfo, owner);
+               SetOwner(fieldInfo, @this);
             }
 #else
-            var fieldInfos = owner.GetType().GetFields(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
+            var fieldInfos = @this.GetType().GetFields(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
             foreach (var fieldInfo in fieldInfos)
             {
-                SetOwner(fieldInfo, owner);
+                SetOwner(fieldInfo, @this);
             }
             //Parallel.For(0, fieldInfos.Count, (i, state) =>
             //  {
             //      var fieldInfo = fieldInfos[i];
-            //      SetOwner(fieldInfo, owner);
+            //      SetOwner(fieldInfo, @this);
             //  });
 #endif
 #if WINDOWS_PORTABLE
-            var propertyInfos = owner.GetType().GetTypeInfo().DeclaredProperties.ToList();
+            var propertyInfos = @this.GetType().GetTypeInfo().DeclaredProperties.ToList();
             foreach (var propertyInfo in propertyInfos)
             {
-                SetOwner(propertyInfo, owner);
+                SetOwner(propertyInfo, @this);
             }
 #else
-            var propertyInfos = owner.GetType().GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
+            var propertyInfos = @this.GetType().GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
             foreach (var propertyInfo in propertyInfos)
             {
-                SetOwner(propertyInfo, owner);
+                SetOwner(propertyInfo, @this);
             }
             //Parallel.For(0, propertyInfos.Count, (i, state) =>
             //  {
             //      var propertyInfo = propertyInfos[i];
-            //      SetOwner(propertyInfo, owner);
+            //      SetOwner(propertyInfo, @this);
             //  });
 #endif
         }
@@ -101,14 +106,14 @@ namespace W
         /// </para>
         /// </summary>
         /// <returns>True if any IProperty member's IsDirty value is true, otherwise false</returns>
-        public static bool IsDirty(object owner)// where TOwner : class
+        public static bool IsDirty(this object @this)// where TOwner : class
         {
             var result = new Lockable<bool>();
 #if WINDOWS_PORTABLE
-            var fieldInfos = owner.GetType().GetTypeInfo().DeclaredFields.ToList();
+            var fieldInfos = @this.GetType().GetTypeInfo().DeclaredFields.ToList();
             foreach (var fieldInfo in fieldInfos)
             {
-                var property = GetProperty(fieldInfo, owner) as IProperty;
+                var property = GetProperty(fieldInfo, @this) as IProperty;
                 if (property?.IsDirty ?? false)
                 {
                     result.Value = true;
@@ -116,10 +121,10 @@ namespace W
                 }
             }
 #else
-            var fieldInfos = owner.GetType().GetFields(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
+            var fieldInfos = @this.GetType().GetFields(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
             foreach (var fieldInfo in fieldInfos)
             {
-                var property = GetProperty(fieldInfo, owner) as IProperty;
+                var property = GetProperty(fieldInfo, @this) as IProperty;
                 if (property?.IsDirty ?? false)
                 {
                     result.Value = true;
@@ -129,7 +134,7 @@ namespace W
             //Parallel.For(0, fieldInfos.Count, (i, state) =>
             //{
             //    var fieldInfo = fieldInfos[i];
-            //    var property = GetProperty(fieldInfo, owner) as IProperty;
+            //    var property = GetProperty(fieldInfo, @this) as IProperty;
             //    if (property?.IsDirty ?? false)
             //    {
             //        result.Value = true;
@@ -140,10 +145,10 @@ namespace W
             if (result.Value)
                 return true;
 #if WINDOWS_PORTABLE
-            var propertyInfos = owner.GetType().GetTypeInfo().DeclaredProperties.ToList();
+            var propertyInfos = @this.GetType().GetTypeInfo().DeclaredProperties.ToList();
             foreach (var propertyInfo in propertyInfos)
             {
-                var property = GetProperty(propertyInfo, owner) as IProperty;
+                var property = GetProperty(propertyInfo, @this) as IProperty;
                 if (property?.IsDirty ?? false)
                 {
                     result.Value = true;
@@ -151,10 +156,10 @@ namespace W
                 }
             }
 #else
-            var propertyInfos = owner.GetType().GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
+            var propertyInfos = @this.GetType().GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
             foreach (var propertyInfo in propertyInfos)
             {
-                var property = GetProperty(propertyInfo, owner) as IProperty;
+                var property = GetProperty(propertyInfo, @this) as IProperty;
                 if (property?.IsDirty ?? false)
                 {
                     result.Value = true;
@@ -163,8 +168,8 @@ namespace W
             }
             //Parallel.For(0, propertyInfos.Count, (i, state) =>
             //  {
-            //      var propertyInfo = propertyInfos[i];//.GetValue(owner) as IProperty;
-            //      var property = GetProperty(propertyInfo, owner) as IProperty;
+            //      var propertyInfo = propertyInfos[i];//.GetValue(@this) as IProperty;
+            //      var property = GetProperty(propertyInfo, @this) as IProperty;
             //      if (property?.IsDirty ?? false)
             //      {
             //          result.Value = true;
@@ -179,52 +184,52 @@ namespace W
         /// Scans each field and property of type IProperty and sets it's IsDirty flag to false
         /// </para>
         /// </summary>
-        public static void MarkAsClean(object owner)// where TOwner : class
+        public static void MarkAsClean(this object @this)// where TOwner : class
         {
 #if WINDOWS_PORTABLE
-            var fieldInfos = owner.GetType().GetTypeInfo().DeclaredFields.ToList();
+            var fieldInfos = @this.GetType().GetTypeInfo().DeclaredFields.ToList();
             foreach (var fieldInfo in fieldInfos)
             {
-                var property = GetProperty(fieldInfo, owner) as IProperty;
+                var property = GetProperty(fieldInfo, @this) as IProperty;
                 if (property != null)
                     property.IsDirty = false;
             }
 #else
-            var fieldInfos = owner.GetType().GetFields(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
+            var fieldInfos = @this.GetType().GetFields(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
             foreach (var fieldInfo in fieldInfos)
             {
-                var property = GetProperty(fieldInfo, owner) as IProperty;
+                var property = GetProperty(fieldInfo, @this) as IProperty;
                 if (property != null)
                     property.IsDirty = false;
             }
             //Parallel.For(0, fieldInfos.Count, (i, state) =>
             //  {
-            //      var fieldInfo = fieldInfos[i];//.GetValue(owner) as IProperty;
-            //      var property = GetProperty(fieldInfo, owner) as IProperty;
+            //      var fieldInfo = fieldInfos[i];//.GetValue(@this) as IProperty;
+            //      var property = GetProperty(fieldInfo, @this) as IProperty;
             //      if (property != null)
             //          property.IsDirty = false;
             //  });
 #endif
 #if WINDOWS_PORTABLE
-            var propertyInfos = owner.GetType().GetTypeInfo().DeclaredProperties.ToList();
+            var propertyInfos = @this.GetType().GetTypeInfo().DeclaredProperties.ToList();
             foreach (var propertyInfo in propertyInfos)
             {
-                var property = GetProperty(propertyInfo, owner) as IProperty;
+                var property = GetProperty(propertyInfo, @this) as IProperty;
                 if (property != null)
                     property.IsDirty = false;
             }
 #else
-            var propertyInfos = owner.GetType().GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
+            var propertyInfos = @this.GetType().GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
             foreach (var propertyInfo in propertyInfos)
             {
-                var property = GetProperty(propertyInfo, owner) as IProperty;
+                var property = GetProperty(propertyInfo, @this) as IProperty;
                 if (property != null)
                     property.IsDirty = false;
             }
             //Parallel.For(0, propertyInfos.Count, (i, state) =>
             //  {
-            //      var propertyInfo = propertyInfos[i];//.GetValue(owner) as IProperty;
-            //      var property = GetProperty(propertyInfo, owner) as IProperty;
+            //      var propertyInfo = propertyInfos[i];//.GetValue(@this) as IProperty;
+            //      var property = GetProperty(propertyInfo, @this) as IProperty;
             //      if (property != null)
             //          property.IsDirty = false;
             //  });
