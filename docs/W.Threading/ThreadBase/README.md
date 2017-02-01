@@ -16,7 +16,7 @@ Syntax
 ------
 
 ```csharp
-public abstract class ThreadBase
+public abstract class ThreadBase : IDisposable
 ```
 
 The **ThreadBase** type exposes the following members.
@@ -48,16 +48,18 @@ Methods
 
                     | Name                       | Description                                                                                                                                     
 ------------------- | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- 
-![Protected method] | [CallInvokeAction][11]     |                                                                                                                                                 
+![Protected method] | [CallInvokeAction][11]     | Must be overridden to provide exception handling                                                                                                
 ![Protected method] | [CallInvokeOnComplete][12] |                                                                                                                                                 
 ![Public method]    | [Cancel][13]               | 
 Cancels the thread by calling Cancel on the CancellationTokenSource. The value should be checked in the code in the specified Action parameter.
  
-![Protected method] | [InvokeAction][14]         |                                                                                                                                                 
-![Protected method] | [InvokeOnComplete][15]     |                                                                                                                                                 
-![Public method]    | [Join()][16]               | Blocks the calling thread until the thread terminates                                                                                           
-![Public method]    | [Join(Int32)][17]          | Blocks the calling thread until either the thread terminates or the specified milliseconds elapse                                               
-![Protected method] | [ThreadProc][18]           |                                                                                                                                                 
+![Public method]    | [Dispose][14]              | Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.                                        
+![Protected method] | [Finalize][15]             | (Overrides [Object.Finalize()][16].)                                                                                                            
+![Protected method] | [InvokeAction][17]         | Invokes the Action. Virtual for customization.                                                                                                  
+![Protected method] | [InvokeOnComplete][18]     | Invokes the OnComplete action. Virtual for customization.                                                                                       
+![Public method]    | [Join()][19]               | Blocks the calling thread until the thread terminates                                                                                           
+![Public method]    | [Join(Int32)][20]          | Blocks the calling thread until either the thread terminates or the specified milliseconds elapse                                               
+![Protected method] | [ThreadProc][21]           |                                                                                                                                                 
 
 
 Extension Methods
@@ -65,16 +67,16 @@ Extension Methods
 
                            | Name                       | Description                                                                                                                                                                                                                      
 -------------------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-![Public Extension Method] | [CreateThread&lt;T>][19]   | Starts a new thread (Defined by [ThreadExtensions][20].)                                                                                                                                                                         
-![Public Extension Method] | [InitializeProperties][21] | 
+![Public Extension Method] | [CreateThread&lt;T>][22]   | Starts a new thread (Defined by [ThreadExtensions][23].)                                                                                                                                                                         
+![Public Extension Method] | [InitializeProperties][24] | 
 Scans the fields and properties of "owner" and sets the member's Owner property to "owner" This method should be called in the constructor of any class which has IOwnedProperty members
- (Defined by [PropertyHostMethods][22].) 
-![Public Extension Method] | [IsDirty][23]              | 
+ (Defined by [PropertyHostMethods][25].) 
+![Public Extension Method] | [IsDirty][26]              | 
 Scans the IsDirty value of each field and property of type IProperty
- (Defined by [PropertyHostMethods][22].)                                                                                                                 
-![Public Extension Method] | [MarkAsClean][24]          | 
+ (Defined by [PropertyHostMethods][25].)                                                                                                                 
+![Public Extension Method] | [MarkAsClean][27]          | 
 Scans each field and property of type IProperty and sets it's IsDirty flag to false
- (Defined by [PropertyHostMethods][22].)                                                                                                  
+ (Defined by [PropertyHostMethods][25].)                                                                                                  
 
 
 See Also
@@ -96,18 +98,21 @@ See Also
 [11]: CallInvokeAction.md
 [12]: CallInvokeOnComplete.md
 [13]: Cancel.md
-[14]: InvokeAction.md
-[15]: InvokeOnComplete.md
-[16]: Join.md
-[17]: Join_1.md
-[18]: ThreadProc.md
-[19]: ../ThreadExtensions/CreateThread__1.md
-[20]: ../ThreadExtensions/README.md
-[21]: ../../W/PropertyHostMethods/InitializeProperties.md
-[22]: ../../W/PropertyHostMethods/README.md
-[23]: ../../W/PropertyHostMethods/IsDirty.md
-[24]: ../../W/PropertyHostMethods/MarkAsClean.md
-[25]: ../../_icons/Help.png
+[14]: Dispose.md
+[15]: Finalize.md
+[16]: http://msdn.microsoft.com/en-us/library/4k87zsw7
+[17]: InvokeAction.md
+[18]: InvokeOnComplete.md
+[19]: Join.md
+[20]: Join_1.md
+[21]: ThreadProc.md
+[22]: ../ThreadExtensions/CreateThread__1.md
+[23]: ../ThreadExtensions/README.md
+[24]: ../../W/PropertyHostMethods/InitializeProperties.md
+[25]: ../../W/PropertyHostMethods/README.md
+[26]: ../../W/PropertyHostMethods/IsDirty.md
+[27]: ../../W/PropertyHostMethods/MarkAsClean.md
+[28]: ../../_icons/Help.png
 [Protected method]: ../../_icons/protmethod.gif "Protected method"
 [Protected property]: ../../_icons/protproperty.gif "Protected property"
 [Public property]: ../../_icons/pubproperty.gif "Public property"

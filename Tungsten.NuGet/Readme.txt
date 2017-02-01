@@ -1,5 +1,8 @@
 ﻿Tungsten is a C# library to make application development easier.  See the wiki @ https://github.com/mode51/Tungsten/wiki for details, examples and use.
 
+2.1.2017
+Removed unused references
+
 1.29.2017
 PropertyHostMethods now actually exposes extension methods (forgot to make them extensions)
 

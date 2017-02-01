@@ -43,18 +43,19 @@ Constructors
 Properties
 ----------
 
-                      | Name        | Description 
---------------------- | ----------- | ----------- 
-![Protected property] | [Action][7] |             
+                      | Name            | Description 
+--------------------- | --------------- | ----------- 
+![Protected property] | [Action][7]     |             
+![Public property]    | [CustomData][8] |             
 
 
 Methods
 -------
 
-                                 | Name              | Description                                                                                               
--------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------- 
-![Public method]![Static member] | [Create][8]       | Starts a new thread                                                                                       
-![Protected method]              | [InvokeAction][9] | Overridden implementation which calls Action with CustomData (Overrides [ThreadBase.InvokeAction()][10].) 
+                                 | Name               | Description                                                                                               
+-------------------------------- | ------------------ | --------------------------------------------------------------------------------------------------------- 
+![Public method]![Static member] | [Create][9]        | Starts a new thread                                                                                       
+![Protected method]              | [InvokeAction][10] | Overridden implementation which calls Action with CustomData (Overrides [ThreadBase.InvokeAction()][11].) 
 
 
 Extension Methods
@@ -62,16 +63,16 @@ Extension Methods
 
                            | Name                       | Description                                                                                                                                                                                                                      
 -------------------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-![Public Extension Method] | [CreateThread&lt;T>][11]   | Starts a new thread (Defined by [ThreadExtensions][12].)                                                                                                                                                                         
-![Public Extension Method] | [InitializeProperties][13] | 
+![Public Extension Method] | [CreateThread&lt;T>][12]   | Starts a new thread (Defined by [ThreadExtensions][13].)                                                                                                                                                                         
+![Public Extension Method] | [InitializeProperties][14] | 
 Scans the fields and properties of "owner" and sets the member's Owner property to "owner" This method should be called in the constructor of any class which has IOwnedProperty members
- (Defined by [PropertyHostMethods][14].) 
-![Public Extension Method] | [IsDirty][15]              | 
+ (Defined by [PropertyHostMethods][15].) 
+![Public Extension Method] | [IsDirty][16]              | 
 Scans the IsDirty value of each field and property of type IProperty
- (Defined by [PropertyHostMethods][14].)                                                                                                                 
-![Public Extension Method] | [MarkAsClean][16]          | 
+ (Defined by [PropertyHostMethods][15].)                                                                                                                 
+![Public Extension Method] | [MarkAsClean][17]          | 
 Scans each field and property of type IProperty and sets it's IsDirty flag to false
- (Defined by [PropertyHostMethods][14].)                                                                                                  
+ (Defined by [PropertyHostMethods][15].)                                                                                                  
 
 
 See Also
@@ -87,18 +88,20 @@ See Also
 [5]: ../README.md
 [6]: _ctor.md
 [7]: Action.md
-[8]: Create.md
-[9]: InvokeAction.md
-[10]: ../ThreadBase/InvokeAction.md
-[11]: ../ThreadExtensions/CreateThread__1.md
-[12]: ../ThreadExtensions/README.md
-[13]: ../../W/PropertyHostMethods/InitializeProperties.md
-[14]: ../../W/PropertyHostMethods/README.md
-[15]: ../../W/PropertyHostMethods/IsDirty.md
-[16]: ../../W/PropertyHostMethods/MarkAsClean.md
-[17]: ../../_icons/Help.png
+[8]: CustomData.md
+[9]: Create.md
+[10]: InvokeAction.md
+[11]: ../ThreadBase/InvokeAction.md
+[12]: ../ThreadExtensions/CreateThread__1.md
+[13]: ../ThreadExtensions/README.md
+[14]: ../../W/PropertyHostMethods/InitializeProperties.md
+[15]: ../../W/PropertyHostMethods/README.md
+[16]: ../../W/PropertyHostMethods/IsDirty.md
+[17]: ../../W/PropertyHostMethods/MarkAsClean.md
+[18]: ../../_icons/Help.png
 [Public method]: ../../_icons/pubmethod.gif "Public method"
 [Protected property]: ../../_icons/protproperty.gif "Protected property"
+[Public property]: ../../_icons/pubproperty.gif "Public property"
 [Static member]: ../../_icons/static.gif "Static member"
 [Protected method]: ../../_icons/protmethod.gif "Protected method"
 [Public Extension Method]: ../../_icons/pubextension.gif "Public Extension Method"

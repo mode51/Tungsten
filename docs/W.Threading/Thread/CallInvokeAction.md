@@ -1,8 +1,6 @@
 Thread.CallInvokeAction Method
 ==============================
-  
-[Missing &lt;summary> documentation for "M:W.Threading.Thread.CallInvokeAction"]
-
+  Wraps the call to InvokeAction with try/catch block to catch exceptions
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

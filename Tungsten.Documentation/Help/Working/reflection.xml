@@ -5036,7 +5036,7 @@
             <type api="T:W.Threading.ThreadExtensions" ref="true" />
           </containers>
         </element>
-        <element api="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" />
+        <element api="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)" />
         <element api="M:W.Threading.Gate`1.CallInvokeAction" />
         <element api="M:W.Threading.Gate`1.Run" />
       </elements>
@@ -5142,7 +5142,7 @@
       </containers>
       <file name="Methods_T_W_Threading_Gate_1" />
     </api>
-    <api id="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})">
+    <api id="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)">
       <topicdata group="api" />
       <apidata name=".ctor" group="member" subgroup="constructor" />
       <memberdata visibility="public" special="true" />
@@ -5162,6 +5162,13 @@
               <type api="T:System.Exception" ref="true" />
             </specialization>
           </type>
+          <argument>
+            <type api="T:System.Object" ref="true" />
+            <nullValue />
+          </argument>
+        </parameter>
+        <parameter name="args" optional="true">
+          <template name="T" index="0" api="T:W.Threading.Gate`1" />
           <argument>
             <type api="T:System.Object" ref="true" />
             <nullValue />
@@ -5447,6 +5454,7 @@
           <element api="M:W.Threading.Thread.Cancel(System.Int32)" />
         </element>
         <element api="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" />
+        <element api="M:W.Threading.Thread.Dispose" />
         <element api="Overload:W.Threading.Thread.Join">
           <element api="M:W.Threading.Thread.Join" />
           <element api="M:W.Threading.Thread.Join(System.Int32)" />
@@ -5545,6 +5553,7 @@
           <element api="M:W.Threading.Thread.Cancel(System.Int32)" />
         </element>
         <element api="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" />
+        <element api="M:W.Threading.Thread.Dispose" />
         <element api="Overload:W.Threading.Thread.Join">
           <element api="M:W.Threading.Thread.Join" />
           <element api="M:W.Threading.Thread.Join(System.Int32)" />
@@ -5728,6 +5737,31 @@
       </containers>
       <file name="M_W_Threading_Thread_Create" />
     </api>
+    <api id="M:W.Threading.Thread.Dispose">
+      <topicdata group="api" />
+      <apidata name="Dispose" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:W.Threading.ThreadBase.Dispose">
+          <type api="T:W.Threading.ThreadBase" ref="true" />
+        </member>
+      </overrides>
+      <implements>
+        <member api="M:System.IDisposable.Dispose">
+          <type api="T:System.IDisposable" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0 (1.0.0.0)" />
+          <noAptca />
+        </library>
+        <namespace api="N:W.Threading" />
+        <type api="T:W.Threading.Thread" ref="true" />
+      </containers>
+      <file name="M_W_Threading_Thread_Dispose" />
+    </api>
     <api id="M:W.Threading.Thread.Join">
       <topicdata group="api" />
       <apidata name="Join" group="member" subgroup="method" />
@@ -5871,6 +5905,7 @@
         <element api="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)" />
         <element api="P:W.Threading.Thread`1.Action" />
         <element api="M:W.Threading.Thread`1.Create(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)" />
+        <element api="P:W.Threading.Thread`1.CustomData" />
         <element api="M:W.Threading.Thread`1.InvokeAction" />
       </elements>
       <containers>
@@ -5984,6 +6019,7 @@
       </templates>
       <elements>
         <element api="P:W.Threading.Thread`1.Action" />
+        <element api="P:W.Threading.Thread`1.CustomData" />
       </elements>
       <containers>
         <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary">
@@ -6114,6 +6150,30 @@
       </containers>
       <file name="M_W_Threading_Thread_1_Create" />
     </api>
+    <api id="P:W.Threading.Thread`1.CustomData">
+      <topicdata group="api" />
+      <apidata name="CustomData" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <propertydata get="true" />
+      <getter name="get_CustomData" />
+      <returns>
+        <type api="T:W.Lockable`1" ref="true">
+          <specialization>
+            <template name="T" index="0" api="T:W.Threading.Thread`1" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0 (1.0.0.0)" />
+          <noAptca />
+        </library>
+        <namespace api="N:W.Threading" />
+        <type api="T:W.Threading.Thread`1" ref="true" />
+      </containers>
+      <file name="P_W_Threading_Thread_1_CustomData" />
+    </api>
     <api id="M:W.Threading.Thread`1.InvokeAction">
       <topicdata group="api" />
       <apidata name="InvokeAction" group="member" subgroup="method" />
@@ -6146,6 +6206,9 @@
           <type api="T:W.Threading.Thread" ref="true" />
         </descendents>
       </family>
+      <implements>
+        <type api="T:System.IDisposable" ref="true" />
+      </implements>
       <elements>
         <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
           <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
@@ -6227,6 +6290,8 @@
         <element api="M:W.Threading.ThreadBase.CallInvokeOnComplete(System.Exception)" />
         <element api="M:W.Threading.ThreadBase.Cancel" />
         <element api="P:W.Threading.ThreadBase.Cts" />
+        <element api="M:W.Threading.ThreadBase.Dispose" />
+        <element api="M:W.Threading.ThreadBase.Finalize" />
         <element api="M:W.Threading.ThreadBase.InvokeAction" />
         <element api="M:W.Threading.ThreadBase.InvokeOnComplete(System.Exception)" />
         <element api="P:W.Threading.ThreadBase.IsBusy" />
@@ -6329,6 +6394,8 @@
         <element api="M:W.Threading.ThreadBase.CallInvokeAction" />
         <element api="M:W.Threading.ThreadBase.CallInvokeOnComplete(System.Exception)" />
         <element api="M:W.Threading.ThreadBase.Cancel" />
+        <element api="M:W.Threading.ThreadBase.Dispose" />
+        <element api="M:W.Threading.ThreadBase.Finalize" />
         <element api="M:W.Threading.ThreadBase.InvokeAction" />
         <element api="M:W.Threading.ThreadBase.InvokeOnComplete(System.Exception)" />
         <element api="Overload:W.Threading.ThreadBase.Join">
@@ -6516,6 +6583,51 @@
         <type api="T:W.Threading.ThreadBase" ref="true" />
       </containers>
       <file name="P_W_Threading_ThreadBase_Cts" />
+    </api>
+    <api id="M:W.Threading.ThreadBase.Dispose">
+      <topicdata group="api" />
+      <apidata name="Dispose" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <implements>
+        <member api="M:System.IDisposable.Dispose">
+          <type api="T:System.IDisposable" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0 (1.0.0.0)" />
+          <noAptca />
+        </library>
+        <namespace api="N:W.Threading" />
+        <type api="T:W.Threading.ThreadBase" ref="true" />
+      </containers>
+      <file name="M_W_Threading_ThreadBase_Dispose" />
+    </api>
+    <api id="M:W.Threading.ThreadBase.Finalize">
+      <topicdata group="api" />
+      <apidata name="Finalize" group="member" subgroup="method" />
+      <memberdata visibility="family" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:System.Object.Finalize">
+          <type api="T:System.Object" ref="true" />
+        </member>
+      </overrides>
+      <implements>
+        <member api="M:System.Object.Finalize">
+          <type api="T:System.Object" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0 (1.0.0.0)" />
+          <noAptca />
+        </library>
+        <namespace api="N:W.Threading" />
+        <type api="T:W.Threading.ThreadBase" ref="true" />
+      </containers>
+      <file name="M_W_Threading_ThreadBase_Finalize" />
     </api>
     <api id="M:W.Threading.ThreadBase.InvokeAction">
       <topicdata group="api" />

@@ -1,8 +1,6 @@
 ThreadBase.InvokeAction Method
 ==============================
-  
-[Missing &lt;summary> documentation for "M:W.Threading.ThreadBase.InvokeAction"]
-
+  Invokes the Action. Virtual for customization.
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

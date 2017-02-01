@@ -7,7 +7,7 @@
     <ProjectGuid>{6280C716-960A-4588-8123-D96B30271C22}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tungsten.Universal</RootNamespace>
+    <RootNamespace>W</RootNamespace>
     <AssemblyName>Tungsten.Universal</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>

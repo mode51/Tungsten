@@ -1,8 +1,6 @@
 ThreadBase.InvokeOnComplete Method
 ==================================
-  
-[Missing &lt;summary> documentation for "M:W.Threading.ThreadBase.InvokeOnComplete(System.Exception)"]
-
+  Invokes the OnComplete action. Virtual for customization.
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

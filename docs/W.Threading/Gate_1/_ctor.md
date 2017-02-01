@@ -11,7 +11,8 @@ Syntax
 ```csharp
 public Gate(
 	Action<T, CancellationTokenSource> action,
-	Action<bool, Exception> onComplete = null
+	Action<bool, Exception> onComplete = null,
+	T args = null
 )
 ```
 
@@ -20,13 +21,19 @@ public Gate(
 ##### *action*
 Type: [System.Action][2]&lt;[T][3], [CancellationTokenSource][4]>  
 
-[Missing &lt;param name="action"/> documentation for "M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})"]
+[Missing &lt;param name="action"/> documentation for "M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)"]
 
 
 ##### *onComplete* (Optional)
 Type: [System.Action][2]&lt;[Boolean][5], [Exception][6]>  
 
-[Missing &lt;param name="onComplete"/> documentation for "M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})"]
+[Missing &lt;param name="onComplete"/> documentation for "M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)"]
+
+
+##### *args* (Optional)
+Type: [T][3]  
+
+[Missing &lt;param name="args"/> documentation for "M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)"]
 
 
 

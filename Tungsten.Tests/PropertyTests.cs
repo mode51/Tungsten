@@ -29,6 +29,15 @@ namespace W.Tests
         }
 
         [Test]
+        public void ShowFullName()
+        {
+            var asm = System.Reflection.Assembly.GetAssembly(typeof(W.IProperty));
+            var name = asm.FullName;
+            Console.WriteLine(name);
+            Assert.IsTrue(true);
+        }
+
+        [Test]
         public void Construction_Test()
         {
             var someInt = new Property<int>();

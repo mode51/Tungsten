@@ -301,9 +301,27 @@
         <param name="Local" value="html/P_W_Threading_ThreadBase_Cts.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="CustomData property">
+        <param name="Local" value="html/P_W_Threading_Thread_1_CustomData.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
         <param name="Name" value="DefaultValue property">
         <param name="Local" value="html/P_W_PropertyBase_2_DefaultValue.htm">
       </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Dispose method">
+        <param name="See Also" value="Dispose method">
+      </OBJECT></LI>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Thread.Dispose Method ">
+          <param name="Local" value="html/M_W_Threading_Thread_Dispose.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ThreadBase.Dispose Method ">
+          <param name="Local" value="html/M_W_Threading_ThreadBase_Dispose.htm">
+        </OBJECT></LI>
+      </UL>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="e method">
         <param name="Local" value="html/Overload_W_Logging_Log_e.htm">
@@ -337,6 +355,10 @@
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="ExecuteOnValueChanged method">
         <param name="Local" value="html/M_W_PropertyBase_2_ExecuteOnValueChanged.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Finalize method">
+        <param name="Local" value="html/M_W_Threading_ThreadBase_Finalize.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Gate class">
@@ -1473,6 +1495,10 @@
         <param name="Local" value="html/M_W_Threading_Thread_1_Create.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Thread(Of T).CustomData property">
+        <param name="Local" value="html/P_W_Threading_Thread_1_CustomData.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Thread(Of T).InvokeAction method">
         <param name="Local" value="html/M_W_Threading_Thread_1_InvokeAction.htm">
       </OBJECT></LI>
@@ -1491,6 +1517,10 @@
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Thread.Create method">
         <param name="Local" value="html/M_W_Threading_Thread_Create.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Thread.Dispose method">
+        <param name="Local" value="html/M_W_Threading_Thread_Dispose.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Thread.Join method">
@@ -1533,6 +1563,10 @@
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Thread&lt;T&gt;.Create method">
         <param name="Local" value="html/M_W_Threading_Thread_1_Create.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Thread&lt;T&gt;.CustomData property">
+        <param name="Local" value="html/P_W_Threading_Thread_1_CustomData.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Thread&lt;T&gt;.InvokeAction method">
@@ -1587,6 +1621,14 @@
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="ThreadBase.Cts property">
         <param name="Local" value="html/P_W_Threading_ThreadBase_Cts.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="ThreadBase.Dispose method">
+        <param name="Local" value="html/M_W_Threading_ThreadBase_Dispose.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="ThreadBase.Finalize method">
+        <param name="Local" value="html/M_W_Threading_ThreadBase_Finalize.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="ThreadBase.InvokeAction method">

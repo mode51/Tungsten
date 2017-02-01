@@ -79,7 +79,12 @@
   <HelpKINode Title="CreateGate method" Url="html/Overload_W_Threading_GateMethods_CreateGate.htm" />
   <HelpKINode Title="CreateThread method" Url="html/Overload_W_Threading_ThreadExtensions_CreateThread.htm" />
   <HelpKINode Title="Cts property" Url="html/P_W_Threading_ThreadBase_Cts.htm" />
+  <HelpKINode Title="CustomData property" Url="html/P_W_Threading_Thread_1_CustomData.htm" />
   <HelpKINode Title="DefaultValue property" Url="html/P_W_PropertyBase_2_DefaultValue.htm" />
+  <HelpKINode Title="Dispose method">
+    <HelpKINode Title="Thread.Dispose Method " Url="html/M_W_Threading_Thread_Dispose.htm" />
+    <HelpKINode Title="ThreadBase.Dispose Method " Url="html/M_W_Threading_ThreadBase_Dispose.htm" />
+  </HelpKINode>
   <HelpKINode Title="e method" Url="html/Overload_W_Logging_Log_e.htm" />
   <HelpKINode Title="Empty property">
     <HelpKINode Title="CallResult(TResult).Empty Property " Url="html/P_W_CallResult_1_Empty.htm" />
@@ -89,6 +94,7 @@
   <HelpKINode Title="Error enumeration member" Url="html/T_W_Logging_Log_LogMessageCategory.htm" />
   <HelpKINode Title="Exception property" Url="html/P_W_CallResult_Exception.htm" />
   <HelpKINode Title="ExecuteOnValueChanged method" Url="html/M_W_PropertyBase_2_ExecuteOnValueChanged.htm" />
+  <HelpKINode Title="Finalize method" Url="html/M_W_Threading_ThreadBase_Finalize.htm" />
   <HelpKINode Title="Gate class">
     <HelpKINode Title="Gate Class" Url="html/T_W_Threading_Gate.htm" />
     <HelpKINode Title="about Gate class" Url="html/T_W_Threading_Gate.htm" />
@@ -389,11 +395,13 @@
   </HelpKINode>
   <HelpKINode Title="Thread(Of T).Action property" Url="html/P_W_Threading_Thread_1_Action.htm" />
   <HelpKINode Title="Thread(Of T).Create method" Url="html/M_W_Threading_Thread_1_Create.htm" />
+  <HelpKINode Title="Thread(Of T).CustomData property" Url="html/P_W_Threading_Thread_1_CustomData.htm" />
   <HelpKINode Title="Thread(Of T).InvokeAction method" Url="html/M_W_Threading_Thread_1_InvokeAction.htm" />
   <HelpKINode Title="Thread(Of T).Thread constructor" Url="html/M_W_Threading_Thread_1__ctor.htm" />
   <HelpKINode Title="Thread.CallInvokeAction method" Url="html/M_W_Threading_Thread_CallInvokeAction.htm" />
   <HelpKINode Title="Thread.Cancel method" Url="html/Overload_W_Threading_Thread_Cancel.htm" />
   <HelpKINode Title="Thread.Create method" Url="html/M_W_Threading_Thread_Create.htm" />
+  <HelpKINode Title="Thread.Dispose method" Url="html/M_W_Threading_Thread_Dispose.htm" />
   <HelpKINode Title="Thread.Join method" Url="html/Overload_W_Threading_Thread_Join.htm" />
   <HelpKINode Title="Thread.Thread constructor" Url="html/M_W_Threading_Thread__ctor.htm" />
   <HelpKINode Title="Thread&lt;T&gt; class">
@@ -405,6 +413,7 @@
   </HelpKINode>
   <HelpKINode Title="Thread&lt;T&gt;.Action property" Url="html/P_W_Threading_Thread_1_Action.htm" />
   <HelpKINode Title="Thread&lt;T&gt;.Create method" Url="html/M_W_Threading_Thread_1_Create.htm" />
+  <HelpKINode Title="Thread&lt;T&gt;.CustomData property" Url="html/P_W_Threading_Thread_1_CustomData.htm" />
   <HelpKINode Title="Thread&lt;T&gt;.InvokeAction method" Url="html/M_W_Threading_Thread_1_InvokeAction.htm" />
   <HelpKINode Title="Thread&lt;T&gt;.Thread constructor" Url="html/M_W_Threading_Thread_1__ctor.htm" />
   <HelpKINode Title="ThreadBase class">
@@ -419,6 +428,8 @@
   <HelpKINode Title="ThreadBase.CallInvokeOnComplete method" Url="html/M_W_Threading_ThreadBase_CallInvokeOnComplete.htm" />
   <HelpKINode Title="ThreadBase.Cancel method" Url="html/M_W_Threading_ThreadBase_Cancel.htm" />
   <HelpKINode Title="ThreadBase.Cts property" Url="html/P_W_Threading_ThreadBase_Cts.htm" />
+  <HelpKINode Title="ThreadBase.Dispose method" Url="html/M_W_Threading_ThreadBase_Dispose.htm" />
+  <HelpKINode Title="ThreadBase.Finalize method" Url="html/M_W_Threading_ThreadBase_Finalize.htm" />
   <HelpKINode Title="ThreadBase.InvokeAction method" Url="html/M_W_Threading_ThreadBase_InvokeAction.htm" />
   <HelpKINode Title="ThreadBase.InvokeOnComplete method" Url="html/M_W_Threading_ThreadBase_InvokeOnComplete.htm" />
   <HelpKINode Title="ThreadBase.IsBusy property" Url="html/P_W_Threading_ThreadBase_IsBusy.htm" />

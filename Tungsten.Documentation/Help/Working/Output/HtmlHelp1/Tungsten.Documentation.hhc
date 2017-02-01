@@ -961,6 +961,12 @@
           </UL>
           <UL>
             <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Dispose Method ">
+              <param name="Local" value="html\M_W_Threading_Thread_Dispose.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
               <param name="Name" value="Join Method ">
               <param name="Local" value="html\Overload_W_Threading_Thread_Join.htm">
             </OBJECT></LI>
@@ -999,6 +1005,12 @@
             <LI><OBJECT type="text/sitemap">
               <param name="Name" value="Action Property ">
               <param name="Local" value="html\P_W_Threading_Thread_1_Action.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="CustomData Property ">
+              <param name="Local" value="html\P_W_Threading_Thread_1_CustomData.htm">
             </OBJECT></LI>
           </UL>
         </UL>
@@ -1095,6 +1107,18 @@
             <LI><OBJECT type="text/sitemap">
               <param name="Name" value="Cancel Method ">
               <param name="Local" value="html\M_W_Threading_ThreadBase_Cancel.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Dispose Method ">
+              <param name="Local" value="html\M_W_Threading_ThreadBase_Dispose.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Finalize Method ">
+              <param name="Local" value="html\M_W_Threading_ThreadBase_Finalize.htm">
             </OBJECT></LI>
           </UL>
           <UL>

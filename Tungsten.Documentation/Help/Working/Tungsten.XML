@@ -425,7 +425,7 @@
             Allows the Action to be called
             </summary>
     </member>
-    <member name="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})">
+    <member name="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)">
       <summary>
             Construct a Gate
             </summary>
@@ -440,6 +440,13 @@
             </summary>
       <typeparam name="T">
       </typeparam>
+    </member>
+    <member name="M:W.Threading.Thread.CallInvokeAction">
+      <summary>
+            Wraps the call to InvokeAction with try/catch block to catch exceptions
+            </summary>
+      <returns>
+      </returns>
     </member>
     <member name="M:W.Threading.Thread.Cancel">
       <summary>
@@ -477,6 +484,9 @@
       <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
       <returns>
       </returns>
+    </member>
+    <member name="M:W.Threading.Thread.Dispose">
+      <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
     </member>
     <member name="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})">
       <summary>
@@ -524,6 +534,25 @@
             A base class for Thread which should work for all compiler Target types
             </summary>
     </member>
+    <member name="M:W.Threading.ThreadBase.InvokeAction">
+      <summary>
+            Invokes the Action. Virtual for customization.
+            </summary>
+    </member>
+    <member name="M:W.Threading.ThreadBase.InvokeOnComplete(System.Exception)">
+      <summary>
+            Invokes the OnComplete action.  Virtual for customization.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:W.Threading.ThreadBase.CallInvokeAction">
+      <summary>
+            Must be overridden to provide exception handling
+            </summary>
+      <returns>
+      </returns>
+    </member>
     <member name="M:W.Threading.ThreadBase.Cancel">
       <summary>
         <para>
@@ -556,6 +585,9 @@
       <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
       <returns>
       </returns>
+    </member>
+    <member name="M:W.Threading.ThreadBase.Dispose">
+      <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
     </member>
     <member name="T:W.Threading.ThreadExtensions">
       <summary>

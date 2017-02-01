@@ -193,7 +193,7 @@
         </topic>
       </topic>
       <topic id="T:W.Threading.Gate`1" project="Tungsten" file="T_W_Threading_Gate_1">
-        <topic id="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" project="Tungsten" file="M_W_Threading_Gate_1__ctor" />
+        <topic id="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)" project="Tungsten" file="M_W_Threading_Gate_1__ctor" />
         <topic id="Methods.T:W.Threading.Gate`1" project="Tungsten" file="Methods_T_W_Threading_Gate_1">
           <topic id="M:W.Threading.Gate`1.CallInvokeAction" project="Tungsten" file="M_W_Threading_Gate_1_CallInvokeAction" />
           <topic id="M:W.Threading.Gate`1.Run" project="Tungsten" file="M_W_Threading_Gate_1_Run" />
@@ -216,6 +216,7 @@
             <topic id="M:W.Threading.Thread.Cancel(System.Int32)" project="Tungsten" file="M_W_Threading_Thread_Cancel_1" />
           </topic>
           <topic id="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" project="Tungsten" file="M_W_Threading_Thread_Create" />
+          <topic id="M:W.Threading.Thread.Dispose" project="Tungsten" file="M_W_Threading_Thread_Dispose" />
           <topic id="Overload:W.Threading.Thread.Join" project="Tungsten" file="Overload_W_Threading_Thread_Join">
             <topic id="M:W.Threading.Thread.Join" project="Tungsten" file="M_W_Threading_Thread_Join" />
             <topic id="M:W.Threading.Thread.Join(System.Int32)" project="Tungsten" file="M_W_Threading_Thread_Join_1" />
@@ -226,6 +227,7 @@
         <topic id="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)" project="Tungsten" file="M_W_Threading_Thread_1__ctor" />
         <topic id="Properties.T:W.Threading.Thread`1" project="Tungsten" file="Properties_T_W_Threading_Thread_1">
           <topic id="P:W.Threading.Thread`1.Action" project="Tungsten" file="P_W_Threading_Thread_1_Action" />
+          <topic id="P:W.Threading.Thread`1.CustomData" project="Tungsten" file="P_W_Threading_Thread_1_CustomData" />
         </topic>
         <topic id="Methods.T:W.Threading.Thread`1" project="Tungsten" file="Methods_T_W_Threading_Thread_1">
           <topic id="M:W.Threading.Thread`1.Create(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)" project="Tungsten" file="M_W_Threading_Thread_1_Create" />
@@ -246,6 +248,8 @@
           <topic id="M:W.Threading.ThreadBase.CallInvokeAction" project="Tungsten" file="M_W_Threading_ThreadBase_CallInvokeAction" />
           <topic id="M:W.Threading.ThreadBase.CallInvokeOnComplete(System.Exception)" project="Tungsten" file="M_W_Threading_ThreadBase_CallInvokeOnComplete" />
           <topic id="M:W.Threading.ThreadBase.Cancel" project="Tungsten" file="M_W_Threading_ThreadBase_Cancel" />
+          <topic id="M:W.Threading.ThreadBase.Dispose" project="Tungsten" file="M_W_Threading_ThreadBase_Dispose" />
+          <topic id="M:W.Threading.ThreadBase.Finalize" project="Tungsten" file="M_W_Threading_ThreadBase_Finalize" />
           <topic id="M:W.Threading.ThreadBase.InvokeAction" project="Tungsten" file="M_W_Threading_ThreadBase_InvokeAction" />
           <topic id="M:W.Threading.ThreadBase.InvokeOnComplete(System.Exception)" project="Tungsten" file="M_W_Threading_ThreadBase_InvokeOnComplete" />
           <topic id="Overload:W.Threading.ThreadBase.Join" project="Tungsten" file="Overload_W_Threading_ThreadBase_Join">

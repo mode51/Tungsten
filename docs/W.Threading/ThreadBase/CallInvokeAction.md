@@ -1,8 +1,6 @@
 ThreadBase.CallInvokeAction Method
 ==================================
-  
-[Missing &lt;summary> documentation for "M:W.Threading.ThreadBase.CallInvokeAction"]
-
+  Must be overridden to provide exception handling
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

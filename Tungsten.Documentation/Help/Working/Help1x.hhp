@@ -111,6 +111,8 @@ html\M_W_Threading_Gate__ctor.htm
 html\M_W_Threading_ThreadBase_CallInvokeAction.htm
 html\M_W_Threading_ThreadBase_CallInvokeOnComplete.htm
 html\M_W_Threading_ThreadBase_Cancel.htm
+html\M_W_Threading_ThreadBase_Dispose.htm
+html\M_W_Threading_ThreadBase_Finalize.htm
 html\M_W_Threading_ThreadBase_InvokeAction.htm
 html\M_W_Threading_ThreadBase_InvokeOnComplete.htm
 html\M_W_Threading_ThreadBase_Join.htm
@@ -126,6 +128,7 @@ html\M_W_Threading_Thread_CallInvokeAction.htm
 html\M_W_Threading_Thread_Cancel.htm
 html\M_W_Threading_Thread_Cancel_1.htm
 html\M_W_Threading_Thread_Create.htm
+html\M_W_Threading_Thread_Dispose.htm
 html\M_W_Threading_Thread_Join.htm
 html\M_W_Threading_Thread_Join_1.htm
 html\M_W_Threading_Thread__ctor.htm
@@ -183,6 +186,7 @@ html\P_W_Threading_ThreadBase_IsRunning.htm
 html\P_W_Threading_ThreadBase_OnComplete.htm
 html\P_W_Threading_ThreadBase_Success.htm
 html\P_W_Threading_Thread_1_Action.htm
+html\P_W_Threading_Thread_1_CustomData.htm
 html\R_Project_Tungsten_Documentation.htm
 html\T_W_ActionQueue_1.htm
 html\T_W_CallResult.htm

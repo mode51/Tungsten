@@ -143,7 +143,7 @@
   <topic id="M:W.Threading.Gate.Run" type="API" />
   <topic id="T:W.Threading.Gate`1" type="API" />
   <topic id="Methods.T:W.Threading.Gate`1" type="API" />
-  <topic id="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" type="API" />
+  <topic id="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)" type="API" />
   <topic id="M:W.Threading.Gate`1.CallInvokeAction" type="API" />
   <topic id="M:W.Threading.Gate`1.Run" type="API" />
   <topic id="T:W.Threading.GateMethods" type="API" />
@@ -160,6 +160,7 @@
   <topic id="M:W.Threading.Thread.Cancel" type="API" />
   <topic id="M:W.Threading.Thread.Cancel(System.Int32)" type="API" />
   <topic id="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" type="API" />
+  <topic id="M:W.Threading.Thread.Dispose" type="API" />
   <topic id="M:W.Threading.Thread.Join" type="API" />
   <topic id="M:W.Threading.Thread.Join(System.Int32)" type="API" />
   <topic id="T:W.Threading.Thread`1" type="API" />
@@ -168,6 +169,7 @@
   <topic id="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)" type="API" />
   <topic id="P:W.Threading.Thread`1.Action" type="API" />
   <topic id="M:W.Threading.Thread`1.Create(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)" type="API" />
+  <topic id="P:W.Threading.Thread`1.CustomData" type="API" />
   <topic id="M:W.Threading.Thread`1.InvokeAction" type="API" />
   <topic id="T:W.Threading.ThreadBase" type="API" />
   <topic id="Methods.T:W.Threading.ThreadBase" type="API" />
@@ -179,6 +181,8 @@
   <topic id="M:W.Threading.ThreadBase.CallInvokeOnComplete(System.Exception)" type="API" />
   <topic id="M:W.Threading.ThreadBase.Cancel" type="API" />
   <topic id="P:W.Threading.ThreadBase.Cts" type="API" />
+  <topic id="M:W.Threading.ThreadBase.Dispose" type="API" />
+  <topic id="M:W.Threading.ThreadBase.Finalize" type="API" />
   <topic id="M:W.Threading.ThreadBase.InvokeAction" type="API" />
   <topic id="M:W.Threading.ThreadBase.InvokeOnComplete(System.Exception)" type="API" />
   <topic id="P:W.Threading.ThreadBase.IsBusy" type="API" />

@@ -35,6 +35,23 @@ namespace W.Tests
             Assert.IsTrue(name == "Jordan Duerksen");
         }
         [Test]
+        public void DoNothingAndSucceed()
+        {
+            Exception e = null;
+
+            var result = this.CreateThread((tests, cts) =>
+            {
+                System.Threading.Thread.Sleep(0);
+            }, (b, exception) =>
+            {
+                Assert.IsTrue(b);
+                e = exception;
+            }).Join(1000);
+
+            Assert.IsTrue(result);
+            Assert.IsTrue(e == null);
+        }
+        [Test]
         public void HandleException()
         {
             Exception e = null;
@@ -45,6 +62,7 @@ namespace W.Tests
             }, (b, exception) =>
             {
                 e = exception;
+                Assert.IsFalse(b);
             }).Join(1000);
 
             Assert.IsTrue(result);
