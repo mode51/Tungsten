@@ -7,6 +7,8 @@ A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable 
 Tungsten is built with .Net Framework 4.5
 Tungsten.Universal is built on Windows 10 (10.0; Build 10240)
 
+To build Tungsten.Documentation, you will need to install the SHFB Visual Studio extension from NuGet.
+
 # Projects
 * Tungsten - A classic class library
 * Tungsten.Portable - A Portable version of Tungsten
@@ -14,6 +16,7 @@ Tungsten.Universal is built on Windows 10 (10.0; Build 10240)
 * Tungsten.RPC - A classic class library
 
 # Demos
+* Tungsten.Demo.Winforms - Uses tasks, Property and Gate to provide a responsive UI while handling background tasks
 * Tungsten.Demo.WPF - Illustrates how to use Tungsten in a WPF application
 * Tungsten.RPC.Server - Illustrates how to create an RPC server with Tungsten.RPC
 * Tungsten.RPC.Client - Illustrates how to create an RPC client with Tungsten.RPC
