@@ -1,8 +1,6 @@
 DomainLoader.Finalize Method
 ============================
-  
-[Missing &lt;summary> documentation for "M:W.Domains.DomainLoader.Finalize"]
-
+  Destructs the DomainLoader instance. Calls Dispose.
 
   **Namespace:**  [W.Domains][1]  
   **Assembly:**  Tungsten.Domains (in Tungsten.Domains.dll)

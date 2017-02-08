@@ -124,21 +124,6 @@
   <topic id="P:W.PropertyHostNotifier.IsDirty" type="API" />
   <topic id="M:W.PropertyHostNotifier.MarkAsClean" type="API" />
   <topic id="N:W.Domains" type="API" />
-  <topic id="T:W.Domains.AssemblyLoader" type="API" />
-  <topic id="Methods.T:W.Domains.AssemblyLoader" type="API" />
-  <topic id="Overload:W.Domains.AssemblyLoader.Create" type="API" />
-  <topic id="Overload:W.Domains.AssemblyLoader.Execute" type="API" />
-  <topic id="Overload:W.Domains.AssemblyLoader.ExecuteStaticMethod" type="API" />
-  <topic id="Overload:W.Domains.AssemblyLoader.Load" type="API" />
-  <topic id="M:W.Domains.AssemblyLoader.#ctor" type="API" />
-  <topic id="M:W.Domains.AssemblyLoader.Create``1(System.String)" type="API" />
-  <topic id="M:W.Domains.AssemblyLoader.Create(System.String)" type="API" />
-  <topic id="M:W.Domains.AssemblyLoader.Execute``1(System.String,System.String,System.Object[])" type="API" />
-  <topic id="M:W.Domains.AssemblyLoader.Execute(System.String,System.String,System.Object[])" type="API" />
-  <topic id="M:W.Domains.AssemblyLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])" type="API" />
-  <topic id="M:W.Domains.AssemblyLoader.ExecuteStaticMethod(System.String,System.String,System.Object[])" type="API" />
-  <topic id="M:W.Domains.AssemblyLoader.Load(System.AppDomain,System.String)" type="API" />
-  <topic id="M:W.Domains.AssemblyLoader.Load(System.AppDomain,System.String,System.String)" type="API" />
   <topic id="T:W.Domains.DomainLoader" type="API" />
   <topic id="Methods.T:W.Domains.DomainLoader" type="API" />
   <topic id="Properties.T:W.Domains.DomainLoader" type="API" />
@@ -162,20 +147,6 @@
   <topic id="M:W.Domains.DomainLoader.Load" type="API" />
   <topic id="M:W.Domains.DomainLoader.SetData(System.String,System.Object)" type="API" />
   <topic id="M:W.Domains.DomainLoader.Unload" type="API" />
-  <topic id="T:W.Domains.IAssemblyLoader" type="API" />
-  <topic id="Methods.T:W.Domains.IAssemblyLoader" type="API" />
-  <topic id="Overload:W.Domains.IAssemblyLoader.Create" type="API" />
-  <topic id="Overload:W.Domains.IAssemblyLoader.Execute" type="API" />
-  <topic id="Overload:W.Domains.IAssemblyLoader.ExecuteStaticMethod" type="API" />
-  <topic id="Overload:W.Domains.IAssemblyLoader.Load" type="API" />
-  <topic id="M:W.Domains.IAssemblyLoader.Create(System.String)" type="API" />
-  <topic id="M:W.Domains.IAssemblyLoader.Create``1(System.String)" type="API" />
-  <topic id="M:W.Domains.IAssemblyLoader.Execute``1(System.String,System.String,System.Object[])" type="API" />
-  <topic id="M:W.Domains.IAssemblyLoader.Execute(System.String,System.String,System.Object[])" type="API" />
-  <topic id="M:W.Domains.IAssemblyLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])" type="API" />
-  <topic id="M:W.Domains.IAssemblyLoader.ExecuteStaticMethod(System.String,System.String,System.Object[])" type="API" />
-  <topic id="M:W.Domains.IAssemblyLoader.Load(System.AppDomain,System.String)" type="API" />
-  <topic id="M:W.Domains.IAssemblyLoader.Load(System.AppDomain,System.String,System.String)" type="API" />
   <topic id="T:W.Domains.IDomainLoader" type="API" />
   <topic id="Methods.T:W.Domains.IDomainLoader" type="API" />
   <topic id="Overload:W.Domains.IDomainLoader.Create" type="API" />

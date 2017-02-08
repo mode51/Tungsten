@@ -168,27 +168,6 @@
       </topic>
     </topic>
     <topic id="N:W.Domains" project="_Namespaces" file="N_W_Domains">
-      <topic id="T:W.Domains.AssemblyLoader" project="Tungsten.Domains" file="T_W_Domains_AssemblyLoader">
-        <topic id="M:W.Domains.AssemblyLoader.#ctor" project="Tungsten.Domains" file="M_W_Domains_AssemblyLoader__ctor" />
-        <topic id="Methods.T:W.Domains.AssemblyLoader" project="Tungsten.Domains" file="Methods_T_W_Domains_AssemblyLoader">
-          <topic id="Overload:W.Domains.AssemblyLoader.Create" project="Tungsten.Domains" file="Overload_W_Domains_AssemblyLoader_Create">
-            <topic id="M:W.Domains.AssemblyLoader.Create``1(System.String)" project="Tungsten.Domains" file="M_W_Domains_AssemblyLoader_Create__1" />
-            <topic id="M:W.Domains.AssemblyLoader.Create(System.String)" project="Tungsten.Domains" file="M_W_Domains_AssemblyLoader_Create" />
-          </topic>
-          <topic id="Overload:W.Domains.AssemblyLoader.Execute" project="Tungsten.Domains" file="Overload_W_Domains_AssemblyLoader_Execute">
-            <topic id="M:W.Domains.AssemblyLoader.Execute``1(System.String,System.String,System.Object[])" project="Tungsten.Domains" file="M_W_Domains_AssemblyLoader_Execute__1" />
-            <topic id="M:W.Domains.AssemblyLoader.Execute(System.String,System.String,System.Object[])" project="Tungsten.Domains" file="M_W_Domains_AssemblyLoader_Execute" />
-          </topic>
-          <topic id="Overload:W.Domains.AssemblyLoader.ExecuteStaticMethod" project="Tungsten.Domains" file="Overload_W_Domains_AssemblyLoader_ExecuteStaticMethod">
-            <topic id="M:W.Domains.AssemblyLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])" project="Tungsten.Domains" file="M_W_Domains_AssemblyLoader_ExecuteStaticMethod__1" />
-            <topic id="M:W.Domains.AssemblyLoader.ExecuteStaticMethod(System.String,System.String,System.Object[])" project="Tungsten.Domains" file="M_W_Domains_AssemblyLoader_ExecuteStaticMethod" />
-          </topic>
-          <topic id="Overload:W.Domains.AssemblyLoader.Load" project="Tungsten.Domains" file="Overload_W_Domains_AssemblyLoader_Load">
-            <topic id="M:W.Domains.AssemblyLoader.Load(System.AppDomain,System.String)" project="Tungsten.Domains" file="M_W_Domains_AssemblyLoader_Load" />
-            <topic id="M:W.Domains.AssemblyLoader.Load(System.AppDomain,System.String,System.String)" project="Tungsten.Domains" file="M_W_Domains_AssemblyLoader_Load_1" />
-          </topic>
-        </topic>
-      </topic>
       <topic id="T:W.Domains.DomainLoader" project="Tungsten.Domains" file="T_W_Domains_DomainLoader">
         <topic id="Overload:W.Domains.DomainLoader.#ctor" project="Tungsten.Domains" file="Overload_W_Domains_DomainLoader__ctor">
           <topic id="M:W.Domains.DomainLoader.#ctor(System.String,System.Boolean)" project="Tungsten.Domains" file="M_W_Domains_DomainLoader__ctor" />
@@ -217,26 +196,6 @@
           <topic id="M:W.Domains.DomainLoader.Load" project="Tungsten.Domains" file="M_W_Domains_DomainLoader_Load" />
           <topic id="M:W.Domains.DomainLoader.SetData(System.String,System.Object)" project="Tungsten.Domains" file="M_W_Domains_DomainLoader_SetData" />
           <topic id="M:W.Domains.DomainLoader.Unload" project="Tungsten.Domains" file="M_W_Domains_DomainLoader_Unload" />
-        </topic>
-      </topic>
-      <topic id="T:W.Domains.IAssemblyLoader" project="Tungsten.Domains" file="T_W_Domains_IAssemblyLoader">
-        <topic id="Methods.T:W.Domains.IAssemblyLoader" project="Tungsten.Domains" file="Methods_T_W_Domains_IAssemblyLoader">
-          <topic id="Overload:W.Domains.IAssemblyLoader.Create" project="Tungsten.Domains" file="Overload_W_Domains_IAssemblyLoader_Create">
-            <topic id="M:W.Domains.IAssemblyLoader.Create(System.String)" project="Tungsten.Domains" file="M_W_Domains_IAssemblyLoader_Create" />
-            <topic id="M:W.Domains.IAssemblyLoader.Create``1(System.String)" project="Tungsten.Domains" file="M_W_Domains_IAssemblyLoader_Create__1" />
-          </topic>
-          <topic id="Overload:W.Domains.IAssemblyLoader.Execute" project="Tungsten.Domains" file="Overload_W_Domains_IAssemblyLoader_Execute">
-            <topic id="M:W.Domains.IAssemblyLoader.Execute``1(System.String,System.String,System.Object[])" project="Tungsten.Domains" file="M_W_Domains_IAssemblyLoader_Execute__1" />
-            <topic id="M:W.Domains.IAssemblyLoader.Execute(System.String,System.String,System.Object[])" project="Tungsten.Domains" file="M_W_Domains_IAssemblyLoader_Execute" />
-          </topic>
-          <topic id="Overload:W.Domains.IAssemblyLoader.ExecuteStaticMethod" project="Tungsten.Domains" file="Overload_W_Domains_IAssemblyLoader_ExecuteStaticMethod">
-            <topic id="M:W.Domains.IAssemblyLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])" project="Tungsten.Domains" file="M_W_Domains_IAssemblyLoader_ExecuteStaticMethod__1" />
-            <topic id="M:W.Domains.IAssemblyLoader.ExecuteStaticMethod(System.String,System.String,System.Object[])" project="Tungsten.Domains" file="M_W_Domains_IAssemblyLoader_ExecuteStaticMethod" />
-          </topic>
-          <topic id="Overload:W.Domains.IAssemblyLoader.Load" project="Tungsten.Domains" file="Overload_W_Domains_IAssemblyLoader_Load">
-            <topic id="M:W.Domains.IAssemblyLoader.Load(System.AppDomain,System.String)" project="Tungsten.Domains" file="M_W_Domains_IAssemblyLoader_Load" />
-            <topic id="M:W.Domains.IAssemblyLoader.Load(System.AppDomain,System.String,System.String)" project="Tungsten.Domains" file="M_W_Domains_IAssemblyLoader_Load_1" />
-          </topic>
         </topic>
       </topic>
       <topic id="T:W.Domains.IDomainLoader" project="Tungsten.Domains" file="T_W_Domains_IDomainLoader">

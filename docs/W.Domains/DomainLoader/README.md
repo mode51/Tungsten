@@ -1,8 +1,6 @@
 DomainLoader Class
 ==================
-  
-[Missing &lt;summary> documentation for "T:W.Domains.DomainLoader"]
-
+  An AppDomain helper class which makes it easy to host relodable AppDomains. Supports ShadowCopy.
 
 
 Inheritance Hierarchy
@@ -36,9 +34,9 @@ Constructors
 Properties
 ----------
 
-                   | Name            | Description 
------------------- | --------------- | ----------- 
-![Public property] | [DomainName][5] |             
+                   | Name            | Description                   
+------------------ | --------------- | ----------------------------- 
+![Public property] | [DomainName][5] | The name of the new AppDomain 
 
 
 Methods
@@ -49,15 +47,15 @@ Methods
 ![Public method]    | [Create(String)][6]                                             | Instantiates a class and returns a handle to it. This handle must be cast to an interface in order to work across AppDomains.               
 ![Public method]    | [Create&lt;TInterfaceType>(String)][7]                          | Instantiates a class and returns a handle to it. This handle must be cast to an interface in order to work across AppDomains.               
 ![Public method]    | [Dispose][8]                                                    | Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.                                    
-![Public method]    | [DoCallback][9]                                                 |                                                                                                                                             
+![Public method]    | [DoCallback][9]                                                 | Executes an action in the context of the hosted AppDomain                                                                                   
 ![Public method]    | [Execute(String, String, Object[])][10]                         | Instantiates a class and calls a method exposed by it.                                                                                      
 ![Public method]    | [Execute&lt;TResult>(String, String, Object[])][11]             | Instantiates a class and calls a method exposed by it.                                                                                      
 ![Public method]    | [ExecuteStaticMethod(String, String, Object[])][12]             | Executes a static method on the specified type across the AppDomain                                                                         
 ![Public method]    | [ExecuteStaticMethod&lt;TResult>(String, String, Object[])][13] | Executes a static method on the specified type across the AppDomain                                                                         
-![Protected method] | [Finalize][14]                                                  | (Overrides [Object.Finalize()][15].)                                                                                                        
+![Protected method] | [Finalize][14]                                                  | Destructs the DomainLoader instance. Calls Dispose. (Overrides [Object.Finalize()][15].)                                                    
 ![Public method]    | [GetData&lt;TData>][16]                                         | Gets the value stored in the current application domain for the specified name                                                              
 ![Public method]    | [Load][17]                                                      | Loads the dlls into the new AppDomain                                                                                                       
-![Public method]    | [SetData][18]                                                   |                                                                                                                                             
+![Public method]    | [SetData][18]                                                   | Sets the value of the specified application domain property                                                                                 
 ![Public method]    | [Unload][19]                                                    | Unloads the AppDomain and deletes files in the cache folder. The cache folder is where dlls are copied, and run, when using shadow copying. 
 
 

@@ -1,8 +1,6 @@
 DomainLoader.DoCallback Method
 ==============================
-  
-[Missing &lt;summary> documentation for "M:W.Domains.DomainLoader.DoCallback(System.Action)"]
-
+  Executes an action in the context of the hosted AppDomain
 
   **Namespace:**  [W.Domains][1]  
   **Assembly:**  Tungsten.Domains (in Tungsten.Domains.dll)
@@ -20,9 +18,7 @@ public void DoCallback(
 
 ##### *action*
 Type: [System.Action][2]  
-
-[Missing &lt;param name="action"/> documentation for "M:W.Domains.DomainLoader.DoCallback(System.Action)"]
-
+The action to be called in the context of the hosted AppDomain
 
 
 See Also

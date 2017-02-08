@@ -2,8 +2,7 @@
 
 Initial Release 2.8.2017
 
-Tungsten.Domains.DomainLoader - this is the class you'll want to use in your app
-Tungsten.Domains.AssemblyLoader - you won't need to use this class
+Tungsten.Domains.DomainLoader
 
 Thanks for using Tungsten.Domains,
 

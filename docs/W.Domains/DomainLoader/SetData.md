@@ -1,8 +1,6 @@
 DomainLoader.SetData Method
 ===========================
-  
-[Missing &lt;summary> documentation for "M:W.Domains.DomainLoader.SetData(System.String,System.Object)"]
-
+  Sets the value of the specified application domain property
 
   **Namespace:**  [W.Domains][1]  
   **Assembly:**  Tungsten.Domains (in Tungsten.Domains.dll)
@@ -21,15 +19,11 @@ public void SetData(
 
 ##### *name*
 Type: [System.String][2]  
-
-[Missing &lt;param name="name"/> documentation for "M:W.Domains.DomainLoader.SetData(System.String,System.Object)"]
-
+The name of a predefined or custom domain property
 
 ##### *data*
 Type: [System.Object][3]  
-
-[Missing &lt;param name="data"/> documentation for "M:W.Domains.DomainLoader.SetData(System.String,System.Object)"]
-
+The value to be assigned to the domain property
 
 
 See Also

@@ -1,8 +1,6 @@
 DomainLoader.DomainName Property
 ================================
-  
-[Missing &lt;summary> documentation for "P:W.Domains.DomainLoader.DomainName"]
-
+  The name of the new AppDomain
 
   **Namespace:**  [W.Domains][1]  
   **Assembly:**  Tungsten.Domains (in Tungsten.Domains.dll)

@@ -109,48 +109,6 @@
         <param name="Local" value="html/P_W_ActionQueue_1_Queue.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="AssemblyLoader class">
-        <param name="See Also" value="AssemblyLoader class">
-      </OBJECT></LI>
-      <UL>
-        <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="AssemblyLoader Class">
-          <param name="Local" value="html/T_W_Domains_AssemblyLoader.htm">
-        </OBJECT></LI>
-        <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="about AssemblyLoader class">
-          <param name="Local" value="html/T_W_Domains_AssemblyLoader.htm">
-        </OBJECT></LI>
-        <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="constructor">
-          <param name="Local" value="html/M_W_Domains_AssemblyLoader__ctor.htm">
-        </OBJECT></LI>
-        <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="methods">
-          <param name="Local" value="html/Methods_T_W_Domains_AssemblyLoader.htm">
-        </OBJECT></LI>
-      </UL>
-      <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="AssemblyLoader.AssemblyLoader constructor">
-        <param name="Local" value="html/M_W_Domains_AssemblyLoader__ctor.htm">
-      </OBJECT></LI>
-      <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="AssemblyLoader.Create method">
-        <param name="Local" value="html/Overload_W_Domains_AssemblyLoader_Create.htm">
-      </OBJECT></LI>
-      <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="AssemblyLoader.Execute method">
-        <param name="Local" value="html/Overload_W_Domains_AssemblyLoader_Execute.htm">
-      </OBJECT></LI>
-      <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="AssemblyLoader.ExecuteStaticMethod method">
-        <param name="Local" value="html/Overload_W_Domains_AssemblyLoader_ExecuteStaticMethod.htm">
-      </OBJECT></LI>
-      <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="AssemblyLoader.Load method">
-        <param name="Local" value="html/Overload_W_Domains_AssemblyLoader_Load.htm">
-      </OBJECT></LI>
-      <LI><OBJECT type="text/sitemap">
         <param name="Name" value="CallInvokeAction method">
         <param name="See Also" value="CallInvokeAction method">
       </OBJECT></LI>
@@ -424,16 +382,8 @@
       </OBJECT></LI>
       <UL>
         <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="AssemblyLoader.Create Method ">
-          <param name="Local" value="html/Overload_W_Domains_AssemblyLoader_Create.htm">
-        </OBJECT></LI>
-        <LI><OBJECT type="text/sitemap">
           <param name="Name" value="DomainLoader.Create Method ">
           <param name="Local" value="html/Overload_W_Domains_DomainLoader_Create.htm">
-        </OBJECT></LI>
-        <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="IAssemblyLoader.Create Method ">
-          <param name="Local" value="html/Overload_W_Domains_IAssemblyLoader_Create.htm">
         </OBJECT></LI>
         <LI><OBJECT type="text/sitemap">
           <param name="Name" value="IDomainLoader.Create Method ">
@@ -668,16 +618,8 @@
       </OBJECT></LI>
       <UL>
         <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="AssemblyLoader.Execute Method ">
-          <param name="Local" value="html/Overload_W_Domains_AssemblyLoader_Execute.htm">
-        </OBJECT></LI>
-        <LI><OBJECT type="text/sitemap">
           <param name="Name" value="DomainLoader.Execute Method ">
           <param name="Local" value="html/Overload_W_Domains_DomainLoader_Execute.htm">
-        </OBJECT></LI>
-        <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="IAssemblyLoader.Execute Method ">
-          <param name="Local" value="html/Overload_W_Domains_IAssemblyLoader_Execute.htm">
         </OBJECT></LI>
         <LI><OBJECT type="text/sitemap">
           <param name="Name" value="IDomainLoader.Execute Method ">
@@ -694,16 +636,8 @@
       </OBJECT></LI>
       <UL>
         <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="AssemblyLoader.ExecuteStaticMethod Method ">
-          <param name="Local" value="html/Overload_W_Domains_AssemblyLoader_ExecuteStaticMethod.htm">
-        </OBJECT></LI>
-        <LI><OBJECT type="text/sitemap">
           <param name="Name" value="DomainLoader.ExecuteStaticMethod Method ">
           <param name="Local" value="html/Overload_W_Domains_DomainLoader_ExecuteStaticMethod.htm">
-        </OBJECT></LI>
-        <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="IAssemblyLoader.ExecuteStaticMethod Method ">
-          <param name="Local" value="html/Overload_W_Domains_IAssemblyLoader_ExecuteStaticMethod.htm">
         </OBJECT></LI>
         <LI><OBJECT type="text/sitemap">
           <param name="Name" value="IDomainLoader.ExecuteStaticMethod Method ">
@@ -897,40 +831,6 @@
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="i method">
         <param name="Local" value="html/M_W_Logging_Log_i.htm">
-      </OBJECT></LI>
-      <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="IAssemblyLoader interface">
-        <param name="See Also" value="IAssemblyLoader interface">
-      </OBJECT></LI>
-      <UL>
-        <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="IAssemblyLoader Interface">
-          <param name="Local" value="html/T_W_Domains_IAssemblyLoader.htm">
-        </OBJECT></LI>
-        <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="about IAssemblyLoader interface">
-          <param name="Local" value="html/T_W_Domains_IAssemblyLoader.htm">
-        </OBJECT></LI>
-        <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="methods">
-          <param name="Local" value="html/Methods_T_W_Domains_IAssemblyLoader.htm">
-        </OBJECT></LI>
-      </UL>
-      <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="IAssemblyLoader.Create method">
-        <param name="Local" value="html/Overload_W_Domains_IAssemblyLoader_Create.htm">
-      </OBJECT></LI>
-      <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="IAssemblyLoader.Execute method">
-        <param name="Local" value="html/Overload_W_Domains_IAssemblyLoader_Execute.htm">
-      </OBJECT></LI>
-      <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="IAssemblyLoader.ExecuteStaticMethod method">
-        <param name="Local" value="html/Overload_W_Domains_IAssemblyLoader_ExecuteStaticMethod.htm">
-      </OBJECT></LI>
-      <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="IAssemblyLoader.Load method">
-        <param name="Local" value="html/Overload_W_Domains_IAssemblyLoader_Load.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="IDomainLoader interface">
@@ -1336,16 +1236,8 @@
       </OBJECT></LI>
       <UL>
         <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="AssemblyLoader.Load Method ">
-          <param name="Local" value="html/Overload_W_Domains_AssemblyLoader_Load.htm">
-        </OBJECT></LI>
-        <LI><OBJECT type="text/sitemap">
           <param name="Name" value="DomainLoader.Load Method ">
           <param name="Local" value="html/M_W_Domains_DomainLoader_Load.htm">
-        </OBJECT></LI>
-        <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="IAssemblyLoader.Load Method ">
-          <param name="Local" value="html/Overload_W_Domains_IAssemblyLoader_Load.htm">
         </OBJECT></LI>
         <LI><OBJECT type="text/sitemap">
           <param name="Name" value="IDomainLoader.Load Method ">
@@ -2585,16 +2477,8 @@
         <param name="Local" value="html/N_W_Domains.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="W.Domains.AssemblyLoader class">
-        <param name="Local" value="html/T_W_Domains_AssemblyLoader.htm">
-      </OBJECT></LI>
-      <LI><OBJECT type="text/sitemap">
         <param name="Name" value="W.Domains.DomainLoader class">
         <param name="Local" value="html/T_W_Domains_DomainLoader.htm">
-      </OBJECT></LI>
-      <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="W.Domains.IAssemblyLoader interface">
-        <param name="Local" value="html/T_W_Domains_IAssemblyLoader.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="W.Domains.IDomainLoader interface">

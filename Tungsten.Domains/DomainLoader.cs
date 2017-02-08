@@ -30,6 +30,9 @@ namespace W.Domains
     }
 
     //[Serializable()]
+    /// <summary>
+    /// An AppDomain helper class which makes it easy to host relodable AppDomains.  Supports ShadowCopy.
+    /// </summary>
     public class DomainLoader : IDomainLoader, IDisposable
     {
         private readonly string _domainName;
@@ -50,6 +53,9 @@ namespace W.Domains
                 _domain?.SetData("AssemblyLoader", value);
             }
         }
+        /// <summary>
+        /// The name of the new AppDomain
+        /// </summary>
         public string DomainName { get; private set; }
 
         /// <summary>
@@ -80,6 +86,9 @@ namespace W.Domains
             _useShadowCopy = useShadowCopy;
         }
 
+        /// <summary>
+        /// Destructs the DomainLoader instance.  Calls Dispose.
+        /// </summary>
         ~DomainLoader()
         {
             Dispose();
@@ -256,11 +265,20 @@ namespace W.Domains
             return result;
         }
 
+        /// <summary>
+        /// Executes an action in the context of the hosted AppDomain
+        /// </summary>
+        /// <param name="action">The action to be called in the context of the hosted AppDomain</param>
         public void DoCallback(Action action)
         {
             _domain.DoCallBack(new CrossAppDomainDelegate(action));
         }
 
+        /// <summary>
+        /// Sets the value of the specified application domain property
+        /// </summary>
+        /// <param name="name">The name of a predefined or custom domain property</param>
+        /// <param name="data">The value to be assigned to the domain property</param>
         public void SetData(string name, object data)
         {
             _domain.SetData(name, data);

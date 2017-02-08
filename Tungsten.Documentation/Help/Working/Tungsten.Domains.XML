@@ -65,6 +65,16 @@
             <param name="typeName">The name of the type which is to be instantiated</param>
             <returns>A handle to the instantiated object.  This value should be cast to an interface as only interfaces will work across AppDomains.</returns>
         </member>
+        <member name="T:W.Domains.DomainLoader">
+            <summary>
+            An AppDomain helper class which makes it easy to host relodable AppDomains.  Supports ShadowCopy.
+            </summary>
+        </member>
+        <member name="P:W.Domains.DomainLoader.DomainName">
+            <summary>
+            The name of the new AppDomain
+            </summary>
+        </member>
         <member name="M:W.Domains.DomainLoader.#ctor(System.String,System.Boolean)">
             <summary>
             Creates an AppDomain under the current AppDomain
@@ -79,6 +89,11 @@
             <param name="domainName">The name for the domain.  If not assigned, or null or empty, a Guid is assigned.</param>
             <param name="relativeSubFolderForDomain">The relative path to the subfolder which will be the root folder for the new AppDomain</param>
             <param name="useShadowCopy">True to shadow copy files.  This allows dlls to be added, removed or modified while the AppDomain is still loaded.</param>
+        </member>
+        <member name="M:W.Domains.DomainLoader.Finalize">
+            <summary>
+            Destructs the DomainLoader instance.  Calls Dispose.
+            </summary>
         </member>
         <member name="M:W.Domains.DomainLoader.Dispose">
             <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
@@ -143,6 +158,19 @@
             </summary>
             <param name="typeName">The name of the type which is to be instantiated</param>
             <returns>A handle to the instantiated object.  This value should be cast to an interface as only interfaces will work across AppDomains.</returns>
+        </member>
+        <member name="M:W.Domains.DomainLoader.DoCallback(System.Action)">
+            <summary>
+            Executes an action in the context of the hosted AppDomain
+            </summary>
+            <param name="action">The action to be called in the context of the hosted AppDomain</param>
+        </member>
+        <member name="M:W.Domains.DomainLoader.SetData(System.String,System.Object)">
+            <summary>
+            Sets the value of the specified application domain property
+            </summary>
+            <param name="name">The name of a predefined or custom domain property</param>
+            <param name="data">The value to be assigned to the domain property</param>
         </member>
         <member name="M:W.Domains.DomainLoader.GetData``1(System.String)">
             <summary>
