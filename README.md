@@ -15,6 +15,7 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 * Tungsten.Universal - A Universal version of Tungsten
 * Tungsten.RPC - A classic class library
 * Tungsten.Domains - Easily implement reloadable AppDomains in your application
+* Tungsten.LiteDb - A POCO based wrapper for LiteDb
 
 # Demos
 * Tungsten.Demo.Winforms - Uses tasks, Property and Gate to provide a responsive UI while handling background tasks
