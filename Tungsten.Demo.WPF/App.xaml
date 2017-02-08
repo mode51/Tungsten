@@ -1,7 +1,7 @@
-﻿<Application x:Class="Tungsten.Demo.WPF.App"
+﻿<Application x:Class="W.Demo.WPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Tungsten.Demo.WPF"
+             xmlns:local="clr-namespace:W.Demo.WPF"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
          

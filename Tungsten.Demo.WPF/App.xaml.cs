@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Tungsten.Demo.WPF
+namespace W.Demo.WPF
 {
     /// <summary>
     /// Interaction logic for App.xaml

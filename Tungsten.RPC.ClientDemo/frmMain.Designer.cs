@@ -1,4 +1,4 @@
-﻿namespace Tungsten.RPC.ClientDemo
+﻿namespace W.RPC.ClientDemo
 {
     partial class frmMain
     {

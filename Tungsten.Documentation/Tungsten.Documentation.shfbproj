@@ -49,6 +49,12 @@
     <DocumentationSources>
       <DocumentationSource sourceFile="..\Tungsten\bin\Release\Tungsten.XML" />
       <DocumentationSource sourceFile="..\Tungsten\bin\Release\Tungsten.dll" />
+      <DocumentationSource sourceFile="..\Tungsten.LiteDb\bin\Release\Tungsten.LiteDb.dll" />
+      <DocumentationSource sourceFile="..\Tungsten.RPC\bin\Release\Tungsten.RPC.dll" />
+      <DocumentationSource sourceFile="..\Tungsten.RPC\bin\Release\Tungsten.RPC.xml" />
+      <DocumentationSource sourceFile="..\Tungsten.RPC.Interfaces\bin\Release\Tungsten.RPC.Interfaces.dll" />
+      <DocumentationSource sourceFile="..\Tungsten.Domains\bin\Release\Tungsten.Domains.dll" />
+      <DocumentationSource sourceFile="..\Tungsten.Domains\bin\Release\Tungsten.Domains.xml" />
     </DocumentationSources>
     <WebsiteSdkLinkType>Msdn</WebsiteSdkLinkType>
     <HtmlSdkLinkType>Msdn</HtmlSdkLinkType>

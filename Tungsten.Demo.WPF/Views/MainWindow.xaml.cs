@@ -13,9 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Tungsten.Demo.WPF.Models;
+using W.Demo.WPF.Models;
 
-namespace Tungsten.Demo.WPF
+namespace W.Demo.WPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

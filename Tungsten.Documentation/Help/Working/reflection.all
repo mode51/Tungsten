@@ -1,6 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <reflection>
   <assemblies>
+    <assembly name="Tungsten.Domains">
+      <assemblydata version="1.0.0.0" culture="" key="" hash="SHA1" />
+      <attributes>
+        <attribute>
+          <type api="T:System.Reflection.AssemblyFileVersionAttribute" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value>1.0.0.0</value>
+          </argument>
+        </attribute>
+      </attributes>
+    </assembly>
+    <assembly name="Tungsten.LiteDb">
+      <assemblydata version="1.0.0.0" culture="" key="" hash="SHA1" />
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+        <attribute>
+          <type api="T:System.Reflection.AssemblyFileVersionAttribute" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value>1.0.0.0</value>
+          </argument>
+        </attribute>
+      </attributes>
+    </assembly>
+    <assembly name="Tungsten.RPC.Interfaces">
+      <assemblydata version="1.0.0.0" culture="" key="" hash="SHA1" />
+      <attributes>
+        <attribute>
+          <type api="T:System.Reflection.AssemblyFileVersionAttribute" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value>1.0.0.0</value>
+          </argument>
+        </attribute>
+      </attributes>
+    </assembly>
+    <assembly name="Tungsten.RPC">
+      <assemblydata version="1.0.0.0" culture="" key="" hash="SHA1" />
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+        <attribute>
+          <type api="T:System.Reflection.AssemblyFileVersionAttribute" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value>1.0.0.0</value>
+          </argument>
+        </attribute>
+      </attributes>
+    </assembly>
     <assembly name="Tungsten">
       <assemblydata version="1.0.0.0" culture="" key="" hash="SHA1" />
       <attributes>
@@ -2529,6 +2583,2250 @@
         <type api="T:W.PropertyHostNotifier" ref="true" />
       </containers>
     </api>
+    <api id="N:W.Domains">
+      <apidata name="W.Domains" group="namespace" />
+      <elements>
+        <element api="T:W.Domains.IAssemblyLoader" />
+        <element api="T:W.Domains.AssemblyLoader" />
+        <element api="T:W.Domains.IDomainLoader" />
+        <element api="T:W.Domains.DomainLoader" />
+      </elements>
+    </api>
+    <api id="T:W.Domains.AssemblyLoader">
+      <apidata name="AssemblyLoader" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:System.MarshalByRefObject" ref="true" />
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <implements>
+        <type api="T:W.Domains.IAssemblyLoader" ref="true" />
+      </implements>
+      <elements>
+        <element api="M:W.Domains.AssemblyLoader.Load(System.AppDomain,System.String)" />
+        <element api="M:W.Domains.AssemblyLoader.Load(System.AppDomain,System.String,System.String)" />
+        <element api="M:W.Domains.AssemblyLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])" />
+        <element api="M:W.Domains.AssemblyLoader.ExecuteStaticMethod(System.String,System.String,System.Object[])" />
+        <element api="M:W.Domains.AssemblyLoader.Execute``1(System.String,System.String,System.Object[])" />
+        <element api="M:W.Domains.AssemblyLoader.Execute(System.String,System.String,System.Object[])" />
+        <element api="M:W.Domains.AssemblyLoader.Create``1(System.String)" />
+        <element api="M:W.Domains.AssemblyLoader.Create(System.String)" />
+        <element api="M:W.Domains.AssemblyLoader.#ctor" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
+          <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="T" />
+          </templates>
+          <parameters>
+            <parameter name="action">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+                  <type api="T:System.Threading.CancellationTokenSource" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="onComplete">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <type api="T:System.Boolean" ref="false" />
+                  <type api="T:System.Exception" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="customData">
+              <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:W.Threading.Thread`1" ref="true">
+              <specialization>
+                <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W.Threading" />
+            <type api="T:W.Threading.ThreadExtensions" ref="true" />
+          </containers>
+        </element>
+      </elements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.AssemblyLoader.#ctor">
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" />
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.AssemblyLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.AssemblyLoader.Create``1(System.String)">
+      <apidata name="Create" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <templates>
+        <template name="TInterfaceType" />
+      </templates>
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="TInterfaceType" index="0" api="M:W.Domains.AssemblyLoader.Create``1(System.String)" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.AssemblyLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.AssemblyLoader.Create(System.String)">
+      <apidata name="Create" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Object" ref="true" />
+      </returns>
+      <implements>
+        <member api="M:W.Domains.IAssemblyLoader.Create(System.String)">
+          <type api="T:W.Domains.IAssemblyLoader" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.AssemblyLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.AssemblyLoader.Execute``1(System.String,System.String,System.Object[])">
+      <apidata name="Execute" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <templates>
+        <template name="TResult" />
+      </templates>
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="methodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="TResult" index="0" api="M:W.Domains.AssemblyLoader.Execute``1(System.String,System.String,System.Object[])" />
+      </returns>
+      <implements>
+        <member api="M:W.Domains.IAssemblyLoader.Execute``1(System.String,System.String,System.Object[])">
+          <type api="T:W.Domains.IAssemblyLoader" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.AssemblyLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.AssemblyLoader.Execute(System.String,System.String,System.Object[])">
+      <apidata name="Execute" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="methodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <implements>
+        <member api="M:W.Domains.IAssemblyLoader.Execute(System.String,System.String,System.Object[])">
+          <type api="T:W.Domains.IAssemblyLoader" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.AssemblyLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.AssemblyLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])">
+      <apidata name="ExecuteStaticMethod" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <templates>
+        <template name="TResult" />
+      </templates>
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="staticMethodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="TResult" index="0" api="M:W.Domains.AssemblyLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])" />
+      </returns>
+      <implements>
+        <member api="M:W.Domains.IAssemblyLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])">
+          <type api="T:W.Domains.IAssemblyLoader" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.AssemblyLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.AssemblyLoader.ExecuteStaticMethod(System.String,System.String,System.Object[])">
+      <apidata name="ExecuteStaticMethod" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="staticMethodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <implements>
+        <member api="M:W.Domains.IAssemblyLoader.ExecuteStaticMethod(System.String,System.String,System.Object[])">
+          <type api="T:W.Domains.IAssemblyLoader" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.AssemblyLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.AssemblyLoader.Load(System.AppDomain,System.String)">
+      <apidata name="Load" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <parameters>
+        <parameter name="domain">
+          <type api="T:System.AppDomain" ref="true" />
+        </parameter>
+        <parameter name="filename">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <implements>
+        <member api="M:W.Domains.IAssemblyLoader.Load(System.AppDomain,System.String)">
+          <type api="T:W.Domains.IAssemblyLoader" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.AssemblyLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.AssemblyLoader.Load(System.AppDomain,System.String,System.String)">
+      <apidata name="Load" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <parameters>
+        <parameter name="domain">
+          <type api="T:System.AppDomain" ref="true" />
+        </parameter>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="searchPattern">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <implements>
+        <member api="M:W.Domains.IAssemblyLoader.Load(System.AppDomain,System.String,System.String)">
+          <type api="T:W.Domains.IAssemblyLoader" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.AssemblyLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="T:W.Domains.DomainLoader">
+      <apidata name="DomainLoader" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <implements>
+        <type api="T:W.Domains.IDomainLoader" ref="true" />
+        <type api="T:System.IDisposable" ref="true" />
+      </implements>
+      <elements>
+        <element api="M:W.Domains.DomainLoader.#ctor(System.String,System.Boolean)" />
+        <element api="M:W.Domains.DomainLoader.#ctor(System.String,System.String,System.Boolean)" />
+        <element api="M:W.Domains.DomainLoader.Finalize" />
+        <element api="M:W.Domains.DomainLoader.Dispose" />
+        <element api="M:W.Domains.DomainLoader.Unload" />
+        <element api="M:W.Domains.DomainLoader.Load" />
+        <element api="M:W.Domains.DomainLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])" />
+        <element api="M:W.Domains.DomainLoader.ExecuteStaticMethod(System.String,System.String,System.Object[])" />
+        <element api="M:W.Domains.DomainLoader.Execute``1(System.String,System.String,System.Object[])" />
+        <element api="M:W.Domains.DomainLoader.Execute(System.String,System.String,System.Object[])" />
+        <element api="M:W.Domains.DomainLoader.Create``1(System.String)" />
+        <element api="M:W.Domains.DomainLoader.Create(System.String)" />
+        <element api="M:W.Domains.DomainLoader.DoCallback(System.Action)" />
+        <element api="M:W.Domains.DomainLoader.SetData(System.String,System.Object)" />
+        <element api="M:W.Domains.DomainLoader.GetData``1(System.String)" />
+        <element api="P:W.Domains.DomainLoader.DomainName" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
+          <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="T" />
+          </templates>
+          <parameters>
+            <parameter name="action">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+                  <type api="T:System.Threading.CancellationTokenSource" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="onComplete">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <type api="T:System.Boolean" ref="false" />
+                  <type api="T:System.Exception" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="customData">
+              <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:W.Threading.Thread`1" ref="true">
+              <specialization>
+                <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W.Threading" />
+            <type api="T:W.Threading.ThreadExtensions" ref="true" />
+          </containers>
+        </element>
+      </elements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.DomainLoader.#ctor(System.String,System.Boolean)">
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" />
+      <parameters>
+        <parameter name="relativeSubFolderForDomain">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="useShadowCopy" optional="true">
+          <type api="T:System.Boolean" ref="false" />
+          <argument>
+            <type api="T:System.Boolean" ref="false" />
+            <value>False</value>
+          </argument>
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.DomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.DomainLoader.#ctor(System.String,System.String,System.Boolean)">
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" />
+      <parameters>
+        <parameter name="domainName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="relativeSubFolderForDomain">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="useShadowCopy" optional="true">
+          <type api="T:System.Boolean" ref="false" />
+          <argument>
+            <type api="T:System.Boolean" ref="false" />
+            <value>False</value>
+          </argument>
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.DomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.DomainLoader.Create``1(System.String)">
+      <apidata name="Create" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <templates>
+        <template name="TInterfaceType" />
+      </templates>
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="TInterfaceType" index="0" api="M:W.Domains.DomainLoader.Create``1(System.String)" />
+      </returns>
+      <implements>
+        <member api="M:W.Domains.IDomainLoader.Create``1(System.String)">
+          <type api="T:W.Domains.IDomainLoader" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.DomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.DomainLoader.Create(System.String)">
+      <apidata name="Create" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Object" ref="true" />
+      </returns>
+      <implements>
+        <member api="M:W.Domains.IDomainLoader.Create(System.String)">
+          <type api="T:W.Domains.IDomainLoader" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.DomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.DomainLoader.Dispose">
+      <apidata name="Dispose" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <implements>
+        <member api="M:W.Domains.IDomainLoader.Dispose">
+          <type api="T:W.Domains.IDomainLoader" ref="true" />
+        </member>
+        <member api="M:System.IDisposable.Dispose">
+          <type api="T:System.IDisposable" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.DomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.DomainLoader.DoCallback(System.Action)">
+      <apidata name="DoCallback" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="action">
+          <type api="T:System.Action" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.DomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="P:W.Domains.DomainLoader.DomainName">
+      <apidata name="DomainName" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <propertydata get="true" />
+      <getter name="get_DomainName" />
+      <returns>
+        <type api="T:System.String" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.DomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.DomainLoader.Execute``1(System.String,System.String,System.Object[])">
+      <apidata name="Execute" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <templates>
+        <template name="TResult" />
+      </templates>
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="methodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="TResult" index="0" api="M:W.Domains.DomainLoader.Execute``1(System.String,System.String,System.Object[])" />
+      </returns>
+      <implements>
+        <member api="M:W.Domains.IDomainLoader.Execute``1(System.String,System.String,System.Object[])">
+          <type api="T:W.Domains.IDomainLoader" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.DomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.DomainLoader.Execute(System.String,System.String,System.Object[])">
+      <apidata name="Execute" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="methodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <implements>
+        <member api="M:W.Domains.IDomainLoader.Execute(System.String,System.String,System.Object[])">
+          <type api="T:W.Domains.IDomainLoader" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.DomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.DomainLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])">
+      <apidata name="ExecuteStaticMethod" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <templates>
+        <template name="TResult" />
+      </templates>
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="staticMethodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="TResult" index="0" api="M:W.Domains.DomainLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])" />
+      </returns>
+      <implements>
+        <member api="M:W.Domains.IDomainLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])">
+          <type api="T:W.Domains.IDomainLoader" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.DomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.DomainLoader.ExecuteStaticMethod(System.String,System.String,System.Object[])">
+      <apidata name="ExecuteStaticMethod" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="staticMethodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <implements>
+        <member api="M:W.Domains.IDomainLoader.ExecuteStaticMethod(System.String,System.String,System.Object[])">
+          <type api="T:W.Domains.IDomainLoader" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.DomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.DomainLoader.Finalize">
+      <apidata name="Finalize" group="member" subgroup="method" />
+      <memberdata visibility="family" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:System.Object.Finalize">
+          <type api="T:System.Object" ref="true" />
+        </member>
+      </overrides>
+      <implements>
+        <member api="M:System.Object.Finalize">
+          <type api="T:System.Object" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.DomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.DomainLoader.GetData``1(System.String)">
+      <apidata name="GetData" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="TData" />
+      </templates>
+      <parameters>
+        <parameter name="name">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="TData" index="0" api="M:W.Domains.DomainLoader.GetData``1(System.String)" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.DomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.DomainLoader.Load">
+      <apidata name="Load" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <implements>
+        <member api="M:W.Domains.IDomainLoader.Load">
+          <type api="T:W.Domains.IDomainLoader" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.DomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.DomainLoader.SetData(System.String,System.Object)">
+      <apidata name="SetData" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="name">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="data">
+          <type api="T:System.Object" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.DomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.DomainLoader.Unload">
+      <apidata name="Unload" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <implements>
+        <member api="M:W.Domains.IDomainLoader.Unload">
+          <type api="T:W.Domains.IDomainLoader" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.DomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="T:W.Domains.IAssemblyLoader">
+      <apidata name="IAssemblyLoader" group="type" subgroup="interface" />
+      <typedata visibility="public" abstract="true" serializable="false" />
+      <implementors>
+        <type api="T:W.Domains.AssemblyLoader" ref="true" />
+      </implementors>
+      <elements>
+        <element api="M:W.Domains.IAssemblyLoader.Load(System.AppDomain,System.String)" />
+        <element api="M:W.Domains.IAssemblyLoader.Load(System.AppDomain,System.String,System.String)" />
+        <element api="M:W.Domains.IAssemblyLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])" />
+        <element api="M:W.Domains.IAssemblyLoader.ExecuteStaticMethod(System.String,System.String,System.Object[])" />
+        <element api="M:W.Domains.IAssemblyLoader.Execute``1(System.String,System.String,System.Object[])" />
+        <element api="M:W.Domains.IAssemblyLoader.Execute(System.String,System.String,System.Object[])" />
+        <element api="M:W.Domains.IAssemblyLoader.Create(System.String)" />
+        <element api="M:W.Domains.IAssemblyLoader.Create``1(System.String)" />
+      </elements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.IAssemblyLoader.Create(System.String)">
+      <apidata name="Create" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Object" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.IAssemblyLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.IAssemblyLoader.Create``1(System.String)">
+      <apidata name="Create" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <templates>
+        <template name="T" />
+      </templates>
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="T" index="0" api="M:W.Domains.IAssemblyLoader.Create``1(System.String)" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.IAssemblyLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.IAssemblyLoader.Execute``1(System.String,System.String,System.Object[])">
+      <apidata name="Execute" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <templates>
+        <template name="TResult" />
+      </templates>
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="methodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="TResult" index="0" api="M:W.Domains.IAssemblyLoader.Execute``1(System.String,System.String,System.Object[])" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.IAssemblyLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.IAssemblyLoader.Execute(System.String,System.String,System.Object[])">
+      <apidata name="Execute" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="methodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.IAssemblyLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.IAssemblyLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])">
+      <apidata name="ExecuteStaticMethod" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <templates>
+        <template name="TResult" />
+      </templates>
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="staticMethodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="TResult" index="0" api="M:W.Domains.IAssemblyLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.IAssemblyLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.IAssemblyLoader.ExecuteStaticMethod(System.String,System.String,System.Object[])">
+      <apidata name="ExecuteStaticMethod" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="staticMethodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.IAssemblyLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.IAssemblyLoader.Load(System.AppDomain,System.String)">
+      <apidata name="Load" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <parameters>
+        <parameter name="domain">
+          <type api="T:System.AppDomain" ref="true" />
+        </parameter>
+        <parameter name="filename">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.IAssemblyLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.IAssemblyLoader.Load(System.AppDomain,System.String,System.String)">
+      <apidata name="Load" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <parameters>
+        <parameter name="domain">
+          <type api="T:System.AppDomain" ref="true" />
+        </parameter>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="searchPattern">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.IAssemblyLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="T:W.Domains.IDomainLoader">
+      <apidata name="IDomainLoader" group="type" subgroup="interface" />
+      <typedata visibility="public" abstract="true" serializable="false" />
+      <implementors>
+        <type api="T:W.Domains.DomainLoader" ref="true" />
+      </implementors>
+      <elements>
+        <element api="M:W.Domains.IDomainLoader.Load" />
+        <element api="M:W.Domains.IDomainLoader.Unload" />
+        <element api="M:W.Domains.IDomainLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])" />
+        <element api="M:W.Domains.IDomainLoader.ExecuteStaticMethod(System.String,System.String,System.Object[])" />
+        <element api="M:W.Domains.IDomainLoader.Execute``1(System.String,System.String,System.Object[])" />
+        <element api="M:W.Domains.IDomainLoader.Execute(System.String,System.String,System.Object[])" />
+        <element api="M:W.Domains.IDomainLoader.Create(System.String)" />
+        <element api="M:W.Domains.IDomainLoader.Create``1(System.String)" />
+        <element api="M:W.Domains.IDomainLoader.Dispose" />
+      </elements>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.IDomainLoader.Create(System.String)">
+      <apidata name="Create" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Object" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.IDomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.IDomainLoader.Create``1(System.String)">
+      <apidata name="Create" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <templates>
+        <template name="TInterfaceType" />
+      </templates>
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="TInterfaceType" index="0" api="M:W.Domains.IDomainLoader.Create``1(System.String)" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.IDomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.IDomainLoader.Dispose">
+      <apidata name="Dispose" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.IDomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.IDomainLoader.Execute``1(System.String,System.String,System.Object[])">
+      <apidata name="Execute" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <templates>
+        <template name="TResult" />
+      </templates>
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="methodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="TResult" index="0" api="M:W.Domains.IDomainLoader.Execute``1(System.String,System.String,System.Object[])" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.IDomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.IDomainLoader.Execute(System.String,System.String,System.Object[])">
+      <apidata name="Execute" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="methodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.IDomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.IDomainLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])">
+      <apidata name="ExecuteStaticMethod" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <templates>
+        <template name="TResult" />
+      </templates>
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="staticMethodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="TResult" index="0" api="M:W.Domains.IDomainLoader.ExecuteStaticMethod``1(System.String,System.String,System.Object[])" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.IDomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.IDomainLoader.ExecuteStaticMethod(System.String,System.String,System.Object[])">
+      <apidata name="ExecuteStaticMethod" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <parameters>
+        <parameter name="typeName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="staticMethodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.IDomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.IDomainLoader.Load">
+      <apidata name="Load" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.IDomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Domains.IDomainLoader.Unload">
+      <apidata name="Unload" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <containers>
+        <library assembly="Tungsten.Domains" module="Tungsten.Domains" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Domains" />
+        <type api="T:W.Domains.IDomainLoader" ref="true" />
+      </containers>
+    </api>
+    <api id="N:W.LiteDb">
+      <apidata name="W.LiteDb" group="namespace" />
+      <elements>
+        <element api="T:W.LiteDb.ILiteDbItem" />
+        <element api="T:W.LiteDb.LiteDbItem" />
+        <element api="T:W.LiteDb.LiteDbMethods" />
+      </elements>
+    </api>
+    <api id="T:W.LiteDb.ILiteDbItem">
+      <apidata name="ILiteDbItem" group="type" subgroup="interface" />
+      <typedata visibility="public" abstract="true" serializable="false" />
+      <implementors>
+        <type api="T:W.LiteDb.LiteDbItem" ref="true" />
+      </implementors>
+      <elements>
+        <element api="P:W.LiteDb.ILiteDbItem._id" />
+      </elements>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+      </containers>
+    </api>
+    <api id="P:W.LiteDb.ILiteDbItem._id">
+      <apidata name="_id" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <propertydata get="true" set="true" />
+      <getter name="get__id" />
+      <setter name="set__id" />
+      <returns>
+        <type api="T:System.Int32" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.ILiteDbItem" ref="true" />
+      </containers>
+    </api>
+    <api id="T:W.LiteDb.LiteDbItem">
+      <apidata name="LiteDbItem" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <implements>
+        <type api="T:W.LiteDb.ILiteDbItem" ref="true" />
+      </implements>
+      <elements>
+        <element api="M:W.LiteDb.LiteDbItem.#ctor" />
+        <element api="P:W.LiteDb.LiteDbItem._id" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
+          <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="T" />
+          </templates>
+          <parameters>
+            <parameter name="action">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+                  <type api="T:System.Threading.CancellationTokenSource" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="onComplete">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <type api="T:System.Boolean" ref="false" />
+                  <type api="T:System.Exception" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="customData">
+              <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:W.Threading.Thread`1" ref="true">
+              <specialization>
+                <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W.Threading" />
+            <type api="T:W.Threading.ThreadExtensions" ref="true" />
+          </containers>
+        </element>
+      </elements>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbItem.#ctor">
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" />
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbItem" ref="true" />
+      </containers>
+    </api>
+    <api id="P:W.LiteDb.LiteDbItem._id">
+      <apidata name="_id" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <propertydata get="true" set="true" />
+      <getter name="get__id" />
+      <setter name="set__id" />
+      <returns>
+        <type api="T:System.Int32" ref="false" />
+      </returns>
+      <implements>
+        <member api="P:W.LiteDb.ILiteDbItem._id">
+          <type api="T:W.LiteDb.ILiteDbItem" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbItem" ref="true" />
+      </containers>
+    </api>
+    <api id="T:W.LiteDb.LiteDbMethods">
+      <apidata name="LiteDbMethods" group="type" subgroup="class" />
+      <typedata visibility="public" abstract="true" sealed="true" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <elements>
+        <element api="M:W.LiteDb.LiteDbMethods.LiteDbAction``2(System.String,System.Func{LiteDB.LiteDatabase,``1},System.String,System.String,System.Int32)" />
+        <element api="M:W.LiteDb.LiteDbMethods.LiteDbAction``2(System.String,System.Func{LiteDB.LiteDatabase,LiteDB.LiteCollection{``0},``1},System.String,System.String,System.Int32)" />
+        <element api="M:W.LiteDb.LiteDbMethods.LiteDbAction``2(System.String,System.Func{LiteDB.LiteDatabase,LiteDB.LiteTransaction,LiteDB.LiteCollection{``0},``1},System.String,System.String,System.Int32)" />
+        <element api="M:W.LiteDb.LiteDbMethods.EnsureIndex``1(LiteDB.LiteDatabase,System.String)" />
+        <element api="M:W.LiteDb.LiteDbMethods.EnsureIndex``1(LiteDB.LiteCollection{``0},System.String)" />
+        <element api="M:W.LiteDb.LiteDbMethods.EnsureIndex``1(System.String,System.String)" />
+        <element api="M:W.LiteDb.LiteDbMethods.Exists``1(System.String,System.String,System.Object)" />
+        <element api="M:W.LiteDb.LiteDbMethods.Exists``1(System.String,System.Func{``0,System.Boolean})" />
+        <element api="M:W.LiteDb.LiteDbMethods.FindOne``1(System.String,System.String,System.Object)" />
+        <element api="M:W.LiteDb.LiteDbMethods.FindOne``1(System.String,System.Func{``0,System.Boolean})" />
+        <element api="M:W.LiteDb.LiteDbMethods.Find``1(System.String,System.String,System.Object)" />
+        <element api="M:W.LiteDb.LiteDbMethods.Find``1(System.String,System.Func{``0,System.Boolean})" />
+        <element api="M:W.LiteDb.LiteDbMethods.Find``1(System.String)" />
+        <element api="M:W.LiteDb.LiteDbMethods.Save``1(System.String,``0)" />
+        <element api="M:W.LiteDb.LiteDbMethods.Save``1(System.String,System.Collections.Generic.List{``0})" />
+        <element api="M:W.LiteDb.LiteDbMethods.Delete``1(System.String,System.Int32)" />
+        <element api="M:W.LiteDb.LiteDbMethods.Delete``1(System.String,System.String,System.Object)" />
+        <element api="M:W.LiteDb.LiteDbMethods.Delete``1(System.String,System.Func{``0,System.Boolean})" />
+        <element api="M:W.LiteDb.LiteDbMethods.Drop``1(System.String)" />
+        <element api="M:W.LiteDb.LiteDbMethods.FileSize(System.String)" />
+        <element api="M:W.LiteDb.LiteDbMethods.SaveBitmap(System.String,System.String,System.Drawing.Bitmap)" />
+        <element api="M:W.LiteDb.LiteDbMethods.DownloadAndSaveBitmap(System.String,System.String)" />
+        <element api="M:W.LiteDb.LiteDbMethods.LoadBitmap(System.String,System.String)" />
+        <element api="M:W.LiteDb.LiteDbMethods.DeleteBitmap(System.String,System.String)" />
+      </elements>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.Delete``1(System.String,System.Func{``0,System.Boolean})">
+      <apidata name="Delete" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T">
+          <constrained ctor="true" />
+        </template>
+      </templates>
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="match">
+          <type api="T:System.Func`2" ref="true">
+            <specialization>
+              <template name="T" index="0" api="M:W.LiteDb.LiteDbMethods.Delete``1(System.String,System.Func{``0,System.Boolean})" />
+              <type api="T:System.Boolean" ref="false" />
+            </specialization>
+          </type>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <type api="T:System.Int32" ref="false" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.Delete``1(System.String,System.Int32)">
+      <apidata name="Delete" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T">
+          <constrained ctor="true" />
+        </template>
+      </templates>
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="id">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <type api="T:System.Boolean" ref="false" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.Delete``1(System.String,System.String,System.Object)">
+      <apidata name="Delete" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T">
+          <constrained ctor="true" />
+        </template>
+      </templates>
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="fieldName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="fieldValue">
+          <type api="T:System.Object" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <type api="T:System.Int32" ref="false" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.DeleteBitmap(System.String,System.String)">
+      <apidata name="DeleteBitmap" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="url">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.DownloadAndSaveBitmap(System.String,System.String)">
+      <apidata name="DownloadAndSaveBitmap" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="url">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.Drop``1(System.String)">
+      <apidata name="Drop" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T">
+          <constrained ctor="true" />
+        </template>
+      </templates>
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <type api="T:System.Boolean" ref="false" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.EnsureIndex``1(LiteDB.LiteCollection{``0},System.String)">
+      <apidata name="EnsureIndex" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="TItemType">
+          <constrained ctor="true" />
+        </template>
+      </templates>
+      <parameters>
+        <parameter name="collection">
+          <type api="T:LiteDB.LiteCollection`1" ref="true">
+            <specialization>
+              <template name="TItemType" index="0" api="M:W.LiteDb.LiteDbMethods.EnsureIndex``1(LiteDB.LiteCollection{``0},System.String)" />
+            </specialization>
+          </type>
+        </parameter>
+        <parameter name="fieldName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <type api="T:System.Boolean" ref="false" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.EnsureIndex``1(LiteDB.LiteDatabase,System.String)">
+      <apidata name="EnsureIndex" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="TItemType">
+          <constrained ctor="true" />
+        </template>
+      </templates>
+      <parameters>
+        <parameter name="db">
+          <type api="T:LiteDB.LiteDatabase" ref="true" />
+        </parameter>
+        <parameter name="fieldName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <type api="T:System.Boolean" ref="false" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.EnsureIndex``1(System.String,System.String)">
+      <apidata name="EnsureIndex" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="TItemType">
+          <constrained ctor="true" />
+        </template>
+      </templates>
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="fieldName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <type api="T:System.Boolean" ref="false" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.Exists``1(System.String,System.Func{``0,System.Boolean})">
+      <apidata name="Exists" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T">
+          <constrained ctor="true" />
+        </template>
+      </templates>
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="match">
+          <type api="T:System.Func`2" ref="true">
+            <specialization>
+              <template name="T" index="0" api="M:W.LiteDb.LiteDbMethods.Exists``1(System.String,System.Func{``0,System.Boolean})" />
+              <type api="T:System.Boolean" ref="false" />
+            </specialization>
+          </type>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <type api="T:System.Boolean" ref="false" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.Exists``1(System.String,System.String,System.Object)">
+      <apidata name="Exists" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T">
+          <constrained ctor="true" />
+        </template>
+      </templates>
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="fieldName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="fieldValue">
+          <type api="T:System.Object" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <type api="T:System.Boolean" ref="false" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.FileSize(System.String)">
+      <apidata name="FileSize" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Int64" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.Find``1(System.String)">
+      <apidata name="Find" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T">
+          <constrained ctor="true" />
+        </template>
+      </templates>
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <type api="T:System.Collections.Generic.IEnumerable`1" ref="true">
+              <specialization>
+                <template name="T" index="0" api="M:W.LiteDb.LiteDbMethods.Find``1(System.String)" />
+              </specialization>
+            </type>
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.Find``1(System.String,System.Func{``0,System.Boolean})">
+      <apidata name="Find" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T">
+          <constrained ctor="true" />
+        </template>
+      </templates>
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="match">
+          <type api="T:System.Func`2" ref="true">
+            <specialization>
+              <template name="T" index="0" api="M:W.LiteDb.LiteDbMethods.Find``1(System.String,System.Func{``0,System.Boolean})" />
+              <type api="T:System.Boolean" ref="false" />
+            </specialization>
+          </type>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <type api="T:System.Collections.Generic.IEnumerable`1" ref="true">
+              <specialization>
+                <template name="T" index="0" api="M:W.LiteDb.LiteDbMethods.Find``1(System.String,System.Func{``0,System.Boolean})" />
+              </specialization>
+            </type>
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.Find``1(System.String,System.String,System.Object)">
+      <apidata name="Find" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T">
+          <constrained ctor="true" />
+        </template>
+      </templates>
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="fieldName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="fieldValue">
+          <type api="T:System.Object" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <type api="T:System.Collections.Generic.IEnumerable`1" ref="true">
+              <specialization>
+                <template name="T" index="0" api="M:W.LiteDb.LiteDbMethods.Find``1(System.String,System.String,System.Object)" />
+              </specialization>
+            </type>
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.FindOne``1(System.String,System.Func{``0,System.Boolean})">
+      <apidata name="FindOne" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T">
+          <constrained ctor="true" />
+        </template>
+      </templates>
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="match">
+          <type api="T:System.Func`2" ref="true">
+            <specialization>
+              <template name="T" index="0" api="M:W.LiteDb.LiteDbMethods.FindOne``1(System.String,System.Func{``0,System.Boolean})" />
+              <type api="T:System.Boolean" ref="false" />
+            </specialization>
+          </type>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <template name="T" index="0" api="M:W.LiteDb.LiteDbMethods.FindOne``1(System.String,System.Func{``0,System.Boolean})" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.FindOne``1(System.String,System.String,System.Object)">
+      <apidata name="FindOne" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T">
+          <constrained ctor="true" />
+        </template>
+      </templates>
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="fieldName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="fieldValue">
+          <type api="T:System.Object" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <template name="T" index="0" api="M:W.LiteDb.LiteDbMethods.FindOne``1(System.String,System.String,System.Object)" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.LiteDbAction``2(System.String,System.Func{LiteDB.LiteDatabase,``1},System.String,System.String,System.Int32)">
+      <apidata name="LiteDbAction" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T">
+          <constrained ctor="true" />
+        </template>
+        <template name="U" />
+      </templates>
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="f">
+          <type api="T:System.Func`2" ref="true">
+            <specialization>
+              <type api="T:LiteDB.LiteDatabase" ref="true" />
+              <template name="U" index="1" api="M:W.LiteDb.LiteDbMethods.LiteDbAction``2(System.String,System.Func{LiteDB.LiteDatabase,``1},System.String,System.String,System.Int32)" />
+            </specialization>
+          </type>
+        </parameter>
+        <parameter name="callerMemberName" optional="true">
+          <type api="T:System.String" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value />
+          </argument>
+        </parameter>
+        <parameter name="callerFilePath" optional="true">
+          <type api="T:System.String" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value />
+          </argument>
+        </parameter>
+        <parameter name="callerLineNumber" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>0</value>
+          </argument>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <template name="U" index="1" api="M:W.LiteDb.LiteDbMethods.LiteDbAction``2(System.String,System.Func{LiteDB.LiteDatabase,``1},System.String,System.String,System.Int32)" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.LiteDbAction``2(System.String,System.Func{LiteDB.LiteDatabase,LiteDB.LiteCollection{``0},``1},System.String,System.String,System.Int32)">
+      <apidata name="LiteDbAction" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T">
+          <constrained ctor="true" />
+        </template>
+        <template name="U" />
+      </templates>
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="f">
+          <type api="T:System.Func`3" ref="true">
+            <specialization>
+              <type api="T:LiteDB.LiteDatabase" ref="true" />
+              <type api="T:LiteDB.LiteCollection`1" ref="true">
+                <specialization>
+                  <template name="T" index="0" api="M:W.LiteDb.LiteDbMethods.LiteDbAction``2(System.String,System.Func{LiteDB.LiteDatabase,LiteDB.LiteCollection{``0},``1},System.String,System.String,System.Int32)" />
+                </specialization>
+              </type>
+              <template name="U" index="1" api="M:W.LiteDb.LiteDbMethods.LiteDbAction``2(System.String,System.Func{LiteDB.LiteDatabase,LiteDB.LiteCollection{``0},``1},System.String,System.String,System.Int32)" />
+            </specialization>
+          </type>
+        </parameter>
+        <parameter name="callerMemberName" optional="true">
+          <type api="T:System.String" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value />
+          </argument>
+        </parameter>
+        <parameter name="callerFilePath" optional="true">
+          <type api="T:System.String" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value />
+          </argument>
+        </parameter>
+        <parameter name="callerLineNumber" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>0</value>
+          </argument>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <template name="U" index="1" api="M:W.LiteDb.LiteDbMethods.LiteDbAction``2(System.String,System.Func{LiteDB.LiteDatabase,LiteDB.LiteCollection{``0},``1},System.String,System.String,System.Int32)" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.LiteDbAction``2(System.String,System.Func{LiteDB.LiteDatabase,LiteDB.LiteTransaction,LiteDB.LiteCollection{``0},``1},System.String,System.String,System.Int32)">
+      <apidata name="LiteDbAction" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T">
+          <constrained ctor="true" />
+        </template>
+        <template name="U" />
+      </templates>
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="f">
+          <type api="T:System.Func`4" ref="true">
+            <specialization>
+              <type api="T:LiteDB.LiteDatabase" ref="true" />
+              <type api="T:LiteDB.LiteTransaction" ref="true" />
+              <type api="T:LiteDB.LiteCollection`1" ref="true">
+                <specialization>
+                  <template name="T" index="0" api="M:W.LiteDb.LiteDbMethods.LiteDbAction``2(System.String,System.Func{LiteDB.LiteDatabase,LiteDB.LiteTransaction,LiteDB.LiteCollection{``0},``1},System.String,System.String,System.Int32)" />
+                </specialization>
+              </type>
+              <template name="U" index="1" api="M:W.LiteDb.LiteDbMethods.LiteDbAction``2(System.String,System.Func{LiteDB.LiteDatabase,LiteDB.LiteTransaction,LiteDB.LiteCollection{``0},``1},System.String,System.String,System.Int32)" />
+            </specialization>
+          </type>
+        </parameter>
+        <parameter name="callerMemberName" optional="true">
+          <type api="T:System.String" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value />
+          </argument>
+        </parameter>
+        <parameter name="callerFilePath" optional="true">
+          <type api="T:System.String" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value />
+          </argument>
+        </parameter>
+        <parameter name="callerLineNumber" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>0</value>
+          </argument>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <template name="U" index="1" api="M:W.LiteDb.LiteDbMethods.LiteDbAction``2(System.String,System.Func{LiteDB.LiteDatabase,LiteDB.LiteTransaction,LiteDB.LiteCollection{``0},``1},System.String,System.String,System.Int32)" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.LoadBitmap(System.String,System.String)">
+      <apidata name="LoadBitmap" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="url">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Drawing.Bitmap" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.Save``1(System.String,System.Collections.Generic.List{``0})">
+      <apidata name="Save" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T">
+          <constrained ref="true" ctor="true">
+            <implements>
+              <type api="T:W.LiteDb.ILiteDbItem" ref="true" />
+            </implements>
+          </constrained>
+        </template>
+      </templates>
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="items">
+          <type api="T:System.Collections.Generic.List`1" ref="true">
+            <specialization>
+              <template name="T" index="0" api="M:W.LiteDb.LiteDbMethods.Save``1(System.String,System.Collections.Generic.List{``0})" />
+            </specialization>
+          </type>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <type api="T:System.Collections.Generic.List`1" ref="true">
+              <specialization>
+                <template name="T" index="0" api="M:W.LiteDb.LiteDbMethods.Save``1(System.String,System.Collections.Generic.List{``0})" />
+              </specialization>
+            </type>
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.Save``1(System.String,``0)">
+      <apidata name="Save" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T">
+          <constrained ctor="true">
+            <implements>
+              <type api="T:W.LiteDb.ILiteDbItem" ref="true" />
+            </implements>
+          </constrained>
+        </template>
+      </templates>
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="item">
+          <template name="T" index="0" api="M:W.LiteDb.LiteDbMethods.Save``1(System.String,``0)" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult`1" ref="true">
+          <specialization>
+            <type api="T:System.Int32" ref="false" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.LiteDb.LiteDbMethods.SaveBitmap(System.String,System.String,System.Drawing.Bitmap)">
+      <apidata name="SaveBitmap" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="path">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="url">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="bitmap">
+          <type api="T:System.Drawing.Bitmap" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Drawing.Bitmap" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.LiteDb" module="Tungsten.LiteDb" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.LiteDb" />
+        <type api="T:W.LiteDb.LiteDbMethods" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
     <api id="N:W.Logging">
       <apidata name="W.Logging" group="namespace" />
       <elements>
@@ -2760,6 +5058,1049 @@
         <type api="T:W.Logging.Log.LogMessageCategory" ref="false">
           <type api="T:W.Logging.Log" ref="true" />
         </type>
+      </containers>
+    </api>
+    <api id="N:W.RPC">
+      <apidata name="W.RPC" group="namespace" />
+      <elements>
+        <element api="T:W.RPC.Client" />
+        <element api="T:W.RPC.Client.ConnectedDelegate" />
+        <element api="T:W.RPC.Client.DisconnectedDelegate" />
+        <element api="T:W.RPC.Server" />
+        <element api="T:W.RPC.RPCClassAttribute" />
+        <element api="T:W.RPC.RPCMethodAttribute" />
+      </elements>
+    </api>
+    <api id="T:W.RPC.Client">
+      <apidata name="Client" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <implements>
+        <type api="T:System.IDisposable" ref="true" />
+      </implements>
+      <elements>
+        <element api="F:W.RPC.Client.DefaultConnectTimeout" />
+        <element api="F:W.RPC.Client.DefaultMakeRPCCallTimeout" />
+        <element api="M:W.RPC.Client.MakeRPCCall``1(System.String,System.Action{``0})" />
+        <element api="M:W.RPC.Client.MakeRPCCall``1(System.String,System.Action{``0},System.Object[])" />
+        <element api="M:W.RPC.Client.MakeRPCCall(System.String,System.Action,System.Object[])" />
+        <element api="M:W.RPC.Client.Connect(System.String,System.Int32,System.Int32,System.Action{W.RPC.Client,System.Net.IPAddress})" />
+        <element api="M:W.RPC.Client.Connect(System.Net.IPAddress,System.Int32,System.Int32,System.Action{W.RPC.Client,System.Net.IPAddress})" />
+        <element api="M:W.RPC.Client.ConnectAsync(System.String,System.Int32,System.Int32)" />
+        <element api="M:W.RPC.Client.ConnectAsync(System.Net.IPAddress,System.Int32,System.Int32)" />
+        <element api="M:W.RPC.Client.Disconnect" />
+        <element api="M:W.RPC.Client.#ctor" />
+        <element api="M:W.RPC.Client.#ctor(System.String,System.Int32,System.Int32)" />
+        <element api="M:W.RPC.Client.#ctor(System.Net.IPAddress,System.Int32,System.Int32)" />
+        <element api="M:W.RPC.Client.Finalize" />
+        <element api="M:W.RPC.Client.Dispose" />
+        <element api="P:W.RPC.Client.IsConnected" />
+        <element api="E:W.RPC.Client.Connected" />
+        <element api="E:W.RPC.Client.Disconnected" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
+          <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="T" />
+          </templates>
+          <parameters>
+            <parameter name="action">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+                  <type api="T:System.Threading.CancellationTokenSource" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="onComplete">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <type api="T:System.Boolean" ref="false" />
+                  <type api="T:System.Exception" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="customData">
+              <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:W.Threading.Thread`1" ref="true">
+              <specialization>
+                <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W.Threading" />
+            <type api="T:W.Threading.ThreadExtensions" ref="true" />
+          </containers>
+        </element>
+      </elements>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Client.#ctor">
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" />
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Client.#ctor(System.Net.IPAddress,System.Int32,System.Int32)">
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" />
+      <parameters>
+        <parameter name="remoteAddress">
+          <type api="T:System.Net.IPAddress" ref="true" />
+        </parameter>
+        <parameter name="remotePort">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+        <parameter name="msTimeout" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>10000</value>
+          </argument>
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Client.#ctor(System.String,System.Int32,System.Int32)">
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" />
+      <parameters>
+        <parameter name="remoteAddress">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="remotePort">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+        <parameter name="msTimeout" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>10000</value>
+          </argument>
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Client.Connect(System.Net.IPAddress,System.Int32,System.Int32,System.Action{W.RPC.Client,System.Net.IPAddress})">
+      <apidata name="Connect" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="remoteAddress">
+          <type api="T:System.Net.IPAddress" ref="true" />
+        </parameter>
+        <parameter name="remotePort">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+        <parameter name="msTimeout" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>10000</value>
+          </argument>
+        </parameter>
+        <parameter name="onConnection" optional="true">
+          <type api="T:System.Action`2" ref="true">
+            <specialization>
+              <type api="T:W.RPC.Client" ref="true" />
+              <type api="T:System.Net.IPAddress" ref="true" />
+            </specialization>
+          </type>
+          <argument>
+            <type api="T:System.Object" ref="true" />
+            <nullValue />
+          </argument>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Client.Connect(System.String,System.Int32,System.Int32,System.Action{W.RPC.Client,System.Net.IPAddress})">
+      <apidata name="Connect" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="remoteAddress">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="remotePort">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+        <parameter name="msTimeout" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>10000</value>
+          </argument>
+        </parameter>
+        <parameter name="onConnection" optional="true">
+          <type api="T:System.Action`2" ref="true">
+            <specialization>
+              <type api="T:W.RPC.Client" ref="true" />
+              <type api="T:System.Net.IPAddress" ref="true" />
+            </specialization>
+          </type>
+          <argument>
+            <type api="T:System.Object" ref="true" />
+            <nullValue />
+          </argument>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.CallResult" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Client.ConnectAsync(System.Net.IPAddress,System.Int32,System.Int32)">
+      <apidata name="ConnectAsync" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="remoteAddress">
+          <type api="T:System.Net.IPAddress" ref="true" />
+        </parameter>
+        <parameter name="remotePort">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+        <parameter name="msTimeout" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>10000</value>
+          </argument>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Threading.Tasks.Task" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Client.ConnectAsync(System.String,System.Int32,System.Int32)">
+      <apidata name="ConnectAsync" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="remoteAddress">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="remotePort">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+        <parameter name="msTimeout" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>10000</value>
+          </argument>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Threading.Tasks.Task" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="E:W.RPC.Client.Connected">
+      <apidata name="Connected" group="member" subgroup="event" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <eventdata add="true" remove="true" />
+      <adder name="add_Connected" />
+      <remover name="remove_Connected" />
+      <eventhandler>
+        <type api="T:W.RPC.Client.ConnectedDelegate" ref="true">
+          <type api="T:W.RPC.Client" ref="true" />
+        </type>
+      </eventhandler>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="F:W.RPC.Client.DefaultConnectTimeout">
+      <apidata name="DefaultConnectTimeout" group="member" subgroup="field" />
+      <memberdata visibility="public" static="true" />
+      <fielddata literal="true" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:System.Int32" ref="false" />
+      </returns>
+      <value>10000</value>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="F:W.RPC.Client.DefaultMakeRPCCallTimeout">
+      <apidata name="DefaultMakeRPCCallTimeout" group="member" subgroup="field" />
+      <memberdata visibility="public" static="true" />
+      <fielddata literal="true" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:System.Int32" ref="false" />
+      </returns>
+      <value>30000</value>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Client.Disconnect">
+      <apidata name="Disconnect" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="E:W.RPC.Client.Disconnected">
+      <apidata name="Disconnected" group="member" subgroup="event" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <eventdata add="true" remove="true" />
+      <adder name="add_Disconnected" />
+      <remover name="remove_Disconnected" />
+      <eventhandler>
+        <type api="T:W.RPC.Client.DisconnectedDelegate" ref="true">
+          <type api="T:W.RPC.Client" ref="true" />
+        </type>
+      </eventhandler>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Client.Dispose">
+      <apidata name="Dispose" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <implements>
+        <member api="M:System.IDisposable.Dispose">
+          <type api="T:System.IDisposable" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Client.Finalize">
+      <apidata name="Finalize" group="member" subgroup="method" />
+      <memberdata visibility="family" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:System.Object.Finalize">
+          <type api="T:System.Object" ref="true" />
+        </member>
+      </overrides>
+      <implements>
+        <member api="M:System.Object.Finalize">
+          <type api="T:System.Object" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="P:W.RPC.Client.IsConnected">
+      <apidata name="IsConnected" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <propertydata get="true" />
+      <getter name="get_IsConnected" />
+      <returns>
+        <type api="T:System.Boolean" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Client.MakeRPCCall(System.String,System.Action,System.Object[])">
+      <apidata name="MakeRPCCall" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="methodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="onResponse">
+          <type api="T:System.Action" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Threading.ManualResetEvent" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Client.MakeRPCCall``1(System.String,System.Action{``0})">
+      <apidata name="MakeRPCCall" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T" />
+      </templates>
+      <parameters>
+        <parameter name="methodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="onResponse">
+          <type api="T:System.Action`1" ref="true">
+            <specialization>
+              <template name="T" index="0" api="M:W.RPC.Client.MakeRPCCall``1(System.String,System.Action{``0})" />
+            </specialization>
+          </type>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Threading.ManualResetEvent" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Client.MakeRPCCall``1(System.String,System.Action{``0},System.Object[])">
+      <apidata name="MakeRPCCall" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="T" />
+      </templates>
+      <parameters>
+        <parameter name="methodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="onResponse">
+          <type api="T:System.Action`1" ref="true">
+            <specialization>
+              <template name="T" index="0" api="M:W.RPC.Client.MakeRPCCall``1(System.String,System.Action{``0},System.Object[])" />
+            </specialization>
+          </type>
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Threading.ManualResetEvent" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="T:W.RPC.Client.ConnectedDelegate">
+      <apidata name="ConnectedDelegate" group="type" subgroup="delegate" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <parameters>
+        <parameter name="client">
+          <type api="T:W.RPC.Client" ref="true" />
+        </parameter>
+        <parameter name="remoteAddress">
+          <type api="T:System.Net.IPAddress" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="T:W.RPC.Client.DisconnectedDelegate">
+      <apidata name="DisconnectedDelegate" group="type" subgroup="delegate" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <parameters>
+        <parameter name="client">
+          <type api="T:W.RPC.Client" ref="true" />
+        </parameter>
+        <parameter name="exception">
+          <type api="T:System.Exception" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </containers>
+    </api>
+    <api id="T:W.RPC.RPCClassAttribute">
+      <apidata name="RPCClassAttribute" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:System.Attribute" ref="true" />
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <elements>
+        <element api="M:W.RPC.RPCClassAttribute.#ctor" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
+          <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="T" />
+          </templates>
+          <parameters>
+            <parameter name="action">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+                  <type api="T:System.Threading.CancellationTokenSource" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="onComplete">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <type api="T:System.Boolean" ref="false" />
+                  <type api="T:System.Exception" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="customData">
+              <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:W.Threading.Thread`1" ref="true">
+              <specialization>
+                <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W.Threading" />
+            <type api="T:W.Threading.ThreadExtensions" ref="true" />
+          </containers>
+        </element>
+      </elements>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.RPCClassAttribute.#ctor">
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" />
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.RPCClassAttribute" ref="true" />
+      </containers>
+    </api>
+    <api id="T:W.RPC.RPCMethodAttribute">
+      <apidata name="RPCMethodAttribute" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:System.Attribute" ref="true" />
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <elements>
+        <element api="M:W.RPC.RPCMethodAttribute.#ctor" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
+          <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="T" />
+          </templates>
+          <parameters>
+            <parameter name="action">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+                  <type api="T:System.Threading.CancellationTokenSource" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="onComplete">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <type api="T:System.Boolean" ref="false" />
+                  <type api="T:System.Exception" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="customData">
+              <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:W.Threading.Thread`1" ref="true">
+              <specialization>
+                <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W.Threading" />
+            <type api="T:W.Threading.ThreadExtensions" ref="true" />
+          </containers>
+        </element>
+      </elements>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.RPCMethodAttribute.#ctor">
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" />
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.RPCMethodAttribute" ref="true" />
+      </containers>
+    </api>
+    <api id="T:W.RPC.Server">
+      <apidata name="Server" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:System.MarshalByRefObject" ref="true" />
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <implements>
+        <type api="T:System.IDisposable" ref="true" />
+        <type api="T:W.RPC.Interfaces.IServer" ref="true" />
+      </implements>
+      <elements>
+        <element api="M:W.RPC.Server.#ctor" />
+        <element api="M:W.RPC.Server.#ctor(System.Net.IPAddress,System.Int32)" />
+        <element api="M:W.RPC.Server.Finalize" />
+        <element api="M:W.RPC.Server.Start(System.Net.IPAddress,System.Int32)" />
+        <element api="M:W.RPC.Server.Stop" />
+        <element api="M:W.RPC.Server.Create(System.Net.IPAddress,System.Int32)" />
+        <element api="M:W.RPC.Server.Dispose" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
+          <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="T" />
+          </templates>
+          <parameters>
+            <parameter name="action">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+                  <type api="T:System.Threading.CancellationTokenSource" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="onComplete">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <type api="T:System.Boolean" ref="false" />
+                  <type api="T:System.Exception" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="customData">
+              <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:W.Threading.Thread`1" ref="true">
+              <specialization>
+                <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W.Threading" />
+            <type api="T:W.Threading.ThreadExtensions" ref="true" />
+          </containers>
+        </element>
+      </elements>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Server.#ctor">
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" />
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Server" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Server.#ctor(System.Net.IPAddress,System.Int32)">
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" />
+      <parameters>
+        <parameter name="ipAddress">
+          <type api="T:System.Net.IPAddress" ref="true" />
+        </parameter>
+        <parameter name="port">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Server" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Server.Create(System.Net.IPAddress,System.Int32)">
+      <apidata name="Create" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="ipAddress">
+          <type api="T:System.Net.IPAddress" ref="true" />
+        </parameter>
+        <parameter name="port">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:W.RPC.Server" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Server" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Server.Dispose">
+      <apidata name="Dispose" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <implements>
+        <member api="M:System.IDisposable.Dispose">
+          <type api="T:System.IDisposable" ref="true" />
+        </member>
+        <member api="M:W.RPC.Interfaces.IServer.Dispose">
+          <type api="T:W.RPC.Interfaces.IServer" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Server" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Server.Finalize">
+      <apidata name="Finalize" group="member" subgroup="method" />
+      <memberdata visibility="family" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:System.Object.Finalize">
+          <type api="T:System.Object" ref="true" />
+        </member>
+      </overrides>
+      <implements>
+        <member api="M:System.Object.Finalize">
+          <type api="T:System.Object" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Server" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Server.Start(System.Net.IPAddress,System.Int32)">
+      <apidata name="Start" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <parameters>
+        <parameter name="ipAddress">
+          <type api="T:System.Net.IPAddress" ref="true" />
+        </parameter>
+        <parameter name="port">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+      </parameters>
+      <implements>
+        <member api="M:W.RPC.Interfaces.IServer.Start(System.Net.IPAddress,System.Int32)">
+          <type api="T:W.RPC.Interfaces.IServer" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Server" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Server.Stop">
+      <apidata name="Stop" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <implements>
+        <member api="M:W.RPC.Interfaces.IServer.Stop">
+          <type api="T:W.RPC.Interfaces.IServer" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Server" ref="true" />
+      </containers>
+    </api>
+    <api id="N:W.RPC.Interfaces">
+      <apidata name="W.RPC.Interfaces" group="namespace" />
+      <elements>
+        <element api="T:W.RPC.Interfaces.IServer" />
+      </elements>
+    </api>
+    <api id="T:W.RPC.Interfaces.IServer">
+      <apidata name="IServer" group="type" subgroup="interface" />
+      <typedata visibility="public" abstract="true" serializable="false" />
+      <implementors>
+        <type api="T:W.RPC.Server" ref="true" />
+      </implementors>
+      <elements>
+        <element api="M:W.RPC.Interfaces.IServer.Start(System.Net.IPAddress,System.Int32)" />
+        <element api="M:W.RPC.Interfaces.IServer.Stop" />
+        <element api="M:W.RPC.Interfaces.IServer.Dispose" />
+      </elements>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC.Interfaces" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Interfaces.IServer.Dispose">
+      <apidata name="Dispose" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC.Interfaces" />
+        <type api="T:W.RPC.Interfaces.IServer" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Interfaces.IServer.Start(System.Net.IPAddress,System.Int32)">
+      <apidata name="Start" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <parameters>
+        <parameter name="address">
+          <type api="T:System.Net.IPAddress" ref="true" />
+        </parameter>
+        <parameter name="port">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC.Interfaces" />
+        <type api="T:W.RPC.Interfaces.IServer" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Interfaces.IServer.Stop">
+      <apidata name="Stop" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC.Interfaces" />
+        <type api="T:W.RPC.Interfaces.IServer" ref="true" />
       </containers>
     </api>
     <api id="N:W.Threading">

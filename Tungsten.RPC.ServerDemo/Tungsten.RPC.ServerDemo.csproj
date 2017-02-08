@@ -7,11 +7,12 @@
     <ProjectGuid>{DBEB2ACC-8614-42AA-AF40-CB94467AFA3B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tungsten.RPC.ServerDemo</RootNamespace>
+    <RootNamespace>W.RPC.ServerDemo</RootNamespace>
     <AssemblyName>Tungsten.RPC.ServerDemo</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -50,6 +51,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Tungsten.RPC.API.Demo\Tungsten.RPC.API.Demo.csproj">
+      <Project>{5e23a1d5-43d6-440f-96fd-44741c60a2fb}</Project>
+      <Name>Tungsten.RPC.API.Demo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tungsten.RPC.Interfaces\Tungsten.RPC.Interfaces.csproj">
+      <Project>{3fe96d19-fda8-4948-a0fe-f200748cc729}</Project>
+      <Name>Tungsten.RPC.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tungsten.RPC\Tungsten.RPC.csproj">
       <Project>{94ddf259-9abb-41ee-8ccd-1cddf596b503}</Project>
       <Name>Tungsten.RPC</Name>

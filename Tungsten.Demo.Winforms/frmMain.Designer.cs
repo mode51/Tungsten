@@ -1,4 +1,4 @@
-﻿namespace Tungsten.Demo.Winforms
+﻿namespace W.Demo.Winforms
 {
     partial class frmMain
     {
@@ -135,7 +135,7 @@
             // 
             // viewModelTestBindingSource
             // 
-            this.viewModelTestBindingSource.DataSource = typeof(Tungsten.Demo.Winforms.CPerson);
+            this.viewModelTestBindingSource.DataSource = typeof(CPerson);
             // 
             // frmMain
             // 

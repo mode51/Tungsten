@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tungsten.Demo.Winforms
+namespace W.Demo.Winforms
 {
     static class Program
     {

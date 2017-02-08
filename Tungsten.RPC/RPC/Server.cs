@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Reflection;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using W.Logging;
 using Newtonsoft.Json.Linq;
+using W.RPC.Interfaces;
 
 namespace W.RPC
 {
@@ -25,13 +27,15 @@ namespace W.RPC
     /// <summary>
     /// Hosts an RPC instance
     /// </summary>
-    public class Server
+    public class Server : MarshalByRefObject, IDisposable, IServer
     {
         private EncryptedServer<EncryptedClient<Message>> _host;
         private Dictionary<string, MethodInfo> _methods = new Dictionary<string, MethodInfo>();
+        private bool _isListening = false;
 
         private void FindAllRPCMethods()
         {
+            //scan the assemblies for RPC attributes
             var assemblies = AppDomain.CurrentDomain.GetAssemblies();
             var srcPath = System.IO.Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
 
@@ -39,10 +43,13 @@ namespace W.RPC
             foreach (var asm in assemblies)
             {
                 if (asm.IsDynamic)
+                {
+                    Console.WriteLine("RPC ignoring dynamic assembly: " + asm.GetName().Name);
                     continue;
-                var path = System.IO.Path.GetDirectoryName(asm.Location);
-                if (!path.StartsWith(srcPath))
-                    continue;
+                }
+                //var path = System.IO.Path.GetDirectoryName(asm.Location);
+                //if (!path.StartsWith(srcPath))
+                //    continue;
                 foreach (var t in asm.GetExportedTypes())
                 {
                     foreach (var a in t.GetCustomAttributes())
@@ -120,6 +127,29 @@ namespace W.RPC
             return result;
         }
 
+        /// <summary>
+        /// Constructor for the Server class.  This constructor does not start listening for clients.
+        /// </summary>
+        public Server()
+        {
+        }
+        /// <summary>
+        /// Constructor for the Server class which automatically starts listening on the specified IP Address and Port
+        /// </summary>
+        /// <param name="ipAddress"></param>
+        /// <param name="port"></param>
+        public Server(IPAddress ipAddress, int port) : this()
+        {
+            Start(ipAddress, port);
+        }
+
+        /// <summary>
+        /// Destructor for the Server class.  Calls Dispose.
+        /// </summary>
+        ~Server()
+        {
+            Dispose();
+        }
         private bool OnMessageArrived(ref Message message)
         {
             var result = FindAndCallMethod(message.Method, message.Parameters.ToArray());
@@ -137,52 +167,103 @@ namespace W.RPC
         /// <param name="port"></param>
         public void Start(IPAddress ipAddress, int port)
         {
-            Stop();
-            FindAllRPCMethods();
-            _host = new EncryptedServer<EncryptedClient<Message>>();
-            _host.Start(ipAddress, port);
-            _host.ClientConnected += (sender, client) =>
+            if (_isListening)
+                Stop();
+            if (_host == null)
             {
-                Log.i("Client Connected: {0}", client.Name);
-                client.Disconnected += (c2, address, exception) =>
+                FindAllRPCMethods();
+                _host = new EncryptedServer<EncryptedClient<Message>>();
+                _host.ClientConnected += (sender, client) =>
                 {
-                    Log.i("Client Disconnected: {0}", address?.ToString());
-                };
-                client.MessageArrived += (c3, message) =>
-                {
-                    try
+                    Log.i("Client Connected: {0}", client.Name);
+                    client.Disconnected += (c2, address, exception) =>
                     {
-                        if (!c3.IsSecure.Value) //ignore any messages that are sent before being secured
-                                {
-                            Log.w("Message arrived at server before client was secure");
-                            return;
-                        }
-                        OnMessageArrived(ref message);
+                        Log.i("Client Disconnected: {0}", address?.ToString());
+                    };
+                    client.MessageArrived += (c3, message) =>
+                    {
                         try
                         {
-                            Task.Run(() =>
+                            if (!c3.IsSecure.Value) //ignore any messages that are sent before being secured
                             {
-                                c3.Post(message);
-                            });
+                                Log.w("Message arrived at server before client was secure");
+                                return;
+                            }
+                            OnMessageArrived(ref message);
+                            try
+                            {
+                                Task.Run(() =>
+                                {
+                                    c3.Post(message);
+                                });
+                            }
+                            catch (Exception e)
+                            {
+                                Log.e(e);
+                            }
                         }
                         catch (Exception e)
                         {
                             Log.e(e);
                         }
-                    }
-                    catch (Exception e)
-                    {
-                        Log.e(e);
-                    }
+                    };
                 };
-            };
+            }
+            _host.Start(ipAddress, port);
+            _isListening = true;
         }
         /// <summary>
         /// Stops listening for client connections
         /// </summary>
         public void Stop()
         {
-            _host?.Stop();
+            if (_isListening)
+                _host?.Stop();
+            _isListening = false;
+        }
+
+        /// <summary>
+        /// Creates a new Server instance and starts listening on the specified ipAddress and port
+        /// </summary>
+        /// <param name="ipAddress">The network address on which to listen</param>
+        /// <param name="port">The port on which to listen</param>
+        /// <returns>The new Server instance</returns>
+        public static Server Create(IPAddress ipAddress, int port)
+        {
+            var result = new Server();
+            result.Start(ipAddress, port);
+            return result;
+        }
+
+        #region Instance Code
+        //private static Server _instance;
+        ///// <summary>
+        ///// Starts a new instanced Server
+        ///// </summary>
+        ///// <param name="ipAddress">The network address on which to listen</param>
+        ///// <param name="port">The port on which to listen</param>
+        //public static void StartInstance(IPAddress ipAddress, int port)
+        //{
+        //    StopInstance();
+        //    _instance = Create(ipAddress, port);
+        //}
+        ///// <summary>
+        ///// Stops the Server instance
+        ///// </summary>
+        //public static void StopInstance()
+        //{
+        //    if (_instance != null)
+        //    {
+        //        _instance.Stop();
+        //        _instance = null;
+        //    }
+        //}
+        #endregion
+
+        /// <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        public void Dispose()
+        {
+            Stop();
         }
     }
 

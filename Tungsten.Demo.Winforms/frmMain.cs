@@ -11,7 +11,7 @@ using W;
 using W.Logging;
 using W.Threading;
 
-namespace Tungsten.Demo.Winforms
+namespace W.Demo.Winforms
 {
     /// <summary>
     /// Sample Winforms form.  This form uses the InvokeEx extension method extensively.

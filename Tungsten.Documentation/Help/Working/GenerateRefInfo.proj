@@ -31,6 +31,10 @@
 		</GenerateDependsOn>
   </PropertyGroup>
   <ItemGroup>
+    <Assembly Include="C:\Users\Jordan\Source\Repos\Tungsten\Tungsten.Domains\bin\Release\Tungsten.Domains.dll" />
+    <Assembly Include="C:\Users\Jordan\Source\Repos\Tungsten\Tungsten.LiteDb\bin\Release\Tungsten.LiteDb.dll" />
+    <Assembly Include="C:\Users\Jordan\Source\Repos\Tungsten\Tungsten.RPC.Interfaces\bin\Release\Tungsten.RPC.Interfaces.dll" />
+    <Assembly Include="C:\Users\Jordan\Source\Repos\Tungsten\Tungsten.RPC\bin\Release\Tungsten.RPC.dll" />
     <Assembly Include="C:\Users\Jordan\Source\Repos\Tungsten\Tungsten\bin\Release\Tungsten.dll" />
   </ItemGroup>
   <Target Name="Generate" DependsOnTargets="$(GenerateDependsOn)" />

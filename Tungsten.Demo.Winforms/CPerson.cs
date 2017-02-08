@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using W;
 using W.Logging;
 
-namespace Tungsten.Demo.Winforms
+namespace W.Demo.Winforms
 {
     //Make sure PropertyHostNotifier is inherited so that each owned property has it's owner set
     //Alternatively, you could call PropertyHostMethods.InitializeProperties in the CPerson constructor

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tungsten.RPC.ClientDemo
+namespace W.RPC.ClientDemo
 {
     static class Program
     {

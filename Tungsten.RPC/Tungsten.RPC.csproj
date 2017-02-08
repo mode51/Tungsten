@@ -80,6 +80,12 @@
       <Link>Tungsten.ico</Link>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tungsten.RPC.Interfaces\Tungsten.RPC.Interfaces.csproj">
+      <Project>{3fe96d19-fda8-4948-a0fe-f200748cc729}</Project>
+      <Name>Tungsten.RPC.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

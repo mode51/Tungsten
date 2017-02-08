@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using W;
 using W.RPC;
 
-namespace Tungsten.RPC.ClientDemo
+namespace W.RPC.ClientDemo
 {
     public partial class frmMain : Form
     {
@@ -54,7 +54,7 @@ namespace Tungsten.RPC.ClientDemo
         private async void btnConnect_Click(object sender, EventArgs e)
         {
             btnConnect.Enabled = false;
-            if (_client.IsConnected.Value)
+            if (_client.IsConnected)
                 _client.Disconnect();
             else
                 await _client.ConnectAsync("127.0.0.1", 5150); //Disconnected will be raised if this fails to connect
@@ -62,9 +62,9 @@ namespace Tungsten.RPC.ClientDemo
         private async void btnSend_Click(object sender, EventArgs e)
         {
             btnSend.Enabled = false;
-            if (_client.IsConnected.Value)
+            if (_client.IsConnected)
             {
-                _client.MakeRPCCall("Tungsten.RPC.ServerDemo.RPCServer.WriteLine", async () =>
+                _client.MakeRPCCall("W.RPC.API.Demo.Sample.WriteLine", async () =>
                 {
                     await Task.Run(() => //ensure that this method exits without blocking the ManualResetEvent
                     {
@@ -81,10 +81,10 @@ namespace Tungsten.RPC.ClientDemo
         private async void btnTestTimeout_Click(object sender, EventArgs e)
         {
             btnTestTimeout.Enabled = false;
-            if (_client.IsConnected.Value)
+            if (_client.IsConnected)
             {
                 //this call returns a boolean result
-                var mre = _client.MakeRPCCall("Tungsten.RPC.ServerDemo.RPCServer.CauseTimeout", async () =>
+                var mre = _client.MakeRPCCall("W.RPC.API.Demo.Sample.CauseTimeout", async () =>
                 {
                     //ensure that this method exits without blocking the UI
                     await Task.Run(() =>
@@ -114,10 +114,10 @@ namespace Tungsten.RPC.ClientDemo
         private async void btnTestTimeoutWithResult_Click(object sender, EventArgs e)
         {
             btnTestTimeout2.Enabled = false;
-            if (_client.IsConnected.Value)
+            if (_client.IsConnected)
             {
                 //this call returns a boolean result
-                var mre = _client.MakeRPCCall<bool>("Tungsten.RPC.ServerDemo.RPCServer.CauseTimeout", async (result) =>
+                var mre = _client.MakeRPCCall<bool>("W.RPC.API.Demo.Sample.CauseTimeout", async (result) =>
                 {
                     //ensure that this method exits without blocking the UI
                     await Task.Run(() =>
@@ -148,10 +148,11 @@ namespace Tungsten.RPC.ClientDemo
 
         private void btnSimplestRPC_Click(object sender, EventArgs e)
         {
-            if (_client.IsConnected.Value)
+            if (_client.IsConnected)
             {
-                _client.MakeRPCCall("Tungsten.RPC.ServerDemo.RPCServer.WriteLine", null, txtMessage.Text);
+                _client.MakeRPCCall("W.RPC.API.Demo.Sample.WriteLine", null, txtMessage.Text);
             }
         }
+
     }
 }

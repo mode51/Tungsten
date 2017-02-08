@@ -43,7 +43,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
+    <Reference Include="System.Core">
+      <EmbedAssembly>true</EmbedAssembly>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionQueue.cs" />

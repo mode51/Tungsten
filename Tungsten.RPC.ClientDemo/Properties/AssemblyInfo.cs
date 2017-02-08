@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Tungsten.RPC.ClientDemo")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCopyright("Copyright ©  2017 Jordan Duerksen")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

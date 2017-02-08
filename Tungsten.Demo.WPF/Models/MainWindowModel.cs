@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using W;
 
-namespace Tungsten.Demo.WPF.Models
+namespace W.Demo.WPF.Models
 {
     //this is a sample viewmodel
 
