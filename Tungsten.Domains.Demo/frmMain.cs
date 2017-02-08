@@ -80,10 +80,12 @@ namespace W.Domains.Demo
                 Console.WriteLine("AppDomain({0}): Success={1}, Result={2}, Exception={3}", AppDomain.CurrentDomain.FriendlyName, true, null, "No Exception");
             });
             Console.WriteLine("AppDomain({0}): Success={1}, Result={2}, Exception={3}", AppDomain.CurrentDomain.FriendlyName, true, null, "No Exception");
+            MessageBox.Show("Verify the console output");
         }
 
         private void btnDoCallback2_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Not Implemented");
 
             //_domain.DoCallback(() =>
             //{

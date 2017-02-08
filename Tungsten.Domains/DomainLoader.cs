@@ -35,10 +35,21 @@ namespace W.Domains
         private readonly string _domainName;
         private AppDomain _domain;
         private readonly string _relativeSubFolderForDomain;
-        private W.Domains.IAssemblyLoader _loader;
+        //private W.Domains.IAssemblyLoader _loader;
         private bool _useShadowCopy = false;
         private string _cachePath = String.Empty;
 
+        private IAssemblyLoader Loader
+        {
+            get
+            {
+                return _domain.GetData("AssemblyLoader") as IAssemblyLoader;
+            }
+            set
+            {
+                _domain?.SetData("AssemblyLoader", value);
+            }
+        }
         public string DomainName { get; private set; }
 
         /// <summary>
@@ -114,7 +125,7 @@ namespace W.Domains
         public void Unload()
         {
             AppDomain.CurrentDomain.SetData("AssemblyLoader", null);
-            _loader = null;
+            Loader = null;
             if (_domain != null)
             {
                 try
@@ -161,8 +172,8 @@ namespace W.Domains
 
             _domain = AppDomain.CreateDomain(DomainName, null, setup);
             _domain.Load("Tungsten.Domains");
-            _loader = (W.Domains.IAssemblyLoader)_domain.CreateInstanceAndUnwrap("Tungsten.Domains", "W.Domains.AssemblyLoader");
-            _domain.SetData("AssemblyLoader", _loader);
+            Loader = (W.Domains.IAssemblyLoader)_domain.CreateInstanceAndUnwrap("Tungsten.Domains", "W.Domains.AssemblyLoader");
+            //_domain.SetData("AssemblyLoader", _loader);
             _domain.DoCallBack(() =>
             {
                 var al = AppDomain.CurrentDomain.GetData("AssemblyLoader");
@@ -171,7 +182,7 @@ namespace W.Domains
 
             //2.7.2017 - In order to find the files correctly, I had to root the value of _relativeSubFolderForDomain
             var fullPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, _relativeSubFolderForDomain);
-            _loader.Load(_domain, fullPath, "*.dll");
+            Loader.Load(_domain, fullPath, "*.dll");
         }
 
         /// <summary>
@@ -184,7 +195,7 @@ namespace W.Domains
         /// <returns>The return value from the function, casted to TResult.</returns>
         public TResult ExecuteStaticMethod<TResult>(string typeName, string staticMethodName, params object[] args)
         {
-            return _loader.ExecuteStaticMethod<TResult>(typeName, staticMethodName, args);
+            return Loader.ExecuteStaticMethod<TResult>(typeName, staticMethodName, args);
         }
         /// <summary>
         /// Executes a static method on the specified type across the AppDomain
@@ -194,7 +205,7 @@ namespace W.Domains
         /// <param name="args">Any arguments to be passedd to the static method</param>
         public void ExecuteStaticMethod(string typeName, string staticMethodName, params object[] args)
         {
-            _loader.ExecuteStaticMethod(typeName, staticMethodName, args);
+            Loader.ExecuteStaticMethod(typeName, staticMethodName, args);
         }
         /// <summary>
         /// Instantiates a class and calls a method exposed by it.
@@ -206,7 +217,7 @@ namespace W.Domains
         /// <returns>The return value from the function, casted to TResult</returns>
         public TResult Execute<TResult>(string typeName, string methodName, params object[] args)
         {
-            return _loader.Execute<TResult>(typeName, methodName, args);
+            return Loader.Execute<TResult>(typeName, methodName, args);
         }
         /// <summary>
         /// Instantiates a class and calls a method exposed by it.
@@ -216,7 +227,7 @@ namespace W.Domains
         /// <param name="args">Any arguments to be passed to the static method</param>
         public void Execute(string typeName, string methodName, params object[] args)
         {
-            _loader.Execute(typeName, methodName, args);
+            Loader.Execute(typeName, methodName, args);
         }
 
         /// <summary>
@@ -227,7 +238,7 @@ namespace W.Domains
         /// <returns>A handle to the instantiated object.  This value should be cast to an interface as only interfaces will work across AppDomains.</returns>
         public TInterfaceType Create<TInterfaceType>(string typeName)
         {
-            var result = _loader.Create<TInterfaceType>(typeName);
+            var result = Loader.Create<TInterfaceType>(typeName);
             if (result == null)
                 throw new NotImplementedException();
             return (TInterfaceType)result;
@@ -239,7 +250,7 @@ namespace W.Domains
         /// <returns>A handle to the instantiated object.  This value should be cast to an interface as only interfaces will work across AppDomains.</returns>
         public object Create(string typeName)
         {
-            var result = _loader.Create(typeName);
+            var result = Loader.Create(typeName);
             if (result == null)
                 throw new NotImplementedException();
             return result;

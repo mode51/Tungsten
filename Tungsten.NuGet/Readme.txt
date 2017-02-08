@@ -19,17 +19,17 @@ Added W.Threading.Gate/Gate<T>
 Added W.Threading.Thread/Thread<T>
 Updated ThreadExtensions
 
-1/13/2017
+1.13.2017
 Added ThreadExtensions
 
-1/12/2017
+1.12.2017
 
 Added Invoke (InvokeExtensions)
 Added CallResult and CallResult<TResult>
 Added CallResult tests
 
 
-Initial Release 1/11/2017
+Initial Release 1.11.2017
 
 Lockable<TValue>
 Property<TValue>

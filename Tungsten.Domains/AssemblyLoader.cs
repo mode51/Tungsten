@@ -9,7 +9,7 @@ using System.Reflection;
 
 namespace W.Domains
 {
-    public interface IAssemblyLoader
+    internal interface IAssemblyLoader
     {
         void Load(AppDomain domain, string filename);
         void Load(AppDomain domain, string path, string searchPattern);
@@ -24,7 +24,7 @@ namespace W.Domains
     }
 
     //<Serializable()>
-    public class AssemblyLoader : MarshalByRefObject, IAssemblyLoader
+    internal class AssemblyLoader : MarshalByRefObject, IAssemblyLoader
     {
         private List<System.Reflection.Assembly> Assemblies { get; set; } = new List<Assembly>();
 
