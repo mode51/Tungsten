@@ -25,7 +25,7 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 * Tungsten.RPC.Host.Demo - Hosts the RPC server in a reloadable AppDomain
 * Tungsten.Domains.Demo - Illustrates using Tungsten.Domains to host a reloadable AppDomain
 
-# Tungsten Classes
+# Tungsten / Tungsten.Portable / Tungsten.Universal Classes
 * [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue-)\<TValue\> - A generic class to wrap a value in a thread-safe manner
 * [W.Property](https://github.com/mode51/Tungsten/wiki/Property-TValue)\<TValue\> - A generic class providing a number of enhancements to a [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue-)\<TValue\> value
     * Implements INotifyPropertyChanged
@@ -48,54 +48,9 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 * W.RPC.Server - An RPC server (see Tungsten.RPC.ServerDemo for use)
 * W.RPC.Client - An RPC client (see Tungsten.RPC.ClientDemo for use)
 
-##Declaring Properties in your code
+#Tungsten.Domains
+* W.Domains.DomainLoader - A handy class to make reloadable AppDomains easy
 
-If you inherit from PropertyHost, the properties will be initialized in the default constructor.
-
-    public class MyClass : PropertyHost
-    {
-        public Property<MyClass, string> Last { get; } = new Property<MyClass, string>();
-        public Property<MyClass, string> First { get; } = new Property<MyClass, string>();
-    }
-
-##CallResult and Property Sample
-
-This sample does not inherit PropertyHost, so it must call PropertyHostMethods.InitializeProperties in the constructor
-
-    public class MyClass : MyBaseClass
-    {
-        public Property<MyClass, string> Last {get; } = new Property<MyClass, string>();
-        public Property<MyClass, string> First {get; } = new Property<MyClass, string>();
-        
-        private CallResult<int> CalculateAge()
-        {
-            var result = new CallResult<int>(); //defaults: Success=False, Result=0, Exception=null
-            try
-            {
-                result.Result = 22; //no real calculations in this sample
-                result.Success = true;
-            }
-            catch (Exception e)
-            {
-              result.Exception = e;
-            }
-            return result;
-        }
-        public MyClass()
-        {
-            PropertyHostMethods.InitializeProperties(this);
-            //or this.InitializeProperties();            
-        }
-    }
-
-##PropertyHostNotifier Sample
-
-    public class MyClass : PropertyHostNotifier
-    {
-        public Property<MyClass, string> Name {get; } = new Property<MyClass, string>();
-        
-        public MyClass()
-        {
-            //Don't need to call PropertyHostMethods.InitializeProperties because it's called in the base class
-        }
-    }
+#Tungsten.LiteDb
+* W.LiteDb.LiteDbItem - A base class for your POCO classes
+* W.LiteDb.LiteDbMethods - CRUD methods for your POCO classes in a LiteDb database
