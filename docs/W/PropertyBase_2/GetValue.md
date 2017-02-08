@@ -1,8 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.GetValue Method
 ===============================================
-  
-[Missing &lt;summary> documentation for "M:W.PropertyBase`2.GetValue"]
-
+  Gets the property value
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -16,9 +14,7 @@ protected override Object GetValue()
 
 #### Return Value
 Type: [Object][2]  
-
-[Missing &lt;returns> documentation for "M:W.PropertyBase`2.GetValue"]
-
+The property value
 
 See Also
 --------

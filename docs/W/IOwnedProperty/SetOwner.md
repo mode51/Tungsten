@@ -1,8 +1,6 @@
 IOwnedProperty.SetOwner Method
 ==============================
-  
-[Missing &lt;summary> documentation for "M:W.IOwnedProperty.SetOwner(System.Object)"]
-
+  Sets the property owner to the specified value
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -20,9 +18,7 @@ void SetOwner(
 
 ##### *owner*
 Type: [System.Object][2]  
-
-[Missing &lt;param name="owner"/> documentation for "M:W.IOwnedProperty.SetOwner(System.Object)"]
-
+The new property owner
 
 
 See Also

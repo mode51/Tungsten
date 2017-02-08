@@ -1,8 +1,6 @@
 Property&lt;TValue> Class
 =========================
-  
-[Missing &lt;summary> documentation for "T:W.Property`1"]
-
+  A generic Property with no owner (self-owned)
 
 
 Inheritance Hierarchy
@@ -26,9 +24,7 @@ public class Property<TValue> : PropertyBase<Property<TValue>, TValue>
 #### Type Parameters
 
 ##### *TValue*
-
-[Missing &lt;typeparam name="TValue"/> documentation for "T:W.Property`1"]
-
+The type of the property value
 
 The **Property<TValue>** type exposes the following members.
 
@@ -36,12 +32,12 @@ The **Property<TValue>** type exposes the following members.
 Constructors
 ------------
 
-                 | Name                                                                                                  | Description                                                  
----------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ 
-![Public method] | [Property&lt;TValue>()][5]                                                                            | Initializes a new instance of the **Property<TValue>** class 
-![Public method] | [Property&lt;TValue>(TValue)][6]                                                                      | Initializes a new instance of the **Property<TValue>** class 
-![Public method] | [Property&lt;TValue>(PropertyBase&lt;Property&lt;TValue>, TValue>.OnValueChangedDelegate)][7]         | Initializes a new instance of the **Property<TValue>** class 
-![Public method] | [Property&lt;TValue>(TValue, PropertyBase&lt;Property&lt;TValue>, TValue>.OnValueChangedDelegate)][8] | Initializes a new instance of the **Property<TValue>** class 
+                 | Name                                                                                                  | Description               
+---------------- | ----------------------------------------------------------------------------------------------------- | ------------------------- 
+![Public method] | [Property&lt;TValue>()][5]                                                                            | Constructs a new Property 
+![Public method] | [Property&lt;TValue>(TValue)][6]                                                                      | Constructs a new Property 
+![Public method] | [Property&lt;TValue>(PropertyBase&lt;Property&lt;TValue>, TValue>.OnValueChangedDelegate)][7]         | Constructs a new Property 
+![Public method] | [Property&lt;TValue>(TValue, PropertyBase&lt;Property&lt;TValue>, TValue>.OnValueChangedDelegate)][8] | Constructs a new Property 
 
 
 Extension Methods

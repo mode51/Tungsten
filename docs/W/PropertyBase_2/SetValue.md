@@ -1,8 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.SetValue Method
 ===============================================
-  
-[Missing &lt;summary> documentation for "M:W.PropertyBase`2.SetValue(System.Object,System.String)"]
-
+  Sets the property value
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -21,15 +19,11 @@ protected override void SetValue(
 
 ##### *value*
 Type: [System.Object][2]  
-
-[Missing &lt;param name="value"/> documentation for "M:W.PropertyBase`2.SetValue(System.Object,System.String)"]
-
+The new property value
 
 ##### *callerMemberName* (Optional)
 Type: [System.String][3]  
-
-[Missing &lt;param name="callerMemberName"/> documentation for "M:W.PropertyBase`2.SetValue(System.Object,System.String)"]
-
+For logging purposes; it's not necessary to set
 
 
 See Also

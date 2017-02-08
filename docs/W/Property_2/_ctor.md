@@ -1,8 +1,8 @@
 Property&lt;TOwner, TValue> Constructor
 =======================================
-  Initializes a new instance of the [Property&lt;TOwner, TValue>][1] class
+  Constructs a new Property
 
-  **Namespace:**  [W][2]  
+  **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
 
 Syntax
@@ -17,9 +17,9 @@ See Also
 --------
 
 #### Reference
-[Property&lt;TOwner, TValue> Class][1]  
-[W Namespace][2]  
+[Property&lt;TOwner, TValue> Class][2]  
+[W Namespace][1]  
 
-[1]: README.md
-[2]: ../README.md
+[1]: ../README.md
+[2]: README.md
 [3]: ../../_icons/Help.png

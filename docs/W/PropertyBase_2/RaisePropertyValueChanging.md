@@ -1,8 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.RaisePropertyValueChanging Method
 =================================================================
-  
-[Missing &lt;summary> documentation for "M:W.PropertyBase`2.RaisePropertyValueChanging(`1,`1,System.Boolean@)"]
-
+  Raises the ValueChanging event
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -22,21 +20,15 @@ protected virtual void RaisePropertyValueChanging(
 
 ##### *oldValue*
 Type: [TValue][2]  
-
-[Missing &lt;param name="oldValue"/> documentation for "M:W.PropertyBase`2.RaisePropertyValueChanging(`1,`1,System.Boolean@)"]
-
+The old property value
 
 ##### *newValue*
 Type: [TValue][2]  
-
-[Missing &lt;param name="newValue"/> documentation for "M:W.PropertyBase`2.RaisePropertyValueChanging(`1,`1,System.Boolean@)"]
-
+The expected new property value
 
 ##### *cancel*
 Type: [System.Boolean][3]  
-
-[Missing &lt;param name="cancel"/> documentation for "M:W.PropertyBase`2.RaisePropertyValueChanging(`1,`1,System.Boolean@)"]
-
+Set to True to cancel the property change
 
 
 See Also

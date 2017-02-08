@@ -1,8 +1,8 @@
 Property&lt;TValue> Constructor (PropertyBase&lt;Property&lt;TValue>, TValue>.OnValueChangedDelegate)
 =====================================================================================================
-  Initializes a new instance of the [Property&lt;TValue>][1] class
+  Constructs a new Property
 
-  **Namespace:**  [W][2]  
+  **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
 
 Syntax
@@ -17,20 +17,18 @@ public Property(
 #### Parameters
 
 ##### *onValueChanged*
-Type: [W.PropertyBase&lt;TOwner, TValue>.OnValueChangedDelegate][3]  
-
-[Missing &lt;param name="onValueChanged"/> documentation for "M:W.Property`1.#ctor(W.PropertyBase{W.Property{`0},`0}.OnValueChangedDelegate)"]
-
+Type: [W.PropertyBase&lt;TOwner, TValue>.OnValueChangedDelegate][2]  
+A callback for when the property value changes
 
 
 See Also
 --------
 
 #### Reference
-[Property&lt;TValue> Class][1]  
-[W Namespace][2]  
+[Property&lt;TValue> Class][3]  
+[W Namespace][1]  
 
-[1]: README.md
-[2]: ../README.md
-[3]: ../PropertyBase_2_OnValueChangedDelegate/README.md
+[1]: ../README.md
+[2]: ../PropertyBase_2_OnValueChangedDelegate/README.md
+[3]: README.md
 [4]: ../../_icons/Help.png

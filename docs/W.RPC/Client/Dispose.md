@@ -14,16 +14,18 @@ public void Dispose()
 
 #### Implements
 [IDisposable.Dispose()][2]  
+[IClient.Dispose()][3]  
 
 
 See Also
 --------
 
 #### Reference
-[Client Class][3]  
+[Client Class][4]  
 [W.RPC Namespace][1]  
 
 [1]: ../README.md
 [2]: http://msdn.microsoft.com/en-us/library/es4s3w1d
-[3]: README.md
-[4]: ../../_icons/Help.png
+[3]: ../IClient/Dispose.md
+[4]: README.md
+[5]: ../../_icons/Help.png

@@ -1,8 +1,6 @@
 IProperty&lt;TValue>.Value Property
 ===================================
-  
-[Missing &lt;summary> documentation for "P:W.IProperty`1.Value"]
-
+  The value of the property
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

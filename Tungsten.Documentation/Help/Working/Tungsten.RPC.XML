@@ -9,34 +9,10 @@
             Provides simple access to a Tungsten RPC Server
             </summary>
         </member>
-        <member name="F:W.RPC.Client.DefaultConnectTimeout">
-            <summary>
-            The default timeout for Connect
-            </summary>
-        </member>
-        <member name="F:W.RPC.Client.DefaultMakeRPCCallTimeout">
-            <summary>
-            The default timeout for a call to MakeRPCCall
-            </summary>
-        </member>
-        <member name="T:W.RPC.Client.ConnectedDelegate">
-            <summary>
-            Delegate to notify the programmer when the Client has connected to the Server
-            </summary>
-            <param name="client">A reference to the Client which has connected</param>
-            <param name="remoteAddress">The IP Address of the Server</param>
-        </member>
         <member name="E:W.RPC.Client.Connected">
             <summary>
             Raised when the Client has connected to the Server
             </summary>
-        </member>
-        <member name="T:W.RPC.Client.DisconnectedDelegate">
-            <summary>
-            Delegate to notify the programmer when the Client has disconnected from the Server
-            </summary>
-            <param name="client">A reference to the Client which has disconnected</param>
-            <param name="exception">Specifies the exception which caused the disconnection.  If no exception ocurred, this value is null.</param>
         </member>
         <member name="E:W.RPC.Client.Disconnected">
             <summary>
@@ -76,7 +52,7 @@
             <param name="args"></param>
             <returns></returns>
         </member>
-        <member name="M:W.RPC.Client.Connect(System.String,System.Int32,System.Int32,System.Action{W.RPC.Client,System.Net.IPAddress})">
+        <member name="M:W.RPC.Client.Connect(System.String,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})">
             <summary>
             Attempts to connect to a local or remote Tungsten RPC Server
             </summary>
@@ -85,7 +61,7 @@
             <param name="msTimeout">The call will fail if the client can't connect within the specified elapsed time (in milliseconds)</param>
             <returns>A CallResult specifying success/failure and an Exception if one ocurred</returns>
         </member>
-        <member name="M:W.RPC.Client.Connect(System.Net.IPAddress,System.Int32,System.Int32,System.Action{W.RPC.Client,System.Net.IPAddress})">
+        <member name="M:W.RPC.Client.Connect(System.Net.IPAddress,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})">
             <summary>
             Attempts to connect to a local or remote Tungsten RPC Server
             </summary>

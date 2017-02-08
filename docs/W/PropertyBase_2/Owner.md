@@ -1,8 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.Owner Property
 ==============================================
-  
-[Missing &lt;summary> documentation for "P:W.PropertyBase`2.Owner"]
-
+  The property owner
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

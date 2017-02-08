@@ -33,17 +33,21 @@ The call will fail if the client can't connect within the specified elapsed time
 #### Return Value
 Type: [Task][4]  
 A Task which can be awaited
+#### Implements
+[ISocketClient.ConnectAsync(String, Int32, Int32)][5]  
+
 
 See Also
 --------
 
 #### Reference
-[Client Class][5]  
+[Client Class][6]  
 [W.RPC Namespace][1]  
 
 [1]: ../README.md
 [2]: http://msdn.microsoft.com/en-us/library/s1wwdcbf
 [3]: http://msdn.microsoft.com/en-us/library/td2s409d
 [4]: http://msdn.microsoft.com/en-us/library/dd235678
-[5]: README.md
-[6]: ../../_icons/Help.png
+[5]: ../ISocketClient/ConnectAsync_1.md
+[6]: README.md
+[7]: ../../_icons/Help.png

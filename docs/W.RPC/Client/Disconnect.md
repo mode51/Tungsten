@@ -12,14 +12,18 @@ Syntax
 public void Disconnect()
 ```
 
+#### Implements
+[ISocketClient.Disconnect()][2]  
+
 
 See Also
 --------
 
 #### Reference
-[Client Class][2]  
+[Client Class][3]  
 [W.RPC Namespace][1]  
 
 [1]: ../README.md
-[2]: README.md
-[3]: ../../_icons/Help.png
+[2]: ../ISocketClient/Disconnect.md
+[3]: README.md
+[4]: ../../_icons/Help.png

@@ -1,7 +1,7 @@
 IOwnedProperty Interface
 ========================
   
-[Missing &lt;summary> documentation for "T:W.IOwnedProperty"]
+Used by PropertyHostMethods.InitializeProperties to find properties on which to set the owner. This interface is not used by self-owned properties.
 
 
   **Namespace:**  [W][1]  
@@ -20,9 +20,9 @@ The **IOwnedProperty** type exposes the following members.
 Methods
 -------
 
-                 | Name          | Description 
----------------- | ------------- | ----------- 
-![Public method] | [SetOwner][2] |             
+                 | Name          | Description                                    
+---------------- | ------------- | ---------------------------------------------- 
+![Public method] | [SetOwner][2] | Sets the property owner to the specified value 
 
 
 See Also

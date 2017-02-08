@@ -1,8 +1,6 @@
 PropertyBase&lt;TOwner, TValue> Class
 =====================================
-  
-[Missing &lt;summary> documentation for "T:W.PropertyBase`2"]
-
+  Provides the functionality for the Property classes
 
 
 Inheritance Hierarchy
@@ -29,14 +27,10 @@ where TOwner : class
 #### Type Parameters
 
 ##### *TOwner*
-
-[Missing &lt;typeparam name="TOwner"/> documentation for "T:W.PropertyBase`2"]
-
+The type of the property owner
 
 ##### *TValue*
-
-[Missing &lt;typeparam name="TValue"/> documentation for "T:W.PropertyBase`2"]
-
+The type of the property value
 
 The **PropertyBase<TOwner, TValue>** type exposes the following members.
 
@@ -52,28 +46,30 @@ Constructors
 Properties
 ----------
 
-                   | Name              | Description 
------------------- | ----------------- | ----------- 
-![Public property] | [DefaultValue][7] |             
-![Public property] | [IsDirty][8]      |             
-![Public property] | [Owner][9]        |             
-![Public property] | [Value][10]       |             
+                   | Name              | Description                                                                                                                                              
+------------------ | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- 
+![Public property] | [DefaultValue][7] | 
+Allows the programmer to assign a default value which can be reset via the ResetToDefaultValue method. This value does not have to be the initial value.
+ 
+![Public property] | [IsDirty][8]      | True if Value has changed since initialization or since the last call to MarkAsClean                                                                     
+![Public property] | [Owner][9]        | The property owner                                                                                                                                       
+![Public property] | [Value][10]       | Get/Set the actual value of the Property                                                                                                                 
 
 
 Methods
 -------
 
-                    | Name                             | Description                                                               
-------------------- | -------------------------------- | ------------------------------------------------------------------------- 
-![Protected method] | [ExecuteOnValueChanged][11]      |                                                                           
-![Protected method] | [GetValue][12]                   | (Overrides [PropertyChangedNotifier.GetValue()][13].)                     
-![Public method]    | [LoadValue][14]                  | Loads Value without raising events or calling the OnValueChanged callback 
-![Protected method] | [OnPropertyChanged][15]          | (Overrides [PropertyChangedNotifier.OnPropertyChanged(String)][16].)      
-![Protected method] | [RaisePropertyValueChanged][17]  |                                                                           
-![Protected method] | [RaisePropertyValueChanging][18] |                                                                           
-![Public method]    | [ResetToDefaultValue][19]        |                                                                           
-![Protected method] | [SetValue][20]                   | (Overrides [PropertyChangedNotifier.SetValue(Object, String)][21].)       
-![Public method]    | [WaitForChanged][22]             | Allows the caller to suspend it's thread until Value changes              
+                    | Name                             | Description                                                                                             
+------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------- 
+![Protected method] | [ExecuteOnValueChanged][11]      | Calls the OnValueChanged callback                                                                       
+![Protected method] | [GetValue][12]                   | Gets the property value (Overrides [PropertyChangedNotifier.GetValue()][13].)                           
+![Public method]    | [LoadValue][14]                  | Loads Value without raising events or calling the OnValueChanged callback                               
+![Protected method] | [OnPropertyChanged][15]          | Raises the OnPropertyChanged event (Overrides [PropertyChangedNotifier.OnPropertyChanged(String)][16].) 
+![Protected method] | [RaisePropertyValueChanged][17]  | Raises the PropertyValueChanged event                                                                   
+![Protected method] | [RaisePropertyValueChanging][18] | Raises the ValueChanging event                                                                          
+![Public method]    | [ResetToDefaultValue][19]        | Resets the Value to the value provided by DefaultValue                                                  
+![Protected method] | [SetValue][20]                   | Sets the property value (Overrides [PropertyChangedNotifier.SetValue(Object, String)][21].)             
+![Public method]    | [WaitForChanged][22]             | Allows the caller to suspend it's thread until Value changes                                            
 
 
 Events
@@ -88,9 +84,9 @@ Events
 Fields
 ------
 
-                   | Name                 | Description 
------------------- | -------------------- | ----------- 
-![Protected field] | [OnValueChanged][25] |             
+                   | Name                 | Description                                                                      
+------------------ | -------------------- | -------------------------------------------------------------------------------- 
+![Protected field] | [OnValueChanged][25] | Callback type for use in the constructor (if one wants to avoid using the event) 
 
 
 Extension Methods

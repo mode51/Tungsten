@@ -4530,9 +4530,14 @@
     <api id="N:W.RPC">
       <apidata name="W.RPC" group="namespace" />
       <elements>
+        <element api="T:W.RPC.Constants" />
+        <element api="T:W.RPC.Delegates" />
+        <element api="T:W.RPC.Delegates.ConnectionTimeoutDelegate" />
+        <element api="T:W.RPC.Delegates.ConnectedDelegate" />
+        <element api="T:W.RPC.Delegates.DisconnectedDelegate" />
+        <element api="T:W.RPC.ISocketClient" />
+        <element api="T:W.RPC.IClient" />
         <element api="T:W.RPC.Client" />
-        <element api="T:W.RPC.Client.ConnectedDelegate" />
-        <element api="T:W.RPC.Client.DisconnectedDelegate" />
         <element api="T:W.RPC.Server" />
         <element api="T:W.RPC.RPCClassAttribute" />
         <element api="T:W.RPC.RPCMethodAttribute" />
@@ -4548,15 +4553,15 @@
       </family>
       <implements>
         <type api="T:System.IDisposable" ref="true" />
+        <type api="T:W.RPC.IClient" ref="true" />
+        <type api="T:W.RPC.ISocketClient" ref="true" />
       </implements>
       <elements>
-        <element api="F:W.RPC.Client.DefaultConnectTimeout" />
-        <element api="F:W.RPC.Client.DefaultMakeRPCCallTimeout" />
         <element api="M:W.RPC.Client.MakeRPCCall``1(System.String,System.Action{``0})" />
         <element api="M:W.RPC.Client.MakeRPCCall``1(System.String,System.Action{``0},System.Object[])" />
         <element api="M:W.RPC.Client.MakeRPCCall(System.String,System.Action,System.Object[])" />
-        <element api="M:W.RPC.Client.Connect(System.String,System.Int32,System.Int32,System.Action{W.RPC.Client,System.Net.IPAddress})" />
-        <element api="M:W.RPC.Client.Connect(System.Net.IPAddress,System.Int32,System.Int32,System.Action{W.RPC.Client,System.Net.IPAddress})" />
+        <element api="M:W.RPC.Client.Connect(System.String,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})" />
+        <element api="M:W.RPC.Client.Connect(System.Net.IPAddress,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})" />
         <element api="M:W.RPC.Client.ConnectAsync(System.String,System.Int32,System.Int32)" />
         <element api="M:W.RPC.Client.ConnectAsync(System.Net.IPAddress,System.Int32,System.Int32)" />
         <element api="M:W.RPC.Client.Disconnect" />
@@ -4705,10 +4710,10 @@
         <type api="T:W.RPC.Client" ref="true" />
       </containers>
     </api>
-    <api id="M:W.RPC.Client.Connect(System.Net.IPAddress,System.Int32,System.Int32,System.Action{W.RPC.Client,System.Net.IPAddress})">
+    <api id="M:W.RPC.Client.Connect(System.Net.IPAddress,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})">
       <apidata name="Connect" group="member" subgroup="method" />
       <memberdata visibility="public" />
-      <proceduredata virtual="false" />
+      <proceduredata virtual="true" final="true" />
       <parameters>
         <parameter name="remoteAddress">
           <type api="T:System.Net.IPAddress" ref="true" />
@@ -4726,8 +4731,19 @@
         <parameter name="onConnection" optional="true">
           <type api="T:System.Action`2" ref="true">
             <specialization>
-              <type api="T:W.RPC.Client" ref="true" />
+              <type api="T:W.RPC.ISocketClient" ref="true" />
               <type api="T:System.Net.IPAddress" ref="true" />
+            </specialization>
+          </type>
+          <argument>
+            <type api="T:System.Object" ref="true" />
+            <nullValue />
+          </argument>
+        </parameter>
+        <parameter name="onException" optional="true">
+          <type api="T:System.Action`1" ref="true">
+            <specialization>
+              <type api="T:System.Exception" ref="true" />
             </specialization>
           </type>
           <argument>
@@ -4737,18 +4753,23 @@
         </parameter>
       </parameters>
       <returns>
-        <type api="T:W.CallResult" ref="true" />
+        <type api="T:System.Boolean" ref="false" />
       </returns>
+      <implements>
+        <member api="M:W.RPC.ISocketClient.Connect(System.Net.IPAddress,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})">
+          <type api="T:W.RPC.ISocketClient" ref="true" />
+        </member>
+      </implements>
       <containers>
         <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:W.RPC" />
         <type api="T:W.RPC.Client" ref="true" />
       </containers>
     </api>
-    <api id="M:W.RPC.Client.Connect(System.String,System.Int32,System.Int32,System.Action{W.RPC.Client,System.Net.IPAddress})">
+    <api id="M:W.RPC.Client.Connect(System.String,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})">
       <apidata name="Connect" group="member" subgroup="method" />
       <memberdata visibility="public" />
-      <proceduredata virtual="false" />
+      <proceduredata virtual="true" final="true" />
       <parameters>
         <parameter name="remoteAddress">
           <type api="T:System.String" ref="true" />
@@ -4766,8 +4787,19 @@
         <parameter name="onConnection" optional="true">
           <type api="T:System.Action`2" ref="true">
             <specialization>
-              <type api="T:W.RPC.Client" ref="true" />
+              <type api="T:W.RPC.ISocketClient" ref="true" />
               <type api="T:System.Net.IPAddress" ref="true" />
+            </specialization>
+          </type>
+          <argument>
+            <type api="T:System.Object" ref="true" />
+            <nullValue />
+          </argument>
+        </parameter>
+        <parameter name="onException" optional="true">
+          <type api="T:System.Action`1" ref="true">
+            <specialization>
+              <type api="T:System.Exception" ref="true" />
             </specialization>
           </type>
           <argument>
@@ -4777,8 +4809,13 @@
         </parameter>
       </parameters>
       <returns>
-        <type api="T:W.CallResult" ref="true" />
+        <type api="T:System.Boolean" ref="false" />
       </returns>
+      <implements>
+        <member api="M:W.RPC.ISocketClient.Connect(System.String,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})">
+          <type api="T:W.RPC.ISocketClient" ref="true" />
+        </member>
+      </implements>
       <containers>
         <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:W.RPC" />
@@ -4788,7 +4825,7 @@
     <api id="M:W.RPC.Client.ConnectAsync(System.Net.IPAddress,System.Int32,System.Int32)">
       <apidata name="ConnectAsync" group="member" subgroup="method" />
       <memberdata visibility="public" />
-      <proceduredata virtual="false" />
+      <proceduredata virtual="true" final="true" />
       <parameters>
         <parameter name="remoteAddress">
           <type api="T:System.Net.IPAddress" ref="true" />
@@ -4807,6 +4844,11 @@
       <returns>
         <type api="T:System.Threading.Tasks.Task" ref="true" />
       </returns>
+      <implements>
+        <member api="M:W.RPC.ISocketClient.ConnectAsync(System.Net.IPAddress,System.Int32,System.Int32)">
+          <type api="T:W.RPC.ISocketClient" ref="true" />
+        </member>
+      </implements>
       <containers>
         <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:W.RPC" />
@@ -4816,7 +4858,7 @@
     <api id="M:W.RPC.Client.ConnectAsync(System.String,System.Int32,System.Int32)">
       <apidata name="ConnectAsync" group="member" subgroup="method" />
       <memberdata visibility="public" />
-      <proceduredata virtual="false" />
+      <proceduredata virtual="true" final="true" />
       <parameters>
         <parameter name="remoteAddress">
           <type api="T:System.String" ref="true" />
@@ -4835,6 +4877,11 @@
       <returns>
         <type api="T:System.Threading.Tasks.Task" ref="true" />
       </returns>
+      <implements>
+        <member api="M:W.RPC.ISocketClient.ConnectAsync(System.String,System.Int32,System.Int32)">
+          <type api="T:W.RPC.ISocketClient" ref="true" />
+        </member>
+      </implements>
       <containers>
         <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:W.RPC" />
@@ -4844,43 +4891,20 @@
     <api id="E:W.RPC.Client.Connected">
       <apidata name="Connected" group="member" subgroup="event" />
       <memberdata visibility="public" />
-      <proceduredata virtual="false" />
+      <proceduredata virtual="true" final="true" />
       <eventdata add="true" remove="true" />
       <adder name="add_Connected" />
       <remover name="remove_Connected" />
       <eventhandler>
-        <type api="T:W.RPC.Client.ConnectedDelegate" ref="true">
-          <type api="T:W.RPC.Client" ref="true" />
+        <type api="T:W.RPC.Delegates.ConnectedDelegate" ref="true">
+          <type api="T:W.RPC.Delegates" ref="true" />
         </type>
       </eventhandler>
-      <containers>
-        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
-        <namespace api="N:W.RPC" />
-        <type api="T:W.RPC.Client" ref="true" />
-      </containers>
-    </api>
-    <api id="F:W.RPC.Client.DefaultConnectTimeout">
-      <apidata name="DefaultConnectTimeout" group="member" subgroup="field" />
-      <memberdata visibility="public" static="true" />
-      <fielddata literal="true" initonly="false" serialized="true" />
-      <returns>
-        <type api="T:System.Int32" ref="false" />
-      </returns>
-      <value>10000</value>
-      <containers>
-        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
-        <namespace api="N:W.RPC" />
-        <type api="T:W.RPC.Client" ref="true" />
-      </containers>
-    </api>
-    <api id="F:W.RPC.Client.DefaultMakeRPCCallTimeout">
-      <apidata name="DefaultMakeRPCCallTimeout" group="member" subgroup="field" />
-      <memberdata visibility="public" static="true" />
-      <fielddata literal="true" initonly="false" serialized="true" />
-      <returns>
-        <type api="T:System.Int32" ref="false" />
-      </returns>
-      <value>30000</value>
+      <implements>
+        <member api="E:W.RPC.ISocketClient.Connected">
+          <type api="T:W.RPC.ISocketClient" ref="true" />
+        </member>
+      </implements>
       <containers>
         <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:W.RPC" />
@@ -4890,7 +4914,12 @@
     <api id="M:W.RPC.Client.Disconnect">
       <apidata name="Disconnect" group="member" subgroup="method" />
       <memberdata visibility="public" />
-      <proceduredata virtual="false" />
+      <proceduredata virtual="true" final="true" />
+      <implements>
+        <member api="M:W.RPC.ISocketClient.Disconnect">
+          <type api="T:W.RPC.ISocketClient" ref="true" />
+        </member>
+      </implements>
       <containers>
         <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:W.RPC" />
@@ -4900,15 +4929,20 @@
     <api id="E:W.RPC.Client.Disconnected">
       <apidata name="Disconnected" group="member" subgroup="event" />
       <memberdata visibility="public" />
-      <proceduredata virtual="false" />
+      <proceduredata virtual="true" final="true" />
       <eventdata add="true" remove="true" />
       <adder name="add_Disconnected" />
       <remover name="remove_Disconnected" />
       <eventhandler>
-        <type api="T:W.RPC.Client.DisconnectedDelegate" ref="true">
-          <type api="T:W.RPC.Client" ref="true" />
+        <type api="T:W.RPC.Delegates.DisconnectedDelegate" ref="true">
+          <type api="T:W.RPC.Delegates" ref="true" />
         </type>
       </eventhandler>
+      <implements>
+        <member api="E:W.RPC.ISocketClient.Disconnected">
+          <type api="T:W.RPC.ISocketClient" ref="true" />
+        </member>
+      </implements>
       <containers>
         <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:W.RPC" />
@@ -4922,6 +4956,9 @@
       <implements>
         <member api="M:System.IDisposable.Dispose">
           <type api="T:System.IDisposable" ref="true" />
+        </member>
+        <member api="M:W.RPC.IClient.Dispose">
+          <type api="T:W.RPC.IClient" ref="true" />
         </member>
       </implements>
       <containers>
@@ -4953,12 +4990,17 @@
     <api id="P:W.RPC.Client.IsConnected">
       <apidata name="IsConnected" group="member" subgroup="property" />
       <memberdata visibility="public" />
-      <proceduredata virtual="false" />
+      <proceduredata virtual="true" final="true" />
       <propertydata get="true" />
       <getter name="get_IsConnected" />
       <returns>
         <type api="T:System.Boolean" ref="false" />
       </returns>
+      <implements>
+        <member api="P:W.RPC.ISocketClient.IsConnected">
+          <type api="T:W.RPC.ISocketClient" ref="true" />
+        </member>
+      </implements>
       <containers>
         <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:W.RPC" />
@@ -4968,7 +5010,7 @@
     <api id="M:W.RPC.Client.MakeRPCCall(System.String,System.Action,System.Object[])">
       <apidata name="MakeRPCCall" group="member" subgroup="method" />
       <memberdata visibility="public" />
-      <proceduredata virtual="false" />
+      <proceduredata virtual="true" final="true" />
       <parameters>
         <parameter name="methodName">
           <type api="T:System.String" ref="true" />
@@ -4985,6 +5027,11 @@
       <returns>
         <type api="T:System.Threading.ManualResetEvent" ref="true" />
       </returns>
+      <implements>
+        <member api="M:W.RPC.IClient.MakeRPCCall(System.String,System.Action,System.Object[])">
+          <type api="T:W.RPC.IClient" ref="true" />
+        </member>
+      </implements>
       <containers>
         <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:W.RPC" />
@@ -4994,7 +5041,7 @@
     <api id="M:W.RPC.Client.MakeRPCCall``1(System.String,System.Action{``0})">
       <apidata name="MakeRPCCall" group="member" subgroup="method" />
       <memberdata visibility="public" />
-      <proceduredata virtual="false" />
+      <proceduredata virtual="true" final="true" />
       <templates>
         <template name="T" />
       </templates>
@@ -5013,6 +5060,11 @@
       <returns>
         <type api="T:System.Threading.ManualResetEvent" ref="true" />
       </returns>
+      <implements>
+        <member api="M:W.RPC.IClient.MakeRPCCall``1(System.String,System.Action{``0})">
+          <type api="T:W.RPC.IClient" ref="true" />
+        </member>
+      </implements>
       <containers>
         <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:W.RPC" />
@@ -5022,7 +5074,7 @@
     <api id="M:W.RPC.Client.MakeRPCCall``1(System.String,System.Action{``0},System.Object[])">
       <apidata name="MakeRPCCall" group="member" subgroup="method" />
       <memberdata visibility="public" />
-      <proceduredata virtual="false" />
+      <proceduredata virtual="true" final="true" />
       <templates>
         <template name="T" />
       </templates>
@@ -5046,44 +5098,652 @@
       <returns>
         <type api="T:System.Threading.ManualResetEvent" ref="true" />
       </returns>
+      <implements>
+        <member api="M:W.RPC.IClient.MakeRPCCall``1(System.String,System.Action{``0},System.Object[])">
+          <type api="T:W.RPC.IClient" ref="true" />
+        </member>
+      </implements>
       <containers>
         <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:W.RPC" />
         <type api="T:W.RPC.Client" ref="true" />
       </containers>
     </api>
-    <api id="T:W.RPC.Client.ConnectedDelegate">
+    <api id="T:W.RPC.Constants">
+      <apidata name="Constants" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <elements>
+        <element api="F:W.RPC.Constants.DefaultConnectTimeout" />
+        <element api="F:W.RPC.Constants.DefaultMakeRPCCallTimeout" />
+        <element api="M:W.RPC.Constants.#ctor" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
+          <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="T" />
+          </templates>
+          <parameters>
+            <parameter name="action">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+                  <type api="T:System.Threading.CancellationTokenSource" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="onComplete">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <type api="T:System.Boolean" ref="false" />
+                  <type api="T:System.Exception" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="customData">
+              <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:W.Threading.Thread`1" ref="true">
+              <specialization>
+                <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W.Threading" />
+            <type api="T:W.Threading.ThreadExtensions" ref="true" />
+          </containers>
+        </element>
+      </elements>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Constants.#ctor">
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" />
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Constants" ref="true" />
+      </containers>
+    </api>
+    <api id="F:W.RPC.Constants.DefaultConnectTimeout">
+      <apidata name="DefaultConnectTimeout" group="member" subgroup="field" />
+      <memberdata visibility="public" static="true" />
+      <fielddata literal="true" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:System.Int32" ref="false" />
+      </returns>
+      <value>10000</value>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Constants" ref="true" />
+      </containers>
+    </api>
+    <api id="F:W.RPC.Constants.DefaultMakeRPCCallTimeout">
+      <apidata name="DefaultMakeRPCCallTimeout" group="member" subgroup="field" />
+      <memberdata visibility="public" static="true" />
+      <fielddata literal="true" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:System.Int32" ref="false" />
+      </returns>
+      <value>30000</value>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Constants" ref="true" />
+      </containers>
+    </api>
+    <api id="T:W.RPC.Delegates">
+      <apidata name="Delegates" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <elements>
+        <element api="M:W.RPC.Delegates.#ctor" />
+        <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
+          <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.IsDirty(System.Object)" source="extension">
+          <apidata name="IsDirty" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.PropertyHostMethods.MarkAsClean(System.Object)" source="extension">
+          <apidata name="MarkAsClean" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
+          <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="T" />
+          </templates>
+          <parameters>
+            <parameter name="action">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+                  <type api="T:System.Threading.CancellationTokenSource" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="onComplete">
+              <type api="T:System.Action`2" ref="true">
+                <specialization>
+                  <type api="T:System.Boolean" ref="false" />
+                  <type api="T:System.Exception" ref="true" />
+                </specialization>
+              </type>
+            </parameter>
+            <parameter name="customData">
+              <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:W.Threading.Thread`1" ref="true">
+              <specialization>
+                <template name="T" index="0" api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W.Threading" />
+            <type api="T:W.Threading.ThreadExtensions" ref="true" />
+          </containers>
+        </element>
+      </elements>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.Delegates.#ctor">
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" />
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Delegates" ref="true" />
+      </containers>
+    </api>
+    <api id="T:W.RPC.Delegates.ConnectedDelegate">
       <apidata name="ConnectedDelegate" group="type" subgroup="delegate" />
       <typedata visibility="public" sealed="true" serializable="false" />
       <parameters>
         <parameter name="client">
-          <type api="T:W.RPC.Client" ref="true" />
+          <type api="T:W.RPC.ISocketClient" ref="true" />
         </parameter>
         <parameter name="remoteAddress">
           <type api="T:System.Net.IPAddress" ref="true" />
         </parameter>
       </parameters>
       <containers>
-        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:W.RPC" />
-        <type api="T:W.RPC.Client" ref="true" />
+        <type api="T:W.RPC.Delegates" ref="true" />
       </containers>
     </api>
-    <api id="T:W.RPC.Client.DisconnectedDelegate">
+    <api id="T:W.RPC.Delegates.ConnectionTimeoutDelegate">
+      <apidata name="ConnectionTimeoutDelegate" group="type" subgroup="delegate" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <parameters>
+        <parameter name="client">
+          <type api="T:W.RPC.ISocketClient" ref="true" />
+        </parameter>
+        <parameter name="remoteAddress">
+          <type api="T:System.Net.IPAddress" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Delegates" ref="true" />
+      </containers>
+    </api>
+    <api id="T:W.RPC.Delegates.DisconnectedDelegate">
       <apidata name="DisconnectedDelegate" group="type" subgroup="delegate" />
       <typedata visibility="public" sealed="true" serializable="false" />
       <parameters>
         <parameter name="client">
-          <type api="T:W.RPC.Client" ref="true" />
+          <type api="T:W.RPC.ISocketClient" ref="true" />
         </parameter>
         <parameter name="exception">
           <type api="T:System.Exception" ref="true" />
         </parameter>
       </parameters>
       <containers>
-        <library assembly="Tungsten.RPC" module="Tungsten.RPC" kind="DynamicallyLinkedLibrary" />
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.Delegates" ref="true" />
+      </containers>
+    </api>
+    <api id="T:W.RPC.IClient">
+      <apidata name="IClient" group="type" subgroup="interface" />
+      <typedata visibility="public" abstract="true" serializable="false" />
+      <implements>
+        <type api="T:W.RPC.ISocketClient" ref="true" />
+      </implements>
+      <implementors>
         <type api="T:W.RPC.Client" ref="true" />
+      </implementors>
+      <elements>
+        <element api="M:W.RPC.IClient.MakeRPCCall``1(System.String,System.Action{``0})" />
+        <element api="M:W.RPC.IClient.MakeRPCCall``1(System.String,System.Action{``0},System.Object[])" />
+        <element api="M:W.RPC.IClient.MakeRPCCall(System.String,System.Action,System.Object[])" />
+        <element api="M:W.RPC.IClient.Dispose" />
+      </elements>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.IClient.Dispose">
+      <apidata name="Dispose" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.IClient" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.IClient.MakeRPCCall(System.String,System.Action,System.Object[])">
+      <apidata name="MakeRPCCall" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <parameters>
+        <parameter name="methodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="onResponse">
+          <type api="T:System.Action" ref="true" />
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Threading.ManualResetEvent" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.IClient" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.IClient.MakeRPCCall``1(System.String,System.Action{``0})">
+      <apidata name="MakeRPCCall" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <templates>
+        <template name="T" />
+      </templates>
+      <parameters>
+        <parameter name="methodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="onResponse">
+          <type api="T:System.Action`1" ref="true">
+            <specialization>
+              <template name="T" index="0" api="M:W.RPC.IClient.MakeRPCCall``1(System.String,System.Action{``0})" />
+            </specialization>
+          </type>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Threading.ManualResetEvent" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.IClient" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.IClient.MakeRPCCall``1(System.String,System.Action{``0},System.Object[])">
+      <apidata name="MakeRPCCall" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <templates>
+        <template name="T" />
+      </templates>
+      <parameters>
+        <parameter name="methodName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="onResponse">
+          <type api="T:System.Action`1" ref="true">
+            <specialization>
+              <template name="T" index="0" api="M:W.RPC.IClient.MakeRPCCall``1(System.String,System.Action{``0},System.Object[])" />
+            </specialization>
+          </type>
+        </parameter>
+        <parameter name="args" params="true">
+          <arrayOf rank="1">
+            <type api="T:System.Object" ref="true" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Threading.ManualResetEvent" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.IClient" ref="true" />
+      </containers>
+    </api>
+    <api id="T:W.RPC.ISocketClient">
+      <apidata name="ISocketClient" group="type" subgroup="interface" />
+      <typedata visibility="public" abstract="true" serializable="false" />
+      <implementors>
+        <type api="T:W.RPC.IClient" ref="true" />
+        <type api="T:W.RPC.Client" ref="true" />
+      </implementors>
+      <elements>
+        <element api="M:W.RPC.ISocketClient.Connect(System.String,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})" />
+        <element api="M:W.RPC.ISocketClient.Connect(System.Net.IPAddress,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})" />
+        <element api="M:W.RPC.ISocketClient.ConnectAsync(System.String,System.Int32,System.Int32)" />
+        <element api="M:W.RPC.ISocketClient.ConnectAsync(System.Net.IPAddress,System.Int32,System.Int32)" />
+        <element api="M:W.RPC.ISocketClient.Disconnect" />
+        <element api="P:W.RPC.ISocketClient.IsConnected" />
+        <element api="E:W.RPC.ISocketClient.Connected" />
+        <element api="E:W.RPC.ISocketClient.Disconnected" />
+      </elements>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.ISocketClient.Connect(System.Net.IPAddress,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})">
+      <apidata name="Connect" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <parameters>
+        <parameter name="remoteAddress">
+          <type api="T:System.Net.IPAddress" ref="true" />
+        </parameter>
+        <parameter name="remotePort">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+        <parameter name="msTimeout" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>10000</value>
+          </argument>
+        </parameter>
+        <parameter name="onConnection" optional="true">
+          <type api="T:System.Action`2" ref="true">
+            <specialization>
+              <type api="T:W.RPC.ISocketClient" ref="true" />
+              <type api="T:System.Net.IPAddress" ref="true" />
+            </specialization>
+          </type>
+          <argument>
+            <type api="T:System.Object" ref="true" />
+            <nullValue />
+          </argument>
+        </parameter>
+        <parameter name="onException" optional="true">
+          <type api="T:System.Action`1" ref="true">
+            <specialization>
+              <type api="T:System.Exception" ref="true" />
+            </specialization>
+          </type>
+          <argument>
+            <type api="T:System.Object" ref="true" />
+            <nullValue />
+          </argument>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Boolean" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.ISocketClient" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.ISocketClient.Connect(System.String,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})">
+      <apidata name="Connect" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <parameters>
+        <parameter name="remoteAddress">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="remotePort">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+        <parameter name="msTimeout" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>10000</value>
+          </argument>
+        </parameter>
+        <parameter name="onConnection" optional="true">
+          <type api="T:System.Action`2" ref="true">
+            <specialization>
+              <type api="T:W.RPC.ISocketClient" ref="true" />
+              <type api="T:System.Net.IPAddress" ref="true" />
+            </specialization>
+          </type>
+          <argument>
+            <type api="T:System.Object" ref="true" />
+            <nullValue />
+          </argument>
+        </parameter>
+        <parameter name="onException" optional="true">
+          <type api="T:System.Action`1" ref="true">
+            <specialization>
+              <type api="T:System.Exception" ref="true" />
+            </specialization>
+          </type>
+          <argument>
+            <type api="T:System.Object" ref="true" />
+            <nullValue />
+          </argument>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Boolean" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.ISocketClient" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.ISocketClient.ConnectAsync(System.Net.IPAddress,System.Int32,System.Int32)">
+      <apidata name="ConnectAsync" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <parameters>
+        <parameter name="remoteAddress">
+          <type api="T:System.Net.IPAddress" ref="true" />
+        </parameter>
+        <parameter name="remotePort">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+        <parameter name="msTimeout" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>10000</value>
+          </argument>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Threading.Tasks.Task" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.ISocketClient" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.ISocketClient.ConnectAsync(System.String,System.Int32,System.Int32)">
+      <apidata name="ConnectAsync" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <parameters>
+        <parameter name="remoteAddress">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="remotePort">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+        <parameter name="msTimeout" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>10000</value>
+          </argument>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Threading.Tasks.Task" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.ISocketClient" ref="true" />
+      </containers>
+    </api>
+    <api id="E:W.RPC.ISocketClient.Connected">
+      <apidata name="Connected" group="member" subgroup="event" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <eventdata add="true" remove="true" />
+      <adder name="add_Connected" />
+      <remover name="remove_Connected" />
+      <eventhandler>
+        <type api="T:W.RPC.Delegates.ConnectedDelegate" ref="true">
+          <type api="T:W.RPC.Delegates" ref="true" />
+        </type>
+      </eventhandler>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.ISocketClient" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.RPC.ISocketClient.Disconnect">
+      <apidata name="Disconnect" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.ISocketClient" ref="true" />
+      </containers>
+    </api>
+    <api id="E:W.RPC.ISocketClient.Disconnected">
+      <apidata name="Disconnected" group="member" subgroup="event" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <eventdata add="true" remove="true" />
+      <adder name="add_Disconnected" />
+      <remover name="remove_Disconnected" />
+      <eventhandler>
+        <type api="T:W.RPC.Delegates.DisconnectedDelegate" ref="true">
+          <type api="T:W.RPC.Delegates" ref="true" />
+        </type>
+      </eventhandler>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.ISocketClient" ref="true" />
+      </containers>
+    </api>
+    <api id="P:W.RPC.ISocketClient.IsConnected">
+      <apidata name="IsConnected" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata abstract="true" virtual="true" />
+      <propertydata get="true" />
+      <getter name="get_IsConnected" />
+      <returns>
+        <type api="T:System.Boolean" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten.RPC.Interfaces" module="Tungsten.RPC.Interfaces" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.RPC" />
+        <type api="T:W.RPC.ISocketClient" ref="true" />
       </containers>
     </api>
     <api id="T:W.RPC.RPCClassAttribute">

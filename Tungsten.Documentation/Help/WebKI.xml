@@ -76,7 +76,6 @@
     <HelpKINode Title="about Client class" Url="html/T_W_RPC_Client.htm" />
     <HelpKINode Title="constructor" Url="html/Overload_W_RPC_Client__ctor.htm" />
     <HelpKINode Title="events" Url="html/Events_T_W_RPC_Client.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_W_RPC_Client.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_RPC_Client.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_W_RPC_Client.htm" />
   </HelpKINode>
@@ -84,19 +83,34 @@
   <HelpKINode Title="Client.Connect method" Url="html/Overload_W_RPC_Client_Connect.htm" />
   <HelpKINode Title="Client.ConnectAsync method" Url="html/Overload_W_RPC_Client_ConnectAsync.htm" />
   <HelpKINode Title="Client.Connected event" Url="html/E_W_RPC_Client_Connected.htm" />
-  <HelpKINode Title="Client.ConnectedDelegate delegate" Url="html/T_W_RPC_Client_ConnectedDelegate.htm" />
-  <HelpKINode Title="Client.DefaultConnectTimeout field" Url="html/F_W_RPC_Client_DefaultConnectTimeout.htm" />
-  <HelpKINode Title="Client.DefaultMakeRPCCallTimeout field" Url="html/F_W_RPC_Client_DefaultMakeRPCCallTimeout.htm" />
   <HelpKINode Title="Client.Disconnect method" Url="html/M_W_RPC_Client_Disconnect.htm" />
   <HelpKINode Title="Client.Disconnected event" Url="html/E_W_RPC_Client_Disconnected.htm" />
-  <HelpKINode Title="Client.DisconnectedDelegate delegate" Url="html/T_W_RPC_Client_DisconnectedDelegate.htm" />
   <HelpKINode Title="Client.Dispose method" Url="html/M_W_RPC_Client_Dispose.htm" />
   <HelpKINode Title="Client.Finalize method" Url="html/M_W_RPC_Client_Finalize.htm" />
   <HelpKINode Title="Client.IsConnected property" Url="html/P_W_RPC_Client_IsConnected.htm" />
   <HelpKINode Title="Client.MakeRPCCall method" Url="html/Overload_W_RPC_Client_MakeRPCCall.htm" />
-  <HelpKINode Title="Connect method" Url="html/Overload_W_RPC_Client_Connect.htm" />
-  <HelpKINode Title="ConnectAsync method" Url="html/Overload_W_RPC_Client_ConnectAsync.htm" />
-  <HelpKINode Title="Connected event" Url="html/E_W_RPC_Client_Connected.htm" />
+  <HelpKINode Title="Connect method">
+    <HelpKINode Title="Client.Connect Method " Url="html/Overload_W_RPC_Client_Connect.htm" />
+    <HelpKINode Title="ISocketClient.Connect Method " Url="html/Overload_W_RPC_ISocketClient_Connect.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConnectAsync method">
+    <HelpKINode Title="Client.ConnectAsync Method " Url="html/Overload_W_RPC_Client_ConnectAsync.htm" />
+    <HelpKINode Title="ISocketClient.ConnectAsync Method " Url="html/Overload_W_RPC_ISocketClient_ConnectAsync.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Connected event">
+    <HelpKINode Title="Client.Connected Event" Url="html/E_W_RPC_Client_Connected.htm" />
+    <HelpKINode Title="ISocketClient.Connected Event" Url="html/E_W_RPC_ISocketClient_Connected.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Constants class">
+    <HelpKINode Title="Constants Class" Url="html/T_W_RPC_Constants.htm" />
+    <HelpKINode Title="about Constants class" Url="html/T_W_RPC_Constants.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_RPC_Constants__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_RPC_Constants.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_RPC_Constants.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Constants.Constants constructor" Url="html/M_W_RPC_Constants__ctor.htm" />
+  <HelpKINode Title="Constants.DefaultConnectTimeout field" Url="html/F_W_RPC_Constants_DefaultConnectTimeout.htm" />
+  <HelpKINode Title="Constants.DefaultMakeRPCCallTimeout field" Url="html/F_W_RPC_Constants_DefaultMakeRPCCallTimeout.htm" />
   <HelpKINode Title="Count property" Url="html/P_W_ActionQueue_1_Count.htm" />
   <HelpKINode Title="Create method">
     <HelpKINode Title="DomainLoader.Create Method " Url="html/Overload_W_Domains_DomainLoader_Create.htm" />
@@ -109,16 +123,33 @@
   <HelpKINode Title="CreateThread method" Url="html/Overload_W_Threading_ThreadExtensions_CreateThread.htm" />
   <HelpKINode Title="Cts property" Url="html/P_W_Threading_ThreadBase_Cts.htm" />
   <HelpKINode Title="CustomData property" Url="html/P_W_Threading_Thread_1_CustomData.htm" />
-  <HelpKINode Title="DefaultConnectTimeout field" Url="html/F_W_RPC_Client_DefaultConnectTimeout.htm" />
-  <HelpKINode Title="DefaultMakeRPCCallTimeout field" Url="html/F_W_RPC_Client_DefaultMakeRPCCallTimeout.htm" />
+  <HelpKINode Title="DefaultConnectTimeout field" Url="html/F_W_RPC_Constants_DefaultConnectTimeout.htm" />
+  <HelpKINode Title="DefaultMakeRPCCallTimeout field" Url="html/F_W_RPC_Constants_DefaultMakeRPCCallTimeout.htm" />
   <HelpKINode Title="DefaultValue property" Url="html/P_W_PropertyBase_2_DefaultValue.htm" />
+  <HelpKINode Title="Delegates class">
+    <HelpKINode Title="Delegates Class" Url="html/T_W_RPC_Delegates.htm" />
+    <HelpKINode Title="about Delegates class" Url="html/T_W_RPC_Delegates.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_RPC_Delegates__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_RPC_Delegates.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Delegates.ConnectedDelegate delegate" Url="html/T_W_RPC_Delegates_ConnectedDelegate.htm" />
+  <HelpKINode Title="Delegates.ConnectionTimeoutDelegate delegate" Url="html/T_W_RPC_Delegates_ConnectionTimeoutDelegate.htm" />
+  <HelpKINode Title="Delegates.Delegates constructor" Url="html/M_W_RPC_Delegates__ctor.htm" />
+  <HelpKINode Title="Delegates.DisconnectedDelegate delegate" Url="html/T_W_RPC_Delegates_DisconnectedDelegate.htm" />
   <HelpKINode Title="Delete method" Url="html/Overload_W_LiteDb_LiteDbMethods_Delete.htm" />
   <HelpKINode Title="DeleteBitmap method" Url="html/M_W_LiteDb_LiteDbMethods_DeleteBitmap.htm" />
-  <HelpKINode Title="Disconnect method" Url="html/M_W_RPC_Client_Disconnect.htm" />
-  <HelpKINode Title="Disconnected event" Url="html/E_W_RPC_Client_Disconnected.htm" />
+  <HelpKINode Title="Disconnect method">
+    <HelpKINode Title="Client.Disconnect Method " Url="html/M_W_RPC_Client_Disconnect.htm" />
+    <HelpKINode Title="ISocketClient.Disconnect Method " Url="html/M_W_RPC_ISocketClient_Disconnect.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Disconnected event">
+    <HelpKINode Title="Client.Disconnected Event" Url="html/E_W_RPC_Client_Disconnected.htm" />
+    <HelpKINode Title="ISocketClient.Disconnected Event" Url="html/E_W_RPC_ISocketClient_Disconnected.htm" />
+  </HelpKINode>
   <HelpKINode Title="Dispose method">
     <HelpKINode Title="Client.Dispose Method " Url="html/M_W_RPC_Client_Dispose.htm" />
     <HelpKINode Title="DomainLoader.Dispose Method " Url="html/M_W_Domains_DomainLoader_Dispose.htm" />
+    <HelpKINode Title="IClient.Dispose Method " Url="html/M_W_RPC_IClient_Dispose.htm" />
     <HelpKINode Title="IDomainLoader.Dispose Method " Url="html/M_W_Domains_IDomainLoader_Dispose.htm" />
     <HelpKINode Title="IServer.Dispose Method " Url="html/M_W_RPC_Interfaces_IServer_Dispose.htm" />
     <HelpKINode Title="Server.Dispose Method " Url="html/M_W_RPC_Server_Dispose.htm" />
@@ -218,6 +249,13 @@
     <HelpKINode Title="PropertyChangedNotifier.GetValue Method " Url="html/M_W_PropertyChangedNotifier_GetValue.htm" />
   </HelpKINode>
   <HelpKINode Title="i method" Url="html/M_W_Logging_Log_i.htm" />
+  <HelpKINode Title="IClient interface">
+    <HelpKINode Title="IClient Interface" Url="html/T_W_RPC_IClient.htm" />
+    <HelpKINode Title="about IClient interface" Url="html/T_W_RPC_IClient.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_RPC_IClient.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IClient.Dispose method" Url="html/M_W_RPC_IClient_Dispose.htm" />
+  <HelpKINode Title="IClient.MakeRPCCall method" Url="html/Overload_W_RPC_IClient_MakeRPCCall.htm" />
   <HelpKINode Title="IDomainLoader interface">
     <HelpKINode Title="IDomainLoader Interface" Url="html/T_W_Domains_IDomainLoader.htm" />
     <HelpKINode Title="about IDomainLoader interface" Url="html/T_W_Domains_IDomainLoader.htm" />
@@ -274,7 +312,10 @@
   </HelpKINode>
   <HelpKINode Title="IProperty&lt;TValue&gt;.Value property" Url="html/P_W_IProperty_1_Value.htm" />
   <HelpKINode Title="IsBusy property" Url="html/P_W_Threading_ThreadBase_IsBusy.htm" />
-  <HelpKINode Title="IsConnected property" Url="html/P_W_RPC_Client_IsConnected.htm" />
+  <HelpKINode Title="IsConnected property">
+    <HelpKINode Title="Client.IsConnected Property " Url="html/P_W_RPC_Client_IsConnected.htm" />
+    <HelpKINode Title="ISocketClient.IsConnected Property " Url="html/P_W_RPC_ISocketClient_IsConnected.htm" />
+  </HelpKINode>
   <HelpKINode Title="IsDirty method" Url="html/M_W_PropertyHostMethods_IsDirty.htm" />
   <HelpKINode Title="IsDirty property">
     <HelpKINode Title="IProperty.IsDirty Property " Url="html/P_W_IProperty_IsDirty.htm" />
@@ -290,6 +331,19 @@
   <HelpKINode Title="IServer.Dispose method" Url="html/M_W_RPC_Interfaces_IServer_Dispose.htm" />
   <HelpKINode Title="IServer.Start method" Url="html/M_W_RPC_Interfaces_IServer_Start.htm" />
   <HelpKINode Title="IServer.Stop method" Url="html/M_W_RPC_Interfaces_IServer_Stop.htm" />
+  <HelpKINode Title="ISocketClient interface">
+    <HelpKINode Title="ISocketClient Interface" Url="html/T_W_RPC_ISocketClient.htm" />
+    <HelpKINode Title="about ISocketClient interface" Url="html/T_W_RPC_ISocketClient.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_W_RPC_ISocketClient.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_RPC_ISocketClient.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_RPC_ISocketClient.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ISocketClient.Connect method" Url="html/Overload_W_RPC_ISocketClient_Connect.htm" />
+  <HelpKINode Title="ISocketClient.ConnectAsync method" Url="html/Overload_W_RPC_ISocketClient_ConnectAsync.htm" />
+  <HelpKINode Title="ISocketClient.Connected event" Url="html/E_W_RPC_ISocketClient_Connected.htm" />
+  <HelpKINode Title="ISocketClient.Disconnect method" Url="html/M_W_RPC_ISocketClient_Disconnect.htm" />
+  <HelpKINode Title="ISocketClient.Disconnected event" Url="html/E_W_RPC_ISocketClient_Disconnected.htm" />
+  <HelpKINode Title="ISocketClient.IsConnected property" Url="html/P_W_RPC_ISocketClient_IsConnected.htm" />
   <HelpKINode Title="IsRunning property" Url="html/P_W_Threading_ThreadBase_IsRunning.htm" />
   <HelpKINode Title="Join method">
     <HelpKINode Title="Thread.Join Method " Url="html/Overload_W_Threading_Thread_Join.htm" />
@@ -366,7 +420,10 @@
   <HelpKINode Title="Log.v method" Url="html/M_W_Logging_Log_v.htm" />
   <HelpKINode Title="Log.w method" Url="html/M_W_Logging_Log_w.htm" />
   <HelpKINode Title="LogTheMessage property" Url="html/P_W_Logging_Log_LogTheMessage.htm" />
-  <HelpKINode Title="MakeRPCCall method" Url="html/Overload_W_RPC_Client_MakeRPCCall.htm" />
+  <HelpKINode Title="MakeRPCCall method">
+    <HelpKINode Title="Client.MakeRPCCall Method " Url="html/Overload_W_RPC_Client_MakeRPCCall.htm" />
+    <HelpKINode Title="IClient.MakeRPCCall Method " Url="html/Overload_W_RPC_IClient_MakeRPCCall.htm" />
+  </HelpKINode>
   <HelpKINode Title="MarkAsClean method">
     <HelpKINode Title="PropertyHost.MarkAsClean Method " Url="html/M_W_PropertyHost_MarkAsClean.htm" />
     <HelpKINode Title="PropertyHostMethods.MarkAsClean Method " Url="html/M_W_PropertyHostMethods_MarkAsClean.htm" />
@@ -685,10 +742,15 @@
   <HelpKINode Title="W.PropertyHostNotifier class" Url="html/T_W_PropertyHostNotifier.htm" />
   <HelpKINode Title="W.RPC namespace" Url="html/N_W_RPC.htm" />
   <HelpKINode Title="W.RPC.Client class" Url="html/T_W_RPC_Client.htm" />
-  <HelpKINode Title="W.RPC.Client.ConnectedDelegate delegate" Url="html/T_W_RPC_Client_ConnectedDelegate.htm" />
-  <HelpKINode Title="W.RPC.Client.DisconnectedDelegate delegate" Url="html/T_W_RPC_Client_DisconnectedDelegate.htm" />
+  <HelpKINode Title="W.RPC.Constants class" Url="html/T_W_RPC_Constants.htm" />
+  <HelpKINode Title="W.RPC.Delegates class" Url="html/T_W_RPC_Delegates.htm" />
+  <HelpKINode Title="W.RPC.Delegates.ConnectedDelegate delegate" Url="html/T_W_RPC_Delegates_ConnectedDelegate.htm" />
+  <HelpKINode Title="W.RPC.Delegates.ConnectionTimeoutDelegate delegate" Url="html/T_W_RPC_Delegates_ConnectionTimeoutDelegate.htm" />
+  <HelpKINode Title="W.RPC.Delegates.DisconnectedDelegate delegate" Url="html/T_W_RPC_Delegates_DisconnectedDelegate.htm" />
+  <HelpKINode Title="W.RPC.IClient interface" Url="html/T_W_RPC_IClient.htm" />
   <HelpKINode Title="W.RPC.Interfaces namespace" Url="html/N_W_RPC_Interfaces.htm" />
   <HelpKINode Title="W.RPC.Interfaces.IServer interface" Url="html/T_W_RPC_Interfaces_IServer.htm" />
+  <HelpKINode Title="W.RPC.ISocketClient interface" Url="html/T_W_RPC_ISocketClient.htm" />
   <HelpKINode Title="W.RPC.RPCClassAttribute class" Url="html/T_W_RPC_RPCClassAttribute.htm" />
   <HelpKINode Title="W.RPC.RPCMethodAttribute class" Url="html/T_W_RPC_RPCMethodAttribute.htm" />
   <HelpKINode Title="W.RPC.Server class" Url="html/T_W_RPC_Server.htm" />

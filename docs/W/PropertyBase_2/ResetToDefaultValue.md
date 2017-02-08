@@ -1,8 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.ResetToDefaultValue Method
 ==========================================================
-  
-[Missing &lt;summary> documentation for "M:W.PropertyBase`2.ResetToDefaultValue(System.Boolean)"]
-
+  Resets the Value to the value provided by DefaultValue
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -20,9 +18,7 @@ public void ResetToDefaultValue(
 
 ##### *raise*
 Type: [System.Boolean][2]  
-
-[Missing &lt;param name="raise"/> documentation for "M:W.PropertyBase`2.ResetToDefaultValue(System.Boolean)"]
-
+If True, raise OnPropertyChanged event and call the OnValueChanged callback
 
 
 See Also

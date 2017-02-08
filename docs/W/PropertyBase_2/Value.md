@@ -1,8 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.Value Property
 ==============================================
-  
-[Missing &lt;summary> documentation for "P:W.PropertyBase`2.Value"]
-
+  Get/Set the actual value of the Property
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

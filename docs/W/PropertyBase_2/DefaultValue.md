@@ -1,7 +1,7 @@
 PropertyBase&lt;TOwner, TValue>.DefaultValue Property
 =====================================================
   
-[Missing &lt;summary> documentation for "P:W.PropertyBase`2.DefaultValue"]
+Allows the programmer to assign a default value which can be reset via the ResetToDefaultValue method. This value does not have to be the initial value.
 
 
   **Namespace:**  [W][1]  

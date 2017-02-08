@@ -41,12 +41,15 @@ Type: [ManualResetEvent][5]
 
 [Missing &lt;returns> documentation for "M:W.RPC.Client.MakeRPCCall(System.String,System.Action,System.Object[])"]
 
+#### Implements
+[IClient.MakeRPCCall(String, Action, Object[])][6]  
+
 
 See Also
 --------
 
 #### Reference
-[Client Class][6]  
+[Client Class][7]  
 [W.RPC Namespace][1]  
 
 [1]: ../README.md
@@ -54,5 +57,6 @@ See Also
 [3]: http://msdn.microsoft.com/en-us/library/bb534741
 [4]: http://msdn.microsoft.com/en-us/library/e5kfa45b
 [5]: http://msdn.microsoft.com/en-us/library/2ssskfws
-[6]: README.md
-[7]: ../../_icons/Help.png
+[6]: ../IClient/MakeRPCCall.md
+[7]: README.md
+[8]: ../../_icons/Help.png

@@ -1,8 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.IsDirty Property
 ================================================
-  
-[Missing &lt;summary> documentation for "P:W.PropertyBase`2.IsDirty"]
-
+  True if Value has changed since initialization or since the last call to MarkAsClean
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

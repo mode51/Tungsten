@@ -1,8 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.OnPropertyChanged Method
 ========================================================
-  
-[Missing &lt;summary> documentation for "M:W.PropertyBase`2.OnPropertyChanged(System.String)"]
-
+  Raises the OnPropertyChanged event
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -20,9 +18,7 @@ protected override void OnPropertyChanged(
 
 ##### *propertyName* (Optional)
 Type: [System.String][2]  
-
-[Missing &lt;param name="propertyName"/> documentation for "M:W.PropertyBase`2.OnPropertyChanged(System.String)"]
-
+The name of the property which changed
 
 
 See Also

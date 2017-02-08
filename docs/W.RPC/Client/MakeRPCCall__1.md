@@ -34,17 +34,21 @@ The result from the call
 #### Return Value
 Type: [ManualResetEvent][4]  
 A ManualResetEvent which can be joined (with or without a timeout) to block the calling thread until a respoonse is received.
+#### Implements
+[IClient.MakeRPCCall&lt;T>(String, Action&lt;T>)][5]  
+
 
 See Also
 --------
 
 #### Reference
-[Client Class][5]  
+[Client Class][6]  
 [W.RPC Namespace][1]  
 
 [1]: ../README.md
 [2]: http://msdn.microsoft.com/en-us/library/s1wwdcbf
 [3]: http://msdn.microsoft.com/en-us/library/018hxwa8
 [4]: http://msdn.microsoft.com/en-us/library/2ssskfws
-[5]: README.md
-[6]: ../../_icons/Help.png
+[5]: ../IClient/MakeRPCCall__1.md
+[6]: README.md
+[7]: ../../_icons/Help.png

@@ -272,6 +272,157 @@
             Calls PropertyHostMethods.InitializeProperties so you don't have to
             </summary>
     </member>
+    <member name="T:W.IOwnedProperty">
+      <summary>
+        <para>
+            Used by PropertyHostMethods.InitializeProperties to find properties on which to set the owner.  This interface is not used by self-owned properties.
+            </para>
+      </summary>
+    </member>
+    <member name="M:W.IOwnedProperty.SetOwner(System.Object)">
+      <summary>
+            Sets the property owner to the specified value
+            </summary>
+      <param name="owner">The new property owner</param>
+    </member>
+    <member name="T:W.IProperty`1">
+      <summary>
+            The base interface which Property must support
+            </summary>
+      <typeparam name="TValue">The type of value for the property</typeparam>
+    </member>
+    <member name="P:W.IProperty`1.Value">
+      <summary>
+            The value of the property
+            </summary>
+    </member>
+    <member name="T:W.IProperty">
+      <summary>
+            The base interface which Property must support
+            </summary>
+    </member>
+    <member name="P:W.IProperty.IsDirty">
+      <summary>
+            True if the property's value has changed since initialization or since the last call to MarkAsClean
+            </summary>
+    </member>
+    <member name="T:W.Property`2">
+      <summary>
+            A generic Property with an owner
+            </summary>
+      <typeparam name="TOwner">The type of owner</typeparam>
+      <typeparam name="TValue">The type of the property value</typeparam>
+    </member>
+    <member name="M:W.Property`2.#ctor">
+      <summary>
+            Constructs a new Property
+            </summary>
+    </member>
+    <member name="M:W.Property`2.#ctor(`1)">
+      <summary>
+            Constructs a new Property
+            </summary>
+      <param name="defaultValue">The default and initial value of the property</param>
+    </member>
+    <member name="M:W.Property`2.#ctor(W.PropertyBase{`0,`1}.OnValueChangedDelegate)">
+      <summary>
+            Constructs a new Property
+            </summary>
+      <param name="onValueChanged">A callback for when the property value changes</param>
+    </member>
+    <member name="M:W.Property`2.#ctor(`0)">
+      <summary>
+            Constructs a new Property
+            </summary>
+      <param name="owner">The owner of the property</param>
+    </member>
+    <member name="M:W.Property`2.#ctor(`0,`1)">
+      <summary>
+            Constructs a new Property
+            </summary>
+      <param name="owner">The owner of the property</param>
+      <param name="defaultValue">The default and initial value of the property</param>
+    </member>
+    <member name="M:W.Property`2.#ctor(`0,W.PropertyBase{`0,`1}.OnValueChangedDelegate)">
+      <summary>
+            Constructs a new Property
+            </summary>
+      <param name="owner">The owner of the property</param>
+      <param name="onValueChanged">A callback for when the property value changes</param>
+    </member>
+    <member name="M:W.Property`2.#ctor(`0,`1,W.PropertyBase{`0,`1}.OnValueChangedDelegate)">
+      <summary>
+            Constructs a new Property
+            </summary>
+      <param name="owner">The owner of the property</param>
+      <param name="defaultValue">The default and initial value of the property</param>
+      <param name="onValueChanged">A callback for when the property value changes</param>
+    </member>
+    <member name="T:W.Property`1">
+      <summary>
+            A generic Property with no owner (self-owned)
+            </summary>
+      <typeparam name="TValue">The type of the property value</typeparam>
+    </member>
+    <member name="M:W.Property`1.#ctor">
+      <summary>
+            Constructs a new Property
+            </summary>
+    </member>
+    <member name="M:W.Property`1.#ctor(`0)">
+      <summary>
+            Constructs a new Property
+            </summary>
+      <param name="defaultValue">The default and initial value of the property value</param>
+    </member>
+    <member name="M:W.Property`1.#ctor(W.PropertyBase{W.Property{`0},`0}.OnValueChangedDelegate)">
+      <summary>
+            Constructs a new Property
+            </summary>
+      <param name="onValueChanged">A callback for when the property value changes</param>
+    </member>
+    <member name="M:W.Property`1.#ctor(`0,W.PropertyBase{W.Property{`0},`0}.OnValueChangedDelegate)">
+      <summary>
+            Constructs a new Property
+            </summary>
+      <param name="defaultValue">The default and initial value of the property value</param>
+      <param name="onValueChanged">A callback for when the property value changes</param>
+    </member>
+    <member name="T:W.PropertyBase`2">
+      <summary>
+            Provides the functionality for the Property classes
+            </summary>
+      <typeparam name="TOwner">The type of the property owner</typeparam>
+      <typeparam name="TValue">The type of the property value</typeparam>
+    </member>
+    <member name="T:W.PropertyBase`2.PropertyValueChangingDelegate">
+      <summary>
+            Raised prior to the value of the property changing.  Allows the programmer to cancel the change.
+            </summary>
+      <param name="owner">The owner of the property</param>
+      <param name="oldValue">The old value</param>
+      <param name="newValue">The expected new value</param>
+      <param name="cancel">Set to True to prevent the property value from changing</param>
+    </member>
+    <member name="T:W.PropertyBase`2.PropertyValueChangedDelegate">
+      <summary>
+            Raised when the value of the property changes
+            </summary>
+      <param name="sender">
+      </param>
+      <param name="oldValue">
+      </param>
+      <param name="newValue">
+      </param>
+    </member>
+    <member name="T:W.PropertyBase`2.OnValueChangedDelegate">
+      <summary>
+            Used by the constructor to handle the property change via a callback rather than the events
+            </summary>
+      <param name="owner">The property owner</param>
+      <param name="oldValue">The previous value</param>
+      <param name="newValue">The new value</param>
+    </member>
     <member name="E:W.PropertyBase`2.ValueChanged">
       <summary>
             Raised after Value has changed
@@ -280,6 +431,39 @@
     <member name="E:W.PropertyBase`2.ValueChanging">
       <summary>
             Raised before Value has changed.  To prevent Value from changing set cancel to true.
+            </summary>
+    </member>
+    <member name="F:W.PropertyBase`2.OnValueChanged">
+      <summary>
+            Callback type for use in the constructor (if one wants to avoid using the event)
+            </summary>
+    </member>
+    <member name="P:W.PropertyBase`2.IsDirty">
+      <summary>
+            True if Value has changed since initialization or since the last call to MarkAsClean
+            </summary>
+    </member>
+    <member name="P:W.PropertyBase`2.Owner">
+      <summary>
+            The property owner
+            </summary>
+    </member>
+    <member name="P:W.PropertyBase`2.DefaultValue">
+      <summary>
+        <para>
+            Allows the programmer to assign a default value which can be reset via the ResetToDefaultValue method. This value does not have to be the initial value.
+            </para>
+      </summary>
+    </member>
+    <member name="M:W.PropertyBase`2.ResetToDefaultValue(System.Boolean)">
+      <summary>
+            Resets the Value to the value provided by DefaultValue
+            </summary>
+      <param name="raise">If True, raise OnPropertyChanged event and call the OnValueChanged callback</param>
+    </member>
+    <member name="P:W.PropertyBase`2.Value">
+      <summary>
+            Get/Set the actual value of the Property
             </summary>
     </member>
     <member name="M:W.PropertyBase`2.WaitForChanged(System.Int32)">
@@ -297,6 +481,47 @@
             </summary>
       <remarks>Calling LoadValue sets IsDirty to false</remarks>
       <param name="value">The new value</param>
+    </member>
+    <member name="M:W.PropertyBase`2.GetValue">
+      <summary>
+            Gets the property value
+            </summary>
+      <returns>The property value</returns>
+    </member>
+    <member name="M:W.PropertyBase`2.SetValue(System.Object,System.String)">
+      <summary>
+            Sets the property value
+            </summary>
+      <param name="value">The new property value</param>
+      <param name="callerMemberName">For logging purposes; it's not necessary to set</param>
+    </member>
+    <member name="M:W.PropertyBase`2.OnPropertyChanged(System.String)">
+      <summary>
+            Raises the OnPropertyChanged event
+            </summary>
+      <param name="propertyName">The name of the property which changed</param>
+    </member>
+    <member name="M:W.PropertyBase`2.ExecuteOnValueChanged(`1,`1)">
+      <summary>
+            Calls the OnValueChanged callback
+            </summary>
+      <param name="oldValue">The old property value</param>
+      <param name="newValue">The new property value</param>
+    </member>
+    <member name="M:W.PropertyBase`2.RaisePropertyValueChanging(`1,`1,System.Boolean@)">
+      <summary>
+            Raises the ValueChanging event
+            </summary>
+      <param name="oldValue">The old property value</param>
+      <param name="newValue">The expected new property value</param>
+      <param name="cancel">Set to True to cancel the property change</param>
+    </member>
+    <member name="M:W.PropertyBase`2.RaisePropertyValueChanged(`1,`1)">
+      <summary>
+            Raises the PropertyValueChanged event
+            </summary>
+      <param name="oldValue">The old property value</param>
+      <param name="newValue">The new property value</param>
     </member>
     <member name="T:W.PropertyHost">
       <summary>

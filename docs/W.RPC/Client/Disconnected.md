@@ -9,20 +9,24 @@ Syntax
 ------
 
 ```csharp
-public event Client.DisconnectedDelegate Disconnected
+public event Delegates.DisconnectedDelegate Disconnected
 ```
 
 #### Value
-Type: [W.RPC.Client.DisconnectedDelegate][2]
+Type: [W.RPC.Delegates.DisconnectedDelegate][2]
+#### Implements
+[ISocketClient.Disconnected][3]  
+
 
 See Also
 --------
 
 #### Reference
-[Client Class][3]  
+[Client Class][4]  
 [W.RPC Namespace][1]  
 
 [1]: ../README.md
-[2]: ../Client_DisconnectedDelegate/README.md
-[3]: README.md
-[4]: ../../_icons/Help.png
+[2]: ../Delegates_DisconnectedDelegate/README.md
+[3]: ../ISocketClient/Disconnected.md
+[4]: README.md
+[5]: ../../_icons/Help.png

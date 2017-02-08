@@ -303,8 +303,8 @@
         </topic>
         <topic id="Methods.T:W.RPC.Client" project="Tungsten.RPC" file="Methods_T_W_RPC_Client">
           <topic id="Overload:W.RPC.Client.Connect" project="Tungsten.RPC" file="Overload_W_RPC_Client_Connect">
-            <topic id="M:W.RPC.Client.Connect(System.Net.IPAddress,System.Int32,System.Int32,System.Action{W.RPC.Client,System.Net.IPAddress})" project="Tungsten.RPC" file="M_W_RPC_Client_Connect" />
-            <topic id="M:W.RPC.Client.Connect(System.String,System.Int32,System.Int32,System.Action{W.RPC.Client,System.Net.IPAddress})" project="Tungsten.RPC" file="M_W_RPC_Client_Connect_1" />
+            <topic id="M:W.RPC.Client.Connect(System.Net.IPAddress,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})" project="Tungsten.RPC" file="M_W_RPC_Client_Connect" />
+            <topic id="M:W.RPC.Client.Connect(System.String,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})" project="Tungsten.RPC" file="M_W_RPC_Client_Connect_1" />
           </topic>
           <topic id="Overload:W.RPC.Client.ConnectAsync" project="Tungsten.RPC" file="Overload_W_RPC_Client_ConnectAsync">
             <topic id="M:W.RPC.Client.ConnectAsync(System.Net.IPAddress,System.Int32,System.Int32)" project="Tungsten.RPC" file="M_W_RPC_Client_ConnectAsync" />
@@ -323,13 +323,52 @@
           <topic id="E:W.RPC.Client.Connected" project="Tungsten.RPC" file="E_W_RPC_Client_Connected" />
           <topic id="E:W.RPC.Client.Disconnected" project="Tungsten.RPC" file="E_W_RPC_Client_Disconnected" />
         </topic>
-        <topic id="Fields.T:W.RPC.Client" project="Tungsten.RPC" file="Fields_T_W_RPC_Client">
-          <topic id="F:W.RPC.Client.DefaultConnectTimeout" project="Tungsten.RPC" file="F_W_RPC_Client_DefaultConnectTimeout" />
-          <topic id="F:W.RPC.Client.DefaultMakeRPCCallTimeout" project="Tungsten.RPC" file="F_W_RPC_Client_DefaultMakeRPCCallTimeout" />
+      </topic>
+      <topic id="T:W.RPC.Constants" project="Tungsten.RPC.Interfaces" file="T_W_RPC_Constants">
+        <topic id="M:W.RPC.Constants.#ctor" project="Tungsten.RPC.Interfaces" file="M_W_RPC_Constants__ctor" />
+        <topic id="Methods.T:W.RPC.Constants" project="Tungsten.RPC.Interfaces" file="Methods_T_W_RPC_Constants" />
+        <topic id="Fields.T:W.RPC.Constants" project="Tungsten.RPC.Interfaces" file="Fields_T_W_RPC_Constants">
+          <topic id="F:W.RPC.Constants.DefaultConnectTimeout" project="Tungsten.RPC.Interfaces" file="F_W_RPC_Constants_DefaultConnectTimeout" />
+          <topic id="F:W.RPC.Constants.DefaultMakeRPCCallTimeout" project="Tungsten.RPC.Interfaces" file="F_W_RPC_Constants_DefaultMakeRPCCallTimeout" />
         </topic>
       </topic>
-      <topic id="T:W.RPC.Client.ConnectedDelegate" project="Tungsten.RPC" file="T_W_RPC_Client_ConnectedDelegate" />
-      <topic id="T:W.RPC.Client.DisconnectedDelegate" project="Tungsten.RPC" file="T_W_RPC_Client_DisconnectedDelegate" />
+      <topic id="T:W.RPC.Delegates" project="Tungsten.RPC.Interfaces" file="T_W_RPC_Delegates">
+        <topic id="M:W.RPC.Delegates.#ctor" project="Tungsten.RPC.Interfaces" file="M_W_RPC_Delegates__ctor" />
+        <topic id="Methods.T:W.RPC.Delegates" project="Tungsten.RPC.Interfaces" file="Methods_T_W_RPC_Delegates" />
+      </topic>
+      <topic id="T:W.RPC.Delegates.ConnectedDelegate" project="Tungsten.RPC.Interfaces" file="T_W_RPC_Delegates_ConnectedDelegate" />
+      <topic id="T:W.RPC.Delegates.ConnectionTimeoutDelegate" project="Tungsten.RPC.Interfaces" file="T_W_RPC_Delegates_ConnectionTimeoutDelegate" />
+      <topic id="T:W.RPC.Delegates.DisconnectedDelegate" project="Tungsten.RPC.Interfaces" file="T_W_RPC_Delegates_DisconnectedDelegate" />
+      <topic id="T:W.RPC.IClient" project="Tungsten.RPC.Interfaces" file="T_W_RPC_IClient">
+        <topic id="Methods.T:W.RPC.IClient" project="Tungsten.RPC.Interfaces" file="Methods_T_W_RPC_IClient">
+          <topic id="M:W.RPC.IClient.Dispose" project="Tungsten.RPC.Interfaces" file="M_W_RPC_IClient_Dispose" />
+          <topic id="Overload:W.RPC.IClient.MakeRPCCall" project="Tungsten.RPC.Interfaces" file="Overload_W_RPC_IClient_MakeRPCCall">
+            <topic id="M:W.RPC.IClient.MakeRPCCall``1(System.String,System.Action{``0})" project="Tungsten.RPC.Interfaces" file="M_W_RPC_IClient_MakeRPCCall__1" />
+            <topic id="M:W.RPC.IClient.MakeRPCCall(System.String,System.Action,System.Object[])" project="Tungsten.RPC.Interfaces" file="M_W_RPC_IClient_MakeRPCCall" />
+            <topic id="M:W.RPC.IClient.MakeRPCCall``1(System.String,System.Action{``0},System.Object[])" project="Tungsten.RPC.Interfaces" file="M_W_RPC_IClient_MakeRPCCall__1_1" />
+          </topic>
+        </topic>
+      </topic>
+      <topic id="T:W.RPC.ISocketClient" project="Tungsten.RPC.Interfaces" file="T_W_RPC_ISocketClient">
+        <topic id="Properties.T:W.RPC.ISocketClient" project="Tungsten.RPC.Interfaces" file="Properties_T_W_RPC_ISocketClient">
+          <topic id="P:W.RPC.ISocketClient.IsConnected" project="Tungsten.RPC.Interfaces" file="P_W_RPC_ISocketClient_IsConnected" />
+        </topic>
+        <topic id="Methods.T:W.RPC.ISocketClient" project="Tungsten.RPC.Interfaces" file="Methods_T_W_RPC_ISocketClient">
+          <topic id="Overload:W.RPC.ISocketClient.Connect" project="Tungsten.RPC.Interfaces" file="Overload_W_RPC_ISocketClient_Connect">
+            <topic id="M:W.RPC.ISocketClient.Connect(System.Net.IPAddress,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})" project="Tungsten.RPC.Interfaces" file="M_W_RPC_ISocketClient_Connect" />
+            <topic id="M:W.RPC.ISocketClient.Connect(System.String,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})" project="Tungsten.RPC.Interfaces" file="M_W_RPC_ISocketClient_Connect_1" />
+          </topic>
+          <topic id="Overload:W.RPC.ISocketClient.ConnectAsync" project="Tungsten.RPC.Interfaces" file="Overload_W_RPC_ISocketClient_ConnectAsync">
+            <topic id="M:W.RPC.ISocketClient.ConnectAsync(System.Net.IPAddress,System.Int32,System.Int32)" project="Tungsten.RPC.Interfaces" file="M_W_RPC_ISocketClient_ConnectAsync" />
+            <topic id="M:W.RPC.ISocketClient.ConnectAsync(System.String,System.Int32,System.Int32)" project="Tungsten.RPC.Interfaces" file="M_W_RPC_ISocketClient_ConnectAsync_1" />
+          </topic>
+          <topic id="M:W.RPC.ISocketClient.Disconnect" project="Tungsten.RPC.Interfaces" file="M_W_RPC_ISocketClient_Disconnect" />
+        </topic>
+        <topic id="Events.T:W.RPC.ISocketClient" project="Tungsten.RPC.Interfaces" file="Events_T_W_RPC_ISocketClient">
+          <topic id="E:W.RPC.ISocketClient.Connected" project="Tungsten.RPC.Interfaces" file="E_W_RPC_ISocketClient_Connected" />
+          <topic id="E:W.RPC.ISocketClient.Disconnected" project="Tungsten.RPC.Interfaces" file="E_W_RPC_ISocketClient_Disconnected" />
+        </topic>
+      </topic>
       <topic id="T:W.RPC.RPCClassAttribute" project="Tungsten.RPC" file="T_W_RPC_RPCClassAttribute">
         <topic id="M:W.RPC.RPCClassAttribute.#ctor" project="Tungsten.RPC" file="M_W_RPC_RPCClassAttribute__ctor" />
         <topic id="Methods.T:W.RPC.RPCClassAttribute" project="Tungsten.RPC" file="Methods_T_W_RPC_RPCClassAttribute" />

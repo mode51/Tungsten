@@ -1,8 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.RaisePropertyValueChanged Method
 ================================================================
-  
-[Missing &lt;summary> documentation for "M:W.PropertyBase`2.RaisePropertyValueChanged(`1,`1)"]
-
+  Raises the PropertyValueChanged event
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -21,15 +19,11 @@ protected virtual void RaisePropertyValueChanged(
 
 ##### *oldValue*
 Type: [TValue][2]  
-
-[Missing &lt;param name="oldValue"/> documentation for "M:W.PropertyBase`2.RaisePropertyValueChanged(`1,`1)"]
-
+The old property value
 
 ##### *newValue*
 Type: [TValue][2]  
-
-[Missing &lt;param name="newValue"/> documentation for "M:W.PropertyBase`2.RaisePropertyValueChanged(`1,`1)"]
-
+The new property value
 
 
 See Also

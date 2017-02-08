@@ -1,8 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.OnValueChangedDelegate Delegate
 ===============================================================
-  
-[Missing &lt;summary> documentation for "T:W.PropertyBase`2.OnValueChangedDelegate"]
-
+  Used by the constructor to handle the property change via a callback rather than the events
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -22,15 +20,15 @@ public delegate void OnValueChangedDelegate(
 
 ##### *owner*
 Type: [TOwner][2]  
-
+The property owner
 
 ##### *oldValue*
 Type: [TValue][2]  
-
+The previous value
 
 ##### *newValue*
 Type: [TValue][2]  
-
+The new value
 
 
 See Also

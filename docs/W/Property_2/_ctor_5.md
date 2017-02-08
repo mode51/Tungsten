@@ -1,8 +1,8 @@
 Property&lt;TOwner, TValue> Constructor (TValue)
 ================================================
-  Initializes a new instance of the [Property&lt;TOwner, TValue>][1] class
+  Constructs a new Property
 
-  **Namespace:**  [W][2]  
+  **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
 
 Syntax
@@ -17,19 +17,17 @@ public Property(
 #### Parameters
 
 ##### *defaultValue*
-Type: [TValue][1]  
-
-[Missing &lt;param name="defaultValue"/> documentation for "M:W.Property`2.#ctor(`1)"]
-
+Type: [TValue][2]  
+The default and initial value of the property
 
 
 See Also
 --------
 
 #### Reference
-[Property&lt;TOwner, TValue> Class][1]  
-[W Namespace][2]  
+[Property&lt;TOwner, TValue> Class][2]  
+[W Namespace][1]  
 
-[1]: README.md
-[2]: ../README.md
+[1]: ../README.md
+[2]: README.md
 [3]: ../../_icons/Help.png

@@ -1356,13 +1356,13 @@
             </OBJECT></LI>
             <UL>
               <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Connect Method (IPAddress, Int32, Int32, Action(Client, IPAddress))">
+                <param name="Name" value="Connect Method (IPAddress, Int32, Int32, Action(ISocketClient, IPAddress), Action(Exception))">
                 <param name="Local" value="html\M_W_RPC_Client_Connect.htm">
               </OBJECT></LI>
             </UL>
             <UL>
               <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Connect Method (String, Int32, Int32, Action(Client, IPAddress))">
+                <param name="Name" value="Connect Method (String, Int32, Int32, Action(ISocketClient, IPAddress), Action(Exception))">
                 <param name="Local" value="html\M_W_RPC_Client_Connect_1.htm">
               </OBJECT></LI>
             </UL>
@@ -1446,36 +1446,204 @@
             </OBJECT></LI>
           </UL>
         </UL>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Constants Class">
+          <param name="Local" value="html\T_W_RPC_Constants.htm">
+        </OBJECT></LI>
         <UL>
           <LI><OBJECT type="text/sitemap">
-            <param name="Name" value="Client Fields">
-            <param name="Local" value="html\Fields_T_W_RPC_Client.htm">
+            <param name="Name" value="Constants Constructor ">
+            <param name="Local" value="html\M_W_RPC_Constants__ctor.htm">
+          </OBJECT></LI>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Constants Methods">
+            <param name="Local" value="html\Methods_T_W_RPC_Constants.htm">
+          </OBJECT></LI>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Constants Fields">
+            <param name="Local" value="html\Fields_T_W_RPC_Constants.htm">
           </OBJECT></LI>
           <UL>
             <LI><OBJECT type="text/sitemap">
               <param name="Name" value="DefaultConnectTimeout Field">
-              <param name="Local" value="html\F_W_RPC_Client_DefaultConnectTimeout.htm">
+              <param name="Local" value="html\F_W_RPC_Constants_DefaultConnectTimeout.htm">
             </OBJECT></LI>
           </UL>
           <UL>
             <LI><OBJECT type="text/sitemap">
               <param name="Name" value="DefaultMakeRPCCallTimeout Field">
-              <param name="Local" value="html\F_W_RPC_Client_DefaultMakeRPCCallTimeout.htm">
+              <param name="Local" value="html\F_W_RPC_Constants_DefaultMakeRPCCallTimeout.htm">
             </OBJECT></LI>
           </UL>
         </UL>
       </UL>
       <UL>
         <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="Client.ConnectedDelegate Delegate">
-          <param name="Local" value="html\T_W_RPC_Client_ConnectedDelegate.htm">
+          <param name="Name" value="Delegates Class">
+          <param name="Local" value="html\T_W_RPC_Delegates.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Delegates Constructor ">
+            <param name="Local" value="html\M_W_RPC_Delegates__ctor.htm">
+          </OBJECT></LI>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Delegates Methods">
+            <param name="Local" value="html\Methods_T_W_RPC_Delegates.htm">
+          </OBJECT></LI>
+        </UL>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Delegates.ConnectedDelegate Delegate">
+          <param name="Local" value="html\T_W_RPC_Delegates_ConnectedDelegate.htm">
         </OBJECT></LI>
       </UL>
       <UL>
         <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="Client.DisconnectedDelegate Delegate">
-          <param name="Local" value="html\T_W_RPC_Client_DisconnectedDelegate.htm">
+          <param name="Name" value="Delegates.ConnectionTimeoutDelegate Delegate">
+          <param name="Local" value="html\T_W_RPC_Delegates_ConnectionTimeoutDelegate.htm">
         </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Delegates.DisconnectedDelegate Delegate">
+          <param name="Local" value="html\T_W_RPC_Delegates_DisconnectedDelegate.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="IClient Interface">
+          <param name="Local" value="html\T_W_RPC_IClient.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="IClient Methods">
+            <param name="Local" value="html\Methods_T_W_RPC_IClient.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Dispose Method ">
+              <param name="Local" value="html\M_W_RPC_IClient_Dispose.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="MakeRPCCall Method ">
+              <param name="Local" value="html\Overload_W_RPC_IClient_MakeRPCCall.htm">
+            </OBJECT></LI>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="MakeRPCCall(T) Method (String, Action(T))">
+                <param name="Local" value="html\M_W_RPC_IClient_MakeRPCCall__1.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="MakeRPCCall Method (String, Action, Object[])">
+                <param name="Local" value="html\M_W_RPC_IClient_MakeRPCCall.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="MakeRPCCall(T) Method (String, Action(T), Object[])">
+                <param name="Local" value="html\M_W_RPC_IClient_MakeRPCCall__1_1.htm">
+              </OBJECT></LI>
+            </UL>
+          </UL>
+        </UL>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ISocketClient Interface">
+          <param name="Local" value="html\T_W_RPC_ISocketClient.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="ISocketClient Properties">
+            <param name="Local" value="html\Properties_T_W_RPC_ISocketClient.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="IsConnected Property ">
+              <param name="Local" value="html\P_W_RPC_ISocketClient_IsConnected.htm">
+            </OBJECT></LI>
+          </UL>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="ISocketClient Methods">
+            <param name="Local" value="html\Methods_T_W_RPC_ISocketClient.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Connect Method ">
+              <param name="Local" value="html\Overload_W_RPC_ISocketClient_Connect.htm">
+            </OBJECT></LI>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="Connect Method (IPAddress, Int32, Int32, Action(ISocketClient, IPAddress), Action(Exception))">
+                <param name="Local" value="html\M_W_RPC_ISocketClient_Connect.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="Connect Method (String, Int32, Int32, Action(ISocketClient, IPAddress), Action(Exception))">
+                <param name="Local" value="html\M_W_RPC_ISocketClient_Connect_1.htm">
+              </OBJECT></LI>
+            </UL>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="ConnectAsync Method ">
+              <param name="Local" value="html\Overload_W_RPC_ISocketClient_ConnectAsync.htm">
+            </OBJECT></LI>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="ConnectAsync Method (IPAddress, Int32, Int32)">
+                <param name="Local" value="html\M_W_RPC_ISocketClient_ConnectAsync.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="ConnectAsync Method (String, Int32, Int32)">
+                <param name="Local" value="html\M_W_RPC_ISocketClient_ConnectAsync_1.htm">
+              </OBJECT></LI>
+            </UL>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Disconnect Method ">
+              <param name="Local" value="html\M_W_RPC_ISocketClient_Disconnect.htm">
+            </OBJECT></LI>
+          </UL>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="ISocketClient Events">
+            <param name="Local" value="html\Events_T_W_RPC_ISocketClient.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Connected Event">
+              <param name="Local" value="html\E_W_RPC_ISocketClient_Connected.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Disconnected Event">
+              <param name="Local" value="html\E_W_RPC_ISocketClient_Disconnected.htm">
+            </OBJECT></LI>
+          </UL>
+        </UL>
       </UL>
       <UL>
         <LI><OBJECT type="text/sitemap">

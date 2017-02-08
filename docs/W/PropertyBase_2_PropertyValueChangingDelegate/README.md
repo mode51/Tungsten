@@ -1,8 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.PropertyValueChangingDelegate Delegate
 ======================================================================
-  
-[Missing &lt;summary> documentation for "T:W.PropertyBase`2.PropertyValueChangingDelegate"]
-
+  Raised prior to the value of the property changing. Allows the programmer to cancel the change.
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -23,19 +21,19 @@ public delegate void PropertyValueChangingDelegate(
 
 ##### *owner*
 Type: [TOwner][2]  
-
+The owner of the property
 
 ##### *oldValue*
 Type: [TValue][2]  
-
+The old value
 
 ##### *newValue*
 Type: [TValue][2]  
-
+The expected new value
 
 ##### *cancel*
 Type: [System.Boolean][3]  
-
+Set to True to prevent the property value from changing
 
 
 See Also

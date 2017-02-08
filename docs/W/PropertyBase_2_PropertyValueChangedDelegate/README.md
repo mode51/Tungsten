@@ -1,8 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.PropertyValueChangedDelegate Delegate
 =====================================================================
-  
-[Missing &lt;summary> documentation for "T:W.PropertyBase`2.PropertyValueChangedDelegate"]
-
+  Raised when the value of the property changes
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

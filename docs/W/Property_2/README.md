@@ -1,8 +1,6 @@
 Property&lt;TOwner, TValue> Class
 =================================
-  
-[Missing &lt;summary> documentation for "T:W.Property`2"]
-
+  A generic Property with an owner
 
 
 Inheritance Hierarchy
@@ -28,14 +26,10 @@ where TOwner : class
 #### Type Parameters
 
 ##### *TOwner*
-
-[Missing &lt;typeparam name="TOwner"/> documentation for "T:W.Property`2"]
-
+The type of owner
 
 ##### *TValue*
-
-[Missing &lt;typeparam name="TValue"/> documentation for "T:W.Property`2"]
-
+The type of the property value
 
 The **Property<TOwner, TValue>** type exposes the following members.
 
@@ -43,15 +37,15 @@ The **Property<TOwner, TValue>** type exposes the following members.
 Constructors
 ------------
 
-                 | Name                                                                                                      | Description                                                          
----------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- 
-![Public method] | [Property&lt;TOwner, TValue>()][5]                                                                        | Initializes a new instance of the **Property<TOwner, TValue>** class 
-![Public method] | [Property&lt;TOwner, TValue>(TOwner)][6]                                                                  | Initializes a new instance of the **Property<TOwner, TValue>** class 
-![Public method] | [Property&lt;TOwner, TValue>(TValue)][7]                                                                  | Initializes a new instance of the **Property<TOwner, TValue>** class 
-![Public method] | [Property&lt;TOwner, TValue>(PropertyBase&lt;TOwner, TValue>.OnValueChangedDelegate)][8]                  | Initializes a new instance of the **Property<TOwner, TValue>** class 
-![Public method] | [Property&lt;TOwner, TValue>(TOwner, TValue)][9]                                                          | Initializes a new instance of the **Property<TOwner, TValue>** class 
-![Public method] | [Property&lt;TOwner, TValue>(TOwner, PropertyBase&lt;TOwner, TValue>.OnValueChangedDelegate)][10]         | Initializes a new instance of the **Property<TOwner, TValue>** class 
-![Public method] | [Property&lt;TOwner, TValue>(TOwner, TValue, PropertyBase&lt;TOwner, TValue>.OnValueChangedDelegate)][11] | Initializes a new instance of the **Property<TOwner, TValue>** class 
+                 | Name                                                                                                      | Description               
+---------------- | --------------------------------------------------------------------------------------------------------- | ------------------------- 
+![Public method] | [Property&lt;TOwner, TValue>()][5]                                                                        | Constructs a new Property 
+![Public method] | [Property&lt;TOwner, TValue>(TOwner)][6]                                                                  | Constructs a new Property 
+![Public method] | [Property&lt;TOwner, TValue>(TValue)][7]                                                                  | Constructs a new Property 
+![Public method] | [Property&lt;TOwner, TValue>(PropertyBase&lt;TOwner, TValue>.OnValueChangedDelegate)][8]                  | Constructs a new Property 
+![Public method] | [Property&lt;TOwner, TValue>(TOwner, TValue)][9]                                                          | Constructs a new Property 
+![Public method] | [Property&lt;TOwner, TValue>(TOwner, PropertyBase&lt;TOwner, TValue>.OnValueChangedDelegate)][10]         | Constructs a new Property 
+![Public method] | [Property&lt;TOwner, TValue>(TOwner, TValue, PropertyBase&lt;TOwner, TValue>.OnValueChangedDelegate)][11] | Constructs a new Property 
 
 
 Extension Methods

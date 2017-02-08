@@ -1,8 +1,6 @@
 IProperty&lt;TValue> Interface
 ==============================
-  
-[Missing &lt;summary> documentation for "T:W.IProperty`1"]
-
+  The base interface which Property must support
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -18,9 +16,7 @@ public interface IProperty<TValue> : IProperty
 #### Type Parameters
 
 ##### *TValue*
-
-[Missing &lt;typeparam name="TValue"/> documentation for "T:W.IProperty`1"]
-
+The type of value for the property
 
 The **IProperty<TValue>** type exposes the following members.
 
@@ -28,9 +24,9 @@ The **IProperty<TValue>** type exposes the following members.
 Properties
 ----------
 
-                   | Name       | Description 
------------------- | ---------- | ----------- 
-![Public property] | [Value][2] |             
+                   | Name       | Description               
+------------------ | ---------- | ------------------------- 
+![Public property] | [Value][2] | The value of the property 
 
 
 See Also

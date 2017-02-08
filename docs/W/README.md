@@ -19,9 +19,9 @@ Generic class to be used as a return value. CallResult encapsulates a success/fa
 ![Public class] | [Lockable&lt;TValue>][5]             | 
 Provides thread safety via locking
                                                                                                                                                                                                                   
-![Public class] | [Property&lt;TValue>][6]             |                                                                                                                                                                                                                                                         
-![Public class] | [Property&lt;TOwner, TValue>][7]     |                                                                                                                                                                                                                                                         
-![Public class] | [PropertyBase&lt;TOwner, TValue>][8] |                                                                                                                                                                                                                                                         
+![Public class] | [Property&lt;TValue>][6]             | A generic Property with no owner (self-owned)                                                                                                                                                                                                           
+![Public class] | [Property&lt;TOwner, TValue>][7]     | A generic Property with an owner                                                                                                                                                                                                                        
+![Public class] | [PropertyBase&lt;TOwner, TValue>][8] | Provides the functionality for the Property classes                                                                                                                                                                                                     
 ![Public class] | [PropertyChangedNotifier][9]         | 
 This is a base class for supporting INotifyPropertyChanged
                                                                                                                                                                                           
@@ -37,21 +37,23 @@ Provides a base class to automate the IsDirty, MarkAsClean and InitializePropert
 Interfaces
 ----------
 
-                    | Interface                  | Description 
-------------------- | -------------------------- | ----------- 
-![Public interface] | [IOwnedProperty][13]       |             
-![Public interface] | [IProperty][14]            |             
-![Public interface] | [IProperty&lt;TValue>][15] |             
+                    | Interface                  | Description                                                                                                                                         
+------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- 
+![Public interface] | [IOwnedProperty][13]       | 
+Used by PropertyHostMethods.InitializeProperties to find properties on which to set the owner. This interface is not used by self-owned properties.
+ 
+![Public interface] | [IProperty][14]            | The base interface which Property must support                                                                                                      
+![Public interface] | [IProperty&lt;TValue>][15] | The base interface which Property must support                                                                                                      
 
 
 Delegates
 ---------
 
-                   | Delegate                                                            | Description 
------------------- | ------------------------------------------------------------------- | ----------- 
-![Public delegate] | [PropertyBase&lt;TOwner, TValue>.OnValueChangedDelegate][16]        |             
-![Public delegate] | [PropertyBase&lt;TOwner, TValue>.PropertyValueChangedDelegate][17]  |             
-![Public delegate] | [PropertyBase&lt;TOwner, TValue>.PropertyValueChangingDelegate][18] |             
+                   | Delegate                                                            | Description                                                                                     
+------------------ | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- 
+![Public delegate] | [PropertyBase&lt;TOwner, TValue>.OnValueChangedDelegate][16]        | Used by the constructor to handle the property change via a callback rather than the events     
+![Public delegate] | [PropertyBase&lt;TOwner, TValue>.PropertyValueChangedDelegate][17]  | Raised when the value of the property changes                                                   
+![Public delegate] | [PropertyBase&lt;TOwner, TValue>.PropertyValueChangingDelegate][18] | Raised prior to the value of the property changing. Allows the programmer to cancel the change. 
 
 [1]: ActionQueue_1/README.md
 [2]: CallResult/README.md

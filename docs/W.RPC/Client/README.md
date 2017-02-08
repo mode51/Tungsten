@@ -15,7 +15,8 @@ Syntax
 ------
 
 ```csharp
-public class Client : IDisposable
+public class Client : IDisposable, IClient, 
+	ISocketClient
 ```
 
 The **Client** type exposes the following members.
@@ -42,18 +43,18 @@ Properties
 Methods
 -------
 
-                    | Name                                                                | Description                                                                                                                                                   
-------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-![Public method]    | [Connect(IPAddress, Int32, Int32, Action&lt;Client, IPAddress>)][7] | Attempts to connect to a local or remote Tungsten RPC Server                                                                                                  
-![Public method]    | [Connect(String, Int32, Int32, Action&lt;Client, IPAddress>)][8]    | Attempts to connect to a local or remote Tungsten RPC Server                                                                                                  
-![Public method]    | [ConnectAsync(IPAddress, Int32, Int32)][9]                          | Attempts to connect to a local or remote Tungsten RPC Server asynchronously                                                                                   
-![Public method]    | [ConnectAsync(String, Int32, Int32)][10]                            | Attempts to connect to a local or remote Tungsten RPC Server asynchronously                                                                                   
-![Public method]    | [Disconnect][11]                                                    | Disconnects from the Server                                                                                                                                   
-![Public method]    | [Dispose][12]                                                       | Disconnects from a Tungsten RPC Server if connected. Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. 
-![Protected method] | [Finalize][13]                                                      | Destructs the Tungsten RPC Client. Calls Dispose. (Overrides [Object.Finalize()][14].)                                                                        
-![Public method]    | [MakeRPCCall(String, Action, Object[])][15]                         | Not sure I should keep this method. Shouldn't all RPC calls have a result? Otherwise, the client wouldn't know if it succeeded.                               
-![Public method]    | [MakeRPCCall&lt;T>(String, Action&lt;T>)][16]                       | Calls a method on the Tungsten RPC Server                                                                                                                     
-![Public method]    | [MakeRPCCall&lt;T>(String, Action&lt;T>, Object[])][17]             | Calls a method on the Tungsten RPC Server                                                                                                                     
+                    | Name                                                                                             | Description                                                                                                                                                   
+------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+![Public method]    | [Connect(IPAddress, Int32, Int32, Action&lt;ISocketClient, IPAddress>, Action&lt;Exception>)][7] | Attempts to connect to a local or remote Tungsten RPC Server                                                                                                  
+![Public method]    | [Connect(String, Int32, Int32, Action&lt;ISocketClient, IPAddress>, Action&lt;Exception>)][8]    | Attempts to connect to a local or remote Tungsten RPC Server                                                                                                  
+![Public method]    | [ConnectAsync(IPAddress, Int32, Int32)][9]                                                       | Attempts to connect to a local or remote Tungsten RPC Server asynchronously                                                                                   
+![Public method]    | [ConnectAsync(String, Int32, Int32)][10]                                                         | Attempts to connect to a local or remote Tungsten RPC Server asynchronously                                                                                   
+![Public method]    | [Disconnect][11]                                                                                 | Disconnects from the Server                                                                                                                                   
+![Public method]    | [Dispose][12]                                                                                    | Disconnects from a Tungsten RPC Server if connected. Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. 
+![Protected method] | [Finalize][13]                                                                                   | Destructs the Tungsten RPC Client. Calls Dispose. (Overrides [Object.Finalize()][14].)                                                                        
+![Public method]    | [MakeRPCCall(String, Action, Object[])][15]                                                      | Not sure I should keep this method. Shouldn't all RPC calls have a result? Otherwise, the client wouldn't know if it succeeded.                               
+![Public method]    | [MakeRPCCall&lt;T>(String, Action&lt;T>)][16]                                                    | Calls a method on the Tungsten RPC Server                                                                                                                     
+![Public method]    | [MakeRPCCall&lt;T>(String, Action&lt;T>, Object[])][17]                                          | Calls a method on the Tungsten RPC Server                                                                                                                     
 
 
 Events
@@ -65,30 +66,21 @@ Events
 ![Public event] | [Disconnected][19] | Raised when the Client has disconnected from the Server 
 
 
-Fields
-------
-
-                                | Name                            | Description                                   
-------------------------------- | ------------------------------- | --------------------------------------------- 
-![Public field]![Static member] | [DefaultConnectTimeout][20]     | The default timeout for Connect               
-![Public field]![Static member] | [DefaultMakeRPCCallTimeout][21] | The default timeout for a call to MakeRPCCall 
-
-
 Extension Methods
 -----------------
 
                            | Name                       | Description                                                                                                                                                                                                                      
 -------------------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-![Public Extension Method] | [CreateThread&lt;T>][22]   | Starts a new thread (Defined by [ThreadExtensions][23].)                                                                                                                                                                         
-![Public Extension Method] | [InitializeProperties][24] | 
+![Public Extension Method] | [CreateThread&lt;T>][20]   | Starts a new thread (Defined by [ThreadExtensions][21].)                                                                                                                                                                         
+![Public Extension Method] | [InitializeProperties][22] | 
 Scans the fields and properties of "owner" and sets the member's Owner property to "owner" This method should be called in the constructor of any class which has IOwnedProperty members
- (Defined by [PropertyHostMethods][25].) 
-![Public Extension Method] | [IsDirty][26]              | 
+ (Defined by [PropertyHostMethods][23].) 
+![Public Extension Method] | [IsDirty][24]              | 
 Scans the IsDirty value of each field and property of type IProperty
- (Defined by [PropertyHostMethods][25].)                                                                                                                 
-![Public Extension Method] | [MarkAsClean][27]          | 
+ (Defined by [PropertyHostMethods][23].)                                                                                                                 
+![Public Extension Method] | [MarkAsClean][25]          | 
 Scans each field and property of type IProperty and sets it's IsDirty flag to false
- (Defined by [PropertyHostMethods][25].)                                                                                                  
+ (Defined by [PropertyHostMethods][23].)                                                                                                  
 
 
 See Also
@@ -116,19 +108,15 @@ See Also
 [17]: MakeRPCCall__1_1.md
 [18]: Connected.md
 [19]: Disconnected.md
-[20]: DefaultConnectTimeout.md
-[21]: DefaultMakeRPCCallTimeout.md
-[22]: ../../W.Threading/ThreadExtensions/CreateThread__1.md
-[23]: ../../W.Threading/ThreadExtensions/README.md
-[24]: ../../W/PropertyHostMethods/InitializeProperties.md
-[25]: ../../W/PropertyHostMethods/README.md
-[26]: ../../W/PropertyHostMethods/IsDirty.md
-[27]: ../../W/PropertyHostMethods/MarkAsClean.md
-[28]: ../../_icons/Help.png
+[20]: ../../W.Threading/ThreadExtensions/CreateThread__1.md
+[21]: ../../W.Threading/ThreadExtensions/README.md
+[22]: ../../W/PropertyHostMethods/InitializeProperties.md
+[23]: ../../W/PropertyHostMethods/README.md
+[24]: ../../W/PropertyHostMethods/IsDirty.md
+[25]: ../../W/PropertyHostMethods/MarkAsClean.md
+[26]: ../../_icons/Help.png
 [Public method]: ../../_icons/pubmethod.gif "Public method"
 [Public property]: ../../_icons/pubproperty.gif "Public property"
 [Protected method]: ../../_icons/protmethod.gif "Protected method"
 [Public event]: ../../_icons/pubevent.gif "Public event"
-[Public field]: ../../_icons/pubfield.gif "Public field"
-[Static member]: ../../_icons/static.gif "Static member"
 [Public Extension Method]: ../../_icons/pubextension.gif "Public Extension Method"

@@ -220,7 +220,6 @@
   <topic id="Methods.T:W.RPC.Client" type="API" />
   <topic id="Properties.T:W.RPC.Client" type="API" />
   <topic id="Events.T:W.RPC.Client" type="API" />
-  <topic id="Fields.T:W.RPC.Client" type="API" />
   <topic id="Overload:W.RPC.Client.#ctor" type="API" />
   <topic id="Overload:W.RPC.Client.Connect" type="API" />
   <topic id="Overload:W.RPC.Client.ConnectAsync" type="API" />
@@ -228,13 +227,11 @@
   <topic id="M:W.RPC.Client.#ctor" type="API" />
   <topic id="M:W.RPC.Client.#ctor(System.Net.IPAddress,System.Int32,System.Int32)" type="API" />
   <topic id="M:W.RPC.Client.#ctor(System.String,System.Int32,System.Int32)" type="API" />
-  <topic id="M:W.RPC.Client.Connect(System.Net.IPAddress,System.Int32,System.Int32,System.Action{W.RPC.Client,System.Net.IPAddress})" type="API" />
-  <topic id="M:W.RPC.Client.Connect(System.String,System.Int32,System.Int32,System.Action{W.RPC.Client,System.Net.IPAddress})" type="API" />
+  <topic id="M:W.RPC.Client.Connect(System.Net.IPAddress,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})" type="API" />
+  <topic id="M:W.RPC.Client.Connect(System.String,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})" type="API" />
   <topic id="M:W.RPC.Client.ConnectAsync(System.Net.IPAddress,System.Int32,System.Int32)" type="API" />
   <topic id="M:W.RPC.Client.ConnectAsync(System.String,System.Int32,System.Int32)" type="API" />
   <topic id="E:W.RPC.Client.Connected" type="API" />
-  <topic id="F:W.RPC.Client.DefaultConnectTimeout" type="API" />
-  <topic id="F:W.RPC.Client.DefaultMakeRPCCallTimeout" type="API" />
   <topic id="M:W.RPC.Client.Disconnect" type="API" />
   <topic id="E:W.RPC.Client.Disconnected" type="API" />
   <topic id="M:W.RPC.Client.Dispose" type="API" />
@@ -243,8 +240,39 @@
   <topic id="M:W.RPC.Client.MakeRPCCall(System.String,System.Action,System.Object[])" type="API" />
   <topic id="M:W.RPC.Client.MakeRPCCall``1(System.String,System.Action{``0})" type="API" />
   <topic id="M:W.RPC.Client.MakeRPCCall``1(System.String,System.Action{``0},System.Object[])" type="API" />
-  <topic id="T:W.RPC.Client.ConnectedDelegate" type="API" />
-  <topic id="T:W.RPC.Client.DisconnectedDelegate" type="API" />
+  <topic id="T:W.RPC.Constants" type="API" />
+  <topic id="Methods.T:W.RPC.Constants" type="API" />
+  <topic id="Fields.T:W.RPC.Constants" type="API" />
+  <topic id="M:W.RPC.Constants.#ctor" type="API" />
+  <topic id="F:W.RPC.Constants.DefaultConnectTimeout" type="API" />
+  <topic id="F:W.RPC.Constants.DefaultMakeRPCCallTimeout" type="API" />
+  <topic id="T:W.RPC.Delegates" type="API" />
+  <topic id="Methods.T:W.RPC.Delegates" type="API" />
+  <topic id="M:W.RPC.Delegates.#ctor" type="API" />
+  <topic id="T:W.RPC.Delegates.ConnectedDelegate" type="API" />
+  <topic id="T:W.RPC.Delegates.ConnectionTimeoutDelegate" type="API" />
+  <topic id="T:W.RPC.Delegates.DisconnectedDelegate" type="API" />
+  <topic id="T:W.RPC.IClient" type="API" />
+  <topic id="Methods.T:W.RPC.IClient" type="API" />
+  <topic id="Overload:W.RPC.IClient.MakeRPCCall" type="API" />
+  <topic id="M:W.RPC.IClient.Dispose" type="API" />
+  <topic id="M:W.RPC.IClient.MakeRPCCall(System.String,System.Action,System.Object[])" type="API" />
+  <topic id="M:W.RPC.IClient.MakeRPCCall``1(System.String,System.Action{``0})" type="API" />
+  <topic id="M:W.RPC.IClient.MakeRPCCall``1(System.String,System.Action{``0},System.Object[])" type="API" />
+  <topic id="T:W.RPC.ISocketClient" type="API" />
+  <topic id="Methods.T:W.RPC.ISocketClient" type="API" />
+  <topic id="Properties.T:W.RPC.ISocketClient" type="API" />
+  <topic id="Events.T:W.RPC.ISocketClient" type="API" />
+  <topic id="Overload:W.RPC.ISocketClient.Connect" type="API" />
+  <topic id="Overload:W.RPC.ISocketClient.ConnectAsync" type="API" />
+  <topic id="M:W.RPC.ISocketClient.Connect(System.Net.IPAddress,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})" type="API" />
+  <topic id="M:W.RPC.ISocketClient.Connect(System.String,System.Int32,System.Int32,System.Action{W.RPC.ISocketClient,System.Net.IPAddress},System.Action{System.Exception})" type="API" />
+  <topic id="M:W.RPC.ISocketClient.ConnectAsync(System.Net.IPAddress,System.Int32,System.Int32)" type="API" />
+  <topic id="M:W.RPC.ISocketClient.ConnectAsync(System.String,System.Int32,System.Int32)" type="API" />
+  <topic id="E:W.RPC.ISocketClient.Connected" type="API" />
+  <topic id="M:W.RPC.ISocketClient.Disconnect" type="API" />
+  <topic id="E:W.RPC.ISocketClient.Disconnected" type="API" />
+  <topic id="P:W.RPC.ISocketClient.IsConnected" type="API" />
   <topic id="T:W.RPC.RPCClassAttribute" type="API" />
   <topic id="Methods.T:W.RPC.RPCClassAttribute" type="API" />
   <topic id="M:W.RPC.RPCClassAttribute.#ctor" type="API" />
