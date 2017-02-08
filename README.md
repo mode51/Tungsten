@@ -34,10 +34,10 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 * [W.Property](https://github.com/mode51/Tungsten/wiki/Property-TOwner,-TValue)\<TOwner, TValue\> - Like Property\<TValue\> except that you can specify an Owner
 * Events and callback have type-strict sender (which is the Owner you specify)
 * [W.PropertyHost](https://github.com/mode51/Tungsten/wiki/PropertyHost) - a base class which automates the IsDirty, MarkAsClean and InitializeProperties so you don't have to.
-* W.PropertyHostNotifier - aggregates PropertyHost and PropertyChangedNotifier
+* [W.PropertyHostNotifier](https://github.com/mode51/Tungsten/wiki/PropertyChangedNotifier) - aggregates PropertyHost and PropertyChangedNotifier
 * [W.InvokeExtensions](https://github.com/mode51/Tungsten/wiki/InvokeExtensions) - A static class exposing InvokeEx extension methods (to ease InvokeRequired handling)
-* W.CallResult - A non-generic class which can be used to return true/false and an exception from a function
-* W.CallResult\<TResult\> - Like CallResult except that you can also specify a result
+* [W.CallResult](https://github.com/mode51/Tungsten/wiki/CallResult) - A non-generic class which can be used to return true/false and an exception from a function
+* [W.CallResult\<TResult\>](https://github.com/mode51/Tungsten/wiki/CallResult-TResult) - Like CallResult except that you can also specify a result
 * W.Threading.Thread - automates creating a thread with an Action
 * W.Threading.Thread\<T\> - like Thread, except Action is now Action\<T\>
 * W.Threading.Gate - similar to Thread, a Gate can be started some time after creation
