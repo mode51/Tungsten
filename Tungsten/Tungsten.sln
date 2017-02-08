@@ -30,6 +30,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.RPC.ClientDemo", "..\Tungsten.RPC.ClientDemo\Tungsten.RPC.ClientDemo.csproj", "{55C04DAA-02F3-48AD-B0CF-E97CC97A4C52}"
 EndProject
 Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "Tungsten.RPC.NuGet", "..\Tungsten.RPC.NuGet\Tungsten.RPC.NuGet.nuproj", "{D8A1AC84-20A5-4AFB-A8D7-455121416D6D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3FE96D19-FDA8-4948-A0FE-F200748CC729} = {3FE96D19-FDA8-4948-A0FE-F200748CC729}
+	EndProjectSection
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Tungsten.Documentation", "..\Tungsten.Documentation\Tungsten.Documentation.shfbproj", "{9D6918C7-3CB7-4006-A0D8-6542ABFF51E2}"
 	ProjectSection(ProjectDependencies) = postProject

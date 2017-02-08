@@ -281,7 +281,7 @@ namespace W.Domains
         /// <param name="data">The value to be assigned to the domain property</param>
         public void SetData(string name, object data)
         {
-            _domain.SetData(name, data);
+            _domain?.SetData(name, data);
         }
 
         /// <summary>
@@ -292,7 +292,10 @@ namespace W.Domains
         /// <returns>The data stored in the domain property as cast to T</returns>
         public TData GetData<TData>(string name)
         {
-            return (TData)_domain.GetData(name);
+            var result = _domain?.GetData(name);
+            if (result != null)
+                return (TData)result;
+            return default(TData);
         }
     }
 }

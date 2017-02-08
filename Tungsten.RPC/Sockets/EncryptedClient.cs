@@ -81,7 +81,7 @@ namespace W.RPC
             {
                 base.Post(_keypair.PublicKey);
             };
-            base.Disconnected += (client, address, exception) =>
+            base.Disconnected += (client, exception) =>
             {
                 _remotePublicKey = "";
                 _initializeEncryption = true;

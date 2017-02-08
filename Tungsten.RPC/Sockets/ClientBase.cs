@@ -13,16 +13,18 @@ using W.Logging;
 
 namespace W.RPC
 {
-    internal abstract class ClientBase : IClient, INamed
+    internal abstract class ClientBase : ISocketClient, INamed
     {
-        public delegate void ConnectedDelegate(ClientBase client, IPAddress remoteAddress);
-        public event ConnectedDelegate Connected;
-        public delegate void ConnectionTimeoutDelegate(ClientBase client, IPAddress remoteAddress);
-        public event ConnectionTimeoutDelegate ConnectionTimeout;
-        public delegate void DisconnectedDelegate(ClientBase client, IPAddress remoteAddress, Exception e);
-        public event DisconnectedDelegate Disconnected;
+        //public delegate void ConnectedDelegate(ClientBase client, IPAddress remoteAddress);
+        public event Delegates.ConnectedDelegate Connected;
+        ////public delegate void ConnectionTimeoutDelegate(ClientBase client, IPAddress remoteAddress);
+        //public event Delegates.ConnectionTimeoutDelegate ConnectionTimeout;
+        //public delegate void DisconnectedDelegate(ClientBase client, IPAddress remoteAddress, Exception e);
+        public event Delegates.DisconnectedDelegate Disconnected;
 
-        public Property<bool> IsConnected = new Property<bool>(false);
+        private readonly Lockable<bool> _isConnected = new Lockable<bool>(false);
+
+        public bool IsConnected => _isConnected.Value;
 
         protected delegate void MessageArrivedDelegate(ClientBase client, string message);
         protected event MessageArrivedDelegate MessageArrived;
@@ -59,7 +61,7 @@ namespace W.RPC
             {
                 try
                 {
-                    evt.Invoke(this, _remoteAddress, e);
+                    evt.Invoke(this, e);
                 }
                 catch (Exception ex)
                 {
@@ -213,7 +215,7 @@ namespace W.RPC
                     try
                     {
                         System.Threading.Thread.Sleep(1);
-                        if (!IsConnected.Value)
+                        if (!_isConnected.Value)
                                 //if (!_socket.Connected)
                                 continue;
                         var msg = Receive();
@@ -342,7 +344,7 @@ namespace W.RPC
 
             try
             {
-                IsConnected.Value = false;
+                _isConnected.Value = false;
                 RaiseDisconnected(e);
             }
             catch (Exception ex)
@@ -367,13 +369,13 @@ namespace W.RPC
                 _outgoing.Enqueue(message);
         }
 
-        private CallResult Activate(System.Net.Sockets.Socket socket)
+        private bool  Activate(System.Net.Sockets.Socket socket)
         {
             var result = new CallResult(false);
             try
             {
                 if (socket == null)
-                    return result;
+                    return result.Success;
 
                 _close = new CancellationTokenSource();
                 _socket = socket;
@@ -383,7 +385,7 @@ namespace W.RPC
                 StartReceiveThread();
                 StartSendThread();
                 StartMessageArrivedThread();
-                IsConnected.Value = true;
+                _isConnected.Value = true;
                 result.Success = true;
                 RaiseConnected();
             }
@@ -392,13 +394,14 @@ namespace W.RPC
                 result.Exception = e;
             }
 
-            return result;
+            return result.Success;
         }
-        public CallResult Connect(System.Net.Sockets.Socket socket) //called by Server
+
+        public bool Connect(System.Net.Sockets.Socket socket) //called by Server
         {
             return Activate(socket);
         }
-        public CallResult Connect(System.Net.Sockets.TcpClient client) //called by Server
+        public bool Connect(System.Net.Sockets.TcpClient client) //called by Server
         {
             return Connect(client.Client);
         }
@@ -444,7 +447,7 @@ namespace W.RPC
         //    return Connect(remoteAddress.ToString(), remotePort);
         //}
 
-        public CallResult Connect(string remoteAddress, int remotePort, int msTimeout = 10000)
+        public bool Connect(string remoteAddress, int remotePort, int msTimeout = 10000, Action<ISocketClient, IPAddress> onConnection = null, Action<Exception> onException = null)
         {
             var client = new TcpClient();
 
@@ -457,21 +460,30 @@ namespace W.RPC
                     try
                     {
                         client.EndConnect(result);
+                        if (onConnection  != null)
+                            Task.Factory.FromAsync((asyncCallback, @object) => onConnection.BeginInvoke(this, IPAddress.Parse(remoteAddress),  asyncCallback, @object), onConnection.EndInvoke, null);
+
                         return Connect(client?.Client); //complete connection setup
                     }
                     catch (SocketException e)
                     {
                         Disconnect(e);
+                        if (onException != null)
+                            Task.Factory.FromAsync((asyncCallback, @object) => onException.BeginInvoke(e, asyncCallback, @object), onException.EndInvoke, null);
                         Log.e(e);
                     }
                     catch (TargetInvocationException e)
                     {
                         Disconnect(e);
+                        if (onException != null)
+                            Task.Factory.FromAsync((asyncCallback, @object) => onException.BeginInvoke(e, asyncCallback, @object), onException.EndInvoke, null);
                         Log.e(e);
                     }
                     catch (Exception e)
                     {
                         Disconnect(e);
+                        if (onException != null)
+                            Task.Factory.FromAsync((asyncCallback, @object) => onException.BeginInvoke(e, asyncCallback, @object), onException.EndInvoke, null);
                         Log.e(e);
                     }
                 }
@@ -489,7 +501,7 @@ namespace W.RPC
                 Log.e(e);
             }
 
-            return new CallResult(false);
+            return false;
             //client.BeginConnect(remoteAddress, remotePort, ar =>
             //{
             //    var c = ar.AsyncState as TcpClient;
@@ -499,9 +511,9 @@ namespace W.RPC
             //        RaiseDisconnected();
             //}, client);
         }
-        public CallResult Connect(IPAddress remoteAddress, int remotePort, int msTimeout = 10000)
+        public bool Connect(IPAddress remoteAddress, int remotePort, int msTimeout = 10000, Action<ISocketClient, IPAddress> onConnection = null, Action<Exception> onException = null)
         {
-            return Connect(remoteAddress.ToString(), remotePort, msTimeout);
+            return Connect(remoteAddress.ToString(), remotePort, msTimeout, onConnection, onException);
         }
 
         public async Task ConnectAsync(string remoteAddress, int remotePort, int msTimeout = 10000)

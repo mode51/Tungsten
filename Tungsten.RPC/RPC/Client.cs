@@ -10,41 +10,20 @@ namespace W.RPC
     /// <summary>
     /// Provides simple access to a Tungsten RPC Server
     /// </summary>
-    public class Client : IDisposable
+    public class Client : IDisposable, IClient
     {
         private EncryptedClient<Message> _client;
         private IPAddress _remoteAddress;
         private readonly Lockable<bool> _isConnected = new Lockable<bool>(false);
 
         /// <summary>
-        /// The default timeout for Connect
-        /// </summary>
-        public const int DefaultConnectTimeout = 10000;
-        /// <summary>
-        /// The default timeout for a call to MakeRPCCall
-        /// </summary>
-        public const int DefaultMakeRPCCallTimeout = 30000;
-
-        /// <summary>
-        /// Delegate to notify the programmer when the Client has connected to the Server
-        /// </summary>
-        /// <param name="client">A reference to the Client which has connected</param>
-        /// <param name="remoteAddress">The IP Address of the Server</param>
-        public delegate void ConnectedDelegate(Client client, IPAddress remoteAddress);
-        /// <summary>
         /// Raised when the Client has connected to the Server
         /// </summary>
-        public event ConnectedDelegate Connected;
-        /// <summary>
-        /// Delegate to notify the programmer when the Client has disconnected from the Server
-        /// </summary>
-        /// <param name="client">A reference to the Client which has disconnected</param>
-        /// <param name="exception">Specifies the exception which caused the disconnection.  If no exception ocurred, this value is null.</param>
-        public delegate void DisconnectedDelegate(Client client, Exception exception);
+        public event Delegates.ConnectedDelegate Connected;
         /// <summary>
         /// Raised when the Client has disconnected from the Server
         /// </summary>
-        public event DisconnectedDelegate Disconnected;
+        public event Delegates.DisconnectedDelegate Disconnected;
         /// <summary>
         /// True if the Client is currently connected to a Tungsten RPC Server, otherwise False
         /// </summary>
@@ -88,18 +67,23 @@ namespace W.RPC
                     else if (response.Response is T)
                         result = (T)response.Response;
                 }
-                Task.Factory.FromAsync((asyncCallback, @object) =>
+                if (onResponse != null)
                 {
-                    return onResponse.BeginInvoke(result, asyncCallback, @object);
-                }, (ar) =>
-                {
-                    onResponse.EndInvoke(ar);
-                    mre.Set();
+                    Task.Factory.FromAsync((asyncCallback, @object) =>
+                    {
+                        return onResponse.BeginInvoke(result, asyncCallback, @object);
+                    }, (ar) =>
+                    {
+                        onResponse.EndInvoke(ar);
+                        mre.Set();
+                    }
+                    , null);
+                    //onResponse?.Invoke(result);
+                    //mre.Set(); //this needs to happen after the call to onResponse
                 }
-                , null);
-                //onResponse?.Invoke(result);
-                //mre.Set(); //this needs to happen after the call to onResponse
-            }, DefaultMakeRPCCallTimeout);
+                else
+                    mre.Set();
+            }, Constants.DefaultMakeRPCCallTimeout);
             return mre;
         }
         /// <summary>
@@ -119,18 +103,23 @@ namespace W.RPC
 
             _client.Post(msg, (client, response, isExpired) =>
             {
-                Task.Factory.FromAsync((asyncCallback, @object) =>
+                if (onResponse != null)
                 {
-                    return onResponse.BeginInvoke(asyncCallback, @object);
-                }, (ar) =>
-                {
-                    onResponse.EndInvoke(ar);
-                    mre.Set();
+                    Task.Factory.FromAsync((asyncCallback, @object) =>
+                    {
+                        return onResponse.BeginInvoke(asyncCallback, @object);
+                    }, (ar) =>
+                    {
+                        onResponse.EndInvoke(ar);
+                        mre.Set();
+                    }
+                    , null);
+                    //onResponse?.Invoke();
+                    //mre.Set(); //this needs to happen after the call to onResponse
                 }
-                , null);
-                //onResponse?.Invoke();
-                //mre.Set(); //this needs to happen after the call to onResponse
-            }, DefaultMakeRPCCallTimeout);
+                else
+                    mre.Set();
+            }, Constants.DefaultMakeRPCCallTimeout);
             return mre;
         }
 
@@ -138,15 +127,15 @@ namespace W.RPC
         {
             _client.Disconnect(e);
         }
-        internal CallResult Connect(System.Net.Sockets.TcpClient client) //called by Server
+        internal bool Connect(System.Net.Sockets.TcpClient client) //called by Server
         {
             if (_isConnected.Value)
-                return new CallResult(true);
+                return true;
 
             var result = _client.Connect(client);
-            if (result.Success)
+            if (result)
             {
-                if (!_client.IsSecure.WaitForChanged(DefaultConnectTimeout)) //default timeout
+                if (!_client.IsSecure.WaitForChanged(Constants.DefaultConnectTimeout)) //default timeout
                 {
                     Log.w("Connection timed out while securing");
                     Disconnect(new Exception("Server failed to secure the connection"));
@@ -158,6 +147,7 @@ namespace W.RPC
                 Disconnect(new Exception("Server failed to respond"));
             return result;
         }
+
         /// <summary>
         /// Attempts to connect to a local or remote Tungsten RPC Server
         /// </summary>
@@ -165,13 +155,14 @@ namespace W.RPC
         /// <param name="remotePort">The port on which the Tungsten RPC Server is listening</param>
         /// <param name="msTimeout">The call will fail if the client can't connect within the specified elapsed time (in milliseconds)</param>
         /// <returns>A CallResult specifying success/failure and an Exception if one ocurred</returns>
-        public CallResult Connect(string remoteAddress, int remotePort, int msTimeout = DefaultConnectTimeout, Action<Client, IPAddress> onConnection = null)
+        public bool Connect(string remoteAddress, int remotePort, int msTimeout = Constants.DefaultConnectTimeout, Action<ISocketClient, IPAddress> onConnection = null, Action<Exception> onException = null)
         {
             if (_isConnected.Value)
-                return new CallResult(true);
+                return true;
+            Exception e = null;
 
-            var result = _client.Connect(remoteAddress, remotePort, msTimeout);
-            if (result.Success)
+            var isConnected = _client.Connect(remoteAddress, remotePort, msTimeout, null, exception => e = exception);
+            if (isConnected)
             {
                 if (!_client.IsSecure.WaitForChanged(msTimeout))
                 {
@@ -185,7 +176,10 @@ namespace W.RPC
             }
             else
                 Disconnect(new Exception("Server failed to respond"));
-            return result;
+            if (e != null && onException != null)
+                Task.Factory.FromAsync((asyncCallback, @object) => onException.BeginInvoke(e, asyncCallback, @object), onException.EndInvoke, null);
+
+            return isConnected;
         }
         /// <summary>
         /// Attempts to connect to a local or remote Tungsten RPC Server
@@ -194,11 +188,9 @@ namespace W.RPC
         /// <param name="remotePort">The port on which the Tungsten RPC Server is listening</param>
         /// <param name="msTimeout">The call will fail if the client can't connect within the specified elapsed time (in milliseconds)</param>
         /// <returns>A CallResult specifying success/failure and an Exception if one ocurred</returns>
-        public CallResult Connect(IPAddress remoteAddress, int remotePort, int msTimeout = DefaultConnectTimeout, Action<Client, IPAddress> onConnection = null)
+        public bool Connect(IPAddress remoteAddress, int remotePort, int msTimeout = Constants.DefaultConnectTimeout, Action<ISocketClient, IPAddress> onConnection = null, Action<Exception> onException = null)
         {
-            if (_isConnected.Value)
-                return new CallResult(true);
-            return Connect(remoteAddress.ToString(), remotePort, msTimeout, onConnection);
+            return Connect(remoteAddress.ToString(), remotePort, msTimeout, onConnection, onException);
         }
         /// <summary>
         /// Attempts to connect to a local or remote Tungsten RPC Server asynchronously
@@ -207,7 +199,7 @@ namespace W.RPC
         /// <param name="remotePort">The port on which the Tungsten RPC Server is listening</param>
         /// <param name="msTimeout">The call will fail if the client can't connect within the specified elapsed time (in milliseconds)</param>
         /// <returns>A Task which can be awaited</returns>
-        public async Task ConnectAsync(string remoteAddress, int remotePort, int msTimeout = DefaultConnectTimeout)
+        public async Task ConnectAsync(string remoteAddress, int remotePort, int msTimeout = Constants.DefaultConnectTimeout)
         {
             if (_isConnected.Value)
                 return;
@@ -220,7 +212,7 @@ namespace W.RPC
         /// <param name="remotePort">The port on which the Tungsten RPC Server is listening</param>
         /// <param name="msTimeout">The call will fail if the client can't connect within the specified elapsed time (in milliseconds)</param>
         /// <returns>A Task which can be awaited</returns>
-        public async Task ConnectAsync(IPAddress remoteAddress, int remotePort, int msTimeout = DefaultConnectTimeout)
+        public async Task ConnectAsync(IPAddress remoteAddress, int remotePort, int msTimeout = Constants.DefaultConnectTimeout)
         {
             if (_isConnected.Value)
                 return;
@@ -258,11 +250,11 @@ namespace W.RPC
                     // http://stackoverflow.com/questions/1916095/how-do-i-make-an-eventhandler-run-asynchronously
                 });
             };
-            _client.Disconnected += (client, address, exception) =>
+            _client.Disconnected += (client, exception) =>
             {
                 _isConnected.Value = false;
 
-                Log.i("Client Disconnected: {0}", client.Name);
+                Log.i("Client Disconnected: {0}", (client as INamed)?.Name);
                 if (exception != null)
                     Log.i("Disconnect Reason: {0}", exception.Message);
                 var evt = this.Disconnected;
@@ -279,7 +271,7 @@ namespace W.RPC
         /// <param name="remoteAddress">The IP address of the Tungsten RPC Server</param>
         /// <param name="remotePort">The port on which the Tungsten RPC Server is listening</param>
         /// <param name="msTimeout">The call will fail if the client can't connect within the specified elapsed time (in milliseconds)</param>
-        public Client(string remoteAddress, int remotePort, int msTimeout = DefaultConnectTimeout) : this()
+        public Client(string remoteAddress, int remotePort, int msTimeout = Constants.DefaultConnectTimeout) : this()
         {
             var mre = new ManualResetEvent(false);
             W.Threading.Thread.Create(cts =>
@@ -291,7 +283,7 @@ namespace W.RPC
                 });
                 //Connected += (client, address) => { mre.Set(); };
             });
-            if (!mre.WaitOne(DefaultConnectTimeout))
+            if (!mre.WaitOne(Constants.DefaultConnectTimeout))
                 throw new TimeoutException("Unable to connect to the remote Tungsten RPC Server: " + remoteAddress);
         }
         /// <summary>
@@ -300,7 +292,7 @@ namespace W.RPC
         /// <param name="remoteAddress">The IP address of the Tungsten RPC Server</param>
         /// <param name="remotePort">The port on which the Tungsten RPC Server is listening</param>
         /// <param name="msTimeout">The call will fail if the client can't connect within the specified elapsed time (in milliseconds)</param>
-        public Client(IPAddress remoteAddress, int remotePort, int msTimeout = DefaultConnectTimeout) : this()
+        public Client(IPAddress remoteAddress, int remotePort, int msTimeout = Constants.DefaultConnectTimeout) : this()
         {
             var mre = new ManualResetEvent(false);
             W.Threading.Thread.Create(cts =>
@@ -312,7 +304,7 @@ namespace W.RPC
                 });
                 //Connected += (client, address) => { mre.Set(); };
             });
-            if (!mre.WaitOne(DefaultConnectTimeout))
+            if (!mre.WaitOne(Constants.DefaultConnectTimeout))
                 throw new TimeoutException("Unable to connect to the remote Tungsten RPC Server: " + remoteAddress);
         }
 

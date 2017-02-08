@@ -10,12 +10,12 @@ using W.Logging;
 
 namespace W.RPC
 {
-    internal class EncryptedServer<TClientType> : IDisposable, INamed where TClientType : ClientBase, IClient, INamed
+    internal class EncryptedServer<TClientType> : IDisposable, INamed where TClientType : ClientBase, INamed
     {
         private CancellationTokenSource _cts = new CancellationTokenSource();
         private TcpListener _listener = null;
         private bool _isListening = false;
-        private List<ClientBase> _clients = new List<ClientBase>();
+        private List<ISocketClient> _clients = new List<ISocketClient>();
 
         public delegate void ClientConnectedDelegate(object sender, TClientType client);
         public event ClientConnectedDelegate ClientConnected;
@@ -108,7 +108,7 @@ namespace W.RPC
             });
         }
 
-        private void OnClientDisconnected(ClientBase client, IPAddress remoteAddress, Exception e)
+        private void OnClientDisconnected(ISocketClient client, Exception e)
         {
             if (_clients.Contains(client))
                 _clients.Remove(client);
@@ -117,7 +117,7 @@ namespace W.RPC
 
         public TClientType this[string clientName]
         {
-            get { return _clients.FirstOrDefault(c => c.Name == clientName) as TClientType; }
+            get { return _clients.FirstOrDefault(c => (c as INamed)?.Name == clientName) as TClientType; }
         }
 
         public void Start(IPAddress address, int port)

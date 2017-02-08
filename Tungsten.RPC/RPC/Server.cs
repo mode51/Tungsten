@@ -176,9 +176,9 @@ namespace W.RPC
                 _host.ClientConnected += (sender, client) =>
                 {
                     Log.i("Client Connected: {0}", client.Name);
-                    client.Disconnected += (c2, address, exception) =>
+                    client.Disconnected += (c2, exception) =>
                     {
-                        Log.i("Client Disconnected: {0}", address?.ToString());
+                        Log.i("Client Disconnected: {0}", (c2 as INamed)?.Name);
                     };
                     client.MessageArrived += (c3, message) =>
                     {

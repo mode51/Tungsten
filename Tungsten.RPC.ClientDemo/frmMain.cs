@@ -14,7 +14,7 @@ namespace W.RPC.ClientDemo
 {
     public partial class frmMain : Form
     {
-        private W.RPC.Client _client = new Client();
+        private W.RPC.IClient _client = new Client();
 
         public frmMain()
         {

@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using W.Domains;
+using W.RPC;
 using W.SampleAPI;
 
 namespace W.Tests.Tungsten
@@ -72,7 +73,7 @@ namespace W.Tests.Tungsten
             client.Connected += (c, address) =>
             {
                 Assert.IsTrue(c.IsConnected);
-                var mre = c.MakeRPCCall<string>("W.SampleAPI.Sample.GetMessageEx", r =>
+                var mre = (c as IClient)?.MakeRPCCall<string>("W.SampleAPI.Sample.GetMessageEx", r =>
                 {
                     Console.WriteLine("GetMessageEx = " + r);
                     result.Value = !string.IsNullOrEmpty(r);
@@ -126,7 +127,7 @@ namespace W.Tests.Tungsten
             client.Connected += (c, address) =>
             {
                 Assert.IsTrue(c.IsConnected);
-                var mre = c.MakeRPCCall<string>("W.SampleAPI.Sample.GetMessageEx", r =>
+                var mre = (c as IClient)?.MakeRPCCall<string>("W.SampleAPI.Sample.GetMessageEx", r =>
                 {
                     Console.WriteLine("GetMessageEx = " + r);
                     result.Value = r;
