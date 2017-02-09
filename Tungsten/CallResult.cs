@@ -2,9 +2,6 @@
 
 namespace W
 {
-    //use this as a return value
-    //public CallResult<SomeResultValue> Load(...)
-    //public CallResult<SomeClass> DoSomething(...)
     /// <summary>
     /// <para>
     /// Generic class to be used as a return value.  CallResult encapsulates a success/failure, an exception and a return value.

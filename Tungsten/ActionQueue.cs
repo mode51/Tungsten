@@ -4,6 +4,10 @@ using System.Threading;
 
 namespace W
 {
+    /// <summary><para>
+    /// Allows the programmer to enqueue items for processing on a separate thread.  The ActionQueue will process items sequentially whenever an item is added.
+    /// </para></summary>
+    /// <typeparam name="T">The type of data to enqueue and process</typeparam>
     public class ActionQueue<T>
     {
         private string _caller;
