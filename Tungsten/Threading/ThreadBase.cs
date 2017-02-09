@@ -8,10 +8,25 @@ namespace W.Threading
     /// </summary>
     public abstract class ThreadBase : IDisposable
     {
+        /// <summary>
+        /// The Action to execute on the thread
+        /// </summary>
         protected Action<CancellationTokenSource> Action { get; set; }
+        /// <summary>
+        /// The Action to execute when the thread completes
+        /// </summary>
         protected Action<bool, Exception> OnComplete { get; set; }
+        /// <summary>
+        /// The CancellationTokenSource which can be used to cancel the thread
+        /// </summary>
         protected CancellationTokenSource Cts { get; set; }
+        /// <summary>
+        /// Value is True if the thread is currently running, otherwise False
+        /// </summary>
         protected Lockable<bool> IsBusy { get; set; } = new Lockable<bool>();
+        /// <summary>
+        /// The Value to send to the OnComplete Action.  True if the thread returns successfully, otherwise False.
+        /// </summary>
         protected Lockable<bool> Success { get; set; } = new Lockable<bool>();
 
         /// <summary>
@@ -33,9 +48,13 @@ namespace W.Threading
         /// <summary>
         /// Must be overridden to provide exception handling
         /// </summary>
-        /// <returns></returns>
+        /// <returns>An Exception object, if an exception ocurred</returns>
         protected abstract Exception CallInvokeAction();
 
+        /// <summary>
+        /// Calls the OnComplete Action when the thread returns
+        /// </summary>
+        /// <param name="e">An Exception object, if an exception ocurred</param>
         protected virtual void CallInvokeOnComplete(Exception e)
         {
             try
@@ -48,8 +67,12 @@ namespace W.Threading
                 System.Diagnostics.Debug.WriteLine("ThreadExtensions.ThreadProc.OnComplete Exception:  " + ex.Message);
             }
         }
+        /// <summary>
+        /// The host thread procedure.  This method calls the Action and subsequent OnComplete.
+        /// </summary>
         protected void ThreadProc()
         {
+            //this method is protected so that it can be called directly by inheriters
             Exception ex = CallInvokeAction();
             CallInvokeOnComplete(ex);
         }
@@ -61,7 +84,7 @@ namespace W.Threading
         /// </summary>
         public virtual void Cancel()
         {
-            Cts.Cancel();
+            Cts?.Cancel();
         }
 
         /// <summary>
@@ -95,6 +118,9 @@ namespace W.Threading
             IsBusy.Value = true;
         }
 
+        /// <summary>
+        /// Destructs the ThreadBase object.  Calls Dispose.
+        /// </summary>
         ~ThreadBase()
         {
             Dispose();

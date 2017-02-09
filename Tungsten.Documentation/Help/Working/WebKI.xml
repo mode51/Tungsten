@@ -119,7 +119,6 @@
     <HelpKINode Title="Thread(T).Create Method " Url="html/M_W_Threading_Thread_1_Create.htm" />
     <HelpKINode Title="Thread.Create Method " Url="html/M_W_Threading_Thread_Create.htm" />
   </HelpKINode>
-  <HelpKINode Title="CreateGate method" Url="html/Overload_W_Threading_GateMethods_CreateGate.htm" />
   <HelpKINode Title="CreateThread method" Url="html/Overload_W_Threading_ThreadExtensions_CreateThread.htm" />
   <HelpKINode Title="Cts property" Url="html/P_W_Threading_ThreadBase_Cts.htm" />
   <HelpKINode Title="CustomData property" Url="html/P_W_Threading_Thread_1_CustomData.htm" />
@@ -236,12 +235,6 @@
   <HelpKINode Title="Gate&lt;T&gt;.CallInvokeAction method" Url="html/M_W_Threading_Gate_1_CallInvokeAction.htm" />
   <HelpKINode Title="Gate&lt;T&gt;.Gate constructor" Url="html/M_W_Threading_Gate_1__ctor.htm" />
   <HelpKINode Title="Gate&lt;T&gt;.Run method" Url="html/M_W_Threading_Gate_1_Run.htm" />
-  <HelpKINode Title="GateMethods class">
-    <HelpKINode Title="GateMethods Class" Url="html/T_W_Threading_GateMethods.htm" />
-    <HelpKINode Title="about GateMethods class" Url="html/T_W_Threading_GateMethods.htm" />
-    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_GateMethods.htm" />
-  </HelpKINode>
-  <HelpKINode Title="GateMethods.CreateGate method" Url="html/Overload_W_Threading_GateMethods_CreateGate.htm" />
   <HelpKINode Title="GetData(Of TData) method" Url="html/M_W_Domains_DomainLoader_GetData__1.htm" />
   <HelpKINode Title="GetData&lt;TData&gt; method" Url="html/M_W_Domains_DomainLoader_GetData__1.htm" />
   <HelpKINode Title="GetValue method">
@@ -758,7 +751,6 @@
   <HelpKINode Title="W.Threading.Gate class" Url="html/T_W_Threading_Gate.htm" />
   <HelpKINode Title="W.Threading.Gate(Of T) class" Url="html/T_W_Threading_Gate_1.htm" />
   <HelpKINode Title="W.Threading.Gate&lt;T&gt; class" Url="html/T_W_Threading_Gate_1.htm" />
-  <HelpKINode Title="W.Threading.GateMethods class" Url="html/T_W_Threading_GateMethods.htm" />
   <HelpKINode Title="W.Threading.Thread class" Url="html/T_W_Threading_Thread.htm" />
   <HelpKINode Title="W.Threading.Thread(Of T) class" Url="html/T_W_Threading_Thread_1.htm" />
   <HelpKINode Title="W.Threading.Thread&lt;T&gt; class" Url="html/T_W_Threading_Thread_1.htm" />

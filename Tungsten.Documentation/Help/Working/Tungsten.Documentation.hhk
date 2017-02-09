@@ -451,10 +451,6 @@
         </OBJECT></LI>
       </UL>
       <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="CreateGate method">
-        <param name="Local" value="html/Overload_W_Threading_GateMethods_CreateGate.htm">
-      </OBJECT></LI>
-      <LI><OBJECT type="text/sitemap">
         <param name="Name" value="CreateThread method">
         <param name="Local" value="html/Overload_W_Threading_ThreadExtensions_CreateThread.htm">
       </OBJECT></LI>
@@ -893,28 +889,6 @@
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Gate&lt;T&gt;.Run method">
         <param name="Local" value="html/M_W_Threading_Gate_1_Run.htm">
-      </OBJECT></LI>
-      <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="GateMethods class">
-        <param name="See Also" value="GateMethods class">
-      </OBJECT></LI>
-      <UL>
-        <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="GateMethods Class">
-          <param name="Local" value="html/T_W_Threading_GateMethods.htm">
-        </OBJECT></LI>
-        <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="about GateMethods class">
-          <param name="Local" value="html/T_W_Threading_GateMethods.htm">
-        </OBJECT></LI>
-        <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="methods">
-          <param name="Local" value="html/Methods_T_W_Threading_GateMethods.htm">
-        </OBJECT></LI>
-      </UL>
-      <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="GateMethods.CreateGate method">
-        <param name="Local" value="html/Overload_W_Threading_GateMethods_CreateGate.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="GetData(Of TData) method">
@@ -2881,10 +2855,6 @@
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="W.Threading.Gate&lt;T&gt; class">
         <param name="Local" value="html/T_W_Threading_Gate_1.htm">
-      </OBJECT></LI>
-      <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="W.Threading.GateMethods class">
-        <param name="Local" value="html/T_W_Threading_GateMethods.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="W.Threading.Thread class">

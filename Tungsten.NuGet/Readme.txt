@@ -1,5 +1,8 @@
 ﻿Tungsten is a C# library to make application development easier.  See the wiki @ https://github.com/mode51/Tungsten/wiki for details, examples and use.
 
+2.9.2017
+Removed Tungsten.Threading.GateExtensions - the methods seem rather redundant or at least unnecessary
+
 2.1.2017
 Removed unused references
 

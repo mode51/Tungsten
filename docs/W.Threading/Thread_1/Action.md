@@ -1,8 +1,6 @@
 Thread&lt;T>.Action Property
 ============================
-  
-[Missing &lt;summary> documentation for "P:W.Threading.Thread`1.Action"]
-
+  The parameterized thread procedure
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

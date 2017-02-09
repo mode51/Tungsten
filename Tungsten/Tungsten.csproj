@@ -72,7 +72,7 @@
     <Folder Include="Archive\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Threading\GateExtensions.cs" />
+    <None Include="Threading\GateExtensions.cs" />
     <Content Include="Tungsten.ico" />
     <Content Include="Tungsten.png" />
   </ItemGroup>

@@ -1,8 +1,6 @@
 ThreadBase.CallInvokeOnComplete Method
 ======================================
-  
-[Missing &lt;summary> documentation for "M:W.Threading.ThreadBase.CallInvokeOnComplete(System.Exception)"]
-
+  Calls the OnComplete Action when the thread returns
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -20,9 +18,7 @@ protected virtual void CallInvokeOnComplete(
 
 ##### *e*
 Type: [System.Exception][2]  
-
-[Missing &lt;param name="e"/> documentation for "M:W.Threading.ThreadBase.CallInvokeOnComplete(System.Exception)"]
-
+An Exception object, if an exception ocurred
 
 
 See Also

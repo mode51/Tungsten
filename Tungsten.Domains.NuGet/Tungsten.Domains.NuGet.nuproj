@@ -24,7 +24,7 @@
     <Authors>Jordan Duerksen</Authors>
     <Owners>Jordan Duerksen</Owners>
     <Summary>Tungsten.Domains</Summary>
-    <Description>Tungsten.Domains makes it easy to implement relodable AppDomains</Description>
+    <Description>Tungsten.Domains makes it easy to implement reloadable AppDomains</Description>
     <ReleaseNotes>
     </ReleaseNotes>
     <ProjectUrl>https://github.com/mode51/Tungsten</ProjectUrl>

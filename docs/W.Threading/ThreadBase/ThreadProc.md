@@ -1,8 +1,6 @@
 ThreadBase.ThreadProc Method
 ============================
-  
-[Missing &lt;summary> documentation for "M:W.Threading.ThreadBase.ThreadProc"]
-
+  The host thread procedure. This method calls the Action and subsequent OnComplete.
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

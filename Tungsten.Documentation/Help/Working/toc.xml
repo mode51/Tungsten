@@ -415,14 +415,6 @@
           <topic id="M:W.Threading.Gate`1.Run" project="Tungsten" file="M_W_Threading_Gate_1_Run" />
         </topic>
       </topic>
-      <topic id="T:W.Threading.GateMethods" project="Tungsten" file="T_W_Threading_GateMethods">
-        <topic id="Methods.T:W.Threading.GateMethods" project="Tungsten" file="Methods_T_W_Threading_GateMethods">
-          <topic id="Overload:W.Threading.GateMethods.CreateGate" project="Tungsten" file="Overload_W_Threading_GateMethods_CreateGate">
-            <topic id="M:W.Threading.GateMethods.CreateGate(System.Action{System.Threading.CancellationTokenSource})" project="Tungsten" file="M_W_Threading_GateMethods_CreateGate" />
-            <topic id="M:W.Threading.GateMethods.CreateGate``1(System.Action{``0,System.Threading.CancellationTokenSource})" project="Tungsten" file="M_W_Threading_GateMethods_CreateGate__1" />
-          </topic>
-        </topic>
-      </topic>
       <topic id="T:W.Threading.Thread" project="Tungsten" file="T_W_Threading_Thread">
         <topic id="M:W.Threading.Thread.#ctor(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" project="Tungsten" file="M_W_Threading_Thread__ctor" />
         <topic id="Methods.T:W.Threading.Thread" project="Tungsten" file="Methods_T_W_Threading_Thread">

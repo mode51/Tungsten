@@ -153,9 +153,9 @@
     <Compile Include="..\Tungsten\Threading\Gate.cs">
       <Link>Threading\Gate.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten\Threading\GateExtensions.cs">
+    <None Include="..\Tungsten\Threading\GateExtensions.cs">
       <Link>Threading\GateExtensions.cs</Link>
-    </Compile>
+    </None>
     <Compile Include="..\Tungsten\Threading\Thread.cs">
       <Link>Threading\Thread.cs</Link>
     </Compile>

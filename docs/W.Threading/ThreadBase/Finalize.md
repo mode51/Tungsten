@@ -1,8 +1,6 @@
 ThreadBase.Finalize Method
 ==========================
-  
-[Missing &lt;summary> documentation for "M:W.Threading.ThreadBase.Finalize"]
-
+  Destructs the ThreadBase object. Calls Dispose.
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

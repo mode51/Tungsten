@@ -4,6 +4,14 @@
     <name>Tungsten</name>
   </assembly>
   <members>
+    <member name="T:W.ActionQueue`1">
+      <summary>
+        <para>
+            Allows the programmer to enqueue items for processing on a separate thread.  The ActionQueue will process items sequentially whenever an item is added.
+            </para>
+      </summary>
+      <typeparam name="T">The type of data to enqueue and process</typeparam>
+    </member>
     <member name="P:W.ActionQueue`1.Count">
       <summary>
             Returns the number of items currently in the queue
@@ -119,6 +127,38 @@
       <summary>
             Provides a new instance of an uninitialized CallResult
             </summary>
+    </member>
+    <member name="T:W.InvokeExtensions">
+      <summary>
+            Extension methods to provide code shortcuts to evaluate InvokeRequired and run code appropriately
+            </summary>
+    </member>
+    <member name="M:W.InvokeExtensions.InvokeEx``1(``0,System.Action{``0})">
+      <summary>
+            Runs the provided Action on the UI thread
+            </summary>
+      <param name="this">The form or control which supports ISynchronizeInvoke</param>
+      <param name="action">The code to be executed on the UI thread</param>
+      <typeparam name="T">The form or control who's thread will execute the code</typeparam>
+    </member>
+    <member name="M:W.InvokeExtensions.InvokeEx``2(``0,System.Func{``0,``1})">
+      <summary>
+            Runs the provided Function on the UI thread. Avoids the cross-threaded exceptions.
+            </summary>
+      <param name="this">The form or control which supports ISynchronizationInvoke</param>
+      <param name="f">The function to be executed on the UI thread</param>
+      <typeparam name="T">The form or control who's thread will execute the code</typeparam>
+      <typeparam name="U">The type of return value</typeparam>
+      <returns>The function should return an object of type U</returns>
+    </member>
+    <member name="M:W.InvokeExtensions.InvokeEx``1(``0,System.Func{``0,System.Object})">
+      <summary>
+            Runs the provided Function on the UI thread. Avoids the cross-threaded exceptions.
+            </summary>
+      <param name="this">The form or control which supports ISynchronizationInvoke</param>
+      <param name="f">The function to be executed on the UI thread</param>
+      <typeparam name="T">The form or control who's thread will execute the code</typeparam>
+      <returns>The function should return an object</returns>
     </member>
     <member name="T:W.Lockable`1">
       <summary>
@@ -729,6 +769,16 @@
       <typeparam name="T">
       </typeparam>
     </member>
+    <member name="P:W.Threading.Thread`1.CustomData">
+      <summary>
+            Custom data to be passed into the thread 
+            </summary>
+    </member>
+    <member name="P:W.Threading.Thread`1.Action">
+      <summary>
+            The parameterized thread procedure
+            </summary>
+    </member>
     <member name="M:W.Threading.Thread`1.InvokeAction">
       <summary>
             Overridden implementation which calls Action with CustomData
@@ -759,6 +809,31 @@
             A base class for Thread which should work for all compiler Target types
             </summary>
     </member>
+    <member name="P:W.Threading.ThreadBase.Action">
+      <summary>
+            The Action to execute on the thread
+            </summary>
+    </member>
+    <member name="P:W.Threading.ThreadBase.OnComplete">
+      <summary>
+            The Action to execute when the thread completes
+            </summary>
+    </member>
+    <member name="P:W.Threading.ThreadBase.Cts">
+      <summary>
+            The CancellationTokenSource which can be used to cancel the thread
+            </summary>
+    </member>
+    <member name="P:W.Threading.ThreadBase.IsBusy">
+      <summary>
+            Value is True if the thread is currently running, otherwise False
+            </summary>
+    </member>
+    <member name="P:W.Threading.ThreadBase.Success">
+      <summary>
+            The Value to send to the OnComplete Action.  True if the thread returns successfully, otherwise False.
+            </summary>
+    </member>
     <member name="M:W.Threading.ThreadBase.InvokeAction">
       <summary>
             Invokes the Action. Virtual for customization.
@@ -775,8 +850,18 @@
       <summary>
             Must be overridden to provide exception handling
             </summary>
-      <returns>
-      </returns>
+      <returns>An Exception object, if an exception ocurred</returns>
+    </member>
+    <member name="M:W.Threading.ThreadBase.CallInvokeOnComplete(System.Exception)">
+      <summary>
+            Calls the OnComplete Action when the thread returns
+            </summary>
+      <param name="e">An Exception object, if an exception ocurred</param>
+    </member>
+    <member name="M:W.Threading.ThreadBase.ThreadProc">
+      <summary>
+            The host thread procedure.  This method calls the Action and subsequent OnComplete.
+            </summary>
     </member>
     <member name="M:W.Threading.ThreadBase.Cancel">
       <summary>
@@ -811,6 +896,11 @@
       <returns>
       </returns>
     </member>
+    <member name="M:W.Threading.ThreadBase.Finalize">
+      <summary>
+            Destructs the ThreadBase object.  Calls Dispose.
+            </summary>
+    </member>
     <member name="M:W.Threading.ThreadBase.Dispose">
       <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
     </member>
@@ -839,20 +929,6 @@
       <typeparam name="T">
       </typeparam>
       <returns>A reference to the new W.Threading.Thread&lt;T&gt;</returns>
-    </member>
-    <member name="M:W.Threading.GateMethods.CreateGate(System.Action{System.Threading.CancellationTokenSource})">
-      <summary>
-            Creates a Gate with the supplied action
-            </summary>
-      <param name="action">The Action to call when the gate is relased (when Run is called)</param>
-      <returns>A reference to a new Gate</returns>
-    </member>
-    <member name="M:W.Threading.GateMethods.CreateGate``1(System.Action{``0,System.Threading.CancellationTokenSource})">
-      <summary>
-            Creates a Gate with the supplied action
-            </summary>
-      <param name="action">The Action to call when the gate is relased (when Run is called)</param>
-      <returns>A reference to a new Gate</returns>
     </member>
     <member name="N:W">
       <summary />

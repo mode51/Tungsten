@@ -1,8 +1,6 @@
 ThreadBase.IsBusy Property
 ==========================
-  
-[Missing &lt;summary> documentation for "P:W.Threading.ThreadBase.IsBusy"]
-
+  Value is True if the thread is currently running, otherwise False
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

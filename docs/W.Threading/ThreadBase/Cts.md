@@ -1,8 +1,6 @@
 ThreadBase.Cts Property
 =======================
-  
-[Missing &lt;summary> documentation for "P:W.Threading.ThreadBase.Cts"]
-
+  The CancellationTokenSource which can be used to cancel the thread
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

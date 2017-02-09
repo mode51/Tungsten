@@ -33,14 +33,14 @@ Constructors
 Properties
 ----------
 
-                      | Name            | Description                                    
---------------------- | --------------- | ---------------------------------------------- 
-![Protected property] | [Action][5]     |                                                
-![Protected property] | [Cts][6]        |                                                
-![Protected property] | [IsBusy][7]     |                                                
-![Public property]    | [IsRunning][8]  | True if the thread is running, otherwise false 
-![Protected property] | [OnComplete][9] |                                                
-![Protected property] | [Success][10]   |                                                
+                      | Name            | Description                                                                                           
+--------------------- | --------------- | ----------------------------------------------------------------------------------------------------- 
+![Protected property] | [Action][5]     | The Action to execute on the thread                                                                   
+![Protected property] | [Cts][6]        | The CancellationTokenSource which can be used to cancel the thread                                    
+![Protected property] | [IsBusy][7]     | Value is True if the thread is currently running, otherwise False                                     
+![Public property]    | [IsRunning][8]  | True if the thread is running, otherwise false                                                        
+![Protected property] | [OnComplete][9] | The Action to execute when the thread completes                                                       
+![Protected property] | [Success][10]   | The Value to send to the OnComplete Action. True if the thread returns successfully, otherwise False. 
 
 
 Methods
@@ -49,17 +49,17 @@ Methods
                     | Name                       | Description                                                                                                                                     
 ------------------- | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- 
 ![Protected method] | [CallInvokeAction][11]     | Must be overridden to provide exception handling                                                                                                
-![Protected method] | [CallInvokeOnComplete][12] |                                                                                                                                                 
+![Protected method] | [CallInvokeOnComplete][12] | Calls the OnComplete Action when the thread returns                                                                                             
 ![Public method]    | [Cancel][13]               | 
 Cancels the thread by calling Cancel on the CancellationTokenSource. The value should be checked in the code in the specified Action parameter.
  
 ![Public method]    | [Dispose][14]              | Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.                                        
-![Protected method] | [Finalize][15]             | (Overrides [Object.Finalize()][16].)                                                                                                            
+![Protected method] | [Finalize][15]             | Destructs the ThreadBase object. Calls Dispose. (Overrides [Object.Finalize()][16].)                                                            
 ![Protected method] | [InvokeAction][17]         | Invokes the Action. Virtual for customization.                                                                                                  
 ![Protected method] | [InvokeOnComplete][18]     | Invokes the OnComplete action. Virtual for customization.                                                                                       
 ![Public method]    | [Join()][19]               | Blocks the calling thread until the thread terminates                                                                                           
 ![Public method]    | [Join(Int32)][20]          | Blocks the calling thread until either the thread terminates or the specified milliseconds elapse                                               
-![Protected method] | [ThreadProc][21]           |                                                                                                                                                 
+![Protected method] | [ThreadProc][21]           | The host thread procedure. This method calls the Action and subsequent OnComplete.                                                              
 
 
 Extension Methods

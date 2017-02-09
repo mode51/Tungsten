@@ -10,12 +10,14 @@ Classes
 
                 | Class                                | Description                                                                                                                                                                                                                                             
 --------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-![Public class] | [ActionQueue&lt;T>][1]               |                                                                                                                                                                                                                                                         
+![Public class] | [ActionQueue&lt;T>][1]               | 
+Allows the programmer to enqueue items for processing on a separate thread. The ActionQueue will process items sequentially whenever an item is added.
+                                                                                              
 ![Public class] | [CallResult][2]                      | A non-generic return value for a function. CallResult encapsulates a success/failure and an exception.                                                                                                                                                  
 ![Public class] | [CallResult&lt;TResult>][3]          | 
 Generic class to be used as a return value. CallResult encapsulates a success/failure, an exception and a return value.
                                                                                                                              
-![Public class] | [InvokeExtensions][4]                |                                                                                                                                                                                                                                                         
+![Public class] | [InvokeExtensions][4]                | Extension methods to provide code shortcuts to evaluate InvokeRequired and run code appropriately                                                                                                                                                       
 ![Public class] | [Lockable&lt;TValue>][5]             | 
 Provides thread safety via locking
                                                                                                                                                                                                                   

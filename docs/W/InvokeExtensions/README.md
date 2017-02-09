@@ -1,8 +1,6 @@
 InvokeExtensions Class
 ======================
-  
-[Missing &lt;summary> documentation for "T:W.InvokeExtensions"]
-
+  Extension methods to provide code shortcuts to evaluate InvokeRequired and run code appropriately
 
 
 Inheritance Hierarchy
@@ -24,11 +22,11 @@ public static class InvokeExtensions
 Methods
 -------
 
-                                 | Name                                       | Description 
--------------------------------- | ------------------------------------------ | ----------- 
-![Public method]![Static member] | [InvokeEx&lt;T>(T, Action&lt;T>)][3]       |             
-![Public method]![Static member] | [InvokeEx&lt;T>(T, Func&lt;T, Object>)][4] |             
-![Public method]![Static member] | [InvokeEx&lt;T, U>(T, Func&lt;T, U>)][5]   |             
+                                 | Name                                       | Description                                                                        
+-------------------------------- | ------------------------------------------ | ---------------------------------------------------------------------------------- 
+![Public method]![Static member] | [InvokeEx&lt;T>(T, Action&lt;T>)][3]       | Runs the provided Action on the UI thread                                          
+![Public method]![Static member] | [InvokeEx&lt;T>(T, Func&lt;T, Object>)][4] | Runs the provided Function on the UI thread. Avoids the cross-threaded exceptions. 
+![Public method]![Static member] | [InvokeEx&lt;T, U>(T, Func&lt;T, U>)][5]   | Runs the provided Function on the UI thread. Avoids the cross-threaded exceptions. 
 
 
 See Also

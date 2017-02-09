@@ -14,9 +14,7 @@ protected abstract Exception CallInvokeAction()
 
 #### Return Value
 Type: [Exception][2]  
-
-[Missing &lt;returns> documentation for "M:W.Threading.ThreadBase.CallInvokeAction"]
-
+An Exception object, if an exception ocurred
 
 See Also
 --------

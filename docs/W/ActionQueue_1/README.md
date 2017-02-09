@@ -1,7 +1,7 @@
 ActionQueue&lt;T> Class
 =======================
   
-[Missing &lt;summary> documentation for "T:W.ActionQueue`1"]
+Allows the programmer to enqueue items for processing on a separate thread. The ActionQueue will process items sequentially whenever an item is added.
 
 
 
@@ -24,9 +24,7 @@ public class ActionQueue<T>
 #### Type Parameters
 
 ##### *T*
-
-[Missing &lt;typeparam name="T"/> documentation for "T:W.ActionQueue`1"]
-
+The type of data to enqueue and process
 
 The **ActionQueue<T>** type exposes the following members.
 

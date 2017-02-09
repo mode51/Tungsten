@@ -1,8 +1,6 @@
 ThreadBase.Action Property
 ==========================
-  
-[Missing &lt;summary> documentation for "P:W.Threading.ThreadBase.Action"]
-
+  The Action to execute on the thread
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

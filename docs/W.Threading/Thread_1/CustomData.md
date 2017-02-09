@@ -1,8 +1,6 @@
 Thread&lt;T>.CustomData Property
 ================================
-  
-[Missing &lt;summary> documentation for "P:W.Threading.Thread`1.CustomData"]
-
+  Custom data to be passed into the thread
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

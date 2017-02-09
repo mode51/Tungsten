@@ -1,8 +1,6 @@
 InvokeExtensions.InvokeEx&lt;T> Method (T, Func&lt;T, Object>)
 ==============================================================
-  
-[Missing &lt;summary> documentation for "M:W.InvokeExtensions.InvokeEx``1(``0,System.Func{``0,System.Object})"]
-
+  Runs the provided Function on the UI thread. Avoids the cross-threaded exceptions.
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -23,28 +21,20 @@ where T : ISynchronizeInvoke
 
 ##### *this*
 Type: **T**  
-
-[Missing &lt;param name="this"/> documentation for "M:W.InvokeExtensions.InvokeEx``1(``0,System.Func{``0,System.Object})"]
-
+The form or control which supports ISynchronizationInvoke
 
 ##### *f*
 Type: [System.Func][2]&lt;**T**, [Object][3]>  
-
-[Missing &lt;param name="f"/> documentation for "M:W.InvokeExtensions.InvokeEx``1(``0,System.Func{``0,System.Object})"]
-
+The function to be executed on the UI thread
 
 #### Type Parameters
 
 ##### *T*
-
-[Missing &lt;typeparam name="T"/> documentation for "M:W.InvokeExtensions.InvokeEx``1(``0,System.Func{``0,System.Object})"]
-
+The form or control who's thread will execute the code
 
 #### Return Value
 Type: [Object][3]  
-
-[Missing &lt;returns> documentation for "M:W.InvokeExtensions.InvokeEx``1(``0,System.Func{``0,System.Object})"]
-
+The function should return an object
 #### Usage Note
 In Visual Basic and C#, you can call this method as an instance method on any object of type . When you use instance method syntax to call this method, omit the first parameter. For more information, see [Extension Methods (Visual Basic)][4] or [Extension Methods (C# Programming Guide)][5].
 

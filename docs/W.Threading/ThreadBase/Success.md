@@ -1,8 +1,6 @@
 ThreadBase.Success Property
 ===========================
-  
-[Missing &lt;summary> documentation for "P:W.Threading.ThreadBase.Success"]
-
+  The Value to send to the OnComplete Action. True if the thread returns successfully, otherwise False.
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

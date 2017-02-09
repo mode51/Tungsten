@@ -43,10 +43,10 @@ Constructors
 Properties
 ----------
 
-                      | Name            | Description 
---------------------- | --------------- | ----------- 
-![Protected property] | [Action][7]     |             
-![Public property]    | [CustomData][8] |             
+                      | Name            | Description                              
+--------------------- | --------------- | ---------------------------------------- 
+![Protected property] | [Action][7]     | The parameterized thread procedure       
+![Public property]    | [CustomData][8] | Custom data to be passed into the thread 
 
 
 Methods

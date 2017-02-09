@@ -61,7 +61,6 @@ html\Methods_T_W_RPC_RPCClassAttribute.htm
 html\Methods_T_W_RPC_RPCMethodAttribute.htm
 html\Methods_T_W_RPC_Server.htm
 html\Methods_T_W_Threading_Gate.htm
-html\Methods_T_W_Threading_GateMethods.htm
 html\Methods_T_W_Threading_Gate_1.htm
 html\Methods_T_W_Threading_Thread.htm
 html\Methods_T_W_Threading_ThreadBase.htm
@@ -207,8 +206,6 @@ html\M_W_RPC_Server_Start.htm
 html\M_W_RPC_Server_Stop.htm
 html\M_W_RPC_Server__ctor.htm
 html\M_W_RPC_Server__ctor_1.htm
-html\M_W_Threading_GateMethods_CreateGate.htm
-html\M_W_Threading_GateMethods_CreateGate__1.htm
 html\M_W_Threading_Gate_1_CallInvokeAction.htm
 html\M_W_Threading_Gate_1_Run.htm
 html\M_W_Threading_Gate_1__ctor.htm
@@ -276,7 +273,6 @@ html\Overload_W_RPC_IClient_MakeRPCCall.htm
 html\Overload_W_RPC_ISocketClient_Connect.htm
 html\Overload_W_RPC_ISocketClient_ConnectAsync.htm
 html\Overload_W_RPC_Server__ctor.htm
-html\Overload_W_Threading_GateMethods_CreateGate.htm
 html\Overload_W_Threading_ThreadBase_Join.htm
 html\Overload_W_Threading_ThreadExtensions_CreateThread.htm
 html\Overload_W_Threading_Thread_Cancel.htm
@@ -369,7 +365,6 @@ html\T_W_RPC_RPCClassAttribute.htm
 html\T_W_RPC_RPCMethodAttribute.htm
 html\T_W_RPC_Server.htm
 html\T_W_Threading_Gate.htm
-html\T_W_Threading_GateMethods.htm
 html\T_W_Threading_Gate_1.htm
 html\T_W_Threading_Thread.htm
 html\T_W_Threading_ThreadBase.htm

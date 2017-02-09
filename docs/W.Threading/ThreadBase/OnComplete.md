@@ -1,8 +1,6 @@
 ThreadBase.OnComplete Property
 ==============================
-  
-[Missing &lt;summary> documentation for "P:W.Threading.ThreadBase.OnComplete"]
-
+  The Action to execute when the thread completes
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
