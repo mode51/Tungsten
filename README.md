@@ -10,10 +10,10 @@ Tungsten.Universal is built on Windows 10 (10.0; Build 10240)
 To build Tungsten.Documentation, you will need to install the SHFB Visual Studio extension from NuGet.
 
 # Projects
-* Tungsten - A classic class library
+* Tungsten - A collection of useful classes for Winforms/WPF
 * Tungsten.Portable - A Portable version of Tungsten
 * Tungsten.Universal - A Universal version of Tungsten
-* Tungsten.RPC - A classic class library
+* Tungsten.RPC - Encrypted socket classes (client and server) to run code on a Tungsten.RPC server
 * Tungsten.Domains - Easily implement reloadable AppDomains in your application
 * Tungsten.LiteDb - LiteDb based CRUD for your POCO classes
 
@@ -53,4 +53,4 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 
 #Tungsten.LiteDb
 * W.LiteDb.LiteDbItem - A base class for your POCO classes (necessary for LiteDbMethods due to needing to know the \_id field)
-* W.LiteDb.LiteDbMethods - CRUD methods for your POCO classes
+* W.LiteDb.LiteDbMethods - CRUD methods for your POCO classes which inherit LiteDbItem
