@@ -26,7 +26,7 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 * Tungsten.Domains.Demo - Illustrates using Tungsten.Domains to host a reloadable AppDomain
 
 # Tungsten / Tungsten.Portable / Tungsten.Universal Classes
-* [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue-)\<TValue\> - A generic class to wrap a value in a thread-safe manner
+* [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue)\<TValue\> - A generic class to wrap a value in a thread-safe manner
 * [W.Property](https://github.com/mode51/Tungsten/wiki/Property-TValue)\<TValue\> - A generic class providing a number of enhancements to a [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue-)\<TValue\> value
     * Implements INotifyPropertyChanged
     * Adds IsDirty/MarkAsClean functionality
