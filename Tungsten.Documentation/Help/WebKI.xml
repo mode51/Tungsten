@@ -28,6 +28,27 @@
   <HelpKINode Title="ActionQueue&lt;T&gt;.Count property" Url="html/P_W_ActionQueue_1_Count.htm" />
   <HelpKINode Title="ActionQueue&lt;T&gt;.Enqueue method" Url="html/M_W_ActionQueue_1_Enqueue.htm" />
   <HelpKINode Title="ActionQueue&lt;T&gt;.Queue property" Url="html/P_W_ActionQueue_1_Queue.htm" />
+  <HelpKINode Title="As(Of TType) method" Url="html/M_W_AsExtensions_As__1.htm" />
+  <HelpKINode Title="As&lt;TType&gt; method" Url="html/M_W_AsExtensions_As__1.htm" />
+  <HelpKINode Title="AsBase64 method" Url="html/M_W_AsExtensions_AsBase64.htm" />
+  <HelpKINode Title="AsBytes method" Url="html/M_W_AsExtensions_AsBytes.htm" />
+  <HelpKINode Title="AsExtensions class">
+    <HelpKINode Title="AsExtensions Class" Url="html/T_W_AsExtensions.htm" />
+    <HelpKINode Title="about AsExtensions class" Url="html/T_W_AsExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_AsExtensions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AsExtensions.As(Of TType) method" Url="html/M_W_AsExtensions_As__1.htm" />
+  <HelpKINode Title="AsExtensions.As&lt;TType&gt; method" Url="html/M_W_AsExtensions_As__1.htm" />
+  <HelpKINode Title="AsExtensions.AsBase64 method" Url="html/M_W_AsExtensions_AsBase64.htm" />
+  <HelpKINode Title="AsExtensions.AsBytes method" Url="html/M_W_AsExtensions_AsBytes.htm" />
+  <HelpKINode Title="AsExtensions.AsJson(Of TType) method" Url="html/M_W_AsExtensions_AsJson__1.htm" />
+  <HelpKINode Title="AsExtensions.AsJson&lt;TType&gt; method" Url="html/M_W_AsExtensions_AsJson__1.htm" />
+  <HelpKINode Title="AsExtensions.AsStream method" Url="html/Overload_W_AsExtensions_AsStream.htm" />
+  <HelpKINode Title="AsExtensions.AsString method" Url="html/M_W_AsExtensions_AsString.htm" />
+  <HelpKINode Title="AsJson(Of TType) method" Url="html/M_W_AsExtensions_AsJson__1.htm" />
+  <HelpKINode Title="AsJson&lt;TType&gt; method" Url="html/M_W_AsExtensions_AsJson__1.htm" />
+  <HelpKINode Title="AsStream method" Url="html/Overload_W_AsExtensions_AsStream.htm" />
+  <HelpKINode Title="AsString method" Url="html/M_W_AsExtensions_AsString.htm" />
   <HelpKINode Title="CallInvokeAction method">
     <HelpKINode Title="Gate(T).CallInvokeAction Method " Url="html/M_W_Threading_Gate_1_CallInvokeAction.htm" />
     <HelpKINode Title="Gate.CallInvokeAction Method " Url="html/M_W_Threading_Gate_CallInvokeAction.htm" />
@@ -208,6 +229,15 @@
   </HelpKINode>
   <HelpKINode Title="Find method" Url="html/Overload_W_LiteDb_LiteDbMethods_Find.htm" />
   <HelpKINode Title="FindOne method" Url="html/Overload_W_LiteDb_LiteDbMethods_FindOne.htm" />
+  <HelpKINode Title="FromBase64 method" Url="html/M_W_FromExtensions_FromBase64.htm" />
+  <HelpKINode Title="FromExtensions class">
+    <HelpKINode Title="FromExtensions Class" Url="html/T_W_FromExtensions.htm" />
+    <HelpKINode Title="about FromExtensions class" Url="html/T_W_FromExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_FromExtensions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FromExtensions.FromBase64 method" Url="html/M_W_FromExtensions_FromBase64.htm" />
+  <HelpKINode Title="FromExtensions.FromJson method" Url="html/Overload_W_FromExtensions_FromJson.htm" />
+  <HelpKINode Title="FromJson method" Url="html/Overload_W_FromExtensions_FromJson.htm" />
   <HelpKINode Title="Gate class">
     <HelpKINode Title="Gate Class" Url="html/T_W_Threading_Gate.htm" />
     <HelpKINode Title="about Gate class" Url="html/T_W_Threading_Gate.htm" />
@@ -697,12 +727,14 @@
   <HelpKINode Title="W namespace" Url="html/N_W.htm" />
   <HelpKINode Title="W.ActionQueue(Of T) class" Url="html/T_W_ActionQueue_1.htm" />
   <HelpKINode Title="W.ActionQueue&lt;T&gt; class" Url="html/T_W_ActionQueue_1.htm" />
+  <HelpKINode Title="W.AsExtensions class" Url="html/T_W_AsExtensions.htm" />
   <HelpKINode Title="W.CallResult class" Url="html/T_W_CallResult.htm" />
   <HelpKINode Title="W.CallResult(Of TResult) class" Url="html/T_W_CallResult_1.htm" />
   <HelpKINode Title="W.CallResult&lt;TResult&gt; class" Url="html/T_W_CallResult_1.htm" />
   <HelpKINode Title="W.Domains namespace" Url="html/N_W_Domains.htm" />
   <HelpKINode Title="W.Domains.DomainLoader class" Url="html/T_W_Domains_DomainLoader.htm" />
   <HelpKINode Title="W.Domains.IDomainLoader interface" Url="html/T_W_Domains_IDomainLoader.htm" />
+  <HelpKINode Title="W.FromExtensions class" Url="html/T_W_FromExtensions.htm" />
   <HelpKINode Title="W.InvokeExtensions class" Url="html/T_W_InvokeExtensions.htm" />
   <HelpKINode Title="W.IOwnedProperty interface" Url="html/T_W_IOwnedProperty.htm" />
   <HelpKINode Title="W.IProperty interface" Url="html/T_W_IProperty.htm" />

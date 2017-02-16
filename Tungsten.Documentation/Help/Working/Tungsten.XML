@@ -46,6 +46,92 @@
             </summary>
       <param name="onItemAdded">A callback which is called whenever an item has been enqueued</param>
     </member>
+    <member name="T:W.AsExtensions">
+      <summary>
+            Extensions which convert objects of one type to another
+            </summary>
+    </member>
+    <member name="M:W.AsExtensions.As``1(``0)">
+      <summary>
+            Use Generic syntax for the <bold>as</bold> operator.
+            </summary>
+      <typeparam name="TType">The type to convert the item reference to.</typeparam>
+      <param name="this">The item to convert to type TType</param>
+      <returns>Null if @this cannot be referenced as TType.  Otherwise, the item as TType</returns>
+      <example>
+        <code>expression as type</code> becomes <code>expression&lt;type&gt;()</code></example>
+    </member>
+    <member name="M:W.AsExtensions.AsBase64(System.String)">
+      <summary>
+            Converts a string to Base64 encoding
+            </summary>
+      <param name="this">The string to convert to Base64 encoding</param>
+      <returns>The Base64 encoded string</returns>
+    </member>
+    <member name="M:W.AsExtensions.AsBytes(System.String)">
+      <summary>
+            Converts a string to an encoded byte array
+            </summary>
+      <param name="this">The string to convert to an encoded byte array</param>
+      <returns>A byte array encoding of the specified string</returns>
+    </member>
+    <member name="M:W.AsExtensions.AsString(System.Byte[])">
+      <summary>
+            Converts an encoded byte array to a string
+            </summary>
+      <param name="this">The encoded byte array to conver to a string</param>
+      <returns>The string representation of the encoded byte array</returns>
+    </member>
+    <member name="M:W.AsExtensions.AsStream(System.Byte[])">
+      <summary>
+            Creates a MemoryStream object and initializes it with the specified byte array
+            </summary>
+      <param name="this">The byte array used in creating the MemoryStream</param>
+      <returns>A new MemoryStream initialized with the specified byte array</returns>
+    </member>
+    <member name="M:W.AsExtensions.AsStream(System.String)">
+      <summary>
+            Creates a MemoryStream object and initializes it with the specified string
+            </summary>
+      <param name="this">The string used in creating the MemoryStream</param>
+      <returns>A new MemoryStream initilized with the specified string</returns>
+    </member>
+    <member name="M:W.AsExtensions.AsJson``1(``0)">
+      <summary>
+            Serializes an object to a Json string
+            </summary>
+      <typeparam name="TType">The type of object to serialize</typeparam>
+      <param name="this">The object to serialize to Json</param>
+      <returns>A Json formatted string representation of the specified object</returns>
+    </member>
+    <member name="T:W.FromExtensions">
+      <summary>
+            Extensions which convert objects of one type to another
+            </summary>
+    </member>
+    <member name="M:W.FromExtensions.FromJson``1(System.String)">
+      <summary>
+            Deserializes a Json string to an object
+            </summary>
+      <typeparam name="TType">The type of object to deserialize</typeparam>
+      <param name="this">The Json formatted string</param>
+      <returns>A new instance of TType deserialized from the specified Json string</returns>
+    </member>
+    <member name="M:W.FromExtensions.FromJson``1(System.Byte[])">
+      <summary>
+            Deserializes an encoded byte array of Json to an object
+            </summary>
+      <typeparam name="TType">The type of object to deserialize</typeparam>
+      <param name="this">The byte array containing encoded Json</param>
+      <returns>A new instance of TType deserialized from the specified Json encoded byte array</returns>
+    </member>
+    <member name="M:W.FromExtensions.FromBase64(System.String)">
+      <summary>
+            Converts a Base64 encoded string back to a normal string
+            </summary>
+      <param name="this">The Base64 encoded string to convert</param>
+      <returns>A non-encoded string</returns>
+    </member>
     <member name="T:W.CallResult`1">
       <summary>
         <para>

@@ -46,9 +46,13 @@
     <Reference Include="System.Core">
       <EmbedAssembly>true</EmbedAssembly>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionQueue.cs" />
+    <Compile Include="As.cs" />
     <Compile Include="CallResult.cs" />
     <Compile Include="InvokeExtensions.cs" />
     <Compile Include="Lockable.cs" />

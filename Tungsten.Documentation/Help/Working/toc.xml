@@ -16,6 +16,19 @@
           <topic id="M:W.ActionQueue`1.Enqueue(`0)" project="Tungsten" file="M_W_ActionQueue_1_Enqueue" />
         </topic>
       </topic>
+      <topic id="T:W.AsExtensions" project="Tungsten" file="T_W_AsExtensions">
+        <topic id="Methods.T:W.AsExtensions" project="Tungsten" file="Methods_T_W_AsExtensions">
+          <topic id="M:W.AsExtensions.As``1(``0)" project="Tungsten" file="M_W_AsExtensions_As__1" />
+          <topic id="M:W.AsExtensions.AsBase64(System.String)" project="Tungsten" file="M_W_AsExtensions_AsBase64" />
+          <topic id="M:W.AsExtensions.AsBytes(System.String)" project="Tungsten" file="M_W_AsExtensions_AsBytes" />
+          <topic id="M:W.AsExtensions.AsJson``1(``0)" project="Tungsten" file="M_W_AsExtensions_AsJson__1" />
+          <topic id="Overload:W.AsExtensions.AsStream" project="Tungsten" file="Overload_W_AsExtensions_AsStream">
+            <topic id="M:W.AsExtensions.AsStream(System.Byte[])" project="Tungsten" file="M_W_AsExtensions_AsStream" />
+            <topic id="M:W.AsExtensions.AsStream(System.String)" project="Tungsten" file="M_W_AsExtensions_AsStream_1" />
+          </topic>
+          <topic id="M:W.AsExtensions.AsString(System.Byte[])" project="Tungsten" file="M_W_AsExtensions_AsString" />
+        </topic>
+      </topic>
       <topic id="T:W.CallResult" project="Tungsten" file="T_W_CallResult">
         <topic id="Overload:W.CallResult.#ctor" project="Tungsten" file="Overload_W_CallResult__ctor">
           <topic id="M:W.CallResult.#ctor" project="Tungsten" file="M_W_CallResult__ctor" />
@@ -41,6 +54,15 @@
           <topic id="P:W.CallResult`1.Result" project="Tungsten" file="P_W_CallResult_1_Result" />
         </topic>
         <topic id="Methods.T:W.CallResult`1" project="Tungsten" file="Methods_T_W_CallResult_1" />
+      </topic>
+      <topic id="T:W.FromExtensions" project="Tungsten" file="T_W_FromExtensions">
+        <topic id="Methods.T:W.FromExtensions" project="Tungsten" file="Methods_T_W_FromExtensions">
+          <topic id="M:W.FromExtensions.FromBase64(System.String)" project="Tungsten" file="M_W_FromExtensions_FromBase64" />
+          <topic id="Overload:W.FromExtensions.FromJson" project="Tungsten" file="Overload_W_FromExtensions_FromJson">
+            <topic id="M:W.FromExtensions.FromJson``1(System.Byte[])" project="Tungsten" file="M_W_FromExtensions_FromJson__1" />
+            <topic id="M:W.FromExtensions.FromJson``1(System.String)" project="Tungsten" file="M_W_FromExtensions_FromJson__1_1" />
+          </topic>
+        </topic>
       </topic>
       <topic id="T:W.InvokeExtensions" project="Tungsten" file="T_W_InvokeExtensions">
         <topic id="Methods.T:W.InvokeExtensions" project="Tungsten" file="Methods_T_W_InvokeExtensions">

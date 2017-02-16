@@ -76,6 +76,8 @@
       <apidata name="W" group="namespace" />
       <elements>
         <element api="T:W.ActionQueue`1" />
+        <element api="T:W.AsExtensions" />
+        <element api="T:W.FromExtensions" />
         <element api="T:W.CallResult`1" />
         <element api="T:W.CallResult" />
         <element api="T:W.InvokeExtensions" />
@@ -302,6 +304,208 @@
         <namespace api="N:W" />
         <type api="T:W.ActionQueue`1" ref="true" />
       </containers>
+    </api>
+    <api id="T:W.AsExtensions">
+      <apidata name="AsExtensions" group="type" subgroup="class" />
+      <typedata visibility="public" abstract="true" sealed="true" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <elements>
+        <element api="M:W.AsExtensions.As``1(``0)" />
+        <element api="M:W.AsExtensions.AsBase64(System.String)" />
+        <element api="M:W.AsExtensions.AsBytes(System.String)" />
+        <element api="M:W.AsExtensions.AsString(System.Byte[])" />
+        <element api="M:W.AsExtensions.AsStream(System.Byte[])" />
+        <element api="M:W.AsExtensions.AsStream(System.String)" />
+        <element api="M:W.AsExtensions.AsJson``1(``0)" />
+      </elements>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.AsExtensions.As``1(``0)">
+      <apidata name="As" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="TType">
+          <constrained ref="true" />
+        </template>
+      </templates>
+      <parameters>
+        <parameter name="this">
+          <template name="TType" index="0" api="M:W.AsExtensions.As``1(``0)" />
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="TType" index="0" api="M:W.AsExtensions.As``1(``0)" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.AsExtensions" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.AsExtensions.AsBase64(System.String)">
+      <apidata name="AsBase64" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="this">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.String" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.AsExtensions" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.AsExtensions.AsBytes(System.String)">
+      <apidata name="AsBytes" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="this">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <arrayOf rank="1">
+          <type api="T:System.Byte" ref="false" />
+        </arrayOf>
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.AsExtensions" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.AsExtensions.AsJson``1(``0)">
+      <apidata name="AsJson" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="TType" />
+      </templates>
+      <parameters>
+        <parameter name="this">
+          <template name="TType" index="0" api="M:W.AsExtensions.AsJson``1(``0)" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.String" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.AsExtensions" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.AsExtensions.AsStream(System.Byte[])">
+      <apidata name="AsStream" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="this">
+          <arrayOf rank="1">
+            <type api="T:System.Byte" ref="false" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.IO.MemoryStream" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.AsExtensions" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.AsExtensions.AsStream(System.String)">
+      <apidata name="AsStream" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="this">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.IO.MemoryStream" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.AsExtensions" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.AsExtensions.AsString(System.Byte[])">
+      <apidata name="AsString" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="this">
+          <arrayOf rank="1">
+            <type api="T:System.Byte" ref="false" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.String" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.AsExtensions" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
     </api>
     <api id="T:W.CallResult">
       <apidata name="CallResult" group="type" subgroup="class" />
@@ -681,6 +885,106 @@
         <namespace api="N:W" />
         <type api="T:W.CallResult`1" ref="true" />
       </containers>
+    </api>
+    <api id="T:W.FromExtensions">
+      <apidata name="FromExtensions" group="type" subgroup="class" />
+      <typedata visibility="public" abstract="true" sealed="true" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <elements>
+        <element api="M:W.FromExtensions.FromJson``1(System.String)" />
+        <element api="M:W.FromExtensions.FromJson``1(System.Byte[])" />
+        <element api="M:W.FromExtensions.FromBase64(System.String)" />
+      </elements>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.FromExtensions.FromBase64(System.String)">
+      <apidata name="FromBase64" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="this">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.String" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.FromExtensions" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.FromExtensions.FromJson``1(System.Byte[])">
+      <apidata name="FromJson" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="TType" />
+      </templates>
+      <parameters>
+        <parameter name="this">
+          <arrayOf rank="1">
+            <type api="T:System.Byte" ref="false" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="TType" index="0" api="M:W.FromExtensions.FromJson``1(System.Byte[])" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.FromExtensions" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.FromExtensions.FromJson``1(System.String)">
+      <apidata name="FromJson" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="TType" />
+      </templates>
+      <parameters>
+        <parameter name="this">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="TType" index="0" api="M:W.FromExtensions.FromJson``1(System.String)" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.FromExtensions" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
     </api>
     <api id="T:W.InvokeExtensions">
       <apidata name="InvokeExtensions" group="type" subgroup="class" />

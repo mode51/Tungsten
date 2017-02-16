@@ -41,6 +41,9 @@
     <Compile Include="..\Tungsten\ActionQueue.cs">
       <Link>ActionQueue.cs</Link>
     </Compile>
+    <Compile Include="..\Tungsten\As.cs">
+      <Link>As.cs</Link>
+    </Compile>
     <Compile Include="..\Tungsten\CallResult.cs">
       <Link>CallResult.cs</Link>
     </Compile>

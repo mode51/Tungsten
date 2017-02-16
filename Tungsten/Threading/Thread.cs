@@ -24,8 +24,27 @@ namespace W.Threading
             Exception ex = null;
             try
             {
-                CallInvokeAction();
+                InvokeAction();
                 Success.Value = true;
+            }
+            catch (TaskSchedulerException e)
+            {
+                ex = e;
+                System.Diagnostics.Debug.WriteLine("ThreadExtensions.ThreadProc TaskSchedulerException:  " + e.Message);
+            }
+            catch (TaskCanceledException e)
+            {
+                ex = e;
+                //System.Diagnostics.Debug.WriteLine("ThreadExtensions.ThreadProc Exception:  " + e.Message);
+            }
+            catch (Exception e)
+            {
+                ex = e;
+                System.Diagnostics.Debug.WriteLine("ThreadExtensions.ThreadProc General Exception:  " + e.Message);
+            }
+            try
+            {
+                InvokeOnComplete(ex);
             }
             catch (TaskSchedulerException e)
             {
