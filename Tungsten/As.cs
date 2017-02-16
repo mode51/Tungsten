@@ -77,17 +77,12 @@ namespace W
         /// <returns>A Json formatted string representation of the specified object</returns>
         public static string AsJson<TType>(this object @this)
         {
-            string result = "";
+            var s = new DataContractJsonSerializer(typeof(TType));
             using (var stream = new System.IO.MemoryStream())
             {
-                var s = new DataContractJsonSerializer(typeof(TType));
                 s.WriteObject(stream, @this);
-                using (var sr = new StreamReader(stream))
-                {
-                    result = sr.ReadToEnd();
-                }
+                return stream.ToArray().AsString();
             }
-            return result;
         }
     }
 

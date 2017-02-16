@@ -1,5 +1,8 @@
 ﻿Tungsten is a C# library to make application development easier.  See the wiki @ https://github.com/mode51/Tungsten/wiki for details, examples and use.
 
+2.16.2017 v1.1.2
+Fixed AsJson extension method
+
 2.16.2017 v1.1.1
 Fixed As<TType> and AsJson<TType>
 
