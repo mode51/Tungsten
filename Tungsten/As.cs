@@ -20,7 +20,7 @@ namespace W
         /// <param name="this">The item to convert to type TType</param>
         /// <returns>Null if @this cannot be referenced as TType.  Otherwise, the item as TType</returns>
         /// <example><code>expression as type</code> becomes <code>expression&lt;type&gt;()</code></example>
-        public static TType As<TType>(this TType @this) where TType : class
+        public static TType As<TType>(this object @this) where TType : class
         {
             return @this as TType;
         }
@@ -75,7 +75,7 @@ namespace W
         /// <typeparam name="TType">The type of object to serialize</typeparam>
         /// <param name="this">The object to serialize to Json</param>
         /// <returns>A Json formatted string representation of the specified object</returns>
-        public static string AsJson<TType>(this TType @this)
+        public static string AsJson<TType>(this object @this)
         {
             string result = "";
             using (var stream = new System.IO.MemoryStream())

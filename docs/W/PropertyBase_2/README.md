@@ -92,18 +92,20 @@ Fields
 Extension Methods
 -----------------
 
-                           | Name                       | Description                                                                                                                                                                                                                      
--------------------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-![Public Extension Method] | [CreateThread&lt;T>][26]   | Starts a new thread (Defined by [ThreadExtensions][27].)                                                                                                                                                                         
-![Public Extension Method] | [InitializeProperties][28] | 
+                                          | Name                       | Description                                                                                                                                                                                                                      
+----------------------------------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+![Public Extension Method]![Code example] | [As&lt;TType>][26]         | Use Generic syntax for the as operator. (Defined by [AsExtensions][27].)                                                                                                                                                         
+![Public Extension Method]                | [AsJson&lt;TType>][28]     | Serializes an object to a Json string (Defined by [AsExtensions][27].)                                                                                                                                                           
+![Public Extension Method]                | [CreateThread&lt;T>][29]   | Starts a new thread (Defined by [ThreadExtensions][30].)                                                                                                                                                                         
+![Public Extension Method]                | [InitializeProperties][31] | 
 Scans the fields and properties of "owner" and sets the member's Owner property to "owner" This method should be called in the constructor of any class which has IOwnedProperty members
- (Defined by [PropertyHostMethods][29].) 
-![Public Extension Method] | [IsDirty][30]              | 
+ (Defined by [PropertyHostMethods][32].) 
+![Public Extension Method]                | [IsDirty][33]              | 
 Scans the IsDirty value of each field and property of type IProperty
- (Defined by [PropertyHostMethods][29].)                                                                                                                 
-![Public Extension Method] | [MarkAsClean][31]          | 
+ (Defined by [PropertyHostMethods][32].)                                                                                                                 
+![Public Extension Method]                | [MarkAsClean][34]          | 
 Scans each field and property of type IProperty and sets it's IsDirty flag to false
- (Defined by [PropertyHostMethods][29].)                                                                                                  
+ (Defined by [PropertyHostMethods][32].)                                                                                                  
 
 
 See Also
@@ -137,16 +139,20 @@ See Also
 [23]: ValueChanged.md
 [24]: ValueChanging.md
 [25]: OnValueChanged.md
-[26]: ../../W.Threading/ThreadExtensions/CreateThread__1.md
-[27]: ../../W.Threading/ThreadExtensions/README.md
-[28]: ../PropertyHostMethods/InitializeProperties.md
-[29]: ../PropertyHostMethods/README.md
-[30]: ../PropertyHostMethods/IsDirty.md
-[31]: ../PropertyHostMethods/MarkAsClean.md
-[32]: ../../_icons/Help.png
+[26]: ../AsExtensions/As__1.md
+[27]: ../AsExtensions/README.md
+[28]: ../AsExtensions/AsJson__1.md
+[29]: ../../W.Threading/ThreadExtensions/CreateThread__1.md
+[30]: ../../W.Threading/ThreadExtensions/README.md
+[31]: ../PropertyHostMethods/InitializeProperties.md
+[32]: ../PropertyHostMethods/README.md
+[33]: ../PropertyHostMethods/IsDirty.md
+[34]: ../PropertyHostMethods/MarkAsClean.md
+[35]: ../../_icons/Help.png
 [Protected method]: ../../_icons/protmethod.gif "Protected method"
 [Public property]: ../../_icons/pubproperty.gif "Public property"
 [Public method]: ../../_icons/pubmethod.gif "Public method"
 [Public event]: ../../_icons/pubevent.gif "Public event"
 [Protected field]: ../../_icons/protfield.gif "Protected field"
 [Public Extension Method]: ../../_icons/pubextension.gif "Public Extension Method"
+[Code example]: ../../_icons/CodeExample.png "Code example"

@@ -10,7 +10,7 @@ Syntax
 
 ```csharp
 public static string AsJson<TType>(
-	this TType this
+	this Object this
 )
 
 ```
@@ -18,7 +18,7 @@ public static string AsJson<TType>(
 #### Parameters
 
 ##### *this*
-Type: **TType**  
+Type: [System.Object][2]  
 The object to serialize to Json
 
 #### Type Parameters
@@ -27,21 +27,22 @@ The object to serialize to Json
 The type of object to serialize
 
 #### Return Value
-Type: [String][2]  
+Type: [String][3]  
 A Json formatted string representation of the specified object
 #### Usage Note
-In Visual Basic and C#, you can call this method as an instance method on any object of type . When you use instance method syntax to call this method, omit the first parameter. For more information, see [Extension Methods (Visual Basic)][3] or [Extension Methods (C# Programming Guide)][4].
+In Visual Basic and C#, you can call this method as an instance method on any object of type [Object][2]. When you use instance method syntax to call this method, omit the first parameter. For more information, see [Extension Methods (Visual Basic)][4] or [Extension Methods (C# Programming Guide)][5].
 
 See Also
 --------
 
 #### Reference
-[AsExtensions Class][5]  
+[AsExtensions Class][6]  
 [W Namespace][1]  
 
 [1]: ../README.md
-[2]: http://msdn.microsoft.com/en-us/library/s1wwdcbf
-[3]: http://msdn.microsoft.com/en-us/library/bb384936.aspx
-[4]: http://msdn.microsoft.com/en-us/library/bb383977.aspx
-[5]: README.md
-[6]: ../../_icons/Help.png
+[2]: http://msdn.microsoft.com/en-us/library/e5kfa45b
+[3]: http://msdn.microsoft.com/en-us/library/s1wwdcbf
+[4]: http://msdn.microsoft.com/en-us/library/bb384936.aspx
+[5]: http://msdn.microsoft.com/en-us/library/bb383977.aspx
+[6]: README.md
+[7]: ../../_icons/Help.png

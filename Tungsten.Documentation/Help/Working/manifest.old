@@ -14,10 +14,10 @@
   <topic id="T:W.AsExtensions" type="API" />
   <topic id="Methods.T:W.AsExtensions" type="API" />
   <topic id="Overload:W.AsExtensions.AsStream" type="API" />
-  <topic id="M:W.AsExtensions.As``1(``0)" type="API" />
+  <topic id="M:W.AsExtensions.As``1(System.Object)" type="API" />
   <topic id="M:W.AsExtensions.AsBase64(System.String)" type="API" />
   <topic id="M:W.AsExtensions.AsBytes(System.String)" type="API" />
-  <topic id="M:W.AsExtensions.AsJson``1(``0)" type="API" />
+  <topic id="M:W.AsExtensions.AsJson``1(System.Object)" type="API" />
   <topic id="M:W.AsExtensions.AsStream(System.Byte[])" type="API" />
   <topic id="M:W.AsExtensions.AsStream(System.String)" type="API" />
   <topic id="M:W.AsExtensions.AsString(System.Byte[])" type="API" />

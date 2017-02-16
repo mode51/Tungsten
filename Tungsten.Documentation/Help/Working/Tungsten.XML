@@ -51,7 +51,7 @@
             Extensions which convert objects of one type to another
             </summary>
     </member>
-    <member name="M:W.AsExtensions.As``1(``0)">
+    <member name="M:W.AsExtensions.As``1(System.Object)">
       <summary>
             Use Generic syntax for the <bold>as</bold> operator.
             </summary>
@@ -96,7 +96,7 @@
       <param name="this">The string used in creating the MemoryStream</param>
       <returns>A new MemoryStream initilized with the specified string</returns>
     </member>
-    <member name="M:W.AsExtensions.AsJson``1(``0)">
+    <member name="M:W.AsExtensions.AsJson``1(System.Object)">
       <summary>
             Serializes an object to a Json string
             </summary>

@@ -18,10 +18,10 @@
       </topic>
       <topic id="T:W.AsExtensions" project="Tungsten" file="T_W_AsExtensions">
         <topic id="Methods.T:W.AsExtensions" project="Tungsten" file="Methods_T_W_AsExtensions">
-          <topic id="M:W.AsExtensions.As``1(``0)" project="Tungsten" file="M_W_AsExtensions_As__1" />
+          <topic id="M:W.AsExtensions.As``1(System.Object)" project="Tungsten" file="M_W_AsExtensions_As__1" />
           <topic id="M:W.AsExtensions.AsBase64(System.String)" project="Tungsten" file="M_W_AsExtensions_AsBase64" />
           <topic id="M:W.AsExtensions.AsBytes(System.String)" project="Tungsten" file="M_W_AsExtensions_AsBytes" />
-          <topic id="M:W.AsExtensions.AsJson``1(``0)" project="Tungsten" file="M_W_AsExtensions_AsJson__1" />
+          <topic id="M:W.AsExtensions.AsJson``1(System.Object)" project="Tungsten" file="M_W_AsExtensions_AsJson__1" />
           <topic id="Overload:W.AsExtensions.AsStream" project="Tungsten" file="Overload_W_AsExtensions_AsStream">
             <topic id="M:W.AsExtensions.AsStream(System.Byte[])" project="Tungsten" file="M_W_AsExtensions_AsStream" />
             <topic id="M:W.AsExtensions.AsStream(System.String)" project="Tungsten" file="M_W_AsExtensions_AsStream_1" />
