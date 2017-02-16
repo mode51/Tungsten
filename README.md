@@ -10,10 +10,10 @@ Tungsten.Universal is built on Windows 10 (10.0; Build 10240)
 To build Tungsten.Documentation, you will need to install the SHFB Visual Studio extension from NuGet.
 
 # Projects
-* Tungsten - A classic class library
+* Tungsten - A collection of useful classes for Winforms/WPF
 * Tungsten.Portable - A Portable version of Tungsten
 * Tungsten.Universal - A Universal version of Tungsten
-* Tungsten.RPC - A classic class library
+* Tungsten.RPC - Encrypted socket classes (client and server) to run code on a Tungsten.RPC server
 * Tungsten.Domains - Easily implement reloadable AppDomains in your application
 * Tungsten.LiteDb - LiteDb based CRUD for your POCO classes
 
@@ -26,7 +26,7 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 * Tungsten.Domains.Demo - Illustrates using Tungsten.Domains to host a reloadable AppDomain
 
 # Tungsten / Tungsten.Portable / Tungsten.Universal Classes
-* [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue-)\<TValue\> - A generic class to wrap a value in a thread-safe manner
+* [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue)\<TValue\> - A generic class to wrap a value in a thread-safe manner
 * [W.Property](https://github.com/mode51/Tungsten/wiki/Property-TValue)\<TValue\> - A generic class providing a number of enhancements to a [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue-)\<TValue\> value
     * Implements INotifyPropertyChanged
     * Adds IsDirty/MarkAsClean functionality
@@ -34,7 +34,8 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 * [W.Property](https://github.com/mode51/Tungsten/wiki/Property-TOwner,-TValue)\<TOwner, TValue\> - Like Property\<TValue\> except that you can specify an Owner
 * Events and callback have type-strict sender (which is the Owner you specify)
 * [W.PropertyHost](https://github.com/mode51/Tungsten/wiki/PropertyHost) - a base class which automates the IsDirty, MarkAsClean and InitializeProperties so you don't have to.
-* [W.PropertyHostNotifier](https://github.com/mode51/Tungsten/wiki/PropertyChangedNotifier) - aggregates PropertyHost and PropertyChangedNotifier
+* [W.PropertyChangedNotifier](https://github.com/mode51/Tungsten/wiki/PropertyChangedNotifier) - provides implementation of INotifyPropertyChanged in a base-class with overridable GetValue and SetValue methods
+* [W.PropertyHostNotifier] - aggregates PropertyHost and PropertyChangedNotifier
 * [W.InvokeExtensions](https://github.com/mode51/Tungsten/wiki/InvokeExtensions) - A static class exposing InvokeEx extension methods (to ease InvokeRequired handling)
 * [W.CallResult](https://github.com/mode51/Tungsten/wiki/CallResult) - A non-generic class which can be used to return true/false and an exception from a function
 * [W.CallResult\<TResult\>](https://github.com/mode51/Tungsten/wiki/CallResult-TResult) - Like CallResult except that you can also specify a result
@@ -53,4 +54,4 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 
 #Tungsten.LiteDb
 * W.LiteDb.LiteDbItem - A base class for your POCO classes (necessary for LiteDbMethods due to needing to know the \_id field)
-* W.LiteDb.LiteDbMethods - CRUD methods for your POCO classes
+* W.LiteDb.LiteDbMethods - CRUD methods for your POCO classes which inherit LiteDbItem
