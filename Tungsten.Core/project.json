@@ -1,0 +1,19 @@
+﻿{
+  "title": "Tungsten.Core",
+  "copyright": "Copyright @ 2017 Jordan Duerksen",
+  "version": "1.0.0-*",
+  "dependencies": {
+    "System.Runtime.Serialization.Xml": "4.3.0",
+    "System.Runtime.Serialization.Json": "4.3.0",
+    "NETStandard.Library": "1.6.1",
+    "System.Threading.Thread": "4.3.0"
+  },
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  },
+  "buildOptions": {
+    "xmlDoc": true
+  }
+}

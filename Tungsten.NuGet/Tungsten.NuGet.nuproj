@@ -35,7 +35,7 @@
     <LicenseUrl>
     </LicenseUrl>
     <Copyright>Copyright © 2017 Jordan Duerksen</Copyright>
-    <Tags>Tungsten.NuGet, Tungsten, W</Tags>
+    <Tags>Tungsten.NuGet, Tungsten, W, C#, library</Tags>
     <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
     <IconUrl>http://www.duerksen.us/images/Tungsten.ico</IconUrl>
   </PropertyGroup>
