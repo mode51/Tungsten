@@ -18,21 +18,22 @@
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
-    <Id>Tungsten.Net.Core.NuGet</Id>
+    <Id>Tungsten.Net.Core</Id>
     <Version>1.0.0</Version>
-    <Title>Tungsten.Net.Core.NuGet</Title>
-    <Authors>Jordan</Authors>
-    <Owners>Jordan</Owners>
-    <Summary>Tungsten.Net.Core.NuGet</Summary>
-    <Description>Tungsten.Net.Core.NuGet</Description>
+    <Title>Tungsten.Net.Core</Title>
+    <Authors>Jordan Duerksen</Authors>
+    <Owners>Jordan Duerksen</Owners>
+    <Summary>Tungsten.Net.Core</Summary>
+    <Description>Tungsten.Net.Core is a tcp socket library which provides client/server classes with and without assymetric encryption</Description>
     <ReleaseNotes>
     </ReleaseNotes>
-    <ProjectUrl>
-    </ProjectUrl>
+    <ProjectUrl>https://github.com/mode51/Tungsten</ProjectUrl>
     <LicenseUrl>
     </LicenseUrl>
-    <Copyright>Copyright © Jordan</Copyright>
-    <Tags>Tungsten.Net.Core.NuGet</Tags>
+    <Copyright>Copyright © 2017 Jordan Duerksen</Copyright>
+    <Tags>Tungsten.Net.Core.NuGet, Tungsten, Tungsten.Net, W, socket, server, client, network, tcp, tcpclient</Tags>
+    <IconUrl>http://www.duerksen.us/images/Tungsten.ico</IconUrl>
+    <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Readme.txt" />
