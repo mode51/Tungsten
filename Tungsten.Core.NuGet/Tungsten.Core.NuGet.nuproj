@@ -38,7 +38,7 @@
     <ProjectUrl>https://github.com/mode51/Tungsten</ProjectUrl>
     <LicenseUrl>
     </LicenseUrl>
-    <Copyright>Copyright © Jordan Duerksen</Copyright>
+    <Copyright>Copyright © 2017 Jordan Duerksen</Copyright>
     <Tags>Tungsten.Core.NuGet, Tungsten.Core, Tungsten, W, C#, library</Tags>
     <IconUrl>http://www.duerksen.us/images/Tungsten.ico</IconUrl>
   </PropertyGroup>
