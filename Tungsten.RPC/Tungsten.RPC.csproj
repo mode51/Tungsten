@@ -48,7 +48,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="Tungsten, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Tungsten\packages\Tungsten.1.0.8\lib\net45\Tungsten.dll</HintPath>
+      <HintPath>..\Tungsten\packages\Tungsten.1.1.2\lib\net45\Tungsten.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

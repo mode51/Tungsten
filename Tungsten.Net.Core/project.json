@@ -1,0 +1,17 @@
+{
+  "title": "Tungsten.Net.Core",
+  "copyright": "Copyright @ 2017 Jordan Duerksen",
+  "version": "1.0.0-*",
+  "dependencies": {
+    "NETStandard.Library": "1.6.1",
+    "Tungsten.Core": "1.0.0"
+  },
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  },
+  "buildOptions": {
+    "xmlDoc": true
+  }
+}
