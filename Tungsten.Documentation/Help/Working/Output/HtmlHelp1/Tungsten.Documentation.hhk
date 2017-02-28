@@ -175,6 +175,18 @@
         <param name="Local" value="html/M_W_AsExtensions_AsString.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="AsExtensions.AsXml(Of TType) method">
+        <param name="Local" value="html/M_W_AsExtensions_AsXml__1.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="AsExtensions.AsXml&lt;TType&gt; method">
+        <param name="Local" value="html/M_W_AsExtensions_AsXml__1.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="AsExtensions.FromBase64 method">
+        <param name="Local" value="html/Overload_W_AsExtensions_FromBase64.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
         <param name="Name" value="AsJson(Of TType) method">
         <param name="Local" value="html/M_W_AsExtensions_AsJson__1.htm">
       </OBJECT></LI>
@@ -189,6 +201,14 @@
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="AsString method">
         <param name="Local" value="html/M_W_AsExtensions_AsString.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="AsXml(Of TType) method">
+        <param name="Local" value="html/M_W_AsExtensions_AsXml__1.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="AsXml&lt;TType&gt; method">
+        <param name="Local" value="html/M_W_AsExtensions_AsXml__1.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="CallInvokeAction method">
@@ -872,7 +892,7 @@
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="FromBase64 method">
-        <param name="Local" value="html/M_W_FromExtensions_FromBase64.htm">
+        <param name="Local" value="html/Overload_W_AsExtensions_FromBase64.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="FromExtensions class">
@@ -893,16 +913,20 @@
         </OBJECT></LI>
       </UL>
       <LI><OBJECT type="text/sitemap">
-        <param name="Name" value="FromExtensions.FromBase64 method">
-        <param name="Local" value="html/M_W_FromExtensions_FromBase64.htm">
-      </OBJECT></LI>
-      <LI><OBJECT type="text/sitemap">
         <param name="Name" value="FromExtensions.FromJson method">
         <param name="Local" value="html/Overload_W_FromExtensions_FromJson.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="FromExtensions.FromXml method">
+        <param name="Local" value="html/Overload_W_FromExtensions_FromXml.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
         <param name="Name" value="FromJson method">
         <param name="Local" value="html/Overload_W_FromExtensions_FromJson.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="FromXml method">
+        <param name="Local" value="html/Overload_W_FromExtensions_FromXml.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Gate class">

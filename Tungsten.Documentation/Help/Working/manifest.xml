@@ -14,6 +14,7 @@
   <topic id="T:W.AsExtensions" type="API" />
   <topic id="Methods.T:W.AsExtensions" type="API" />
   <topic id="Overload:W.AsExtensions.AsStream" type="API" />
+  <topic id="Overload:W.AsExtensions.FromBase64" type="API" />
   <topic id="M:W.AsExtensions.As``1(System.Object)" type="API" />
   <topic id="M:W.AsExtensions.AsBase64(System.String)" type="API" />
   <topic id="M:W.AsExtensions.AsBytes(System.String)" type="API" />
@@ -21,6 +22,9 @@
   <topic id="M:W.AsExtensions.AsStream(System.Byte[])" type="API" />
   <topic id="M:W.AsExtensions.AsStream(System.String)" type="API" />
   <topic id="M:W.AsExtensions.AsString(System.Byte[])" type="API" />
+  <topic id="M:W.AsExtensions.AsXml``1(System.Object)" type="API" />
+  <topic id="M:W.AsExtensions.FromBase64(System.Byte[])" type="API" />
+  <topic id="M:W.AsExtensions.FromBase64(System.String)" type="API" />
   <topic id="T:W.CallResult" type="API" />
   <topic id="Methods.T:W.CallResult" type="API" />
   <topic id="Properties.T:W.CallResult" type="API" />
@@ -44,9 +48,11 @@
   <topic id="T:W.FromExtensions" type="API" />
   <topic id="Methods.T:W.FromExtensions" type="API" />
   <topic id="Overload:W.FromExtensions.FromJson" type="API" />
-  <topic id="M:W.FromExtensions.FromBase64(System.String)" type="API" />
+  <topic id="Overload:W.FromExtensions.FromXml" type="API" />
   <topic id="M:W.FromExtensions.FromJson``1(System.Byte[])" type="API" />
   <topic id="M:W.FromExtensions.FromJson``1(System.String)" type="API" />
+  <topic id="M:W.FromExtensions.FromXml``1(System.Byte[])" type="API" />
+  <topic id="M:W.FromExtensions.FromXml``1(System.String)" type="API" />
   <topic id="T:W.InvokeExtensions" type="API" />
   <topic id="Methods.T:W.InvokeExtensions" type="API" />
   <topic id="Overload:W.InvokeExtensions.InvokeEx" type="API" />

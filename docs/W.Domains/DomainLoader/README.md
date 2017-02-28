@@ -66,16 +66,17 @@ Extension Methods
 ----------------------------------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 ![Public Extension Method]![Code example] | [As&lt;TType>][20]         | Use Generic syntax for the as operator. (Defined by [AsExtensions][21].)                                                                                                                                                         
 ![Public Extension Method]                | [AsJson&lt;TType>][22]     | Serializes an object to a Json string (Defined by [AsExtensions][21].)                                                                                                                                                           
-![Public Extension Method]                | [CreateThread&lt;T>][23]   | Starts a new thread (Defined by [ThreadExtensions][24].)                                                                                                                                                                         
-![Public Extension Method]                | [InitializeProperties][25] | 
+![Public Extension Method]                | [AsXml&lt;TType>][23]      | Serializes an object to an xml string (Defined by [AsExtensions][21].)                                                                                                                                                           
+![Public Extension Method]                | [CreateThread&lt;T>][24]   | Starts a new thread (Defined by [ThreadExtensions][25].)                                                                                                                                                                         
+![Public Extension Method]                | [InitializeProperties][26] | 
 Scans the fields and properties of "owner" and sets the member's Owner property to "owner" This method should be called in the constructor of any class which has IOwnedProperty members
- (Defined by [PropertyHostMethods][26].) 
-![Public Extension Method]                | [IsDirty][27]              | 
+ (Defined by [PropertyHostMethods][27].) 
+![Public Extension Method]                | [IsDirty][28]              | 
 Scans the IsDirty value of each field and property of type IProperty
- (Defined by [PropertyHostMethods][26].)                                                                                                                 
-![Public Extension Method]                | [MarkAsClean][28]          | 
+ (Defined by [PropertyHostMethods][27].)                                                                                                                 
+![Public Extension Method]                | [MarkAsClean][29]          | 
 Scans each field and property of type IProperty and sets it's IsDirty flag to false
- (Defined by [PropertyHostMethods][26].)                                                                                                  
+ (Defined by [PropertyHostMethods][27].)                                                                                                  
 
 
 See Also
@@ -106,13 +107,14 @@ See Also
 [20]: ../../W/AsExtensions/As__1.md
 [21]: ../../W/AsExtensions/README.md
 [22]: ../../W/AsExtensions/AsJson__1.md
-[23]: ../../W.Threading/ThreadExtensions/CreateThread__1.md
-[24]: ../../W.Threading/ThreadExtensions/README.md
-[25]: ../../W/PropertyHostMethods/InitializeProperties.md
-[26]: ../../W/PropertyHostMethods/README.md
-[27]: ../../W/PropertyHostMethods/IsDirty.md
-[28]: ../../W/PropertyHostMethods/MarkAsClean.md
-[29]: ../../_icons/Help.png
+[23]: ../../W/AsExtensions/AsXml__1.md
+[24]: ../../W.Threading/ThreadExtensions/CreateThread__1.md
+[25]: ../../W.Threading/ThreadExtensions/README.md
+[26]: ../../W/PropertyHostMethods/InitializeProperties.md
+[27]: ../../W/PropertyHostMethods/README.md
+[28]: ../../W/PropertyHostMethods/IsDirty.md
+[29]: ../../W/PropertyHostMethods/MarkAsClean.md
+[30]: ../../_icons/Help.png
 [Public method]: ../../_icons/pubmethod.gif "Public method"
 [Public property]: ../../_icons/pubproperty.gif "Public property"
 [Protected method]: ../../_icons/protmethod.gif "Protected method"

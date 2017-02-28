@@ -149,6 +149,22 @@
             <type api="T:W.AsExtensions" ref="true" />
           </containers>
         </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
           <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -348,6 +364,8 @@
         </ancestors>
       </family>
       <elements>
+        <element api="M:W.AsExtensions.FromBase64(System.String)" />
+        <element api="M:W.AsExtensions.FromBase64(System.Byte[])" />
         <element api="M:W.AsExtensions.As``1(System.Object)" />
         <element api="M:W.AsExtensions.AsBase64(System.String)" />
         <element api="M:W.AsExtensions.AsBytes(System.String)" />
@@ -355,6 +373,7 @@
         <element api="M:W.AsExtensions.AsStream(System.Byte[])" />
         <element api="M:W.AsExtensions.AsStream(System.String)" />
         <element api="M:W.AsExtensions.AsJson``1(System.Object)" />
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" />
       </elements>
       <containers>
         <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
@@ -541,6 +560,82 @@
         </attribute>
       </attributes>
     </api>
+    <api id="M:W.AsExtensions.AsXml``1(System.Object)">
+      <apidata name="AsXml" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="TType" />
+      </templates>
+      <parameters>
+        <parameter name="this">
+          <type api="T:System.Object" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.String" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.AsExtensions" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.AsExtensions.FromBase64(System.Byte[])">
+      <apidata name="FromBase64" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="this">
+          <arrayOf rank="1">
+            <type api="T:System.Byte" ref="false" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <arrayOf rank="1">
+          <type api="T:System.Byte" ref="false" />
+        </arrayOf>
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.AsExtensions" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.AsExtensions.FromBase64(System.String)">
+      <apidata name="FromBase64" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="this">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.String" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.AsExtensions" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
     <api id="T:W.CallResult">
       <apidata name="CallResult" group="type" subgroup="class" />
       <typedata visibility="public" serializable="false" />
@@ -579,6 +674,22 @@
         </element>
         <element api="M:W.AsExtensions.AsJson``1(System.Object)" source="extension">
           <apidata name="AsJson" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
           <proceduredata virtual="false" />
           <templates>
@@ -813,6 +924,22 @@
             <type api="T:W.AsExtensions" ref="true" />
           </containers>
         </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
           <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -999,34 +1126,12 @@
       <elements>
         <element api="M:W.FromExtensions.FromJson``1(System.String)" />
         <element api="M:W.FromExtensions.FromJson``1(System.Byte[])" />
-        <element api="M:W.FromExtensions.FromBase64(System.String)" />
+        <element api="M:W.FromExtensions.FromXml``1(System.String)" />
+        <element api="M:W.FromExtensions.FromXml``1(System.Byte[])" />
       </elements>
       <containers>
         <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:W" />
-      </containers>
-      <attributes>
-        <attribute>
-          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
-        </attribute>
-      </attributes>
-    </api>
-    <api id="M:W.FromExtensions.FromBase64(System.String)">
-      <apidata name="FromBase64" group="member" subgroup="method" />
-      <memberdata visibility="public" static="true" />
-      <proceduredata virtual="false" />
-      <parameters>
-        <parameter name="this">
-          <type api="T:System.String" ref="true" />
-        </parameter>
-      </parameters>
-      <returns>
-        <type api="T:System.String" ref="true" />
-      </returns>
-      <containers>
-        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
-        <namespace api="N:W" />
-        <type api="T:W.FromExtensions" ref="true" />
       </containers>
       <attributes>
         <attribute>
@@ -1076,6 +1181,60 @@
       </parameters>
       <returns>
         <template name="TType" index="0" api="M:W.FromExtensions.FromJson``1(System.String)" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.FromExtensions" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.FromExtensions.FromXml``1(System.Byte[])">
+      <apidata name="FromXml" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="TType" />
+      </templates>
+      <parameters>
+        <parameter name="this">
+          <arrayOf rank="1">
+            <type api="T:System.Byte" ref="false" />
+          </arrayOf>
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="TType" index="0" api="M:W.FromExtensions.FromXml``1(System.Byte[])" />
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.FromExtensions" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.FromExtensions.FromXml``1(System.String)">
+      <apidata name="FromXml" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="TType" />
+      </templates>
+      <parameters>
+        <parameter name="this">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <template name="TType" index="0" api="M:W.FromExtensions.FromXml``1(System.String)" />
       </returns>
       <containers>
         <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
@@ -1375,6 +1534,22 @@
             <type api="T:W.AsExtensions" ref="true" />
           </containers>
         </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
           <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -1572,6 +1747,22 @@
         </element>
         <element api="M:W.AsExtensions.AsJson``1(System.Object)" source="extension">
           <apidata name="AsJson" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
           <proceduredata virtual="false" />
           <templates>
@@ -1794,6 +1985,22 @@
         </element>
         <element api="M:W.AsExtensions.AsJson``1(System.Object)" source="extension">
           <apidata name="AsJson" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
           <proceduredata virtual="false" />
           <templates>
@@ -2087,6 +2294,22 @@
         </element>
         <element api="M:W.AsExtensions.AsJson``1(System.Object)" source="extension">
           <apidata name="AsJson" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
           <proceduredata virtual="false" />
           <templates>
@@ -2635,6 +2858,22 @@
             <type api="T:W.AsExtensions" ref="true" />
           </containers>
         </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
           <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -2852,6 +3091,22 @@
         </element>
         <element api="M:W.AsExtensions.AsJson``1(System.Object)" source="extension">
           <apidata name="AsJson" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
           <proceduredata virtual="false" />
           <templates>
@@ -3113,6 +3368,22 @@
             <type api="T:W.AsExtensions" ref="true" />
           </containers>
         </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
           <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -3283,6 +3554,22 @@
         </element>
         <element api="M:W.AsExtensions.AsJson``1(System.Object)" source="extension">
           <apidata name="AsJson" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
           <proceduredata virtual="false" />
           <templates>
@@ -3999,6 +4286,22 @@
         </element>
         <element api="M:W.AsExtensions.AsJson``1(System.Object)" source="extension">
           <apidata name="AsJson" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
           <proceduredata virtual="false" />
           <templates>
@@ -5319,6 +5622,22 @@
             <type api="T:W.AsExtensions" ref="true" />
           </containers>
         </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
           <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -5901,6 +6220,22 @@
             <type api="T:W.AsExtensions" ref="true" />
           </containers>
         </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
           <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -6048,6 +6383,22 @@
         </element>
         <element api="M:W.AsExtensions.AsJson``1(System.Object)" source="extension">
           <apidata name="AsJson" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
           <proceduredata virtual="false" />
           <templates>
@@ -6605,6 +6956,22 @@
             <type api="T:W.AsExtensions" ref="true" />
           </containers>
         </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
           <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -6725,6 +7092,22 @@
         </element>
         <element api="M:W.AsExtensions.AsJson``1(System.Object)" source="extension">
           <apidata name="AsJson" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
           <proceduredata virtual="false" />
           <templates>
@@ -6869,6 +7252,22 @@
         </element>
         <element api="M:W.AsExtensions.AsJson``1(System.Object)" source="extension">
           <apidata name="AsJson" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
           <proceduredata virtual="false" />
           <templates>
@@ -7205,6 +7604,22 @@
             <type api="T:W.AsExtensions" ref="true" />
           </containers>
         </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
           <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -7385,6 +7800,22 @@
         </element>
         <element api="M:W.AsExtensions.AsJson``1(System.Object)" source="extension">
           <apidata name="AsJson" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
           <proceduredata virtual="false" />
           <templates>
@@ -7587,6 +8018,22 @@
         </element>
         <element api="M:W.AsExtensions.AsJson``1(System.Object)" source="extension">
           <apidata name="AsJson" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
           <proceduredata virtual="false" />
           <templates>
@@ -7907,6 +8354,22 @@
             <type api="T:W.AsExtensions" ref="true" />
           </containers>
         </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.PropertyHostMethods.InitializeProperties(System.Object)" source="extension">
           <apidata name="InitializeProperties" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -8178,6 +8641,22 @@
         </element>
         <element api="M:W.AsExtensions.AsJson``1(System.Object)" source="extension">
           <apidata name="AsJson" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <templates>
+            <template name="TType" />
+          </templates>
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.AsExtensions" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.AsExtensions.AsXml``1(System.Object)" source="extension">
+          <apidata name="AsXml" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
           <proceduredata virtual="false" />
           <templates>

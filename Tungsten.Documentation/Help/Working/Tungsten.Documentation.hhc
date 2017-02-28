@@ -131,6 +131,30 @@
               <param name="Local" value="html\M_W_AsExtensions_AsString.htm">
             </OBJECT></LI>
           </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="AsXml(TType) Method ">
+              <param name="Local" value="html\M_W_AsExtensions_AsXml__1.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="FromBase64 Method ">
+              <param name="Local" value="html\Overload_W_AsExtensions_FromBase64.htm">
+            </OBJECT></LI>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="FromBase64 Method (Byte[])">
+                <param name="Local" value="html\M_W_AsExtensions_FromBase64.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="FromBase64 Method (String)">
+                <param name="Local" value="html\M_W_AsExtensions_FromBase64_1.htm">
+              </OBJECT></LI>
+            </UL>
+          </UL>
         </UL>
       </UL>
       <UL>
@@ -265,12 +289,6 @@
           </OBJECT></LI>
           <UL>
             <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="FromBase64 Method ">
-              <param name="Local" value="html\M_W_FromExtensions_FromBase64.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
               <param name="Name" value="FromJson Method ">
               <param name="Local" value="html\Overload_W_FromExtensions_FromJson.htm">
             </OBJECT></LI>
@@ -284,6 +302,24 @@
               <LI><OBJECT type="text/sitemap">
                 <param name="Name" value="FromJson(TType) Method (String)">
                 <param name="Local" value="html\M_W_FromExtensions_FromJson__1_1.htm">
+              </OBJECT></LI>
+            </UL>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="FromXml Method ">
+              <param name="Local" value="html\Overload_W_FromExtensions_FromXml.htm">
+            </OBJECT></LI>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="FromXml(TType) Method (Byte[])">
+                <param name="Local" value="html\M_W_FromExtensions_FromXml__1.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="FromXml(TType) Method (String)">
+                <param name="Local" value="html\M_W_FromExtensions_FromXml__1_1.htm">
               </OBJECT></LI>
             </UL>
           </UL>

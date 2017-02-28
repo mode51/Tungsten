@@ -67,16 +67,17 @@ Extension Methods
 ----------------------------------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 ![Public Extension Method]![Code example] | [As&lt;TType>][11]         | Use Generic syntax for the as operator. (Defined by [AsExtensions][12].)                                                                                                                                                         
 ![Public Extension Method]                | [AsJson&lt;TType>][13]     | Serializes an object to a Json string (Defined by [AsExtensions][12].)                                                                                                                                                           
-![Public Extension Method]                | [CreateThread&lt;T>][14]   | Starts a new thread (Defined by [ThreadExtensions][15].)                                                                                                                                                                         
-![Public Extension Method]                | [InitializeProperties][16] | 
+![Public Extension Method]                | [AsXml&lt;TType>][14]      | Serializes an object to an xml string (Defined by [AsExtensions][12].)                                                                                                                                                           
+![Public Extension Method]                | [CreateThread&lt;T>][15]   | Starts a new thread (Defined by [ThreadExtensions][16].)                                                                                                                                                                         
+![Public Extension Method]                | [InitializeProperties][17] | 
 Scans the fields and properties of "owner" and sets the member's Owner property to "owner" This method should be called in the constructor of any class which has IOwnedProperty members
- (Defined by [PropertyHostMethods][17].) 
-![Public Extension Method]                | [IsDirty][18]              | 
+ (Defined by [PropertyHostMethods][18].) 
+![Public Extension Method]                | [IsDirty][19]              | 
 Scans the IsDirty value of each field and property of type IProperty
- (Defined by [PropertyHostMethods][17].)                                                                                                                 
-![Public Extension Method]                | [MarkAsClean][19]          | 
+ (Defined by [PropertyHostMethods][18].)                                                                                                                 
+![Public Extension Method]                | [MarkAsClean][20]          | 
 Scans each field and property of type IProperty and sets it's IsDirty flag to false
- (Defined by [PropertyHostMethods][17].)                                                                                                  
+ (Defined by [PropertyHostMethods][18].)                                                                                                  
 
 
 See Also
@@ -98,13 +99,14 @@ See Also
 [11]: ../AsExtensions/As__1.md
 [12]: ../AsExtensions/README.md
 [13]: ../AsExtensions/AsJson__1.md
-[14]: ../../W.Threading/ThreadExtensions/CreateThread__1.md
-[15]: ../../W.Threading/ThreadExtensions/README.md
-[16]: ../PropertyHostMethods/InitializeProperties.md
-[17]: ../PropertyHostMethods/README.md
-[18]: ../PropertyHostMethods/IsDirty.md
-[19]: ../PropertyHostMethods/MarkAsClean.md
-[20]: ../../_icons/Help.png
+[14]: ../AsExtensions/AsXml__1.md
+[15]: ../../W.Threading/ThreadExtensions/CreateThread__1.md
+[16]: ../../W.Threading/ThreadExtensions/README.md
+[17]: ../PropertyHostMethods/InitializeProperties.md
+[18]: ../PropertyHostMethods/README.md
+[19]: ../PropertyHostMethods/IsDirty.md
+[20]: ../PropertyHostMethods/MarkAsClean.md
+[21]: ../../_icons/Help.png
 [Protected method]: ../../_icons/protmethod.gif "Protected method"
 [Public event]: ../../_icons/pubevent.gif "Public event"
 [Public Extension Method]: ../../_icons/pubextension.gif "Public Extension Method"

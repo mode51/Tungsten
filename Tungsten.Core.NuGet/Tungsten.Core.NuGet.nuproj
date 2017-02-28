@@ -11,12 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\Tungsten.NuGet\Readme.txt">
-      <Link>Readme.txt</Link>
-    </Content>
+    <ProjectReference Include="..\Tungsten.Core\Tungsten.Core.xproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Tungsten.Core\Tungsten.Core.xproj" />
+    <Content Include="Readme.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>8e1f9a5a-e123-408c-9ef9-3dc6a366fa72</ProjectGuid>
@@ -27,7 +25,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>Tungsten.Core</Id>
-    <Version>1.0.0</Version>
+    <Version>1.1.3</Version>
     <Title>Tungsten.Core</Title>
     <Authors>Jordan Duerksen</Authors>
     <Owners>Jordan Duerksen</Owners>

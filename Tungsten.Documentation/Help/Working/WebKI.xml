@@ -45,10 +45,15 @@
   <HelpKINode Title="AsExtensions.AsJson&lt;TType&gt; method" Url="html/M_W_AsExtensions_AsJson__1.htm" />
   <HelpKINode Title="AsExtensions.AsStream method" Url="html/Overload_W_AsExtensions_AsStream.htm" />
   <HelpKINode Title="AsExtensions.AsString method" Url="html/M_W_AsExtensions_AsString.htm" />
+  <HelpKINode Title="AsExtensions.AsXml(Of TType) method" Url="html/M_W_AsExtensions_AsXml__1.htm" />
+  <HelpKINode Title="AsExtensions.AsXml&lt;TType&gt; method" Url="html/M_W_AsExtensions_AsXml__1.htm" />
+  <HelpKINode Title="AsExtensions.FromBase64 method" Url="html/Overload_W_AsExtensions_FromBase64.htm" />
   <HelpKINode Title="AsJson(Of TType) method" Url="html/M_W_AsExtensions_AsJson__1.htm" />
   <HelpKINode Title="AsJson&lt;TType&gt; method" Url="html/M_W_AsExtensions_AsJson__1.htm" />
   <HelpKINode Title="AsStream method" Url="html/Overload_W_AsExtensions_AsStream.htm" />
   <HelpKINode Title="AsString method" Url="html/M_W_AsExtensions_AsString.htm" />
+  <HelpKINode Title="AsXml(Of TType) method" Url="html/M_W_AsExtensions_AsXml__1.htm" />
+  <HelpKINode Title="AsXml&lt;TType&gt; method" Url="html/M_W_AsExtensions_AsXml__1.htm" />
   <HelpKINode Title="CallInvokeAction method">
     <HelpKINode Title="Gate(T).CallInvokeAction Method " Url="html/M_W_Threading_Gate_1_CallInvokeAction.htm" />
     <HelpKINode Title="Gate.CallInvokeAction Method " Url="html/M_W_Threading_Gate_CallInvokeAction.htm" />
@@ -229,15 +234,16 @@
   </HelpKINode>
   <HelpKINode Title="Find method" Url="html/Overload_W_LiteDb_LiteDbMethods_Find.htm" />
   <HelpKINode Title="FindOne method" Url="html/Overload_W_LiteDb_LiteDbMethods_FindOne.htm" />
-  <HelpKINode Title="FromBase64 method" Url="html/M_W_FromExtensions_FromBase64.htm" />
+  <HelpKINode Title="FromBase64 method" Url="html/Overload_W_AsExtensions_FromBase64.htm" />
   <HelpKINode Title="FromExtensions class">
     <HelpKINode Title="FromExtensions Class" Url="html/T_W_FromExtensions.htm" />
     <HelpKINode Title="about FromExtensions class" Url="html/T_W_FromExtensions.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_FromExtensions.htm" />
   </HelpKINode>
-  <HelpKINode Title="FromExtensions.FromBase64 method" Url="html/M_W_FromExtensions_FromBase64.htm" />
   <HelpKINode Title="FromExtensions.FromJson method" Url="html/Overload_W_FromExtensions_FromJson.htm" />
+  <HelpKINode Title="FromExtensions.FromXml method" Url="html/Overload_W_FromExtensions_FromXml.htm" />
   <HelpKINode Title="FromJson method" Url="html/Overload_W_FromExtensions_FromJson.htm" />
+  <HelpKINode Title="FromXml method" Url="html/Overload_W_FromExtensions_FromXml.htm" />
   <HelpKINode Title="Gate class">
     <HelpKINode Title="Gate Class" Url="html/T_W_Threading_Gate.htm" />
     <HelpKINode Title="about Gate class" Url="html/T_W_Threading_Gate.htm" />

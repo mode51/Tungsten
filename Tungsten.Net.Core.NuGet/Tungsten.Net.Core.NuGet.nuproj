@@ -19,14 +19,13 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>Tungsten.Net.Core</Id>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Title>Tungsten.Net.Core</Title>
     <Authors>Jordan Duerksen</Authors>
     <Owners>Jordan Duerksen</Owners>
     <Summary>Tungsten.Net.Core</Summary>
     <Description>Tungsten.Net.Core is a tcp socket library which provides client/server classes with and without assymetric encryption</Description>
-    <ReleaseNotes>
-    </ReleaseNotes>
+    <ReleaseNotes>Corrected Tungsten.Core dependency</ReleaseNotes>
     <ProjectUrl>https://github.com/mode51/Tungsten</ProjectUrl>
     <LicenseUrl>
     </LicenseUrl>
@@ -39,6 +38,7 @@
     <Content Include="Readme.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Tungsten.Core.NuGet\Tungsten.Core.NuGet.nuproj" />
     <ProjectReference Include="..\Tungsten.Net.Core\Tungsten.Net.Core.xproj" />
   </ItemGroup>
   <Import Project="$(NuProjPath)\NuProj.targets" />

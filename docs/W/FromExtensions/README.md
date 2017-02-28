@@ -18,17 +18,16 @@ Syntax
 public static class FromExtensions
 ```
 
-The **FromExtensions** type exposes the following members.
-
 
 Methods
 -------
 
-                                 | Name                            | Description                                              
--------------------------------- | ------------------------------- | -------------------------------------------------------- 
-![Public method]![Static member] | [FromBase64][3]                 | Converts a Base64 encoded string back to a normal string 
-![Public method]![Static member] | [FromJson&lt;TType>(Byte[])][4] | Deserializes an encoded byte array of Json to an object  
-![Public method]![Static member] | [FromJson&lt;TType>(String)][5] | Deserializes a Json string to an object                  
+                                 | Name                            | Description                                             
+-------------------------------- | ------------------------------- | ------------------------------------------------------- 
+![Public method]![Static member] | [FromJson&lt;TType>(Byte[])][3] | Deserializes an encoded byte array of Json to an object 
+![Public method]![Static member] | [FromJson&lt;TType>(String)][4] | Deserializes a Json string to an object                 
+![Public method]![Static member] | [FromXml&lt;TType>(Byte[])][5]  | Deserializes an Xml string to an object                 
+![Public method]![Static member] | [FromXml&lt;TType>(String)][6]  | Deserializes an Xml string to an object                 
 
 
 See Also
@@ -39,9 +38,10 @@ See Also
 
 [1]: http://msdn.microsoft.com/en-us/library/e5kfa45b
 [2]: ../README.md
-[3]: FromBase64.md
-[4]: FromJson__1.md
-[5]: FromJson__1_1.md
-[6]: ../../_icons/Help.png
+[3]: FromJson__1.md
+[4]: FromJson__1_1.md
+[5]: FromXml__1.md
+[6]: FromXml__1_1.md
+[7]: ../../_icons/Help.png
 [Public method]: ../../_icons/pubmethod.gif "Public method"
 [Static member]: ../../_icons/static.gif "Static member"

@@ -78,7 +78,10 @@ html\M_W_AsExtensions_AsJson__1.htm
 html\M_W_AsExtensions_AsStream.htm
 html\M_W_AsExtensions_AsStream_1.htm
 html\M_W_AsExtensions_AsString.htm
+html\M_W_AsExtensions_AsXml__1.htm
 html\M_W_AsExtensions_As__1.htm
+html\M_W_AsExtensions_FromBase64.htm
+html\M_W_AsExtensions_FromBase64_1.htm
 html\M_W_CallResult_1__ctor.htm
 html\M_W_CallResult_1__ctor_1.htm
 html\M_W_CallResult_1__ctor_2.htm
@@ -110,9 +113,10 @@ html\M_W_Domains_IDomainLoader_ExecuteStaticMethod__1.htm
 html\M_W_Domains_IDomainLoader_Execute__1.htm
 html\M_W_Domains_IDomainLoader_Load.htm
 html\M_W_Domains_IDomainLoader_Unload.htm
-html\M_W_FromExtensions_FromBase64.htm
 html\M_W_FromExtensions_FromJson__1.htm
 html\M_W_FromExtensions_FromJson__1_1.htm
+html\M_W_FromExtensions_FromXml__1.htm
+html\M_W_FromExtensions_FromXml__1_1.htm
 html\M_W_InvokeExtensions_InvokeEx__1.htm
 html\M_W_InvokeExtensions_InvokeEx__1_1.htm
 html\M_W_InvokeExtensions_InvokeEx__2.htm
@@ -257,6 +261,7 @@ html\N_W_RPC_Interfaces.htm
 html\N_W_Threading.htm
 html\Overload_W_ActionQueue_1__ctor.htm
 html\Overload_W_AsExtensions_AsStream.htm
+html\Overload_W_AsExtensions_FromBase64.htm
 html\Overload_W_CallResult_1__ctor.htm
 html\Overload_W_CallResult__ctor.htm
 html\Overload_W_Domains_DomainLoader_Create.htm
@@ -267,6 +272,7 @@ html\Overload_W_Domains_IDomainLoader_Create.htm
 html\Overload_W_Domains_IDomainLoader_Execute.htm
 html\Overload_W_Domains_IDomainLoader_ExecuteStaticMethod.htm
 html\Overload_W_FromExtensions_FromJson.htm
+html\Overload_W_FromExtensions_FromXml.htm
 html\Overload_W_InvokeExtensions_InvokeEx.htm
 html\Overload_W_LiteDb_LiteDbMethods_Delete.htm
 html\Overload_W_LiteDb_LiteDbMethods_EnsureIndex.htm

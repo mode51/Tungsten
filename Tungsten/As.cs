@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Threading.Tasks;
 
@@ -13,6 +14,27 @@ namespace W
     /// </summary>
     public static class AsExtensions
     {
+        /// <summary>
+        /// Converts a Base64 encoded string back to a normal string
+        /// </summary>
+        /// <param name="this">The Base64 encoded string to convert</param>
+        /// <returns>A non-encoded string</returns>
+        public static string FromBase64(this string @this)
+        {
+            var bytes = Convert.FromBase64String(@this);
+            return System.Text.Encoding.UTF8.GetString(bytes, 0, bytes.Length);
+        }
+        /// <summary>
+        /// Converts a Base64 encoded byte array back to a normal byte array
+        /// </summary>
+        /// <param name="this">The Base64 encoded byte array to convert</param>
+        /// <returns>A non-encoded string</returns>
+        //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [System.Diagnostics.DebuggerStepThrough]
+        public static byte[] FromBase64(this byte[] @this)
+        {
+            return Convert.FromBase64String(@this.AsString());
+        }
         /// <summary>
         /// Use Generic syntax for the <bold>as</bold> operator.
         /// </summary>
@@ -78,6 +100,22 @@ namespace W
         public static string AsJson<TType>(this object @this)
         {
             var s = new DataContractJsonSerializer(typeof(TType));
+            //var s = new DataContractJsonSerializer(typeof(TType), new DataContractJsonSerializerSettings() { EmitTypeInformation = EmitTypeInformation.Always, UseSimpleDictionaryFormat = false});
+            using (var stream = new System.IO.MemoryStream())
+            {
+                s.WriteObject(stream, @this);
+                return stream.ToArray().AsString();
+            }
+        }
+        /// <summary>
+        /// Serializes an object to an xml string
+        /// </summary>
+        /// <typeparam name="TType">The type of object to serialize</typeparam>
+        /// <param name="this">The object to serialize</param>
+        /// <returns></returns>
+        public static string AsXml<TType>(this object @this)
+        {
+            var s = new DataContractSerializer(typeof(TType));
             using (var stream = new System.IO.MemoryStream())
             {
                 s.WriteObject(stream, @this);
@@ -119,14 +157,30 @@ namespace W
             return result;
         }
         /// <summary>
-        /// Converts a Base64 encoded string back to a normal string
+        /// Deserializes an Xml string to an object
         /// </summary>
-        /// <param name="this">The Base64 encoded string to convert</param>
-        /// <returns>A non-encoded string</returns>
-        public static string FromBase64(this string @this)
+        /// <typeparam name="TType">The type of object to deserialize</typeparam>
+        /// <param name="this">The Json formatted string</param>
+        /// <returns>A new instance of TType deserialized from the specified Xml string</returns>
+        public static TType FromXml<TType>(this string @this)
         {
-            var bytes = Convert.FromBase64String(@this);
-            return System.Text.Encoding.UTF8.GetString(bytes, 0, bytes.Length);
+            return FromXml<TType>(@this.AsBytes());
+        }
+        /// <summary>
+        /// Deserializes an Xml string to an object
+        /// </summary>
+        /// <typeparam name="TType">The type of object to deserialize</typeparam>
+        /// <param name="this">The Xml formatted string</param>
+        /// <returns>A new instace of TType deserialized from the specified Xml string</returns>
+        public static TType FromXml<TType>(this byte[] @this)
+        {
+            TType result;
+            var s = new DataContractSerializer(typeof(TType));
+            using (var stream = new System.IO.MemoryStream(@this, 0, @this.Length))
+            {
+                result = (TType)s.ReadObject(stream);
+            }
+            return result;
         }
     }
 }

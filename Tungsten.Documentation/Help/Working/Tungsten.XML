@@ -51,6 +51,20 @@
             Extensions which convert objects of one type to another
             </summary>
     </member>
+    <member name="M:W.AsExtensions.FromBase64(System.String)">
+      <summary>
+            Converts a Base64 encoded string back to a normal string
+            </summary>
+      <param name="this">The Base64 encoded string to convert</param>
+      <returns>A non-encoded string</returns>
+    </member>
+    <member name="M:W.AsExtensions.FromBase64(System.Byte[])">
+      <summary>
+            Converts a Base64 encoded byte array back to a normal byte array
+            </summary>
+      <param name="this">The Base64 encoded byte array to convert</param>
+      <returns>A non-encoded string</returns>
+    </member>
     <member name="M:W.AsExtensions.As``1(System.Object)">
       <summary>
             Use Generic syntax for the <bold>as</bold> operator.
@@ -104,6 +118,15 @@
       <param name="this">The object to serialize to Json</param>
       <returns>A Json formatted string representation of the specified object</returns>
     </member>
+    <member name="M:W.AsExtensions.AsXml``1(System.Object)">
+      <summary>
+            Serializes an object to an xml string
+            </summary>
+      <typeparam name="TType">The type of object to serialize</typeparam>
+      <param name="this">The object to serialize</param>
+      <returns>
+      </returns>
+    </member>
     <member name="T:W.FromExtensions">
       <summary>
             Extensions which convert objects of one type to another
@@ -125,12 +148,21 @@
       <param name="this">The byte array containing encoded Json</param>
       <returns>A new instance of TType deserialized from the specified Json encoded byte array</returns>
     </member>
-    <member name="M:W.FromExtensions.FromBase64(System.String)">
+    <member name="M:W.FromExtensions.FromXml``1(System.String)">
       <summary>
-            Converts a Base64 encoded string back to a normal string
+            Deserializes an Xml string to an object
             </summary>
-      <param name="this">The Base64 encoded string to convert</param>
-      <returns>A non-encoded string</returns>
+      <typeparam name="TType">The type of object to deserialize</typeparam>
+      <param name="this">The Json formatted string</param>
+      <returns>A new instance of TType deserialized from the specified Xml string</returns>
+    </member>
+    <member name="M:W.FromExtensions.FromXml``1(System.Byte[])">
+      <summary>
+            Deserializes an Xml string to an object
+            </summary>
+      <typeparam name="TType">The type of object to deserialize</typeparam>
+      <param name="this">The Xml formatted string</param>
+      <returns>A new instace of TType deserialized from the specified Xml string</returns>
     </member>
     <member name="T:W.CallResult`1">
       <summary>
