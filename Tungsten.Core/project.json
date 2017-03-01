@@ -1,8 +1,8 @@
-﻿{
+{
   "description": "A small library of classes which make application development a little easier",
   "title": "Tungsten.Core",
   "copyright": "Copyright @ 2017 Jordan Duerksen",
-  "version": "1.1.4-*",
+  "version": "1.1.5-*",
   "authors": [ "Jordan Duerksen" ],
   "dependencies": {
     "NETStandard.Library": "1.6.0",
