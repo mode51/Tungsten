@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using W.Logging;
+using W.Net.Helpers;
 
 namespace W.Encryption
 {
@@ -95,7 +96,7 @@ namespace W.Encryption
         }
         public string Encrypt(byte[] byteData, RSAParameters publicKey)
         {
-            //Log.v("Encryption Hash={0}", MD5.GetMd5Hash(publicKey.AsXml<RSAParameters>()));
+            Log.v("Encryption Hash={0}", MD5.GetMd5Hash(publicKey.AsXml<RSAParameters>()));
 
             _rsa.ImportParameters(publicKey);
             //byte[] byteData = Encoding.UTF32.GetBytes(text);

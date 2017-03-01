@@ -1,5 +1,8 @@
 ﻿Tungsten is a C# library to make application development easier.  See the wiki @ https://github.com/mode51/Tungsten/wiki for details, examples and use.
 
+2.28.2017 v1.1.4
+Had to remove Tungsten.Core from this package because NuProj doesn't support it yet
+
 2.28.2017 v1.1.3
 Merged the Tungsten, Tungsten.Portable, Tungsten.Universal and Tungsten.Core NuGet packages
 

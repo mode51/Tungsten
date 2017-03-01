@@ -1,10 +1,14 @@
 {
+  "description": "Tungsten.Net.Core is a tcp socket library which provides client/server classes with and without assymetric encryption",
   "title": "Tungsten.Net.Core",
   "copyright": "Copyright @ 2017 Jordan Duerksen",
-  "version": "1.0.0-*",
+  "version": "1.0.2-*",
+  "authors": [ "Jordan Duerksen" ],
   "dependencies": {
     "NETStandard.Library": "1.6.1",
-    "Tungsten.Core": "1.0.0"
+    "System.Runtime.Serialization.Json": "4.3.0",
+    "System.Runtime.Serialization.Xml": "4.3.0",
+    "Tungsten.Core": "1.1.4"
   },
   "frameworks": {
     "netstandard1.6": {
@@ -12,6 +16,21 @@
     }
   },
   "buildOptions": {
-    "xmlDoc": true
+    "xmlDoc": true,
+    "optimize": true
+  },
+  "packOptions": {
+    "owners": [ "Jordan Duerksen" ],
+    "iconUrl": "http://www.duerksen.us/images/Tungsten.ico",
+    "repository": {
+      "url": "https://github.com/mode51/Tungsten",
+      "type": "git"
+    },
+    "tags": ["Tungsten", "Tungsten.Core", "Tungsten.Net", "Tungsten.Net.Core", "W", "C#", "library"]
+
+  },  "scripts": {
+    "postcompile": [
+      "dotnet pack --no-build --configuration %compile:Configuration%"
+    ]
   }
 }

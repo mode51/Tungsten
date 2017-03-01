@@ -2,6 +2,7 @@ using System;
 using System.Net.Sockets;
 using System.Security.Cryptography;
 using W.Logging;
+using W.Net.Helpers;
 using W.Net.Sockets;
 
 namespace W.Net

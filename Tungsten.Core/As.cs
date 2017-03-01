@@ -4,8 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Json;
 using System.Threading.Tasks;
 
 
@@ -106,7 +104,7 @@ namespace W
         /// <returns>A Json formatted string representation of the specified object</returns>
         public static string AsJson<TType>(this object @this)
         {
-            var s = new DataContractJsonSerializer(typeof(TType));
+            var s = new System.Runtime.Serialization.Json.DataContractJsonSerializer(typeof(TType));
             //var s = new DataContractJsonSerializer(typeof(TType), new DataContractJsonSerializerSettings() { EmitTypeInformation = EmitTypeInformation.Always, UseSimpleDictionaryFormat = false});
             using (var stream = new System.IO.MemoryStream())
             {
@@ -122,7 +120,7 @@ namespace W
         /// <returns></returns>
         public static string AsXml<TType>(this object @this)
         {
-            var s = new DataContractSerializer(typeof(TType));
+            var s = new System.Runtime.Serialization.DataContractSerializer(typeof(TType));
             using (var stream = new System.IO.MemoryStream())
             {
                 s.WriteObject(stream, @this);

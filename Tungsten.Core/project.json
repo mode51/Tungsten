@@ -1,11 +1,13 @@
 ﻿{
+  "description": "A small library of classes which make application development a little easier",
   "title": "Tungsten.Core",
   "copyright": "Copyright @ 2017 Jordan Duerksen",
-  "version": "1.0.0-*",
+  "version": "1.1.4-*",
+  "authors": [ "Jordan Duerksen" ],
   "dependencies": {
-    "System.Runtime.Serialization.Xml": "4.3.0",
+    "NETStandard.Library": "1.6.0",
     "System.Runtime.Serialization.Json": "4.3.0",
-    "NETStandard.Library": "1.6.1",
+    "System.Runtime.Serialization.Xml": "4.3.0",
     "System.Threading.Thread": "4.3.0"
   },
   "frameworks": {
@@ -14,6 +16,22 @@
     }
   },
   "buildOptions": {
-    "xmlDoc": true
+    "xmlDoc": true,
+    "optimize": true
+  },
+  "packOptions": {
+    "owners": [ "Jordan Duerksen" ],
+    "iconUrl": "http://www.duerksen.us/images/Tungsten.ico",
+    "repository": {
+      "url": "https://github.com/mode51/Tungsten",
+      "type": "git"
+    },
+    "tags": ["Tungsten", "Tungsten.Core", "W", "C#", "library"]
+
+  },
+  "scripts": {
+    "postcompile": [
+      "dotnet pack --no-build --configuration %compile:Configuration%"
+    ]
   }
 }
