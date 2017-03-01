@@ -2,7 +2,6 @@ using System;
 using System.Net.Sockets;
 using System.Security.Cryptography;
 using W.Logging;
-using W.Net.Helpers;
 using W.Net.Sockets;
 
 namespace W.Net
@@ -16,14 +15,20 @@ namespace W.Net
         private RSAParameters? _remotePublicKey;
 
         /// <summary>
+        /// Called when the connection has been secured
+        /// </summary>
+        public Action<object> ConnectionSecured { get; set; }
+
+        /// <summary>
         /// Constructs a new SecureStringClient
         /// </summary>
         public SecureStringClient() : base()
         {
             _rsa = new W.Encryption.RSA();
-            Socket.Connected += (socket, address) =>
+            Connected += (socket, address) =>
             {
                 SendPublicKey(); //immediately send the public key
+                Log.v("Client Sent Public Key");
             };
         }
 
@@ -36,6 +41,7 @@ namespace W.Net
         {
             _rsa = rsa;
             SendPublicKey(); //immediately send the public key
+            Log.v("Server Sent Public Key");
         }
 
         private void SendPublicKey()
@@ -61,6 +67,8 @@ namespace W.Net
                 msg = base.FormatReceivedMessage(message).FromBase64();
                 _remotePublicKey = msg.FromXml<RSAParameters>();
                 msg = null; //not a real message, so set it to null
+                ConnectionSecured?.Invoke(this);
+                Log.v("Received Public Key");
             }
             return msg;
         }

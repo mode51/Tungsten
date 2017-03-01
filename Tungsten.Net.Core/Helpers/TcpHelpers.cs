@@ -19,7 +19,7 @@ namespace W.Net
             {
                 //send the message
                 var dataLength = length == -1 ? dataChunk.Length : length;
-                Console.WriteLine("Sending {0} bytes", dataLength);
+                Log.v("Sending {0} bytes", dataLength);
                 client.Write(dataChunk, offset, dataLength);
             }
             catch (ArgumentNullException e) //the buffer is null
@@ -62,7 +62,7 @@ namespace W.Net
             {
                 int length = message.Length;
                 int numberOfBytesSent = 0;
-                Console.WriteLine("Send Message Size = {0}", length);
+                Log.v("Send Message Size = {0}", length);
 
                 //send the size
                 var sizeBuffer = BitConverter.GetBytes(length); //4 bytes
@@ -123,7 +123,7 @@ namespace W.Net
                 }
                 Thread.Sleep(1); //play nice with other threads
             }
-            Console.WriteLine("Receive Message Size = {0}", length);
+            Log.v("Receive Message Size = {0}", length);
             return length;
         }
         private static void ReadMessage(NetworkStream stream, int length, int receiveBufferSize, Action<byte[], Exception> onComplete = null, CancellationTokenSource cts = null)
@@ -156,7 +156,7 @@ namespace W.Net
                         onComplete?.Invoke(null, null);
                         break;
                     }
-                    Console.WriteLine("Read {0} bytes", read);
+                    Log.v("Read {0} bytes", read);
                     numberOfBytesRead += read;
                 }
 

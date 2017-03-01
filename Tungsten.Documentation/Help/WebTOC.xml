@@ -1,116 +1,116 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpTOC>
 
-  <HelpTOCNode Id="b4373486-2e45-483b-abb1-94e0a2e3f8ae" Title="Tungsten Namespaces" Url="html/R_Project_Tungsten_Documentation.htm">
-    <HelpTOCNode Id="1d1e3853-8be6-40b2-a744-b2debe643177" Title="W" Url="html/N_W.htm">
-      <HelpTOCNode Id="baa8e32b-b1b9-4daf-a179-408b19a80a41" Title="ActionQueue(T) Class" Url="html/T_W_ActionQueue_1.htm">
-        <HelpTOCNode Id="3e841046-3fca-4336-8d42-68155b441ce4" Title="ActionQueue(T) Constructor " Url="html/Overload_W_ActionQueue_1__ctor.htm">
+  <HelpTOCNode Id="378cf0f8-8620-4bd5-b4a1-9f823a04fd76" Title="Tungsten Namespaces" Url="html/R_Project_Tungsten_Documentation.htm">
+    <HelpTOCNode Id="ed4832d4-0411-4ee7-bf71-fe93d1466cff" Title="W" Url="html/N_W.htm">
+      <HelpTOCNode Id="c06d5871-0508-4b80-99af-1af97b6823ba" Title="ActionQueue(T) Class" Url="html/T_W_ActionQueue_1.htm">
+        <HelpTOCNode Id="eeff86c2-8bed-48d3-9ab4-d74c1f827a82" Title="ActionQueue(T) Constructor " Url="html/Overload_W_ActionQueue_1__ctor.htm">
           <HelpTOCNode Title="ActionQueue(T) Constructor (Action(T), String)" Url="html/M_W_ActionQueue_1__ctor.htm" />
           <HelpTOCNode Title="ActionQueue(T) Constructor (Func(T, Boolean), String)" Url="html/M_W_ActionQueue_1__ctor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="c118ef23-0a9e-4aac-a595-8ff70e71ec8a" Title="ActionQueue(T) Properties" Url="html/Properties_T_W_ActionQueue_1.htm">
+        <HelpTOCNode Id="2922fb90-34da-4d95-86ae-c238dde7a589" Title="ActionQueue(T) Properties" Url="html/Properties_T_W_ActionQueue_1.htm">
           <HelpTOCNode Title="Count Property " Url="html/P_W_ActionQueue_1_Count.htm" />
           <HelpTOCNode Title="Queue Property " Url="html/P_W_ActionQueue_1_Queue.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="8c731103-2ef7-46a2-a299-620a015e0a67" Title="ActionQueue(T) Methods" Url="html/Methods_T_W_ActionQueue_1.htm">
+        <HelpTOCNode Id="7f1b4c0f-5af4-4cf0-b344-43b8dada0f4d" Title="ActionQueue(T) Methods" Url="html/Methods_T_W_ActionQueue_1.htm">
           <HelpTOCNode Title="Cancel Method " Url="html/M_W_ActionQueue_1_Cancel.htm" />
           <HelpTOCNode Title="Enqueue Method " Url="html/M_W_ActionQueue_1_Enqueue.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="a374913c-e031-4225-99fc-0fdabd701fc6" Title="AsExtensions Class" Url="html/T_W_AsExtensions.htm">
-        <HelpTOCNode Id="bec49fe9-600d-4502-82e1-0d97513a5dbe" Title="AsExtensions Methods" Url="html/Methods_T_W_AsExtensions.htm">
+      <HelpTOCNode Id="e8ec524f-e91c-4c79-8aa0-64c798d0cbc1" Title="AsExtensions Class" Url="html/T_W_AsExtensions.htm">
+        <HelpTOCNode Id="eafab6ab-6ced-4732-87ec-cc3abdec6fc8" Title="AsExtensions Methods" Url="html/Methods_T_W_AsExtensions.htm">
           <HelpTOCNode Title="As(TType) Method " Url="html/M_W_AsExtensions_As__1.htm" />
           <HelpTOCNode Title="AsBase64 Method " Url="html/M_W_AsExtensions_AsBase64.htm" />
           <HelpTOCNode Title="AsBytes Method " Url="html/M_W_AsExtensions_AsBytes.htm" />
           <HelpTOCNode Title="AsJson(TType) Method " Url="html/M_W_AsExtensions_AsJson__1.htm" />
-          <HelpTOCNode Id="ea32b6c6-2179-4424-b6e9-20c00600ec38" Title="AsStream Method " Url="html/Overload_W_AsExtensions_AsStream.htm">
+          <HelpTOCNode Id="70741ed0-ca01-4599-80b4-b612bbc5d80d" Title="AsStream Method " Url="html/Overload_W_AsExtensions_AsStream.htm">
             <HelpTOCNode Title="AsStream Method (Byte[])" Url="html/M_W_AsExtensions_AsStream.htm" />
             <HelpTOCNode Title="AsStream Method (String)" Url="html/M_W_AsExtensions_AsStream_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="AsString Method " Url="html/M_W_AsExtensions_AsString.htm" />
           <HelpTOCNode Title="AsXml(TType) Method " Url="html/M_W_AsExtensions_AsXml__1.htm" />
-          <HelpTOCNode Id="26eeb87d-12fb-47af-b755-b3b046c87ccb" Title="FromBase64 Method " Url="html/Overload_W_AsExtensions_FromBase64.htm">
+          <HelpTOCNode Id="2694eb33-f99e-4746-8563-d8aacfd46542" Title="FromBase64 Method " Url="html/Overload_W_AsExtensions_FromBase64.htm">
             <HelpTOCNode Title="FromBase64 Method (Byte[])" Url="html/M_W_AsExtensions_FromBase64.htm" />
             <HelpTOCNode Title="FromBase64 Method (String)" Url="html/M_W_AsExtensions_FromBase64_1.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="0d28b303-8266-49ba-abe9-3f4979b054b3" Title="CallResult Class" Url="html/T_W_CallResult.htm">
-        <HelpTOCNode Id="5d51dc0e-f0d5-4462-935d-543c82156c7b" Title="CallResult Constructor " Url="html/Overload_W_CallResult__ctor.htm">
+      <HelpTOCNode Id="edea57a4-edb4-421f-b2a9-6aec6555c255" Title="CallResult Class" Url="html/T_W_CallResult.htm">
+        <HelpTOCNode Id="3c7f21a5-e154-46a3-b5cc-73ca077277f0" Title="CallResult Constructor " Url="html/Overload_W_CallResult__ctor.htm">
           <HelpTOCNode Title="CallResult Constructor " Url="html/M_W_CallResult__ctor.htm" />
           <HelpTOCNode Title="CallResult Constructor (Boolean)" Url="html/M_W_CallResult__ctor_1.htm" />
           <HelpTOCNode Title="CallResult Constructor (Boolean, Exception)" Url="html/M_W_CallResult__ctor_2.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="432ac001-5dcc-4e89-b227-733e465077db" Title="CallResult Properties" Url="html/Properties_T_W_CallResult.htm">
+        <HelpTOCNode Id="c693e51e-c2d5-4d30-8868-c387a7befbb1" Title="CallResult Properties" Url="html/Properties_T_W_CallResult.htm">
           <HelpTOCNode Title="Empty Property " Url="html/P_W_CallResult_Empty.htm" />
           <HelpTOCNode Title="Exception Property " Url="html/P_W_CallResult_Exception.htm" />
           <HelpTOCNode Title="Success Property " Url="html/P_W_CallResult_Success.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="CallResult Methods" Url="html/Methods_T_W_CallResult.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="d35f8983-d9ea-43cf-a271-7b4097a21770" Title="CallResult(TResult) Class" Url="html/T_W_CallResult_1.htm">
-        <HelpTOCNode Id="306efded-ce96-4922-a08d-05beafd939f6" Title="CallResult(TResult) Constructor " Url="html/Overload_W_CallResult_1__ctor.htm">
+      <HelpTOCNode Id="49c68d43-8d92-4bd9-9ff5-7256aa17d690" Title="CallResult(TResult) Class" Url="html/T_W_CallResult_1.htm">
+        <HelpTOCNode Id="fc20a827-17f7-4ea1-9691-bc3313150993" Title="CallResult(TResult) Constructor " Url="html/Overload_W_CallResult_1__ctor.htm">
           <HelpTOCNode Title="CallResult(TResult) Constructor " Url="html/M_W_CallResult_1__ctor.htm" />
           <HelpTOCNode Title="CallResult(TResult) Constructor (Boolean)" Url="html/M_W_CallResult_1__ctor_1.htm" />
           <HelpTOCNode Title="CallResult(TResult) Constructor (Boolean, TResult)" Url="html/M_W_CallResult_1__ctor_2.htm" />
           <HelpTOCNode Title="CallResult(TResult) Constructor (Boolean, TResult, Exception)" Url="html/M_W_CallResult_1__ctor_3.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="b097faf7-13c2-49e1-8dd7-c85c4f77feb1" Title="CallResult(TResult) Properties" Url="html/Properties_T_W_CallResult_1.htm">
+        <HelpTOCNode Id="f66870d0-20dc-4648-9e7a-5f5e4c93fcf2" Title="CallResult(TResult) Properties" Url="html/Properties_T_W_CallResult_1.htm">
           <HelpTOCNode Title="Empty Property " Url="html/P_W_CallResult_1_Empty.htm" />
           <HelpTOCNode Title="Result Property " Url="html/P_W_CallResult_1_Result.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="CallResult(TResult) Methods" Url="html/Methods_T_W_CallResult_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="62f40f1c-90bc-4441-b6fb-584b93fb93dd" Title="FromExtensions Class" Url="html/T_W_FromExtensions.htm">
-        <HelpTOCNode Id="1253ae3b-e92c-4438-94f8-6caa77448072" Title="FromExtensions Methods" Url="html/Methods_T_W_FromExtensions.htm">
-          <HelpTOCNode Id="41785daf-06cb-4c29-b7a5-d3d9c2ce516d" Title="FromJson Method " Url="html/Overload_W_FromExtensions_FromJson.htm">
+      <HelpTOCNode Id="12f15142-90eb-4ede-8c90-1b7db86bd55e" Title="FromExtensions Class" Url="html/T_W_FromExtensions.htm">
+        <HelpTOCNode Id="dca7d5dd-39f5-4817-9270-218deeb08316" Title="FromExtensions Methods" Url="html/Methods_T_W_FromExtensions.htm">
+          <HelpTOCNode Id="1a1cdc18-1823-4cd4-8837-1309c0e856a9" Title="FromJson Method " Url="html/Overload_W_FromExtensions_FromJson.htm">
             <HelpTOCNode Title="FromJson(TType) Method (Byte[])" Url="html/M_W_FromExtensions_FromJson__1.htm" />
             <HelpTOCNode Title="FromJson(TType) Method (String)" Url="html/M_W_FromExtensions_FromJson__1_1.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="c561030f-63d4-40c2-94ab-b5e265ce84e0" Title="FromXml Method " Url="html/Overload_W_FromExtensions_FromXml.htm">
+          <HelpTOCNode Id="c34a9c8d-c7b4-425e-85ed-7d0a6cf4f101" Title="FromXml Method " Url="html/Overload_W_FromExtensions_FromXml.htm">
             <HelpTOCNode Title="FromXml(TType) Method (Byte[])" Url="html/M_W_FromExtensions_FromXml__1.htm" />
             <HelpTOCNode Title="FromXml(TType) Method (String)" Url="html/M_W_FromExtensions_FromXml__1_1.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="e0ef01ee-5614-48d9-aab5-340946196964" Title="InvokeExtensions Class" Url="html/T_W_InvokeExtensions.htm">
-        <HelpTOCNode Id="7dbf8c92-96cf-4ea0-8bbd-babefac7a9c7" Title="InvokeExtensions Methods" Url="html/Methods_T_W_InvokeExtensions.htm">
-          <HelpTOCNode Id="2ecbf36d-edca-41fa-931f-ae17ea3d70fa" Title="InvokeEx Method " Url="html/Overload_W_InvokeExtensions_InvokeEx.htm">
+      <HelpTOCNode Id="ab8dc19d-64d6-4016-8f9c-8c8016489f8e" Title="InvokeExtensions Class" Url="html/T_W_InvokeExtensions.htm">
+        <HelpTOCNode Id="0dc59af3-b048-4174-a072-89a45a17bdfd" Title="InvokeExtensions Methods" Url="html/Methods_T_W_InvokeExtensions.htm">
+          <HelpTOCNode Id="0439cefc-e7e5-4808-9512-82e372e591d3" Title="InvokeEx Method " Url="html/Overload_W_InvokeExtensions_InvokeEx.htm">
             <HelpTOCNode Title="InvokeEx(T) Method (T, Action(T))" Url="html/M_W_InvokeExtensions_InvokeEx__1.htm" />
             <HelpTOCNode Title="InvokeEx(T) Method (T, Func(T, Object))" Url="html/M_W_InvokeExtensions_InvokeEx__1_1.htm" />
             <HelpTOCNode Title="InvokeEx(T, U) Method (T, Func(T, U))" Url="html/M_W_InvokeExtensions_InvokeEx__2.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="66e2cccd-8389-472a-8db7-5e07e66584cc" Title="IOwnedProperty Interface" Url="html/T_W_IOwnedProperty.htm">
-        <HelpTOCNode Id="504a790b-985c-49f2-9585-5d46ae49a8f0" Title="IOwnedProperty Methods" Url="html/Methods_T_W_IOwnedProperty.htm">
+      <HelpTOCNode Id="a52d6a6b-3629-4be0-88b8-2ba527bc3161" Title="IOwnedProperty Interface" Url="html/T_W_IOwnedProperty.htm">
+        <HelpTOCNode Id="3620647c-ab06-4df0-b058-a8dbc2403d99" Title="IOwnedProperty Methods" Url="html/Methods_T_W_IOwnedProperty.htm">
           <HelpTOCNode Title="SetOwner Method " Url="html/M_W_IOwnedProperty_SetOwner.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="bc19663e-05c5-4d9e-9c51-3f3b619e6ee0" Title="IProperty Interface" Url="html/T_W_IProperty.htm">
-        <HelpTOCNode Id="166f374c-4230-4d64-b515-7501e6fb379f" Title="IProperty Properties" Url="html/Properties_T_W_IProperty.htm">
+      <HelpTOCNode Id="8ea36f2a-66c1-4b6a-95ff-cb0994d417b7" Title="IProperty Interface" Url="html/T_W_IProperty.htm">
+        <HelpTOCNode Id="4efd0da4-b38a-403c-9e1e-a897e5a4802d" Title="IProperty Properties" Url="html/Properties_T_W_IProperty.htm">
           <HelpTOCNode Title="IsDirty Property " Url="html/P_W_IProperty_IsDirty.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="5bec366e-5ff2-4f24-a65a-8d6db2ace771" Title="IProperty(TValue) Interface" Url="html/T_W_IProperty_1.htm">
-        <HelpTOCNode Id="89df93c0-7141-41fa-af5a-b7509da2599a" Title="IProperty(TValue) Properties" Url="html/Properties_T_W_IProperty_1.htm">
+      <HelpTOCNode Id="bde97fb7-73f5-4fc8-8762-43d3accbfee4" Title="IProperty(TValue) Interface" Url="html/T_W_IProperty_1.htm">
+        <HelpTOCNode Id="5d7edb42-e2ae-4e68-b0fa-9ce6e890b416" Title="IProperty(TValue) Properties" Url="html/Properties_T_W_IProperty_1.htm">
           <HelpTOCNode Title="Value Property " Url="html/P_W_IProperty_1_Value.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="9a0094fa-aa56-4ef2-88e1-9eb7073f7b61" Title="Lockable(TValue) Class" Url="html/T_W_Lockable_1.htm">
-        <HelpTOCNode Id="2785b9b7-7796-4a22-802b-af31565701ee" Title="Lockable(TValue) Constructor " Url="html/Overload_W_Lockable_1__ctor.htm">
+      <HelpTOCNode Id="6b8b8d55-662c-4eda-bc0e-9010eab9e385" Title="Lockable(TValue) Class" Url="html/T_W_Lockable_1.htm">
+        <HelpTOCNode Id="46f4a301-bc29-48f0-b841-e4bb3b07ad7a" Title="Lockable(TValue) Constructor " Url="html/Overload_W_Lockable_1__ctor.htm">
           <HelpTOCNode Title="Lockable(TValue) Constructor " Url="html/M_W_Lockable_1__ctor.htm" />
           <HelpTOCNode Title="Lockable(TValue) Constructor (TValue)" Url="html/M_W_Lockable_1__ctor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="0e927b87-29d4-4a8d-afef-70532e0dc7bb" Title="Lockable(TValue) Properties" Url="html/Properties_T_W_Lockable_1.htm">
+        <HelpTOCNode Id="09ef8b22-f24f-4eb9-b376-2610ab856242" Title="Lockable(TValue) Properties" Url="html/Properties_T_W_Lockable_1.htm">
           <HelpTOCNode Title="LockObject Property " Url="html/P_W_Lockable_1_LockObject.htm" />
           <HelpTOCNode Title="UnlockedValue Property " Url="html/P_W_Lockable_1_UnlockedValue.htm" />
           <HelpTOCNode Title="Value Property " Url="html/P_W_Lockable_1_Value.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="Lockable(TValue) Methods" Url="html/Methods_T_W_Lockable_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="7505f461-daff-41d6-9661-3ebc05837433" Title="Property(TValue) Class" Url="html/T_W_Property_1.htm">
-        <HelpTOCNode Id="8bec739b-9406-4ce1-9629-38c4d02dbcb2" Title="Property(TValue) Constructor " Url="html/Overload_W_Property_1__ctor.htm">
+      <HelpTOCNode Id="e60d22a2-3053-45c7-a23e-e24d710a97d1" Title="Property(TValue) Class" Url="html/T_W_Property_1.htm">
+        <HelpTOCNode Id="670888fa-1af9-4906-b1e8-9f5026b6e148" Title="Property(TValue) Constructor " Url="html/Overload_W_Property_1__ctor.htm">
           <HelpTOCNode Title="Property(TValue) Constructor " Url="html/M_W_Property_1__ctor.htm" />
           <HelpTOCNode Title="Property(TValue) Constructor (TValue)" Url="html/M_W_Property_1__ctor_1.htm" />
           <HelpTOCNode Title="Property(TValue) Constructor (PropertyBase(Property(TValue), TValue).OnValueChangedDelegate)" Url="html/M_W_Property_1__ctor_3.htm" />
@@ -118,8 +118,8 @@
         </HelpTOCNode>
         <HelpTOCNode Title="Property(TValue) Methods" Url="html/Methods_T_W_Property_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="d84ecb0a-c554-49a2-a4d5-f6a56ca42ebb" Title="Property(TOwner, TValue) Class" Url="html/T_W_Property_2.htm">
-        <HelpTOCNode Id="9f8bf157-7845-4be6-9417-0762e45e3410" Title="Property(TOwner, TValue) Constructor " Url="html/Overload_W_Property_2__ctor.htm">
+      <HelpTOCNode Id="dfa3f483-40b5-4282-a5e3-5d8342c25999" Title="Property(TOwner, TValue) Class" Url="html/T_W_Property_2.htm">
+        <HelpTOCNode Id="164b5d9a-0237-4529-ae09-27607d2d0dc3" Title="Property(TOwner, TValue) Constructor " Url="html/Overload_W_Property_2__ctor.htm">
           <HelpTOCNode Title="Property(TOwner, TValue) Constructor " Url="html/M_W_Property_2__ctor.htm" />
           <HelpTOCNode Title="Property(TOwner, TValue) Constructor (TOwner)" Url="html/M_W_Property_2__ctor_1.htm" />
           <HelpTOCNode Title="Property(TOwner, TValue) Constructor (TValue)" Url="html/M_W_Property_2__ctor_5.htm" />
@@ -130,15 +130,15 @@
         </HelpTOCNode>
         <HelpTOCNode Title="Property(TOwner, TValue) Methods" Url="html/Methods_T_W_Property_2.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="79024ac3-93c3-43d2-8dd1-63611eaf78f9" Title="PropertyBase(TOwner, TValue) Class" Url="html/T_W_PropertyBase_2.htm">
+      <HelpTOCNode Id="cf9a7a6d-52a3-4754-958d-e38e54aae9c5" Title="PropertyBase(TOwner, TValue) Class" Url="html/T_W_PropertyBase_2.htm">
         <HelpTOCNode Title="PropertyBase(TOwner, TValue) Constructor " Url="html/M_W_PropertyBase_2__ctor.htm" />
-        <HelpTOCNode Id="16ba72b1-d69d-456d-b300-b1f3b61834b5" Title="PropertyBase(TOwner, TValue) Properties" Url="html/Properties_T_W_PropertyBase_2.htm">
+        <HelpTOCNode Id="e4ed1e80-8541-4aec-8ac7-ef2b9fa3983f" Title="PropertyBase(TOwner, TValue) Properties" Url="html/Properties_T_W_PropertyBase_2.htm">
           <HelpTOCNode Title="DefaultValue Property " Url="html/P_W_PropertyBase_2_DefaultValue.htm" />
           <HelpTOCNode Title="IsDirty Property " Url="html/P_W_PropertyBase_2_IsDirty.htm" />
           <HelpTOCNode Title="Owner Property " Url="html/P_W_PropertyBase_2_Owner.htm" />
           <HelpTOCNode Title="Value Property " Url="html/P_W_PropertyBase_2_Value.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="f4f561d5-730d-4a1b-afc0-1320a6c371a1" Title="PropertyBase(TOwner, TValue) Methods" Url="html/Methods_T_W_PropertyBase_2.htm">
+        <HelpTOCNode Id="3e3eac59-fe94-483a-8962-82fdfe3e9ca2" Title="PropertyBase(TOwner, TValue) Methods" Url="html/Methods_T_W_PropertyBase_2.htm">
           <HelpTOCNode Title="ExecuteOnValueChanged Method " Url="html/M_W_PropertyBase_2_ExecuteOnValueChanged.htm" />
           <HelpTOCNode Title="GetValue Method " Url="html/M_W_PropertyBase_2_GetValue.htm" />
           <HelpTOCNode Title="LoadValue Method " Url="html/M_W_PropertyBase_2_LoadValue.htm" />
@@ -149,76 +149,76 @@
           <HelpTOCNode Title="SetValue Method " Url="html/M_W_PropertyBase_2_SetValue.htm" />
           <HelpTOCNode Title="WaitForChanged Method " Url="html/M_W_PropertyBase_2_WaitForChanged.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="d636ac96-7577-4817-8ac7-d1ae208d5977" Title="PropertyBase(TOwner, TValue) Events" Url="html/Events_T_W_PropertyBase_2.htm">
+        <HelpTOCNode Id="fc28c9c8-8f1b-4512-8376-0ddb49bd8ea9" Title="PropertyBase(TOwner, TValue) Events" Url="html/Events_T_W_PropertyBase_2.htm">
           <HelpTOCNode Title="ValueChanged Event" Url="html/E_W_PropertyBase_2_ValueChanged.htm" />
           <HelpTOCNode Title="ValueChanging Event" Url="html/E_W_PropertyBase_2_ValueChanging.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="dead5a7e-283b-495c-8af3-7c215f0a8107" Title="PropertyBase(TOwner, TValue) Fields" Url="html/Fields_T_W_PropertyBase_2.htm">
+        <HelpTOCNode Id="2bcbed3f-0c15-4e8d-9e8d-0a9271b417e8" Title="PropertyBase(TOwner, TValue) Fields" Url="html/Fields_T_W_PropertyBase_2.htm">
           <HelpTOCNode Title="OnValueChanged Field" Url="html/F_W_PropertyBase_2_OnValueChanged.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
       <HelpTOCNode Title="PropertyBase(TOwner, TValue).OnValueChangedDelegate Delegate" Url="html/T_W_PropertyBase_2_OnValueChangedDelegate.htm" />
       <HelpTOCNode Title="PropertyBase(TOwner, TValue).PropertyValueChangedDelegate Delegate" Url="html/T_W_PropertyBase_2_PropertyValueChangedDelegate.htm" />
       <HelpTOCNode Title="PropertyBase(TOwner, TValue).PropertyValueChangingDelegate Delegate" Url="html/T_W_PropertyBase_2_PropertyValueChangingDelegate.htm" />
-      <HelpTOCNode Id="82b59def-ee57-4f4b-a9cd-11db3a27e199" Title="PropertyChangedNotifier Class" Url="html/T_W_PropertyChangedNotifier.htm">
+      <HelpTOCNode Id="c4189a20-9c06-49b2-9c31-15297e881c48" Title="PropertyChangedNotifier Class" Url="html/T_W_PropertyChangedNotifier.htm">
         <HelpTOCNode Title="PropertyChangedNotifier Constructor " Url="html/M_W_PropertyChangedNotifier__ctor.htm" />
-        <HelpTOCNode Id="6195a7e6-7138-4e3a-bf7d-c70e0bc425d1" Title="PropertyChangedNotifier Methods" Url="html/Methods_T_W_PropertyChangedNotifier.htm">
+        <HelpTOCNode Id="10d64116-aaf3-43c9-96ac-48c9ecb573ec" Title="PropertyChangedNotifier Methods" Url="html/Methods_T_W_PropertyChangedNotifier.htm">
           <HelpTOCNode Title="GetValue Method " Url="html/M_W_PropertyChangedNotifier_GetValue.htm" />
           <HelpTOCNode Title="OnPropertyChanged Method " Url="html/M_W_PropertyChangedNotifier_OnPropertyChanged.htm" />
           <HelpTOCNode Title="RaiseOnPropertyChanged Method " Url="html/M_W_PropertyChangedNotifier_RaiseOnPropertyChanged.htm" />
           <HelpTOCNode Title="SetValue Method " Url="html/M_W_PropertyChangedNotifier_SetValue.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="2d1032da-a130-4f51-a5a6-6affd9c2389a" Title="PropertyChangedNotifier Events" Url="html/Events_T_W_PropertyChangedNotifier.htm">
+        <HelpTOCNode Id="e8f142be-d386-4c07-a22b-d23a2862aeac" Title="PropertyChangedNotifier Events" Url="html/Events_T_W_PropertyChangedNotifier.htm">
           <HelpTOCNode Title="PropertyChanged Event" Url="html/E_W_PropertyChangedNotifier_PropertyChanged.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="3705ab45-5971-4288-b306-483ecb9afef7" Title="PropertyHost Class" Url="html/T_W_PropertyHost.htm">
+      <HelpTOCNode Id="d61d395a-a6c6-4d77-acf7-ff2ccfaba036" Title="PropertyHost Class" Url="html/T_W_PropertyHost.htm">
         <HelpTOCNode Title="PropertyHost Constructor " Url="html/M_W_PropertyHost__ctor.htm" />
-        <HelpTOCNode Id="96ab14f7-54d0-442b-b59a-42c4e5ce5354" Title="PropertyHost Properties" Url="html/Properties_T_W_PropertyHost.htm">
+        <HelpTOCNode Id="e8eed429-7f90-4080-b958-a145634ffc7e" Title="PropertyHost Properties" Url="html/Properties_T_W_PropertyHost.htm">
           <HelpTOCNode Title="IsDirty Property " Url="html/P_W_PropertyHost_IsDirty.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="0b4320d5-4fd6-41ac-a90c-7444ee1064ed" Title="PropertyHost Methods" Url="html/Methods_T_W_PropertyHost.htm">
+        <HelpTOCNode Id="c979c0e1-8011-4bcb-b25e-7d29db0e9679" Title="PropertyHost Methods" Url="html/Methods_T_W_PropertyHost.htm">
           <HelpTOCNode Title="MarkAsClean Method " Url="html/M_W_PropertyHost_MarkAsClean.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="4171dc44-9b53-4cab-8f1c-4092e06a6635" Title="PropertyHostMethods Class" Url="html/T_W_PropertyHostMethods.htm">
-        <HelpTOCNode Id="9252018d-eabf-4ad5-9fc7-0425b3d835cd" Title="PropertyHostMethods Methods" Url="html/Methods_T_W_PropertyHostMethods.htm">
+      <HelpTOCNode Id="0175ebe7-186b-4625-8c2f-da6a6415602d" Title="PropertyHostMethods Class" Url="html/T_W_PropertyHostMethods.htm">
+        <HelpTOCNode Id="152590ce-3110-452f-9bb3-00c003b31512" Title="PropertyHostMethods Methods" Url="html/Methods_T_W_PropertyHostMethods.htm">
           <HelpTOCNode Title="InitializeProperties Method " Url="html/M_W_PropertyHostMethods_InitializeProperties.htm" />
           <HelpTOCNode Title="IsDirty Method " Url="html/M_W_PropertyHostMethods_IsDirty.htm" />
           <HelpTOCNode Title="MarkAsClean Method " Url="html/M_W_PropertyHostMethods_MarkAsClean.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="ff95044b-b80c-4225-bd81-83d64b89dbfb" Title="PropertyHostNotifier Class" Url="html/T_W_PropertyHostNotifier.htm">
+      <HelpTOCNode Id="0885c009-e287-4878-bee3-32abdd35429b" Title="PropertyHostNotifier Class" Url="html/T_W_PropertyHostNotifier.htm">
         <HelpTOCNode Title="PropertyHostNotifier Constructor " Url="html/M_W_PropertyHostNotifier__ctor.htm" />
-        <HelpTOCNode Id="eaa5432e-58d0-4a28-ad6d-a9838a2b3be7" Title="PropertyHostNotifier Properties" Url="html/Properties_T_W_PropertyHostNotifier.htm">
+        <HelpTOCNode Id="263d5dcb-b741-47cb-a991-838494c6b72d" Title="PropertyHostNotifier Properties" Url="html/Properties_T_W_PropertyHostNotifier.htm">
           <HelpTOCNode Title="IsDirty Property " Url="html/P_W_PropertyHostNotifier_IsDirty.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="120094d3-6954-4217-9cdb-e075f1a1525b" Title="PropertyHostNotifier Methods" Url="html/Methods_T_W_PropertyHostNotifier.htm">
+        <HelpTOCNode Id="b7958c2d-6ec7-4ff6-bae3-4c8374283027" Title="PropertyHostNotifier Methods" Url="html/Methods_T_W_PropertyHostNotifier.htm">
           <HelpTOCNode Title="MarkAsClean Method " Url="html/M_W_PropertyHostNotifier_MarkAsClean.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="6ad52450-036f-44ed-b391-042761bc077e" Title="W.Domains" Url="html/N_W_Domains.htm">
-      <HelpTOCNode Id="5b7e02f0-21b7-4348-a9fb-ba57deabb90e" Title="DomainLoader Class" Url="html/T_W_Domains_DomainLoader.htm">
-        <HelpTOCNode Id="163177c8-7873-4ec6-b9da-432acda87534" Title="DomainLoader Constructor " Url="html/Overload_W_Domains_DomainLoader__ctor.htm">
+    <HelpTOCNode Id="79556357-6dbe-4803-9681-a526a6a6c0a7" Title="W.Domains" Url="html/N_W_Domains.htm">
+      <HelpTOCNode Id="189274e1-5de1-40cc-9a38-ed4d9e25b1dc" Title="DomainLoader Class" Url="html/T_W_Domains_DomainLoader.htm">
+        <HelpTOCNode Id="09f358a7-f59e-4a00-8ce1-0e9fbd7a18db" Title="DomainLoader Constructor " Url="html/Overload_W_Domains_DomainLoader__ctor.htm">
           <HelpTOCNode Title="DomainLoader Constructor (String, Boolean)" Url="html/M_W_Domains_DomainLoader__ctor.htm" />
           <HelpTOCNode Title="DomainLoader Constructor (String, String, Boolean)" Url="html/M_W_Domains_DomainLoader__ctor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="77bf9c7c-f772-4acd-bf6b-485b17885df5" Title="DomainLoader Properties" Url="html/Properties_T_W_Domains_DomainLoader.htm">
+        <HelpTOCNode Id="c435c6df-779a-4b6e-9bf8-851672e9c2c5" Title="DomainLoader Properties" Url="html/Properties_T_W_Domains_DomainLoader.htm">
           <HelpTOCNode Title="DomainName Property " Url="html/P_W_Domains_DomainLoader_DomainName.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="03f3298c-2180-4ecd-bce6-a51177c872c9" Title="DomainLoader Methods" Url="html/Methods_T_W_Domains_DomainLoader.htm">
-          <HelpTOCNode Id="b92482f1-403d-41de-b45c-485f7b57a474" Title="Create Method " Url="html/Overload_W_Domains_DomainLoader_Create.htm">
+        <HelpTOCNode Id="8b39d149-a846-427e-abc6-1da73a5ad0f1" Title="DomainLoader Methods" Url="html/Methods_T_W_Domains_DomainLoader.htm">
+          <HelpTOCNode Id="078dd68e-f892-4059-8eff-3825cd2b917d" Title="Create Method " Url="html/Overload_W_Domains_DomainLoader_Create.htm">
             <HelpTOCNode Title="Create(TInterfaceType) Method (String)" Url="html/M_W_Domains_DomainLoader_Create__1.htm" />
             <HelpTOCNode Title="Create Method (String)" Url="html/M_W_Domains_DomainLoader_Create.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Dispose Method " Url="html/M_W_Domains_DomainLoader_Dispose.htm" />
           <HelpTOCNode Title="DoCallback Method " Url="html/M_W_Domains_DomainLoader_DoCallback.htm" />
-          <HelpTOCNode Id="216f0a90-7fe8-4056-b5ab-92c1093d536c" Title="Execute Method " Url="html/Overload_W_Domains_DomainLoader_Execute.htm">
+          <HelpTOCNode Id="0cbef099-5f10-4a0c-81f8-b5465fd0111d" Title="Execute Method " Url="html/Overload_W_Domains_DomainLoader_Execute.htm">
             <HelpTOCNode Title="Execute(TResult) Method (String, String, Object[])" Url="html/M_W_Domains_DomainLoader_Execute__1.htm" />
             <HelpTOCNode Title="Execute Method (String, String, Object[])" Url="html/M_W_Domains_DomainLoader_Execute.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="f6f98692-85d1-40e2-a5f4-3fa408d33646" Title="ExecuteStaticMethod Method " Url="html/Overload_W_Domains_DomainLoader_ExecuteStaticMethod.htm">
+          <HelpTOCNode Id="921fac4a-4c61-44f1-bb12-59b11bc9e6ce" Title="ExecuteStaticMethod Method " Url="html/Overload_W_Domains_DomainLoader_ExecuteStaticMethod.htm">
             <HelpTOCNode Title="ExecuteStaticMethod(TResult) Method (String, String, Object[])" Url="html/M_W_Domains_DomainLoader_ExecuteStaticMethod__1.htm" />
             <HelpTOCNode Title="ExecuteStaticMethod Method (String, String, Object[])" Url="html/M_W_Domains_DomainLoader_ExecuteStaticMethod.htm" />
           </HelpTOCNode>
@@ -229,18 +229,18 @@
           <HelpTOCNode Title="Unload Method " Url="html/M_W_Domains_DomainLoader_Unload.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="553da562-454f-4db1-9aa6-19d4cfe49458" Title="IDomainLoader Interface" Url="html/T_W_Domains_IDomainLoader.htm">
-        <HelpTOCNode Id="ab28de35-d404-4711-84e8-aabd8082d8a8" Title="IDomainLoader Methods" Url="html/Methods_T_W_Domains_IDomainLoader.htm">
-          <HelpTOCNode Id="edd25f0a-4f73-44fb-b4c1-38aa2f28c100" Title="Create Method " Url="html/Overload_W_Domains_IDomainLoader_Create.htm">
+      <HelpTOCNode Id="3b162267-a621-46f2-a197-c03350d1874b" Title="IDomainLoader Interface" Url="html/T_W_Domains_IDomainLoader.htm">
+        <HelpTOCNode Id="50e24e23-308a-454a-a0a8-9c2151d4aedc" Title="IDomainLoader Methods" Url="html/Methods_T_W_Domains_IDomainLoader.htm">
+          <HelpTOCNode Id="01062fd8-8104-46fe-a40e-c7d5b81a8ae4" Title="Create Method " Url="html/Overload_W_Domains_IDomainLoader_Create.htm">
             <HelpTOCNode Title="Create Method (String)" Url="html/M_W_Domains_IDomainLoader_Create.htm" />
             <HelpTOCNode Title="Create(TInterfaceType) Method (String)" Url="html/M_W_Domains_IDomainLoader_Create__1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Dispose Method " Url="html/M_W_Domains_IDomainLoader_Dispose.htm" />
-          <HelpTOCNode Id="b76f24c5-9a07-49e9-a3c5-6ac0e3ef91a7" Title="Execute Method " Url="html/Overload_W_Domains_IDomainLoader_Execute.htm">
+          <HelpTOCNode Id="2d522128-0ca3-47b8-bb32-0d33d85e7ee1" Title="Execute Method " Url="html/Overload_W_Domains_IDomainLoader_Execute.htm">
             <HelpTOCNode Title="Execute(TResult) Method (String, String, Object[])" Url="html/M_W_Domains_IDomainLoader_Execute__1.htm" />
             <HelpTOCNode Title="Execute Method (String, String, Object[])" Url="html/M_W_Domains_IDomainLoader_Execute.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="ffc4dd4c-05ee-4c86-add9-1ed3de8e8b07" Title="ExecuteStaticMethod Method " Url="html/Overload_W_Domains_IDomainLoader_ExecuteStaticMethod.htm">
+          <HelpTOCNode Id="db729bdc-fd45-436a-bdaf-4882fe885022" Title="ExecuteStaticMethod Method " Url="html/Overload_W_Domains_IDomainLoader_ExecuteStaticMethod.htm">
             <HelpTOCNode Title="ExecuteStaticMethod(TResult) Method (String, String, Object[])" Url="html/M_W_Domains_IDomainLoader_ExecuteStaticMethod__1.htm" />
             <HelpTOCNode Title="ExecuteStaticMethod Method (String, String, Object[])" Url="html/M_W_Domains_IDomainLoader_ExecuteStaticMethod.htm" />
           </HelpTOCNode>
@@ -249,22 +249,22 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="e9c886aa-37c7-432d-8b83-c8cd4f33d872" Title="W.LiteDb" Url="html/N_W_LiteDb.htm">
-      <HelpTOCNode Id="8746e9a2-39ba-4674-ac3b-90a8ec5347b1" Title="ILiteDbItem Interface" Url="html/T_W_LiteDb_ILiteDbItem.htm">
-        <HelpTOCNode Id="bbed7c75-d3bd-4e0a-a6ee-2d11968746cc" Title="ILiteDbItem Properties" Url="html/Properties_T_W_LiteDb_ILiteDbItem.htm">
+    <HelpTOCNode Id="8b4706aa-ce5d-4295-a156-65918cef25e7" Title="W.LiteDb" Url="html/N_W_LiteDb.htm">
+      <HelpTOCNode Id="ca9f58aa-ca1b-4bf3-8b33-f169731d59fa" Title="ILiteDbItem Interface" Url="html/T_W_LiteDb_ILiteDbItem.htm">
+        <HelpTOCNode Id="7a108a5d-73a1-476c-a10b-0a4b24c806a1" Title="ILiteDbItem Properties" Url="html/Properties_T_W_LiteDb_ILiteDbItem.htm">
           <HelpTOCNode Title="_id Property " Url="html/P_W_LiteDb_ILiteDbItem__id.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="5e992ce0-6bf2-4840-9c29-50ba8312db73" Title="LiteDbItem Class" Url="html/T_W_LiteDb_LiteDbItem.htm">
+      <HelpTOCNode Id="efc849f5-3643-4514-81a9-8010555b8209" Title="LiteDbItem Class" Url="html/T_W_LiteDb_LiteDbItem.htm">
         <HelpTOCNode Title="LiteDbItem Constructor " Url="html/M_W_LiteDb_LiteDbItem__ctor.htm" />
-        <HelpTOCNode Id="d7546366-3827-4d91-b78d-7d89f3fe19ce" Title="LiteDbItem Properties" Url="html/Properties_T_W_LiteDb_LiteDbItem.htm">
+        <HelpTOCNode Id="98a5600c-303d-4691-b755-0be7de91774c" Title="LiteDbItem Properties" Url="html/Properties_T_W_LiteDb_LiteDbItem.htm">
           <HelpTOCNode Title="_id Property " Url="html/P_W_LiteDb_LiteDbItem__id.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="LiteDbItem Methods" Url="html/Methods_T_W_LiteDb_LiteDbItem.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="0a440584-a7a8-4f28-9184-a1479d401103" Title="LiteDbMethods Class" Url="html/T_W_LiteDb_LiteDbMethods.htm">
-        <HelpTOCNode Id="ab593638-e2e9-4ff1-8f00-63a61dfd3153" Title="LiteDbMethods Methods" Url="html/Methods_T_W_LiteDb_LiteDbMethods.htm">
-          <HelpTOCNode Id="4dc66c59-83bd-49d7-953e-4860da46e75f" Title="Delete Method " Url="html/Overload_W_LiteDb_LiteDbMethods_Delete.htm">
+      <HelpTOCNode Id="a58f8bd7-9009-4f0f-b4dd-4037087e10d9" Title="LiteDbMethods Class" Url="html/T_W_LiteDb_LiteDbMethods.htm">
+        <HelpTOCNode Id="729044b5-7f5a-40a3-87ec-539ffb078a52" Title="LiteDbMethods Methods" Url="html/Methods_T_W_LiteDb_LiteDbMethods.htm">
+          <HelpTOCNode Id="c561cdd4-4bb8-4708-be63-0b82215da7a7" Title="Delete Method " Url="html/Overload_W_LiteDb_LiteDbMethods_Delete.htm">
             <HelpTOCNode Title="Delete(T) Method (String, Func(T, Boolean))" Url="html/M_W_LiteDb_LiteDbMethods_Delete__1.htm" />
             <HelpTOCNode Title="Delete(T) Method (String, Int32)" Url="html/M_W_LiteDb_LiteDbMethods_Delete__1_1.htm" />
             <HelpTOCNode Title="Delete(T) Method (String, String, Object)" Url="html/M_W_LiteDb_LiteDbMethods_Delete__1_2.htm" />
@@ -272,32 +272,32 @@
           <HelpTOCNode Title="DeleteBitmap Method " Url="html/M_W_LiteDb_LiteDbMethods_DeleteBitmap.htm" />
           <HelpTOCNode Title="DownloadAndSaveBitmap Method " Url="html/M_W_LiteDb_LiteDbMethods_DownloadAndSaveBitmap.htm" />
           <HelpTOCNode Title="Drop(T) Method " Url="html/M_W_LiteDb_LiteDbMethods_Drop__1.htm" />
-          <HelpTOCNode Id="936e4712-1d42-47fc-9ad1-11f39a91475b" Title="EnsureIndex Method " Url="html/Overload_W_LiteDb_LiteDbMethods_EnsureIndex.htm">
+          <HelpTOCNode Id="413aeabf-2100-4fbe-bb3c-833ec5d7bce9" Title="EnsureIndex Method " Url="html/Overload_W_LiteDb_LiteDbMethods_EnsureIndex.htm">
             <HelpTOCNode Title="EnsureIndex(TItemType) Method (LiteCollection`1(TItemType), String)" Url="html/M_W_LiteDb_LiteDbMethods_EnsureIndex__1.htm" />
             <HelpTOCNode Title="EnsureIndex(TItemType) Method (LiteDatabase, String)" Url="html/M_W_LiteDb_LiteDbMethods_EnsureIndex__1_1.htm" />
             <HelpTOCNode Title="EnsureIndex(TItemType) Method (String, String)" Url="html/M_W_LiteDb_LiteDbMethods_EnsureIndex__1_2.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="81c45b2a-23ad-47ea-9965-ba85c1872be3" Title="Exists Method " Url="html/Overload_W_LiteDb_LiteDbMethods_Exists.htm">
+          <HelpTOCNode Id="9d0f343c-f1b4-432f-9780-b7d2b4ab7530" Title="Exists Method " Url="html/Overload_W_LiteDb_LiteDbMethods_Exists.htm">
             <HelpTOCNode Title="Exists(T) Method (String, Func(T, Boolean))" Url="html/M_W_LiteDb_LiteDbMethods_Exists__1.htm" />
             <HelpTOCNode Title="Exists(T) Method (String, String, Object)" Url="html/M_W_LiteDb_LiteDbMethods_Exists__1_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="FileSize Method " Url="html/M_W_LiteDb_LiteDbMethods_FileSize.htm" />
-          <HelpTOCNode Id="a1cf6eac-d468-48eb-9816-bf4827e9cce2" Title="Find Method " Url="html/Overload_W_LiteDb_LiteDbMethods_Find.htm">
+          <HelpTOCNode Id="8ebed7c3-6b95-47ee-90db-56240315e316" Title="Find Method " Url="html/Overload_W_LiteDb_LiteDbMethods_Find.htm">
             <HelpTOCNode Title="Find(T) Method (String)" Url="html/M_W_LiteDb_LiteDbMethods_Find__1.htm" />
             <HelpTOCNode Title="Find(T) Method (String, Func(T, Boolean))" Url="html/M_W_LiteDb_LiteDbMethods_Find__1_1.htm" />
             <HelpTOCNode Title="Find(T) Method (String, String, Object)" Url="html/M_W_LiteDb_LiteDbMethods_Find__1_2.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="82af2165-386c-49c0-8ed2-17da37bd23ac" Title="FindOne Method " Url="html/Overload_W_LiteDb_LiteDbMethods_FindOne.htm">
+          <HelpTOCNode Id="79ba4f58-a053-458c-8adc-2f301eba698e" Title="FindOne Method " Url="html/Overload_W_LiteDb_LiteDbMethods_FindOne.htm">
             <HelpTOCNode Title="FindOne(T) Method (String, Func(T, Boolean))" Url="html/M_W_LiteDb_LiteDbMethods_FindOne__1.htm" />
             <HelpTOCNode Title="FindOne(T) Method (String, String, Object)" Url="html/M_W_LiteDb_LiteDbMethods_FindOne__1_1.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="463fce26-1c30-41b7-b664-7a482e21e48f" Title="LiteDbAction Method " Url="html/Overload_W_LiteDb_LiteDbMethods_LiteDbAction.htm">
+          <HelpTOCNode Id="21fd4f44-a639-4b05-804b-f57303b2d7c6" Title="LiteDbAction Method " Url="html/Overload_W_LiteDb_LiteDbMethods_LiteDbAction.htm">
             <HelpTOCNode Title="LiteDbAction(T, U) Method (String, Func(LiteDatabase, U), String, String, Int32)" Url="html/M_W_LiteDb_LiteDbMethods_LiteDbAction__2.htm" />
             <HelpTOCNode Title="LiteDbAction(T, U) Method (String, Func(LiteDatabase, LiteCollection`1(T), U), String, String, Int32)" Url="html/M_W_LiteDb_LiteDbMethods_LiteDbAction__2_1.htm" />
             <HelpTOCNode Title="LiteDbAction(T, U) Method (String, Func(LiteDatabase, LiteTransaction, LiteCollection`1(T), U), String, String, Int32)" Url="html/M_W_LiteDb_LiteDbMethods_LiteDbAction__2_2.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="LoadBitmap Method " Url="html/M_W_LiteDb_LiteDbMethods_LoadBitmap.htm" />
-          <HelpTOCNode Id="94e05a95-1de1-40a2-8133-269c2224d3a5" Title="Save Method " Url="html/Overload_W_LiteDb_LiteDbMethods_Save.htm">
+          <HelpTOCNode Id="bf66735a-32e2-4661-be61-68e54ba6e39f" Title="Save Method " Url="html/Overload_W_LiteDb_LiteDbMethods_Save.htm">
             <HelpTOCNode Title="Save(T) Method (String, List(T))" Url="html/M_W_LiteDb_LiteDbMethods_Save__1.htm" />
             <HelpTOCNode Title="Save(T) Method (String, T)" Url="html/M_W_LiteDb_LiteDbMethods_Save__1_1.htm" />
           </HelpTOCNode>
@@ -305,13 +305,13 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="ab62e5e8-ff8d-4d1d-9f8b-d56217e85237" Title="W.Logging" Url="html/N_W_Logging.htm">
-      <HelpTOCNode Id="f966d63c-6df1-4ea4-a0ab-1e4118936818" Title="Log Class" Url="html/T_W_Logging_Log.htm">
-        <HelpTOCNode Id="2343f8fc-ff51-44c4-9e1f-56b4f413e685" Title="Log Properties" Url="html/Properties_T_W_Logging_Log.htm">
+    <HelpTOCNode Id="34f30c98-bd41-445a-b50e-a16f19594924" Title="W.Logging" Url="html/N_W_Logging.htm">
+      <HelpTOCNode Id="21f00e69-9b53-4819-953e-959744c5c54a" Title="Log Class" Url="html/T_W_Logging_Log.htm">
+        <HelpTOCNode Id="fce14c75-3721-4f90-9fcc-2695f1db43f1" Title="Log Properties" Url="html/Properties_T_W_Logging_Log.htm">
           <HelpTOCNode Title="LogTheMessage Property " Url="html/P_W_Logging_Log_LogTheMessage.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="7fabd6f9-d180-498c-bde9-230c00e6c173" Title="Log Methods" Url="html/Methods_T_W_Logging_Log.htm">
-          <HelpTOCNode Id="a93f579c-3ac0-4c43-8698-a4812352c70e" Title="e Method " Url="html/Overload_W_Logging_Log_e.htm">
+        <HelpTOCNode Id="6f3f2998-ed8b-4160-b0c3-a80466b2026a" Title="Log Methods" Url="html/Methods_T_W_Logging_Log.htm">
+          <HelpTOCNode Id="bc414c7c-1d7f-4f03-9a9c-f56f7115057f" Title="e Method " Url="html/Overload_W_Logging_Log_e.htm">
             <HelpTOCNode Title="e Method (Exception)" Url="html/M_W_Logging_Log_e.htm" />
             <HelpTOCNode Title="e Method (String, Object[])" Url="html/M_W_Logging_Log_e_1.htm" />
           </HelpTOCNode>
@@ -322,98 +322,98 @@
       </HelpTOCNode>
       <HelpTOCNode Title="Log.LogMessageCategory Enumeration" Url="html/T_W_Logging_Log_LogMessageCategory.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="680fbc83-4d9d-4501-b012-203282b17e5b" Title="W.RPC" Url="html/N_W_RPC.htm">
-      <HelpTOCNode Id="ef133233-3921-41cd-b1de-b6eebf8d099e" Title="Client Class" Url="html/T_W_RPC_Client.htm">
-        <HelpTOCNode Id="866d5bec-83ce-4603-94e0-ccd0512e91e9" Title="Client Constructor " Url="html/Overload_W_RPC_Client__ctor.htm">
+    <HelpTOCNode Id="17188bbe-03da-4021-acbe-b32d2891aa20" Title="W.RPC" Url="html/N_W_RPC.htm">
+      <HelpTOCNode Id="0dced5f7-92c8-47f3-bfde-36907878ea1c" Title="Client Class" Url="html/T_W_RPC_Client.htm">
+        <HelpTOCNode Id="e81e8886-e92b-4720-8f30-fde93fa57e03" Title="Client Constructor " Url="html/Overload_W_RPC_Client__ctor.htm">
           <HelpTOCNode Title="Client Constructor " Url="html/M_W_RPC_Client__ctor.htm" />
           <HelpTOCNode Title="Client Constructor (IPAddress, Int32, Int32)" Url="html/M_W_RPC_Client__ctor_1.htm" />
           <HelpTOCNode Title="Client Constructor (String, Int32, Int32)" Url="html/M_W_RPC_Client__ctor_2.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="cd54cc97-db83-41b9-99d3-389a75fd380f" Title="Client Properties" Url="html/Properties_T_W_RPC_Client.htm">
+        <HelpTOCNode Id="ceec10db-f39d-450d-bea7-52e98a98e516" Title="Client Properties" Url="html/Properties_T_W_RPC_Client.htm">
           <HelpTOCNode Title="IsConnected Property " Url="html/P_W_RPC_Client_IsConnected.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="c2fa3da9-00d9-40e6-850b-275f380a0020" Title="Client Methods" Url="html/Methods_T_W_RPC_Client.htm">
-          <HelpTOCNode Id="a1a1b388-5cb9-4901-a2ba-fdc7de7692ae" Title="Connect Method " Url="html/Overload_W_RPC_Client_Connect.htm">
+        <HelpTOCNode Id="d5ae2740-8a07-47cb-8a11-2bd271d27769" Title="Client Methods" Url="html/Methods_T_W_RPC_Client.htm">
+          <HelpTOCNode Id="c12eccee-b0a3-4354-9507-b3d82b941d23" Title="Connect Method " Url="html/Overload_W_RPC_Client_Connect.htm">
             <HelpTOCNode Title="Connect Method (IPAddress, Int32, Int32, Action(ISocketClient, IPAddress), Action(Exception))" Url="html/M_W_RPC_Client_Connect.htm" />
             <HelpTOCNode Title="Connect Method (String, Int32, Int32, Action(ISocketClient, IPAddress), Action(Exception))" Url="html/M_W_RPC_Client_Connect_1.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="1dcd26dd-eada-4e3a-aa9a-dfe6a0dd7402" Title="ConnectAsync Method " Url="html/Overload_W_RPC_Client_ConnectAsync.htm">
+          <HelpTOCNode Id="42ebc24c-1b1b-46c2-9759-e72471df6639" Title="ConnectAsync Method " Url="html/Overload_W_RPC_Client_ConnectAsync.htm">
             <HelpTOCNode Title="ConnectAsync Method (IPAddress, Int32, Int32)" Url="html/M_W_RPC_Client_ConnectAsync.htm" />
             <HelpTOCNode Title="ConnectAsync Method (String, Int32, Int32)" Url="html/M_W_RPC_Client_ConnectAsync_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Disconnect Method " Url="html/M_W_RPC_Client_Disconnect.htm" />
           <HelpTOCNode Title="Dispose Method " Url="html/M_W_RPC_Client_Dispose.htm" />
           <HelpTOCNode Title="Finalize Method " Url="html/M_W_RPC_Client_Finalize.htm" />
-          <HelpTOCNode Id="e0144dac-dc9c-4aeb-8c06-3e8f23086840" Title="MakeRPCCall Method " Url="html/Overload_W_RPC_Client_MakeRPCCall.htm">
+          <HelpTOCNode Id="290741e8-98f4-4119-bb95-06abc063c09c" Title="MakeRPCCall Method " Url="html/Overload_W_RPC_Client_MakeRPCCall.htm">
             <HelpTOCNode Title="MakeRPCCall(T) Method (String, Action(T))" Url="html/M_W_RPC_Client_MakeRPCCall__1.htm" />
             <HelpTOCNode Title="MakeRPCCall Method (String, Action, Object[])" Url="html/M_W_RPC_Client_MakeRPCCall.htm" />
             <HelpTOCNode Title="MakeRPCCall(T) Method (String, Action(T), Object[])" Url="html/M_W_RPC_Client_MakeRPCCall__1_1.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
-        <HelpTOCNode Id="67760a5a-c7e5-41c7-ad65-0778417f7845" Title="Client Events" Url="html/Events_T_W_RPC_Client.htm">
+        <HelpTOCNode Id="322f27b1-5b97-4ee5-8111-b75108c1cf06" Title="Client Events" Url="html/Events_T_W_RPC_Client.htm">
           <HelpTOCNode Title="Connected Event" Url="html/E_W_RPC_Client_Connected.htm" />
           <HelpTOCNode Title="Disconnected Event" Url="html/E_W_RPC_Client_Disconnected.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="cc4e70fe-4805-4bf0-982b-ce8bbe8492f0" Title="Constants Class" Url="html/T_W_RPC_Constants.htm">
+      <HelpTOCNode Id="7f065418-9623-4151-bb01-52f125b09ea4" Title="Constants Class" Url="html/T_W_RPC_Constants.htm">
         <HelpTOCNode Title="Constants Constructor " Url="html/M_W_RPC_Constants__ctor.htm" />
         <HelpTOCNode Title="Constants Methods" Url="html/Methods_T_W_RPC_Constants.htm" />
-        <HelpTOCNode Id="87a76118-1cb0-4bfe-b63f-808651fc56bb" Title="Constants Fields" Url="html/Fields_T_W_RPC_Constants.htm">
+        <HelpTOCNode Id="b275f377-42a4-4900-aeac-fb3c2f139cb1" Title="Constants Fields" Url="html/Fields_T_W_RPC_Constants.htm">
           <HelpTOCNode Title="DefaultConnectTimeout Field" Url="html/F_W_RPC_Constants_DefaultConnectTimeout.htm" />
           <HelpTOCNode Title="DefaultMakeRPCCallTimeout Field" Url="html/F_W_RPC_Constants_DefaultMakeRPCCallTimeout.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="d2dbb1c1-b2aa-4273-9cf0-1d6716fe9000" Title="Delegates Class" Url="html/T_W_RPC_Delegates.htm">
+      <HelpTOCNode Id="254f7ef0-ebac-4dee-baba-aee07ede2753" Title="Delegates Class" Url="html/T_W_RPC_Delegates.htm">
         <HelpTOCNode Title="Delegates Constructor " Url="html/M_W_RPC_Delegates__ctor.htm" />
         <HelpTOCNode Title="Delegates Methods" Url="html/Methods_T_W_RPC_Delegates.htm" />
       </HelpTOCNode>
       <HelpTOCNode Title="Delegates.ConnectedDelegate Delegate" Url="html/T_W_RPC_Delegates_ConnectedDelegate.htm" />
       <HelpTOCNode Title="Delegates.ConnectionTimeoutDelegate Delegate" Url="html/T_W_RPC_Delegates_ConnectionTimeoutDelegate.htm" />
       <HelpTOCNode Title="Delegates.DisconnectedDelegate Delegate" Url="html/T_W_RPC_Delegates_DisconnectedDelegate.htm" />
-      <HelpTOCNode Id="36849ed4-af40-4c30-9d16-c06b2d8175d5" Title="IClient Interface" Url="html/T_W_RPC_IClient.htm">
-        <HelpTOCNode Id="89235464-ea7b-4d96-af2b-fbd8b030a71c" Title="IClient Methods" Url="html/Methods_T_W_RPC_IClient.htm">
+      <HelpTOCNode Id="e8934d96-c6b1-4c14-abf7-ad9177fe3314" Title="IClient Interface" Url="html/T_W_RPC_IClient.htm">
+        <HelpTOCNode Id="d831ef76-5cc9-48d7-8d9d-cb932169f1f1" Title="IClient Methods" Url="html/Methods_T_W_RPC_IClient.htm">
           <HelpTOCNode Title="Dispose Method " Url="html/M_W_RPC_IClient_Dispose.htm" />
-          <HelpTOCNode Id="b498df1d-08ca-40e9-ae2c-90247fb228d9" Title="MakeRPCCall Method " Url="html/Overload_W_RPC_IClient_MakeRPCCall.htm">
+          <HelpTOCNode Id="91ece9bd-e214-4b1d-bef4-d1f528c8e277" Title="MakeRPCCall Method " Url="html/Overload_W_RPC_IClient_MakeRPCCall.htm">
             <HelpTOCNode Title="MakeRPCCall(T) Method (String, Action(T))" Url="html/M_W_RPC_IClient_MakeRPCCall__1.htm" />
             <HelpTOCNode Title="MakeRPCCall Method (String, Action, Object[])" Url="html/M_W_RPC_IClient_MakeRPCCall.htm" />
             <HelpTOCNode Title="MakeRPCCall(T) Method (String, Action(T), Object[])" Url="html/M_W_RPC_IClient_MakeRPCCall__1_1.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="27b5e7d6-969f-4ad3-b64f-164380cce32f" Title="ISocketClient Interface" Url="html/T_W_RPC_ISocketClient.htm">
-        <HelpTOCNode Id="7089425c-b679-4ee4-8f48-6ac04a0302b4" Title="ISocketClient Properties" Url="html/Properties_T_W_RPC_ISocketClient.htm">
+      <HelpTOCNode Id="4fa76637-3c3a-4740-9407-bb3b8cd86f72" Title="ISocketClient Interface" Url="html/T_W_RPC_ISocketClient.htm">
+        <HelpTOCNode Id="c56463fb-db6a-423d-9008-79500bcb23bd" Title="ISocketClient Properties" Url="html/Properties_T_W_RPC_ISocketClient.htm">
           <HelpTOCNode Title="IsConnected Property " Url="html/P_W_RPC_ISocketClient_IsConnected.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="04aad2d8-f140-4386-9d58-68e9d6bde293" Title="ISocketClient Methods" Url="html/Methods_T_W_RPC_ISocketClient.htm">
-          <HelpTOCNode Id="2b9a0607-840c-4265-ab85-eed1ed31892e" Title="Connect Method " Url="html/Overload_W_RPC_ISocketClient_Connect.htm">
+        <HelpTOCNode Id="d0e4edbb-8236-4365-9633-2584b73bb5b0" Title="ISocketClient Methods" Url="html/Methods_T_W_RPC_ISocketClient.htm">
+          <HelpTOCNode Id="24f8627b-92f7-46fa-8118-d2e7a6de576b" Title="Connect Method " Url="html/Overload_W_RPC_ISocketClient_Connect.htm">
             <HelpTOCNode Title="Connect Method (IPAddress, Int32, Int32, Action(ISocketClient, IPAddress), Action(Exception))" Url="html/M_W_RPC_ISocketClient_Connect.htm" />
             <HelpTOCNode Title="Connect Method (String, Int32, Int32, Action(ISocketClient, IPAddress), Action(Exception))" Url="html/M_W_RPC_ISocketClient_Connect_1.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="6519725e-ce7c-4bc9-8db5-d7c90eb21c28" Title="ConnectAsync Method " Url="html/Overload_W_RPC_ISocketClient_ConnectAsync.htm">
+          <HelpTOCNode Id="ce7389f8-1a0f-4909-91fa-473197f0671f" Title="ConnectAsync Method " Url="html/Overload_W_RPC_ISocketClient_ConnectAsync.htm">
             <HelpTOCNode Title="ConnectAsync Method (IPAddress, Int32, Int32)" Url="html/M_W_RPC_ISocketClient_ConnectAsync.htm" />
             <HelpTOCNode Title="ConnectAsync Method (String, Int32, Int32)" Url="html/M_W_RPC_ISocketClient_ConnectAsync_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Disconnect Method " Url="html/M_W_RPC_ISocketClient_Disconnect.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="fe125063-f36f-4cce-9039-19b42e657cac" Title="ISocketClient Events" Url="html/Events_T_W_RPC_ISocketClient.htm">
+        <HelpTOCNode Id="30f4e74a-9f3f-4a7a-8465-15c0045d76d6" Title="ISocketClient Events" Url="html/Events_T_W_RPC_ISocketClient.htm">
           <HelpTOCNode Title="Connected Event" Url="html/E_W_RPC_ISocketClient_Connected.htm" />
           <HelpTOCNode Title="Disconnected Event" Url="html/E_W_RPC_ISocketClient_Disconnected.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="9809938a-852b-4350-9406-9e03e6a2a120" Title="RPCClassAttribute Class" Url="html/T_W_RPC_RPCClassAttribute.htm">
+      <HelpTOCNode Id="f63ba7a4-00a4-4ec8-89dc-706a9c4692a9" Title="RPCClassAttribute Class" Url="html/T_W_RPC_RPCClassAttribute.htm">
         <HelpTOCNode Title="RPCClassAttribute Constructor " Url="html/M_W_RPC_RPCClassAttribute__ctor.htm" />
         <HelpTOCNode Title="RPCClassAttribute Methods" Url="html/Methods_T_W_RPC_RPCClassAttribute.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="d28d16e0-cfc2-4e5b-b05f-607af6f95bbb" Title="RPCMethodAttribute Class" Url="html/T_W_RPC_RPCMethodAttribute.htm">
+      <HelpTOCNode Id="bc0acae0-0f62-4cfc-84aa-95b92968fbf0" Title="RPCMethodAttribute Class" Url="html/T_W_RPC_RPCMethodAttribute.htm">
         <HelpTOCNode Title="RPCMethodAttribute Constructor " Url="html/M_W_RPC_RPCMethodAttribute__ctor.htm" />
         <HelpTOCNode Title="RPCMethodAttribute Methods" Url="html/Methods_T_W_RPC_RPCMethodAttribute.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="3e89865e-42ba-43e1-9482-edfd00cbb9aa" Title="Server Class" Url="html/T_W_RPC_Server.htm">
-        <HelpTOCNode Id="9ad92907-60a7-4dd2-bc13-32ffcde2a512" Title="Server Constructor " Url="html/Overload_W_RPC_Server__ctor.htm">
+      <HelpTOCNode Id="256ceb30-9206-46c5-90aa-eb6450ba2575" Title="Server Class" Url="html/T_W_RPC_Server.htm">
+        <HelpTOCNode Id="9e6b123c-b419-48bf-9d81-8414ccb9b5fc" Title="Server Constructor " Url="html/Overload_W_RPC_Server__ctor.htm">
           <HelpTOCNode Title="Server Constructor " Url="html/M_W_RPC_Server__ctor.htm" />
           <HelpTOCNode Title="Server Constructor (IPAddress, Int32)" Url="html/M_W_RPC_Server__ctor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="e2b2ad74-9e95-48af-891f-373792c24c04" Title="Server Methods" Url="html/Methods_T_W_RPC_Server.htm">
+        <HelpTOCNode Id="4bbc0cae-9d53-4730-adc6-1d56d9ff68c3" Title="Server Methods" Url="html/Methods_T_W_RPC_Server.htm">
           <HelpTOCNode Title="Create Method " Url="html/M_W_RPC_Server_Create.htm" />
           <HelpTOCNode Title="Dispose Method " Url="html/M_W_RPC_Server_Dispose.htm" />
           <HelpTOCNode Title="Finalize Method " Url="html/M_W_RPC_Server_Finalize.htm" />
@@ -422,60 +422,60 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="66aea10b-f899-42b0-83a4-06b51bd8a618" Title="W.RPC.Interfaces" Url="html/N_W_RPC_Interfaces.htm">
-      <HelpTOCNode Id="e37f9805-581c-47ce-a824-564e843f91a5" Title="IServer Interface" Url="html/T_W_RPC_Interfaces_IServer.htm">
-        <HelpTOCNode Id="022826d0-ae69-4e55-942b-d4f4cba44978" Title="IServer Methods" Url="html/Methods_T_W_RPC_Interfaces_IServer.htm">
+    <HelpTOCNode Id="8b22bb5a-65ab-4a9d-8c34-ca8b0a51e483" Title="W.RPC.Interfaces" Url="html/N_W_RPC_Interfaces.htm">
+      <HelpTOCNode Id="03bf77e1-8fac-4d1f-8546-d1345b094d80" Title="IServer Interface" Url="html/T_W_RPC_Interfaces_IServer.htm">
+        <HelpTOCNode Id="f22b82b7-6006-4f55-abb0-2b5df4153b92" Title="IServer Methods" Url="html/Methods_T_W_RPC_Interfaces_IServer.htm">
           <HelpTOCNode Title="Dispose Method " Url="html/M_W_RPC_Interfaces_IServer_Dispose.htm" />
           <HelpTOCNode Title="Start Method " Url="html/M_W_RPC_Interfaces_IServer_Start.htm" />
           <HelpTOCNode Title="Stop Method " Url="html/M_W_RPC_Interfaces_IServer_Stop.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="3987c134-f9c2-4fc2-a9f8-dbfbb7def3dc" Title="W.Threading" Url="html/N_W_Threading.htm">
-      <HelpTOCNode Id="02bdcc66-d18c-4ded-b6dd-764766c9b541" Title="Gate Class" Url="html/T_W_Threading_Gate.htm">
+    <HelpTOCNode Id="0efc0f1a-37dc-4126-b7a9-eacdad268403" Title="W.Threading" Url="html/N_W_Threading.htm">
+      <HelpTOCNode Id="da779a78-950d-498f-add3-a1c565196279" Title="Gate Class" Url="html/T_W_Threading_Gate.htm">
         <HelpTOCNode Title="Gate Constructor " Url="html/M_W_Threading_Gate__ctor.htm" />
-        <HelpTOCNode Id="b3425d6f-6a58-4903-a3df-6c70f0eea68b" Title="Gate Methods" Url="html/Methods_T_W_Threading_Gate.htm">
+        <HelpTOCNode Id="a4cbbc55-c9d7-441d-a912-ef5a9a8f4d0f" Title="Gate Methods" Url="html/Methods_T_W_Threading_Gate.htm">
           <HelpTOCNode Title="CallInvokeAction Method " Url="html/M_W_Threading_Gate_CallInvokeAction.htm" />
           <HelpTOCNode Title="Run Method " Url="html/M_W_Threading_Gate_Run.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="e0131347-ded9-4973-b739-2039367e12f4" Title="Gate(T) Class" Url="html/T_W_Threading_Gate_1.htm">
+      <HelpTOCNode Id="a0c9339a-21ba-40cd-b4a3-b9bcdf6ab949" Title="Gate(T) Class" Url="html/T_W_Threading_Gate_1.htm">
         <HelpTOCNode Title="Gate(T) Constructor " Url="html/M_W_Threading_Gate_1__ctor.htm" />
-        <HelpTOCNode Id="0e69cf6e-4e18-41b9-800f-0cd411caf9d8" Title="Gate(T) Methods" Url="html/Methods_T_W_Threading_Gate_1.htm">
+        <HelpTOCNode Id="c5a1d2f3-8d0b-4df9-bfe2-72bdeef59751" Title="Gate(T) Methods" Url="html/Methods_T_W_Threading_Gate_1.htm">
           <HelpTOCNode Title="CallInvokeAction Method " Url="html/M_W_Threading_Gate_1_CallInvokeAction.htm" />
           <HelpTOCNode Title="Run Method " Url="html/M_W_Threading_Gate_1_Run.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="3f4c8a46-0c22-47eb-9b5d-f17dab41a595" Title="Thread Class" Url="html/T_W_Threading_Thread.htm">
+      <HelpTOCNode Id="512325c0-dbd1-4f96-8047-abd22c47546e" Title="Thread Class" Url="html/T_W_Threading_Thread.htm">
         <HelpTOCNode Title="Thread Constructor " Url="html/M_W_Threading_Thread__ctor.htm" />
-        <HelpTOCNode Id="5767ab31-11cc-4716-bdbb-33564543011e" Title="Thread Methods" Url="html/Methods_T_W_Threading_Thread.htm">
+        <HelpTOCNode Id="90c354b8-567f-44aa-ba03-4330597df6a7" Title="Thread Methods" Url="html/Methods_T_W_Threading_Thread.htm">
           <HelpTOCNode Title="CallInvokeAction Method " Url="html/M_W_Threading_Thread_CallInvokeAction.htm" />
-          <HelpTOCNode Id="77393746-4af3-47ee-af79-18f067faaa00" Title="Cancel Method " Url="html/Overload_W_Threading_Thread_Cancel.htm">
+          <HelpTOCNode Id="db8867cd-fb88-4319-9368-31c2b91bb43f" Title="Cancel Method " Url="html/Overload_W_Threading_Thread_Cancel.htm">
             <HelpTOCNode Title="Cancel Method " Url="html/M_W_Threading_Thread_Cancel.htm" />
             <HelpTOCNode Title="Cancel Method (Int32)" Url="html/M_W_Threading_Thread_Cancel_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Create Method " Url="html/M_W_Threading_Thread_Create.htm" />
           <HelpTOCNode Title="Dispose Method " Url="html/M_W_Threading_Thread_Dispose.htm" />
-          <HelpTOCNode Id="c4b818c1-a5ad-456f-be12-e62664779650" Title="Join Method " Url="html/Overload_W_Threading_Thread_Join.htm">
+          <HelpTOCNode Id="e80f4c88-3834-42e3-8270-14b469bf34fc" Title="Join Method " Url="html/Overload_W_Threading_Thread_Join.htm">
             <HelpTOCNode Title="Join Method " Url="html/M_W_Threading_Thread_Join.htm" />
             <HelpTOCNode Title="Join Method (Int32)" Url="html/M_W_Threading_Thread_Join_1.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="56215c81-f154-4a63-97fc-4bb8ff6c7d8b" Title="Thread(T) Class" Url="html/T_W_Threading_Thread_1.htm">
+      <HelpTOCNode Id="487013fb-7164-4227-9d47-f905c0b5c9de" Title="Thread(T) Class" Url="html/T_W_Threading_Thread_1.htm">
         <HelpTOCNode Title="Thread(T) Constructor " Url="html/M_W_Threading_Thread_1__ctor.htm" />
-        <HelpTOCNode Id="c93b565e-0577-434e-a8fd-a254dfced9f0" Title="Thread(T) Properties" Url="html/Properties_T_W_Threading_Thread_1.htm">
+        <HelpTOCNode Id="5de7c7c3-5eec-4c5e-8ffd-3de2d9987f18" Title="Thread(T) Properties" Url="html/Properties_T_W_Threading_Thread_1.htm">
           <HelpTOCNode Title="Action Property " Url="html/P_W_Threading_Thread_1_Action.htm" />
           <HelpTOCNode Title="CustomData Property " Url="html/P_W_Threading_Thread_1_CustomData.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="8ed1b174-fb94-4ebc-a1b2-5ec134497523" Title="Thread(T) Methods" Url="html/Methods_T_W_Threading_Thread_1.htm">
+        <HelpTOCNode Id="d1f0abc0-128c-4a86-b47e-76c98d778f9b" Title="Thread(T) Methods" Url="html/Methods_T_W_Threading_Thread_1.htm">
           <HelpTOCNode Title="Create Method " Url="html/M_W_Threading_Thread_1_Create.htm" />
           <HelpTOCNode Title="InvokeAction Method " Url="html/M_W_Threading_Thread_1_InvokeAction.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="1091f6a1-026c-4616-8e66-88b7a9b9fbfc" Title="ThreadBase Class" Url="html/T_W_Threading_ThreadBase.htm">
+      <HelpTOCNode Id="bfddfbc8-96e9-439d-892d-5542172d6f9a" Title="ThreadBase Class" Url="html/T_W_Threading_ThreadBase.htm">
         <HelpTOCNode Title="ThreadBase Constructor " Url="html/M_W_Threading_ThreadBase__ctor.htm" />
-        <HelpTOCNode Id="f9822d6d-134c-4eec-b65a-ee9992c927e6" Title="ThreadBase Properties" Url="html/Properties_T_W_Threading_ThreadBase.htm">
+        <HelpTOCNode Id="17b1e049-fc93-413c-9f13-6b92cd00046f" Title="ThreadBase Properties" Url="html/Properties_T_W_Threading_ThreadBase.htm">
           <HelpTOCNode Title="Action Property " Url="html/P_W_Threading_ThreadBase_Action.htm" />
           <HelpTOCNode Title="Cts Property " Url="html/P_W_Threading_ThreadBase_Cts.htm" />
           <HelpTOCNode Title="IsBusy Property " Url="html/P_W_Threading_ThreadBase_IsBusy.htm" />
@@ -483,7 +483,7 @@
           <HelpTOCNode Title="OnComplete Property " Url="html/P_W_Threading_ThreadBase_OnComplete.htm" />
           <HelpTOCNode Title="Success Property " Url="html/P_W_Threading_ThreadBase_Success.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="539c042a-0ea5-4f1f-b224-e12dfd38807b" Title="ThreadBase Methods" Url="html/Methods_T_W_Threading_ThreadBase.htm">
+        <HelpTOCNode Id="a5aadb17-39c1-43bc-afdc-c41dce3ad5e4" Title="ThreadBase Methods" Url="html/Methods_T_W_Threading_ThreadBase.htm">
           <HelpTOCNode Title="CallInvokeAction Method " Url="html/M_W_Threading_ThreadBase_CallInvokeAction.htm" />
           <HelpTOCNode Title="CallInvokeOnComplete Method " Url="html/M_W_Threading_ThreadBase_CallInvokeOnComplete.htm" />
           <HelpTOCNode Title="Cancel Method " Url="html/M_W_Threading_ThreadBase_Cancel.htm" />
@@ -491,16 +491,16 @@
           <HelpTOCNode Title="Finalize Method " Url="html/M_W_Threading_ThreadBase_Finalize.htm" />
           <HelpTOCNode Title="InvokeAction Method " Url="html/M_W_Threading_ThreadBase_InvokeAction.htm" />
           <HelpTOCNode Title="InvokeOnComplete Method " Url="html/M_W_Threading_ThreadBase_InvokeOnComplete.htm" />
-          <HelpTOCNode Id="6e3da567-3cb1-47c0-9996-794c3ec386c4" Title="Join Method " Url="html/Overload_W_Threading_ThreadBase_Join.htm">
+          <HelpTOCNode Id="12bac9c0-87f9-4df1-afd2-57f370652560" Title="Join Method " Url="html/Overload_W_Threading_ThreadBase_Join.htm">
             <HelpTOCNode Title="Join Method " Url="html/M_W_Threading_ThreadBase_Join.htm" />
             <HelpTOCNode Title="Join Method (Int32)" Url="html/M_W_Threading_ThreadBase_Join_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="ThreadProc Method " Url="html/M_W_Threading_ThreadBase_ThreadProc.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="a1d71a8b-134d-4bbc-bf13-bb5e94a1c869" Title="ThreadExtensions Class" Url="html/T_W_Threading_ThreadExtensions.htm">
-        <HelpTOCNode Id="c62f23b6-1152-4e32-b9f9-60fb5625063c" Title="ThreadExtensions Methods" Url="html/Methods_T_W_Threading_ThreadExtensions.htm">
-          <HelpTOCNode Id="95fab65a-34da-40e7-837a-0035400c18a2" Title="CreateThread Method " Url="html/Overload_W_Threading_ThreadExtensions_CreateThread.htm">
+      <HelpTOCNode Id="8ba7d865-0ac8-469f-9e47-62222dcf36e0" Title="ThreadExtensions Class" Url="html/T_W_Threading_ThreadExtensions.htm">
+        <HelpTOCNode Id="eb2f80c7-e653-4fae-a222-d086dc5585d3" Title="ThreadExtensions Methods" Url="html/Methods_T_W_Threading_ThreadExtensions.htm">
+          <HelpTOCNode Id="6d84e6d6-33be-443a-96e9-4df56035572b" Title="CreateThread Method " Url="html/Overload_W_Threading_ThreadExtensions_CreateThread.htm">
             <HelpTOCNode Title="CreateThread(T) Method (T, Action(T, CancellationTokenSource), Action(Boolean, Exception))" Url="html/M_W_Threading_ThreadExtensions_CreateThread__1_1.htm" />
             <HelpTOCNode Title="CreateThread(T) Method (Object, Action(T, CancellationTokenSource), Action(Boolean, Exception), T)" Url="html/M_W_Threading_ThreadExtensions_CreateThread__1.htm" />
           </HelpTOCNode>
