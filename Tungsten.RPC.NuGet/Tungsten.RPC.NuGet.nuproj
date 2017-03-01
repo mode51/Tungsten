@@ -24,7 +24,7 @@
     <Authors>Jordan Duerksen</Authors>
     <Owners>Jordan Duerksen</Owners>
     <Summary>Tungsten.RPC</Summary>
-    <Description>Tungsten.RPC is a socket library which allows clients to execute functionality (with or without return values) on a server.  Tungsten.RPC uses two-way encryption via public/private key pairs to secure the transmission.</Description>
+    <Description>A tcp socket library which allows clients to execute functionality (with or without return values) on a server.  Tungsten.RPC uses two-way encryption via public/private key pairs to secure the transmission.</Description>
     <ReleaseNotes>Corrected Tungsten dependency</ReleaseNotes>
     <ProjectUrl>https://github.com/mode51/Tungsten</ProjectUrl>
     <LicenseUrl>

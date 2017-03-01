@@ -28,7 +28,7 @@
     <Authors>Jordan Duerksen</Authors>
     <Owners>Jordan Duerksen</Owners>
     <Summary>Tungsten</Summary>
-    <Description>Tungsten is a C# library of classes which make application development easier</Description>
+    <Description>A library of classes which make application development easier</Description>
     <ReleaseNotes>
     </ReleaseNotes>
     <ProjectUrl>https://github.com/mode51/Tungsten</ProjectUrl>

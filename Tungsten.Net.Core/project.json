@@ -1,5 +1,5 @@
 {
-  "description": "Tungsten.Net.Core is a tcp socket library which provides client/server classes with and without assymetric encryption",
+  "description": "A tcp socket library which provides client/server classes with and without assymetric encryption",
   "title": "Tungsten.Net.Core",
   "copyright": "Copyright @ 2017 Jordan Duerksen",
   "version": "1.1.5-*",
