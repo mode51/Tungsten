@@ -133,7 +133,11 @@ namespace W.Encryption
 
                 var tempBytes = new byte[(dataLength - maxLength * i > maxLength) ? maxLength : dataLength - maxLength * i];
                 Buffer.BlockCopy(data, maxLength * i, tempBytes, 0, tempBytes.Length);
-                tasks.Add(EncryptBlock(semaphore, tempBytes, (s, iteration) => { result.Append(s); Log.i("Iteration:{0}", iteration); }, _rsa, i));
+                tasks.Add(EncryptBlock(semaphore, tempBytes, (s, iteration) =>
+                {
+                    result.Append(s);
+                    //Log.i("Iteration:{0}", iteration);
+                }, _rsa, i));
             }
             await Task.WhenAll(tasks);
             return result.ToString();

@@ -85,6 +85,7 @@ namespace W.Threading
         public virtual void Cancel()
         {
             Cts?.Cancel();
+            Cts = null;
         }
 
         /// <summary>

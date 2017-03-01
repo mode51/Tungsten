@@ -4,8 +4,9 @@ using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using W;
 
-namespace W.Demo
+namespace W.Net.Core.Demo
 {
     public class Program
     {

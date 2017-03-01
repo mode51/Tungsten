@@ -66,9 +66,9 @@ namespace W.Net
             {
                 msg = base.FormatReceivedMessage(message).FromBase64();
                 _remotePublicKey = msg.FromXml<RSAParameters>();
+                Log.v("Received Public Key");
                 msg = null; //not a real message, so set it to null
                 ConnectionSecured?.Invoke(this);
-                Log.v("Received Public Key");
             }
             return msg;
         }
