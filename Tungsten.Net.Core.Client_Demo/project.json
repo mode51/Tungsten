@@ -11,8 +11,8 @@
       "type": "platform",
       "version": "1.0.1"
     },
-    "Tungsten.Core": "1.0.0-*",
-    "Tungsten.Net.Core": "1.0.0-*"
+    "Tungsten.Core": "1.1.4-*",
+    "Tungsten.Net.Core": "1.1.4"
   },
 
   "frameworks": {

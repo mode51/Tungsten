@@ -2,7 +2,7 @@
   "description": "Tungsten.Net.Core is a tcp socket library which provides client/server classes with and without assymetric encryption",
   "title": "Tungsten.Net.Core",
   "copyright": "Copyright @ 2017 Jordan Duerksen",
-  "version": "1.0.2-*",
+  "version": "1.1.4-*",
   "authors": [ "Jordan Duerksen" ],
   "dependencies": {
     "NETStandard.Library": "1.6.1",
