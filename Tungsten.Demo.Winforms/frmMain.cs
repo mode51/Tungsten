@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using W;
@@ -18,7 +19,7 @@ namespace W.Demo.Winforms
     /// </summary>
     public partial class frmMain : Form
     {
-        private readonly CPerson _vm = new CPerson(); //weak example of a viewmodel
+        private readonly PersonModel _vm = new PersonModel(); //weak example of a viewmodel
         private bool _isLoading = true; //if this value could be read or modified on separate threads, you could use Lockable<bool> instead.
 
         //this is an example of how to use W.Threading.Gate (though there's really no need to do it this way)

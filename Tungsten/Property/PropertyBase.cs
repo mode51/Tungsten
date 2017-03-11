@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.CompilerServices;
 using System.Threading;
 
@@ -8,7 +9,7 @@ namespace W
     /// </summary>
     /// <typeparam name="TOwner">The type of the property owner</typeparam>
     /// <typeparam name="TValue">The type of the property value</typeparam>
-    public abstract class PropertyBase<TOwner, TValue> : PropertyChangedNotifier, IProperty<TValue> where TOwner : class
+    public abstract class PropertyBase<TOwner, TValue> : PropertyChangedNotifier, IDisposable, IProperty<TValue> where TOwner : class
     {
         //These delegates/events require the base class to support TOwner (otherwise, the owner parameter would have to be of object type)
         /// <summary>
@@ -48,7 +49,7 @@ namespace W
         protected OnValueChangedDelegate OnValueChanged;
 
         private readonly Lockable<bool> _isDirty = new Lockable<bool>();
-        private readonly ManualResetEvent _mre = new ManualResetEvent(false);
+        private ManualResetEvent _mre = new ManualResetEvent(false);
 
         #region IProperty
         /// <summary>
@@ -205,6 +206,19 @@ namespace W
         protected virtual void RaisePropertyValueChanged(TValue oldValue, TValue newValue)
         {
             ValueChanged?.Invoke(Owner, oldValue, newValue);
+        }
+
+        public void Dispose()
+        {
+            _mre?.Dispose();
+            _mre = null;
+        }
+        /// <summary>
+        /// Disposes the PropertyBase
+        /// </summary>
+        ~PropertyBase()
+        {
+            Dispose();
         }
     }
 }

@@ -54,6 +54,7 @@
     <Compile Include="ActionQueue.cs" />
     <Compile Include="As.cs" />
     <Compile Include="CallResult.cs" />
+    <Compile Include="FromExtensions.cs" />
     <Compile Include="InvokeExtensions.cs" />
     <Compile Include="Lockable.cs" />
     <Compile Include="Logging.cs" />

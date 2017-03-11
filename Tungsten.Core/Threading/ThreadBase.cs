@@ -15,7 +15,7 @@ namespace W.Threading
         /// <summary>
         /// The Action to execute when the thread completes
         /// </summary>
-        protected Action<bool, Exception> OnComplete { get; set; }
+        protected Action<bool, Exception> OnExit { get; set; }
         /// <summary>
         /// The CancellationTokenSource which can be used to cancel the thread
         /// </summary>
@@ -25,24 +25,24 @@ namespace W.Threading
         /// </summary>
         protected Lockable<bool> IsBusy { get; set; } = new Lockable<bool>();
         /// <summary>
-        /// The Value to send to the OnComplete Action.  True if the thread returns successfully, otherwise False.
+        /// The Value to send to the onExit Action.  True if the thread returns successfully, otherwise False.
         /// </summary>
         protected Lockable<bool> Success { get; set; } = new Lockable<bool>();
 
         /// <summary>
         /// Invokes the Action. Virtual for customization.
         /// </summary>
-        protected virtual void InvokeAction()
+        protected virtual void InvokeAction(CancellationTokenSource cts)
         {
-            Action?.Invoke(Cts);
+            Action?.Invoke(cts);
         }
         /// <summary>
-        /// Invokes the OnComplete action.  Virtual for customization.
+        /// Invokes the onExit action.  Virtual for customization.
         /// </summary>
         /// <param name="e"></param>
         protected virtual void InvokeOnComplete(Exception e)
         {
-            OnComplete?.Invoke(Success.Value, e);
+            OnExit?.Invoke(Success.Value, e);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace W.Threading
         protected abstract Exception CallInvokeAction();
 
         /// <summary>
-        /// Calls the OnComplete Action when the thread returns
+        /// Calls the onExit Action when the thread returns
         /// </summary>
         /// <param name="e">An Exception object, if an exception occured</param>
         protected virtual void CallInvokeOnComplete(Exception e)
@@ -61,7 +61,7 @@ namespace W.Threading
             InvokeOnComplete(e);
         }
         /// <summary>
-        /// The host thread procedure.  This method calls the Action and subsequent OnComplete.
+        /// The host thread procedure.  This method calls the Action and subsequent onExit.
         /// </summary>
         protected void ThreadProc()
         {
@@ -102,13 +102,14 @@ namespace W.Threading
         /// Starts a new thread
         /// </summary>
         /// <param name="action">Action to call on a thread</param>
-        /// <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
+        /// <param name="onExit">Action to call upon comletion.  Executes on the same thread as Action.</param>
+        /// <param name="cts">A CancellationTokenSource to use instead of creating a new one</param>
         /// <returns></returns>
-        protected ThreadBase(Action<CancellationTokenSource> action, Action<bool, Exception> onComplete = null)
+        protected ThreadBase(Action<CancellationTokenSource> action, Action<bool, Exception> onExit = null, CancellationTokenSource cts = null)
         {
-            Cts = new CancellationTokenSource();
+            Cts = cts ?? new CancellationTokenSource();
             Action = action;
-            OnComplete = onComplete;
+            OnExit = onExit;
             IsBusy.Value = true;
         }
 
@@ -131,11 +132,11 @@ namespace W.Threading
         ///// Starts a new thread
         ///// </summary>
         ///// <param name="action">Action to call on a thread</param>
-        ///// <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
+        ///// <param name="onExit">Action to call upon comletion.  Executes on the same thread as Action.</param>
         ///// <returns></returns>
-        //public static Thread Create(Action<CancellationTokenSource> action, Action<bool, Exception> onComplete = null)
+        //public static Thread Create(Action<CancellationTokenSource> action, Action<bool, Exception> onExit = null)
         //{
-        //    var result = new Thread(action, onComplete);
+        //    var result = new Thread(action, onExit);
         //    return result;
         //}
     }

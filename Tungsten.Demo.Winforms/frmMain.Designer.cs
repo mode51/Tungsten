@@ -135,7 +135,7 @@
             // 
             // viewModelTestBindingSource
             // 
-            this.viewModelTestBindingSource.DataSource = typeof(CPerson);
+            this.viewModelTestBindingSource.DataSource = typeof(PersonModel);
             // 
             // frmMain
             // 

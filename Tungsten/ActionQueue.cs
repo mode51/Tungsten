@@ -8,13 +8,13 @@ namespace W
     /// Allows the programmer to enqueue items for processing on a separate thread.  The ActionQueue will process items sequentially whenever an item is added.
     /// </para></summary>
     /// <typeparam name="T">The type of data to enqueue and process</typeparam>
-    public class ActionQueue<T>
+    public class ActionQueue<T> : IDisposable
     {
         private string _caller;
 
         private readonly ConcurrentQueue<T> _queue = new ConcurrentQueue<T>();
-        private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
-        private readonly ManualResetEvent _threadReleaser = new ManualResetEvent(false);
+        private CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
+        private ManualResetEvent _threadReleaser = new ManualResetEvent(false);
 
         /// <summary>
         /// Returns the number of items currently in the queue
@@ -35,6 +35,17 @@ namespace W
         public void Cancel()
         {
             _cancellationTokenSource.Cancel();
+        }
+
+        /// <summary>
+        /// Releases resources related to the ActionQueue
+        /// </summary>
+        public void Dispose()
+        {
+            _cancellationTokenSource?.Dispose();
+            _cancellationTokenSource = null;
+            _threadReleaser?.Dispose();
+            _threadReleaser = null;
         }
 
         /// <summary>
@@ -98,6 +109,13 @@ namespace W
                     }
                 }
             });
+        }
+        /// <summary>
+        /// Disposes the ActionQueue
+        /// </summary>
+        ~ActionQueue()
+        {
+            Dispose();
         }
     }
 }

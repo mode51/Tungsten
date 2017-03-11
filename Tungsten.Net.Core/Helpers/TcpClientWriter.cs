@@ -40,6 +40,12 @@ namespace W.Net
             _sendBufferSize = client.SendBufferSize;
         }
 
+        public TcpClientWriter(NetworkStream stream, int sendBufferSize)
+        {
+            _stream = stream;
+            _sendBufferSize = sendBufferSize;
+        }
+
         /// <summary>
         /// Starts sending 
         /// </summary>

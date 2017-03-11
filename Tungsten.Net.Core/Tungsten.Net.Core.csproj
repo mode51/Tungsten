@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>A tcp socket library which provides client/server classes with and without assymetric encryption</Description>
+    <Copyright>Copyright @ 2017 Jordan Duerksen</Copyright>
+    <AssemblyTitle>Tungsten.Net.Core</AssemblyTitle>
+    <VersionPrefix>1.1.5</VersionPrefix>
+    <Authors>Jordan Duerksen</Authors>
+    <TargetFramework>netstandard1.4</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>Tungsten.Net.Core</AssemblyName>
+    <PackageId>Tungsten.Net.Core</PackageId>
+    <PackageTags>Tungsten;Tungsten.Core;Tungsten.Net;Tungsten.Net.Core;W;C#;library</PackageTags>
+    <PackageIconUrl>http://www.duerksen.us/images/Tungsten.ico</PackageIconUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
+    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace>W.Net.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Serialization.Xml" Version="4.3.0" />
+    <PackageReference Include="System.Threading.Thread" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tungsten.Standard\Tungsten.Standard.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostcompileScript" AfterTargets="Build">
+    <Exec Command="dotnet pack --no-build --configuration $(Configuration)" />
+  </Target>
+
+</Project>
