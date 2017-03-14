@@ -16,7 +16,17 @@ namespace W
         [System.Diagnostics.DebuggerStepThrough]
         public static string FromBase64(this string @this)
         {
-            return System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(@this));
+            return Convert.FromBase64String(@this).AsString();
+        }
+        /// <summary>
+        /// Converts a Base64 encoded byte array back to a normal byte array
+        /// </summary>
+        /// <param name="this">The Base64 encoded byte array to convert</param>
+        /// <returns>A non-encoded string</returns>
+        [System.Diagnostics.DebuggerStepThrough]
+        public static string FromBase64(this byte[] @this)
+        {
+            return Convert.FromBase64String(@this.AsString()).AsString();
         }
         /// <summary>
         /// Converts a Base64 encoded byte array back to a normal byte array
@@ -24,11 +34,11 @@ namespace W
         /// <param name="this">The Base64 encoded byte array to convert</param>
         /// <returns>A non-encoded string</returns>
         //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [System.Diagnostics.DebuggerStepThrough]
-        public static byte[] FromBase64(this byte[] @this)
-        {
-            return Convert.FromBase64String(@this.AsString());
-        }
+        //[System.Diagnostics.DebuggerStepThrough]
+        //public static byte[] FromBase64(this byte[] @this)
+        //{
+        //    return Convert.FromBase64String(@this.AsString());
+        //}
         /// <summary>
         /// Deserializes a Json string to an object
         /// </summary>

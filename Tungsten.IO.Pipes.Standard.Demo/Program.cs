@@ -1,6 +1,4 @@
 ﻿using System;
-using W;
-using W.Demo;
 
 namespace W.Demo
 {
@@ -13,8 +11,9 @@ namespace W.Demo
             {
                 Console.Clear();
                 Console.WriteLine("Menu");
-                Console.WriteLine("1.  Test RSA Encryption");
-                Console.WriteLine("2.  Test Compression");
+                Console.WriteLine("1.  Test PipeClient");
+                Console.WriteLine("2.  Test PipeClient(sending objects)");
+                Console.WriteLine("3.  Test CompressedPipeClient(sending objects)");
 
                 Console.WriteLine("Press <Escape> To Exit");
                 var selection = Console.ReadKey();
@@ -22,11 +21,15 @@ namespace W.Demo
                 {
                     case ConsoleKey.D1:
                         Console.Clear();
-                        TestEncryption.Run();
+                        TestPipeClient.Run();
                         break;
                     case ConsoleKey.D2:
                         Console.Clear();
-                        TestCompression.Run();
+                        TestPipeClientObjects.Run();
+                        break;
+                    case ConsoleKey.D3:
+                        Console.Clear();
+                        TestCompressedPipeClient.Run();
                         break;
                     case ConsoleKey.Escape:
                         exit = true;

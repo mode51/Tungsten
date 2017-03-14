@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
     <RootNamespace>W</RootNamespace>
-    <Version>1.1.5</Version>
+    <Version>1.1.6</Version>
     <Authors>Jordan Duerksen</Authors>
     <Company />
     <Product>Tungsten</Product>
@@ -13,7 +13,9 @@
     <PackageIconUrl>http://www.duerksen.us/images/Tungsten.ico</PackageIconUrl>
     <PackageTags>Tungsten.NuGet Tungsten W C# library</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <AssemblyVersion>1.1.5.0</AssemblyVersion>
+    <AssemblyVersion>1.1.6.0</AssemblyVersion>
+    <FileVersion>1.1.6.0</FileVersion>
+    <PackageReleaseNotes>Added AsCompressed and AsDecompressed</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionQueue.cs" />
-    <Compile Include="As.cs" />
+    <Compile Include="AsExtensions.cs" />
     <Compile Include="CallResult.cs" />
     <Compile Include="FromExtensions.cs" />
     <Compile Include="InvokeExtensions.cs" />

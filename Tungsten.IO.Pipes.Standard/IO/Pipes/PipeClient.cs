@@ -4,6 +4,7 @@ using W;
 
 namespace W.IO.Pipes
 {
+
     /// <summary>
     /// A pipe client which sends and receives byte arrays
     /// </summary>
@@ -22,10 +23,9 @@ namespace W.IO.Pipes
         /// <returns>The formatted message</returns>
         protected override TDataType FormatReceivedMessage(byte[] message)
         {
-            var base64 = message.AsString();
-            var json = base64.FromBase64();
-            var m = json.FromXml<TDataType>();
-            return m;
+            var xml = message.AsString();
+            var result = xml.FromXml<TDataType>();
+            return result;
         }
         /// <summary>
         /// Customized formatting for sending a message
@@ -34,9 +34,8 @@ namespace W.IO.Pipes
         /// <returns>The message converted to a byte array</returns>
         protected override byte[] FormatMessageToSend(TDataType message)
         {
-            var json = message.AsXml<TDataType>();
-            var base64 = json.AsBase64();
-            var bytes = base64.AsBytes();
+            var xml = message.AsXml<TDataType>();
+            var bytes = xml.AsBytes();
             return bytes;
         }
     }

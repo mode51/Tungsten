@@ -87,7 +87,7 @@ namespace W.Net
             }
             else
             {
-                msg = base.FormatMessageToSend(message).AsBase64();
+                msg = base.FormatMessageToSend(message).AsBase64().AsBytes();
             }
             return msg;
         }

@@ -16,8 +16,7 @@ namespace W
         /// <returns>A non-encoded string</returns>
         public static string FromBase64(this string @this)
         {
-            var bytes = Convert.FromBase64String(@this);
-            return System.Text.Encoding.UTF8.GetString(bytes, 0, bytes.Length);
+            return Convert.FromBase64String(@this).AsString();
         }
         /// <summary>
         /// Converts a Base64 encoded byte array back to a normal byte array

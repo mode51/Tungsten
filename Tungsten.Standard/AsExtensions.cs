@@ -38,7 +38,17 @@ namespace W
         [System.Diagnostics.DebuggerStepThrough]
         public static string AsBase64(this string @this)
         {
-            return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(@this));
+            return Convert.ToBase64String(@this.AsBytes());
+        }
+        /// <summary>
+        /// Converts a byte array to a Base64 encoded string
+        /// </summary>
+        /// <param name="this">The string to convert to Base64 encoding</param>
+        /// <returns>The Base64 encoded string</returns>
+        [System.Diagnostics.DebuggerStepThrough]
+        public static string AsBase64(this byte[] @this)
+        {
+            return Convert.ToBase64String(@this);
         }
         /// <summary>
         /// Converts a byte array to Base64 encoding
@@ -46,11 +56,11 @@ namespace W
         /// <param name="this">The byte array to convert to Base64</param>
         /// <returns></returns>
         //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [System.Diagnostics.DebuggerStepThrough]
-        public static byte[] AsBase64(this byte[] @this)
-        {
-            return Convert.ToBase64String(@this).AsBytes();
-        }
+        //[System.Diagnostics.DebuggerStepThrough]
+        //public static byte[] AsBase64(this byte[] @this)
+        //{
+        //    return Convert.ToBase64String(@this).AsBytes();
+        //}
         /// <summary>
         /// Converts a string to an encoded byte array
         /// </summary>
@@ -114,6 +124,7 @@ namespace W
         /// <typeparam name="TType">The type of object to serialize</typeparam>
         /// <param name="this">The object to serialize to Json</param>
         /// <returns>A Json formatted string representation of the specified object</returns>
+        [System.Diagnostics.DebuggerStepThrough]
         public static string AsJson<TType>(this object @this)
         {
             var s = new System.Runtime.Serialization.Json.DataContractJsonSerializer(typeof(TType));
@@ -130,6 +141,7 @@ namespace W
         /// <typeparam name="TType">The type of object to serialize</typeparam>
         /// <param name="this">The object to serialize</param>
         /// <returns></returns>
+        [System.Diagnostics.DebuggerStepThrough]
         public static string AsXml<TType>(this object @this)
         {
             var s = new System.Runtime.Serialization.DataContractSerializer(typeof(TType));
@@ -139,5 +151,67 @@ namespace W
                 return stream.ToArray().AsString();
             }
         }
+
+        /// <summary>
+        /// Compresses the byte array using System.IO.Compression.DeflateStream
+        /// </summary>
+        /// <param name="bytes">The byte array to compress</param>
+        /// <returns>A byte array of compressed data</returns>
+        [System.Diagnostics.DebuggerStepThrough]
+        public static byte[] AsCompressed(this byte[] bytes)
+        {
+            var output = new MemoryStream();
+            //using (var output = new MemoryStream())
+            //{
+                using (var deflater = new System.IO.Compression.DeflateStream(output, System.IO.Compression.CompressionMode.Compress))
+                {
+                    deflater.Write(bytes, 0, bytes.Length);
+                }
+                return output.ToArray();
+            //}
+        }
+        /// <summary>
+        /// Decompresses the byte array using System.IO.Compression.DeflateStream
+        /// </summary>
+        /// <param name="bytes">The byte array containing compressed data</param>
+        /// <returns>A byte array of the decompressed data</returns>
+        [System.Diagnostics.DebuggerStepThrough]
+        public static byte[] AsDecompressed(this byte[] bytes)
+        {
+            var input = new MemoryStream(bytes);
+            //using (var output = new MemoryStream())
+            //{
+                var output = new MemoryStream();
+                using (var deflater = new System.IO.Compression.DeflateStream(input, System.IO.Compression.CompressionMode.Decompress))
+                {
+                    deflater.CopyTo(output);
+                }
+                return output.ToArray();
+            //}
+        }
+        ///// <summary>
+        ///// Compresses the string using System.IO.Compression.DeflateStream
+        ///// </summary>
+        ///// <param name="item">The string to compress</param>
+        ///// <returns>A compressed string</returns>
+        //public static string AsCompressed(this string item)
+        //{
+        //    var bytes = item.AsBytes();
+        //    var compressed = bytes.AsCompressed();
+        //    var result = compressed.AsString();
+        //    return result;
+        //}
+        ///// <summary>
+        ///// Decompresses the string using System.IO.Compression.DeflateStream
+        ///// </summary>
+        ///// <param name="item">The string containing compressed data</param>
+        ///// <returns>A string of decompressed data</returns>
+        //public static string AsDecompressed(this string item)
+        //{
+        //    var bytes = item.AsBytes();
+        //    var decompressed = bytes.AsDecompressed();
+        //    var result = decompressed.AsString();
+        //    return result;
+        //}
     }
 }

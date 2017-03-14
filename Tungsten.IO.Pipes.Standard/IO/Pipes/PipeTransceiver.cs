@@ -39,6 +39,11 @@ namespace W.IO.Pipes
         /// Called when a message has been received
         /// </summary>
         public Action<object, TDataType> MessageReceived { get; set; }
+        /// <summary>
+        /// Can be useful for large data sets.  Set to True to use compression, otherwise False
+        /// </summary>
+        /// <remarks>Make sure both server and client have the same value</remarks>
+        public bool UseCompression { get; set; }
 
         private void WriteMessage(System.IO.Pipes.PipeStream stream, byte[] bytes, int writeBufferSize)
         {
@@ -223,6 +228,8 @@ namespace W.IO.Pipes
                         var bytes = ReadMessage(Stream.Value, _readSize.Value, 256);
                         if (bytes != null)
                         {
+                            if (UseCompression)
+                                bytes = bytes.AsDecompressed();
                             var formatted = FormatReceivedMessage(bytes);
                             MessageReceived?.Invoke(this, formatted);
                         }
@@ -328,6 +335,8 @@ namespace W.IO.Pipes
         public void Write(TDataType message)
         {
             var formatted = FormatMessageToSend(message);
+            if (UseCompression)
+                formatted = formatted.AsCompressed();
             _writeQueue.Enqueue(formatted);
         }
 
