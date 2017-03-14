@@ -20,16 +20,16 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>W.Net.Core</RootNamespace>
+    <Version>1.1.6</Version>
+    <PackageReleaseNotes>Changed the project reference of Tungsten.Standard to the NuGet package for Tungsten.Standard</PackageReleaseNotes>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
     <PackageReference Include="System.Runtime.Serialization.Xml" Version="4.3.0" />
     <PackageReference Include="System.Threading.Thread" Version="4.3.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Tungsten.Standard\Tungsten.Standard.csproj" />
+    <PackageReference Include="Tungsten.Standard" Version="1.1.6" />
   </ItemGroup>
 
   <Target Name="PostcompileScript" AfterTargets="Build">

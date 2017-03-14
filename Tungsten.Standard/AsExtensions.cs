@@ -160,15 +160,15 @@ namespace W
         [System.Diagnostics.DebuggerStepThrough]
         public static byte[] AsCompressed(this byte[] bytes)
         {
-            var output = new MemoryStream();
-            //using (var output = new MemoryStream())
-            //{
+            //var output = new MemoryStream();
+            using (var output = new MemoryStream())
+            {
                 using (var deflater = new System.IO.Compression.DeflateStream(output, System.IO.Compression.CompressionMode.Compress))
                 {
                     deflater.Write(bytes, 0, bytes.Length);
                 }
                 return output.ToArray();
-            //}
+            }
         }
         /// <summary>
         /// Decompresses the byte array using System.IO.Compression.DeflateStream
@@ -179,39 +179,15 @@ namespace W
         public static byte[] AsDecompressed(this byte[] bytes)
         {
             var input = new MemoryStream(bytes);
-            //using (var output = new MemoryStream())
-            //{
-                var output = new MemoryStream();
+            //var output = new MemoryStream();
+            using (var output = new MemoryStream())
+            {
                 using (var deflater = new System.IO.Compression.DeflateStream(input, System.IO.Compression.CompressionMode.Decompress))
                 {
                     deflater.CopyTo(output);
                 }
                 return output.ToArray();
-            //}
+            }
         }
-        ///// <summary>
-        ///// Compresses the string using System.IO.Compression.DeflateStream
-        ///// </summary>
-        ///// <param name="item">The string to compress</param>
-        ///// <returns>A compressed string</returns>
-        //public static string AsCompressed(this string item)
-        //{
-        //    var bytes = item.AsBytes();
-        //    var compressed = bytes.AsCompressed();
-        //    var result = compressed.AsString();
-        //    return result;
-        //}
-        ///// <summary>
-        ///// Decompresses the string using System.IO.Compression.DeflateStream
-        ///// </summary>
-        ///// <param name="item">The string containing compressed data</param>
-        ///// <returns>A string of decompressed data</returns>
-        //public static string AsDecompressed(this string item)
-        //{
-        //    var bytes = item.AsBytes();
-        //    var decompressed = bytes.AsDecompressed();
-        //    var result = decompressed.AsString();
-        //    return result;
-        //}
     }
 }

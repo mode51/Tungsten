@@ -44,6 +44,12 @@ namespace W.Net.Sockets
         public Action<Socket, byte[]> MessageReceived { get; set; }
 
         /// <summary>
+        /// Can be useful for large data sets.  Set to True to use compression, otherwise False.
+        /// </summary>
+        /// <remarks>Make sure both server and client have the same value</remarks>
+        public bool UseCompression { get; set; }
+
+        /// <summary>
         /// Constructs a ByteClient
         /// </summary>
         public Socket()
@@ -112,6 +118,23 @@ namespace W.Net.Sockets
         /// <param name="message"></param>
         protected virtual void OnMessageReceived(byte[] message)
         {
+            if (message != null && message.Length > 0 && UseCompression)
+            {
+                try
+                {
+                    var msg = message.AsDecompressed();
+                    message = msg;
+                }
+                catch (System.IO.InvalidDataException e)
+                {
+                    //ignore - the key will be sent uncompressed
+                    //so just pass it on as is
+                }
+                catch (Exception e)
+                {
+                    Log.e(e);
+                }
+            }
             MessageReceived?.Invoke(this, message);
         }
 
@@ -204,19 +227,25 @@ namespace W.Net.Sockets
         {
             if (!IsConnected || message == null)
                 return;
+            if (UseCompression)
+            {
+                var size = message.Length;
+                message = message.AsCompressed();
+                Log.v("Original Size = {0}, Compressed Size = {1}", size, message.Length);
+            }
             if (immediate)
                 W.Net.TcpHelpers.SendMessageAsync(_networkStream, _client.SendBufferSize, message);
             else
                 _writer.Send(message);
         }
-        /// <summary>
-        /// Enqueues message to send
-        /// </summary>
-        /// <param name="message">The message to send</param>
-        /// <param name="immediate">If true, the message is sent unformatted and immediately</param>
-        public virtual void Send(string message, bool immediate = false)
-        {
-            Send(message.AsBytes(), immediate); //TODO: 2.26.17 - should this conver to base64 before sending?
-        }
+        ///// <summary>
+        ///// Enqueues message to send
+        ///// </summary>
+        ///// <param name="message">The message to send</param>
+        ///// <param name="immediate">If true, the message is sent unformatted and immediately</param>
+        //public virtual void Send(string message, bool immediate = false)
+        //{
+        //    Send(message.AsBytes(), immediate); //TODO: 2.26.17 - should this conver to base64 before sending?
+        //}
     }
 }

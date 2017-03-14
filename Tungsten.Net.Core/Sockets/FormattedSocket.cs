@@ -33,6 +33,22 @@ namespace W.Net.Sockets
         public Action<object> MessageSent { get; set; }
 
         /// <summary>
+        /// Can be useful for large data sets.  Set to True to use compression, otherwise False.
+        /// </summary>
+        /// <remarks>Make sure both server and client have the same value</remarks>
+        public bool UseCompression
+        {
+            get
+            {
+                return Socket.UseCompression;
+            }
+            set
+            {
+                Socket.UseCompression = value;
+            }
+        }
+
+        /// <summary>
         /// Constructs a new FormattedSocket
         /// </summary>
         public FormattedSocket()
@@ -97,7 +113,7 @@ namespace W.Net.Sockets
         public void Send(TDataType message, bool immediate = false)
         {
             var msg = FormatMessageToSend(message);
-            Send(msg, immediate);
+            Socket.Send(msg, immediate);
         }
         /// <summary>
         /// Queues data to send
@@ -106,6 +122,7 @@ namespace W.Net.Sockets
         /// <param name="immediate"></param>
         public void Send(byte[] message, bool immediate = false)
         {
+            var msg = FormatMessageToSend(message.As<TDataType>());
             Socket.Send(message, immediate);
         }
 

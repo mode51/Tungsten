@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tungsten.Net.Core\Tungsten.Net.Core.csproj" />
-    <ProjectReference Include="..\Tungsten.Standard\Tungsten.Standard.csproj" />
   </ItemGroup>
 
 </Project>
