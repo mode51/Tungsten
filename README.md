@@ -13,9 +13,12 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 * Tungsten - A collection of useful classes for Winforms/WPF
 * Tungsten.Portable - A Portable version of Tungsten
 * Tungsten.Universal - A Universal version of Tungsten
+* Tungsten.Standard - A NetStandard version of Tungsten
 * Tungsten.RPC - Encrypted socket classes (client and server) to run code on a Tungsten.RPC server
 * Tungsten.Domains - Easily implement reloadable AppDomains in your application
 * Tungsten.LiteDb - LiteDb based CRUD for your POCO classes
+* Tungsten.Net.Core - A NetStandard wrapper for sockets (client and server)
+* Tungsten.IO.Pipes.Standard - A NetStandard wrapper for named pipes (client and server)
 
 # Demos
 * Tungsten.Demo.Winforms - Uses tasks, Property and Gate to provide a responsive UI while handling background tasks
@@ -24,6 +27,8 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 * Tungsten.RPC.ClientDemo - Illustrates how to create an RPC client with Tungsten.RPC
 * Tungsten.RPC.Host.Demo - Hosts the RPC server in a reloadable AppDomain
 * Tungsten.Domains.Demo - Illustrates using Tungsten.Domains to host a reloadable AppDomain
+* Tungsten.Standard.Demo - Demonstrates using some of the features in Tungsten.Standard
+* Tungsten.IO.Pipes.Standard.Demo - Illustrates using the named pipe client and server wrappers
 
 # Tungsten / Tungsten.Portable / Tungsten.Universal Classes
 * [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue)\<TValue\> - A generic class to wrap a value in a thread-safe manner
