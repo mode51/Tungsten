@@ -1,6 +1,6 @@
 #Tungsten
 
-Platforms: WinForms, WPF, Windows Universal, Windows Portable (PCL)
+Platforms: WinForms, WPF, Windows Universal, Windows Portable (PCL), NetStandard1.4
 
 A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable application development easier.  See the Wiki page for details and use.
 
