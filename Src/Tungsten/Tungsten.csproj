@@ -79,12 +79,17 @@
   <ItemGroup>
     <None Include="Threading\GateExtensions.cs" />
     <Content Include="Tungsten.ico" />
-    <Content Include="Tungsten.png" />
+    <None Include="Tungsten.nuspec">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>@echo Copying Files For NuGet
+copy "$(TargetDir)$(TargetName).dll" "$(SolutionDir)NuGet\Tungsten\bin\lib\net45\"
+copy "$(TargetDir)$(TargetName).XML" "$(SolutionDir)NuGet\Tungsten\bin\lib\net45\"
+"C:\Users\Jordan\Source\Repos\nuget.exe" pack "$(ProjectPath)"
+</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

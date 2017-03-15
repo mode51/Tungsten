@@ -57,6 +57,7 @@ namespace W.Demo
                     {
                         Console.WriteLine("Client Message Sent");
                     };
+                    secureClient.UseCompression = true;
                     secureClient.Socket.Connect(IPAddress.Parse("127.0.0.1"), 5150);
                     mre.WaitOne();
 

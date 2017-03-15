@@ -23,6 +23,8 @@
     <Version>1.1.6</Version>
     <PackageReleaseNotes>Changed the project reference of Tungsten.Standard to the NuGet package for Tungsten.Standard</PackageReleaseNotes>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

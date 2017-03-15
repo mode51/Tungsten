@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Tungsten</id>
+    <version>1.1.6</version>
+    <title>$title$</title>
+    <authors>Jordan Duerksen</authors>
+    <owners>Jordan Duerksen</owners>
+    <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/mode51/Tungsten</projectUrl>
+    <iconUrl>http://www.duerksen.us/images/Tungsten.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Tungsten is a C# library of classes which make application development easier.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2017 Jordan Duerksen</copyright>
+    <tags>Tungsten W C# library</tags>
+  </metadata>
+</package>

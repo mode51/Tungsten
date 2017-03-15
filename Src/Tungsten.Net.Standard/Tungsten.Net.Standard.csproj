@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+    <Version>1.2.0.0</Version>
+    <Authors>Jordan Duerksen</Authors>
+    <Company />
+    <Product>Tungsten.Net.Standard</Product>
+    <Copyright>Copyright @ 2017 Jordan Duerksen</Copyright>
+    <Description>A tcp socket library which provides client/server classes with and without assymetric encryption</Description>
+    <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</PackageIconUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
+    <PackageTags>Tungsten.Net.Standard Tungsten.Net Tungsten W W.Net C# library tcp sockets client server</PackageTags>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <FileVersion>1.2.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Tungsten.Standard" Version="1.1.6" />
+  </ItemGroup>
+
+</Project>

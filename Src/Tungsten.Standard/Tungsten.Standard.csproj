@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
     <RootNamespace>W</RootNamespace>
-    <Version>1.1.6</Version>
+    <Version>1.2.0.0</Version>
     <Authors>Jordan Duerksen</Authors>
     <Company />
     <Product>Tungsten</Product>
@@ -13,9 +13,14 @@
     <PackageIconUrl>http://www.duerksen.us/images/Tungsten.ico</PackageIconUrl>
     <PackageTags>Tungsten.NuGet Tungsten W C# library</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <AssemblyVersion>1.1.6.0</AssemblyVersion>
-    <FileVersion>1.1.6.0</FileVersion>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <FileVersion>1.2.0.0</FileVersion>
     <PackageReleaseNotes>Added AsCompressed and AsDecompressed</PackageReleaseNotes>
+    <PostBuildEvent>@echo Copying Files For NuGet
+copy "$(SolutionDir)Src\Tungsten.Standard\bin\Release\netstandard1.4\Tungsten.Standard.dll" "$(SolutionDir)NuGet\Tungsten\bin\lib\netstandard1.4\"
+copy "$(SolutionDir)Src\Tungsten.Standard\bin\Release\netstandard1.4\Tungsten.Standard.XML" "$(SolutionDir)NuGet\Tungsten\bin\lib\netstandard1.4\"
+</PostBuildEvent>
+    <RepositoryUrl>$(SolutionDir)NuGet</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
