@@ -49,6 +49,7 @@
     <Compile Include="Delegates.cs" />
     <Compile Include="IClient.cs" />
     <Compile Include="IServer.cs" />
+    <Compile Include="ISocketClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

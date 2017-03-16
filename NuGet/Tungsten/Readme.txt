@@ -1,5 +1,8 @@
 ﻿Tungsten is a C# library to make application development easier.  See the wiki @ https://github.com/mode51/Tungsten/wiki for details, examples and use.
 
+3.16.2017 v1.2.1
+Added RSA encryption to Tungsten (net45).  It already exists in netstandard1.4 (it is not in PCL or Universal - and may never)
+
 3.15.2017 v1.2.0
 Merged Tungsten.Standard into Tungsten NuGet Package
   - Tungsten package now contains net45, portable, universal and netstandard targets

@@ -16,6 +16,9 @@
     <copyright>Copyright 2017 Jordan Duerksen</copyright>
     <tags>Tungsten.Net.Standard Tungsten.Net Tungsten W W.Net C# library tcp sockets client server</tags>
     <dependencies>
+      <group targetFramework="net45">
+        <dependency id="Tungsten" version="1.2.0" exclude="Build,Analyzers" />
+      </group>
       <group targetFramework=".NETStandard1.4">
         <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
         <dependency id="Tungsten" version="1.2.0" exclude="Build,Analyzers" />

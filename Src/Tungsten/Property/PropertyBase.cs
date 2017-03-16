@@ -207,7 +207,9 @@ namespace W
         {
             ValueChanged?.Invoke(Owner, oldValue, newValue);
         }
-
+        /// <summary>
+        /// Disposes the object and releases resources
+        /// </summary>
         public void Dispose()
         {
             _mre?.Dispose();

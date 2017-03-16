@@ -3,16 +3,16 @@
   <metadata>
     <id>Tungsten</id>
     <title>Tungsten</title>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <authors>Jordan Duerksen</authors>
     <owners>Jordan Duerksen</owners>
     <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/mode51/Tungsten</projectUrl>
-    <iconUrl>http://www.duerksen.us/images/Tungsten.ico</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Tungsten is a C# library of classes which make application development easier.</description>
     <summary>Tungsten now includes net45, netstandard1.4, universal and portable (portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20).  Note that Silverlight is not supported.</summary>
-    <releaseNotes>Added support for netstandard1.4</releaseNotes>
+    <releaseNotes>Added RSA support to Tungsten for net45.  This already exists for netstandard1.4 (but not PCL or Universal - and may never)</releaseNotes>
     <copyright>Copyright 2017 Jordan Duerksen</copyright>
     <tags>Tungsten W C# library</tags>
  <dependencies>

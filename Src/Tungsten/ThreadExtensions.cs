@@ -27,6 +27,7 @@ namespace W.Threading
         /// <summary>
         /// Starts a new thread
         /// </summary>
+        /// <param name="@this">The custom data to be passed to the thread (Action)</param>
         /// <param name="action">Action to call on a thread</param>
         /// <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
         /// <returns>A reference to the new W.Threading.Thread&lt;T&gt;</returns>
@@ -38,7 +39,7 @@ namespace W.Threading
         /// <summary>
         /// Starts a new thread
         /// </summary>
-        /// <param name="this"></param>
+        /// <param name="@this">The custom data to be passed to the thread (Action)</param>
         /// <param name="action">Action to call on a thread</param>
         /// <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
         /// <param name="customData">The data to pass to the thread (Action)</param>

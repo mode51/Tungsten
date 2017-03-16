@@ -148,6 +148,20 @@
             <param name="item">The string to compress</param>
             <returns>A compressed string</returns>
         </member>
+        <member name="M:W.AsExtensions.AsDecompressed(System.Byte[])">
+            <summary>
+            Decompresses the byte array using System.IO.Compression.DeflateStream
+            </summary>
+            <param name="bytes">The byte array containing compressed data</param>
+            <returns>A byte array of the decompressed data</returns>
+        </member>
+        <member name="M:W.AsExtensions.AsDecompressed(System.String)">
+            <summary>
+            Decompresses the string using System.IO.Compression.DeflateStream
+            </summary>
+            <param name="item">The string containing compressed data</param>
+            <returns>A string of decompressed data</returns>
+        </member>
         <member name="T:W.CallResult`1">
             <summary>
             <para>
@@ -185,6 +199,7 @@
             </summary>
             <param name="success">The initial Success value</param>
             <param name="result">The initial Result value</param>
+            <param name="e">An exception object if one has occured</param>
         </member>
         <member name="P:W.CallResult`1.Empty">
             <summary>
@@ -266,6 +281,11 @@
             </summary>
             <typeparam name="TValue"></typeparam>
         </member>
+        <member name="P:W.Lockable`1.LockObject">
+            <summary>
+            The object used internally for lock statements
+            </summary>
+        </member>
         <member name="P:W.Lockable`1.Value">
             <summary>
             <para>
@@ -308,6 +328,26 @@
             The log message type
             </summary>
         </member>
+        <member name="F:W.Logging.Log.LogMessageCategory.Verbose">
+            <summary>
+            Denotes verbose message
+            </summary>
+        </member>
+        <member name="F:W.Logging.Log.LogMessageCategory.Information">
+            <summary>
+            Denotes a informational message
+            </summary>
+        </member>
+        <member name="F:W.Logging.Log.LogMessageCategory.Warning">
+            <summary>
+            Denotes a warning message
+            </summary>
+        </member>
+        <member name="F:W.Logging.Log.LogMessageCategory.Error">
+            <summary>
+            Denotes an error message
+            </summary>
+        </member>
         <member name="M:W.Logging.Log.e(System.Exception)">
             <summary>
             Log an Exception
@@ -347,6 +387,11 @@
             <para>
             This is a base class for supporting INotifyPropertyChanged
             </para>
+            </summary>
+        </member>
+        <member name="E:W.PropertyChangedNotifier.PropertyChanged">
+            <summary>
+            Raised when a property changes
             </summary>
         </member>
         <member name="M:W.PropertyChangedNotifier.GetValue">
@@ -678,6 +723,11 @@
             <param name="oldValue">The old property value</param>
             <param name="newValue">The new property value</param>
         </member>
+        <member name="M:W.PropertyBase`2.Dispose">
+            <summary>
+            Disposes the object and releases resources
+            </summary>
+        </member>
         <member name="M:W.PropertyBase`2.Finalize">
             <summary>
             Disposes the PropertyBase
@@ -774,6 +824,7 @@
             </summary>
             <param name="action"></param>
             <param name="onComplete"></param>
+            <param name="args">Arguments to pass into the underlying thread</param>
         </member>
         <member name="T:W.Threading.Thread">
             <summary>
@@ -822,7 +873,7 @@
             <summary>
             A thread wrapper which makes multi-threading easier
             </summary>
-            <typeparam name="T">The type of custom data to pass to the thread Action</typeparam>
+            <typeparam name="TCustomData">The type of custom data to pass to the thread Action</typeparam>
         </member>
         <member name="P:W.Threading.Thread`1.CustomData">
             <summary>
@@ -853,7 +904,7 @@
             </summary>
             <param name="action">Action to call on a thread</param>
             <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
-            <returns></returns>
+            <returns>A new thread with custom data of type TCustomData</returns>
         </member>
         <member name="T:W.Threading.ThreadBase">
             <summary>

@@ -68,6 +68,7 @@
     <Compile Include="PropertyHost.cs" />
     <Compile Include="PropertyHostMethods.cs" />
     <Compile Include="Property\PropertyMethods.cs" />
+    <Compile Include="RSA.cs" />
     <Compile Include="Threading\Gate.cs" />
     <Compile Include="Threading\Thread.cs" />
     <Compile Include="Threading\ThreadBase.cs" />

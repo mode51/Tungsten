@@ -148,6 +148,20 @@
             <param name="item">The string to compress</param>
             <returns>A compressed string</returns>
         </member>
+        <member name="M:W.AsExtensions.AsDecompressed(System.Byte[])">
+            <summary>
+            Decompresses the byte array using System.IO.Compression.DeflateStream
+            </summary>
+            <param name="bytes">The byte array containing compressed data</param>
+            <returns>A byte array of the decompressed data</returns>
+        </member>
+        <member name="M:W.AsExtensions.AsDecompressed(System.String)">
+            <summary>
+            Decompresses the string using System.IO.Compression.DeflateStream
+            </summary>
+            <param name="item">The string containing compressed data</param>
+            <returns>A string of decompressed data</returns>
+        </member>
         <member name="T:W.CallResult`1">
             <summary>
             <para>
@@ -185,6 +199,7 @@
             </summary>
             <param name="success">The initial Success value</param>
             <param name="result">The initial Result value</param>
+            <param name="e">An exception object if one has occured</param>
         </member>
         <member name="P:W.CallResult`1.Empty">
             <summary>
@@ -320,6 +335,11 @@
             </summary>
             <typeparam name="TValue"></typeparam>
         </member>
+        <member name="P:W.Lockable`1.LockObject">
+            <summary>
+            The object used internally for lock statements
+            </summary>
+        </member>
         <member name="P:W.Lockable`1.Value">
             <summary>
             <para>
@@ -362,6 +382,26 @@
             The log message type
             </summary>
         </member>
+        <member name="F:W.Logging.Log.LogMessageCategory.Verbose">
+            <summary>
+            Denotes verbose message
+            </summary>
+        </member>
+        <member name="F:W.Logging.Log.LogMessageCategory.Information">
+            <summary>
+            Denotes a informational message
+            </summary>
+        </member>
+        <member name="F:W.Logging.Log.LogMessageCategory.Warning">
+            <summary>
+            Denotes a warning message
+            </summary>
+        </member>
+        <member name="F:W.Logging.Log.LogMessageCategory.Error">
+            <summary>
+            Denotes an error message
+            </summary>
+        </member>
         <member name="M:W.Logging.Log.e(System.Exception)">
             <summary>
             Log an Exception
@@ -401,6 +441,11 @@
             <para>
             This is a base class for supporting INotifyPropertyChanged
             </para>
+            </summary>
+        </member>
+        <member name="E:W.PropertyChangedNotifier.PropertyChanged">
+            <summary>
+            Raised when a property changes
             </summary>
         </member>
         <member name="M:W.PropertyChangedNotifier.GetValue">
@@ -703,6 +748,11 @@
             <param name="oldValue">The old property value</param>
             <param name="newValue">The new property value</param>
         </member>
+        <member name="M:W.PropertyBase`2.Dispose">
+            <summary>
+            Disposes the object and releases resources
+            </summary>
+        </member>
         <member name="M:W.PropertyBase`2.Finalize">
             <summary>
             Disposes the PropertyBase
@@ -785,6 +835,211 @@
             </summary>
             <returns>True if the assignment was made, otherwise false</returns>
         </member>
+        <member name="T:W.Encryption.PublicPrivateKeyPair">
+            <summary>
+            The public and private RSA keys
+            </summary>
+        </member>
+        <member name="P:W.Encryption.PublicPrivateKeyPair.PrivateKey">
+            <summary>
+            The private RSA key.  Should never be shared.
+            </summary>
+        </member>
+        <member name="P:W.Encryption.PublicPrivateKeyPair.PublicKey">
+            <summary>
+            the public RSA key. Should be shared.
+            </summary>
+        </member>
+        <member name="T:W.Encryption.RSA">
+            <summary>
+            Provides RSA encryption functionality
+            </summary>
+        </member>
+        <member name="P:W.Encryption.RSA.PrivateKey">
+            <summary>
+            The private key used to decrypt data(do not share)
+            </summary>
+        </member>
+        <member name="P:W.Encryption.RSA.PublicKey">
+            <summary>
+            The public key used to encrypt data (should be shared)
+            </summary>
+        </member>
+        <member name="M:W.Encryption.RSA.#ctor(System.Int32)">
+            <summary>
+            constructs a new RSA object
+            </summary>
+        </member>
+        <member name="M:W.Encryption.RSA.Finalize">
+            <summary>
+            Destructs the RSA object and calls Dispose 
+            </summary>
+        </member>
+        <member name="M:W.Encryption.RSA.Encrypt(System.String)">
+            <summary>
+            Encrypts a string
+            </summary>
+            <param name="text">The string to encrypt</param>
+            <returns>A string containing the encrypted value</returns>
+        </member>
+        <member name="M:W.Encryption.RSA.Encrypt(System.String,System.Security.Cryptography.RSAParameters)">
+            <summary>
+            Encrypts a string
+            </summary>
+            <param name="text">The string to encrypt</param>
+            <param name="publicKey">The public key used to encrypt the string</param>
+            <returns>A string containing the encrypted value</returns>
+        </member>
+        <member name="M:W.Encryption.RSA.Encrypt(System.Byte[],System.Security.Cryptography.RSAParameters)">
+            <summary>
+            Encrypts a string
+            </summary>
+            <param name="byteData">The data to encrypt</param>
+            <param name="publicKey">The public key used to encrypt the data</param>
+            <returns>A string containing the encrypted data</returns>
+        </member>
+        <member name="M:W.Encryption.RSA.Decrypt(System.String)">
+            <summary>
+            Decrypts a string (previously encrypted with the Encrypt method)
+            </summary>
+            <param name="base64String">The encrypted string</param>
+            <returns>A string containing the decrypted value</returns>
+        </member>
+        <member name="M:W.Encryption.RSA.Decrypt(System.String,System.Security.Cryptography.RSAParameters)">
+            <summary>
+            Decrypts a string (previously encrypted with the Encrypt method)
+            </summary>
+            <param name="base64String">The encrypted string</param>
+            <param name="privateKey">The private key used to decrypt the string</param>
+            <returns>A string containing the decrypted value</returns>
+        </member>
+        <member name="M:W.Encryption.RSA.Dispose">
+            <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        </member>
+        <member name="T:W.Encryption.MD5">
+            <summary>
+            Creates MD5 hashes
+            </summary>
+        </member>
+        <member name="M:W.Encryption.MD5.GetMd5Hash(System.String)">
+            <summary>
+            Create an MD5 hash for the specified string
+            </summary>
+            <param name="input">The value for which to create an MD5 hash</param>
+            <returns>The MD5 hash of the specified value</returns>
+        </member>
+        <member name="M:W.Encryption.MD5.GetMd5Hash(System.String,System.Security.Cryptography.MD5)">
+            <summary>
+            Create an MD5 hash for the specified string
+            </summary>
+            <param name="input">The value for which to create an MD5 hash</param>
+            <param name="md5">The MD5 object to use to create the hash</param>
+            <returns>The MD5 hash of the specified value</returns>
+        </member>
+        <member name="M:W.Encryption.MD5.VerifyMd5Hash(System.String,System.String)">
+            <summary>
+            Verify a hash against a string
+            </summary>
+            <param name="input">The input string</param>
+            <param name="hash">The MD5 hash to use to verify the input string</param>
+            <returns>True if the input string is verified</returns>
+        </member>
+        <member name="T:W.Encryption.RSAMethods">
+            <summary>
+            Static Encrypt and Decrypt methods
+            </summary>
+        </member>
+        <member name="M:W.Encryption.RSAMethods.Encrypt(System.String,System.String,System.Int32)">
+            <summary>
+            Encrypts a string with RSA encryption
+            </summary>
+            <param name="text">The string to encrypt</param>
+            <param name="key">The public key to use to encrypt the string</param>
+            <param name="keySize">The keysize, in bits, of the public key</param>
+            <returns>The encrypted value of the specified data</returns>
+        </member>
+        <member name="M:W.Encryption.RSAMethods.Encrypt(System.String,System.Security.Cryptography.RSAParameters,System.Int32)">
+            <summary>
+            Encrypts a string with RSA encryption
+            </summary>
+            <param name="text">The string to encrypt</param>
+            <param name="key">The public key to use to encrypt the string</param>
+            <param name="keySize">The keysize, in bits, of the public key</param>
+            <returns>The encrypted value of the specified data</returns>
+        </member>
+        <member name="M:W.Encryption.RSAMethods.Encrypt(System.Byte[],System.String,System.Int32)">
+            <summary>
+            Encrypts a byte array with RSA encryption
+            </summary>
+            <param name="byteData">The byte array to encrypt</param>
+            <param name="key">The public key to use to encrypt the byte array</param>
+            <param name="keySize">The keysize, in bits, of the public key</param>
+            <returns>The encrypted byte array of the specified data</returns>
+        </member>
+        <member name="M:W.Encryption.RSAMethods.Encrypt(System.Byte[],System.Security.Cryptography.RSAParameters,System.Int32)">
+            <summary>
+            Encrypts a byte array with RSA encryption
+            </summary>
+            <param name="byteData">The byte array to encrypt</param>
+            <param name="key">The public key to use to encrypt the byte array</param>
+            <param name="keySize">The keysize, in bits, of the public key</param>
+            <returns>The encrypted byte array of the specified data</returns>
+        </member>
+        <member name="M:W.Encryption.RSAMethods.Decrypt(System.String,System.String,System.Int32)">
+            <summary>
+            Decrypts a string previously encrypted with RSA encryption
+            </summary>
+            <param name="text">The RSA encrypted string</param>
+            <param name="key">The private key to use for decrypting</param>
+            <param name="keySize">The keysize, in bits, of the private key</param>
+            <returns>The decrypted string</returns>
+        </member>
+        <member name="M:W.Encryption.RSAMethods.Decrypt(System.String,System.Security.Cryptography.RSAParameters,System.Int32)">
+            <summary>
+            Decrypts a string previously encrypted with RSA encryption
+            </summary>
+            <param name="text">The RSA encrypted string</param>
+            <param name="key">The private key to use for decrypting</param>
+            <param name="keySize">The keysize, in bits, of the private key</param>
+            <returns>The decrypted string</returns>
+        </member>
+        <member name="T:W.Encryption.RSA_Old">
+            <summary>
+            Provides methods for RSA Encryption
+            </summary>
+            <remarks>This class was adapted from an online sample at http://digitalsquid.co.uk/2009/01/rsa-crypto/ </remarks>
+        </member>
+        <member name="M:W.Encryption.RSA_Old.CreatePublicPrivateKeyPair(System.String@,System.String@,System.Int32)">
+            <summary>
+            Creates a public/private key pair which can be used for RSA encryption
+            </summary>
+            <param name="publicKey">The public key</param>
+            <param name="privateKey">The private key</param>
+            <param name="keySize">The keysize, in bits, for the keys</param>
+            <returns>True if successful, otherwise False</returns>
+        </member>
+        <member name="T:W.Encryption.RSA_Old.RSAPublicPrivateKeyPair">
+            <summary>
+            Used to store a public/private key pair for RSA encryption
+            </summary>
+        </member>
+        <member name="P:W.Encryption.RSA_Old.RSAPublicPrivateKeyPair.PublicKey">
+            <summary>
+            The public key used to encrypt data
+            </summary>
+        </member>
+        <member name="P:W.Encryption.RSA_Old.RSAPublicPrivateKeyPair.PrivateKey">
+            <summary>
+            The private key used to decrypt data
+            </summary>
+        </member>
+        <member name="M:W.Encryption.RSA_Old.RSAPublicPrivateKeyPair.Create(System.Int32)">
+            <summary>
+            Creates a new public/private key pair for use with RSA encryption
+            </summary>
+            <param name="keySize">The keysize, in bits, of the key to use</param>
+            <returns></returns>
+        </member>
         <member name="T:W.Threading.Gate">
             <summary>
             <para>
@@ -838,6 +1093,7 @@
             </summary>
             <param name="action"></param>
             <param name="onComplete"></param>
+            <param name="args">Arguments to pass into the underlying thread</param>
         </member>
         <member name="T:W.Threading.Thread">
             <summary>
@@ -1044,6 +1300,7 @@
             <summary>
             Starts a new thread
             </summary>
+            <param name="@this">The custom data to be passed to the thread (Action)</param>
             <param name="action">Action to call on a thread</param>
             <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
             <returns>A reference to the new W.Threading.Thread&lt;T&gt;</returns>
@@ -1052,7 +1309,7 @@
             <summary>
             Starts a new thread
             </summary>
-            <param name="this"></param>
+            <param name="@this">The custom data to be passed to the thread (Action)</param>
             <param name="action">Action to call on a thread</param>
             <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
             <param name="customData">The data to pass to the thread (Action)</param>

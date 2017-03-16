@@ -54,12 +54,14 @@
   <ItemGroup>
     <Compile Include="Tungsten.Domains\DomainTests.cs" />
     <Compile Include="Tungsten.RPC\RPCTests.cs" />
+    <Compile Include="Tungsten\AsExtensionsTests.cs" />
     <Compile Include="Tungsten\CallResultTests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tungsten\PropertyHostMethodsTests.cs" />
     <Compile Include="Tungsten\PropertyHostTests.cs" />
     <Compile Include="Tungsten\PropertyTests.cs" />
+    <Compile Include="Tungsten\RSATests.cs" />
     <Compile Include="Tungsten\ThreadExtensionsTests.cs" />
     <Compile Include="Tungsten\ThreadTests.cs" />
   </ItemGroup>

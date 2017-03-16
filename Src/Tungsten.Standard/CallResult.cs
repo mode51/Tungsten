@@ -36,6 +36,7 @@ namespace W
         /// </summary>
         /// <param name="success">The initial Success value</param>
         /// <param name="result">The initial Result value</param>
+        /// <param name="e">An exception if one ocurred</param>
         public CallResult(bool success, TResult result, Exception e)
         {
             Success = success;

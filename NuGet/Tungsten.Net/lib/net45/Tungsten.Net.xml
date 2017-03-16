@@ -1,0 +1,529 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tungsten.Net</name>
+    </assembly>
+    <members>
+        <member name="T:W.Net.GenericClient`1">
+            <summary>
+            Extends SecureStringClient by supporting generics
+            </summary>
+            <typeparam name="TType">The type to transmit and receive</typeparam>
+        </member>
+        <member name="P:W.Net.GenericClient`1.GenericMessageReceived">
+            <summary>
+            Called when data has been received and formatted
+            </summary>
+        </member>
+        <member name="M:W.Net.GenericClient`1.Send(`0)">
+            <summary>
+            Serialize an object and send it to the remote
+            </summary>
+            <param name="item">The item to serialize and transmit</param>
+        </member>
+        <member name="M:W.Net.GenericClient`1.#ctor">
+            <summary>
+            Constructs a GenericClient
+            </summary>
+        </member>
+        <member name="M:W.Net.GenericClient`1.#ctor(System.Net.Sockets.TcpClient,W.Encryption.RSA)">
+            <summary>
+            Constructs a new GenericClient
+            </summary>
+            <param name="client">An existing connected TcpClient</param>
+            <param name="rsa">An existing instance of RSA to be used for encryption</param>
+        </member>
+        <member name="T:W.Net.GenericServer`1">
+            <summary>
+            Extends SecureServer by supporting generics
+            </summary>
+            <typeparam name="TType">The type to transmit and receive</typeparam>
+        </member>
+        <member name="T:W.Net.TcpClientReader">
+            <summary>
+            Encapsulates safe TcpClient reading.  Supports data larger than the ReceiveBufferSize.
+            </summary>
+        </member>
+        <member name="F:W.Net.TcpClientReader.OnException">
+            <summary>
+            Delegate called whenever an exception occurs
+            </summary>
+        </member>
+        <member name="F:W.Net.TcpClientReader.OnMessageReceived">
+            <summary>
+            Delegate called when a message is received
+            </summary>
+        </member>
+        <member name="M:W.Net.TcpClientReader.#ctor(System.Net.Sockets.TcpClient)">
+            <summary>
+            Constructs the TcpClientReader
+            </summary>
+            <param name="client"></param>
+        </member>
+        <member name="M:W.Net.TcpClientReader.Start">
+            <summary>
+            Starts waiting for messages
+            </summary>
+        </member>
+        <member name="M:W.Net.TcpClientReader.Stop">
+            <summary>
+            Stops waiting for messages
+            </summary>
+        </member>
+        <member name="T:W.Net.TcpClientWriter">
+            <summary>
+            Encapsulates safe TcpClient writing.  Supports data larger than the SendBufferSize.
+            </summary>
+        </member>
+        <member name="F:W.Net.TcpClientWriter.OnMessageSent">
+            <summary>
+            Delegate called whenever a message is successfully sent
+            </summary>
+        </member>
+        <member name="F:W.Net.TcpClientWriter.OnException">
+            <summary>
+            Delegate called whenever an exception occurs
+            </summary>
+        </member>
+        <member name="M:W.Net.TcpClientWriter.#ctor(System.Net.Sockets.TcpClient)">
+            <summary>
+            Constructs the TcpClientWriter
+            </summary>
+            <param name="client">The currently connected TcpClient</param>
+        </member>
+        <member name="M:W.Net.TcpClientWriter.Start">
+            <summary>
+            Starts sending 
+            </summary>
+        </member>
+        <member name="M:W.Net.TcpClientWriter.Stop">
+            <summary>
+            Stops sending data (this may leave messages unsent)
+            </summary>
+        </member>
+        <member name="M:W.Net.TcpClientWriter.Send(System.Byte[])">
+            <summary>
+            Enqueues data to be sent.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:W.Net.TcpHelpers">
+            <summary>
+            Helper methods for TcpClient and NetworkStream
+            </summary>
+        </member>
+        <member name="M:W.Net.TcpHelpers.SendMessageAsync(System.Net.Sockets.NetworkStream,System.Int32,System.Byte[],System.Action{System.Exception},System.Threading.CancellationTokenSource)">
+            <summary>
+            Writes data to the specified NetworkStream
+            </summary>
+            <param name="stream">The stream on which to write data</param>
+            <param name="sendBufferSize">The data will be written in chunks this size, or less</param>
+            <param name="message">The data to write to the network stream</param>
+            <param name="onComplete">Delegate called once the data has been written or an error occurs</param>
+            <param name="cts">Can be used to cancel the write operation</param>
+            <returns>The Task on which this method executes</returns>
+        </member>
+        <member name="M:W.Net.TcpHelpers.ReadMessageAsync(System.Net.Sockets.NetworkStream,System.Int32,System.Action{System.Byte[],System.Exception},System.Threading.CancellationTokenSource)">
+            <summary>
+            Reads data from the network stream.  The first 4 bytes should indicate the message size.
+            </summary>
+            <param name="stream">The network stream from which to read data</param>
+            <param name="receiveBufferSize">Data will be read in chunks this size, or less</param>
+            <param name="onComplete">Delegate called when a full message has been received, or an error occurs</param>
+            <param name="cts">Can be used to cancel the read operation</param>
+            <returns>The Task on which this method executes</returns>
+        </member>
+        <member name="M:W.Net.TcpHelpers.IsMessageAvailable(System.Net.Sockets.NetworkStream,System.Action{System.Exception})">
+            <summary>
+            Checks the NetworkStream.DataAvailable
+            </summary>
+            <param name="stream">The NetworkStream to check</param>
+            <param name="onException">Called if a SocketException occurs</param>
+            <returns></returns>
+        </member>
+        <member name="M:W.Net.TcpHelpers.IsMessageAvailable(System.Net.Sockets.TcpClient,System.Action{System.Exception})">
+            <summary>
+            Checks the TcpClient.Available value
+            </summary>
+            <param name="client">The TcpClient to check</param>
+            <param name="onException">Called if a SocketException occurs</param>
+            <returns>True if at least 4 bytes of data are available</returns>
+        </member>
+        <member name="T:W.Net.SecureStringClient">
+            <summary>
+            A client which uses assymetric encryption when sending and receiving strings.
+            </summary>
+        </member>
+        <member name="P:W.Net.SecureStringClient.ConnectionSecured">
+            <summary>
+            Called when the connection has been secured
+            </summary>
+        </member>
+        <member name="M:W.Net.SecureStringClient.#ctor">
+            <summary>
+            Constructs a new SecureStringClient
+            </summary>
+        </member>
+        <member name="M:W.Net.SecureStringClient.#ctor(System.Net.Sockets.TcpClient,W.Encryption.RSA)">
+            <summary>
+            Constructs a new SecureStringClient
+            </summary>
+            <param name="client">An existing connected TcpClient</param>
+            <param name="rsa">An existing instance of RSA to be used for encryption</param>
+        </member>
+        <member name="M:W.Net.SecureStringClient.FormatReceivedMessage(System.Byte[])">
+            <summary>
+            Override to alter received data before exposing it via the MessageReceived callback
+            </summary>
+            <param name="message">The received data</param>
+            <returns>The original or modified data</returns>
+        </member>
+        <member name="M:W.Net.SecureStringClient.FormatMessageToSend(System.String)">
+            <summary>
+            Override to alter data before it is sent
+            </summary>
+            <param name="message">The data to send</param>
+            <returns>The original or modified data</returns>
+        </member>
+        <member name="T:W.Net.SecureStringServer">
+            <summary>
+            A Tcp server which uses assymetric encryption to send/receive string data
+            </summary>
+        </member>
+        <member name="T:W.Net.Sockets.FormattedSocket`1">
+            <summary>
+            Allows the programmer to customize data before sending and after reception
+            </summary>
+            <typeparam name="TDataType">The type of data</typeparam>
+        </member>
+        <member name="P:W.Net.Sockets.FormattedSocket`1.Socket">
+            <summary>
+            The underlying Tungsten Socket
+            </summary>
+        </member>
+        <member name="P:W.Net.Sockets.FormattedSocket`1.Connected">
+            <summary>
+            Called when a connection has been established
+            </summary>
+        </member>
+        <member name="P:W.Net.Sockets.FormattedSocket`1.Disconnected">
+            <summary>
+            Called when the connection has been terminated
+            </summary>
+        </member>
+        <member name="P:W.Net.Sockets.FormattedSocket`1.MessageReceived">
+            <summary>
+            Called when data has been received and formatted
+            </summary>
+        </member>
+        <member name="P:W.Net.Sockets.FormattedSocket`1.MessageSent">
+            <summary>
+            Called after data has been formatted and sent
+            </summary>
+        </member>
+        <member name="P:W.Net.Sockets.FormattedSocket`1.UseCompression">
+            <summary>
+            Can be useful for large data sets.  Set to True to use compression, otherwise False.
+            </summary>
+            <remarks>Make sure both server and client have the same value</remarks>
+        </member>
+        <member name="M:W.Net.Sockets.FormattedSocket`1.#ctor">
+            <summary>
+            Constructs a new FormattedSocket
+            </summary>
+        </member>
+        <member name="M:W.Net.Sockets.FormattedSocket`1.#ctor(System.Net.Sockets.TcpClient)">
+            <summary>
+            Constructs a new FormattedSocket.  Used internally by W.Net.Sockets.Server and W.Net.Sockets.SecureServer.
+            </summary>
+            <param name="client">An existing connected TcpClient</param>
+        </member>
+        <member name="M:W.Net.Sockets.FormattedSocket`1.FormatReceivedMessage(System.Byte[])">
+            <summary>
+            Override to customize received data before exposing it via the MessageReceived callback
+            </summary>
+            <param name="message">The received data</param>
+            <returns>The original or modified data</returns>
+        </member>
+        <member name="M:W.Net.Sockets.FormattedSocket`1.FormatMessageToSend(`0)">
+            <summary>
+            Override to customize the data before transmission
+            </summary>
+            <param name="message">The unaltered data to send</param>
+            <returns>The original or modified data</returns>
+        </member>
+        <member name="M:W.Net.Sockets.FormattedSocket`1.Send(`0,System.Boolean)">
+            <summary>
+            Queues data to send
+            </summary>
+            <param name="message"></param>
+            <param name="immediate"></param>
+        </member>
+        <member name="M:W.Net.Sockets.FormattedSocket`1.Send(System.Byte[],System.Boolean)">
+            <summary>
+            Queues data to send
+            </summary>
+            <param name="message"></param>
+            <param name="immediate"></param>
+        </member>
+        <member name="M:W.Net.Sockets.FormattedSocket`1.Dispose">
+            <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        </member>
+        <member name="T:W.Net.Sockets.IFormattedSocket">
+            <summary>
+            Implemented by FormattedSocket; required by W.Net.Sockets.Server and W.Net.Sockets.SecureServer.
+            </summary>
+        </member>
+        <member name="P:W.Net.Sockets.IFormattedSocket.Socket">
+            <summary>
+            The underlying Tungsten Socket
+            </summary>
+        </member>
+        <member name="P:W.Net.Sockets.IFormattedSocket.Disconnected">
+            <summary>
+            Called when the client disconnects
+            </summary>
+        </member>
+        <member name="T:W.Net.Sockets.ISecureSocket">
+            <summary>
+            Must be implemented by clients to be used by SecureServer
+            </summary>
+        </member>
+        <member name="T:W.Net.Sockets.SecureServer`1">
+            <summary>
+            Listens for socket connections and secures them with assymetric encryption
+            </summary>
+            <typeparam name="TSocket">The type of Socket client to use</typeparam>
+        </member>
+        <member name="P:W.Net.Sockets.SecureServer`1.ClientConnected">
+            <summary>
+             Called when a client connects to the server
+             </summary>
+        </member>
+        <member name="P:W.Net.Sockets.SecureServer`1.ClientDisconnected">
+            <summary>
+            Called when a client disconnects normally or by exception
+            </summary>
+        </member>
+        <member name="P:W.Net.Sockets.SecureServer`1.IsListeningChanged">
+            <summary>
+            Called when the value of IsListening changes to true or false
+            </summary>
+        </member>
+        <member name="P:W.Net.Sockets.SecureServer`1.IsListening">
+            <summary>
+            True if the server is listening for clients, otherwise false
+            </summary>
+        </member>
+        <member name="M:W.Net.Sockets.SecureServer`1.#ctor">
+            <summary>
+            Constructs a new Server
+            </summary>
+        </member>
+        <member name="M:W.Net.Sockets.SecureServer`1.Start(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Starts listening for clients
+            </summary>
+            <param name="ipAddress">The IP address to use</param>
+            <param name="port">The port on which to listen</param>
+        </member>
+        <member name="M:W.Net.Sockets.SecureServer`1.Stop">
+            <summary>
+            Stops listening for and disconnects all current connections
+            </summary>
+        </member>
+        <member name="M:W.Net.Sockets.SecureServer`1.Dispose">
+            <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        </member>
+        <member name="T:W.Net.Sockets.Server`1">
+            <summary>
+            A socket server which listens for and handles client connections 
+            </summary>
+            <typeparam name="TSocket">The type of Socket client to use</typeparam>
+        </member>
+        <member name="P:W.Net.Sockets.Server`1.ClientConnected">
+            <summary>
+             Called when a client connects to the server
+             </summary>
+        </member>
+        <member name="P:W.Net.Sockets.Server`1.ClientDisconnected">
+            <summary>
+            Called when a client disconnects normally or by exception
+            </summary>
+        </member>
+        <member name="P:W.Net.Sockets.Server`1.IsListeningChanged">
+            <summary>
+            Called when the value of IsListening changes to true or false
+            </summary>
+        </member>
+        <member name="P:W.Net.Sockets.Server`1.IsListening">
+            <summary>
+            True if the server is listening for clients, otherwise false
+            </summary>
+        </member>
+        <member name="M:W.Net.Sockets.Server`1.#ctor">
+            <summary>
+            Constructs a new Server
+            </summary>
+        </member>
+        <member name="M:W.Net.Sockets.Server`1.Start(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Starts listening for clients
+            </summary>
+            <param name="ipAddress">The IP address to use</param>
+            <param name="port">The port on which to listen</param>
+        </member>
+        <member name="M:W.Net.Sockets.Server`1.Stop">
+            <summary>
+            Stops listening for and disconnects all current connections
+            </summary>
+        </member>
+        <member name="M:W.Net.Sockets.Server`1.Dispose">
+            <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        </member>
+        <member name="T:W.Net.Sockets.Socket">
+            <summary>
+            A binary socket client.  Data is sent and received as byte arrays.
+            </summary>
+        </member>
+        <member name="P:W.Net.Sockets.Socket.Connected">
+            <summary>
+            Called when the client connects to the server
+            </summary>
+        </member>
+        <member name="P:W.Net.Sockets.Socket.Disconnected">
+            <summary>
+            Called when the client disconnects from the server
+            </summary>
+        </member>
+        <member name="P:W.Net.Sockets.Socket.MessageSent">
+            <summary>
+            Called when a message has been sent to the server
+            </summary>
+        </member>
+        <member name="P:W.Net.Sockets.Socket.MessageReceived">
+            <summary>
+            Called when a message is received from the server
+            </summary>
+        </member>
+        <member name="P:W.Net.Sockets.Socket.UseCompression">
+            <summary>
+            Can be useful for large data sets.  Set to True to use compression, otherwise False.
+            </summary>
+            <remarks>Make sure both server and client have the same value</remarks>
+        </member>
+        <member name="M:W.Net.Sockets.Socket.#ctor">
+            <summary>
+            Constructs a ByteClient
+            </summary>
+        </member>
+        <member name="M:W.Net.Sockets.Socket.#ctor(System.Net.Sockets.TcpClient)">
+            <summary>
+            Constructs a ByteClient
+            </summary>
+            <param name="tcpClient">A handle to an existing TcpClient</param>
+        </member>
+        <member name="M:W.Net.Sockets.Socket.Dispose">
+            <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        </member>
+        <member name="M:W.Net.Sockets.Socket.FinalizeConnection(System.Net.IPAddress)">
+            <summary>
+            Creates the TcpClientReader and TcpClientWriter
+            </summary>
+            <param name="remoteAddress">The remote server address</param>
+        </member>
+        <member name="M:W.Net.Sockets.Socket.OnConnected(System.Net.IPAddress)">
+            <summary>
+            Calls the Notifications.Connected callback
+            </summary>
+            <param name="remoteAddress"></param>
+        </member>
+        <member name="M:W.Net.Sockets.Socket.OnDisconnected(System.Exception)">
+            <summary>
+            Calls the Notifications.OnDisconnected callback
+            </summary>
+            <param name="e">The exception if one occurred</param>
+        </member>
+        <member name="M:W.Net.Sockets.Socket.OnMessageReceived(System.Byte[])">
+            <summary>
+            Calls the Notification.MessageReceived callback
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="P:W.Net.Sockets.Socket.Name">
+            <summary>
+            Gets or sets a Name property
+            </summary>
+        </member>
+        <member name="P:W.Net.Sockets.Socket.IsConnected">
+            <summary>
+            True if the Client is currently connected to a Tungsten RPC Server, otherwise False
+            </summary>
+        </member>
+        <member name="M:W.Net.Sockets.Socket.Connect(System.String,System.Int32)">
+            <summary>
+            Attempts to connect to a local or remote Tungsten RPC Server
+            </summary>
+            <param name="remoteAddress">The IP address of the Tungsten RPC Server</param>
+            <param name="remotePort">The port on which the Tungsten RPC Server is listening</param>
+            <returns>A bool specifying success/failure</returns>
+            <remarks>If an exception occurs, the Disconnected delegate will be called with the specific exception</remarks>
+        </member>
+        <member name="M:W.Net.Sockets.Socket.Connect(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Attempts to connect to a local or remote Tungsten RPC Server
+            </summary>
+            <param name="remoteAddress">The IP address of the Tungsten RPC Server</param>
+            <param name="remotePort">The port on which the Tungsten RPC Server is listening</param>
+            <returns>A bool specifying success/failure</returns>
+            <remarks>If an exception occurs, the Disconnected delegate will be called with the specific exception</remarks>
+        </member>
+        <member name="M:W.Net.Sockets.Socket.Disconnect(System.Exception)">
+            <summary>
+            Disconnects from the remote server and cleans up resources
+            </summary>
+            <param name="e">An exception if one occurred</param>
+        </member>
+        <member name="M:W.Net.Sockets.Socket.Send(System.Byte[],System.Boolean)">
+            <summary>
+            Enqueues message to send
+            </summary>
+            <param name="message">The message to send</param>
+            <param name="immediate">If true, the message is sent unformatted and immediately</param>
+        </member>
+        <member name="T:W.Net.StringClient">
+            <summary>
+            A Tungsten Socket client which sends and receives text
+            </summary>
+        </member>
+        <member name="M:W.Net.StringClient.#ctor">
+            <summary>
+            Constructs a new StringClient
+            </summary>
+        </member>
+        <member name="M:W.Net.StringClient.#ctor(System.Net.Sockets.TcpClient)">
+            <summary>
+            Constructs a new StringClient
+            </summary>
+        </member>
+        <member name="M:W.Net.StringClient.FormatReceivedMessage(System.Byte[])">
+            <summary>
+            Formats the data as text
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:W.Net.StringClient.FormatMessageToSend(System.String)">
+            <summary>
+            Converts the string into a byte array
+            </summary>
+            <param name="message">The string to be sent</param>
+            <returns>A byte array containing the converted string</returns>
+        </member>
+        <member name="T:W.Net.StringServer">
+            <summary>
+            A Tcp server which sends and receives string data
+            </summary>
+        </member>
+    </members>
+</doc>

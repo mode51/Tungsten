@@ -11,6 +11,9 @@
         private readonly object _lockObject = new object();
         private TValue _value;
 
+        /// <summary>
+        /// The object used internally for lock statements
+        /// </summary>
         public object LockObject => _lockObject;
 
         /// <summary>

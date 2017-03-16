@@ -16,6 +16,10 @@ namespace W
     /// </summary>
     public static class AsExtensions
     {
+        //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[System.Diagnostics.DebuggerStepThrough]
+
+
         /// <summary>
         /// Use Generic syntax for the <bold>as</bold> operator.
         /// </summary>
@@ -23,7 +27,6 @@ namespace W
         /// <param name="this">The item to convert to type TType</param>
         /// <returns>Null if @this cannot be referenced as TType.  Otherwise, the item as TType</returns>
         /// <example><code>expression as type</code> becomes <code>expression&lt;type&gt;()</code></example>
-        //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
         [System.Diagnostics.DebuggerStepThrough]
         public static TType As<TType>(this object @this) where TType : class
         {
@@ -34,7 +37,6 @@ namespace W
         /// </summary>
         /// <param name="this">The string to convert to Base64 encoding</param>
         /// <returns>The Base64 encoded string</returns>
-        //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
         [System.Diagnostics.DebuggerStepThrough]
         public static string AsBase64(this string @this)
         {
@@ -51,22 +53,10 @@ namespace W
             return Convert.ToBase64String(@this);
         }
         /// <summary>
-        /// Converts a byte array to Base64 encoding
-        /// </summary>
-        /// <param name="this">The byte array to convert to Base64</param>
-        /// <returns></returns>
-        //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
-        //[System.Diagnostics.DebuggerStepThrough]
-        //public static byte[] AsBase64(this byte[] @this)
-        //{
-        //    return Convert.ToBase64String(@this).AsBytes();
-        //}
-        /// <summary>
         /// Converts a string to an encoded byte array
         /// </summary>
         /// <param name="this">The string to convert to an encoded byte array</param>
         /// <returns>A byte array encoding of the specified string</returns>
-        //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
         [System.Diagnostics.DebuggerStepThrough]
         public static byte[] AsBytes(this string @this)
         {
@@ -77,7 +67,6 @@ namespace W
         /// </summary>
         /// <param name="this">The encoded byte array to conver to a string</param>
         /// <returns>The string representation of the encoded byte array</returns>
-        //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
         [System.Diagnostics.DebuggerStepThrough]
         public static string AsString(this byte[] @this)
         {
@@ -90,7 +79,6 @@ namespace W
         /// <param name="index">The starting index</param>
         /// <param name="count">The number of bytes to convert</param>
         /// <returns>The string representation of the encoded byte array</returns>
-        //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
         [System.Diagnostics.DebuggerStepThrough]
         public static string AsString(this byte[] @this, int index, int count)
         {
@@ -101,7 +89,6 @@ namespace W
         /// </summary>
         /// <param name="this">The byte array used in creating the MemoryStream</param>
         /// <returns>A new MemoryStream initialized with the specified byte array</returns>
-        //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
         [System.Diagnostics.DebuggerStepThrough]
         public static MemoryStream AsStream(this byte[] @this)
         {
@@ -112,7 +99,6 @@ namespace W
         /// </summary>
         /// <param name="this">The string used in creating the MemoryStream</param>
         /// <returns>A new MemoryStream initilized with the specified string</returns>
-        //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
         [System.Diagnostics.DebuggerStepThrough]
         public static MemoryStream AsStream(this string @this)
         {

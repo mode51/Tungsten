@@ -108,17 +108,17 @@ namespace W.Threading
     /// <summary>
     /// A thread wrapper which makes multi-threading easier
     /// </summary>
-    /// <typeparam name="T">The type of custom data to pass to the thread Action</typeparam>
-    public class Thread<T> : Thread
+    /// <typeparam name="TCustomData">The type of custom data to pass to the thread Action</typeparam>
+    public class Thread<TCustomData> : Thread
     {
         /// <summary>
         /// The custom data to pass into the Action
         /// </summary>
-        protected T CustomData { get; set; }
+        protected TCustomData CustomData { get; set; }
         /// <summary>
         /// The Action to be run on a new thread
         /// </summary>
-        protected new Action<T, CancellationTokenSource> Action { get; set; }
+        protected new Action<TCustomData, CancellationTokenSource> Action { get; set; }
 
         /// <summary>
         /// Invokes the Action
@@ -134,7 +134,7 @@ namespace W.Threading
         /// <param name="action">The Action to be called in the thread</param>
         /// <param name="onComplete">The Action to be called when the thread completes</param>
         /// <param name="customData">The custom data to be passed into the thread</param>
-        public Thread(Action<T, CancellationTokenSource> action, Action<bool, Exception> onComplete = null, T customData = default(T)) : base(null, onComplete)
+        public Thread(Action<TCustomData, CancellationTokenSource> action, Action<bool, Exception> onComplete = null, TCustomData customData = default(TCustomData)) : base(null, onComplete)
         {
             Action = action;
             CustomData = customData;
@@ -145,10 +145,10 @@ namespace W.Threading
         /// </summary>
         /// <param name="action">Action to call on a thread</param>
         /// <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
-        /// <returns></returns>
-        public static Thread<T> Create<T>(Action<T, CancellationTokenSource> action, Action<bool, Exception> onComplete = null, T customData = default(T))
+        /// <returns>A new thread with custom data of type TCustomData</returns>
+        public static Thread<TcustomDataType> Create<TcustomDataType>(Action<TcustomDataType, CancellationTokenSource> action, Action<bool, Exception> onComplete = null, TcustomDataType customData = default(TcustomDataType))
         {
-            var result = new Thread<T>(action, onComplete, customData);
+            var result = new Thread<TcustomDataType>(action, onComplete, customData);
             return result;
         }
     }

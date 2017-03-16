@@ -116,17 +116,17 @@ namespace W.Threading
     /// <summary>
     /// A thread wrapper which makes multi-threading easier
     /// </summary>
-    /// <typeparam name="T">The type of custom data to pass to the thread Action</typeparam>
-    public class Thread<T> : Thread
+    /// <typeparam name="TCustomData">The type of custom data to pass to the thread Action</typeparam>
+    public class Thread<TCustomData> : Thread
     {
         /// <summary>
         /// The custom data to pass into the Action
         /// </summary>
-        protected T CustomData { get; set; }
+        protected TCustomData CustomData { get; set; }
         /// <summary>
         /// The Action to be run on a new thread
         /// </summary>
-        protected new Action<T, CancellationTokenSource> Action { get; set; }
+        protected new Action<TCustomData, CancellationTokenSource> Action { get; set; }
 
         /// <summary>
         /// Invokes the Action
@@ -142,7 +142,8 @@ namespace W.Threading
         /// <param name="action">The Action to be called in the thread</param>
         /// <param name="onExit">The Action to be called when the thread completes</param>
         /// <param name="customData">The custom data to be passed into the thread</param>
-        public Thread(Action<T, CancellationTokenSource> action, Action<bool, Exception> onExit = null, T customData = default(T), CancellationTokenSource cts = null) : base(null, onExit, cts)
+        /// <param name="cts">A CancellationTokenSource which can be used to cancel the thread</param>
+        public Thread(Action<TCustomData, CancellationTokenSource> action, Action<bool, Exception> onExit = null, TCustomData customData = default(TCustomData), CancellationTokenSource cts = null) : base(null, onExit, cts)
         {
             Action = action;
             CustomData = customData;
@@ -154,10 +155,11 @@ namespace W.Threading
         /// <param name="action">Action to call on a thread</param>
         /// <param name="onExit">Action to call upon comletion.  Executes on the same thread as Action.</param>
         /// <param name="customData">Custom data to be passed into the thread</param>
+        /// <param name="cts">A CancellationTokenSource which can be used to cancel the operation</param>
         /// <returns>A new long-running Thread object</returns>
-        public static Thread<T> Create<T>(Action<T, CancellationTokenSource> action, Action<bool, Exception> onExit = null, T customData = default(T), CancellationTokenSource cts = null)
+        public static Thread<TCustomDataType> Create<TCustomDataType>(Action<TCustomDataType, CancellationTokenSource> action, Action<bool, Exception> onExit = null, TCustomDataType customData = default(TCustomDataType), CancellationTokenSource cts = null)
         {
-            var result = new Thread<T>(action, onExit, customData, cts);
+            var result = new Thread<TCustomDataType>(action, onExit, customData, cts);
             return result;
         }
     }

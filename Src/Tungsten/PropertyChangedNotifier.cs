@@ -10,6 +10,9 @@ namespace W
     /// </summary>
     public abstract class PropertyChangedNotifier : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Raised when a property changes
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>

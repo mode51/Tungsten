@@ -23,12 +23,24 @@ namespace W.Encryption
         /// </summary>
         public RSAParameters PublicKey { get; set; }
     }
+    /// <summary>
+    /// Provides RSA encryption functionality
+    /// </summary>
+    /// <remarks>
+    /// Adapted from an online sample http://digitalsquid.co.uk/2009/01/rsa-crypto/
+    /// </remarks>
     public class RSA : IDisposable
     {
         private System.Security.Cryptography.RSA _rsa = System.Security.Cryptography.RSA.Create();
         private int _keySize;
 
+        /// <summary>
+        /// The private key used to decrypt data(do not share)
+        /// </summary>
         public RSAParameters PrivateKey { get; set; }
+        /// <summary>
+        /// The public key used to encrypt data (should be shared)
+        /// </summary>
         public RSAParameters PublicKey { get; set; }
 
         /// <summary>
@@ -51,48 +63,32 @@ namespace W.Encryption
         {
             Dispose();
         }
-        ///// <summary>
-        ///// Encrypts data using the public key
-        ///// </summary>
-        ///// <param name="data">The data to encrypt</param>
-        ///// <returns>A cipher of the data</returns>
-        //public byte[] Encrypt(byte[] data)
-        //{
-        //    _rsa.ImportParameters(PublicKey);
-        //    return _rsa.Encrypt(data, RSAEncryptionPadding.Pkcs1);
-        //}
-        ///// <summary>
-        ///// Encrypts data using the public key
-        ///// </summary>
-        ///// <param name="data">The data to encrypt</param>
-        ///// <param name="publicKey">Use this public key to encrypt instead of the underlying value</param>
-        ///// <returns>A cipher of the data</returns>
-        //public byte[] Encrypt(byte[] data, RSAParameters publicKey)
-        //{
-        //    _rsa.ImportParameters(publicKey);
-        //    var result = _rsa.Encrypt(data, RSAEncryptionPadding.Pkcs1);
-        //    //_rsa.SignData(result, HashAlgorithmName.SHA512, RSASignaturePadding.Pkcs1);
-        //    return result;
-        //}
-        ///// <summary>
-        ///// Deciphers data using the underlying private key
-        ///// </summary>
-        ///// <param name="cipher">The data to decipher</param>
-        ///// <returns>The deciphered data</returns>
-        //public byte[] Decrypt(byte[] cipher)
-        //{
-        //    _rsa.ImportParameters(PrivateKey);
-        //    return _rsa.Decrypt(cipher, RSAEncryptionPadding.Pkcs1);
-        //}
-        //adapted from an online sample (http://digitalsquid.co.uk/2009/01/rsa-crypto/)
+
+        /// <summary>
+        /// Encrypts a string
+        /// </summary>
+        /// <param name="text">The string to encrypt</param>
+        /// <returns>A string containing the encrypted value</returns>
         public string Encrypt(string text)
         {
             return Encrypt(text.AsBytes(), PublicKey);
         }
+        /// <summary>
+        /// Encrypts a string
+        /// </summary>
+        /// <param name="text">The string to encrypt</param>
+        /// <param name="publicKey">The public key used to encrypt the string</param>
+        /// <returns>A string containing the encrypted value</returns>
         public string Encrypt(string text, RSAParameters publicKey)
         {
             return Encrypt(text.AsBytes(), publicKey);
         }
+        /// <summary>
+        /// Encrypts a string
+        /// </summary>
+        /// <param name="byteData">The data to encrypt</param>
+        /// <param name="publicKey">The public key used to encrypt the data</param>
+        /// <returns>A string containing the encrypted data</returns>
         public string Encrypt(byte[] byteData, RSAParameters publicKey)
         {
             //Log.v("Encryption Hash={0}", MD5.GetMd5Hash(publicKey.AsXml<RSAParameters>()));
@@ -115,6 +111,12 @@ namespace W.Encryption
             var result = sb.ToString();
             return result;
         }
+        /// <summary>
+        /// Encrypts data asynchronously
+        /// </summary>
+        /// <param name="data">The data to encrypt</param>
+        /// <param name="key">The public key used to encrypt the data</param>
+        /// <returns>A Task for the asynchronous operation</returns>
         public async Task<string> EncryptAsync(byte[] data, RSAParameters key)
         {
             var result = new StringBuilder();
@@ -161,10 +163,21 @@ namespace W.Encryption
             }
         }
 
+        /// <summary>
+        /// Decrypts a string (previously encrypted with the Encrypt method)
+        /// </summary>
+        /// <param name="base64String">The encrypted string</param>
+        /// <returns>A string containing the decrypted value</returns>
         public string Decrypt(string base64String)
         {
             return Decrypt(base64String, PrivateKey);
         }
+        /// <summary>
+        /// Decrypts a string (previously encrypted with the Encrypt method)
+        /// </summary>
+        /// <param name="base64String">The encrypted string</param>
+        /// <param name="privateKey">The private key used to decrypt the string</param>
+        /// <returns>A string containing the decrypted value</returns>
         public string Decrypt(string base64String, RSAParameters privateKey)
         {
             string result = null;
@@ -195,10 +208,21 @@ namespace W.Encryption
             return result;
         }
 
+        /// <summary>
+        /// Decrypts a byte array (previously encrypted with the Encrypt method)
+        /// </summary>
+        /// <param name="cipher">The encrypted data</param>
+        /// <returns>A byte array containing the decrypted value</returns>
         public byte[] Decrypt(byte[] cipher)
         {
             return Decrypt(cipher, PrivateKey);
         }
+        /// <summary>
+        /// Decrypts a byte array (previously encrypted with the Encrypt method)
+        /// </summary>
+        /// <param name="cipher">The encrypted byte array</param>
+        /// <param name="privateKey">The private key used to decrypt the data</param>
+        /// <returns>A byte array containing the decrypted value</returns>
         public byte[] Decrypt(byte[] cipher, RSAParameters privateKey)
         {
             byte[] result = null;
@@ -237,8 +261,16 @@ namespace W.Encryption
         }
     }
 
+    /// <summary>
+    /// Used to generate MD5 hashes and verify input strings against them
+    /// </summary>
     public class MD5
     {
+        /// <summary>
+        /// Generates an MD5 hash of the input string
+        /// </summary>
+        /// <param name="input">An MD5 hash of this input will be created</param>
+        /// <returns>An MD5 hash of the inputted value</returns>
         public static string GetMd5Hash(string input)
         {
             using (var md5 = System.Security.Cryptography.MD5.Create())
@@ -246,6 +278,12 @@ namespace W.Encryption
                 return MD5.GetMd5Hash(input, md5);
             }
         }
+        /// <summary>
+        /// Generates an MD5 hash of the input string
+        /// </summary>
+        /// <param name="input">An MD5 hash of this input will be created</param>
+        /// <param name="md5">The previously allocated MD5 object to use</param>
+        /// <returns>An MD5 hash of the inputted value</returns>
         public static string GetMd5Hash(string input, System.Security.Cryptography.MD5 md5)
         {
             // Convert the input string to a byte array and compute the hash.
@@ -266,7 +304,12 @@ namespace W.Encryption
             return sBuilder.ToString();
         }
 
-        // Verify a hash against a string.
+        /// <summary>
+        /// Verifies a hash against a string
+        /// </summary>
+        /// <param name="input">The string to verify</param>
+        /// <param name="hash">The MD5 hash used in the verification</param>
+        /// <returns>True if the input string is verified, otherwise False</returns>
         public static bool VerifyMd5Hash(string input, string hash)
         {
             using (var md5 = System.Security.Cryptography.MD5.Create())

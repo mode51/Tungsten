@@ -175,6 +175,7 @@
             </summary>
             <param name="success">The initial Success value</param>
             <param name="result">The initial Result value</param>
+            <param name="e">An exception if one ocurred</param>
         </member>
         <member name="P:W.CallResult`1.Empty">
             <summary>
@@ -279,7 +280,7 @@
             <summary>
             Runs the provided Action on the UI thread
             </summary>
-            <param name="this">The form or control which supports ISynchronizeInvoke</param>
+            <param name="context">The form or control which supports ISynchronizeInvoke</param>
             <param name="action">The code to be executed on the UI thread</param>
             <typeparam name="T">The form or control who's thread will execute the code</typeparam>
         </member>
@@ -287,7 +288,7 @@
             <summary>
             Asynchronously runs the provided Action on the UI thread
             </summary>
-            <param name="this">The form or control which supports ISynchronizeInvoke</param>
+            <param name="context">The form or control which supports ISynchronizeInvoke</param>
             <param name="action">The code to be executed on the UI thread</param>
             <typeparam name="T">The form or control who's thread will execute the code</typeparam>
         </member>
@@ -295,7 +296,7 @@
             <summary>
             Creates a Task to run the provided Action on the UI thread.  Can be awaited.
             </summary>
-            <param name="this">The form or control which supports ISynchronizeInvoke</param>
+            <param name="context">The form or control which supports ISynchronizeInvoke</param>
             <param name="action">The code to be executed on the UI thread</param>
             <typeparam name="T">The form or control who's thread will execute the code</typeparam>
         </member>
@@ -306,6 +307,11 @@
             </para>
             </summary>
             <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="P:W.Lockable`1.LockObject">
+            <summary>
+            The object used internally for lock statements
+            </summary>
         </member>
         <member name="P:W.Lockable`1.Value">
             <summary>
@@ -359,6 +365,26 @@
         <member name="T:W.Logging.Log.LogMessageCategory">
             <summary>
             The log message type
+            </summary>
+        </member>
+        <member name="F:W.Logging.Log.LogMessageCategory.Verbose">
+            <summary>
+            Denotes verbose message
+            </summary>
+        </member>
+        <member name="F:W.Logging.Log.LogMessageCategory.Information">
+            <summary>
+            Denotes a informational message
+            </summary>
+        </member>
+        <member name="F:W.Logging.Log.LogMessageCategory.Warning">
+            <summary>
+            Denotes a warning message
+            </summary>
+        </member>
+        <member name="F:W.Logging.Log.LogMessageCategory.Error">
+            <summary>
+            Denotes an error message
             </summary>
         </member>
         <member name="M:W.Logging.Log.e(System.Exception)">
@@ -644,6 +670,11 @@
             </para>
             </summary>
         </member>
+        <member name="E:W.PropertyChangedNotifier.PropertyChanged">
+            <summary>
+            Raised when a property changes
+            </summary>
+        </member>
         <member name="M:W.PropertyChangedNotifier.GetValue">
             <summary>
             <para>
@@ -794,6 +825,24 @@
             the public RSA key. Should be shared.
             </summary>
         </member>
+        <member name="T:W.Encryption.RSA">
+            <summary>
+            Provides RSA encryption functionality
+            </summary>
+            <remarks>
+            Adapted from an online sample http://digitalsquid.co.uk/2009/01/rsa-crypto/
+            </remarks>
+        </member>
+        <member name="P:W.Encryption.RSA.PrivateKey">
+            <summary>
+            The private key used to decrypt data(do not share)
+            </summary>
+        </member>
+        <member name="P:W.Encryption.RSA.PublicKey">
+            <summary>
+            The public key used to encrypt data (should be shared)
+            </summary>
+        </member>
         <member name="M:W.Encryption.RSA.#ctor(System.Int32)">
             <summary>
             constructs a new RSA object
@@ -804,8 +853,97 @@
             Destructs the RSA object and calls Dispose 
             </summary>
         </member>
+        <member name="M:W.Encryption.RSA.Encrypt(System.String)">
+            <summary>
+            Encrypts a string
+            </summary>
+            <param name="text">The string to encrypt</param>
+            <returns>A string containing the encrypted value</returns>
+        </member>
+        <member name="M:W.Encryption.RSA.Encrypt(System.String,System.Security.Cryptography.RSAParameters)">
+            <summary>
+            Encrypts a string
+            </summary>
+            <param name="text">The string to encrypt</param>
+            <param name="publicKey">The public key used to encrypt the string</param>
+            <returns>A string containing the encrypted value</returns>
+        </member>
+        <member name="M:W.Encryption.RSA.Encrypt(System.Byte[],System.Security.Cryptography.RSAParameters)">
+            <summary>
+            Encrypts a string
+            </summary>
+            <param name="byteData">The data to encrypt</param>
+            <param name="publicKey">The public key used to encrypt the data</param>
+            <returns>A string containing the encrypted data</returns>
+        </member>
+        <member name="M:W.Encryption.RSA.EncryptAsync(System.Byte[],System.Security.Cryptography.RSAParameters)">
+            <summary>
+            Encrypts data asynchronously
+            </summary>
+            <param name="data">The data to encrypt</param>
+            <param name="key">The public key used to encrypt the data</param>
+            <returns>A Task for the asynchronous operation</returns>
+        </member>
+        <member name="M:W.Encryption.RSA.Decrypt(System.String)">
+            <summary>
+            Decrypts a string (previously encrypted with the Encrypt method)
+            </summary>
+            <param name="base64String">The encrypted string</param>
+            <returns>A string containing the decrypted value</returns>
+        </member>
+        <member name="M:W.Encryption.RSA.Decrypt(System.String,System.Security.Cryptography.RSAParameters)">
+            <summary>
+            Decrypts a string (previously encrypted with the Encrypt method)
+            </summary>
+            <param name="base64String">The encrypted string</param>
+            <param name="privateKey">The private key used to decrypt the string</param>
+            <returns>A string containing the decrypted value</returns>
+        </member>
+        <member name="M:W.Encryption.RSA.Decrypt(System.Byte[])">
+            <summary>
+            Decrypts a byte array (previously encrypted with the Encrypt method)
+            </summary>
+            <param name="cipher">The encrypted data</param>
+            <returns>A byte array containing the decrypted value</returns>
+        </member>
+        <member name="M:W.Encryption.RSA.Decrypt(System.Byte[],System.Security.Cryptography.RSAParameters)">
+            <summary>
+            Decrypts a byte array (previously encrypted with the Encrypt method)
+            </summary>
+            <param name="cipher">The encrypted byte array</param>
+            <param name="privateKey">The private key used to decrypt the data</param>
+            <returns>A byte array containing the decrypted value</returns>
+        </member>
         <member name="M:W.Encryption.RSA.Dispose">
             <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        </member>
+        <member name="T:W.Encryption.MD5">
+            <summary>
+            Used to generate MD5 hashes and verify input strings against them
+            </summary>
+        </member>
+        <member name="M:W.Encryption.MD5.GetMd5Hash(System.String)">
+            <summary>
+            Generates an MD5 hash of the input string
+            </summary>
+            <param name="input">An MD5 hash of this input will be created</param>
+            <returns>An MD5 hash of the inputted value</returns>
+        </member>
+        <member name="M:W.Encryption.MD5.GetMd5Hash(System.String,System.Security.Cryptography.MD5)">
+            <summary>
+            Generates an MD5 hash of the input string
+            </summary>
+            <param name="input">An MD5 hash of this input will be created</param>
+            <param name="md5">The previously allocated MD5 object to use</param>
+            <returns>An MD5 hash of the inputted value</returns>
+        </member>
+        <member name="M:W.Encryption.MD5.VerifyMd5Hash(System.String,System.String)">
+            <summary>
+            Verifies a hash against a string
+            </summary>
+            <param name="input">The string to verify</param>
+            <param name="hash">The MD5 hash used in the verification</param>
+            <returns>True if the input string is verified, otherwise False</returns>
         </member>
         <member name="T:W.Threading.Gate">
             <summary>
@@ -976,7 +1114,7 @@
             <summary>
             A thread wrapper which makes multi-threading easier
             </summary>
-            <typeparam name="T">The type of custom data to pass to the thread Action</typeparam>
+            <typeparam name="TCustomData">The type of custom data to pass to the thread Action</typeparam>
         </member>
         <member name="P:W.Threading.Thread`1.CustomData">
             <summary>
@@ -1000,6 +1138,7 @@
             <param name="action">The Action to be called in the thread</param>
             <param name="onExit">The Action to be called when the thread completes</param>
             <param name="customData">The custom data to be passed into the thread</param>
+            <param name="cts">A CancellationTokenSource which can be used to cancel the thread</param>
         </member>
         <member name="M:W.Threading.Thread`1.Create``1(System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0,System.Threading.CancellationTokenSource)">
             <summary>
@@ -1008,6 +1147,7 @@
             <param name="action">Action to call on a thread</param>
             <param name="onExit">Action to call upon comletion.  Executes on the same thread as Action.</param>
             <param name="customData">Custom data to be passed into the thread</param>
+            <param name="cts">A CancellationTokenSource which can be used to cancel the operation</param>
             <returns>A new long-running Thread object</returns>
         </member>
         <member name="T:W.Threading.ThreadBase">
@@ -1118,6 +1258,7 @@
             <summary>
             Starts a new thread
             </summary>
+            <param name="this">The object to send into a new Thread</param>
             <param name="action">Action to call on a thread</param>
             <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
             <returns>A reference to the new W.Threading.Thread&lt;T&gt;</returns>

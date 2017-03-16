@@ -23,9 +23,21 @@ namespace W.Logging
         /// </summary>
         public enum LogMessageCategory
         {
+            /// <summary>
+            /// Denotes verbose message
+            /// </summary>
             Verbose,
+            /// <summary>
+            /// Denotes a informational message
+            /// </summary>
             Information,
+            /// <summary>
+            /// Denotes a warning message
+            /// </summary>
             Warning,
+            /// <summary>
+            /// Denotes an error message
+            /// </summary>
             Error
         }
         /// <summary>

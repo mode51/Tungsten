@@ -45,9 +45,9 @@ namespace W
         /// <param name="this">The byte array to convert to Base64</param>
         /// <returns></returns>
         [System.Diagnostics.DebuggerStepThrough]
-        public static byte[] AsBase64(this byte[] @this)
+        public static string AsBase64(this byte[] @this)
         {
-            return Convert.ToBase64String(@this).AsBytes();
+            return Convert.ToBase64String(@this);
         }
         /// <summary>
         /// Converts a string to an encoded byte array
@@ -167,38 +167,38 @@ namespace W
             return System.Text.Encoding.Default.GetString(AsCompressed(System.Text.Encoding.Default.GetBytes(item)));
 #endif
         }
-//        /// <summary>
-//        /// Decompresses the byte array using System.IO.Compression.DeflateStream
-//        /// </summary>
-//        /// <param name="bytes">The byte array containing compressed data</param>
-//        /// <returns>A byte array of the decompressed data</returns>
-//        public static byte[] AsDecompressed(this byte[] bytes)
-//        {
-//            var input = new MemoryStream(bytes);
-//            var output = new MemoryStream();
-//            using (var deflater = new System.IO.Compression.DeflateStream(input, System.IO.Compression.CompressionMode.Decompress))
-//            {
-//                deflater.CopyTo(output);
-//            }
-//#if WINDOWS_PORTABLE || WINDOWS_UWP
-//            return output.ToArray();
-//#else
-//            return output.GetBuffer();
-//#endif
-//        }
-//        /// <summary>
-//        /// Decompresses the string using System.IO.Compression.DeflateStream
-//        /// </summary>
-//        /// <param name="item">The string containing compressed data</param>
-//        /// <returns>A string of decompressed data</returns>
-//        public static string AsDecompressed(this string item)
-//        {
-//#if WINDOWS_PORTABLE || WINDOWS_UWP
-//            var bytes = AsDecompressed(System.Text.Encoding.UTF8.GetBytes(item));
-//            return System.Text.Encoding.UTF8.GetString(bytes, 0, bytes.Length).TrimEnd('\0');
-//#else
-//            return System.Text.Encoding.Default.GetString(AsDecompressed(System.Text.Encoding.Default.GetBytes(item))).TrimEnd('\0');
-//#endif
-//        }
+        /// <summary>
+        /// Decompresses the byte array using System.IO.Compression.DeflateStream
+        /// </summary>
+        /// <param name="bytes">The byte array containing compressed data</param>
+        /// <returns>A byte array of the decompressed data</returns>
+        public static byte[] AsDecompressed(this byte[] bytes)
+        {
+            var input = new MemoryStream(bytes);
+            var output = new MemoryStream();
+            using (var deflater = new System.IO.Compression.DeflateStream(input, System.IO.Compression.CompressionMode.Decompress))
+            {
+                deflater.CopyTo(output);
+            }
+#if WINDOWS_PORTABLE || WINDOWS_UWP
+            return output.ToArray();
+#else
+            return output.GetBuffer();
+#endif
+        }
+        /// <summary>
+        /// Decompresses the string using System.IO.Compression.DeflateStream
+        /// </summary>
+        /// <param name="item">The string containing compressed data</param>
+        /// <returns>A string of decompressed data</returns>
+        public static string AsDecompressed(this string item)
+        {
+#if WINDOWS_PORTABLE || WINDOWS_UWP
+            var bytes = AsDecompressed(System.Text.Encoding.UTF8.GetBytes(item));
+            return System.Text.Encoding.UTF8.GetString(bytes, 0, bytes.Length).TrimEnd('\0');
+#else
+            return System.Text.Encoding.Default.GetString(AsDecompressed(System.Text.Encoding.Default.GetBytes(item))).TrimEnd('\0');
+#endif
+        }
     }
 }
