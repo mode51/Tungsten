@@ -17,7 +17,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\Tungsten.Net.Core\Tungsten.Net.Core.csproj" />
+    <ProjectReference Include="..\..\Src\Tungsten.Net.Standard\Tungsten.Net.Standard.csproj" />
   </ItemGroup>
 
 </Project>

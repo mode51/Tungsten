@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Tungsten</id>
+    <title>Tungsten</title>
+    <version>1.2.0</version>
+    <authors>Jordan Duerksen</authors>
+    <owners>Jordan Duerksen</owners>
+    <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/mode51/Tungsten</projectUrl>
+    <iconUrl>http://www.duerksen.us/images/Tungsten.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Tungsten is a C# library of classes which make application development easier.</description>
+    <summary>Tungsten now includes net45, netstandard1.4, universal and portable (portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20).  Note that Silverlight is not supported.</summary>
+    <releaseNotes>Added support for netstandard1.4</releaseNotes>
+    <copyright>Copyright 2017 Jordan Duerksen</copyright>
+    <tags>Tungsten W C# library</tags>
+ <dependencies>
+    <group targetFramework=".NETStandard1.4">
+        <dependency id="System.Runtime.Serialization.Json" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Thread" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+        <dependency id="System.Runtime.Serialization.Xml" version="4.3.0" exclude="Build,Analyzers" />
+    </group>
+  </dependencies>
+  </metadata>
+</package>

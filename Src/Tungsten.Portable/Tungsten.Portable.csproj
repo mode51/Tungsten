@@ -101,8 +101,8 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>@echo Copying Files For NuGet
-copy "$(TargetDir)$(TargetName).dll" "$(SolutionDir)NuGet\Tungsten\bin\lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20\"
-copy "$(TargetDir)$(TargetName).XML" "$(SolutionDir)NuGet\Tungsten\bin\lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20\"
+copy "$(TargetDir)$(TargetName).dll" "$(SolutionDir)NuGet\Tungsten\lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20\"
+copy "$(TargetDir)$(TargetName).XML" "$(SolutionDir)NuGet\Tungsten\lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20\"
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

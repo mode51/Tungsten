@@ -86,8 +86,8 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>@echo Copying Files For NuGet
-copy "$(TargetDir)$(TargetName).dll" "$(SolutionDir)NuGet\Tungsten\bin\lib\net45\"
-copy "$(TargetDir)$(TargetName).XML" "$(SolutionDir)NuGet\Tungsten\bin\lib\net45\"
+copy "$(TargetDir)$(TargetName).dll" "$(SolutionDir)NuGet\Tungsten\lib\net45\"
+copy "$(TargetDir)$(TargetName).XML" "$(SolutionDir)NuGet\Tungsten\lib\net45\"
 "C:\Users\Jordan\Source\Repos\nuget.exe" pack "$(ProjectPath)"
 </PostBuildEvent>
   </PropertyGroup>

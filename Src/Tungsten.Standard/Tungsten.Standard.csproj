@@ -17,8 +17,8 @@
     <FileVersion>1.2.0.0</FileVersion>
     <PackageReleaseNotes>Added AsCompressed and AsDecompressed</PackageReleaseNotes>
     <PostBuildEvent>@echo Copying Files For NuGet
-copy "$(SolutionDir)Src\Tungsten.Standard\bin\Release\netstandard1.4\Tungsten.Standard.dll" "$(SolutionDir)NuGet\Tungsten\bin\lib\netstandard1.4\"
-copy "$(SolutionDir)Src\Tungsten.Standard\bin\Release\netstandard1.4\Tungsten.Standard.XML" "$(SolutionDir)NuGet\Tungsten\bin\lib\netstandard1.4\"
+copy "C:\Users\Jordan\Source\Repos\Tungsten\Src\Tungsten.Standard\bin\Release\netstandard1.4\Tungsten.Standard.dll" "C:\Users\Jordan\Source\Repos\Tungsten\NuGet\Tungsten\lib\netstandard1.4\"
+copy "C:\Users\Jordan\Source\Repos\Tungsten\Src\Tungsten.Standard\bin\Release\netstandard1.4\Tungsten.Standard.XML" "C:\Users\Jordan\Source\Repos\Tungsten\NuGet\Tungsten\lib\netstandard1.4\"
 </PostBuildEvent>
     <RepositoryUrl>$(SolutionDir)NuGet</RepositoryUrl>
   </PropertyGroup>

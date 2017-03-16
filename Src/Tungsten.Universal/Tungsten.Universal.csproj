@@ -182,8 +182,8 @@
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>@echo Copying Files For NuGet
-copy "$(TargetDir)$(TargetName).dll" "$(SolutionDir)NuGet\Tungsten\bin\lib\uap10.0\"
-copy "$(TargetDir)$(TargetName).XML" "$(SolutionDir)NuGet\Tungsten\bin\lib\uap10.0\"
+copy "$(TargetDir)$(TargetName).dll" "$(SolutionDir)NuGet\Tungsten\lib\uap10.0\"
+copy "$(TargetDir)$(TargetName).XML" "$(SolutionDir)NuGet\Tungsten\lib\uap10.0\"
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
