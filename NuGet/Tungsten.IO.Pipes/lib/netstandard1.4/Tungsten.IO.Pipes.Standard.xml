@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tungsten.IO.Pipes.Standard</name>
+    </assembly>
+    <members>
+        <member name="T:W.IO.Pipes.FormattedPipeClient`1">
+            <summary>
+            Base class for PipeClient.  When inherited, it supports customized formatting before sending and after receiving data.
+            </summary>
+            <remarks>Override the FormatReceivedMessage and FormatMessageToSend functions to customize the formatting</remarks>
+        </member>
+        <member name="P:W.IO.Pipes.FormattedPipeClient`1.Connected">
+            <summary>
+            Called when the client connects to the server
+            </summary>
+        </member>
+        <member name="P:W.IO.Pipes.FormattedPipeClient`1.Disconnected">
+            <summary>
+            Called when the client disconnects from the server
+            </summary>
+        </member>
+        <member name="M:W.IO.Pipes.FormattedPipeClient`1.Connect(System.String,System.IO.Pipes.PipeDirection)">
+            <summary>
+            Attempts to connect to the server
+            </summary>
+            <returns>True if a connection was established, otherwise false</returns>
+        </member>
+        <member name="M:W.IO.Pipes.FormattedPipeClient`1.Connect(System.String,System.String,System.IO.Pipes.PipeDirection)">
+            <summary>
+            Attempts to connect to the server
+            </summary>
+            <returns>True if a connection was established, otherwise false</returns>
+        </member>
+        <member name="M:W.IO.Pipes.FormattedPipeClient`1.OnDispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:W.IO.Pipes.FormattedPipeClient`1.OnDisconnected(System.Exception)">
+            <summary>
+            Override to handle a disconnect
+            </summary>
+            <param name="e">The exception, if one occurred</param>
+        </member>
+        <member name="M:W.IO.Pipes.FormattedPipeClient`1.#ctor">
+            <summary>
+            Constructs a new GenericPipe
+            </summary>
+            <remarks>Used when creating a client and calling Connect</remarks>
+        </member>
+        <member name="M:W.IO.Pipes.FormattedPipeClient`1.Finalize">
+            <summary>
+            Disposes the Pipe
+            </summary>
+        </member>
+        <member name="T:W.IO.Pipes.IPipeClient">
+            <summary>
+            Defines the required methods for a PipeClient to be used by PipeServer
+            </summary>
+        </member>
+        <member name="M:W.IO.Pipes.IPipeClient.Initialize(System.IO.Pipes.PipeStream,System.Boolean)">
+            <summary>
+            Initializes the instance with a pre-existing, connected, PipeStream
+            </summary>
+            <param name="stream">The previously connected pipe client</param>
+            <param name="isServerSide">Set to True if your customized server code needs to know the client exists server-side</param>
+            <remarks>Called by PipeServer when handling a new connection</remarks>
+        </member>
+        <member name="P:W.IO.Pipes.IPipeClient.Connected">
+            <summary>
+            Called when the client connects to the server
+            </summary>
+        </member>
+        <member name="P:W.IO.Pipes.IPipeClient.Disconnected">
+            <summary>
+            Called when the client disconnects from the server
+            </summary>
+            <remarks>Handled by PipeServer to know when to dispose the server-side client</remarks>
+        </member>
+        <member name="M:W.IO.Pipes.IPipeClient.Dispose">
+            <summary>
+            Disposes the object and releases resources
+            </summary>
+        </member>
+        <member name="T:W.IO.Pipes.PipeClient">
+            <summary>
+            A pipe client which sends and receives byte arrays
+            </summary>
+        </member>
+        <member name="T:W.IO.Pipes.PipeClient`1">
+            <summary>
+            Used to send/receive any class type over a named pipe
+            </summary>
+            <typeparam name="TDataType">The class type of the data</typeparam>
+        </member>
+        <member name="M:W.IO.Pipes.PipeClient`1.FormatReceivedMessage(System.Byte[])">
+            <summary>
+            Customized formatting for the received message
+            </summary>
+            <param name="message">The byte[] containing the unformatted message</param>
+            <returns>The formatted message</returns>
+        </member>
+        <member name="M:W.IO.Pipes.PipeClient`1.FormatMessageToSend(`0)">
+            <summary>
+            Customized formatting for sending a message
+            </summary>
+            <param name="message">The message to convert to a byte array</param>
+            <returns>The message converted to a byte array</returns>
+        </member>
+        <member name="T:W.IO.Pipes.PipeServer`1">
+            <summary>
+            Wraps a NamedPipeServerStream for easier use
+            </summary>
+        </member>
+        <member name="P:W.IO.Pipes.PipeServer`1.Started">
+            <summary>
+            Called when the server starts
+            </summary>
+        </member>
+        <member name="P:W.IO.Pipes.PipeServer`1.Stopped">
+            <summary>
+            Called when the server stops
+            </summary>
+        </member>
+        <member name="P:W.IO.Pipes.PipeServer`1.Exception">
+            <summary>
+            Called if an exception occurs
+            </summary>
+        </member>
+        <member name="P:W.IO.Pipes.PipeServer`1.ClientConnected">
+            <summary>
+            Called when a client connects
+            </summary>
+        </member>
+        <member name="M:W.IO.Pipes.PipeServer`1.#ctor(System.String)">
+            <summary>
+            Constructs a new PipeClient
+            </summary>
+            <param name="name">The name of the pipe to use</param>
+        </member>
+        <member name="M:W.IO.Pipes.PipeServer`1.Finalize">
+            <summary>
+            Disposes the PipeServer
+            </summary>
+        </member>
+        <member name="M:W.IO.Pipes.PipeServer`1.Start(System.Int32)">
+            <summary>
+            Creates the underlying NamedPipeClientStream and connects to the server
+            </summary>
+        </member>
+        <member name="M:W.IO.Pipes.PipeServer`1.Stop">
+            <summary>
+            Stops the server and frees resources
+            </summary>
+        </member>
+        <member name="M:W.IO.Pipes.PipeServer`1.Dispose">
+            <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        </member>
+        <member name="T:W.IO.Pipes.PipeTransceiver`1">
+            <summary>
+            Synchronizes two threads
+            </summary>
+        </member>
+        <member name="P:W.IO.Pipes.PipeTransceiver`1.Stream">
+            <summary>
+            The PipeStream associated with this PipeTransceiver
+            </summary>
+        </member>
+        <member name="P:W.IO.Pipes.PipeTransceiver`1.IsServerSide">
+            <summary>
+            Set to True if the client is running server-side
+            </summary>
+            <remarks>This value is informational only; no logic depends on it</remarks>
+        </member>
+        <member name="P:W.IO.Pipes.PipeTransceiver`1.Exception">
+            <summary>
+            Called when an exception occurs
+            </summary>
+        </member>
+        <member name="P:W.IO.Pipes.PipeTransceiver`1.MessageReceived">
+            <summary>
+            Called when a message has been received
+            </summary>
+        </member>
+        <member name="P:W.IO.Pipes.PipeTransceiver`1.UseCompression">
+            <summary>
+            Can be useful for large data sets.  Set to True to use compression, otherwise False
+            </summary>
+            <remarks>Make sure both server and client have the same value</remarks>
+        </member>
+        <member name="M:W.IO.Pipes.PipeTransceiver`1.Initialize(System.IO.Pipes.PipeStream,System.Boolean)">
+            <summary>
+            Constructs a Synchronizer
+            </summary>
+        </member>
+        <member name="M:W.IO.Pipes.PipeTransceiver`1.Finalize">
+            <summary>
+            Disposes the Synchronizer and releases resources
+            </summary>
+        </member>
+        <member name="M:W.IO.Pipes.PipeTransceiver`1.Write(`0)">
+            <summary>
+            Queues a message to send over the pipe
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:W.IO.Pipes.PipeTransceiver`1.OnDisconnected(System.Exception)">
+            <summary>
+            Override to handle a disconnect
+            </summary>
+            <param name="e">The exception, if one occurred</param>
+            <remarks>This method is called when a disconnect has been detected by a failed ReadAsync</remarks>
+        </member>
+        <member name="M:W.IO.Pipes.PipeTransceiver`1.FormatReceivedMessage(System.Byte[])">
+            <summary>
+            Override to customize received data before exposing it via the MessageReceived callback
+            </summary>
+            <param name="message">The received data</param>
+            <returns>The formatted data</returns>
+        </member>
+        <member name="M:W.IO.Pipes.PipeTransceiver`1.FormatMessageToSend(`0)">
+            <summary>
+            Override to customize the data before transmission
+            </summary>
+            <param name="message">The unaltered data to send</param>
+            <returns>The formatted data</returns>
+        </member>
+        <member name="M:W.IO.Pipes.PipeTransceiver`1.OnDispose">
+            <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        </member>
+        <member name="M:W.IO.Pipes.PipeTransceiver`1.Dispose">
+            <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        </member>
+    </members>
+</doc>

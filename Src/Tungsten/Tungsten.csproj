@@ -85,10 +85,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>@echo Copying Files For NuGet
-copy "$(TargetDir)$(TargetName).dll" "$(SolutionDir)NuGet\Tungsten\lib\net45\"
-copy "$(TargetDir)$(TargetName).XML" "$(SolutionDir)NuGet\Tungsten\lib\net45\"
-"C:\Users\Jordan\Source\Repos\nuget.exe" pack "$(ProjectPath)"
+    <PostBuildEvent>
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -16,6 +16,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
     <PackageReleaseNotes>Initial release with same version number as Tungsten.Standard</PackageReleaseNotes>
+    <PostBuildEvent></PostBuildEvent>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -28,7 +29,7 @@
 
   <ItemGroup>
     <PackageReference Include="System.IO.Pipes" Version="4.3.0" />
-    <PackageReference Include="Tungsten.Standard" Version="1.1.6" />
+    <PackageReference Include="Tungsten" Version="1.2.0" />
   </ItemGroup>
 
 </Project>

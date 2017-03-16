@@ -16,11 +16,7 @@
     <AssemblyVersion>1.2.0.0</AssemblyVersion>
     <FileVersion>1.2.0.0</FileVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PostBuildEvent>@echo Copying Files For NuGet
-copy "C:\Users\Jordan\Source\Repos\Tungsten\Src\Tungsten.Net.Standard\bin\Release\netstandard1.4\Tungsten.Net.Standard.dll" "C:\Users\Jordan\Source\Repos\Tungsten\NuGet\Tungsten.Net\lib\netstandard1.4\"
-copy "C:\Users\Jordan\Source\Repos\Tungsten\Src\Tungsten.Net.Standard\bin\Release\netstandard1.4\Tungsten.Net.Standard.XML" "C:\Users\Jordan\Source\Repos\Tungsten\NuGet\Tungsten.Net\lib\netstandard1.4\"
-
-</PostBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
