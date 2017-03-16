@@ -17,8 +17,11 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 * Tungsten.RPC - Encrypted socket classes (client and server) to run code on a Tungsten.RPC server
 * Tungsten.Domains - Easily implement reloadable AppDomains in your application
 * Tungsten.LiteDb - LiteDb based CRUD for your POCO classes
-* Tungsten.Net.Core - A NetStandard wrapper for sockets (client and server)
 * Tungsten.IO.Pipes.Standard - A NetStandard wrapper for named pipes (client and server)
+
+# Obsolete Projects
+* Tungsten.Core - Obsolete - replaced by Tungsten.Standard
+* Tungsten.Net.Core - Obsolete - replaced by Tungsten.Net.Standard
 
 # Demos
 * Tungsten.Demo.Winforms - Uses tasks, Property and Gate to provide a responsive UI while handling background tasks
@@ -30,7 +33,7 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 * Tungsten.Standard.Demo - Demonstrates using some of the features in Tungsten.Standard
 * Tungsten.IO.Pipes.Standard.Demo - Illustrates using the named pipe client and server wrappers
 
-# Tungsten / Tungsten.Portable / Tungsten.Universal Classes
+# Tungsten (Tungsten, Portable, Universal, Standard)
 * [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue)\<TValue\> - A generic class to wrap a value in a thread-safe manner
 * [W.Property](https://github.com/mode51/Tungsten/wiki/Property-TValue)\<TValue\> - A generic class providing a number of enhancements to a [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue-)\<TValue\> value
     * Implements INotifyPropertyChanged
@@ -60,3 +63,9 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 #Tungsten.LiteDb
 * W.LiteDb.LiteDbItem - A base class for your POCO classes (necessary for LiteDbMethods due to needing to know the \_id field)
 * W.LiteDb.LiteDbMethods - CRUD methods for your POCO classes which inherit LiteDbItem
+
+#Tungsten.IO.Pipes
+* W.IO.Pipes.PipeClient - A named pipe client; designed to be used with W.IO.Pipes.PipeServer
+* W.IO.Pipes.PipeServer - A named pipe server; designed to be used with W.IO.Pipes.PipeClient
+* W.IO.Pipes.FormattedPipeClient - the base class for PipeClient which handles connecting, disconnecting and cleanup
+* W.IO.Pipes.PipeTransceiver - the base class of FormattedPipeClient which handles sending and receiving of data
