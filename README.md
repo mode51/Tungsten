@@ -29,7 +29,7 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 # Tungsten.LiteDb
 * Tungsten.LiteDb - LiteDb based CRUD for your POCO classes
 
-# Tungsten.IO.Pipes
+# Tungsten.IO.Pipes Demo
 * Tungsten.IO.Pipes.Standard - A NetStandard wrapper for named pipes (client and server)
 
 # Tungsten Demos
