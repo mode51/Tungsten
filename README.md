@@ -1,4 +1,4 @@
-#Tungsten
+# Tungsten
 
 Platforms: WinForms, WPF, Windows Universal, Windows Portable (PCL), NetStandard1.4
 
@@ -23,9 +23,14 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 * Tungsten.Net.RPC - Encrypted socket classes (client and server) to run code on a Tungsten.RPC server
 * Tungsten.Net.RPC.Standard - .NetStandard version of Tungsten.Net.RPC
 
-# Tungsten.Domains - Easily implement reloadable AppDomains in your application
-# Tungsten.LiteDb - LiteDb based CRUD for your POCO classes
-# Tungsten.IO.Pipes.Standard - A NetStandard wrapper for named pipes (client and server)
+# Tungsten.Domains
+* Tungsten.Domains - Easily implement reloadable AppDomains in your application
+
+# Tungsten.LiteDb
+* Tungsten.LiteDb - LiteDb based CRUD for your POCO classes
+
+# Tungsten.IO.Pipes
+* Tungsten.IO.Pipes.Standard - A NetStandard wrapper for named pipes (client and server)
 
 # Tungsten Demos
 * Tungsten.Demo.Winforms - Uses tasks, Property and Gate to provide a responsive UI while handling background tasks
