@@ -46,7 +46,6 @@ A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable 
     * Implements INotifyPropertyChanged
     * Adds IsDirty/MarkAsClean functionality
     * Supports a callback handler in the constructor so you don't have to use events
-* Events and callback have type-strict sender (which is the Owner you specify)
 * [W.PropertyHost](https://github.com/mode51/Tungsten/wiki/PropertyHost) - a base class which automates the IsDirty, MarkAsClean and InitializeProperties so you don't have to.
 * [W.PropertyChangedNotifier](https://github.com/mode51/Tungsten/wiki/PropertyChangedNotifier) - provides implementation of INotifyPropertyChanged in a base-class with overridable GetValue and SetValue methods
 * [W.PropertyHostNotifier] - aggregates PropertyHost and PropertyChangedNotifier
