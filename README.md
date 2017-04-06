@@ -61,18 +61,35 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 * W.Threading.Gate\<T\> - like Gate, exception Action is now Action\<T\>
 * W.ActionQueue\<T\> - Merges a Thread with a ConcurrentQueue.  Executes the provided Action\<T\> or Func\<T, bool\> whenever an item is added to the ConcurrentQueue
 
-#Tungsten.RPC Classes
-* W.RPC.Server - An RPC server (see Tungsten.RPC.ServerDemo for use)
-* W.RPC.Client - An RPC client (see Tungsten.RPC.ClientDemo for use)
+# Tungsten.Net
+These two classes are designed to be the primary implementations
+* W.Net.GenericServer - a generic TCP server hosts secure client connections
+* W.Net.GenericClient - a secure generic TCP client to be used specifically with W.Net.GenericServer; sends and receives messages of any type
 
-#Tungsten.Domains
+These classes can be used if you don't need to transmit objects
+* W.Net.SecureStringServer - a secure server which hosts W.Net.SecureStringClient connections
+* W.Net.SecureStringClient - a secure client which 
+* W.Net.StringServer - a non-secure server which hosts non-secure W.Net.StringClient connections
+* W.Net.StringClient - a non-secure string client to be used specifically with W.Net.StringServer; sends and receives string messages
+
+The following classes can be used to create more customized implementations
+* W.Net.Sockets.SecureServer - can be used with customized secure client connections
+* W.Net.Sockets.Server - a non-secure server; can be used with customized W.Net.Socket.FormattedSocket clients
+* W.Net.Sockets.FormattedSocket - can be used to create a custom client with a custom data type (as long as you can convert it to and from a byte array)
+* W.Net.Sockets.Socket - can be used to create a custom client which transmits byte arrays
+
+# Tungsten.Net.RPC
+* W.Net.RPC.Server - An RPC server (see Tungsten.Net.RPC.Standard.Demo for use)
+* W.Net.RPC.Client - An RPC client (see Tungsten.Net.RPC.Standard.Demo for use)
+
+# Tungsten.Domains
 * W.Domains.DomainLoader - A handy class to make reloadable AppDomains easy
 
-#Tungsten.LiteDb
+# Tungsten.LiteDb
 * W.LiteDb.LiteDbItem - A base class for your POCO classes (necessary for LiteDbMethods due to needing to know the \_id field)
 * W.LiteDb.LiteDbMethods - CRUD methods for your POCO classes which inherit LiteDbItem
 
-#Tungsten.IO.Pipes
+# Tungsten.IO.Pipes
 * W.IO.Pipes.PipeClient - A named pipe client; designed to be used with W.IO.Pipes.PipeServer
 * W.IO.Pipes.PipeServer - A named pipe server; designed to be used with W.IO.Pipes.PipeClient
 * W.IO.Pipes.FormattedPipeClient - the base class for PipeClient which handles connecting, disconnecting and cleanup
