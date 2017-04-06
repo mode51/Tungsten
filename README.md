@@ -9,30 +9,42 @@ Tungsten.Universal is built on Windows 10 (10.0; Build 10240)
 
 To build Tungsten.Documentation, you will need to install the SHFB Visual Studio extension from NuGet.
 
-# Projects
+# Tungsten
 * Tungsten - A collection of useful classes for Winforms/WPF
 * Tungsten.Portable - A Portable version of Tungsten
 * Tungsten.Universal - A Universal version of Tungsten
 * Tungsten.Standard - A NetStandard version of Tungsten
-* Tungsten.Net.Standard - A NetStandard client/server tcp socket library
-* Tungsten.RPC - Encrypted socket classes (client and server) to run code on a Tungsten.RPC server
-* Tungsten.Domains - Easily implement reloadable AppDomains in your application
-* Tungsten.LiteDb - LiteDb based CRUD for your POCO classes
-* Tungsten.IO.Pipes.Standard - A NetStandard wrapper for named pipes (client and server)
 
-# Obsolete Projects
-* Tungsten.Core - Obsolete - replaced by Tungsten.Standard
-* Tungsten.Net.Core - Obsolete - replaced by Tungsten.Net.Standard
+# Tungsten.Net
+* Tungsten.Net - A client/server tcp socket library
+* Tungsten.Net.Standard - A NetStandard version of Tungsten.Net
 
-# Demos
+# Tungsten.Net.RPC
+* Tungsten.Net.RPC - Encrypted socket classes (client and server) to run code on a Tungsten.RPC server
+* Tungsten.Net.RPC.Standard - .NetStandard version of Tungsten.Net.RPC
+
+# Tungsten.Domains - Easily implement reloadable AppDomains in your application
+# Tungsten.LiteDb - LiteDb based CRUD for your POCO classes
+# Tungsten.IO.Pipes.Standard - A NetStandard wrapper for named pipes (client and server)
+
+# Tungsten Demos
 * Tungsten.Demo.Winforms - Uses tasks, Property and Gate to provide a responsive UI while handling background tasks
 * Tungsten.Demo.WPF - Illustrates how to use Tungsten in a WPF application
-* Tungsten.RPC.ServerDemo - Illustrates how to create an RPC server with Tungsten.RPC
-* Tungsten.RPC.ClientDemo - Illustrates how to create an RPC client with Tungsten.RPC
-* Tungsten.RPC.Host.Demo - Hosts the RPC server in a reloadable AppDomain
-* Tungsten.Domains.Demo - Illustrates using Tungsten.Domains to host a reloadable AppDomain
 * Tungsten.Standard.Demo - Demonstrates using some of the features in Tungsten.Standard
+
+# Tungsten.Domains Demo
+* Tungsten.Domains.Demo - Illustrates using Tungsten.Domains to host a reloadable AppDomain
+* Tungsten.Domains.Plugin.Demo - A sample plugin
+* Tungsten.Domains.Plugin.Interface.Demo - The interface used by the plugin demo
+
+# Tungsten.IO.Pipes
 * Tungsten.IO.Pipes.Standard.Demo - Illustrates using the named pipe client and server wrappers
+
+# Tungsten.Net Demo
+* Tungsten.Net.Demo - Illustrates how to create a tcp server and connect clients
+
+# Tungsten.Net.RPC Demo
+* Tungsten.Net.RPC.Standard.Demo - a client/server RPC demo
 
 # Tungsten (Tungsten, Portable, Universal, Standard)
 * [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue)\<TValue\> - A generic class to wrap a value in a thread-safe manner
