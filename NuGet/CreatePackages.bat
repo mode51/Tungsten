@@ -9,6 +9,10 @@ echo __________
 @mkdir Tungsten\lib\netstandard1.4
 @mkdir Tungsten\lib\uap10.0
 @mkdir Tungsten\lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20
+@mkdir Tungsten\runtimes
+@mkdir Tungsten\runtimes\win10-x86\native
+@mkdir Tungsten\runtimes\win10-x64\native
+@mkdir Tungsten\runtimes\win10-arm\native
 
 @copy ..\Src\Tungsten\bin\Release\Tungsten.dll Tungsten\lib\net45 /y
 @copy ..\Src\Tungsten\bin\Release\Tungsten.xml Tungsten\lib\net45 /y
@@ -18,6 +22,9 @@ echo __________
 
 @copy ..\Src\Tungsten.Universal\bin\Release\Tungsten.Universal.dll Tungsten\lib\uap10.0 /y
 @copy ..\Src\Tungsten.Universal\bin\Release\Tungsten.Universal.xml Tungsten\lib\uap10.0 /y
+@copy ..\Src\Tungsten.Universal\bin\x86\Release\Tungsten.Universal.dll Tungsten\runtimes\win10-x86\native /y
+@copy ..\Src\Tungsten.Universal\bin\x64\Release\Tungsten.Universal.dll Tungsten\runtimes\win10-x64\native /y
+@copy ..\Src\Tungsten.Universal\bin\ARM\Release\Tungsten.Universal.dll Tungsten\runtimes\win10-arm\native /y
 
 @copy ..\Src\Tungsten.Portable\bin\Release\Tungsten.Portable.dll "Tungsten\lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20\" /y
 @copy ..\Src\Tungsten.Portable\bin\Release\Tungsten.Portable.xml "Tungsten\lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20\" /y

@@ -1,5 +1,8 @@
 ﻿Tungsten is a C# library to make application development easier.  See the wiki @ https://github.com/mode51/Tungsten/wiki for details, examples and use.
 
+4.6.2017 v1.2.3
+Attempting to fix NuGet inclusion of Tungsten.Universal
+
 3.30.2017 v1.2.2
 Added ExecuteInLock/ExecutInLockAsync to Lockable class
 Added additional functionality to W.Threading.Thread and W.Threading.ThreadBase
