@@ -53,7 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tungsten.Domains\DomainTests.cs" />
-    <None Include="Tungsten.RPC\RPCTests.cs" />
     <Compile Include="Tungsten\AsExtensionsTests.cs" />
     <Compile Include="Tungsten\CallResultTests.cs" />
     <Compile Include="Program.cs" />
@@ -78,20 +77,6 @@
       <Project>{46040e3b-ae52-42f9-9c1b-8566fc6765c5}</Project>
       <Name>Tungsten</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="API\Newtonsoft.Json.dll" />
-    <Content Include="API\Tungsten.dll" />
-    <Content Include="API\Tungsten.RPC.dll" />
-    <Content Include="API\Tungsten.RPC.Interfaces.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="API\Tungsten.SampleAPI.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="API\Tungsten.SampleAPI.Interface.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
