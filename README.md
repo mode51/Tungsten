@@ -14,6 +14,7 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 * Tungsten.Portable - A Portable version of Tungsten
 * Tungsten.Universal - A Universal version of Tungsten
 * Tungsten.Standard - A NetStandard version of Tungsten
+* Tungsten.Net.Standard - A NetStandard client/server tcp socket library
 * Tungsten.RPC - Encrypted socket classes (client and server) to run code on a Tungsten.RPC server
 * Tungsten.Domains - Easily implement reloadable AppDomains in your application
 * Tungsten.LiteDb - LiteDb based CRUD for your POCO classes
