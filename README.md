@@ -41,19 +41,16 @@ A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable 
 # Overview Of Classes By Project
 
 ### Tungsten (Tungsten, Portable, Universal, Standard)
-* [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue)\<TValue\> - A generic class to wrap a value in a thread-safe manner
-* [W.Property](https://github.com/mode51/Tungsten/wiki/Property-TValue)\<TValue\> - A generic class providing a number of enhancements to a [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue-)\<TValue\> value
+* [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable) - A generic class to wrap a value in a thread-safe manner
+* [W.Property](https://github.com/mode51/Tungsten/wiki/Property) - A generic class providing a number of enhancements to a [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable) value
     * Implements INotifyPropertyChanged
     * Adds IsDirty/MarkAsClean functionality
     * Supports a callback handler in the constructor so you don't have to use events
-* [W.Property](https://github.com/mode51/Tungsten/wiki/Property-TOwner,-TValue)\<TOwner, TValue\> - Like Property\<TValue\> except that you can specify an Owner
-* Events and callback have type-strict sender (which is the Owner you specify)
 * [W.PropertyHost](https://github.com/mode51/Tungsten/wiki/PropertyHost) - a base class which automates the IsDirty, MarkAsClean and InitializeProperties so you don't have to.
 * [W.PropertyChangedNotifier](https://github.com/mode51/Tungsten/wiki/PropertyChangedNotifier) - provides implementation of INotifyPropertyChanged in a base-class with overridable GetValue and SetValue methods
 * [W.PropertyHostNotifier] - aggregates PropertyHost and PropertyChangedNotifier
 * [W.InvokeExtensions](https://github.com/mode51/Tungsten/wiki/InvokeExtensions) - A static class exposing InvokeEx extension methods (to ease InvokeRequired handling)
 * [W.CallResult](https://github.com/mode51/Tungsten/wiki/CallResult) - A non-generic class which can be used to return true/false and an exception from a function
-* [W.CallResult\<TResult\>](https://github.com/mode51/Tungsten/wiki/CallResult-TResult) - Like CallResult except that you can also specify a result
 * W.Threading.Thread - automates creating a thread with an Action
 * W.Threading.Thread\<T\> - like Thread, except Action is now Action\<T\>
 * W.Threading.Gate - similar to Thread, a Gate can be started some time after creation
