@@ -29,26 +29,16 @@ To build Tungsten.Documentation, you will need to install the SHFB Visual Studio
 # Tungsten.LiteDb
 * Tungsten.LiteDb - LiteDb based CRUD for your POCO classes
 
-# Tungsten.IO.Pipes Demo
+# Demos
 * Tungsten.IO.Pipes.Standard - A NetStandard wrapper for named pipes (client and server)
-
-# Tungsten Demos
 * Tungsten.Demo.Winforms - Uses tasks, Property and Gate to provide a responsive UI while handling background tasks
 * Tungsten.Demo.WPF - Illustrates how to use Tungsten in a WPF application
 * Tungsten.Standard.Demo - Demonstrates using some of the features in Tungsten.Standard
-
-# Tungsten.Domains Demo
 * Tungsten.Domains.Demo - Illustrates using Tungsten.Domains to host a reloadable AppDomain
 * Tungsten.Domains.Plugin.Demo - A sample plugin
 * Tungsten.Domains.Plugin.Interface.Demo - The interface used by the plugin demo
-
-# Tungsten.IO.Pipes
 * Tungsten.IO.Pipes.Standard.Demo - Illustrates using the named pipe client and server wrappers
-
-# Tungsten.Net Demo
 * Tungsten.Net.Demo - Illustrates how to create a tcp server and connect clients
-
-# Tungsten.Net.RPC Demo
 * Tungsten.Net.RPC.Standard.Demo - a client/server RPC demo
 
 # Tungsten (Tungsten, Portable, Universal, Standard)
