@@ -292,6 +292,30 @@
             </para>
             </summary>
         </member>
+        <member name="M:W.Lockable`1.ExecuteInLock(System.Action{`0})">
+            <summary>
+            Executes an action within a lock of the LockObject
+            </summary>
+            <param name="action">The action to call within a lock</param>
+        </member>
+        <member name="M:W.Lockable`1.ExecuteInLock(System.Func{`0,`0})">
+            <summary>
+            Executes an action within a lock of the LockObject
+            </summary>
+            <param name="function">The function to call within a lock</param>
+        </member>
+        <member name="M:W.Lockable`1.ExecuteInLockAsync(System.Action{`0})">
+            <summary>
+            Executes a task within a lock of the LockObject
+            </summary>
+            <param name="action">The action to call within a lock</param>
+        </member>
+        <member name="M:W.Lockable`1.ExecuteInLockAsync(System.Func{`0,`0})">
+            <summary>
+            Executes a task within a lock of the LockObject
+            </summary>
+            <param name="function">The function to call within a lock</param>
+        </member>
         <member name="M:W.Lockable`1.#ctor">
             <summary>
             <para>
@@ -749,20 +773,6 @@
             </summary>
             <returns>True if the assignment was made, otherwise false</returns>
         </member>
-        <member name="T:W.Threading.ThreadExtensions">
-            <summary>
-            Contains a generic extension method to quickly start a new thread
-            </summary>
-        </member>
-        <member name="M:W.Threading.ThreadExtensions.CreateThread``1(``0,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})">
-            <summary>
-            Starts a new thread
-            </summary>
-            <param name="@this">The custom data to be passed to the thread (Action)</param>
-            <param name="action">Action to call on a thread</param>
-            <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
-            <returns>Returns a reference to the new Thread</returns>
-        </member>
         <member name="T:W.Threading.Gate">
             <summary>
             <para>
@@ -810,12 +820,13 @@
             Allows the Action to be called
             </summary>
         </member>
-        <member name="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)">
+        <member name="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},System.Threading.CancellationTokenSource,`0)">
             <summary>
             Construct a Gate
             </summary>
             <param name="action"></param>
             <param name="onComplete"></param>
+            <param name="cts">Can be used to control cancelation externally</param>
             <param name="args">Arguments to pass into the underlying thread</param>
         </member>
         <member name="T:W.Threading.Thread">
@@ -846,19 +857,21 @@
             <param name="msTimeout">The number of milliseconds to wait for the thread to terminate</param>
             <returns>True if the thread terminates within the timeout specified, otherwise false</returns>
         </member>
-        <member name="M:W.Threading.Thread.#ctor(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})">
+        <member name="M:W.Threading.Thread.#ctor(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},System.Threading.CancellationTokenSource)">
             <summary>
             Constructs the Thread object
             </summary>
             <param name="action">The Action to be called on a new thread</param>
             <param name="onComplete">The Action to be called when the thread completes</param>
+            <param name="cts">Can be used to control cancelation externally</param>
         </member>
-        <member name="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})">
+        <member name="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},System.Threading.CancellationTokenSource)">
             <summary>
             Starts a new thread
             </summary>
             <param name="action">Action to call on a thread</param>
             <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
+            <param name="cts">Can be used to control cancelation externally</param>
             <returns></returns>
         </member>
         <member name="T:W.Threading.Thread`1">
@@ -882,20 +895,23 @@
             Invokes the Action
             </summary>
         </member>
-        <member name="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)">
+        <member name="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},System.Threading.CancellationTokenSource,`0)">
             <summary>
             Constructs a new Thread object
             </summary>
             <param name="action">The Action to be called in the thread</param>
             <param name="onComplete">The Action to be called when the thread completes</param>
+            <param name="cts">Can be used to control cancelation externally</param>
             <param name="customData">The custom data to be passed into the thread</param>
         </member>
-        <member name="M:W.Threading.Thread`1.Create``1(System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)">
+        <member name="M:W.Threading.Thread`1.Create``1(System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},System.Threading.CancellationTokenSource,``0)">
             <summary>
             Starts a new thread
             </summary>
             <param name="action">Action to call on a thread</param>
             <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
+            <param name="cts">Can be used to control cancelation externally</param>
+            <param name="customData">The custom data to pass into the thread</param>
             <returns>A new thread with custom data of type TCustomData</returns>
         </member>
         <member name="T:W.Threading.ThreadBase">
@@ -980,12 +996,13 @@
             <param name="msTimeout">The number of milliseconds to wait for the thread to terminate</param>
             <returns>True if the thread terminates within the timeout specified, otherwise false</returns>
         </member>
-        <member name="M:W.Threading.ThreadBase.#ctor(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})">
+        <member name="M:W.Threading.ThreadBase.#ctor(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},System.Threading.CancellationTokenSource)">
             <summary>
             Starts a new thread
             </summary>
             <param name="action">Action to call on a thread</param>
             <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
+            <param name="cts">A CancellationTokenSource which can be used to Cancel the thread</param>
             <returns></returns>
         </member>
         <member name="M:W.Threading.ThreadBase.Finalize">
@@ -995,6 +1012,21 @@
         </member>
         <member name="M:W.Threading.ThreadBase.Dispose">
             <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        </member>
+        <member name="T:W.Threading.ThreadExtensions">
+            <summary>
+            Contains a generic extension method to quickly start a new thread
+            </summary>
+        </member>
+        <member name="M:W.Threading.ThreadExtensions.CreateThread``1(``0,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},System.Threading.CancellationTokenSource)">
+            <summary>
+            Starts a new thread
+            </summary>
+            <param name="this">The custom data to be passed to the thread (Action)</param>
+            <param name="action">Action to call on a thread</param>
+            <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
+            <param name="cts">Can be used to control cancelation externally</param>
+            <returns>Returns a reference to the new Thread</returns>
         </member>
     </members>
 </doc>

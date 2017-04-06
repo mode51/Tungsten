@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <RootNamespace>W.Net.RPC</RootNamespace>
+    <Authors>Jordan Duerksen</Authors>
+    <Company />
+    <Description>Client/Server socket library.   The client calls methods on the server via the MakeRPCCall method.  The server implements RPC methods by using the RPCMethod attribute.</Description>
+    <Copyright>Copyright @ 2017 Jordan Duerksen</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Message.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
+    <PackageReference Include="System.Reflection" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.Extensions" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.3.0" />
+    <PackageReference Include="Tungsten" Version="1.2.2" />
+    <PackageReference Include="Tungsten.Net" Version="1.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Archive\" />
+  </ItemGroup>
+
+</Project>

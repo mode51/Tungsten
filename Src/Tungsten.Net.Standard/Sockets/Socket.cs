@@ -18,10 +18,6 @@ namespace W.Net.Sockets
         private NetworkStream _networkStream;
 
         /// <summary>
-        /// Used to notify the programmer of the state of the client
-        /// </summary>
-        //public ConnectionNotifications<Socket> ConnectionNotifications { get; } = new ConnectionNotifications<Socket>();
-        /// <summary>
         /// Called when the client connects to the server
         /// </summary>
         public Action<Socket, IPAddress> Connected { get; set; }
@@ -30,10 +26,6 @@ namespace W.Net.Sockets
         /// </summary>
         public Action<Socket, Exception> Disconnected { get; set; }
 
-        /// <summary>
-        /// Used to notify the programmer of data sent and received
-        /// </summary>
-        //public DataNotifications<Socket, byte[]> DataNotifications { get; } = new DataNotifications<Socket, byte[]>();
         /// <summary>
         /// Called when a message has been sent to the server
         /// </summary>
@@ -69,10 +61,15 @@ namespace W.Net.Sockets
             if (_client != null)
                 FinalizeConnection(_client.Client.RemoteEndPoint.As<IPEndPoint>()?.Address);
         }
+        ~Socket()
+        {
+            Dispose();
+        }
         /// <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
         public void Dispose()
         {
             Disconnect();
+            GC.SuppressFinalize(this);
         }
 
         /// <summary>
@@ -92,8 +89,9 @@ namespace W.Net.Sockets
             _writer.OnMessageSent += () => { MessageSent?.Invoke(this); };
             _writer.Start();
 
-            if (string.IsNullOrEmpty(Name))
-                Name = _client.Client.RemoteEndPoint.As<IPEndPoint>()?.Address.ToString() ?? "";
+            
+            //if (string.IsNullOrEmpty(Name))
+            Name = Guid.NewGuid().ToString() + "." + _client.Client.RemoteEndPoint.As<IPEndPoint>()?.Address.ToString() ?? "";
         }
 
         /// <summary>
@@ -125,7 +123,7 @@ namespace W.Net.Sockets
                     var msg = message.AsDecompressed();
                     message = msg;
                 }
-                catch (System.IO.InvalidDataException e)
+                catch (System.IO.InvalidDataException)
                 {
                     //ignore - the key will be sent uncompressed
                     //so just pass it on as is
@@ -213,7 +211,11 @@ namespace W.Net.Sockets
             _writer = null;
             _networkStream?.Dispose();
             _networkStream = null;
+#if NETSTANDARD1_4
             _client?.Dispose();
+#else
+            _client?.Close();
+#endif
             _client = null;
             OnDisconnected(e);
         }

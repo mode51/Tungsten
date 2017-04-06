@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
     <RootNamespace>W</RootNamespace>
-    <Version>1.2.1.0</Version>
+    <Version>1.2.2.0</Version>
     <Authors>Jordan Duerksen</Authors>
     <Company />
     <Product>Tungsten</Product>
@@ -13,8 +13,8 @@
     <PackageIconUrl>http://www.duerksen.us/images/Tungsten.ico</PackageIconUrl>
     <PackageTags>Tungsten.NuGet Tungsten W C# library</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <AssemblyVersion>1.2.1.0</AssemblyVersion>
-    <FileVersion>1.2.1.0</FileVersion>
+    <AssemblyVersion>1.2.2.0</AssemblyVersion>
+    <FileVersion>1.2.2.0</FileVersion>
     <PackageReleaseNotes>Added AsCompressed and AsDecompressed</PackageReleaseNotes>
     <PostBuildEvent></PostBuildEvent>
     <RepositoryUrl>$(SolutionDir)NuGet</RepositoryUrl>

@@ -56,25 +56,57 @@ namespace W
         /// <summary>
         /// Executes an action within a lock of the LockObject
         /// </summary>
-        /// <param name="action"></param>
+        /// <param name="action">The action to call within a lock</param>
         public void ExecuteInLock(Action<TValue> action)
         {
+            if (action == null)
+                throw new ArgumentNullException(nameof(action));
             lock (_lockObject)
             {
                 action?.Invoke(Value);
             }
         }
         /// <summary>
+        /// Executes an action within a lock of the LockObject
+        /// </summary>
+        /// <param name="function">The function to call within a lock</param>
+        public void ExecuteInLock(Func<TValue, TValue> function)
+        {
+            if (function == null)
+                throw new ArgumentNullException(nameof(function));
+
+            lock (_lockObject)
+            {
+                Value = function.Invoke(Value);
+            }
+        }
+        /// <summary>
         /// Executes a task within a lock of the LockObject
         /// </summary>
-        /// <param name="action"></param>
+        /// <param name="action">The action to call within a lock</param>
         public async void ExecuteInLockAsync(Action<TValue> action)
         {
+            if (action == null)
+                throw new ArgumentNullException(nameof(action));
             await Task.Run(() =>
             {
                 lock (_lockObject)
                 {
                     action?.Invoke(Value);
+                }
+            });
+        }
+        /// <summary>
+        /// Executes a task within a lock of the LockObject
+        /// </summary>
+        /// <param name="function">The function to call within a lock</param>
+        public async void ExecuteInLockAsync(Func<TValue, TValue> function)
+        {
+            await Task.Run(() =>
+            {
+                lock (_lockObject)
+                {
+                    Value = function.Invoke(Value);
                 }
             });
         }

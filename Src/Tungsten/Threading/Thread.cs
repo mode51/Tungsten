@@ -87,7 +87,8 @@ namespace W.Threading
         /// </summary>
         /// <param name="action">The Action to be called on a new thread</param>
         /// <param name="onComplete">The Action to be called when the thread completes</param>
-        public Thread(Action<CancellationTokenSource> action, Action<bool, Exception> onComplete = null) : base(action, onComplete)
+        /// <param name="cts">Can be used to control cancelation externally</param>
+        public Thread(Action<CancellationTokenSource> action, Action<bool, Exception> onComplete = null, CancellationTokenSource cts = null) : base(action, onComplete, cts)
         {
             Task = Task.Factory.StartNew(() => { ThreadProc(); }, Cts.Token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
         }
@@ -97,10 +98,11 @@ namespace W.Threading
         /// </summary>
         /// <param name="action">Action to call on a thread</param>
         /// <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
+        /// <param name="cts">Can be used to control cancelation externally</param>
         /// <returns></returns>
-        public static Thread Create(Action<CancellationTokenSource> action, Action<bool, Exception> onComplete = null)
+        public static Thread Create(Action<CancellationTokenSource> action, Action<bool, Exception> onComplete = null, CancellationTokenSource cts = null)
         {
-            var result = new Thread(action, onComplete);
+            var result = new Thread(action, onComplete, cts);
             return result;
         }
     }
@@ -133,8 +135,9 @@ namespace W.Threading
         /// </summary>
         /// <param name="action">The Action to be called in the thread</param>
         /// <param name="onComplete">The Action to be called when the thread completes</param>
+        /// <param name="cts">Can be used to control cancelation externally</param>
         /// <param name="customData">The custom data to be passed into the thread</param>
-        public Thread(Action<TCustomData, CancellationTokenSource> action, Action<bool, Exception> onComplete = null, TCustomData customData = default(TCustomData)) : base(null, onComplete)
+        public Thread(Action<TCustomData, CancellationTokenSource> action, Action<bool, Exception> onComplete = null, CancellationTokenSource cts = null, TCustomData customData = default(TCustomData)) : base(null, onComplete, cts)
         {
             Action = action;
             CustomData = customData;
@@ -145,10 +148,12 @@ namespace W.Threading
         /// </summary>
         /// <param name="action">Action to call on a thread</param>
         /// <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
+        /// <param name="cts">Can be used to control cancelation externally</param>
+        /// <param name="customData">The custom data to pass into the thread</param>
         /// <returns>A new thread with custom data of type TCustomData</returns>
-        public static Thread<TcustomDataType> Create<TcustomDataType>(Action<TcustomDataType, CancellationTokenSource> action, Action<bool, Exception> onComplete = null, TcustomDataType customData = default(TcustomDataType))
+        public static Thread<TCustomDataType> Create<TCustomDataType>(Action<TCustomDataType, CancellationTokenSource> action, Action<bool, Exception> onComplete = null, CancellationTokenSource cts = null, TCustomDataType customData = default(TCustomDataType))
         {
-            var result = new Thread<TcustomDataType>(action, onComplete, customData);
+            var result = new Thread<TCustomDataType>(action, onComplete, cts, customData);
             return result;
         }
     }
@@ -254,7 +259,6 @@ namespace W.Threading
     /// <summary>
     /// A thread wrapper which makes multi-threading easier
     /// </summary>
-    /// <typeparam name="T"></typeparam>
     public class Thread : ThreadBase
     {
         private readonly System.Threading.Thread _thread = null;
@@ -288,7 +292,6 @@ namespace W.Threading
         /// Cancels the thread by calling Cancel on the CancellationTokenSource.  The value should be checked in the code in the specified Action parameter.
         /// </para>
         /// </summary>
-        /// <param name="msForceAbortDelay">Abort the thread if it doesn't terminate before the specified number of milliseconds elapse</param>
         public override void Cancel()
         {
             base.Cancel();
@@ -336,8 +339,9 @@ namespace W.Threading
         /// </summary>
         /// <param name="action">Action to call on a thread</param>
         /// <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
+        /// <param name="cts">can be use dto cancel the thread</param>
         /// <returns></returns>
-        public Thread(Action<System.Threading.CancellationTokenSource> action, Action<bool, Exception> onComplete = null) : base(action, onComplete)
+        public Thread(Action<System.Threading.CancellationTokenSource> action, Action<bool, Exception> onComplete = null, CancellationTokenSource cts = null) : base(action, onComplete, cts)
         {
             _thread = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
             _thread.Start();
@@ -353,10 +357,11 @@ namespace W.Threading
         /// </summary>
         /// <param name="action">Action to call on a thread</param>
         /// <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
+        /// <param name="cts">Can be used to cancel the thread</param>
         /// <returns></returns>
-        public static Thread Create(Action<CancellationTokenSource> action, Action<bool, Exception> onComplete = null)
+        public static Thread Create(Action<CancellationTokenSource> action, Action<bool, Exception> onComplete = null, CancellationTokenSource cts = null)
         {
-            var result = new Thread(action, onComplete);
+            var result = new Thread(action, onComplete, cts);
             return result;
         }
 
@@ -402,9 +407,10 @@ namespace W.Threading
         /// </summary>
         /// <param name="action">Action to call on a thread</param>
         /// <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
+        /// <param name="cts">can be use dto cancel the thread</param>
         /// <param name="customData">The data to pass to the call to the thread (Action)</param>
         /// <returns></returns>
-        public Thread(Action<T, System.Threading.CancellationTokenSource> action, Action<bool, Exception> onComplete = null, T customData = default(T)) : base(null, onComplete)
+        public Thread(Action<T, System.Threading.CancellationTokenSource> action, Action<bool, Exception> onComplete = null, CancellationTokenSource cts = null, T customData = default(T)) : base(null, onComplete, cts)
         {
             Action = action;
             CustomData = new Lockable<T>(customData);
@@ -415,11 +421,12 @@ namespace W.Threading
         /// </summary>
         /// <param name="action">Action to call on a thread</param>
         /// <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
+        /// <param name="cts">can be use dto cancel the thread</param>
         /// <param name="customData">The custom data to pass to the thread (Action)</param>
         /// <returns></returns>
-        public static W.Threading.Thread<T> Create(Action<T, CancellationTokenSource> action, Action<bool, Exception> onComplete = null, T customData = default(T))
+        public static W.Threading.Thread<T> Create(Action<T, CancellationTokenSource> action, Action<bool, Exception> onComplete = null, CancellationTokenSource cts = null, T customData = default(T))
         {
-            var thread = new W.Threading.Thread<T>(action, onComplete, customData);
+            var thread = new W.Threading.Thread<T>(action, onComplete, cts, customData);
             return thread;
         }
     }

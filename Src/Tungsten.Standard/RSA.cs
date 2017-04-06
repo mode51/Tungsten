@@ -144,7 +144,9 @@ namespace W.Encryption
             await Task.WhenAll(tasks);
             return result.ToString();
         }
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
         private static async Task EncryptBlock(SemaphoreSlim semaphore, byte[] data, Action<string, int> result, System.Security.Cryptography.RSA rsa, int iteration)
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
         {
             try
             {

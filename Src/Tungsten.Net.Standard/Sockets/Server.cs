@@ -59,6 +59,10 @@ namespace W.Net.Sockets
         public Server()
         {
         }
+        ~Server()
+        {
+            Dispose();
+        }
 
         private void ListenForClientsProc_OnComplete(bool success, Exception e)
         {
@@ -74,7 +78,7 @@ namespace W.Net.Sockets
             IsListeningChanged?.Invoke(true);
             try
             {
-                while (!cts.Token.IsCancellationRequested && (_server != null))
+                while (!cts?.Token.IsCancellationRequested ?? false && (_server != null))
                 {
                     System.Threading.Thread.Sleep(1);
                     if (IsListening && !_server.Pending())
@@ -119,7 +123,10 @@ namespace W.Net.Sockets
                 IsListeningChanged?.Invoke(IsListening);
             }
         }
-
+        /// <summary>
+        /// Configures a new server-side client connection
+        /// </summary>
+        /// <param name="client">The new server-side client connection</param>
         protected virtual void OnCreateClientHandler(TcpClient client)
         {
             //var handler = new TClientType(client);
@@ -170,6 +177,7 @@ namespace W.Net.Sockets
         public void Dispose()
         {
             Stop();
+            GC.SuppressFinalize(this);
         }
 
     }

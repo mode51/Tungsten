@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using W.Logging;
 using Newtonsoft.Json.Linq;
-using W.RPC.Interfaces;
+using W.Net;
 
 namespace W.RPC
 {
@@ -27,9 +27,9 @@ namespace W.RPC
     /// <summary>
     /// Hosts an RPC instance
     /// </summary>
-    public class Server : MarshalByRefObject, IDisposable, IServer
+    public class Server : MarshalByRefObject, IDisposable//, IServer
     {
-        private EncryptedServer<EncryptedClient<Message>> _host;
+        private GenericServer<Message> _host;
         private Dictionary<string, MethodInfo> _methods = new Dictionary<string, MethodInfo>();
         private bool _isListening = false;
 
@@ -172,29 +172,29 @@ namespace W.RPC
             if (_host == null)
             {
                 FindAllRPCMethods();
-                _host = new EncryptedServer<EncryptedClient<Message>>();
-                _host.ClientConnected += (sender, client) =>
+                _host = new GenericServer<Message>();
+                _host.ClientConnected += (client) =>
                 {
-                    Log.i("Client Connected: {0}", client.Name);
+                    //Log.i("Client Connected: {0}", client.Name);
                     client.Disconnected += (c2, exception) =>
                     {
                         Log.i("Client Disconnected: {0}", (c2 as INamed)?.Name);
                     };
-                    client.MessageArrived += (c3, message) =>
+                    client.GenericMessageReceived += (c3, message) =>
                     {
                         try
                         {
-                            if (!c3.IsSecure.Value) //ignore any messages that are sent before being secured
-                            {
-                                Log.w("Message arrived at server before client was secure");
-                                return;
-                            }
+                            //if (!c3.IsSecure.Value) //ignore any messages that are sent before being secured
+                            //{
+                            //    Log.w("Message arrived at server before client was secure");
+                            //    return;
+                            //}
                             OnMessageArrived(ref message);
                             try
                             {
                                 Task.Run(() =>
                                 {
-                                    c3.Post(message);
+                                    c3.As<GenericClient<Message>>().Send(message);
                                 });
                             }
                             catch (Exception e)
@@ -234,31 +234,6 @@ namespace W.RPC
             result.Start(ipAddress, port);
             return result;
         }
-
-        #region Instance Code
-        //private static Server _instance;
-        ///// <summary>
-        ///// Starts a new instanced Server
-        ///// </summary>
-        ///// <param name="ipAddress">The network address on which to listen</param>
-        ///// <param name="port">The port on which to listen</param>
-        //public static void StartInstance(IPAddress ipAddress, int port)
-        //{
-        //    StopInstance();
-        //    _instance = Create(ipAddress, port);
-        //}
-        ///// <summary>
-        ///// Stops the Server instance
-        ///// </summary>
-        //public static void StopInstance()
-        //{
-        //    if (_instance != null)
-        //    {
-        //        _instance.Stop();
-        //        _instance = null;
-        //    }
-        //}
-        #endregion
 
         /// <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
         public void Dispose()

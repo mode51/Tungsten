@@ -1,4 +1,7 @@
-﻿namespace W
+﻿using System;
+using System.Threading.Tasks;
+
+namespace W
 {
     /// <summary>
     /// <para>
@@ -48,6 +51,55 @@
         {
             get { return _value; }
             set { _value = value; }
+        }
+
+        /// <summary>
+        /// Executes an action within a lock of the LockObject
+        /// </summary>
+        /// <param name="action">The action to call within a lock</param>
+        public void ExecuteInLock(Action<TValue> action)
+        {
+            ExecuteInLockAsync(action).Wait();
+        }
+        /// <summary>
+        /// Executes an action within a lock of the LockObject
+        /// </summary>
+        /// <param name="function">The function to call within a lock</param>
+        public void ExecuteInLock(Func<TValue, TValue> function)
+        {
+            ExecuteInLockAsync(function).Wait();
+        }
+        /// <summary>
+        /// Executes a task within a lock of the LockObject
+        /// </summary>
+        /// <param name="action">The action to call within a lock</param>
+        public async Task ExecuteInLockAsync(Action<TValue> action)
+        {
+            if (action == null)
+                throw new ArgumentNullException(nameof(action));
+            await Task.Run(() =>
+            {
+                lock (_lockObject)
+                {
+                    action?.Invoke(Value);
+                }
+            });
+        }
+        /// <summary>
+        /// Executes a task within a lock of the LockObject
+        /// </summary>
+        /// <param name="function">The function to call within a lock</param>
+        public async Task ExecuteInLockAsync(Func<TValue, TValue> function)
+        {
+            if (function == null)
+                throw new ArgumentNullException(nameof(function));
+            await Task.Run(() =>
+            {
+                lock (_lockObject)
+                {
+                    Value = function.Invoke(Value);
+                }
+            });
         }
 
         /// <summary>

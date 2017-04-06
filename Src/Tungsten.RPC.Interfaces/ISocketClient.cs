@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace W.RPC
 {
+    /// <summary>
+    /// Defines the interface for a Socket Client
+    /// </summary>
     public interface ISocketClient
     {
         /// <summary>

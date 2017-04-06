@@ -1,29 +1,35 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using W.Logging;
+using W.Net;
 
 namespace W.RPC
 {
     /// <summary>
     /// Provides simple access to a Tungsten RPC Server
     /// </summary>
-    public class Client : IDisposable, IClient
+    public class Client : IDisposable//, IClient
     {
-        private EncryptedClient<Message> _client;
+        private GenericClient<Message> _client;
         private IPAddress _remoteAddress;
         private readonly Lockable<bool> _isConnected = new Lockable<bool>(false);
+        private readonly List<KeyValuePair<Message, MessageArrivedCallback>> _waiters = new List<KeyValuePair<Message, MessageArrivedCallback>>();
+
+        private delegate void MessageArrivedCallback(GenericClient<Message> clientClient, Message response, bool expired);
 
         /// <summary>
         /// Raised when the Client has connected to the Server
         /// </summary>
-        public event Delegates.ConnectedDelegate Connected;
+        public Action<GenericClient<Message>> Connected;
         /// <summary>
         /// Raised when the Client has disconnected from the Server
         /// </summary>
-        public event Delegates.DisconnectedDelegate Disconnected;
+        public Action<GenericClient<Message>> Disconnected;
         /// <summary>
         /// True if the Client is currently connected to a Tungsten RPC Server, otherwise False
         /// </summary>
@@ -56,7 +62,11 @@ namespace W.RPC
             if (args != null)
                 msg.Parameters.AddRange(args);
 
-            _client.Post(msg, (client, response, isExpired) =>
+            if (msg.Id == Guid.Empty)
+                msg.Id = Guid.NewGuid();
+            msg.ExpireDateTime = DateTime.Now.AddMilliseconds(10000);
+
+            _waiters.Add(new KeyValuePair<Message, MessageArrivedCallback>(msg, (client, response, isExpired) =>
             {
                 var result = default(T);
                 if (response?.Response != null)
@@ -83,7 +93,8 @@ namespace W.RPC
                 }
                 else
                     mre.Set();
-            }, Constants.DefaultMakeRPCCallTimeout);
+            }));
+            _client.Send(msg);
             return mre;
         }
         /// <summary>
@@ -101,7 +112,11 @@ namespace W.RPC
             if (args != null)
                 msg.Parameters.AddRange(args);
 
-            _client.Post(msg, (client, response, isExpired) =>
+            if (msg.Id == Guid.Empty)
+                msg.Id = Guid.NewGuid();
+            msg.ExpireDateTime = DateTime.Now.AddMilliseconds(10000);
+
+            _waiters.Add(new KeyValuePair<Message, MessageArrivedCallback>(msg, (client, response, isExpired) =>
             {
                 if (onResponse != null)
                 {
@@ -114,39 +129,38 @@ namespace W.RPC
                         mre.Set();
                     }
                     , null);
-                    //onResponse?.Invoke();
-                    //mre.Set(); //this needs to happen after the call to onResponse
                 }
                 else
                     mre.Set();
-            }, Constants.DefaultMakeRPCCallTimeout);
+            }));
+            _client.Send(msg);
             return mre;
         }
 
         internal void Disconnect(Exception e)
         {
-            _client.Disconnect(e);
+            _client.Socket.Disconnect(e);
         }
-        internal bool Connect(System.Net.Sockets.TcpClient client) //called by Server
-        {
-            if (_isConnected.Value)
-                return true;
+        //internal bool Connect(System.Net.Sockets.TcpClient client) //called by Server
+        //{
+        //    if (_isConnected.Value)
+        //        return true;
 
-            var result = _client.Connect(client);
-            if (result)
-            {
-                if (!_client.IsSecure.WaitForChanged(Constants.DefaultConnectTimeout)) //default timeout
-                {
-                    Log.w("Connection timed out while securing");
-                    Disconnect(new Exception("Server failed to secure the connection"));
-                }
-                else
-                    Log.i("Client Connected");
-            }
-            else
-                Disconnect(new Exception("Server failed to respond"));
-            return result;
-        }
+        //    var result = _client.Connect(client);
+        //    if (result)
+        //    {
+        //        if (!_client.IsSecure.WaitForChanged(Constants.DefaultConnectTimeout)) //default timeout
+        //        {
+        //            Log.w("Connection timed out while securing");
+        //            Disconnect(new Exception("Server failed to secure the connection"));
+        //        }
+        //        else
+        //            Log.i("Client Connected");
+        //    }
+        //    else
+        //        Disconnect(new Exception("Server failed to respond"));
+        //    return result;
+        //}
 
         /// <summary>
         /// Attempts to connect to a local or remote Tungsten RPC Server
@@ -275,13 +289,11 @@ namespace W.RPC
         {
             var mre = new ManualResetEvent(false);
             W.Threading.Thread.Create(cts =>
-            //Task.Run(() =>
             {
                 Connect(remoteAddress, remotePort, msTimeout, (client, address) =>
                 {
                     mre.Set();
                 });
-                //Connected += (client, address) => { mre.Set(); };
             });
             if (!mre.WaitOne(Constants.DefaultConnectTimeout))
                 throw new TimeoutException("Unable to connect to the remote Tungsten RPC Server: " + remoteAddress);
@@ -296,13 +308,11 @@ namespace W.RPC
         {
             var mre = new ManualResetEvent(false);
             W.Threading.Thread.Create(cts =>
-            //Task.Run(() =>
             {
                 Connect(remoteAddress, remotePort, msTimeout, (client, address) =>
                 {
                     mre.Set();
                 });
-                //Connected += (client, address) => { mre.Set(); };
             });
             if (!mre.WaitOne(Constants.DefaultConnectTimeout))
                 throw new TimeoutException("Unable to connect to the remote Tungsten RPC Server: " + remoteAddress);

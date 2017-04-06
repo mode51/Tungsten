@@ -28,11 +28,11 @@ namespace W
         {
             return Convert.FromBase64String(@this.AsString()).AsString();
         }
-        /// <summary>
-        /// Converts a Base64 encoded byte array back to a normal byte array
-        /// </summary>
-        /// <param name="this">The Base64 encoded byte array to convert</param>
-        /// <returns>A non-encoded string</returns>
+        ///// <summary>
+        ///// Converts a Base64 encoded byte array back to a normal byte array
+        ///// </summary>
+        ///// <param name="this">The Base64 encoded byte array to convert</param>
+        ///// <returns>A non-encoded string</returns>
         //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
         //[System.Diagnostics.DebuggerStepThrough]
         //public static byte[] FromBase64(this byte[] @this)

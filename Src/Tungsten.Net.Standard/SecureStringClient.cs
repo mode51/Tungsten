@@ -46,7 +46,8 @@ namespace W.Net
 
         private void SendPublicKey()
         {
-            var publicKey = _rsa.PublicKey.AsXml<RSAParameters>();
+            //var publicKey = _rsa.PublicKey.AsXml<RSAParameters>();
+            var publicKey = Newtonsoft.Json.JsonConvert.SerializeObject(_rsa.PublicKey);
             base.Send(publicKey);
         }
         /// <summary>
@@ -65,7 +66,8 @@ namespace W.Net
             else
             {
                 msg = base.FormatReceivedMessage(message).FromBase64();
-                _remotePublicKey = msg.FromXml<RSAParameters>();
+                //_remotePublicKey = msg.FromXml<RSAParameters>();
+                _remotePublicKey = Newtonsoft.Json.JsonConvert.DeserializeObject<RSAParameters>(msg);
                 Log.v("Received Public Key");
                 msg = null; //not a real message, so set it to null
                 ConnectionSecured?.Invoke(this);

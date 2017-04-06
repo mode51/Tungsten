@@ -2,7 +2,7 @@
 @del *.dll /s
 @del *.xml /s
 echo.
-echo __________________________________________________________________________
+echo __________
 
 @echo Processing Tungsten
 @mkdir Tungsten\lib\net45
@@ -21,10 +21,11 @@ echo __________________________________________________________________________
 
 @copy ..\Src\Tungsten.Portable\bin\Release\Tungsten.Portable.dll "Tungsten\lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20\" /y
 @copy ..\Src\Tungsten.Portable\bin\Release\Tungsten.Portable.xml "Tungsten\lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20\" /y
+
 nuget pack Tungsten
 
 echo.
-echo __________________________________________________________________________
+echo __________
 @echo Processing Tungsten.Net
 @mkdir Tungsten.Net\lib\net45
 @mkdir Tungsten.Net\lib\netstandard1.4
@@ -37,7 +38,7 @@ echo __________________________________________________________________________
 nuget pack Tungsten.Net
  
 echo.
-echo __________________________________________________________________________
+echo __________
 @echo Processing Tungsten.IO.Pipes
 @mkdir Tungsten.IO.Pipes\lib\netstandard1.4
 @copy ..\Src\Tungsten.IO.Pipes.Standard\bin\Release\netstandard1.4\Tungsten.IO.Pipes.Standard.dll Tungsten.IO.Pipes\lib\netstandard1.4 /y
@@ -45,7 +46,7 @@ echo __________________________________________________________________________
 nuget pack Tungsten.IO.Pipes
 
 echo.
-echo __________________________________________________________________________
+echo __________
 @echo Processing Tungsten.Domains
 @mkdir Tungsten.Domains\lib\net45
 @copy ..\Src\Tungsten.Domains\bin\Release\Tungsten.Domains.dll Tungsten.Domains\lib\net45 /y

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace W.RPC
 {
+    /// <summary>
+    /// Constants used by W.RPC
+    /// </summary>
     public class Constants
     {
         /// <summary>

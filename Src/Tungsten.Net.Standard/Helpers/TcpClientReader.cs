@@ -68,7 +68,7 @@ namespace W.Net
         {
             try
             {
-                while (!cts.IsCancellationRequested)
+                while (!cts?.IsCancellationRequested ?? false)
                 {
                     if (TcpHelpers.IsMessageAvailable(_client, OnException))
                     {
@@ -82,7 +82,7 @@ namespace W.Net
                     }
                     System.Threading.Thread.Sleep(1); //play nice with other threads
                 }
-                cts.Dispose();
+                //cts.Dispose();
             }
             catch (Exception e)
             {
@@ -94,7 +94,7 @@ namespace W.Net
         {
             try
             {
-                while (!cts.IsCancellationRequested)
+                while (!cts?.IsCancellationRequested ?? false)
                 {
                     byte[] message;
                     if (_messages.TryDequeue(out message))
@@ -113,7 +113,7 @@ namespace W.Net
                     }
                     System.Threading.Thread.Sleep(1); //play nice with other threads
                 }
-                cts.Dispose();
+                //cts.Dispose();
             }
             catch (Exception e)
             {

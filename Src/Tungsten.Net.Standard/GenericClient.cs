@@ -24,7 +24,8 @@ namespace W.Net
         /// <param name="item">The item to serialize and transmit</param>
         public void Send(TType item)
         {
-            var data = item.AsXml<TType>();
+            //var data = item.AsXml<TType>();
+            var data = Newtonsoft.Json.JsonConvert.SerializeObject(item);
             base.Send(data);
         }
 
@@ -50,7 +51,8 @@ namespace W.Net
         {
             MessageReceived += (o, s) =>
             {
-                var item = s.FromXml<TType>();
+                //var item = s.FromXml<TType>();
+                var item = Newtonsoft.Json.JsonConvert.DeserializeObject<TType>(s);
                 this.GenericMessageReceived?.Invoke(this, item);
             };
         }

@@ -47,30 +47,30 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tungsten, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Tungsten\packages\Tungsten.1.1.2\lib\net45\Tungsten.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Tungsten, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Tungsten.1.2.1\lib\net45\Tungsten.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sockets\ClientBase.cs" />
-    <Compile Include="Helpers\ExtensionMethods.cs" />
-    <Compile Include="Helpers\Json.cs" />
-    <Compile Include="Helpers\SecureStringExtensions.cs" />
-    <Compile Include="Helpers\SecureStringMethods.cs" />
-    <Compile Include="Sockets\EncryptedClient.Generic.cs" />
-    <Compile Include="Sockets\EncryptedClient.cs" />
-    <Compile Include="Sockets\EncryptedMessageBase.cs" />
+    <None Include="Archive\Sockets\ClientBase.cs" />
+    <None Include="Archive\Helpers\ExtensionMethods.cs" />
+    <None Include="Archive\Helpers\Json.cs" />
+    <None Include="Archive\Helpers\SecureStringExtensions.cs" />
+    <None Include="Archive\Helpers\SecureStringMethods.cs" />
+    <None Include="Archive\Sockets\EncryptedClient.Generic.cs" />
+    <None Include="Archive\Sockets\EncryptedClient.cs" />
+    <Compile Include="RPC\Constants.cs" />
+    <Compile Include="RPC\EncryptedMessageBase.cs" />
     <Compile Include="RPC\Client.cs" />
     <Compile Include="RPC\Server.cs" />
-    <Compile Include="Sockets\Message.cs" />
-    <Compile Include="Attributes\RPCClassAttribute.cs" />
-    <Compile Include="Attributes\RPCMethodAttribute.cs" />
-    <None Include="Interfaces\IClient.cs" />
-    <Compile Include="Interfaces\INamed.cs" />
+    <Compile Include="RPC\Message.cs" />
+    <Compile Include="RPC\Attributes\RPCClassAttribute.cs" />
+    <Compile Include="RPC\Attributes\RPCMethodAttribute.cs" />
+    <Compile Include="Archive\Interfaces\IClient.cs" />
+    <Compile Include="Archive\Interfaces\INamed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Helpers\RSA.cs" />
-    <Compile Include="Sockets\EncryptedServer.cs" />
+    <None Include="Archive\Helpers\RSA.cs" />
+    <None Include="Archive\Sockets\EncryptedServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -81,9 +81,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Tungsten.RPC.Interfaces\Tungsten.RPC.Interfaces.csproj">
-      <Project>{3fe96d19-fda8-4948-a0fe-f200748cc729}</Project>
-      <Name>Tungsten.RPC.Interfaces</Name>
+    <ProjectReference Include="..\Tungsten.Net\Tungsten.Net.csproj">
+      <Project>{f2fe9090-34c9-4f7e-a932-7f3cf8d00567}</Project>
+      <Name>Tungsten.Net</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

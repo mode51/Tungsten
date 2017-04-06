@@ -14,18 +14,67 @@ using ss = System.Configuration.ConfigurationSettings;
 
 namespace W.Domains
 {
+    /// <summary>
+    /// Defines the interface for a DomainLoader
+    /// </summary>
     public interface IDomainLoader
     {
+        /// <summary>
+        /// Loads the dlls into the new AppDomain
+        /// </summary>
         void Load();
+        /// <summary>
+        /// Unloads the AppDomain and deletes files in the cache folder.  The cache folder is where dlls are copied, and run, when using shadow copying.
+        /// </summary>
         void Unload();
 
+        /// <summary>
+        /// Executes a static method on the specified type across the AppDomain
+        /// </summary>
+        /// <typeparam name="TResult">The result of the function call is cast to TResult</typeparam>
+        /// <param name="typeName">The name of the type which exposes the static method</param>
+        /// <param name="staticMethodName">The name of the static method</param>
+        /// <param name="args">Any parameters to be passedd to the static method</param>
+        /// <returns>The return value from the function, casted to TResult.</returns>
         TResult ExecuteStaticMethod<TResult>(string typeName, string staticMethodName, params object[] args);
+        /// <summary>
+        /// Executes a static method on the specified type across the AppDomain
+        /// </summary>
+        /// <param name="typeName">The name of the type which exposes the static method</param>
+        /// <param name="staticMethodName">The name of the static method</param>
+        /// <param name="args">Any arguments to be passedd to the static method</param>
         void ExecuteStaticMethod(string typeName, string staticMethodName, params object[] args);
+        /// <summary>
+        /// Instantiates a class and calls a method exposed by it.
+        /// </summary>
+        /// <typeparam name="TResult">The result of the function call is cast to TResult</typeparam>
+        /// <param name="typeName">The name of the type which exposes the static method</param>
+        /// <param name="methodName">The name of the static method</param>
+        /// <param name="args">Any arguments to be passed to the static method</param>
+        /// <returns>The return value from the function, casted to TResult</returns>
         TResult Execute<TResult>(string typeName, string methodName, params object[] args);
+        /// <summary>
+        /// Instantiates a class and calls a method exposed by it.
+        /// </summary>
+        /// <param name="typeName">The name of the type which exposes the static method</param>
+        /// <param name="methodName">The name of the static method</param>
+        /// <param name="args">Any arguments to be passed to the static method</param>
         void Execute(string typeName, string methodName, params object[] args);
 
+        /// <summary>
+        /// Instantiates a class and returns a handle to it.  This handle must be cast to an interface in order to work across AppDomains.
+        /// </summary>
+        /// <param name="typeName">The name of the type which is to be instantiated</param>
+        /// <returns>A handle to the instantiated object.  This value should be cast to an interface as only interfaces will work across AppDomains.</returns>
         object Create(string typeName);
+        /// <summary>
+        /// Instantiates a class and returns a handle to it.  This handle must be cast to an interface in order to work across AppDomains.
+        /// </summary>
+        /// <typeparam name="TInterfaceType">The handle to the class is automatically cast to the interfafce TInterfaceType</typeparam>
+        /// <param name="typeName">The name of the type which is to be instantiated</param>
+        /// <returns>A handle to the instantiated object.  This value should be cast to an interface as only interfaces will work across AppDomains.</returns>
         TInterfaceType Create<TInterfaceType>(string typeName);
+        /// <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
         void Dispose();
     }
 

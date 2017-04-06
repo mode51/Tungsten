@@ -12,6 +12,7 @@ namespace W.Net
     /// </summary>
     public class TcpHelpers
     {
+        public static bool LogMessages { get; set; } = false;
         private static bool SendChunk(NetworkStream client, ref byte[] dataChunk, int offset = 0, int length = -1, Action<Exception> onComplete = null)
         {
             Exception ex = null;
@@ -19,8 +20,8 @@ namespace W.Net
             {
                 //send the message
                 var dataLength = length == -1 ? dataChunk.Length : length;
-                Log.v("Sending {0} bytes", dataLength);
-                client.Write(dataChunk, offset, dataLength);
+                if (LogMessages) Log.v("Sending {0} bytes", dataLength);
+                client?.Write(dataChunk, offset, dataLength);
             }
             catch (ArgumentNullException e) //the buffer is null
             {
@@ -62,7 +63,7 @@ namespace W.Net
             {
                 int length = message.Length;
                 int numberOfBytesSent = 0;
-                Log.v("Send Message Size = {0}", length);
+                if (LogMessages) Log.v("Send Message Size = {0}", length);
 
                 //send the size
                 var sizeBuffer = BitConverter.GetBytes(length); //4 bytes
@@ -123,7 +124,7 @@ namespace W.Net
                 }
                 Thread.Sleep(1); //play nice with other threads
             }
-            Log.v("Receive Message Size = {0}", length);
+            if (LogMessages) Log.v("Receive Message Size = {0}", length);
             return length;
         }
         private static void ReadMessage(NetworkStream stream, int length, int receiveBufferSize, Action<byte[], Exception> onComplete = null, CancellationTokenSource cts = null)
@@ -156,7 +157,7 @@ namespace W.Net
                         onComplete?.Invoke(null, null);
                         break;
                     }
-                    Log.v("Read {0} bytes", read);
+                    if (LogMessages) Log.v("Read {0} bytes", read);
                     numberOfBytesRead += read;
                 }
 

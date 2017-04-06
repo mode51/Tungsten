@@ -69,7 +69,7 @@ namespace W.IO.Pipes
                     {
                         stream = new NamedPipeServerStream(_name, PipeDirection.InOut, maxConnections, PipeTransmissionMode.Byte, PipeOptions.Asynchronous);
                     }
-                    catch (System.IO.IOException e)
+                    catch (System.IO.IOException)
                     {
                         System.Threading.Thread.Sleep(100);
                     }
@@ -119,13 +119,13 @@ namespace W.IO.Pipes
                         System.Diagnostics.Debugger.Break(); //why are we here?
                         Exception?.Invoke(this, e);
                     }
-                    catch (System.Threading.Tasks.TaskCanceledException e)
+                    catch (System.Threading.Tasks.TaskCanceledException)
                     {
                         //ignore
                         System.Diagnostics.Debugger.Break(); //why are we here?
                         //Exception?.Invoke(this, e);
                     }
-                    catch (System.OperationCanceledException e) //happens when the server is closed
+                    catch (System.OperationCanceledException) //happens when the server is closed
                     {
                         stream?.Dispose(); //dispose the last allocated stream
                         //ignore

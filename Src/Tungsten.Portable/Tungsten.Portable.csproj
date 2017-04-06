@@ -81,9 +81,6 @@
     <Compile Include="..\Tungsten\Property\PropertyMethods.cs">
       <Link>Property\PropertyMethods.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten\ThreadExtensions.cs">
-      <Link>ThreadExtensions.cs</Link>
-    </Compile>
     <Compile Include="..\Tungsten\Threading\Gate.cs">
       <Link>Threading\Gate.cs</Link>
     </Compile>
@@ -95,6 +92,9 @@
     </Compile>
     <Compile Include="..\Tungsten\Threading\ThreadBase.cs">
       <Link>Threading\ThreadBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten\Threading\ThreadExtensions.cs">
+      <Link>Threading\ThreadExtensions.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

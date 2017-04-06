@@ -39,7 +39,11 @@ namespace W.Net
             _stream = client.GetStream();
             _sendBufferSize = client.SendBufferSize;
         }
-
+        /// <summary>
+        /// Constructs the TcpClientWriter
+        /// </summary>
+        /// <param name="stream">The currently connected NetworkStream</param>
+        /// <param name="sendBufferSize">The SendBufferSize, in bytes; used to send the data in chunks</param>
         public TcpClientWriter(NetworkStream stream, int sendBufferSize)
         {
             _stream = stream;
@@ -75,7 +79,7 @@ namespace W.Net
         {
             try
             {
-                while (!cts.IsCancellationRequested)
+                while (!cts?.IsCancellationRequested ?? false)
                 {
                     if (!_sendQueue.IsEmpty && _stream != null)
                     {
@@ -93,7 +97,7 @@ namespace W.Net
                     }
                     System.Threading.Thread.Sleep(1);
                 }
-                cts?.Dispose();
+                //cts?.Dispose();
             }
             catch (Exception e)
             {

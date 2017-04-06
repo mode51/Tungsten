@@ -137,8 +137,9 @@ namespace W.Threading
         /// </summary>
         /// <param name="action"></param>
         /// <param name="onComplete"></param>
+        /// <param name="cts">Can be used to control cancelation externally</param>
         /// <param name="args">Arguments to pass into the underlying thread</param>
-        public Gate(Action<T, CancellationTokenSource> action, Action<bool, Exception> onComplete = null, T args = default(T)) : base(action, onComplete, args)
+        public Gate(Action<T, CancellationTokenSource> action, Action<bool, Exception> onComplete = null, CancellationTokenSource cts = null, T args = default(T)) : base(action, onComplete, cts, args)
         {
         }
     }

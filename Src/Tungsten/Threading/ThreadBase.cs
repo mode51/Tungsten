@@ -110,10 +110,11 @@ namespace W.Threading
         /// </summary>
         /// <param name="action">Action to call on a thread</param>
         /// <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
+        /// <param name="cts">A CancellationTokenSource which can be used to Cancel the thread</param>
         /// <returns></returns>
-        protected ThreadBase(Action<CancellationTokenSource> action, Action<bool, Exception> onComplete = null)
+        protected ThreadBase(Action<CancellationTokenSource> action, Action<bool, Exception> onComplete = null, CancellationTokenSource cts = null)
         {
-            Cts = new CancellationTokenSource();
+            Cts = cts ?? new CancellationTokenSource();
             Action = action;
             OnComplete = onComplete;
             IsBusy.Value = true;

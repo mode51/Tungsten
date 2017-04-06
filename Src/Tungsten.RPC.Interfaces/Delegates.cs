@@ -13,6 +13,11 @@ namespace W.RPC
     /// </summary>
     public class Delegates
     {
+        /// <summary>
+        /// Delegate to notify the programmer when a connection timeout has occurred
+        /// </summary>
+        /// <param name="client">The ISocketClient on which the timeout occurred</param>
+        /// <param name="remoteAddress">The remote IP address of the connection attempt</param>
         public delegate void ConnectionTimeoutDelegate(ISocketClient client, IPAddress remoteAddress);
         /// <summary>
         /// Delegate to notify the programmer when the Client has connected to the Server

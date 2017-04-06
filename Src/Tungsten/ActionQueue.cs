@@ -63,7 +63,9 @@ namespace W
         /// Creates a new ActionQueue
         /// </summary>
         /// <param name="onItemAdded">A callback which is called whenever an item has been enqueued</param>
+#pragma warning disable CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
         public ActionQueue(Func<T, bool> onItemAdded, [System.Runtime.CompilerServices.CallerMemberName] string caller = "")
+#pragma warning restore CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
         {
             _caller = caller;
             W.Threading.Thread.Create((cts) =>
@@ -89,7 +91,9 @@ namespace W
         /// Creates a new ActionQueue
         /// </summary>
         /// <param name="onItemAdded">A callback which is called whenever an item has been enqueued</param>
+#pragma warning disable CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
         public ActionQueue(Action<T> onItemAdded, [System.Runtime.CompilerServices.CallerMemberName] string caller = "")
+#pragma warning restore CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
         {
             _caller = caller;
             W.Threading.Thread.Create((cts) =>

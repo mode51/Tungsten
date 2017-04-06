@@ -331,13 +331,25 @@
             <summary>
             Executes an action within a lock of the LockObject
             </summary>
-            <param name="action"></param>
+            <param name="action">The action to call within a lock</param>
+        </member>
+        <member name="M:W.Lockable`1.ExecuteInLock(System.Func{`0,`0})">
+            <summary>
+            Executes an action within a lock of the LockObject
+            </summary>
+            <param name="function">The function to call within a lock</param>
         </member>
         <member name="M:W.Lockable`1.ExecuteInLockAsync(System.Action{`0})">
             <summary>
             Executes a task within a lock of the LockObject
             </summary>
-            <param name="action"></param>
+            <param name="action">The action to call within a lock</param>
+        </member>
+        <member name="M:W.Lockable`1.ExecuteInLockAsync(System.Func{`0,`0})">
+            <summary>
+            Executes a task within a lock of the LockObject
+            </summary>
+            <param name="function">The function to call within a lock</param>
         </member>
         <member name="M:W.Lockable`1.#ctor">
             <summary>

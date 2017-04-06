@@ -35,6 +35,9 @@
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,26 +46,69 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tungsten, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Tungsten.1.2.1\lib\net45\Tungsten.dll</HintPath>
+    <Reference Include="Tungsten, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Tungsten.1.2.2\lib\net45\Tungsten.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GenericClient.cs" />
-    <Compile Include="GenericServer.cs" />
-    <Compile Include="Helpers\TcpClientReader.cs" />
-    <Compile Include="Helpers\TcpClientWriter.cs" />
-    <Compile Include="Helpers\TcpHelpers.cs" />
-    <Compile Include="SecureStringClient.cs" />
-    <Compile Include="SecureStringServer.cs" />
-    <Compile Include="Sockets\FormattedSocket.cs" />
-    <Compile Include="Sockets\IFormattedSocket.cs" />
-    <Compile Include="Sockets\ISecureSocket.cs" />
-    <Compile Include="Sockets\SecureServer.cs" />
-    <Compile Include="Sockets\Server.cs" />
-    <Compile Include="Sockets\Socket.cs" />
-    <Compile Include="StringClient.cs" />
-    <Compile Include="StringServer.cs" />
+    <Compile Include="..\Tungsten.Net.Standard\GenericClient.cs">
+      <Link>GenericClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\GenericServer.cs">
+      <Link>GenericServer.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\Helpers\TcpClientReader.cs">
+      <Link>Helpers\TcpClientReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\Helpers\TcpClientWriter.cs">
+      <Link>Helpers\TcpClientWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\Helpers\TcpHelpers.cs">
+      <Link>Helpers\TcpHelpers.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\SecureStringClient.cs">
+      <Link>SecureStringClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\SecureStringServer.cs">
+      <Link>SecureStringServer.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\Sockets\FormattedSocket.cs">
+      <Link>Sockets\FormattedSocket.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\Sockets\IFormattedSocket.cs">
+      <Link>Sockets\IFormattedSocket.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\Sockets\ISecureSocket.cs">
+      <Link>Sockets\ISecureSocket.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\Sockets\SecureServer.cs">
+      <Link>Sockets\SecureServer.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\Sockets\Server.cs">
+      <Link>Sockets\Server.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\Sockets\Socket.cs">
+      <Link>Sockets\Socket.cs</Link>
+    </Compile>
+    <None Include="Archive\GenericClient.cs" />
+    <None Include="Archive\GenericServer.cs" />
+    <None Include="Archive\Helpers\TcpClientReader.cs" />
+    <None Include="Archive\Helpers\TcpClientWriter.cs" />
+    <None Include="Archive\Helpers\TcpHelpers.cs" />
+    <None Include="Archive\SecureStringClient.cs" />
+    <None Include="Archive\SecureStringServer.cs" />
+    <None Include="Archive\Sockets\FormattedSocket.cs" />
+    <None Include="Archive\Sockets\SecureServer.cs" />
+    <None Include="Archive\Sockets\Server.cs" />
+    <None Include="Archive\Sockets\Socket.cs" />
+    <None Include="Archive\StringClient.cs" />
+    <None Include="Archive\StringServer.cs" />
+    <Compile Include="..\Tungsten.Net.Standard\StringClient.cs">
+      <Link>StringClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\StringServer.cs">
+      <Link>StringServer.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -21,7 +21,7 @@ namespace W
         /// <summary>
         /// Runs the provided Action on the UI thread
         /// </summary>
-        /// <param name="this">The form or control which supports ISynchronizeInvoke</param>
+        /// <param name="context">The form or control which supports ISynchronizeInvoke</param>
         /// <param name="action">The code to be executed on the UI thread</param>
         /// <typeparam name="T">The form or control who's thread will execute the code</typeparam>
         public static void InvokeEx<T>(this SynchronizationContext context, Action action)
@@ -40,7 +40,7 @@ namespace W
         /// <summary>
         /// Asynchronously runs the provided Action on the UI thread
         /// </summary>
-        /// <param name="this">The form or control which supports ISynchronizeInvoke</param>
+        /// <param name="context">The form or control which supports ISynchronizeInvoke</param>
         /// <param name="action">The code to be executed on the UI thread</param>
         /// <typeparam name="T">The form or control who's thread will execute the code</typeparam>
         public static void InvokeExAsync<T>(this SynchronizationContext context, Action action)
@@ -60,7 +60,7 @@ namespace W
         /// <summary>
         /// Creates a Task to run the provided Action on the UI thread.  Can be awaited.
         /// </summary>
-        /// <param name="this">The form or control which supports ISynchronizeInvoke</param>
+        /// <param name="context">The form or control which supports ISynchronizeInvoke</param>
         /// <param name="action">The code to be executed on the UI thread</param>
         /// <typeparam name="T">The form or control who's thread will execute the code</typeparam>
         public static Task InvokeAsync<T>(this SynchronizationContext context, Action action)

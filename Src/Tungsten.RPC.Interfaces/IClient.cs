@@ -6,6 +6,9 @@ using System.Threading;
 
 namespace W.RPC
 {
+    /// <summary>
+    /// Defines the interface of an RPC client
+    /// </summary>
     public interface IClient : ISocketClient
     {
         /// <summary>

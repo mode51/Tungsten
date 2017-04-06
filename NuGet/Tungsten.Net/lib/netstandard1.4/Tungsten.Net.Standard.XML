@@ -91,6 +91,13 @@
             </summary>
             <param name="client">The currently connected TcpClient</param>
         </member>
+        <member name="M:W.Net.TcpClientWriter.#ctor(System.Net.Sockets.NetworkStream,System.Int32)">
+            <summary>
+            Constructs the TcpClientWriter
+            </summary>
+            <param name="stream">The currently connected NetworkStream</param>
+            <param name="sendBufferSize">The SendBufferSize, in bytes; used to send the data in chunks</param>
+        </member>
         <member name="M:W.Net.TcpClientWriter.Start">
             <summary>
             Starts sending 
@@ -365,6 +372,12 @@
             <summary>
             Constructs a new Server
             </summary>
+        </member>
+        <member name="M:W.Net.Sockets.Server`1.OnCreateClientHandler(System.Net.Sockets.TcpClient)">
+            <summary>
+            Configures a new server-side client connection
+            </summary>
+            <param name="client">The new server-side client connection</param>
         </member>
         <member name="M:W.Net.Sockets.Server`1.Start(System.Net.IPAddress,System.Int32)">
             <summary>

@@ -111,7 +111,9 @@ namespace W.IO.Pipes
             }
             return numberOfBytesRead == length ? buffer : null;
         }
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
         private async Task GetMessageSize(PipeStream stream, CancellationTokenSource cts)
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
         {
             //3.8.2017 - this code seems to work.  blocks and cancels correctly
             try
@@ -125,12 +127,12 @@ namespace W.IO.Pipes
                     _readSize.Value = length;
                 }).Wait(cts.Token);
             }
-            catch (TaskCanceledException e)
+            catch (TaskCanceledException)
             {
                 //ignore
                 //Exception?.Invoke(this, e);
             }
-            catch (OperationCanceledException e)
+            catch (OperationCanceledException)
             {
                 //ignore - canceled to write or dispose
                 //Console.WriteLine("ReadMessageSize was canceled");
@@ -189,11 +191,11 @@ namespace W.IO.Pipes
                     _gateReadMessage.Run(); //read the message
                     _gateReadMessage.Join();
                 }
-                catch (TaskCanceledException e)
+                catch (TaskCanceledException)
                 {
                     //ignore
                 }
-                catch (OperationCanceledException e)
+                catch (OperationCanceledException)
                 {
                     //ignore - the read was cancelled
                 }
@@ -235,7 +237,7 @@ namespace W.IO.Pipes
                         }
                     }
                 }
-                catch (OperationCanceledException e)
+                catch (OperationCanceledException)
                 {
                     //ignore - the read was cancelled
                 }
@@ -265,7 +267,7 @@ namespace W.IO.Pipes
                     while (!_writeQueue.IsEmpty)
                         WriteProc(); //writes all queued messages
                 }
-                catch (OperationCanceledException e)
+                catch (OperationCanceledException)
                 {
                     //ignore - the read was cancelled
                 }

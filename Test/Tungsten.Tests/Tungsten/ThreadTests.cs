@@ -81,7 +81,7 @@ namespace W.Tests.Tungsten
             }, (b, exception) =>
             {
                 name = "Jordan Duerksen";
-            }, age.Value).Join(1000);
+            }, null, age.Value).Join(1000);
 
             Assert.IsTrue(age.Value == 47);
             Assert.IsTrue(result);
@@ -98,7 +98,7 @@ namespace W.Tests.Tungsten
             }, (b, exception) =>
             {
                 e = exception;
-            }, 47).Join(1000);
+            },null, 47).Join(1000);
 
             Assert.IsTrue(result);
             Assert.IsTrue(e != null);
@@ -115,7 +115,7 @@ namespace W.Tests.Tungsten
             }, (b, exception) =>
             {
                 e = exception;
-            }, 47).Join(1000);
+            }, null, 47).Join(1000);
 
             Assert.IsTrue(result);
             Assert.IsTrue(e != null);

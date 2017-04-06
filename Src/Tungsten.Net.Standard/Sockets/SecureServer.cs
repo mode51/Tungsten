@@ -60,10 +60,14 @@ namespace W.Net.Sockets
         public SecureServer()
         {
         }
+        ~SecureServer()
+        {
+            Dispose();
+        }
 
         private void ListenForClientsProc_OnComplete(bool success, Exception e)
         {
-            Log.i("Tungsten.Net.SecureServer Shutdown Complete(result={0}", success);
+            Log.i("Tungsten.Net.SecureServer Shutdown Complete(result={0})", success);
             if (e != null)
                 Log.e(e);
             if (IsListening)
@@ -74,7 +78,7 @@ namespace W.Net.Sockets
             IsListeningChanged?.Invoke(true);
             try
             {
-                while (!cts.Token.IsCancellationRequested && (_server != null))
+                while (!cts?.Token.IsCancellationRequested ?? false && (_server != null))
                 {
                     System.Threading.Thread.Sleep(1);
                     if (IsListening && !_server.Pending())
@@ -171,6 +175,7 @@ namespace W.Net.Sockets
         public void Dispose()
         {
             Stop();
+            GC.SuppressFinalize(this);
         }
 
     }

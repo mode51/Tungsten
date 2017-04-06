@@ -65,6 +65,10 @@ namespace W.Net.Sockets
             this.Socket = new Socket(client);
             HookNotifications();
         }
+        ~FormattedSocket()
+        {
+            Dispose();
+        }
         private void HookNotifications()
         {
             Socket.Connected += (socket, address) =>
@@ -131,6 +135,7 @@ namespace W.Net.Sockets
         {
             Socket?.Dispose();
             Socket = null;
+            GC.SuppressFinalize(this);
         }
     }
 }

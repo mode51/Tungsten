@@ -72,7 +72,7 @@
     <Compile Include="Threading\Gate.cs" />
     <Compile Include="Threading\Thread.cs" />
     <Compile Include="Threading\ThreadBase.cs" />
-    <Compile Include="ThreadExtensions.cs" />
+    <Compile Include="Threading\ThreadExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Archive\" />
@@ -87,7 +87,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
-</PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
