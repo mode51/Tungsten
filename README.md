@@ -41,8 +41,8 @@ A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable 
 # Overview Of Classes By Project
 
 ### Tungsten (Tungsten, Portable, Universal, Standard)
-* [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue)\<TValue\> - A generic class to wrap a value in a thread-safe manner
-* [W.Property](https://github.com/mode51/Tungsten/wiki/Property-TValue)\<TValue\> - A generic class providing a number of enhancements to a [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue-)\<TValue\> value
+* [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable) - A generic class to wrap a value in a thread-safe manner
+* [W.Property](https://github.com/mode51/Tungsten/wiki/Property) - A generic class providing a number of enhancements to a [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable) value
     * Implements INotifyPropertyChanged
     * Adds IsDirty/MarkAsClean functionality
     * Supports a callback handler in the constructor so you don't have to use events
