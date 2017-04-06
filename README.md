@@ -1,16 +1,12 @@
 # Tungsten
-
-Platforms: WinForms, WPF, Windows Universal, Windows Portable (PCL), NetStandard1.4
-
 A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable application development easier.  See the Wiki page for details and use.
 
-Tungsten is built with .Net Framework 4.5
-Tungsten.Universal is built on Windows 10 (10.0; Build 10240)
+#### Tungsten targets .Net Framework 4.5
+#### Tungsten.Portable targets portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20
+#### Tungsten.Universal targets Windows 10 (10.0; Build 10240)
+#### Tungsten.Standard targets .NetStandard 1.4
 
-To build Tungsten.Documentation, you will need to install the SHFB Visual Studio extension from NuGet.
-
-# Tungsten
-* Tungsten - A collection of useful classes for Winforms/WPF
+* Tungsten - A collection of useful classes for Winforms/WPF (some classes are listed below)
 * Tungsten.Portable - A Portable version of Tungsten
 * Tungsten.Universal - A Universal version of Tungsten
 * Tungsten.Standard - A NetStandard version of Tungsten
