@@ -1,4 +1,6 @@
-# Tungsten
+# Projects
+
+### Tungsten
 A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable application development easier.  See the Wiki page for details and use.
 
 * **Tungsten** - A collection of useful classes for Winforms/WPF (some classes are listed below)
@@ -10,18 +12,18 @@ A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable 
 * **Tungsten.Standard** - A NetStandard version of Tungsten
   * Targets .NetStandard 1.4
 
-# Tungsten.Net
+### Tungsten.Net
 * Tungsten.Net - A client/server tcp socket library
 * Tungsten.Net.Standard - A NetStandard version of Tungsten.Net
 
-# Tungsten.Net.RPC
+### Tungsten.Net.RPC
 * Tungsten.Net.RPC - Encrypted socket classes (client and server) to run code on a Tungsten.RPC server
 * Tungsten.Net.RPC.Standard - .NetStandard version of Tungsten.Net.RPC
 
-# Tungsten.Domains
+### Tungsten.Domains
 * Tungsten.Domains - Easily implement reloadable AppDomains in your application
 
-# Tungsten.LiteDb
+### Tungsten.LiteDb
 * Tungsten.LiteDb - LiteDb based CRUD for your POCO classes
 
 # Demos
@@ -36,7 +38,9 @@ A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable 
 * Tungsten.Net.Demo - Illustrates how to create a tcp server and connect clients
 * Tungsten.Net.RPC.Standard.Demo - a client/server RPC demo
 
-# Tungsten (Tungsten, Portable, Universal, Standard)
+# Overview Of Classes By Project
+
+### Tungsten (Tungsten, Portable, Universal, Standard)
 * [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue)\<TValue\> - A generic class to wrap a value in a thread-safe manner
 * [W.Property](https://github.com/mode51/Tungsten/wiki/Property-TValue)\<TValue\> - A generic class providing a number of enhancements to a [W.Lockable](https://github.com/mode51/Tungsten/wiki/Lockable-TValue-)\<TValue\> value
     * Implements INotifyPropertyChanged
@@ -56,7 +60,7 @@ A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable 
 * W.Threading.Gate\<T\> - like Gate, exception Action is now Action\<T\>
 * W.ActionQueue\<T\> - Merges a Thread with a ConcurrentQueue.  Executes the provided Action\<T\> or Func\<T, bool\> whenever an item is added to the ConcurrentQueue
 
-# Tungsten.Net
+### Tungsten.Net
 These two classes are designed to be the primary implementations
 * W.Net.GenericServer - a generic TCP server hosts secure client connections
 * W.Net.GenericClient - a secure generic TCP client to be used specifically with W.Net.GenericServer; sends and receives messages of any type
@@ -73,18 +77,18 @@ The following classes can be used to create more customized implementations
 * W.Net.Sockets.FormattedSocket - can be used to create a custom client with a custom data type (as long as you can convert it to and from a byte array)
 * W.Net.Sockets.Socket - can be used to create a custom client which transmits byte arrays
 
-# Tungsten.Net.RPC
+### Tungsten.Net.RPC
 * W.Net.RPC.Server - An RPC server (see Tungsten.Net.RPC.Standard.Demo for use)
 * W.Net.RPC.Client - An RPC client (see Tungsten.Net.RPC.Standard.Demo for use)
 
-# Tungsten.Domains
+### Tungsten.Domains
 * W.Domains.DomainLoader - A handy class to make reloadable AppDomains easy
 
-# Tungsten.LiteDb
+### Tungsten.LiteDb
 * W.LiteDb.LiteDbItem - A base class for your POCO classes (necessary for LiteDbMethods due to needing to know the \_id field)
 * W.LiteDb.LiteDbMethods - CRUD methods for your POCO classes which inherit LiteDbItem
 
-# Tungsten.IO.Pipes
+### Tungsten.IO.Pipes
 * W.IO.Pipes.PipeClient - A named pipe client; designed to be used with W.IO.Pipes.PipeServer
 * W.IO.Pipes.PipeServer - A named pipe server; designed to be used with W.IO.Pipes.PipeClient
 * W.IO.Pipes.FormattedPipeClient - the base class for PipeClient which handles connecting, disconnecting and cleanup
