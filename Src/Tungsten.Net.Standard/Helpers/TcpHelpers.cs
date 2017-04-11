@@ -12,6 +12,9 @@ namespace W.Net
     /// </summary>
     public class TcpHelpers
     {
+        /// <summary>
+        /// If True, messages will be logged
+        /// </summary>
         public static bool LogMessages { get; set; } = false;
         private static bool SendChunk(NetworkStream client, ref byte[] dataChunk, int offset = 0, int length = -1, Action<Exception> onComplete = null)
         {

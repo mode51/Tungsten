@@ -15,5 +15,16 @@
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2017 Jordan Duerksen</copyright>
     <tags>Tungsten.Domains Tungsten W C# library AppDomain</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5" />
+    </dependencies>
   </metadata>
+
+  <files>
+    <file src="Readme.txt" target="" />
+
+    <file src="..\..\Src\Tungsten.Domains\bin\Release\Tungsten.Domains.dll" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.Domains\bin\Release\Tungsten.Domains.xml" target="lib\net45" />
+    
+  </files>
 </package>

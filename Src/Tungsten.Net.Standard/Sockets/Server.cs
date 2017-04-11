@@ -59,6 +59,9 @@ namespace W.Net.Sockets
         public Server()
         {
         }
+        /// <summary>
+        /// Disposes and deconstructs the Server instance
+        /// </summary>
         ~Server()
         {
             Dispose();

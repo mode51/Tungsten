@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Tungsten.Portable</id>
+    <title>Tungsten.Portable</title>
+    <version>1.2.3</version>
+    <authors>Jordan Duerksen</authors>
+    <owners>Jordan Duerksen</owners>
+    <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/mode51/Tungsten</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Tungsten is a C# library of classes which make application development easier.</description>
+    <summary>Tungsten is a C# library of classes which make application development easier.</summary>
+    <releaseNotes>Each Tungsten target now has it's own NuGet package</releaseNotes>
+    <copyright>Copyright 2017 Jordan Duerksen</copyright>
+    <tags>Tungsten W C# library</tags>
+    <dependencies>
+      <group targetFramework=".NETPortable0.0-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Readme.txt" target="" />
+
+    <file src="..\..\Src\Tungsten.Portable\bin\Release\Tungsten.Portable.dll" target="lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20" />
+    <file src="..\..\Src\Tungsten.Portable\bin\Release\Tungsten.Portable.xml" target="lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20" />
+
+  </files>
+</package>

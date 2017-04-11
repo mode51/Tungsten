@@ -46,36 +46,44 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.Domains.Demo", "De
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{C71FC3F0-7F17-45C8-B2D2-C1A86D6EC481}"
 	ProjectSection(SolutionItems) = preProject
-		NuGet\CreatePackages.bat = NuGet\CreatePackages.bat
 		NuGet\nuget.exe = NuGet\nuget.exe
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tungsten", "Tungsten", "{A0FFD84B-1276-4A20-A311-931AE453F7AA}"
 	ProjectSection(SolutionItems) = preProject
-		NuGet\Tungsten\Package.nuspec = NuGet\Tungsten\Package.nuspec
+		NuGet\Tungsten\Create_Tungsten_Packages.bat = NuGet\Tungsten\Create_Tungsten_Packages.bat
 		NuGet\Tungsten\Readme.txt = NuGet\Tungsten\Readme.txt
+		NuGet\Tungsten\Tungsten.Classic.nuspec = NuGet\Tungsten\Tungsten.Classic.nuspec
+		NuGet\Tungsten\Tungsten.nuspec = NuGet\Tungsten\Tungsten.nuspec
+		NuGet\Tungsten\Tungsten.Portable.nuspec = NuGet\Tungsten\Tungsten.Portable.nuspec
+		NuGet\Tungsten\Tungsten.Standard.nuspec = NuGet\Tungsten\Tungsten.Standard.nuspec
+		NuGet\Tungsten\Tungsten.Universal.nuspec = NuGet\Tungsten\Tungsten.Universal.nuspec
+		NuGet\Tungsten\Tungsten.Universal.targets = NuGet\Tungsten\Tungsten.Universal.targets
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tungsten.Net.Demo", "Demos\Tungsten.Net.Demo\Tungsten.Net.Demo.csproj", "{507B060A-73C8-46FA-84EC-EA2428C555A5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tungsten.Net", "Tungsten.Net", "{A47263B7-A04B-448E-9C20-6DD9F2D48828}"
 	ProjectSection(SolutionItems) = preProject
-		NuGet\Tungsten.Net\Package.nuspec = NuGet\Tungsten.Net\Package.nuspec
+		NuGet\Tungsten.Net\Create_Tungsten.Net_Packages.bat = NuGet\Tungsten.Net\Create_Tungsten.Net_Packages.bat
 		NuGet\Tungsten.Net\Readme.txt = NuGet\Tungsten.Net\Readme.txt
+		NuGet\Tungsten.Net\Tungsten.Net.nuspec = NuGet\Tungsten.Net\Tungsten.Net.nuspec
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tungsten.IO.Pipes", "Tungsten.IO.Pipes", "{D217F5A3-A5C9-408E-8FD9-E7128C9E77C1}"
 	ProjectSection(SolutionItems) = preProject
-		NuGet\Tungsten.IO.Pipes\Package.nuspec = NuGet\Tungsten.IO.Pipes\Package.nuspec
+		NuGet\Tungsten.IO.Pipes\Create_Tungsten.IO.Pipes_Packages.bat = NuGet\Tungsten.IO.Pipes\Create_Tungsten.IO.Pipes_Packages.bat
 		NuGet\Tungsten.IO.Pipes\Readme.txt = NuGet\Tungsten.IO.Pipes\Readme.txt
+		NuGet\Tungsten.IO.Pipes\Tungsten.IO.Pipes.nuspec = NuGet\Tungsten.IO.Pipes\Tungsten.IO.Pipes.nuspec
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.Net", "Src\Tungsten.Net\Tungsten.Net.csproj", "{F2FE9090-34C9-4F7E-A932-7F3CF8D00567}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tungsten.Domains", "Tungsten.Domains", "{7E45DFD5-5330-47D9-BAB5-5221658783D8}"
 	ProjectSection(SolutionItems) = preProject
-		NuGet\Tungsten.Domains\Package.nuspec = NuGet\Tungsten.Domains\Package.nuspec
+		NuGet\Tungsten.Domains\Create_Tungsten.Domains_Packages.bat = NuGet\Tungsten.Domains\Create_Tungsten.Domains_Packages.bat
 		NuGet\Tungsten.Domains\Readme.txt = NuGet\Tungsten.Domains\Readme.txt
+		NuGet\Tungsten.Domains\Tungsten.Domains.nuspec = NuGet\Tungsten.Domains\Tungsten.Domains.nuspec
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tungsten.Net.RPC.Standard", "Src\Tungsten.Net.RPC.Standard\Tungsten.Net.RPC.Standard.csproj", "{00DD4608-5FA2-49C8-96BA-8C68C1A2C706}"

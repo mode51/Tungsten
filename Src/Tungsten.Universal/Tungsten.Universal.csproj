@@ -11,7 +11,7 @@
     <AssemblyName>Tungsten.Universal</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -35,7 +35,8 @@
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Tungsten.Universal.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Tungsten.Universal.xml</DocumentationFile>
+    <GenerateLibraryLayout>false</GenerateLibraryLayout>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -170,11 +171,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Archive\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\Tungsten\Tungsten.ico">
-      <Link>Tungsten.ico</Link>
-    </Content>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

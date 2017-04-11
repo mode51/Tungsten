@@ -65,6 +65,9 @@ namespace W.Net.Sockets
             this.Socket = new Socket(client);
             HookNotifications();
         }
+        /// <summary>
+        /// Disposes and deconstructs the FormattedSocket instance
+        /// </summary>
         ~FormattedSocket()
         {
             Dispose();

@@ -61,6 +61,9 @@ namespace W.Net.Sockets
             if (_client != null)
                 FinalizeConnection(_client.Client.RemoteEndPoint.As<IPEndPoint>()?.Address);
         }
+        /// <summary>
+        /// Disposes and deconstructs the Socket instance
+        /// </summary>
         ~Socket()
         {
             Dispose();

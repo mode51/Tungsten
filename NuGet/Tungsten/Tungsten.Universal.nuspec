@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Tungsten.Universal</id>
+    <title>Tungsten.Universal</title>
+    <version>1.2.3</version>
+    <authors>Jordan Duerksen</authors>
+    <owners>Jordan Duerksen</owners>
+    <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/mode51/Tungsten</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Tungsten is a C# library of classes which make application development easier.</description>
+    <summary>Tungsten is a C# library of classes which make application development easier.</summary>
+    <releaseNotes>Each Tungsten target now has it's own NuGet package</releaseNotes>
+    <copyright>Copyright 2017 Jordan Duerksen</copyright>
+    <tags>Tungsten W C# library</tags>
+    <dependencies>
+      <group targetFramework="uap10.0">
+        <dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="5.1.0" exclude="Build,Analyzers" />
+        <!--<dependency id="System.Threading.Thread" version="4.0.10.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Tasks" version="4.0.10.0" exclude="Build,Analyzers" />-->
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Readme.txt" target="" />
+
+    <!-- apparently uap10.0 needs to be first? -->
+    <file src="..\..\Src\Tungsten.Universal\bin\Release\Tungsten.Universal.dll" target="lib\uap10.0" />
+    <file src="..\..\Src\Tungsten.Universal\bin\Release\Tungsten.Universal.xml" target="lib\uap10.0" />
+    <file src="..\..\Src\Tungsten.Universal\bin\Release\Tungsten.Universal.dll" target="ref\uap10.0" />
+    <file src="..\..\Src\Tungsten.Universal\bin\x86\Release\Tungsten.Universal.dll" target="runtimes\win10-x86\native" />
+    <file src="..\..\Src\Tungsten.Universal\bin\x86\Release\Tungsten.Universal.pri" target="runtimes\win10-x86\native" />
+    <file src="..\..\Src\Tungsten.Universal\bin\x64\Release\Tungsten.Universal.dll" target="runtimes\win10-x64\native" />
+    <file src="..\..\Src\Tungsten.Universal\bin\x64\Release\Tungsten.Universal.pri" target="runtimes\win10-x64\native" />
+    <file src="..\..\Src\Tungsten.Universal\bin\ARM\Release\Tungsten.Universal.dll" target="runtimes\win10-arm\native" />
+    <file src="..\..\Src\Tungsten.Universal\bin\ARM\Release\Tungsten.Universal.pri" target="runtimes\win10-arm\native" />
+    <file src="Tungsten.Universal.targets" target="build\native" />
+
+  </files>
+</package>

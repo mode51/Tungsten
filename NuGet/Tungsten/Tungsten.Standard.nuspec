@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Tungsten</id>
-    <title>Tungsten</title>
-    <version>1.2.2.1</version>
+    <id>Tungsten.Standard</id>
+    <title>Tungsten.Standard</title>
+    <version>1.2.3</version>
     <authors>Jordan Duerksen</authors>
     <owners>Jordan Duerksen</owners>
     <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
@@ -11,17 +11,24 @@
     <iconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Tungsten is a C# library of classes which make application development easier.</description>
-    <summary>Tungsten now includes net45, netstandard1.4, universal and portable (portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20).  Note that Silverlight is not supported.</summary>
-    <releaseNotes>Added RSA support to Tungsten for net45.  This already exists for netstandard1.4 (but not PCL or Universal - and may never)</releaseNotes>
+    <summary>Tungsten is a C# library of classes which make application development easier.</summary>
+    <releaseNotes>Each Tungsten target now has it's own NuGet package</releaseNotes>
     <copyright>Copyright 2017 Jordan Duerksen</copyright>
-    <tags>Tungsten W C# library</tags>
- <dependencies>
-    <group targetFramework=".NETStandard1.4">
+    <tags>Tungsten W C# library netstandard</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard1.4">
         <dependency id="System.Runtime.Serialization.Json" version="4.3.0" exclude="Build,Analyzers" />
         <dependency id="System.Threading.Thread" version="4.3.0" exclude="Build,Analyzers" />
         <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
         <dependency id="System.Runtime.Serialization.Xml" version="4.3.0" exclude="Build,Analyzers" />
-    </group>
-  </dependencies>
+      </group>
+    </dependencies>
   </metadata>
+  <files>
+    <file src="Readme.txt" target="" />
+
+    <file src="..\..\Src\Tungsten.Standard\bin\Release\netstandard1.4\Tungsten.Standard.dll" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Standard\bin\Release\netstandard1.4\Tungsten.Standard.xml" target="lib\netstandard1.4" />
+
+  </files>
 </package>

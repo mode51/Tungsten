@@ -60,6 +60,9 @@ namespace W.Net.Sockets
         public SecureServer()
         {
         }
+        /// <summary>
+        /// Disposes and deconstructs the SecureServer instance
+        /// </summary>
         ~SecureServer()
         {
             Dispose();

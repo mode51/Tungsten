@@ -20,6 +20,18 @@
         <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
         <dependency id="Tungsten" version="1.2.0" exclude="Build,Analyzers" />
       </group>
+      <!--<group targetFramework=".NETFramework4.5" />-->
     </dependencies>
   </metadata>
+  
+  <files>
+    <file src="Readme.txt" target="" />
+
+    <!--<file src="..\..\Src\Tungsten.IO.Pipes\bin\Release\Tungsten.IO.Pipes.dll" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.IO.Pipes\bin\Release\Tungsten.IO.Pipes.xml" target="lib\net45" />-->
+
+    <file src="..\..\Src\Tungsten.IO.Pipes.Standard\bin\Release\netstandard1.4\Tungsten.IO.Pipes.Standard.dll" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.IO.Pipes.Standard\bin\Release\netstandard1.4\Tungsten.IO.Pipes.Standard.xml" target="lib\netstandard1.4" />
+
+  </files>
 </package>
