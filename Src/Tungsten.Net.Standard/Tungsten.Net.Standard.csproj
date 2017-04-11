@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
-    <Version>1.2.3.0</Version>
+    <Version>1.2.3.1</Version>
     <Authors>Jordan Duerksen</Authors>
     <Company />
     <Product>Tungsten.Net.Standard</Product>
@@ -13,8 +13,8 @@
     <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
     <PackageTags>Tungsten.Net.Standard Tungsten.Net Tungsten W W.Net C# library tcp sockets client server</PackageTags>
-    <AssemblyVersion>1.2.2.0</AssemblyVersion>
-    <FileVersion>1.2.2.0</FileVersion>
+    <AssemblyVersion>1.2.3.1</AssemblyVersion>
+    <FileVersion>1.2.3.1</FileVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PostBuildEvent></PostBuildEvent>
   </PropertyGroup>
