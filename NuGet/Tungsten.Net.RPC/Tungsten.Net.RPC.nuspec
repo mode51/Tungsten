@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Tungsten.Net</id>
-    <title>Tungsten.Net</title>
+    <id>Tungsten.Net.RPC</id>
+    <title>Tungsten.Net.RPC</title>
     <version>1.2.3</version>
     <authors>Jordan Duerksen</authors>
     <owners>Jordan Duerksen</owners>
@@ -14,15 +14,17 @@
     <summary></summary>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2017 Jordan Duerksen</copyright>
-    <tags>Tungsten.Net.Standard Tungsten.Net Tungsten W W.Net C# library tcp sockets client server</tags>
+    <tags>Tungsten.Net.RPC Tungsten Tungsten.Net RPC client server remote procedure call c# library</tags>
     <dependencies>
-      <group targetFramework=".NETStandard1.4">
+      <group targetFramework=".NETStandard1.5">
         <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
         <dependency id="Tungsten" version="1.2.3" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Net" version="1.2.3" exclude="Build,Analyzers" />
         <dependency id="Newtonsoft.Json" version="10.0.2" exclude="Build,Analyzers" />
       </group>
       <group targetFramework="net45">
         <dependency id="Tungsten" version="1.2.3" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Net" version="1.2.3" exclude="Build,Analyzers" />
         <dependency id="Newtonsoft.Json" version="10.0.2" exclude="Build,Analyzers"/>
       </group>
     </dependencies>
@@ -31,11 +33,11 @@
   <files>
     <file src="Readme.txt" target="" />
 
-    <file src="..\..\Src\Tungsten.Net.Standard\bin\Release\netstandard1.4\Tungsten.Net.Standard.dll" target="lib\netstandard1.4" />
-    <file src="..\..\Src\Tungsten.Net.Standard\bin\Release\netstandard1.4\Tungsten.Net.Standard.xml" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Net.RPC.Standard\bin\Release\netstandard1.5\Tungsten.Net.RPC.Standard.dll" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Net.RPC.Standard\bin\Release\netstandard1.5\Tungsten.Net.RPC.Standard.xml" target="lib\netstandard1.5" />
 
-    <file src="..\..\Src\Tungsten.Net\bin\Release\Tungsten.Net.dll" target="lib\net45" />
-    <file src="..\..\Src\Tungsten.Net\bin\Release\Tungsten.Net.xml" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.Net.RPC\bin\Release\Tungsten.Net.RPC.dll" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.Net.RPC\bin\Release\Tungsten.Net.RPC.xml" target="lib\net45" />
 
   </files>
 </package>

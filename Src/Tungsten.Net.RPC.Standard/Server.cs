@@ -6,12 +6,22 @@ using System.Threading;
 
 namespace W.Net.RPC
 {
+    /// <summary>
+    /// Supports remote instances of Tungsten.Net.RPC.Client to call local methods.
+    /// </summary>
     public class Server : IDisposable
     {
         private GenericServer<Message> _host;
         private ManualResetEvent _mreIsListening;
 
+        /// <summary>
+        /// Exposes the dictionary of methods.  Custom, non-attributed methods may be added to this dictionary.
+        /// </summary>
         public MethodDictionary Methods = new MethodDictionary();
+        /// <summary>
+        /// Multi-cast delegate will be called with the appropriate value whenever the server successfully starts or stops listening.
+        /// </summary>
+        /// <remarks>The value will be True if the server is listening, otherwise False</remarks>
         public Action<bool> IsListeningChanged { get; set; }
 
         private bool OnMessageReceived(ref Message message)
@@ -22,6 +32,11 @@ namespace W.Net.RPC
             return result.Success;
         }
 
+        /// <summary>
+        /// Blocks the calling thread until the server starts or fails to start within the allotted timeout period.
+        /// </summary>
+        /// <param name="msTimeout">The number of milliseconds to wait before a timeout occurs.</param>
+        /// <returns>True if the server starts within the specified timeout period, otherwise False.</returns>
         public bool WaitForIsListening(int msTimeout = 10000)
         {
             //return TimeoutFunc<bool>.Create(msTimeout, ct => 
@@ -41,8 +56,15 @@ namespace W.Net.RPC
             //}).Start();
             return _mreIsListening?.WaitOne(msTimeout) ?? false;
         }
+        /// <summary>
+        /// Starts listening for client connections on the specified network interface and port
+        /// </summary>
+        /// <param name="ipAddress">The IP address on which to bind and listen for clients</param>
+        /// <param name="port">The port on which to listen.  Must be a positive value.</param>
         public void Start(IPAddress ipAddress, int port)
         {
+            if (port <= 0)
+                throw new ArgumentOutOfRangeException(nameof(port));
             Stop();
             _mreIsListening = new ManualResetEvent(false);
             _host = new GenericServer<Message>();
@@ -83,6 +105,9 @@ namespace W.Net.RPC
             };
             _host.Start(ipAddress, port);
         }
+        /// <summary>
+        /// Stops listening for client connections
+        /// </summary>
         public void Stop()
         {
             _mreIsListening?.Dispose();
@@ -91,14 +116,23 @@ namespace W.Net.RPC
             _host = null;
         }
 
+        /// <summary>
+        /// Initializes the Tungsten.Net.RPC.Server and loads the RPC methods
+        /// </summary>
         public Server()
         {
             Methods.Refresh();
         }
+        /// <summary>
+        /// Calls Dispose and deconstructs the Tungsten.Net.RPC.Server
+        /// </summary>
         ~Server()
         {
             Dispose();
         }
+        /// <summary>
+        /// Disposes the Tungsten.Net.RPC.Server and releases resources
+        /// </summary>
         public void Dispose()
         {
             Stop();

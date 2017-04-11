@@ -6,6 +6,9 @@ using W.Logging;
 
 namespace W.Net.RPC
 {
+    /// <summary>
+    /// Used to store and call RPC methods on a Tungsten.Net.RPC Server
+    /// </summary>
     public class MethodDictionary : Dictionary<string, MethodInfo>
     {
         private void ExamineAssembly(Assembly asm)
@@ -59,10 +62,24 @@ namespace W.Net.RPC
             Console.WriteLine($"Found {Count} RPC Methods");
         }
 
-        public T Call<T>(string method, params object[] args)
+        /// <summary>
+        /// Call a method on the Tungsten.Net.RPC Server.
+        /// </summary>
+        /// <typeparam name="TResult">The expected return type of the call</typeparam>
+        /// <param name="method">The namespace, class name and method name of the method to call (ie: MyNamespace.MyClass.Method1)</param>
+        /// <param name="args">Arguments, if any, to be passed into the remote method</param>
+        /// <returns>A result of type TResult</returns>
+        /// <remarks>If TResult does not match the return type of the method on the server, a return value cannot be expected and the call may time out.</remarks>
+        public TResult Call<TResult>(string method, params object[] args)
         {
-            return (T)Convert.ChangeType(Call(method, args).Result, typeof(T));
+            return (TResult)Convert.ChangeType(Call(method, args).Result, typeof(TResult));
         }
+        /// <summary>
+        /// Call a method on the Tungsten.Net.RPC Server.  This method s
+        /// </summary>
+        /// <param name="method">The namespace, class name and method name of the method to call (ie: MyNamespace.MyClass.Method1)</param>
+        /// <param name="args">Arguments, if any, to be passed into the remote method</param>
+        /// <returns>A CallResult object describing the result of the call.  If the remote method does not have a return value, the value of CallResult.Result will be null.</returns>
         public CallResult<object> Call(string method, params object[] args)
         {
             var result = new CallResult<object>(true, null);
@@ -109,6 +126,10 @@ namespace W.Net.RPC
             return result;
         }
 
+        /// <summary>
+        /// Scans the server process for RPC methods (static methods with the RPCMethod attribute in classes with the RPCClass attribute)
+        /// </summary>
+        /// <remarks>Any methods previously added manually will have to be re-added</remarks>
         public void Refresh()
         {
             Clear();

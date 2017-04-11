@@ -1,12 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard1.5</TargetFramework>
     <RootNamespace>W.Net.RPC</RootNamespace>
     <Authors>Jordan Duerksen</Authors>
     <Company />
-    <Description>Client/Server socket library.   The client calls methods on the server via the MakeRPCCall method.  The server implements RPC methods by using the RPCMethod attribute.</Description>
+    <Description>Tungsten.Net.RPC is a socket library which allows clients to execute functionality (with or without return values) on a server (the server must be a Tungsten.Net.RPC server). Tungsten.Net.RPC uses two-way encryption via public/private key pairs to secure the transmission.  The client calls methods on the server via the MakeRPCCall method.  The server implements RPC methods by using the RPCMethod attribute (or added manually).</Description>
     <Copyright>Copyright @ 2017 Jordan Duerksen</Copyright>
+    <ApplicationIcon>Tungsten.ico</ApplicationIcon>
+    <Version>1.2.3</Version>
+    <AssemblyVersion>1.2.3.0</AssemblyVersion>
+    <FileVersion>1.2.3.0</FileVersion>
+    <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</PackageIconUrl>
+    <PackageTags>Tungsten.Net.RPC Tungsten Tungsten.Net RPC client server remote procedure call c# library</PackageTags>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard1.5\Tungsten.Net.RPC.Standard.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,17 +27,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
     <PackageReference Include="System.Reflection" Version="4.3.0" />
     <PackageReference Include="System.Reflection.Extensions" Version="4.3.0" />
     <PackageReference Include="System.Reflection.Primitives" Version="4.3.0" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.3.0" />
-    <PackageReference Include="Tungsten" Version="1.2.2" />
+    <PackageReference Include="Tungsten" Version="1.2.3" />
     <PackageReference Include="Tungsten.Net" Version="1.2.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Archive\" />
   </ItemGroup>
 
 </Project>

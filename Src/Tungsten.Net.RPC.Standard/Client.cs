@@ -9,9 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using Newtonsoft.Json.Linq;
+using W.Logging;
 
 namespace W.Net.RPC
 {
+    /// <summary>
+    /// Supports calling methods exposed by a Tungsten.Net.RPC Server
+    /// </summary>
     public partial class Client : IDisposable
     {
         private GenericClient<Message> _client;
@@ -19,10 +23,24 @@ namespace W.Net.RPC
         private readonly List<Waiter> _waiters = new List<Waiter>();
         private Lockable<bool> _isConnected { get; } = new Lockable<bool>();
 
-        public delegate void HandleResponseDelegate<TResponseType>(TResponseType response, bool expired);
+        //public delegate void HandleResponseDelegate<TResponseType>(TResponseType response, bool expired);
+        /// <summary>
+        /// Multi-cast delegate called when the client connects to the server
+        /// </summary>
         public Action<Client> Connected { get; set; }
+        /// <summary>
+        /// Multi-cast delegate called when the client disconnects from the server
+        /// </summary>
         public Action<Client, Exception> Disconnected { get; set; }
 
+        /// <summary>
+        /// True if the client is connected to the server, otherwise False
+        /// </summary>
+        public bool IsConnected => _isConnected.Value;
+        
+        /// <summary>
+        /// Calls Dispose and deconstructs the Client
+        /// </summary>
         ~Client()
         {
             Dispose();
@@ -39,6 +57,7 @@ namespace W.Net.RPC
         /// Calls a method on the Tungsten RPC Server
         /// </summary>
         /// <param name="methodName">The name of the method to call, including full namespace and class name</param>
+        /// <param name="args">Arguments, if any, to be passed into the remote method</param>
         public void Call(string methodName, params object[] args)
         {
             Call<object>(methodName, null, args);
@@ -134,6 +153,7 @@ namespace W.Net.RPC
         /// <param name="remoteAddress">The IP address of the Tungsten RPC Server</param>
         /// <param name="remotePort">The port on which the Tungsten RPC Server is listening</param>
         /// <param name="msTimeout">The call will fail if the client can't connect within the specified elapsed time (in milliseconds)</param>
+        /// <param name="onConnection">Called when a connection has been established</param>
         /// <returns>A CallResult specifying success/failure and an Exception if one ocurred</returns>
         public bool Connect(string remoteAddress, int remotePort, int msTimeout = 10000, Action<Client, IPAddress> onConnection = null)//, Action<Exception> onException = null)
         {
@@ -145,8 +165,22 @@ namespace W.Net.RPC
             {
                 //if (onConnection != null)
                 //    Task.Factory.FromAsync((asyncCallback, @object) => onConnection.BeginInvoke(this, IPAddress.Parse(remoteAddress), asyncCallback, @object), onConnection.EndInvoke, null);
-                onConnection?.Invoke(this, IPAddress.Parse(remoteAddress));
-                Connected?.Invoke(this);
+                try
+                { 
+                    onConnection?.Invoke(this, IPAddress.Parse(remoteAddress));
+                }
+                catch (Exception e)
+                {
+                    Log.e(e);
+                }
+                try
+                {
+                    Connected?.Invoke(this);
+                }
+                catch (Exception e)
+                {
+                    Log.e(e);
+                }
                 mre?.Set();
             };
             //3.28.2017 - now each Waiter taps the GenericMessageReceived to listen for their own message (identified by Message.Id)
@@ -164,6 +198,7 @@ namespace W.Net.RPC
         /// <param name="remoteAddress">The IP address of the Tungsten RPC Server</param>
         /// <param name="remotePort">The port on which the Tungsten RPC Server is listening</param>
         /// <param name="msTimeout">The call will fail if the client can't connect within the specified elapsed time (in milliseconds)</param>
+        /// <param name="onConnection">Called when a connection has been established</param>
         /// <returns>A CallResult specifying success/failure and an Exception if one ocurred</returns>
         public bool Connect(IPAddress remoteAddress, int remotePort, int msTimeout = 10000, Action<Client, IPAddress> onConnection = null)//, Action<Exception> onException = null)
         {
@@ -183,7 +218,14 @@ namespace W.Net.RPC
             _waiters?.Clear();
             _client?.Socket.Disconnect(e);
             _client = null;
-            Disconnected?.Invoke(this, e);
+            try
+            { 
+                Disconnected?.Invoke(this, e);
+            }
+            catch (Exception ex)
+            {
+                Log.e(ex);
+            }
         }
         /// <summary>
         /// Disconnects the socket from the server

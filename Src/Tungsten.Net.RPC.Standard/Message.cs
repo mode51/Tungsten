@@ -9,7 +9,7 @@ namespace W.Net.RPC
     //    public DateTime ExpireDateTime { get; set; }
     //}
     //this is the Message class used by the Client and Server
-    public class Message //: EncryptedMessageBase
+    internal class Message //: EncryptedMessageBase
     {
         public Guid Id { get; set; }
         public DateTime ExpireDateTime { get; set; }
