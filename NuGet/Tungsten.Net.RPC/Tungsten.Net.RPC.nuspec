@@ -3,14 +3,14 @@
   <metadata>
     <id>Tungsten.Net.RPC</id>
     <title>Tungsten.Net.RPC</title>
-    <version>1.2.3.1</version>
+    <version>1.2.3.2</version>
     <authors>Jordan Duerksen</authors>
     <owners>Jordan Duerksen</owners>
     <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/mode51/Tungsten</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Tungsten.Net makes it easy to add tcp sockets to your application.  Client and server classes are provided, with and without assymetric encryption.</description>
+    <description>Tungsten.Net is a client/server solution to add tcp sockets to your application.  Client and server classes are provided, with and without assymetric encryption.  netstandard1.5 is required due to the use of reflection.</description>
     <summary></summary>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2017 Jordan Duerksen</copyright>
@@ -18,13 +18,13 @@
     <dependencies>
       <group targetFramework=".NETStandard1.5">
         <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
-        <dependency id="Tungsten" version="1.2.3" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Net" version="1.2.3.1" exclude="Build,Analyzers" />
+        <dependency id="Tungsten" version="1.2.3.2" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Net" version="1.2.3.3" exclude="Build,Analyzers" />
         <dependency id="Newtonsoft.Json" version="10.0.2" exclude="Build,Analyzers" />
       </group>
       <group targetFramework="net45">
-        <dependency id="Tungsten" version="1.2.3" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Net" version="1.2.3.1" exclude="Build,Analyzers" />
+        <dependency id="Tungsten" version="1.2.3.2" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Net" version="1.2.3.3" exclude="Build,Analyzers" />
         <dependency id="Newtonsoft.Json" version="10.0.2" exclude="Build,Analyzers"/>
       </group>
     </dependencies>

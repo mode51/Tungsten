@@ -36,11 +36,12 @@ namespace W.Net.RPC
         }
         private void FindAllRPCMethods()
         {
+            //4.12.2017 - The use of GetEntryAssembly requires netstandard1.5.  I can't see any way to use an earlier version of netstandard.
             //scan the assemblies for RPC attributes
-            //var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            //var assemblies2 = AppDomain.CurrentDomain.GetAssemblies();
             //var assemblies = Microsoft.Framework.Runtime.LibraryManager.DependencyContext.Default.RuntimeLibraries;
+            //var srcPath2 = System.IO.Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
             var assemblies = System.Reflection.Assembly.GetEntryAssembly().GetReferencedAssemblies().ToList();
-            //var srcPath = System.IO.Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
             var srcPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
 
             Clear();
@@ -61,7 +62,6 @@ namespace W.Net.RPC
             }
             Console.WriteLine($"Found {Count} RPC Methods");
         }
-
         /// <summary>
         /// Call a method on the Tungsten.Net.RPC Server.
         /// </summary>

@@ -22,6 +22,10 @@
     <DocumentationFile>bin\Release\netstandard1.5\Tungsten.Net.RPC.Standard.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD1_5</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Include="Message.cs" />
   </ItemGroup>
@@ -32,8 +36,8 @@
     <PackageReference Include="System.Reflection.Extensions" Version="4.3.0" />
     <PackageReference Include="System.Reflection.Primitives" Version="4.3.0" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.3.0" />
-    <PackageReference Include="Tungsten" Version="1.2.3" />
-    <PackageReference Include="Tungsten.Net" Version="1.2.3" />
+    <PackageReference Include="Tungsten" Version="1.2.3.2" />
+    <PackageReference Include="Tungsten.Net" Version="1.2.3.3" />
   </ItemGroup>
 
 </Project>
