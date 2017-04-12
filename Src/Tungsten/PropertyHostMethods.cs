@@ -13,7 +13,7 @@ namespace W
         private static IOwnedProperty GetProperty(FieldInfo fieldInfo, object owner)
 
         {
-#if WINDOWS_UWP || WINDOWS_PORTABLE
+#if WINDOWS_UWP || WINDOWS_PORTABLE || NETCOREAPP1_0 || NETCOREAPP1_1
             if (fieldInfo?.FieldType.GetTypeInfo().IsClass ?? false)
 #else
             if (fieldInfo?.FieldType?.IsClass ?? false)
@@ -27,7 +27,7 @@ namespace W
         }
         private static IOwnedProperty GetProperty(PropertyInfo propertyInfo, object owner)
         {
-#if WINDOWS_UWP || WINDOWS_PORTABLE
+#if WINDOWS_UWP || WINDOWS_PORTABLE || NETCOREAPP1_0 || NETCOREAPP1_1
             if (propertyInfo?.PropertyType.GetTypeInfo().IsClass ?? false)
 #else
             if (propertyInfo?.PropertyType?.IsClass ?? false)

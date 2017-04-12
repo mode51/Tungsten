@@ -214,7 +214,7 @@ namespace W.Net.Sockets
             _writer = null;
             _networkStream?.Dispose();
             _networkStream = null;
-#if NETSTANDARD1_4
+#if NETSTANDARD1_3 || NETSTANDARD1_4
             _client?.Dispose();
 #else
             _client?.Close();

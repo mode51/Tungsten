@@ -12,7 +12,7 @@ namespace W.Logging
         /// </summary>
         public static Action<LogMessageCategory, string> LogTheMessage { get; set; } = (level, msg) =>
         {
-#if !WINDOWS_PORTABLE && !WINDOWS_UWP
+#if !WINDOWS_PORTABLE && !WINDOWS_UWP && !NETCOREAPP1_0 && !NETCOREAPP1_1
             var typeName = Enum.GetName(typeof(LogMessageCategory), level);
             System.Diagnostics.Trace.WriteLine($"{typeName}: {msg}");
 #endif

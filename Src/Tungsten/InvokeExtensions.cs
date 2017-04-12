@@ -17,7 +17,28 @@ namespace W
     /// </summary>
     public static class InvokeExtensions
     {
-#if WINDOWS_PORTABLE
+#if WINDOWS_UWP
+        /// <summary>
+        /// Runs the provided Action on the UI thread
+        /// </summary>
+        /// <param name="this">The form or control which supports Dispatcher</param>
+        /// <param name="action">The code to be executed on the UI thread</param>
+        /// <typeparam name="T">The form or control who's thread will execute the code</typeparam>
+        public static void InvokeEx<T>(this T @this, Action action)
+        {
+            CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => action?.Invoke()).GetResults();
+        }
+        /// <summary>
+        /// Asynchronously runs the provided Action on the UI thread
+        /// </summary>
+        /// <param name="this">The form or control which supports Dispatcher</param>
+        /// <param name="action">The code to be executed on the UI thread</param>
+        /// <typeparam name="T">The form or control who's thread will execute the code</typeparam>
+        public static async Task InvokeAsync<T>(this T @this, Action action)
+        {
+            await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => action?.Invoke());
+        }
+#elif (WINDOWS_PORTABLE || NETCOREAPP1_0 || NETCOREAPP1_1)
         /// <summary>
         /// Runs the provided Action on the UI thread
         /// </summary>
@@ -82,27 +103,6 @@ namespace W
             },
             null);
             return taskCompletionSource.Task;
-        }
-#elif WINDOWS_UWP
-        /// <summary>
-        /// Runs the provided Action on the UI thread
-        /// </summary>
-        /// <param name="this">The form or control which supports Dispatcher</param>
-        /// <param name="action">The code to be executed on the UI thread</param>
-        /// <typeparam name="T">The form or control who's thread will execute the code</typeparam>
-        public static void InvokeEx<T>(this T @this, Action action)
-        {
-            CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => action?.Invoke()).GetResults();
-        }
-        /// <summary>
-        /// Asynchronously runs the provided Action on the UI thread
-        /// </summary>
-        /// <param name="this">The form or control which supports Dispatcher</param>
-        /// <param name="action">The code to be executed on the UI thread</param>
-        /// <typeparam name="T">The form or control who's thread will execute the code</typeparam>
-        public static async Task InvokeAsync<T>(this T @this, Action action)
-        {
-            await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => action?.Invoke());
         }
 #else
         /// <summary>

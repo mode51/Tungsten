@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.4</TargetFramework>
+    <TargetFramework>netstandard1.3</TargetFramework>
     <RootNamespace>W</RootNamespace>
     <Version>1.2.3</Version>
     <Authors>Jordan Duerksen</Authors>
@@ -28,7 +28,8 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.4\Tungsten.Standard.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard1.3\Tungsten.Standard.xml</DocumentationFile>
+    <OutputPath>bin\Release\netstandard1.3\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

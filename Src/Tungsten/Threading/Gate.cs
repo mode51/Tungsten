@@ -32,7 +32,7 @@ namespace W.Threading
                     }
                 }
             }
-#if WINDOWS_UWP || WINDOWS_PORTABLE
+#if WINDOWS_UWP || WINDOWS_PORTABLE || NETCOREAPP1_0 || NETCOREAPP1_1
             catch (TaskSchedulerException e)
             {
                 ex = e;
@@ -101,7 +101,7 @@ namespace W.Threading
                     }
                 }
             }
-#if WINDOWS_UWP || WINDOWS_PORTABLE
+#if WINDOWS_UWP || WINDOWS_PORTABLE || NETCOREAPP1_0 || NETCOREAPP1_1
             catch (TaskSchedulerException e)
             {
                 ex = e;

@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Tungsten is a C# library of classes which make application development easier.</description>
     <summary>Tungsten is a C# library of classes which make application development easier.</summary>
-    <releaseNotes>Each Tungsten target now has it's own NuGet package</releaseNotes>
+    <releaseNotes>This NuGet package is for local testing purposes</releaseNotes>
     <copyright>Copyright 2017 Jordan Duerksen</copyright>
     <tags>Tungsten W C# library</tags>
     <dependencies>

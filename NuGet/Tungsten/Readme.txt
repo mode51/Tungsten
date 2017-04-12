@@ -1,5 +1,11 @@
 ﻿Tungsten is a C# library to make application development easier.  See the wiki @ https://github.com/mode51/Tungsten/wiki for details, examples and use.
 
+4.12.2017 v1.2.3.2
+Changed netstandard minimum from 1.4 to 1.3
+
+4.11.2017 v1.2.3.1
+All target frameworks should work now
+
 4.6.2017 v1.2.3
 Attempting to fix NuGet inclusion of Tungsten.Universal
 

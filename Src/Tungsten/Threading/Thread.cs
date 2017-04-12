@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace W.Threading
 {
-#if WINDOWS_PORTABLE || WINDOWS_UWP
+#if WINDOWS_PORTABLE || WINDOWS_UWP || NETCOREAPP1_0 || NETCOREAPP1_1
     /// <summary>
     /// A thread wrapper which makes multi-threading easier
     /// </summary>

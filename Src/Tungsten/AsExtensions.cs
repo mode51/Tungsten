@@ -147,7 +147,7 @@ namespace W
             {
                 deflater.Write(bytes, 0, bytes.Length);
             }
-#if WINDOWS_PORTABLE || WINDOWS_UWP
+#if WINDOWS_PORTABLE || WINDOWS_UWP || NETCOREAPP1_0 || NETCOREAPP1_1
             return output.ToArray();
 #else
             return output.GetBuffer();
@@ -160,7 +160,7 @@ namespace W
         /// <returns>A compressed string</returns>
         public static string AsCompressed(this string item)
         {
-#if WINDOWS_PORTABLE || WINDOWS_UWP
+#if WINDOWS_PORTABLE || WINDOWS_UWP || NETCOREAPP1_0 || NETCOREAPP1_1
             var bytes = AsCompressed(System.Text.Encoding.UTF8.GetBytes(item));
             return System.Text.Encoding.UTF8.GetString(bytes, 0, bytes.Length);
 #else
@@ -180,7 +180,7 @@ namespace W
             {
                 deflater.CopyTo(output);
             }
-#if WINDOWS_PORTABLE || WINDOWS_UWP
+#if WINDOWS_PORTABLE || WINDOWS_UWP || NETCOREAPP1_0 || NETCOREAPP1_1
             return output.ToArray();
 #else
             return output.GetBuffer();
@@ -193,7 +193,7 @@ namespace W
         /// <returns>A string of decompressed data</returns>
         public static string AsDecompressed(this string item)
         {
-#if WINDOWS_PORTABLE || WINDOWS_UWP
+#if WINDOWS_PORTABLE || WINDOWS_UWP || NETCOREAPP1_0 || NETCOREAPP1_1
             var bytes = AsDecompressed(System.Text.Encoding.UTF8.GetBytes(item));
             return System.Text.Encoding.UTF8.GetString(bytes, 0, bytes.Length).TrimEnd('\0');
 #else
