@@ -17,10 +17,11 @@
     <FileVersion>1.2.3.0</FileVersion>
     <PackageReleaseNotes>Each Tungsten target now has it's own NuGet package</PackageReleaseNotes>
     <PostBuildEvent></PostBuildEvent>
-    <RepositoryUrl>$(SolutionDir)NuGet</RepositoryUrl>
+    <RepositoryUrl></RepositoryUrl>
     <AssemblyName>Tungsten.Standard</AssemblyName>
     <PackageId>Tungsten.Standard</PackageId>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

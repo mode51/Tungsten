@@ -306,6 +306,7 @@ namespace W.LiteDb
             return 0;
         }
 
+#if !NETSTANDARD1_4
         #region FileStorage Methods (Bitmap Storage)
         public static System.Drawing.Bitmap SaveBitmap(this string path, string url, System.Drawing.Bitmap bitmap)
         {
@@ -384,5 +385,6 @@ namespace W.LiteDb
             }
         }
         #endregion
+#endif
     }
 }

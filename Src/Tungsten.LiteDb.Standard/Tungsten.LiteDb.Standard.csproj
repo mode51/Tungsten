@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+    <RootNamespace>W.LiteDb</RootNamespace>
+    <Authors>Jordan Duerksen</Authors>
+    <Company />
+    <Description>LiteDb based CRUD for your POCO classes</Description>
+    <Copyright>Copyright @ 2017 Jordan Duerksen</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
+    <PackageIconUrl>https://github.com/mode51/Tungsten/blob/master/Tungsten/Tungsten.ico</PackageIconUrl>
+    <PackageTags>Tungsten.LiteDb Tungsten LiteDb POCO C# library</PackageTags>
+    <ApplicationIcon>Tungsten.ico</ApplicationIcon>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard1.4\Tungsten.LiteDb.Standard.xml</DocumentationFile>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;RELEASE;NETSTANDARD1_4</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard1.4\Tungsten.LiteDb.Standard.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Tungsten.LiteDb\LiteDbItem.cs" Link="LiteDbItem.cs" />
+    <Compile Include="..\Tungsten.LiteDb\LiteDbMethods.cs" Link="LiteDbMethods.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiteDB" Version="3.1.0" />
+    <PackageReference Include="Tungsten" Version="1.2.3.2" />
+  </ItemGroup>
+
+</Project>

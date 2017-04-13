@@ -17,6 +17,7 @@
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
     <PackageReleaseNotes>Initial release with same version number as Tungsten.Standard</PackageReleaseNotes>
     <PostBuildEvent></PostBuildEvent>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
