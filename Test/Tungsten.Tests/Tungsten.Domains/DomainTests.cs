@@ -24,7 +24,7 @@ namespace W.Tests.Tungsten
         {
             var domain = new DomainLoader("API", true);
             domain.Load();
-            Assert.IsTrue(System.IO.Directory.Exists("API\\cache"));
+            Assert.IsTrue(System.IO.Directory.Exists(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "API\\cache")), "API\\cache failed to create");
             domain.Unload();
             Assert.IsTrue(true);
         }

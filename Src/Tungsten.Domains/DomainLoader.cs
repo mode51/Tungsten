@@ -220,12 +220,14 @@ namespace W.Domains
             setup.ApplicationName = DomainName;
             if (_useShadowCopy)
             {
-                _cachePath = System.IO.Path.Combine(_relativeSubFolderForDomain, "cache" + System.IO.Path.DirectorySeparatorChar) + "\\";
-                setup.CachePath = _cachePath;
+                _cachePath = System.IO.Path.Combine(_relativeSubFolderForDomain, "cache" + System.IO.Path.DirectorySeparatorChar);// + "\\";
+                //setup.CachePath = _cachePath;
+                //4.13.2017 - apparently CachePath needs to be a full path, not relative
+                setup.CachePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, _cachePath);
                 setup.ShadowCopyFiles = "true";
                 setup.ShadowCopyDirectories = null;
                 //to restrict which folders are to be shadow copied, uncomment the next line
-                //setup.ShadowCopyDirectories = System.IO.Path.GetDirectoryName(_subFolderForDomainPath);
+                //setup.ShadowCopyDirectories = System.IO.Path.GetDirectoryName(_relativeSubFolderForDomain);
             }
 
             _domain = AppDomain.CreateDomain(DomainName, null, setup);
