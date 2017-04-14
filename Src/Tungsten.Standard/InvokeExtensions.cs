@@ -67,7 +67,7 @@ namespace W
             {
                 try
                 {
-                    action();
+                    action.Invoke();
                     taskCompletionSource.SetResult(null);
                 }
                 catch (Exception exception)

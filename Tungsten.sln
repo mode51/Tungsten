@@ -128,6 +128,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tungsten.LiteDb", "Tungsten
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tungsten.LiteDb.Standard", "Src\Tungsten.LiteDb.Standard\Tungsten.LiteDb.Standard.csproj", "{FA1C08F4-794B-4FF5-A266-6EDB15B42607}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BA374E8B-412E-43E6-B2F9-391FA59A68A1}"
+	ProjectSection(SolutionItems) = preProject
+		FeatureMatrix.xlsx = FeatureMatrix.xlsx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
