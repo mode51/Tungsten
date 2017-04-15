@@ -3,6 +3,7 @@
 ### Tungsten
 A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable application development easier.  See the Wiki page for details and use.
 
+### Tungsten ###
 * **Tungsten** - A collection of useful classes for Winforms/WPF (some classes are listed below)
   * Targets .Net Framework 4.5
 * **Tungsten.Portable** - A Portable version of Tungsten
@@ -25,6 +26,9 @@ A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable 
 
 ### Tungsten.LiteDb
 * Tungsten.LiteDb - LiteDb based CRUD for your POCO classes
+
+### Tungsten.Firewall
+* Tungsten.Firewall - A minimal library, using NetFwTypeLib, to add and remove Windows firewall rules
 
 # Demos
 * Tungsten.IO.Pipes.Standard - A NetStandard wrapper for named pipes (client and server)
@@ -81,12 +85,15 @@ The following classes can be used to create more customized implementations
 ### Tungsten.Domains
 * W.Domains.DomainLoader - A handy class to make reloadable AppDomains easy
 
-### Tungsten.LiteDb
-* W.LiteDb.LiteDbItem - A base class for your POCO classes (necessary for LiteDbMethods due to needing to know the \_id field)
-* W.LiteDb.LiteDbMethods - CRUD methods for your POCO classes which inherit LiteDbItem
-
 ### Tungsten.IO.Pipes
 * W.IO.Pipes.PipeClient - A named pipe client; designed to be used with W.IO.Pipes.PipeServer
 * W.IO.Pipes.PipeServer - A named pipe server; designed to be used with W.IO.Pipes.PipeClient
 * W.IO.Pipes.FormattedPipeClient - the base class for PipeClient which handles connecting, disconnecting and cleanup
 * W.IO.Pipes.PipeTransceiver - the base class of FormattedPipeClient which handles sending and receiving of data
+
+### Tungsten.LiteDb
+* W.LiteDb.LiteDbItem - A base class for your POCO classes (necessary for LiteDbMethods due to needing to know the \_id field)
+* W.LiteDb.LiteDbMethods - CRUD methods for your POCO classes which inherit LiteDbItem
+
+### Tungsten.Firewall
+* W.Firewall - Provides static methods to add, remove and check the existance of, Windows firewall rules
