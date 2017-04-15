@@ -3,6 +3,6 @@
 4.15.2017 - v1.0.0
 Initial Release
 
-Thanks for using Tungsten,
+Thanks for using Tungsten.Firewall,
 
 Jordan Duerksen
