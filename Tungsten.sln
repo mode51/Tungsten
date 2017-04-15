@@ -133,6 +133,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		FeatureMatrix.xlsx = FeatureMatrix.xlsx
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.Firewall", "Src\Tungsten.Firewall\Tungsten.Firewall.csproj", "{1C99F7A3-1B92-411A-B588-CD5AD2C27743}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tungsten.Firewall", "Tungsten.Firewall", "{AE92FC38-7A4B-41BA-8AD1-7C6BC4FDB21A}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet\Tungsten.Firewall\Create_Tungsten.Firewall_Packages.bat = NuGet\Tungsten.Firewall\Create_Tungsten.Firewall_Packages.bat
+		NuGet\Tungsten.Firewall\Readme.txt = NuGet\Tungsten.Firewall\Readme.txt
+		NuGet\Tungsten.Firewall\Tungsten.Firewall.nuspec = NuGet\Tungsten.Firewall\Tungsten.Firewall.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -677,6 +686,30 @@ Global
 		{FA1C08F4-794B-4FF5-A266-6EDB15B42607}.Release|x64.Build.0 = Release|Any CPU
 		{FA1C08F4-794B-4FF5-A266-6EDB15B42607}.Release|x86.ActiveCfg = Release|Any CPU
 		{FA1C08F4-794B-4FF5-A266-6EDB15B42607}.Release|x86.Build.0 = Release|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Debug|ARM.Build.0 = Debug|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Debug|x64.Build.0 = Debug|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Debug|x86.Build.0 = Debug|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Release|ARM.ActiveCfg = Release|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Release|ARM.Build.0 = Release|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Release|iPhone.Build.0 = Release|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Release|x64.ActiveCfg = Release|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Release|x64.Build.0 = Release|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Release|x86.ActiveCfg = Release|Any CPU
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -719,5 +752,7 @@ Global
 		{59A56743-A50C-4448-B458-B0266FCB434D} = {FEFB48AC-2D7D-4F83-A464-C05E299E8D0C}
 		{E49E045B-B5CC-48CA-A3EA-52B928123089} = {C71FC3F0-7F17-45C8-B2D2-C1A86D6EC481}
 		{FA1C08F4-794B-4FF5-A266-6EDB15B42607} = {59A56743-A50C-4448-B458-B0266FCB434D}
+		{1C99F7A3-1B92-411A-B588-CD5AD2C27743} = {FEFB48AC-2D7D-4F83-A464-C05E299E8D0C}
+		{AE92FC38-7A4B-41BA-8AD1-7C6BC4FDB21A} = {C71FC3F0-7F17-45C8-B2D2-C1A86D6EC481}
 	EndGlobalSection
 EndGlobal
