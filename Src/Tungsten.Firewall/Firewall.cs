@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using NetFwTypeLib;
 
-namespace Tungsten.Firewall
+namespace W.Firewall
 {
     /// <summary>
     /// Provides static methods to add, remove and check the existance of, Windows firewall rules
