@@ -9,7 +9,7 @@ namespace W.Firewall
     /// <summary>
     /// Provides static methods to add, remove and check the existance of, Windows firewall rules
     /// </summary>
-    public static class Firewall
+    public static class Rules
     {
         /// <summary>
         /// Firewall rule actions
@@ -56,9 +56,9 @@ namespace W.Firewall
         /// <param name="localPorts">The desired rule port</param>
         /// <param name="action">The desired rule action, to allow or block communications</param>
         /// <param name="profiles">The desired rule profile</param>
-        public static void AddRule(string ruleName, string ruleGroup, int protocol = 6, string localPorts = "80", EFirewallRuleAction action = EFirewallRuleAction.Allowed, EFirewallProfiles profiles = EFirewallProfiles.All)
+        public static void Add(string ruleName, string ruleGroup, int protocol = 6, string localPorts = "80", EFirewallRuleAction action = EFirewallRuleAction.Allowed, EFirewallProfiles profiles = EFirewallProfiles.All)
         {
-            if (RuleExists(ruleName))
+            if (Exists(ruleName))
                 return;
             Type tNetFwPolicy2 = Type.GetTypeFromProgID("HNetCfg.FwPolicy2");
             INetFwPolicy2 fwPolicy2 = (INetFwPolicy2)Activator.CreateInstance(tNetFwPolicy2);
@@ -92,7 +92,7 @@ namespace W.Firewall
         /// </summary>
         /// <param name="ruleName">The name of the rule to check</param>
         /// <returns>True if the rule exists, otherwise false</returns>
-        public static bool RuleExists(string ruleName)
+        public static bool Exists(string ruleName)
         {
             bool result = false;
             INetFwPolicy2 firewallPolicy = (INetFwPolicy2)Activator.CreateInstance(Type.GetTypeFromProgID("HNetCfg.FwPolicy2"));
@@ -111,9 +111,9 @@ namespace W.Firewall
         /// Removes a firewall rule
         /// </summary>
         /// <param name="ruleName">The name of the rule to remove</param>
-        public static void RemoveRule(string ruleName)
+        public static void Remove(string ruleName)
         {
-            if (RuleExists(ruleName))
+            if (Exists(ruleName))
             {
                 INetFwPolicy2 firewallPolicy = (INetFwPolicy2)Activator.CreateInstance(Type.GetTypeFromProgID("HNetCfg.FwPolicy2"));
                 firewallPolicy.Rules.Remove(ruleName);

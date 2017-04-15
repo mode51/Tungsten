@@ -3,7 +3,7 @@
   <metadata>
     <id>Tungsten.Firewall</id>
     <title>Tungsten.Firewall</title>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <authors>Jordan Duerksen</authors>
     <owners>Jordan Duerksen</owners>
     <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Tungsten.Firewall is a minimal library, using NetFwTypeLib, to add and remove Windows firewall rules</description>
     <summary>Tungsten.Firewall is a minimal library, using NetFwTypeLib, to add and remove Windows firewall rules</summary>
-    <releaseNotes>This NuGet package is for local testing purposes</releaseNotes>
+    <releaseNotes></releaseNotes>
     <copyright>Copyright 2017 Jordan Duerksen</copyright>
     <tags>Tungsten.Firewall Tungsten W Firewall C# library</tags>
     <dependencies>
