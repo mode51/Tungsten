@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\Tungsten\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
@@ -53,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tungsten.Domains\DomainTests.cs" />
+    <Compile Include="Tungsten.LiteDb\LiteDbTests.cs" />
     <Compile Include="Tungsten\AsExtensionsTests.cs" />
     <Compile Include="Tungsten\CallResultTests.cs" />
     <Compile Include="Program.cs" />
@@ -72,6 +76,10 @@
     <ProjectReference Include="..\..\Src\Tungsten.Domains\Tungsten.Domains.csproj">
       <Project>{6be16433-6fef-4266-84ff-8ae1c6b5b14a}</Project>
       <Name>Tungsten.Domains</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Src\Tungsten.LiteDb\Tungsten.LiteDb.csproj">
+      <Project>{f2426bac-7157-423d-aac2-3caeb52d877b}</Project>
+      <Name>Tungsten.LiteDb</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Src\Tungsten\Tungsten.csproj">
       <Project>{46040e3b-ae52-42f9-9c1b-8566fc6765c5}</Project>
