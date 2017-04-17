@@ -59,7 +59,7 @@ A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable 
 * W.Threading.Thread\<T\> - like Thread, except Action is now Action\<T\>
 * W.Threading.Gate - similar to Thread, a Gate can be started some time after creation
 * W.Threading.Gate\<T\> - like Gate, exception Action is now Action\<T\>
-* W.ActionQueue\<T\> - Merges a Thread with a ConcurrentQueue.  Executes the provided Action\<T\> or Func\<T, bool\> whenever an item is added to the ConcurrentQueue
+* W.ActionQueue\<T\> - Merges a Thread with a ConcurrentQueue.  Executes the provided Action\<T\> or Func\<T, bool\>, on a background thread, whenever an item is added to the ConcurrentQueue.
 
 ### Tungsten.Net
 These two classes are designed to be the primary implementations
