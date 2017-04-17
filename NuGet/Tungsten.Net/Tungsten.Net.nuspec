@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/mode51/Tungsten</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Tungsten.Net makes it easy to add tcp sockets to your application.  Client and server classes are provided, with and without assymetric encryption.</description>
+    <description>Tungsten.Net is a client/server tcp socket library. Client and server classes are provided, with and without assymetric encryption.</description>
     <summary></summary>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2017 Jordan Duerksen</copyright>

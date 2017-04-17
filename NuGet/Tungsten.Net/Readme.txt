@@ -1,4 +1,4 @@
-﻿A tcp socket library which provides client/server classes with and without assymetric encryption
+﻿Tungsten.Net is a client/server tcp socket library. Client and server classes are provided, with and without assymetric encryption.
 
 4.12.2017 - v1.2.3.2
 Changed netstandard target from 1.4 to 1.3
