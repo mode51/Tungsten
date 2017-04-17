@@ -23,7 +23,7 @@ namespace Tungsten.Net.RPC.Tests
                         break;
                     case ConsoleKey.D2:
                         Console.Clear();
-                        W.Tests.Net_RPC_Standard_Client.Run();
+                        W.Tests.Net_RPC_Standard_Client.Run().Wait();
                         break;
                     case ConsoleKey.Escape:
                         exit = true;

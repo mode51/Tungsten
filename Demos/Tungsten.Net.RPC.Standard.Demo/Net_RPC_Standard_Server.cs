@@ -16,6 +16,7 @@ namespace W.Tests
                 tests.CallTestGetValue1();
                 tests.CallTestGetValue2();
                 tests.CallTestGetValue3();
+                tests.CallTestGetValue4();
             }
             Console.WriteLine("Press Any Key To Return");
             Console.ReadKey();
@@ -76,6 +77,14 @@ namespace W.Tests
             {
                 var result = server.Methods.Call<object>("W.Tests.Sample_RPC_Class.TestGetValue3");
                 Console.WriteLine("TestGetValue3: {0}", result);
+            }
+        }
+        public void CallTestGetValue4()
+        {
+            using (var server = new W.Net.RPC.Server())
+            {
+                var result = server.Methods.Call<string>("W.Tests.Sample_RPC_Class.TestGetValue4", "Echo this!");
+                Console.WriteLine("TestGetValue4: {0}", result);
             }
         }
     }

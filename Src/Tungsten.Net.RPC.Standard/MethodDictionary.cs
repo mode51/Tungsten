@@ -72,7 +72,11 @@ namespace W.Net.RPC
         /// <remarks>If TResult does not match the return type of the method on the server, a return value cannot be expected and the call may time out.</remarks>
         public TResult Call<TResult>(string method, params object[] args)
         {
-            return (TResult)Convert.ChangeType(Call(method, args).Result, typeof(TResult));
+            var result = Call(method, args).Result;
+            var convertible = result as IConvertible;
+            if (convertible == null)
+                return (TResult)result;
+            return (TResult)Convert.ChangeType(result, typeof(TResult));
         }
         /// <summary>
         /// Call a method on the Tungsten.Net.RPC Server.  This method s
@@ -86,35 +90,37 @@ namespace W.Net.RPC
             MethodInfo mi = null;
             if (ContainsKey(method))
                 mi = this[method];
-
             try
             {
-                if (args != null)
-                {
-                    var parameters = mi?.GetParameters();
-                    if (parameters != null)
-                    {
-                        if (parameters.Length != args.Length)
-                            throw new Exception("Wrong number of arguments");
-                        for (int t = 0; t < args.Length; t++)
-                        {
-                            if (args[t] is Newtonsoft.Json.Linq.JToken)
-                                args[t] = ((Newtonsoft.Json.Linq.JToken)args[t]).ToObject(parameters[t].ParameterType);
-                            //args[t] = Newtonsoft.Json.JsonConvert.DeserializeObject((string)args[t], parameters[t].ParameterType);
-                        }
-                    }
-                }
-
                 if (mi != null)
                 {
-                    if (mi.ReturnType.FullName == "System.Void")
-                        mi?.Invoke(null, args);
-                    else
-                        //TODO: 12/4/2016
-                        //invoking this method isn't working because the actual User/Address/whatever class isn't being deserialized from JSON
-                        //instead it's leaving it as JSON (as JArray or JObject or the like)
-                        //figure out how to deserialize the objects as objects rather than json strings
-                        result.Result = mi?.Invoke(null, args);
+                    if (args != null)
+                    {
+                        var parameters = mi?.GetParameters();
+                        if (parameters != null)
+                        {
+                            if (parameters.Length != args.Length)
+                                throw new Exception("Wrong number of arguments");
+                            for (int t = 0; t < args.Length; t++)
+                            {
+                                if (args[t] is Newtonsoft.Json.Linq.JToken)
+                                    args[t] = ((Newtonsoft.Json.Linq.JToken)args[t]).ToObject(parameters[t].ParameterType);
+                                //args[t] = Newtonsoft.Json.JsonConvert.DeserializeObject((string)args[t], parameters[t].ParameterType);
+                            }
+                        }
+                    }
+
+                    if (mi != null)
+                    {
+                        if (mi.ReturnType.FullName == "System.Void")
+                            mi?.Invoke(null, args);
+                        else
+                            //TODO: 12/4/2016
+                            //invoking this method isn't working because the actual User/Address/whatever class isn't being deserialized from JSON
+                            //instead it's leaving it as JSON (as JArray or JObject or the like)
+                            //figure out how to deserialize the objects as objects rather than json strings
+                            result.Result = mi?.Invoke(null, args);
+                    }
                 }
             }
             catch (Exception e)

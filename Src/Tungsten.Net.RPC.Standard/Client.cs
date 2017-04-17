@@ -22,6 +22,7 @@ namespace W.Net.RPC
         private delegate void MessageArrivedCallback(Client clientClient, Message response, bool expired);
         private readonly List<Waiter> _waiters = new List<Waiter>();
         private Lockable<bool> _isConnected { get; } = new Lockable<bool>();
+        private int _maxTimeoutPeriod = 60000;
 
         //public delegate void HandleResponseDelegate<TResponseType>(TResponseType response, bool expired);
         /// <summary>
@@ -37,7 +38,7 @@ namespace W.Net.RPC
         /// True if the client is connected to the server, otherwise False
         /// </summary>
         public bool IsConnected => _isConnected.Value;
-        
+
         /// <summary>
         /// Calls Dispose and deconstructs the Client
         /// </summary>
@@ -45,22 +46,55 @@ namespace W.Net.RPC
         {
             Dispose();
         }
+        
+        /// <summary>
+        /// Sets the maximum number of milliseconds that an RPC call can take before it times out.  This value is used for asynchronous calls as well.
+        /// </summary>
+        /// <param name="maxTimeout">The maximum timeout period, in milliseconds. Any value less than 0, will result in a timeout period of 60,000 milliseconds</param>
+        /// <remarks>By default, this value is 60,000 milliseconds</remarks>
+        public void SetMaxTimeout(int maxTimeout)
+        {
+            if (maxTimeout < 0)
+                _maxTimeoutPeriod = 60000;
+            else
+                _maxTimeoutPeriod = maxTimeout;
+        }
+
         /// <summary>
         /// Calls a method on the Tungsten RPC Server
         /// </summary>
         /// <param name="methodName">The name of the method to call, including full namespace and class name</param>
-        public void Call(string methodName)
+        public ManualResetEvent Call(string methodName)
         {
-            Call<object>(methodName, null, null);
+            return Call<object>(methodName, null, null);
+        }
+        /// <summary>
+        /// Calls a method on the Tungsten RPC Server
+        /// </summary>
+        /// <param name="msTimeout">The time, in milliseconds, to wait for the call to execute before a timeout occurs</param>
+        /// <param name="methodName">The name of the method to call, including full namespace and class name</param>
+        public ManualResetEvent Call(int msTimeout, string methodName)
+        {
+            return Call<object>(msTimeout, methodName, null, null);
         }
         /// <summary>
         /// Calls a method on the Tungsten RPC Server
         /// </summary>
         /// <param name="methodName">The name of the method to call, including full namespace and class name</param>
         /// <param name="args">Arguments, if any, to be passed into the remote method</param>
-        public void Call(string methodName, params object[] args)
+        public ManualResetEvent Call(string methodName, params object[] args)
         {
-            Call<object>(methodName, null, args);
+            return Call<object>(methodName, null, args);
+        }
+        /// <summary>
+        /// Calls a method on the Tungsten RPC Server
+        /// </summary>
+        /// <param name="msTimeout">The time, in milliseconds, to wait for the call to execute before a timeout occurs</param>
+        /// <param name="methodName">The name of the method to call, including full namespace and class name</param>
+        /// <param name="args">Arguments, if any, to be passed into the remote method</param>
+        public ManualResetEvent Call(int msTimeout, string methodName, params object[] args)
+        {
+            return Call<object>(msTimeout, methodName, null, args);
         }
         /// <summary>
         /// Calls a method on the Tungsten RPC Server
@@ -77,6 +111,19 @@ namespace W.Net.RPC
         /// <summary>
         /// Calls a method on the Tungsten RPC Server
         /// </summary>
+        /// <param name="msTimeout">The time, in milliseconds, to wait for the call to execute before a timeout occurs</param>
+        /// <param name="methodName">The name of the method to call, including full namespace and class name</param>
+        /// <param name="onResponse">Called when a response to has been received.</param>
+        /// <typeparam name="TResponseType">The result from the call</typeparam>
+        /// <returns>A ManualResetEvent which can be joined (with or without a timeout) to block the calling thread until a respoonse is received.</returns>
+        /// <remarks>The return value will be null if the onResponse parameter is null</remarks>
+        public ManualResetEvent Call<TResponseType>(int msTimeout, string methodName, Action<TResponseType, bool> onResponse)
+        {
+            return Call<TResponseType>(msTimeout, methodName, onResponse, null);
+        }
+        /// <summary>
+        /// Calls a method on the Tungsten RPC Server
+        /// </summary>
         /// <param name="methodName">The name of the method to call, including full namespace, class name, and method name</param>
         /// <param name="onResponse">Called when a response to has been received.</param>
         /// <param name="args">Optional parameters to be passed into the method</param>
@@ -84,6 +131,20 @@ namespace W.Net.RPC
         /// <returns>A ManualResetEvent which can be joined (with or without a timeout) to block the calling thread until a respoonse is received.</returns>
         /// <remarks>The return value will be null if the onResponse parameter is null</remarks>
         public ManualResetEvent Call<TResponseType>(string methodName, Action<TResponseType, bool> onResponse, params object[] args)
+        {
+            return Call<TResponseType>(-1, methodName, onResponse, args);
+        }
+        /// <summary>
+        /// Calls a method on the Tungsten RPC Server
+        /// </summary>
+        /// <param name="msTimeout">The time, in milliseconds, to wait for the call to execute before a timeout occurs</param>
+        /// <param name="methodName">The name of the method to call, including full namespace, class name, and method name</param>
+        /// <param name="onResponse">Called when a response to has been received.</param>
+        /// <param name="args">Optional parameters to be passed into the method</param>
+        /// <typeparam name="TResponseType">The result from the call</typeparam>
+        /// <returns>A ManualResetEvent which can be joined (with or without a timeout) to block the calling thread until a respoonse is received.</returns>
+        /// <remarks>The return value will be null if the onResponse parameter is null</remarks>
+        public ManualResetEvent Call<TResponseType>(int msTimeout, string methodName, Action<TResponseType, bool> onResponse, params object[] args)
         {
             if (_client == null)
                 throw new IOException("Socket is not connected");
@@ -95,12 +156,20 @@ namespace W.Net.RPC
 
             if (msg.Id == Guid.Empty)
                 msg.Id = Guid.NewGuid();
-            msg.ExpireDateTime = DateTime.Now.AddMilliseconds(10000);
+            msTimeout = msTimeout == -1 ? _maxTimeoutPeriod : msTimeout;
+            msg.ExpireDateTime = DateTime.Now.AddMilliseconds(msTimeout);
 
-            if (onResponse != null)
+            if (onResponse == null) //create one for mre
             {
-                mre = new ManualResetEvent(false);
-                var waiter = new Waiter(this, _client, 10000);
+                onResponse = (response, isExpired) =>
+                {
+                    //do nothing
+                };
+            }
+            //if (onResponse != null)
+            {
+                mre = new ManualResetEvent(false); //need to wait even for call-and-forget methods (void)
+                var waiter = new Waiter(this, _client, msTimeout);
                 waiter.Message = msg;
                 waiter.Callback = (client, response, isExpired) =>
                 {
@@ -143,8 +212,129 @@ namespace W.Net.RPC
                 };
                 _waiters.Add(waiter);
             }
-            _client.Send(msg);
+            if (_client == null)
+                Log.v("_client is null");
+            _client?.Send(msg);
             return mre;
+        }
+
+        /// <summary>
+        /// Calls a method on the Tungsten RPC Server
+        /// </summary>
+        /// <param name="methodName">The name of the method to call, including full namespace and class name</param>
+        /// <returns>The Task related to this asynchronous call.  By default, the call will timeout after 60 seconds.</returns>
+        public async Task CallAsync(string methodName)
+        {
+            await CallAsync(-1, methodName);
+        }
+        /// <summary>
+        /// Calls a method on the Tungsten RPC Server
+        /// </summary>
+        /// <param name="msTimeout">A period to wait before the call times out.  If this value is -1, the call will wait a maximum of 60 seconds.</param>
+        /// <param name="methodName">The name of the method to call, including full namespace and class name</param>
+        /// <returns>The Task related to this asynchronous call</returns>
+        public async Task CallAsync(int msTimeout, string methodName)
+        {
+            await Task.Run(() =>
+            {
+                using (var mre = Call(methodName))
+                {
+                    if (msTimeout == -1)
+                        mre.WaitOne();
+                    else
+                        mre.WaitOne(msTimeout);
+                }
+            });
+        }
+        /// <summary>
+        /// Calls a method on the Tungsten RPC Server
+        /// </summary>
+        /// <param name="methodName">The name of the method to call, including full namespace and class name</param>
+        /// <param name="args">Optional parameters to pass into the method</param>
+        /// <returns>The Task related to this asynchronous call.  By default, the call will timeout after 60 seconds.</returns>
+        public async Task CallAsync(string methodName, params object[] args)
+        {
+            await CallAsync(-1, methodName, args);
+        }
+        /// <summary>
+        /// Calls a method on the Tungsten RPC Server
+        /// </summary>
+        /// <param name="msTimeout">A period to wait before the call times out.  If this value is -1, the call will wait a maximum of 60 seconds.</param>
+        /// <param name="methodName">The name of the method to call, including full namespace and class name</param>
+        /// <param name="args">Optional parameters to pass into the method</param>
+        /// <returns>The Task related to this asynchronous call</returns>
+        public async Task CallAsync(int msTimeout, string methodName, params object[] args)
+        {
+            await Task.Run(() =>
+            {
+                using (var mre = Call(methodName, args))
+                {
+                    if (msTimeout == -1)
+                        mre.WaitOne();
+                    else
+                        mre.WaitOne(msTimeout);
+                }
+            });
+        }
+        /// <summary>
+        /// Calls a method on the Tungsten RPC Server
+        /// </summary>
+        /// <typeparam name="TResponseType"></typeparam>
+        /// <param name="methodName">The name of the method to call, including full namespace and class name</param>
+        /// <returns>The Task related to this asynchronous call.  By default, the call will timeout after 60 seconds.</returns>
+        public async Task<TResponseType> CallAsync<TResponseType>(string methodName)
+        {
+            return await CallAsync<TResponseType>(-1, methodName);
+        }
+        /// <summary>
+        /// Calls a method on the Tungsten RPC Server
+        /// </summary>
+        /// <typeparam name="TResponseType"></typeparam>
+        /// <param name="msTimeout">A period to wait before the call times out.  If this value is -1, the call will wait indefinitely.</param>
+        /// <param name="methodName">The name of the method to call, including full namespace and class name</param>
+        /// <returns>The Task related to this asynchronous call</returns>
+        public async Task<TResponseType> CallAsync<TResponseType>(int msTimeout, string methodName)
+        {
+            return await Task.Run(() =>
+            {
+                TResponseType result = default(TResponseType);
+                using (var mre = Call<TResponseType>(msTimeout, methodName, (response, isExpired) => { if (!isExpired) result = response; }))
+                {
+                    mre.WaitOne(msTimeout);
+                }
+                return result;
+            });
+        }
+        /// <summary>
+        /// Calls a method on the Tungsten RPC Server
+        /// </summary>
+        /// <typeparam name="TResponseType"></typeparam>
+        /// <param name="methodName">The name of the method to call, including full namespace and class name</param>
+        /// <param name="args">Optional parameters to pass into the method</param>
+        /// <returns>The Task related to this asynchronous call.  By default, the call will timeout after 60 seconds.</returns>
+        public async Task<TResponseType> CallAsync<TResponseType>(string methodName, params object[] args)
+        {
+            return await CallAsync<TResponseType>(-1, methodName, args);
+        }
+        /// <summary>
+        /// Calls a method on the Tungsten RPC Server
+        /// </summary>
+        /// <typeparam name="TResponseType"></typeparam>
+        /// <param name="msTimeout">A period to wait before the call times out.  If this value is -1, the call will wait indefinitely.</param>
+        /// <param name="methodName">The name of the method to call, including full namespace and class name</param>
+        /// <param name="args">Optional parameters to pass into the method</param>
+        /// <returns>The Task related to this asynchronous call</returns>
+        public async Task<TResponseType> CallAsync<TResponseType>(int msTimeout, string methodName, params object[] args)
+        {
+            return await Task.Run(() =>
+            {
+                TResponseType result = default(TResponseType);
+                using (var mre = Call<TResponseType>(msTimeout, methodName, (response, isExpired) => { if (!isExpired) result = response; }, args))
+                {
+                    mre.WaitOne(msTimeout);
+                }
+                return result;
+            });
         }
 
         /// <summary>
@@ -166,7 +356,7 @@ namespace W.Net.RPC
                 //if (onConnection != null)
                 //    Task.Factory.FromAsync((asyncCallback, @object) => onConnection.BeginInvoke(this, IPAddress.Parse(remoteAddress), asyncCallback, @object), onConnection.EndInvoke, null);
                 try
-                { 
+                {
                     onConnection?.Invoke(this, IPAddress.Parse(remoteAddress));
                 }
                 catch (Exception e)
@@ -219,7 +409,7 @@ namespace W.Net.RPC
             _client?.Socket.Disconnect(e);
             _client = null;
             try
-            { 
+            {
                 Disconnected?.Invoke(this, e);
             }
             catch (Exception ex)

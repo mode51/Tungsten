@@ -17,18 +17,28 @@ namespace W.Tests
         private W.Net.RPC.Server _server;
         private W.Net.RPC.Client _client = new Net.RPC.Client();
 
-        public static void Run()
+        public async static Task Run()
         {
+            var mre = new ManualResetEvent(false);
             //create a new instance to start the server
             using (var callTests = new W.Tests.Net_RPC_Standard_Client())
             {
                 callTests.CallRPCMethod1();
                 callTests.CallRPCMethod2();
                 callTests.CallRPCMethod3();
+                await callTests.CallRPCMethod1_2();
+                await callTests.CallRPCMethod2_2();
+                await callTests.CallRPCMethod3_2();
                 callTests.CallRPCTestGetvalue1();
                 callTests.CallRPCTestGetvalue2();
                 callTests.CallRPCTestGetvalue3();
                 callTests.CallRPCTestGetvalue4();
+                await callTests.CallRPCTestGetvalue4_2(mre);
+                mre.WaitOne(60000);
+                await callTests.CallRPCInvalidMethod();
+                await callTests.CallRPCInvalidMethod1();
+                await callTests.CallRPCInvalidMethod2();
+                await callTests.CallRPCInvalidMethod3();
             }
             Console.WriteLine("Press Any Key To Return");
             Console.ReadKey();
@@ -61,7 +71,7 @@ namespace W.Tests
         {
             if (_client.Connect(IPADDRESS, PORT))
             {
-                _client.Call("W.Tests.Sample_RPC_Class.Test1");
+                _client.Call("W.Tests.Sample_RPC_Class.Test1").WaitOne(3000);
                 _client.Disconnect();
             }
         }
@@ -69,8 +79,7 @@ namespace W.Tests
         {
             if (_client.Connect(IPADDRESS, PORT))
             {
-                _client.Call("W.Tests.Sample_RPC_Class.Test2", "This is a sample message");
-                System.Threading.Thread.Sleep(10);
+                _client.Call("W.Tests.Sample_RPC_Class.Test2", "This is a sample message").WaitOne(3000);
                 _client.Disconnect();
             }
         }
@@ -78,8 +87,31 @@ namespace W.Tests
         {
             if (_client.Connect(IPADDRESS, PORT))
             {
-                _client.Call("W.Tests.Sample_RPC_Class.Test3", "This is a {0} message", new object[] { "SAMPLE" });
-                System.Threading.Thread.Sleep(10);
+                _client.Call("W.Tests.Sample_RPC_Class.Test3", "This is a {0} message", new object[] { "SAMPLE" }).WaitOne(3000);
+                _client.Disconnect();
+            }
+        }
+        public async Task CallRPCMethod1_2()
+        {
+            if (_client.Connect(IPADDRESS, PORT))
+            {
+                await _client.CallAsync(3000, "W.Tests.Sample_RPC_Class.Test1");
+                _client.Disconnect();
+            }
+        }
+        public async Task CallRPCMethod2_2()
+        {
+            if (_client.Connect(IPADDRESS, PORT))
+            {
+                await _client.CallAsync("W.Tests.Sample_RPC_Class.Test2", "This is a sample message");
+                _client.Disconnect();
+            }
+        }
+        public async Task CallRPCMethod3_2()
+        {
+            if (_client.Connect(IPADDRESS, PORT))
+            {
+                await _client.CallAsync("W.Tests.Sample_RPC_Class.Test3", "This is a {0} message", new object[] { "SAMPLE" });
                 _client.Disconnect();
             }
         }
@@ -126,6 +158,52 @@ namespace W.Tests
                 {
                     Console.WriteLine("TestGetValue4 = {0}, IsExpired = {1}", value, isExpired);
                 }, "Sample Echo");
+                _client.Disconnect();
+            }
+        }
+        public async Task CallRPCTestGetvalue4_2(ManualResetEvent mre)
+        {
+            if (_client.Connect(IPADDRESS, PORT))
+            {
+                var result = await _client.CallAsync<string>("W.Tests.Sample_RPC_Class.TestGetValue4", "Sample Echo");
+                Console.WriteLine("TestGetValue4 = {0}", result);
+                _client.Disconnect();
+                mre.Set();
+            }
+        }
+        public async Task CallRPCInvalidMethod()
+        {
+            if (_client.Connect(IPADDRESS, PORT))
+            {
+                await _client.CallAsync("W.Tests.Sample_RPC_Class.UnknownMethod");
+                Console.WriteLine("Called UnknownMethod");
+                _client.Disconnect();
+            }
+        }
+        public async Task CallRPCInvalidMethod1()
+        {
+            if (_client.Connect(IPADDRESS, PORT))
+            {
+                var result = await _client.CallAsync<bool>("W.Tests.Sample_RPC_Class.UnknownMethod1");
+                Console.WriteLine("UnknownMethod1 = {0}", result);
+                _client.Disconnect();
+            }
+        }
+        public async Task CallRPCInvalidMethod2()
+        {
+            if (_client.Connect(IPADDRESS, PORT))
+            {
+                var result = await _client.CallAsync<string>("W.Tests.Sample_RPC_Class.UnknownMethod2", "Sample Echo");
+                Console.WriteLine("UnknownMethod2 = {0}", result);
+                _client.Disconnect();
+            }
+        }
+        public async Task CallRPCInvalidMethod3()
+        {
+            if (_client.Connect(IPADDRESS, PORT))
+            {
+                var result = await _client.CallAsync<object>("W.Tests.Sample_RPC_Class.UnknownMethod3", 14,15,16,"test");
+                Console.WriteLine("UnknownMethod3 = {0}", result);
                 _client.Disconnect();
             }
         }

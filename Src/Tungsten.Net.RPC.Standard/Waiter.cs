@@ -34,7 +34,10 @@ namespace W.Net.RPC
                     if (message == null)
                         Callback.Invoke(_client, null, true);
                     else
-                        Callback.Invoke(_client, message, message.ExpireDateTime < DateTime.Now);
+                    {
+                        var isExpired = message.ExpireDateTime < DateTime.Now;
+                        Callback.Invoke(_client, message, isExpired);
+                    }
                 }
                 catch (Exception e)
                 {
@@ -79,14 +82,15 @@ namespace W.Net.RPC
                 //_cts = new CancellationTokenSource(msTimeout);
                 _thread = W.Threading.Thread.Create(cts =>
                 {
+                    bool isExpired = false;
                     try
                     {
+                        //cts is Cancelled before the response is sent
                         while (!cts?.IsCancellationRequested ?? false)
                         {
-                            if (Message != null && (DateTime.Now > Message.ExpireDateTime))
-                            {
+                            isExpired = DateTime.Now > Message.ExpireDateTime;
+                            if (isExpired)
                                 break;
-                            }
                             System.Threading.Thread.Sleep(25);
                         }
                     }
@@ -95,7 +99,8 @@ namespace W.Net.RPC
                     }
                     finally
                     {
-                        ExecuteCallback(null);
+                        if (isExpired)
+                            ExecuteCallback(null);
                     }
                 }, null);//, _cts);
             }

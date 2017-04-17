@@ -33,13 +33,14 @@ namespace W.Tests
             return "Return Value";
         }
         [W.Net.RPC.RPCMethod()]
-        public static object TestGetValue3()
+        public static dynamic TestGetValue3()
         {
             Console.WriteLine("In TestGetValue3");
-            return new object();
+            //return new object();
+            return new { Name = "Joe", Age = 26 };
         }
         [W.Net.RPC.RPCMethod()]
-        public static object TestGetValue4(string key)
+        public static string TestGetValue4(string key)
         {
             Console.WriteLine("In TestGetValue4");
             return key;
