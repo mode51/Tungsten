@@ -1,4 +1,4 @@
-﻿Tungsten.Net.RPC is a socket library which allows clients to execute functionality (with or without return values) on a server (the server must be a Tungsten.Net.RPC server). Tungsten.Net.RPC uses two-way encryption via public/private key pairs to secure the transmission.
+﻿Tungsten.Net.RPC is a client/server solution for invoking methods on a server.  Communications are made over the port you specify.  RPC methods on the server are created by attributing classes and methods with the [RPCClass] and [RPCMethod] attributes.  Clients make calls by passing in the method name ("MyNameSpace.MyClass.Method1") and any parameters to one of the Call or CallAsync methods.
 
 4.17.2017 - v1.2.4
 Added more overrides to W.Net.RPC.Client.Call
