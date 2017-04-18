@@ -3,15 +3,15 @@
   <metadata>
     <id>Tungsten.Net.RPC</id>
     <title>Tungsten.Net.RPC</title>
-    <version>1.2.4</version>
+    <version>1.2.4.1</version>
     <authors>Jordan Duerksen</authors>
     <owners>Jordan Duerksen</owners>
     <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/mode51/Tungsten</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Tungsten.Net.RPC is a client/server solution for invoking methods on a server.  Communications are made over the port you specify.  RPC methods on the server are created by attributing classes and methods with the [RPCClass] and [RPCMethod] attributes.  Clients make calls by passing in the method name ("MyNameSpace.MyClass.Method1") and any parameters to one of the Call or CallAsync methods.</description>
-    <summary></summary>
+    <description>Tungsten.Net.RPC is a client/server TCP solution for invoking methods on a server from a remote client.</description>
+    <summary>Tungsten.Net.RPC is a client/server TCP solution for invoking methods on a server from a remote client</summary>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2017 Jordan Duerksen</copyright>
     <tags>Tungsten.Net.RPC Tungsten Tungsten.Net RPC client server remote procedure call c# library</tags>
