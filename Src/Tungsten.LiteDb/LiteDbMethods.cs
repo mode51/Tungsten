@@ -378,6 +378,7 @@ namespace W.LiteDb
                 return items;
             });
         }
+
         /// <summary>
         /// Deletes an item from the collection
         /// </summary>
@@ -425,6 +426,7 @@ namespace W.LiteDb
                 return result;
             });
         }
+        
         /// <summary>
         /// Removes the specified collection from the database
         /// </summary>
@@ -438,6 +440,7 @@ namespace W.LiteDb
                 return database.DropCollection(GetCollectionName<T>());
             });
         }
+        
         /// <summary>
         /// The size, in bytes, of the actual database file
         /// </summary>

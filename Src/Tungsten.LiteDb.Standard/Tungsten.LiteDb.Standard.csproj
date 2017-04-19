@@ -13,6 +13,7 @@
     <PackageTags>Tungsten.LiteDb Tungsten LiteDb POCO C# library</PackageTags>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>1.2.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
