@@ -443,14 +443,16 @@ namespace W.LiteDb
         /// </summary>
         /// <param name="path"></param>
         /// <returns>The size, in bytes, of the actual database file</returns>
-        public static long FileSize(string path)
+        public static CallResult<long> DatabaseFileSize(string path)
         {
+            var result = new CallResult<long>();
             try
             {
                 if (!System.IO.File.Exists(path))
-                    return 0;
+                    return result;
                 var fi = new System.IO.FileInfo(path);
-                return fi.Length;
+                result.Result = fi.Length;
+                result.Success = true;
                 //using (var db = new LiteDB.LiteDatabase(path))// GetDatabase(path))
                 //{
                 //    var dbInfo = db.GetDatabaseInfo();
@@ -459,9 +461,10 @@ namespace W.LiteDb
             }
             catch (Exception e)
             {
+                result.Exception = e;
                 Log.e(e);
             }
-            return 0;
+            return result;
         }
 
         /// <summary>
@@ -471,24 +474,25 @@ namespace W.LiteDb
         /// <param name="id">The unique id for the data</param>
         /// <param name="data">The byte data to save</param>
         /// <returns>True if the data is saved, otherwise False</returns>
-        public static bool Upload(this string path, string id, byte[] data)
+        public static CallResult Upload(this string path, string id, byte[] data)
         {
-            var result = false;
-            using (var db = new LiteDB.LiteDatabase(path))
+            var result = new CallResult();
+            try
             {
-                try
+                using (var db = new LiteDB.LiteDatabase(path))
                 {
                     using (var ms = new System.IO.MemoryStream(data))
                     {
                         ms.Seek(0, System.IO.SeekOrigin.Begin);
                         db.FileStorage.Upload(id, id, ms);
                     }
-                    result = true;
+                    result.Success = true;
                 }
-                catch (Exception e)
-                {
-                    Log.e(e);
-                }
+            }
+            catch (Exception e)
+            {
+                result.Exception = e;
+                Log.e(e);
             }
             return result;
         }
@@ -499,18 +503,19 @@ namespace W.LiteDb
         /// <param name="id">The unique id for the filename.  Can be the path and filename, or some other unique value.</param>
         /// <param name="filename">The path and name of the file to save</param>
         /// <returns>True if the data is saved, otherwise False</returns>
-        public static bool Upload(this string path, string id, string filename)
+        public static CallResult Upload(this string path, string id, string filename)
         {
-            var result = false;
+            var result = new CallResult();
             using (var db = new LiteDB.LiteDatabase(path))
             {
                 try
                 {
                     db.FileStorage.Upload(id, filename);
-                    result = true;
+                    result.Success = true;
                 }
                 catch (Exception e)
                 {
+                    result.Exception = e;
                     Log.e(e);
                 }
             }
@@ -522,25 +527,27 @@ namespace W.LiteDb
         /// <param name="path">The database path and filename</param>
         /// <param name="id">The unique id used to identify the data</param>
         /// <returns>The data if found, otherwise null</returns>
-        public static byte[] Download(this string path, string id)
+        public static CallResult<byte[]> Download(this string path, string id)
         {
-            byte[] result = null;
-            using (var db = new LiteDB.LiteDatabase(path))
+            var result = new CallResult<byte[]>();
+            try
             {
-                try
+                using (var db = new LiteDB.LiteDatabase(path))
                 {
                     var li = db.FileStorage.FindById(id);
                     using (var ms = new System.IO.MemoryStream())
                     {
                         ms.Seek(0, System.IO.SeekOrigin.Begin);
                         li.CopyTo(ms);
-                        result = ms.ToArray();
+                        result.Result = ms.ToArray();
+                        result.Success = true;
                     }
                 }
-                catch (Exception e)
-                {
-                    Log.e(e);
-                }
+            }
+            catch (Exception e)
+            {
+                result.Exception = e;
+                Log.e(e);
             }
             return result;
         }
@@ -552,25 +559,27 @@ namespace W.LiteDb
         /// <param name="outputFilename">The path and filename to use when saving the file</param>
         /// <param name="overwrite">If true, any existing file will be overwritten</param>
         /// <returns>True if the file was retrieved and written to the file system.  Otherwise False.</returns>
-        public static bool Download(this string path, string id, string outputFilename, bool overwrite = true)
+        public static CallResult Download(this string path, string id, string outputFilename, bool overwrite = true)
         {
-            var result = false;
-            using (var db = new LiteDB.LiteDatabase(path))
+            var result = new CallResult();
+            try
             {
-                try
+                using (var db = new LiteDB.LiteDatabase(path))
                 {
                     var li = db.FileStorage.FindById(id);
                     li.SaveAs(outputFilename, overwrite);
-                    result = true;
+                    result.Success = true;
                 }
-                catch (Exception e)
-                {
-                    Log.e(e);
-                }
+            }
+            catch (Exception e)
+            {
+                result.Exception = e;
+                Log.e(e);
             }
             return result;
         }
 
+        //The methods below aren't really necessary becuse Download and Upload work with byte arrays.
 #if !NETSTANDARD1_4 && !NETFX_CORE && !WINDOWS_UWP
         #region FileStorage Methods (Bitmap Storage)
         /// <summary>
@@ -580,46 +589,54 @@ namespace W.LiteDb
         /// <param name="url"></param>
         /// <param name="bitmap">The Bitmap to save</param>
         /// <returns></returns>
-        public static System.Drawing.Bitmap SaveBitmap(this string path, string url, System.Drawing.Bitmap bitmap)
+        public static CallResult<System.Drawing.Bitmap> SaveBitmap(this string path, string url, System.Drawing.Bitmap bitmap)
         {
-            using (var db = new LiteDB.LiteDatabase(path))// GetDatabase(path))
+            var result = new CallResult<System.Drawing.Bitmap>(false, bitmap);
+
+            try
             {
-                try
+                using (var db = new LiteDB.LiteDatabase(path))// GetDatabase(path))
                 {
                     var ms = new System.IO.MemoryStream();
                     bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                     ms.Seek(0, System.IO.SeekOrigin.Begin);
                     db.FileStorage.Upload(url, url, ms);
-                }
-                catch (Exception e)
-                {
-                    Log.e(e);
+                    result.Success = true;
                 }
             }
-            return bitmap;
+            catch (Exception e)
+            {
+                result.Exception = e;
+                Log.e(e);
+            }
+            return result;
         }
         /// <summary>
         /// Retrieve a bitmap from the database and save it to the file system
         /// </summary>
         /// <param name="path">The databse path and filename</param>
         /// <param name="id">The unique id identifying the bitmap</param>
-        public static void DownloadAndSaveBitmap(this string path, string id)
+        public static CallResult DownloadAndSaveBitmap(this string path, string id)
         {
-            using (var db = new LiteDB.LiteDatabase(path))// GetDatabase(path))
+            var result = new CallResult();
+            try
             {
-                try
+                using (var db = new LiteDB.LiteDatabase(path))// GetDatabase(path))
                 {
                     System.Net.WebRequest request = System.Net.WebRequest.Create(id);
                     System.Net.WebResponse response = request.GetResponse();
                     System.IO.Stream responseStream = response.GetResponseStream();
                     //return new System.Drawing.Bitmap(responseStream);
                     db.FileStorage.Upload(id, id, responseStream);
-                }
-                catch (Exception e)
-                {
-                    Log.e(e);
+                    result.Success = true;
                 }
             }
+            catch (Exception e)
+            {
+                result.Exception = e;
+                Log.e(e);
+            }
+            return result;
         }
         /// <summary>
         /// Retrieves a bitmap from the database and returns it as a Bitmap object
@@ -627,42 +644,49 @@ namespace W.LiteDb
         /// <param name="path">The database path and filename</param>
         /// <param name="id">The unique id identifying the bitmap</param>
         /// <returns></returns>
-        public static System.Drawing.Bitmap LoadBitmap(this string path, string id)
+        public static CallResult<System.Drawing.Bitmap> LoadBitmap(this string path, string id)
         {
-            using (var db = new LiteDB.LiteDatabase(path))// GetDatabase(path))
+            var result = new CallResult<System.Drawing.Bitmap>();
+            try
             {
-                try
+                using (var db = new LiteDB.LiteDatabase(path))// GetDatabase(path))
                 {
                     System.IO.Stream stream = new System.IO.MemoryStream();
                     db.FileStorage.Download(id, stream);
                     stream.Seek(0, System.IO.SeekOrigin.Begin);
-                    return new System.Drawing.Bitmap(stream);
+                    result.Result = new System.Drawing.Bitmap(stream);
+                    result.Success = true;
                 }
-                catch (Exception e)
-                {
-                    Log.e(e);
-                }
-                return null;
             }
+            catch (Exception e)
+            {
+                result.Exception = e;
+                Log.e(e);
+            }
+            return result;
         }
         /// <summary>
         /// Deletes a Bitmap from the database
         /// </summary>
         /// <param name="path">The database path and filename</param>
         /// <param name="id">The unique id identifying the bitmap</param>
-        public static void DeleteBitmap(this string path, string id)
+        public static CallResult DeleteBitmap(this string path, string id)
         {
-            using (var db = new LiteDB.LiteDatabase(path))// GetDatabase(path))
+            var result = new CallResult();
+            try
             {
-                try
+                using (var db = new LiteDB.LiteDatabase(path))// GetDatabase(path))
                 {
                     db.FileStorage.Delete(id);
-                }
-                catch (Exception e)
-                {
-                    Log.e(e);
+                    result.Success = true;
                 }
             }
+            catch (Exception e)
+            {
+                result.Exception = e;
+                Log.e(e);
+            }
+            return result;
         }
         #endregion
 #endif
