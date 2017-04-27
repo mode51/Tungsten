@@ -30,6 +30,10 @@ namespace W.Net
                 SendPublicKey(); //immediately send the public key
                 Log.v("Client Sent Public Key");
             };
+            Disconnected += (socket, remoteEndPoint, e) =>
+            {
+                _remotePublicKey = null;
+            };
         }
 
         /// <summary>

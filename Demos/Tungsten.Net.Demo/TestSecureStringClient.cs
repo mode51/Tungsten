@@ -13,7 +13,7 @@ namespace W.Demo
             {
                 server.ClientConnected += client =>
                 {
-                    Console.WriteLine("Client Connected To Server");
+                    Console.WriteLine("Server Connected To Client: " + client.As<W.Net.SecureStringClient>().Socket.Name);
                     client.MessageReceived += (proxy, message) =>
                     {
                         if (!string.IsNullOrEmpty(message))
@@ -23,53 +23,60 @@ namespace W.Demo
                         }
                     };
                 };
-                server.ClientDisconnected += (client, exception) =>
+                server.ClientDisconnected += (client, remoteEndPoint, exception) =>
                 {
-                    Console.WriteLine("Client Disconnected");
+                    if (exception != null)
+                        Console.WriteLine("Client Disconnected: " + client.As<W.Net.SecureStringClient>().Socket.Name + " - " + exception.Message);
+                    else
+                        Console.WriteLine("Client Disconnected: " + client.As<W.Net.SecureStringClient>().Socket.Name);
+
+                    Console.WriteLine("Server Disconnected From: " + remoteEndPoint?.ToString());
                 };
                 server.Start(IPAddress.Parse("127.0.0.1"), 5150);
 
-                using (var socketProxy = new W.Net.SecureStringClient())
+                using (var client = new W.Net.SecureStringClient())
                 {
-                    socketProxy.Connected += (s, address) =>
+                    client.Connected += (ssc, remoteEndPoint) =>
                     {
-                        Console.WriteLine("Client connected to " + address.ToString());
+                        Console.WriteLine("Client Connected: " + ssc.As<W.Net.SecureStringClient>().Socket.Name);
                     };
-                    socketProxy.ConnectionSecured += s =>
+                    client.ConnectionSecured += s =>
                     {
                         mre.Set();
                     };
-                    socketProxy.Disconnected += (s, exception) =>
+                    client.Disconnected += (ssc, remoteEndPoint, exception) =>
                     {
                         if (exception != null)
-                            Console.WriteLine("Client Disconnected: " + exception.Message);
+                            Console.WriteLine("Client Disconnected: " + remoteEndPoint?.ToString() + " - " + exception.Message);
                         else
-                            Console.WriteLine("Client Disconnected");
+                            Console.WriteLine("Client Disconnected: " + remoteEndPoint?.ToString());
                         mre.Set();
                     };
-                    socketProxy.MessageReceived += (s, message) =>
+                    client.MessageReceived += (s, message) =>
                     {
                         Console.WriteLine("Client Received: " + message);
-                        Console.Write("Send <Return To Exit>: ");
+                        Console.Write("Send <Return To Disconnect>: ");
                     };
-                    socketProxy.MessageSent += s =>
+                    client.MessageSent += s =>
                     {
                         Console.WriteLine("Client Message Sent");
                     };
 
-                    socketProxy.Socket.Connect(IPAddress.Parse("127.0.0.1"), 5150);
+                    client.Socket.ConnectAsync(IPAddress.Parse("127.0.0.1"), 5150).Wait();
                     mre.WaitOne();
 
-                    Console.Write("Send <Return To Exit>: ");
-                    while (socketProxy.Socket.IsConnected)
+                    Console.Write("Send <Return To Disconnect>: ");
+                    while (client.Socket.IsConnected)
                     {
                         var message = Console.ReadLine();
                         if (string.IsNullOrEmpty(message))
                             break;
-                        socketProxy.Send(message);
+                        client.Send(message);
                     }
                 }
             }
+            Console.WriteLine("Press Any Key To Return");
+            Console.ReadKey();
         }
     }
 }

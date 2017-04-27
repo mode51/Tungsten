@@ -18,11 +18,11 @@ namespace W.Net.Sockets
         /// <summary>
         /// Called when a connection has been established
         /// </summary>
-        public Action<object, IPAddress> Connected { get; set; }
+        public Action<object, IPEndPoint> Connected { get; set; }
         /// <summary>
         /// Called when the connection has been terminated
         /// </summary>
-        public Action<object, Exception> Disconnected { get; set; }
+        public Action<object, IPEndPoint, Exception> Disconnected { get; set; }
         /// <summary>
         /// Called when data has been received and formatted
         /// </summary>
@@ -74,13 +74,13 @@ namespace W.Net.Sockets
         }
         private void HookNotifications()
         {
-            Socket.Connected += (socket, address) =>
+            Socket.Connected += (socket, remoteEndPoint) =>
             {
-                Connected?.Invoke(this, address);
+                Connected?.Invoke(this, remoteEndPoint);
             };
-            Socket.Disconnected += (socket, exception) =>
+            Socket.Disconnected += (socket, remoteEndPoint, exception) =>
             {
-                Disconnected?.Invoke(this, exception);
+                Disconnected?.Invoke(this, remoteEndPoint, exception);
             };
             Socket.MessageReceived += (s, message) =>
             {

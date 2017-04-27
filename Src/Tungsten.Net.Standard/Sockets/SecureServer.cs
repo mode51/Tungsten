@@ -27,7 +27,7 @@ namespace W.Net.Sockets
         /// <summary>
         /// Called when a client disconnects normally or by exception
         /// </summary>
-        public Action<TSocket, Exception> ClientDisconnected { get; set; }
+        public Action<TSocket, IPEndPoint, Exception> ClientDisconnected { get; set; }
         /// <summary>
         /// Called when the value of IsListening changes to true or false
         /// </summary>
@@ -132,7 +132,7 @@ namespace W.Net.Sockets
             //var handler = new TClientType(client);
             var handler = (TSocket)Activator.CreateInstance(typeof(TSocket), client, _rsa);
             //Notifications.ClientCreated?.Invoke(handler);
-            handler.As<IFormattedSocket>().Disconnected += (s, exception) =>
+            handler.As<IFormattedSocket>().Disconnected += (s, remoteEndPoint, exception) =>
             {
                 //s.As<SecureStringClient>()?.SendPublicKey();
                 var secureSocket = s.As<TSocket>();
@@ -140,7 +140,7 @@ namespace W.Net.Sockets
                     throw new ArgumentOutOfRangeException(nameof(s), "Parameter s should have been a legitimate instance of SecureByteClient");
                 if (_clients.Contains(secureSocket))
                     _clients.Remove(secureSocket);
-                ClientDisconnected?.Invoke(secureSocket, exception);
+                ClientDisconnected?.Invoke(secureSocket, remoteEndPoint, exception);
             };
             _clients.Add(handler);
             ClientConnected?.Invoke(handler);

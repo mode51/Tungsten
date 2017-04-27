@@ -24,28 +24,31 @@ namespace W.Demo
                         }
                     };
                 };
-                server.ClientDisconnected += (client, exception) =>
+                server.ClientDisconnected += (client, remoteEndPoint, exception) =>
                 {
-                    Console.WriteLine("Client Disconnected");
+                    if (exception != null)
+                        Console.WriteLine("Client Disconnected: " + remoteEndPoint?.ToString() + " - " + exception.Message);
+                    else
+                        Console.WriteLine("Client Disconnected: " + remoteEndPoint?.ToString());
                 };
                 server.Start(IPAddress.Parse("127.0.0.1"), 5150);
 
                 using (var secureClient = new W.Net.SecureStringClient())
                 {
-                    secureClient.Connected += (s, address) =>
+                    secureClient.Connected += (s, remoteEndPoint) =>
                     {
-                        Console.WriteLine("Client connected to " + address.ToString());
+                        Console.WriteLine("Client Connected: " + remoteEndPoint?.ToString());
                     };
                     secureClient.ConnectionSecured += s =>
                     {
                         mre.Set();
                     };
-                    secureClient.Disconnected += (s, exception) =>
+                    secureClient.Disconnected += (s, remoteEndPoint, exception) =>
                     {
                         if (exception != null)
-                            Console.WriteLine("Client Disconnected: " + exception.Message);
+                            Console.WriteLine("Client Disconnected: " + remoteEndPoint?.ToString() + " - " + exception.Message);
                         else
-                            Console.WriteLine("Client Disconnected");
+                            Console.WriteLine("Client Disconnected: " + remoteEndPoint?.ToString());
                         mre.Set();
                     };
                     secureClient.MessageReceived += (s, message) =>
@@ -58,7 +61,7 @@ namespace W.Demo
                         Console.WriteLine("Client Message Sent");
                     };
                     secureClient.UseCompression = true;
-                    secureClient.Socket.Connect(IPAddress.Parse("127.0.0.1"), 5150);
+                    secureClient.Socket.ConnectAsync(IPAddress.Parse("127.0.0.1"), 5150).Wait();
                     mre.WaitOne();
 
                     Console.Write("Send <Return To Exit>: ");

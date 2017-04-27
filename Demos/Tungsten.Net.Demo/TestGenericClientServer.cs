@@ -42,11 +42,11 @@ namespace W.Demo
                     {
                         mre.Set();
                     };
-                    client.Disconnected += (s, exception) =>
+                    client.Disconnected += (s, remoteEndPoint, exception) =>
                     {
                         mre.Set();
                     };
-                    client.Socket.Connect(IPAddress.Parse("127.0.0.1"), 5150).Wait();
+                    client.Socket.ConnectAsync(IPAddress.Parse("127.0.0.1"), 5150).Wait();
                     mre.WaitOne();
 
                     Console.WriteLine("Send <Return To Exit>: ");

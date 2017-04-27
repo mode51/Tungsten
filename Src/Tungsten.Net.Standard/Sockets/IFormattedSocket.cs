@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 
 namespace W.Net.Sockets
 {
@@ -14,6 +15,6 @@ namespace W.Net.Sockets
         /// <summary>
         /// Called when the client disconnects
         /// </summary>
-        Action<object, Exception> Disconnected { get; set; }
+        Action<object, IPEndPoint, Exception> Disconnected { get; set; }
     }
 }

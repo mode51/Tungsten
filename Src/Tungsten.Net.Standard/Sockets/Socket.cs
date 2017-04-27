@@ -20,11 +20,11 @@ namespace W.Net.Sockets
         /// <summary>
         /// Called when the client connects to the server
         /// </summary>
-        public Action<Socket, IPAddress> Connected { get; set; }
+        public Action<Socket, IPEndPoint> Connected { get; set; }
         /// <summary>
         /// Called when the client disconnects from the server
         /// </summary>
-        public Action<Socket, Exception> Disconnected { get; set; }
+        public Action<Socket, IPEndPoint, Exception> Disconnected { get; set; }
 
         /// <summary>
         /// Called when a message has been sent to the server
@@ -41,6 +41,16 @@ namespace W.Net.Sockets
         /// <remarks>Make sure both server and client have the same value</remarks>
         public bool UseCompression { get; set; }
 
+        /// <summary>
+        /// The remote IPEndPoint for this socket
+        /// </summary>
+        public IPEndPoint RemoteEndPoint
+        {
+            get
+            {
+                return _client?.Client?.RemoteEndPoint.As<IPEndPoint>() ?? null;
+            }
+        }
         /// <summary>
         /// Constructs a ByteClient
         /// </summary>
@@ -59,7 +69,7 @@ namespace W.Net.Sockets
                 throw new ArgumentOutOfRangeException(nameof(tcpClient), "Client must already be connected");
             _client = tcpClient;
             if (_client != null)
-                FinalizeConnection(_client.Client.RemoteEndPoint.As<IPEndPoint>()?.Address);
+                FinalizeConnection(_client.Client.RemoteEndPoint.As<IPEndPoint>());
         }
         /// <summary>
         /// Disposes and deconstructs the Socket instance
@@ -78,8 +88,8 @@ namespace W.Net.Sockets
         /// <summary>
         /// Creates the TcpClientReader and TcpClientWriter
         /// </summary>
-        /// <param name="remoteAddress">The remote server address</param>
-        private void FinalizeConnection(IPAddress remoteAddress)
+        /// <param name="remoteEndPoint">The remote server address</param>
+        private void FinalizeConnection(IPEndPoint remoteEndPoint)
         {
             _networkStream = _client.GetStream();
             _reader = new TcpClientReader(_client);
@@ -92,26 +102,29 @@ namespace W.Net.Sockets
             _writer.OnMessageSent += () => { MessageSent?.Invoke(this); };
             _writer.Start();
 
-            
-            //if (string.IsNullOrEmpty(Name))
-            Name = Guid.NewGuid().ToString() + "." + _client.Client.RemoteEndPoint.As<IPEndPoint>()?.Address.ToString() ?? "";
+
+            //Name = Guid.NewGuid().ToString() + "." + _client.Client.RemoteEndPoint.As<IPEndPoint>()?.Address.ToString() ?? "";
+            var ipEndPoint = _client.Client.RemoteEndPoint.As<IPEndPoint>();
+            if (ipEndPoint != null)
+                Name = ipEndPoint.Address.ToString() + ":" + ipEndPoint.Port.ToString();
         }
 
         /// <summary>
         /// Calls the Notifications.Connected callback
         /// </summary>
-        /// <param name="remoteAddress"></param>
-        protected virtual void OnConnected(IPAddress remoteAddress)
+        /// <param name="remoteEndPoint"></param>
+        protected virtual void OnConnected(IPEndPoint remoteEndPoint)
         {
-            Connected?.Invoke(this, remoteAddress);
+            Connected?.Invoke(this, remoteEndPoint);
         }
         /// <summary>
         /// Calls the Notifications.OnDisconnected callback
         /// </summary>
+        /// <param name="remoteEndPoint">The remote IPEndPoint which has disconnected</param>
         /// <param name="e">The exception if one occurred</param>
-        protected virtual void OnDisconnected(Exception e = null)
+        protected virtual void OnDisconnected(IPEndPoint remoteEndPoint, Exception e = null)
         {
-            Disconnected?.Invoke(this, e);
+            Disconnected?.Invoke(this, remoteEndPoint, e);
         }
         /// <summary>
         /// Calls the Notification.MessageReceived callback
@@ -154,9 +167,9 @@ namespace W.Net.Sockets
         /// <param name="remotePort">The port on which the Tungsten RPC Server is listening</param>
         /// <returns>A bool specifying success/failure</returns>
         /// <remarks>If an exception occurs, the Disconnected delegate will be called with the specific exception</remarks>
-        public async Task Connect(string remoteAddress, int remotePort)
+        public async Task ConnectAsync(string remoteAddress, int remotePort)
         {
-            await Connect(IPAddress.Parse(remoteAddress), remotePort);
+            await ConnectAsync(IPAddress.Parse(remoteAddress), remotePort);
         }
         /// <summary>
         /// Attempts to connect to a local or remote Tungsten RPC Server
@@ -165,7 +178,7 @@ namespace W.Net.Sockets
         /// <param name="remotePort">The port on which the Tungsten RPC Server is listening</param>
         /// <returns>A bool specifying success/failure</returns>
         /// <remarks>If an exception occurs, the Disconnected delegate will be called with the specific exception</remarks>
-        public async Task Connect(IPAddress remoteAddress, int remotePort)
+        public async Task ConnectAsync(IPAddress remoteAddress, int remotePort)
         {
             Exception ex = null;
             try
@@ -199,8 +212,8 @@ namespace W.Net.Sockets
                 Disconnect(ex);
                 return;
             }
-            FinalizeConnection(remoteAddress);
-            OnConnected(remoteAddress);
+            FinalizeConnection(_client.Client.RemoteEndPoint.As<IPEndPoint>());
+            OnConnected(_client.Client.RemoteEndPoint.As<IPEndPoint>());
         }
         /// <summary>
         /// Disconnects from the remote server and cleans up resources
@@ -208,6 +221,9 @@ namespace W.Net.Sockets
         /// <param name="e">An exception if one occurred</param>
         public void Disconnect(Exception e = null)
         {
+            if (_client == null)
+                return;
+            var remoteEndPoint = _client.Client.RemoteEndPoint.As<IPEndPoint>();
             _reader?.Stop();
             _reader = null;
             _writer?.Stop();
@@ -220,7 +236,7 @@ namespace W.Net.Sockets
             _client?.Close();
 #endif
             _client = null;
-            OnDisconnected(e);
+            OnDisconnected(remoteEndPoint, e);
         }
 
         /// <summary>
