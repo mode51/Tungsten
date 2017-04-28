@@ -72,10 +72,10 @@ namespace W.Net.RPC
             _host.ClientConnected += (client) =>
             {
                 //Log.i("Client Connected: {0}", client.Name);
-                client.Disconnected += (c, exception) =>
+                client.Disconnected += (c, remoteEndPoint, exception) =>
                 {
-                    var name = (c as GenericClient<Message>)?.Socket.Name ?? "Unknown";
-                    Log.i($"Client Disconnected: {name}");
+                    //var name = (c as GenericClient<Message>)?.Socket.Name ?? "Unknown";
+                    Log.i($"Client Disconnected: {remoteEndPoint.ToString()}");
                 };
                 client.GenericMessageReceived += (c, message) =>
                 {

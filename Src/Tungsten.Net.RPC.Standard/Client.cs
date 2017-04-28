@@ -28,16 +28,26 @@ namespace W.Net.RPC
         /// <summary>
         /// Multi-cast delegate called when the client connects to the server
         /// </summary>
-        public Action<Client> Connected { get; set; }
+        public Action<Client, IPEndPoint> Connected { get; set; }
         /// <summary>
         /// Multi-cast delegate called when the client disconnects from the server
         /// </summary>
-        public Action<Client, Exception> Disconnected { get; set; }
+        public Action<Client, IPEndPoint, Exception> Disconnected { get; set; }
 
         /// <summary>
         /// True if the client is connected to the server, otherwise False
         /// </summary>
         public bool IsConnected => _isConnected.Value;
+        /// <summary>
+        /// The remote IPEndPoint for this socket
+        /// </summary>
+        public IPEndPoint RemoteEndPoint
+        {
+            get
+            {
+                return _client?.Socket?.RemoteEndPoint?.As<IPEndPoint>() ?? null;
+            }
+        }
 
         /// <summary>
         /// Calls Dispose and deconstructs the Client
@@ -365,7 +375,7 @@ namespace W.Net.RPC
                 }
                 try
                 {
-                    Connected?.Invoke(this);
+                    Connected?.Invoke(this, RemoteEndPoint);
                 }
                 catch (Exception e)
                 {
@@ -375,7 +385,7 @@ namespace W.Net.RPC
             };
             //3.28.2017 - now each Waiter taps the GenericMessageReceived to listen for their own message (identified by Message.Id)
 
-            var isConnected = _client.Socket.Connect(remoteAddress, remotePort).Wait(msTimeout);
+            var isConnected = _client.Socket.ConnectAsync(remoteAddress, remotePort).Wait(msTimeout);
             if (!isConnected || (!mre?.WaitOne(msTimeout) ?? false)) //wait for secured
                 Disconnect(new Exception("Server failed to respond"));
             mre.Dispose();
@@ -396,6 +406,8 @@ namespace W.Net.RPC
         }
         internal void Disconnect(Exception e)
         {
+            if (_client == null)
+                return;
             //attempt to wait for completion or timeouts
             Task.Run(() =>
             {
@@ -405,12 +417,13 @@ namespace W.Net.RPC
                     System.Threading.Thread.Sleep(5);
                 }
             }).Wait(10000);
+            var remoteEndPoint = RemoteEndPoint; //retain a reference
             _waiters?.Clear();
             _client?.Socket.Disconnect(e);
             _client = null;
             try
             {
-                Disconnected?.Invoke(this, e);
+                Disconnected?.Invoke(this, remoteEndPoint, e);
             }
             catch (Exception ex)
             {

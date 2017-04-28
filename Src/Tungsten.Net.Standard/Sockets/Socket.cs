@@ -223,7 +223,7 @@ namespace W.Net.Sockets
         {
             if (_client == null)
                 return;
-            var remoteEndPoint = _client.Client.RemoteEndPoint.As<IPEndPoint>();
+            var remoteEndPoint = _client.Client.RemoteEndPoint.As<IPEndPoint>(); //retain a reference
             _reader?.Stop();
             _reader = null;
             _writer?.Stop();

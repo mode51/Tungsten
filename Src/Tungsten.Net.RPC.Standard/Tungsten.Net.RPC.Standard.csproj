@@ -8,9 +8,9 @@
     <Description>Tungsten.Net.RPC is a socket library which allows clients to execute functionality (with or without return values) on a server (the server must be a Tungsten.Net.RPC server). Tungsten.Net.RPC uses two-way encryption via public/private key pairs to secure the transmission.  The client calls methods on the server via the MakeRPCCall method.  The server implements RPC methods by using the RPCMethod attribute (or added manually).</Description>
     <Copyright>Copyright @ 2017 Jordan Duerksen</Copyright>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
-    <Version>1.2.4.1</Version>
-    <AssemblyVersion>1.2.4.1</AssemblyVersion>
-    <FileVersion>1.2.4.1</FileVersion>
+    <Version>1.2.5.0</Version>
+    <AssemblyVersion>1.2.5.0</AssemblyVersion>
+    <FileVersion>1.2.5.0</FileVersion>
     <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</PackageIconUrl>
     <PackageTags>Tungsten.Net.RPC Tungsten Tungsten.Net RPC client server remote procedure call c# library</PackageTags>
@@ -37,7 +37,7 @@
     <PackageReference Include="System.Reflection.Primitives" Version="4.3.0" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.3.0" />
     <PackageReference Include="Tungsten" Version="1.2.3.2" />
-    <PackageReference Include="Tungsten.Net" Version="1.2.3.3" />
+    <PackageReference Include="Tungsten.Net" Version="1.2.3.4" />
   </ItemGroup>
 
 </Project>

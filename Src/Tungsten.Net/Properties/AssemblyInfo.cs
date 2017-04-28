@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Tungsten.Net")]
-[assembly: AssemblyDescription("A tcp socket library which provides client/server classes with and without assymetric encryption")]
+[assembly: AssemblyDescription("Tungsten.Net makes it easy to add tcp sockets to your application. Client and server classes are provided, with and without assymetric encryption.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Tungsten.Net")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.3.1")]
-[assembly: AssemblyFileVersion("1.2.3.1")]
+[assembly: AssemblyVersion("1.2.3.4")]
+[assembly: AssemblyFileVersion("1.2.3.4")]

@@ -49,8 +49,8 @@
     <Reference Include="Tungsten, Version=1.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Tungsten.1.2.3.2\lib\net45\Tungsten.dll</HintPath>
     </Reference>
-    <Reference Include="Tungsten.Net, Version=1.2.3.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Tungsten.Net.1.2.3.3\lib\net45\Tungsten.Net.dll</HintPath>
+    <Reference Include="Tungsten.Net, Version=1.2.3.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Tungsten.Net.1.2.3.4\lib\net45\Tungsten.Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

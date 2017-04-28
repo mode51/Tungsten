@@ -1,5 +1,11 @@
 ﻿Tungsten.Net is a client/server tcp socket library. Client and server classes are provided, with and without assymetric encryption.
 
+4.28.2017 - v1.2.3.4
+W.Net.Sockets.Socket.Name will now be the remoteAddress + ":" + remotePort (ie: "127.0.0.1:5150")
+W.Net.Sockets.FormattedSocket has been renamed to FormattedClient
+W.Net.Sockets.FormattedClient.Connected now exposes the IPEndPoint instead of the IPAddress
+W.Net.Sockets.FormattedClient.Disconnected now also exposes the IPEndPoint
+
 4.12.2017 - v1.2.3.2
 Changed netstandard target from 1.4 to 1.3
 
