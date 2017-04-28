@@ -72,8 +72,8 @@
     <Compile Include="..\Tungsten.Net.Standard\SecureStringServer.cs">
       <Link>SecureStringServer.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Sockets\FormattedSocket.cs">
-      <Link>Sockets\FormattedSocket.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\Sockets\FormattedClient.cs">
+      <Link>Sockets\FormattedClient.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Net.Standard\Sockets\IFormattedSocket.cs">
       <Link>Sockets\IFormattedSocket.cs</Link>

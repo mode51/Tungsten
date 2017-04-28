@@ -35,7 +35,7 @@ namespace W.Demo
 
                 using (var secureClient = new W.Net.SecureStringClient())
                 {
-                    secureClient.Connected += (s, remoteEndPoint) =>
+                    secureClient.Connected += (ssc, remoteEndPoint) =>
                     {
                         Console.WriteLine("Client Connected: " + remoteEndPoint?.ToString());
                     };

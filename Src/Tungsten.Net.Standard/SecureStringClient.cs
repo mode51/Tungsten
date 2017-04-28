@@ -25,7 +25,7 @@ namespace W.Net
         public SecureStringClient() : base()
         {
             _rsa = new W.Encryption.RSA();
-            Connected += (socket, address) =>
+            Connected += (client, address) =>
             {
                 SendPublicKey(); //immediately send the public key
                 Log.v("Client Sent Public Key");

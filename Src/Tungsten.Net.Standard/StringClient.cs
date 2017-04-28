@@ -6,7 +6,7 @@ namespace W.Net
     /// <summary>
     /// A Tungsten Socket client which sends and receives text
     /// </summary>
-    public class StringClient : FormattedSocket<string>
+    public class StringClient : FormattedClient<string>
     {
         /// <summary>
         /// Constructs a new StringClient

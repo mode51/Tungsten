@@ -8,7 +8,7 @@ namespace W.Net.Sockets
     /// Allows the programmer to customize data before sending and after reception
     /// </summary>
     /// <typeparam name="TDataType">The type of data</typeparam>
-    public class FormattedSocket<TDataType> : IFormattedSocket, IDisposable where TDataType : class
+    public class FormattedClient<TDataType> : IFormattedSocket, IDisposable where TDataType : class
     {
         /// <summary>
         /// The underlying Tungsten Socket
@@ -51,7 +51,7 @@ namespace W.Net.Sockets
         /// <summary>
         /// Constructs a new FormattedSocket
         /// </summary>
-        public FormattedSocket()
+        public FormattedClient()
         {
             this.Socket = new Socket();
             HookNotifications();
@@ -60,7 +60,7 @@ namespace W.Net.Sockets
         /// Constructs a new FormattedSocket.  Used internally by W.Net.Sockets.Server and W.Net.Sockets.SecureServer.
         /// </summary>
         /// <param name="client">An existing connected TcpClient</param>
-        public FormattedSocket(TcpClient client) //used by SecureServer
+        public FormattedClient(TcpClient client) //used by SecureServer
         {
             this.Socket = new Socket(client);
             HookNotifications();
@@ -68,7 +68,7 @@ namespace W.Net.Sockets
         /// <summary>
         /// Disposes and deconstructs the FormattedSocket instance
         /// </summary>
-        ~FormattedSocket()
+        ~FormattedClient()
         {
             Dispose();
         }
