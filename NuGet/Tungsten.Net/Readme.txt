@@ -2,6 +2,7 @@
 
 5.2.2017 v1.2.4
 All target dlls are now named Tungsten.Net.dll - this should help with cross-framework compatability
+Updated Tungsten reference to v1.2.4
 
 4.28.2017 - v1.2.3.4
 W.Net.Sockets.Socket.Name will now be the remoteAddress + ":" + remotePort (ie: "127.0.0.1:5150")

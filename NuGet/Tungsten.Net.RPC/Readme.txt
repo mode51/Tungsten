@@ -2,6 +2,7 @@
 
 5.2.2017 v1.2.6
 All target dlls are now named Tungsten.Net.RPC.dll - this should help with cross-framework compatability
+Updated Tungsten reference to v1.2.4
 
 4.28.2017 - v1.2.5.0
 Updated reference to Tungsten.Net and made the appropriate code changes
