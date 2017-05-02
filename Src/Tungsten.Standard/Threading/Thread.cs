@@ -118,8 +118,17 @@ namespace W.Threading
         /// <param name="msDelay">The number of milliseconds to block the thread</param>
         public static void Sleep(int msDelay)
         {
-
-            System.Threading.Thread.Sleep(msDelay);
+            var result = false;
+            try
+            {
+                System.Threading.Thread.Sleep(msDelay);
+                result = true;
+            }
+            catch (System.MissingMethodException e)
+            {
+            }
+            if (!result)
+                System.Threading.Tasks.Task.Delay(msDelay);
         }
     }
 

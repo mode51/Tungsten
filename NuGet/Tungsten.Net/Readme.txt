@@ -1,5 +1,8 @@
 ﻿Tungsten.Net is a client/server tcp socket library. Client and server classes are provided, with and without assymetric encryption.
 
+5.2.2017 v1.2.4.1
+Readded a constructor to W.Net.SecureStringClient and W.Net.GenericClient
+
 5.2.2017 v1.2.4
 All target dlls are now named Tungsten.Net.dll - this should help with cross-framework compatibility
 Updated Tungsten reference to v1.2.4

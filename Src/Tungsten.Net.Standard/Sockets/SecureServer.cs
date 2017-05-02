@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.Threading.Tasks;
 using W.Logging;
 
 namespace W.Net.Sockets
@@ -154,10 +155,17 @@ namespace W.Net.Sockets
         /// <param name="port">The port on which to listen</param>
         public void Start(IPAddress ipAddress, int port)
         {
-            _server = new TcpListener(ipAddress, port);
-            _server.Start();
-            _listenProc = W.Threading.Thread.Create(ListenForClientsProc, ListenForClientsProc_OnComplete);
-            IsListening = true;
+            try
+            {
+                _server = new TcpListener(ipAddress, port);
+                _server.Start();
+                _listenProc = W.Threading.Thread.Create(ListenForClientsProc, ListenForClientsProc_OnComplete);
+                IsListening = true;
+            }
+            catch (Exception e)
+            {
+                Log.e(e);
+            }
         }
 
         /// <summary>

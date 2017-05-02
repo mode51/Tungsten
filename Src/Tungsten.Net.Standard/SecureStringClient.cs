@@ -36,17 +36,17 @@ namespace W.Net
             };
         }
 
-        ///// <summary>
-        ///// Constructs a new SecureStringClient
-        ///// </summary>
-        ///// <param name="client">An existing connected TcpClient</param>
-        ///// <param name="rsa">An existing instance of RSA to be used for encryption</param>
-        //public SecureStringClient(TcpClient client, W.Encryption.RSA rsa) : base(client)
-        //{
-        //    _rsa = rsa;
-        //    SendPublicKey(); //immediately send the public key
-        //    Log.v("Server Sent Public Key");
-        //}
+        /// <summary>
+        /// Constructs a new SecureStringClient
+        /// </summary>
+        /// <param name="client">An existing connected TcpClient</param>
+        /// <param name="rsa">An existing instance of RSA to be used for encryption</param>
+        public SecureStringClient(TcpClient client, W.Encryption.RSA rsa) : base(client)
+        {
+            _rsa = rsa;
+            SendPublicKey(); //immediately send the public key
+            Log.v("Server Sent Public Key");
+        }
 
         private void SendPublicKey()
         {

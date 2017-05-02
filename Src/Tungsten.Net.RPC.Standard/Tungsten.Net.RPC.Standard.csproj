@@ -38,7 +38,7 @@
     <PackageReference Include="System.Reflection.Primitives" Version="4.3.0" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.3.0" />
     <PackageReference Include="Tungsten" Version="1.2.4" />
-    <PackageReference Include="Tungsten.Net" Version="1.2.4" />
+    <PackageReference Include="Tungsten.Net" Version="1.2.4.1" />
   </ItemGroup>
 
 </Project>
