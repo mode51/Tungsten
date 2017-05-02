@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
     <RootNamespace>W</RootNamespace>
-    <Version>1.2.3</Version>
+    <Version>1.2.4</Version>
     <Authors>Jordan Duerksen</Authors>
     <Company />
     <Product>Tungsten</Product>
@@ -13,12 +13,12 @@
     <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</PackageIconUrl>
     <PackageTags>Tungsten.NuGet Tungsten W C# library</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <AssemblyVersion>1.2.3.0</AssemblyVersion>
-    <FileVersion>1.2.3.0</FileVersion>
+    <AssemblyVersion>1.2.4.0</AssemblyVersion>
+    <FileVersion>1.2.4.0</FileVersion>
     <PackageReleaseNotes>Each Tungsten target now has it's own NuGet package</PackageReleaseNotes>
     <PostBuildEvent></PostBuildEvent>
     <RepositoryUrl></RepositoryUrl>
-    <AssemblyName>Tungsten.Standard</AssemblyName>
+    <AssemblyName>Tungsten</AssemblyName>
     <PackageId>Tungsten.Standard</PackageId>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
     <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
@@ -29,8 +29,8 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.3\Tungsten.Standard.xml</DocumentationFile>
-    <OutputPath>bin\Release\netstandard1.3\</OutputPath>
+    <DocumentationFile>bin\Release\netstandard1.3\Tungsten.xml</DocumentationFile>
+    <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

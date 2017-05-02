@@ -3,7 +3,7 @@
   <metadata>
     <id>Tungsten.Net.RPC</id>
     <title>Tungsten.Net.RPC</title>
-    <version>1.2.5.0</version>
+    <version>1.2.6.0</version>
     <authors>Jordan Duerksen</authors>
     <owners>Jordan Duerksen</owners>
     <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
@@ -23,8 +23,8 @@
         <dependency id="Newtonsoft.Json" version="10.0.2" exclude="Build,Analyzers" />
       </group>
       <group targetFramework="net45">
-        <dependency id="Tungsten" version="1.2.3.2" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Net" version="1.2.3.4" exclude="Build,Analyzers" />
+        <dependency id="Tungsten" version="1.2.4" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Net" version="1.2.4" exclude="Build,Analyzers" />
         <dependency id="Newtonsoft.Json" version="10.0.2" exclude="Build,Analyzers"/>
       </group>
     </dependencies>
@@ -33,8 +33,8 @@
   <files>
     <file src="Readme.txt" target="" />
 
-    <file src="..\..\Src\Tungsten.Net.RPC.Standard\bin\Release\netstandard1.5\Tungsten.Net.RPC.Standard.dll" target="lib\netstandard1.5" />
-    <file src="..\..\Src\Tungsten.Net.RPC.Standard\bin\Release\netstandard1.5\Tungsten.Net.RPC.Standard.xml" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Net.RPC.Standard\bin\Release\netstandard1.5\Tungsten.Net.RPC.dll" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Net.RPC.Standard\bin\Release\netstandard1.5\Tungsten.Net.RPC.xml" target="lib\netstandard1.5" />
 
     <file src="..\..\Src\Tungsten.Net.RPC\bin\Release\Tungsten.Net.RPC.dll" target="lib\net45" />
     <file src="..\..\Src\Tungsten.Net.RPC\bin\Release\Tungsten.Net.RPC.xml" target="lib\net45" />

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
-    <RootNamespace>W.IO.Pipes.Standard</RootNamespace>
+    <RootNamespace>W.IO.Pipes</RootNamespace>
     <Authors>Jordan Duerksen</Authors>
     <Company />
     <Description>Named pipe wrappers to easily add asynchronous named pipes to your application.  Server and client are provided.</Description>
@@ -10,14 +10,17 @@
     <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
     <PackageIconUrl>https://github.com/mode51/Tungsten/blob/master/Tungsten/Tungsten.ico</PackageIconUrl>
     <PackageTags>Tungsten Tungsten.IO.Pipes Pipe NamedPipe W C# library</PackageTags>
-    <AssemblyVersion>1.2.0.0</AssemblyVersion>
-    <FileVersion>1.2.0.0</FileVersion>
-    <Version>1.2.0.0</Version>
+    <AssemblyVersion>1.2.4.0</AssemblyVersion>
+    <FileVersion>1.2.4.0</FileVersion>
+    <Version>1.2.4.0</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
     <PackageReleaseNotes>Initial release with same version number as Tungsten.Standard</PackageReleaseNotes>
     <PostBuildEvent></PostBuildEvent>
     <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
+    <PackageId>Tungsten.IO.Pipes</PackageId>
+    <Product>Tungsten.IO.Pipes</Product>
+    <AssemblyName>Tungsten.IO.Pipes</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -25,12 +28,13 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.4\Tungsten.IO.Pipes.Standard.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard1.4\Tungsten.IO.Pipes.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
     <PackageReference Include="System.IO.Pipes" Version="4.3.0" />
-    <PackageReference Include="Tungsten" Version="1.2.0" />
+    <PackageReference Include="Tungsten" Version="1.2.4" />
   </ItemGroup>
 
 </Project>

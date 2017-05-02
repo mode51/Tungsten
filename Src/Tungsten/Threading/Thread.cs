@@ -105,6 +105,15 @@ namespace W.Threading
             var result = new Thread(action, onComplete, cts);
             return result;
         }
+
+        /// <summary>
+        /// Blocks the calling thread for the specified time
+        /// </summary>
+        /// <param name="msDelay">The number of milliseconds to block the thread</param>
+        public static void Sleep(int msDelay)
+        {
+            System.Threading.Tasks.Task.Delay(msDelay);
+        }
     }
 
     /// <summary>
@@ -377,6 +386,15 @@ namespace W.Threading
         //    var thread = new W.Threading.Thread(action, onComplete);
         //    return thread;
         //}
+
+        /// <summary>
+        /// Blocks the calling thread for the specified time
+        /// </summary>
+        /// <param name="msDelay">The number of milliseconds to block the thread</param>
+        public static void Sleep(int msDelay)
+        {
+            System.Threading.Thread.Sleep(msDelay);
+        }
     }
 
     /// <summary>

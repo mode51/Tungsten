@@ -80,13 +80,13 @@ namespace W.Net
                                 _messages.Enqueue(bytes);
                         }, cts).Wait();
                     }
-                    System.Threading.Thread.Sleep(1); //play nice with other threads
+                    W.Threading.Thread.Sleep(1); //play nice with other threads
                 }
                 //cts.Dispose();
             }
             catch (Exception e)
             {
-                Log.e("MessageReader Exception: {0}", e.Message);
+                W.Logging.Log.e("MessageReader Exception: {0}", e.Message);
             }
             _thread = null;
         }
@@ -111,7 +111,7 @@ namespace W.Net
                             }
                         }
                     }
-                    System.Threading.Thread.Sleep(1); //play nice with other threads
+                    W.Threading.Thread.Sleep(1); //play nice with other threads
                 }
                 //cts.Dispose();
             }

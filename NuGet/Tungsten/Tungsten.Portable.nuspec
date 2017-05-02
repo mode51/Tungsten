@@ -3,7 +3,7 @@
   <metadata>
     <id>Tungsten.Portable</id>
     <title>Tungsten.Portable</title>
-    <version>1.2.3</version>
+    <version>1.2.4</version>
     <authors>Jordan Duerksen</authors>
     <owners>Jordan Duerksen</owners>
     <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
@@ -22,8 +22,8 @@
   <files>
     <file src="Readme.txt" target="" />
 
-    <file src="..\..\Src\Tungsten.Portable\bin\Release\Tungsten.Portable.dll" target="lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20" />
-    <file src="..\..\Src\Tungsten.Portable\bin\Release\Tungsten.Portable.xml" target="lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20" />
+    <file src="..\..\Src\Tungsten.Portable\bin\Release\Tungsten.dll" target="lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20" />
+    <file src="..\..\Src\Tungsten.Portable\bin\Release\Tungsten.xml" target="lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20" />
 
   </files>
 </package>

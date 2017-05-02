@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
-    <Version>1.2.3.4</Version>
+    <Version>1.2.4</Version>
     <Authors>Jordan Duerksen</Authors>
     <Company />
-    <Product>Tungsten.Net.Standard</Product>
+    <Product>Tungsten.Net</Product>
     <Copyright>Copyright @ 2017 Jordan Duerksen</Copyright>
     <Description>Tungsten.Net.Standard makes it easy to add tcp sockets to your application. Client and server classes are provided, with and without assymetric encryption.</Description>
     <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
@@ -13,19 +13,20 @@
     <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
     <PackageTags>Tungsten.Net.Standard Tungsten.Net Tungsten W W.Net C# library tcp sockets client server</PackageTags>
-    <AssemblyVersion>1.2.3.4</AssemblyVersion>
-    <FileVersion>1.2.3.4</FileVersion>
+    <AssemblyVersion>1.2.4.0</AssemblyVersion>
+    <FileVersion>1.2.4.0</FileVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PostBuildEvent></PostBuildEvent>
+    <AssemblyName>Tungsten.Net</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.3\Tungsten.Net.Standard.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard1.3\Tungsten.Net.XML</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
-    <PackageReference Include="Tungsten" Version="1.2.3.2" />
+    <PackageReference Include="Tungsten" Version="1.2.4" />
   </ItemGroup>
 
 </Project>

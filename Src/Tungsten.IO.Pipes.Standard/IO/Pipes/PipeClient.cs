@@ -24,7 +24,7 @@ namespace W.IO.Pipes
         protected override TDataType FormatReceivedMessage(byte[] message)
         {
             var xml = message.AsString();
-            var result = xml.FromXml<TDataType>();
+            var result = Newtonsoft.Json.JsonConvert.DeserializeObject<TDataType>(xml);
             return result;
         }
         /// <summary>
@@ -34,7 +34,7 @@ namespace W.IO.Pipes
         /// <returns>The message converted to a byte array</returns>
         protected override byte[] FormatMessageToSend(TDataType message)
         {
-            var xml = message.AsXml<TDataType>();
+            var xml = Newtonsoft.Json.JsonConvert.SerializeObject(message);
             var bytes = xml.AsBytes();
             return bytes;
         }

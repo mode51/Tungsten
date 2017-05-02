@@ -125,7 +125,7 @@ namespace W.Net
                     onComplete?.Invoke(null, e);
                     break;
                 }
-                Thread.Sleep(1); //play nice with other threads
+                W.Threading.Thread.Sleep(1); //play nice with other threads
             }
             if (LogMessages) Log.v("Receive Message Size = {0}", length);
             return length;
@@ -164,7 +164,7 @@ namespace W.Net
                     numberOfBytesRead += read;
                 }
 
-                Thread.Sleep(1); //play nice with other threads
+                W.Threading.Thread.Sleep(1); //play nice with other threads
             }
             if (!(cts?.IsCancellationRequested ?? false))
                 onComplete?.Invoke(buffer, null);

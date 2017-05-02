@@ -3,7 +3,7 @@
   <metadata>
     <id>Tungsten.Universal</id>
     <title>Tungsten.Universal</title>
-    <version>1.2.3</version>
+    <version>1.2.4</version>
     <authors>Jordan Duerksen</authors>
     <owners>Jordan Duerksen</owners>
     <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
@@ -27,15 +27,15 @@
     <file src="Readme.txt" target="" />
 
     <!-- apparently uap10.0 needs to be first? -->
-    <file src="..\..\Src\Tungsten.Universal\bin\Release\Tungsten.Universal.dll" target="lib\uap10.0" />
-    <file src="..\..\Src\Tungsten.Universal\bin\Release\Tungsten.Universal.xml" target="lib\uap10.0" />
-    <file src="..\..\Src\Tungsten.Universal\bin\Release\Tungsten.Universal.dll" target="ref\uap10.0" />
-    <file src="..\..\Src\Tungsten.Universal\bin\x86\Release\Tungsten.Universal.dll" target="runtimes\win10-x86\native" />
-    <file src="..\..\Src\Tungsten.Universal\bin\x86\Release\Tungsten.Universal.pri" target="runtimes\win10-x86\native" />
-    <file src="..\..\Src\Tungsten.Universal\bin\x64\Release\Tungsten.Universal.dll" target="runtimes\win10-x64\native" />
-    <file src="..\..\Src\Tungsten.Universal\bin\x64\Release\Tungsten.Universal.pri" target="runtimes\win10-x64\native" />
-    <file src="..\..\Src\Tungsten.Universal\bin\ARM\Release\Tungsten.Universal.dll" target="runtimes\win10-arm\native" />
-    <file src="..\..\Src\Tungsten.Universal\bin\ARM\Release\Tungsten.Universal.pri" target="runtimes\win10-arm\native" />
+    <file src="..\..\Src\Tungsten.Universal\bin\Release\Tungsten.dll" target="lib\uap10.0" />
+    <file src="..\..\Src\Tungsten.Universal\bin\Release\Tungsten.xml" target="lib\uap10.0" />
+    <file src="..\..\Src\Tungsten.Universal\bin\Release\Tungsten.dll" target="ref\uap10.0" />
+    <file src="..\..\Src\Tungsten.Universal\bin\x86\Release\Tungsten.dll" target="runtimes\win10-x86\native" />
+    <file src="..\..\Src\Tungsten.Universal\bin\x86\Release\Tungsten.pri" target="runtimes\win10-x86\native" />
+    <file src="..\..\Src\Tungsten.Universal\bin\x64\Release\Tungsten.dll" target="runtimes\win10-x64\native" />
+    <file src="..\..\Src\Tungsten.Universal\bin\x64\Release\Tungsten.pri" target="runtimes\win10-x64\native" />
+    <file src="..\..\Src\Tungsten.Universal\bin\ARM\Release\Tungsten.dll" target="runtimes\win10-arm\native" />
+    <file src="..\..\Src\Tungsten.Universal\bin\ARM\Release\Tungsten.pri" target="runtimes\win10-arm\native" />
     <file src="Tungsten.Universal.targets" target="build\native" />
 
   </files>

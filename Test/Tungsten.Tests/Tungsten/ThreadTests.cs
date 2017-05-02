@@ -121,5 +121,10 @@ namespace W.Tests.Tungsten
             Assert.IsTrue(e != null);
         }
 
+        [Test]
+        public void ThreadSleep()
+        {
+            W.Threading.Thread.Sleep(1000);
+        }
     }
 }

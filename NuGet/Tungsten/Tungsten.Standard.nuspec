@@ -3,7 +3,7 @@
   <metadata>
     <id>Tungsten.Standard</id>
     <title>Tungsten.Standard</title>
-    <version>1.2.3</version>
+    <version>1.2.4</version>
     <authors>Jordan Duerksen</authors>
     <owners>Jordan Duerksen</owners>
     <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
@@ -27,8 +27,8 @@
   <files>
     <file src="Readme.txt" target="" />
 
-    <file src="..\..\Src\Tungsten.Standard\bin\Release\netstandard1.3\Tungsten.Standard.dll" target="lib\netstandard1.3" />
-    <file src="..\..\Src\Tungsten.Standard\bin\Release\netstandard1.3\Tungsten.Standard.xml" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.Standard\bin\Release\netstandard1.3\Tungsten.dll" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.Standard\bin\Release\netstandard1.3\Tungsten.xml" target="lib\netstandard1.3" />
 
   </files>
 </package>

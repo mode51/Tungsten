@@ -13,11 +13,16 @@
     <PackageTags>Tungsten.LiteDb Tungsten LiteDb POCO C# library</PackageTags>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>1.2.0</Version>
+    <Version>1.2.4</Version>
+    <Product>Tungsten.LiteDb</Product>
+    <AssemblyVersion>1.2.4.0</AssemblyVersion>
+    <FileVersion>1.2.4.0</FileVersion>
+    <AssemblyName>Tungsten.LiteDb</AssemblyName>
+    <PackageId>Tungsten.LiteDb</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.4\Tungsten.LiteDb.Standard.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard1.4\Tungsten.LiteDb.xml</DocumentationFile>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;RELEASE;NETSTANDARD1_4</DefineConstants>
   </PropertyGroup>
@@ -33,7 +38,7 @@
 
   <ItemGroup>
     <PackageReference Include="LiteDB" Version="3.1.0" />
-    <PackageReference Include="Tungsten" Version="1.2.3.2" />
+    <PackageReference Include="Tungsten" Version="1.2.4" />
   </ItemGroup>
 
 </Project>

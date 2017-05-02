@@ -37,15 +37,15 @@ namespace W.Net
             HookMessageReceived();
         }
 
-        /// <summary>
-        /// Constructs a new GenericClient
-        /// </summary>
-        /// <param name="client">An existing connected TcpClient</param>
-        /// <param name="rsa">An existing instance of RSA to be used for encryption</param>
-        public GenericClient(System.Net.Sockets.TcpClient client, W.Encryption.RSA rsa) : base(client, rsa)
-        {
-            HookMessageReceived();
-        }
+        ///// <summary>
+        ///// Constructs a new GenericClient
+        ///// </summary>
+        ///// <param name="client">An existing connected TcpClient</param>
+        ///// <param name="rsa">An existing instance of RSA to be used for encryption</param>
+        //public GenericClient(System.Net.Sockets.TcpClient client, W.Encryption.RSA rsa) : base(client, rsa)
+        //{
+        //    HookMessageReceived();
+        //}
 
         private void HookMessageReceived()
         {

@@ -83,7 +83,7 @@ namespace W.Net.Sockets
             {
                 while (!cts?.Token.IsCancellationRequested ?? false && (_server != null))
                 {
-                    System.Threading.Thread.Sleep(1);
+                    W.Threading.Thread.Sleep(1);
                     if (IsListening && !_server.Pending())
                         continue;
 

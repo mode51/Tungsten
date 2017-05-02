@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.3
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Test Projects", "_Test Projects", "{6E66335A-C00D-4B75-8D90-E1FDC012306F}"
 EndProject
@@ -46,6 +46,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.Domains.Demo", "De
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{C71FC3F0-7F17-45C8-B2D2-C1A86D6EC481}"
 	ProjectSection(SolutionItems) = preProject
+		NuGet\Create_All_Tungsten_NuGet_Packages.bat = NuGet\Create_All_Tungsten_NuGet_Packages.bat
 		NuGet\nuget.exe = NuGet\nuget.exe
 	EndProjectSection
 EndProject
@@ -130,7 +131,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tungsten.LiteDb.Standard", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BA374E8B-412E-43E6-B2F9-391FA59A68A1}"
 	ProjectSection(SolutionItems) = preProject
-		FeatureMatrix.xlsx = FeatureMatrix.xlsx
+		Tungsten_FeatureMatrix.xlsx = Tungsten_FeatureMatrix.xlsx
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.Firewall", "Src\Tungsten.Firewall\Tungsten.Firewall.csproj", "{1C99F7A3-1B92-411A-B588-CD5AD2C27743}"
