@@ -1,7 +1,7 @@
 ﻿Tungsten is a C# library to make application development easier.  See the wiki @ https://github.com/mode51/Tungsten/wiki for details, examples and use.
 
 5.2.2017 v1.2.4
-All target dlls are now named Tungsten.dll - this should help with cross-framework compatability
+All target dlls are now named Tungsten.dll - this should help with cross-framework compatibility
 
 4.12.2017 v1.2.3.2
 Changed netstandard minimum from 1.4 to 1.3
