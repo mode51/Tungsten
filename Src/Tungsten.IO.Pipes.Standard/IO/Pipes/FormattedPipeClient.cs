@@ -10,8 +10,8 @@ namespace W.IO.Pipes
     /// <remarks>Override the FormatReceivedMessage and FormatMessageToSend functions to customize the formatting</remarks>
     public class FormattedPipeClient<TDataType> : PipeTransceiver<TDataType>, IPipeClient where TDataType : class /* Initialize and Dispose are implemented by PipeTransmitter */
     {
-        //private PipeStream _stream;
-        private Lockable<bool> IsDisconnected { get; } = new Lockable<bool>(false);
+        private static int NumberOfInstances = 0;
+        private Lockable<bool> IsConnected { get; } = new Lockable<bool>(false);
 
         /// <summary>
         /// Called when the client connects to the server
@@ -30,6 +30,7 @@ namespace W.IO.Pipes
                 client.Connect(1000);
                 client.ReadMode = System.IO.Pipes.PipeTransmissionMode.Byte; //it appears this must be done immediately after connecting
                 Stream.Value = client;
+                IsConnected.Value = true;
             }
             catch (TimeoutException e)
             {
@@ -69,8 +70,7 @@ namespace W.IO.Pipes
         {
             TryConnect(serverName, pipeName, pipeDirection, (o, e) =>
             {
-                if (e != null)
-                    Disconnected?.Invoke(this, null);
+                Disconnected?.Invoke(this, e);
             });
             if (Stream.Value?.IsConnected ?? false)
             {
@@ -103,7 +103,7 @@ namespace W.IO.Pipes
             if (Stream.Value is NamedPipeClientStream c)
                 c.Dispose();
             Stream.Value = null;
-            if (!IsDisconnected.Value)
+            if (IsConnected.Value)
                 OnDisconnected();
         }
         /// <summary>
@@ -112,7 +112,7 @@ namespace W.IO.Pipes
         /// <param name="e">The exception, if one occurred</param>
         protected override void OnDisconnected(Exception e = null)
         {
-            IsDisconnected.Value = true;
+            IsConnected.Value = false;
             Disconnected?.Invoke(this, e);
         }
 
@@ -126,7 +126,43 @@ namespace W.IO.Pipes
         /// </summary>
         ~FormattedPipeClient()
         {
+            NumberOfInstances -= 1;
+            if (NumberOfInstances == 0)
+            {
+                _clients.Clear();
+            }
             Dispose();
+        }
+
+        private static System.Collections.Generic.SortedList<string, PipeClient> _clients = new System.Collections.Generic.SortedList<string, PipeClient>();
+        /// <summary>
+        /// Writes a byte array to the specified pipe 
+        /// </summary>
+        /// <param name="pipeName">The name of the named pipe</param>
+        /// <param name="message">The message to send</param>
+        public static void Write(string pipeName, byte[] message)
+        {
+            if (!_clients.ContainsKey(pipeName))
+            {
+                var newClient = new PipeClient();
+                newClient.Disconnected += (o, e) =>
+                {
+                    var c = o.As<W.IO.Pipes.PipeClient>();
+                    c.Dispose();
+                    if (_clients.ContainsValue(c))
+                        _clients.RemoveAt(_clients.IndexOfValue(c));
+                };
+                _clients.Add(pipeName, newClient);
+
+            }
+            var client = _clients[pipeName];
+
+            if (!client.IsConnected.Value)
+            {
+                if (!client.Connect(pipeName))
+                    return; //just fail
+            }
+            client.Write(message);
         }
     }
 }

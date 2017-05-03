@@ -55,7 +55,7 @@ namespace W.IO.Pipes
         /// <summary>
         /// Creates the underlying NamedPipeClientStream and connects to the server
         /// </summary>
-        public void Start(int maxConnections = -1)
+        public void Start(int maxConnections = -1, PipeDirection direction = PipeDirection.InOut)
         {
             Stop();
             _cts = new CancellationTokenSource();
@@ -67,7 +67,8 @@ namespace W.IO.Pipes
                     NamedPipeServerStream stream = null;
                     try
                     {
-                        stream = new NamedPipeServerStream(_name, PipeDirection.InOut, maxConnections, PipeTransmissionMode.Byte, PipeOptions.Asynchronous);
+                        stream = new NamedPipeServerStream(_name, direction, maxConnections, PipeTransmissionMode.Byte, PipeOptions.Asynchronous);
+                        //Task.Run(() => { Started?.Invoke(this); });
                     }
                     catch (System.IO.IOException)
                     {

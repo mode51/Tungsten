@@ -134,7 +134,7 @@ namespace W.IO.Pipes
             }
             catch (OperationCanceledException)
             {
-                //ignore - canceled to write or dispose
+                //ignore - the read was canceled to Write a message or Dispose
                 //Console.WriteLine("ReadMessageSize was canceled");
             }
             catch (System.IO.IOException e) //Pipe closed or shut down?
@@ -173,23 +173,26 @@ namespace W.IO.Pipes
             }
         }
 
-        private void StartReadMessageSizeGate()
+        private void CreateReadMessageSizeGate()
         {
             _gateReadMessageSize = new Threading.Gate(async cts =>
             {
                 //Console.WriteLine("-> ReadMessageSizeGate");
                 try
                 {
-                    await GetMessageSize(Stream.Value, cts);
-                    if (_readSize.Value <= 0) //read was cancelled (either to write or dispose)
+                    while (cts != null && !cts.IsCancellationRequested)
                     {
-                        if (!Stream.Value?.IsConnected ?? false)
+                        await GetMessageSize(Stream.Value, cts);
+                        if (_readSize.Value <= 0) //read was cancelled (either to write or dispose)
+                        {
+                            if (!Stream.Value?.IsConnected ?? false)
+                                return;
+                        }
+                        if (cts == null || cts.IsCancellationRequested)
                             return;
+                        _gateReadMessage.Run(); //read the message
+                        _gateReadMessage.Join();
                     }
-                    if (cts == null || cts.IsCancellationRequested)
-                        return;
-                    _gateReadMessage.Run(); //read the message
-                    _gateReadMessage.Join();
                 }
                 catch (TaskCanceledException)
                 {
@@ -218,7 +221,7 @@ namespace W.IO.Pipes
                     Exception?.Invoke(this, exception);
             });
         }
-        private void StartReadMessageGate()
+        private void CreateReadMessageGate()
         {
             _gateReadMessage = new Threading.Gate(cts =>
             {
@@ -228,6 +231,7 @@ namespace W.IO.Pipes
                     if (_readSize.Value > 0)
                     {
                         var bytes = ReadMessage(Stream.Value, _readSize.Value, 256);
+
                         if (bytes != null)
                         {
                             if (UseCompression)
@@ -257,7 +261,7 @@ namespace W.IO.Pipes
                     Exception?.Invoke(this, exception);
             });
         }
-        private void StartWriteGate()
+        private void CreateWriteGate()
         {
             _gateWrite = new W.Threading.Gate(cts =>
             {
@@ -294,9 +298,9 @@ namespace W.IO.Pipes
         {
             IsServerSide = isServerSide;
             Stream.Value = stream;
-            StartReadMessageSizeGate();
-            StartReadMessageGate();
-            StartWriteGate();
+            CreateReadMessageSizeGate();
+            CreateReadMessageGate();
+            CreateWriteGate();
 
             _gateReadMessageSize.Run();
 
@@ -304,20 +308,29 @@ namespace W.IO.Pipes
             {
                 while (!cts?.IsCancellationRequested ?? false)
                 {
-                    if (Stream.Value != null && !Stream.Value.IsConnected)
+                    try
                     {
-                        OnDisconnected();
+                        if (Stream.Value != null && !Stream.Value.IsConnected)
+                        {
+                            OnDisconnected();
+                        }
+                        if (!_writeQueue.IsEmpty)
+                        {
+                            _gateReadMessageSize.Cancel();
+                            //Console.WriteLine("Joining gateReadMessageSize");
+                            _gateReadMessageSize.Join(); // wait 1000ms for debugging purposes
+                            //send all messages
+                            _gateWrite.Run();
+                            _gateWrite.Join(); //join until it completes
+                            _gateReadMessageSize.Run();  //restart listening for messages
+                        }
                     }
-                    if (!_writeQueue.IsEmpty)
+                    catch (Exception e)
                     {
-                        _gateReadMessageSize.Cancel();
-                        //Console.WriteLine("Joining gateReadMessageSize");
-                        _gateReadMessageSize.Join(); // wait 1000ms for debugging purposes
-                        _gateWrite.Run();
-                        _gateWrite.Join(); //join until it completes
-                        _gateReadMessageSize.Run();  //restart listening for messages
+                        System.Diagnostics.Debugger.Break();
+                        Console.WriteLine(e.Message);
                     }
-                    System.Threading.Thread.Sleep(1); //play nice with other threads
+                    W.Threading.Thread.Sleep(1); //play nice with other threads
                 }
             });
         }
@@ -340,6 +353,7 @@ namespace W.IO.Pipes
             if (UseCompression)
                 formatted = formatted.AsCompressed();
             _writeQueue.Enqueue(formatted);
+            //Console.WriteLine("There are {0} items to write", _writeQueue.Count);
         }
 
         /// <summary>

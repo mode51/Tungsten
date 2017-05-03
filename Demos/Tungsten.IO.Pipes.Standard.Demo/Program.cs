@@ -14,9 +14,10 @@ namespace W.Demo
                 Console.WriteLine("1.  Test PipeClient");
                 Console.WriteLine("2.  Test PipeClient(sending objects)");
                 Console.WriteLine("3.  Test CompressedPipeClient(sending objects)");
+                Console.WriteLine("4.  Test Static Write Method");
 
                 Console.WriteLine("Press <Escape> To Exit");
-                var selection = Console.ReadKey();
+                var selection = Console.ReadKey(true);
                 switch (selection.Key)
                 {
                     case ConsoleKey.D1:
@@ -30,6 +31,9 @@ namespace W.Demo
                     case ConsoleKey.D3:
                         Console.Clear();
                         TestCompressedPipeClient.Run();
+                        break;
+                    case ConsoleKey.D4:
+                        TestStaticPipeClientMethods.Run();
                         break;
                     case ConsoleKey.Escape:
                         exit = true;
