@@ -79,6 +79,21 @@ namespace W.Threading
         {
             Cts?.Cancel();
         }
+        /// <summary>
+        /// <para>
+        /// Cancels the thread by calling Cancel on the CancellationTokenSource.  The value should be checked in the code in the specified Action parameter.
+        /// </para>
+        /// </summary>
+        /// <param name="msForceAbortDelay">Abort the thread if it doesn't terminate before the specified number of milliseconds elapse</param>
+        public virtual void Cancel(int msForceAbortDelay)
+        {
+            Cancel();
+
+            if (!Join(msForceAbortDelay)) //give the thread 5 seconds to close down, otherwise force it
+            {
+                Cts?.Cancel(true);
+            }
+        }
 
         /// <summary>
         /// True if the thread is running, otherwise false

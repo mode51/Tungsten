@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tungsten.Domains\DomainTests.cs" />
+    <Compile Include="Tungsten.IO.Pipes\TestPipes.cs" />
     <Compile Include="Tungsten.LiteDb\LiteDbTests.cs" />
     <Compile Include="Tungsten\AsExtensionsTests.cs" />
     <Compile Include="Tungsten\CallResultTests.cs" />
@@ -76,6 +77,10 @@
     <ProjectReference Include="..\..\Src\Tungsten.Domains\Tungsten.Domains.csproj">
       <Project>{6be16433-6fef-4266-84ff-8ae1c6b5b14a}</Project>
       <Name>Tungsten.Domains</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Src\Tungsten.IO.Pipes\Tungsten.IO.Pipes.csproj">
+      <Project>{084b7039-1d07-4e79-9bba-4e202f1a6bdb}</Project>
+      <Name>Tungsten.IO.Pipes</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Src\Tungsten.LiteDb\Tungsten.LiteDb.csproj">
       <Project>{f2426bac-7157-423d-aac2-3caeb52d877b}</Project>

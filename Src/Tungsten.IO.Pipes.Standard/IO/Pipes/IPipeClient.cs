@@ -9,6 +9,12 @@ namespace W.IO.Pipes
     public interface IPipeClient
     {
         /// <summary>
+        /// Can be useful for large data sets.  Set to True to use compression, otherwise False
+        /// </summary>
+        /// <remarks>Make sure both server and client have the same value</remarks>
+        bool UseCompression { get; set; }
+
+        /// <summary>
         /// Initializes the instance with a pre-existing, connected, PipeStream
         /// </summary>
         /// <param name="stream">The previously connected pipe client</param>

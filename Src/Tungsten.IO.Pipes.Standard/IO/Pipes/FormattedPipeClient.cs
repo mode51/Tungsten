@@ -10,7 +10,6 @@ namespace W.IO.Pipes
     /// <remarks>Override the FormatReceivedMessage and FormatMessageToSend functions to customize the formatting</remarks>
     public class FormattedPipeClient<TDataType> : PipeTransceiver<TDataType>, IPipeClient where TDataType : class /* Initialize and Dispose are implemented by PipeTransmitter */
     {
-        private static int NumberOfInstances = 0;
         private Lockable<bool> IsConnected { get; } = new Lockable<bool>(false);
 
         /// <summary>
@@ -74,14 +73,7 @@ namespace W.IO.Pipes
             });
             if (Stream.Value?.IsConnected ?? false)
             {
-                try
-                {
-                    Initialize(Stream.Value, false);
-                }
-                catch (Exception e)
-                {
-                    Exception?.Invoke(this, e);
-                }
+                Initialize(Stream.Value, false);
                 Connected?.Invoke(this);
                 return true;
             }
@@ -99,6 +91,9 @@ namespace W.IO.Pipes
                 s.Disconnect(); //I think this needs to execute before the base disposes
 
             base.OnDispose();
+#if !NETSTANDARD1_4
+            s?.Close();
+#endif
             s?.Dispose();
             if (Stream.Value is NamedPipeClientStream c)
                 c.Dispose();
@@ -126,11 +121,6 @@ namespace W.IO.Pipes
         /// </summary>
         ~FormattedPipeClient()
         {
-            NumberOfInstances -= 1;
-            if (NumberOfInstances == 0)
-            {
-                _clients.Clear();
-            }
             Dispose();
         }
 
@@ -163,6 +153,35 @@ namespace W.IO.Pipes
                     return; //just fail
             }
             client.Write(message);
+        }
+
+        private static object _lockObj = new object();
+        public static void RemoveNamedPipeLogger()
+        {
+            lock (_lockObj)
+            {
+                while (_clients.Count > 0)
+                {
+                    var key = _clients.Keys[0];
+                    var client = _clients[key];
+                    client.Dispose();
+                    _clients.Remove(key);
+                }
+            }
+        }
+
+        private static string logPipeName = string.Empty;
+        /// <summary>
+        /// Configures W.Logging.Log to send information over a named pipe
+        /// </summary>
+        /// <param name="pipeName">The name of the named pipe</param>
+        public static void AddNamedPipeLogger(string pipeName)
+        {
+            logPipeName = pipeName;
+            W.Logging.Log.LogTheMessage += (category, message) =>
+            {
+                Write(logPipeName, message.AsBytes());
+            };
         }
     }
 }

@@ -15,11 +15,6 @@ namespace W.Demo
             {
                 server.ClientConnected += (client) =>
                 {
-                    client.As<W.IO.Pipes.PipeClient>().Exception += (o, e) =>
-                    {
-                        if (e != null)
-                            Console.WriteLine("Server Exception: " + e.Message);
-                    };
                     client.As<W.IO.Pipes.PipeClient>().MessageReceived += (o, m) =>
                     {
                         Console.WriteLine("Server Received: " + m.AsString());

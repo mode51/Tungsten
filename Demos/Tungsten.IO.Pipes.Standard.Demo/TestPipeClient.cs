@@ -15,11 +15,6 @@ namespace W.Demo
             {
                 server.ClientConnected += (client) =>
                 {
-                    client.Exception += (o, e) =>
-                    {
-                        if (e != null)
-                            Console.WriteLine("Server Exception: " + e.Message);
-                    };
                     client.MessageReceived += (o, m) =>
                     {
                         Console.WriteLine("Server Echo: " + m.AsString());
@@ -43,11 +38,6 @@ namespace W.Demo
                         client.Connected += (o) =>
                         {
                             Console.WriteLine("Client Connected");
-                        };
-                        client.Exception += (o, e) =>
-                        {
-                            if (e != null)
-                                Console.WriteLine("Client Exception: " + e.Message);
                         };
                         client.MessageReceived += (o, m) =>
                         {

@@ -37,6 +37,12 @@ namespace W.IO.Pipes
         public Action<TClientType> ClientConnected { get; set; }
 
         /// <summary>
+        /// Can be useful for large data sets.  Set to True to use compression, otherwise False
+        /// </summary>
+        /// <remarks>Make sure both server and client have the same value</remarks>
+        public bool UseCompression { get; set; }
+
+        /// <summary>
         /// Constructs a new PipeClient
         /// </summary>
         /// <param name="name">The name of the pipe to use</param>
@@ -81,40 +87,60 @@ namespace W.IO.Pipes
                     try
                     {
                         //blocks until a client has connected
-                        stream?.WaitForConnectionAsync(_cts.Token).ContinueWith(task =>
-                        {
-                            if (_cts?.IsCancellationRequested ?? true)
-                            {
-                                stream?.Dispose();
-                                return;
-                            }
-                            if (stream?.IsConnected ?? false)
-                            {
-                                //var p = (TClientType)Activator.CreateInstance(typeof(TClientType), stream);
-                                var client = (TClientType)Activator.CreateInstance(typeof(TClientType));
-                                client.Initialize(stream, true);
-                                client.Disconnected += (o, e) =>
-                                {
-                                    lock (_lockCleanup)
-                                    {
-                                        try
-                                        {
-                                            if (o != null && o is IPipeClient c)
-                                            {
-                                                c.Dispose();
-                                                _clients.Remove(c);
-                                            }
-                                        }
-                                        finally
-                                        {
-                                        }
-                                    }
-                                };
-                                _clients.Add(client);
-                                ClientConnected?.Invoke(client);
-                            }
-                        }).Wait(cts.Token);
+#if NETSTANDARD1_4
+                        stream?.WaitForConnectionAsync(_cts.Token).ContinueWith(task => InitializeClient(stream, cts)).Wait(cts.Token);
+#else
+                        stream.WaitForConnection();
+                        InitializeClient(stream, cts);
+                        //var test = stream.BeginWaitForConnection(ar => 
+                        //{
+                        //    var s = (NamedPipeServerStream)ar.AsyncState;
+                        //    s.EndWaitForConnection(ar);
+
+                        //}, stream);
+#endif
+//                        {
+//                            if (_cts?.IsCancellationRequested ?? true)
+//                            {
+//                                stream?.Dispose();
+//                                return;
+//                            }
+//                            if (stream?.IsConnected ?? false)
+//                            {
+//                                //var p = (TClientType)Activator.CreateInstance(typeof(TClientType), stream);
+//                                var client = (TClientType)Activator.CreateInstance(typeof(TClientType));
+//                                client.Initialize(stream, true);
+//                                client.Disconnected += (o, e) =>
+//                                {
+//                                    lock (_lockCleanup)
+//                                    {
+//                                        try
+//                                        {
+//                                            if (o != null && o is IPipeClient c)
+//                                            {
+//                                                c.Dispose();
+//                                                _clients.Remove(c);
+//                                            }
+//                                        }
+//                                        finally
+//                                        {
+//                                        }
+//                                    }
+//                                };
+//                                _clients.Add(client);
+//                                ClientConnected?.Invoke(client);
+//                            }
+//                        }
+//#if NETSTANDARD1_4
+//                        ).Wait(cts.Token);
+//#endif
                     }
+#if !NETSTANDARD1_4
+                    catch (System.Threading.ThreadAbortException)
+                    {
+                        System.Threading.Thread.ResetAbort();
+                    }
+#endif
                     catch (System.IO.IOException e)
                     {
                         System.Diagnostics.Debugger.Break(); //why are we here?
@@ -140,6 +166,66 @@ namespace W.IO.Pipes
                     System.Threading.Thread.Sleep(1); //play nice with other threads
                 } //while
             });
+        }
+
+        private void InitializeClient(NamedPipeServerStream stream, CancellationTokenSource cts)
+        {
+            try
+            {
+                if (_cts?.IsCancellationRequested ?? true)
+                {
+                    stream?.Dispose();
+                    return;
+                }
+                if (stream?.IsConnected ?? false)
+                {
+                    //var p = (TClientType)Activator.CreateInstance(typeof(TClientType), stream);
+                    var client = (IPipeClient)Activator.CreateInstance(typeof(TClientType));
+                    client.Initialize(stream, true);
+                    client.UseCompression = this.UseCompression;
+                    client.Disconnected += (o, e) =>
+                    {
+                        lock (_lockCleanup)
+                        {
+                            try
+                            {
+                                if (o != null && o is IPipeClient c)
+                                {
+                                    c.Dispose();
+                                    _clients.Remove(c);
+                                }
+                            }
+                            finally
+                            {
+                            }
+                        }
+                    };
+                    _clients.Add(client);
+                    ClientConnected?.Invoke((TClientType)client);
+                }
+            }
+            catch (System.IO.IOException e)
+            {
+                System.Diagnostics.Debugger.Break(); //why are we here?
+                Exception?.Invoke(this, e);
+            }
+            catch (System.Threading.Tasks.TaskCanceledException)
+            {
+                //ignore
+                System.Diagnostics.Debugger.Break(); //why are we here?
+                                                     //Exception?.Invoke(this, e);
+            }
+            catch (System.OperationCanceledException) //happens when the server is closed
+            {
+                stream?.Dispose(); //dispose the last allocated stream
+                                   //ignore
+                                   //Exception?.Invoke(this, e);
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debugger.Break(); //why are we here?
+                Exception?.Invoke(this, e);
+            }
         }
         /// <summary>
         /// Stops the server and frees resources
