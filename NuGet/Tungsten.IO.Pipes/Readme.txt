@@ -1,5 +1,10 @@
 ﻿Named pipe wrappers to easily add asynchronous named pipes to your application.  Server and client are provided.
 
+5.4.2017 - v1.2.6
+Rewrote PipeTransceiver.cs to be simpler and use less resources
+Fixed some bugs in the process
+Added Tungsten.IO.Pipes (for .Net45)
+
 5.3.2017 - v1.2.5
 Added static Write(string pipeName, byte[] message) method to W.IO.Pipes.FormattedClient and W.IO.Pipes.PipeClient
 Fixed a bug where the pipe server would stop listening for messages

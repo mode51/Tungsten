@@ -67,7 +67,7 @@ namespace W.Tests.Tungsten.IO.Pipes
         }
 
         [Test]
-        public void TestNamedPipeLogging()
+        public void TestNamedPipeLoggingWithHost()
         {
             var mreQuit = new System.Threading.ManualResetEvent(false);
             int count = 0;
@@ -99,6 +99,20 @@ namespace W.Tests.Tungsten.IO.Pipes
                 Assert.IsTrue(mreQuit.WaitOne(10000));
                 Console.WriteLine("ConsoleLogger Complete");
             }
+            //optionally, you can manually Stop the logging Pipe
+            W.IO.Pipes.PipeClient.RemoveNamedPipeLogger();
+        }
+
+        [Test]
+        public void TestNamedPipeLogging()
+        {
+            W.IO.Pipes.PipeClient.AddNamedPipeLogger("ConsoleLogger");
+
+            for (int t = 0; t < 10; t++)
+                W.Logging.Log.i("Test Log Message {0}", t);
+
+            Console.WriteLine("ConsoleLogger Complete");
+
             //optionally, you can manually Stop the logging Pipe
             W.IO.Pipes.PipeClient.RemoveNamedPipeLogger();
         }

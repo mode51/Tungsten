@@ -7,6 +7,24 @@ using System.Threading.Tasks;
 namespace W.IO.Pipes
 {
     /// <summary>
+    /// Specified the direction of data for the Pipe
+    /// </summary>
+    public enum EPipeDirection
+    {
+        /// <summary>
+        /// Receive data only
+        /// </summary>
+        In = PipeDirection.In,
+        /// <summary>
+        /// Send data only
+        /// </summary>
+        Out = PipeDirection.Out,
+        /// <summary>
+        /// Send and Receive data
+        /// </summary>
+        InOut = PipeDirection.InOut
+    }
+    /// <summary>
     /// Wraps a NamedPipeServerStream for easier use
     /// </summary>
     public class PipeServer<TClientType> : IDisposable where TClientType : IPipeClient
@@ -61,7 +79,14 @@ namespace W.IO.Pipes
         /// <summary>
         /// Creates the underlying NamedPipeClientStream and connects to the server
         /// </summary>
-        public void Start(int maxConnections = -1, PipeDirection direction = PipeDirection.InOut)
+        public void Start()
+        {
+            Start(-1, EPipeDirection.InOut);
+        }
+        /// <summary>
+        /// Creates the underlying NamedPipeClientStream and connects to the server
+        /// </summary>
+        public void Start(int maxConnections = -1, EPipeDirection direction = EPipeDirection.InOut)
         {
             Stop();
             _cts = new CancellationTokenSource();
@@ -73,7 +98,7 @@ namespace W.IO.Pipes
                     NamedPipeServerStream stream = null;
                     try
                     {
-                        stream = new NamedPipeServerStream(_name, direction, maxConnections, PipeTransmissionMode.Byte, PipeOptions.Asynchronous);
+                        stream = new NamedPipeServerStream(_name, (PipeDirection)direction, maxConnections, PipeTransmissionMode.Byte, PipeOptions.Asynchronous);
                         //Task.Run(() => { Started?.Invoke(this); });
                     }
                     catch (System.IO.IOException)

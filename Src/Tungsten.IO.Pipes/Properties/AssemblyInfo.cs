@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Tungsten.IO.Pipes")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Named pipe wrappers to easily add asynchronous named pipes to your application.  Server and client are provided.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Tungsten.IO.Pipes")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCopyright("Copyright ©  2017 Jordan Duerksen")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

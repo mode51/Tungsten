@@ -175,11 +175,18 @@ namespace W.IO.Pipes
         /// Configures W.Logging.Log to send information over a named pipe
         /// </summary>
         /// <param name="pipeName">The name of the named pipe</param>
-        public static void AddNamedPipeLogger(string pipeName)
+        /// <param name="autoAddTimestamp">If true, the message will be prefixed with a timestamp</param>
+        public static void AddNamedPipeLogger(string pipeName, bool autoAddTimestamp = true)
         {
             logPipeName = pipeName;
             W.Logging.Log.LogTheMessage += (category, message) =>
             {
+                if (autoAddTimestamp)
+#if NETSTANDARD1_4
+                    message = string.Format("{0}: {1} - {2}", DateTime.Now.TimeOfDay.ToString(), category.ToString(), message);
+#else
+                    message = string.Format("{0}: {1} - {2}", DateTime.Now.TimeOfDay.ToString(), category.ToString(), message);
+#endif
                 Write(logPipeName, message.AsBytes());
             };
         }
