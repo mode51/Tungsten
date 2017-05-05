@@ -3,7 +3,7 @@
   <metadata>
     <id>Tungsten.IO.Pipes</id>
     <title>Tungsten.IO.Pipes</title>
-    <version>1.2.6.0</version>
+    <version>1.2.6.1</version>
     <authors>Jordan Duerksen</authors>
     <owners>Jordan Duerksen</owners>
     <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
@@ -21,7 +21,10 @@
         <dependency id="Tungsten" version="1.2.4" exclude="Build,Analyzers" />
         <dependency id="Newtonsoft.Json" version="10.0.2" exclude="Build,Analyzers" />
       </group>
-      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework="net45">
+        <dependency id="Tungsten" version="1.2.4" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="10.0.2" exclude="Build,Analyzers"/>
+      </group>
     </dependencies>
   </metadata>
   

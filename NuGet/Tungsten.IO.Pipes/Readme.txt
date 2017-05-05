@@ -1,5 +1,8 @@
 ﻿Named pipe wrappers to easily add asynchronous named pipes to your application.  Server and client are provided.
 
+5.5.2017 -v1.2.6.1
+Corrected the .Net45 dependencies in the NuGet package
+
 5.5.2017 - v1.2.6
 Rewrote PipeTransceiver.cs to be simpler and use less resources
 Fixed some bugs in the process
