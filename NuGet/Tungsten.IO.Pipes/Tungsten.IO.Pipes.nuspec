@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/mode51/Tungsten</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Named pipe wrappers to easily add asynchronous named pipes to your application.  Server and client are provided.</description>
+    <description>Named pipe wrappers to easily add asynchronous named pipes to your application.  Server and client are provided. Note that your application may require elevated permissions to use pipes.</description>
     <summary></summary>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2017 Jordan Duerksen</copyright>
