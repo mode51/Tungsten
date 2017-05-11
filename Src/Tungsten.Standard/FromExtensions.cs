@@ -13,7 +13,7 @@ namespace W
         /// <param name="this">The Base64 encoded string to convert</param>
         /// <returns>A non-encoded string</returns>
         //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [System.Diagnostics.DebuggerStepThrough]
+        //[System.Diagnostics.DebuggerStepThrough]
         public static string FromBase64(this string @this)
         {
             return Convert.FromBase64String(@this).AsString();
@@ -23,7 +23,7 @@ namespace W
         /// </summary>
         /// <param name="this">The Base64 encoded byte array to convert</param>
         /// <returns>A non-encoded string</returns>
-        [System.Diagnostics.DebuggerStepThrough]
+        //[System.Diagnostics.DebuggerStepThrough]
         public static string FromBase64(this byte[] @this)
         {
             return Convert.FromBase64String(@this.AsString()).AsString();
@@ -34,7 +34,7 @@ namespace W
         ///// <param name="this">The Base64 encoded byte array to convert</param>
         ///// <returns>A non-encoded string</returns>
         //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
-        //[System.Diagnostics.DebuggerStepThrough]
+        ////[System.Diagnostics.DebuggerStepThrough]
         //public static byte[] FromBase64(this byte[] @this)
         //{
         //    return Convert.FromBase64String(@this.AsString());

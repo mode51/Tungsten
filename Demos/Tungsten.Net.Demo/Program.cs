@@ -13,6 +13,8 @@ namespace W.Demo
                 Console.WriteLine("1.  Test GenericClient/GenericServer");
                 Console.WriteLine("2.  Test SecureStringClient");
                 Console.WriteLine("3.  Test SecureStringClient with compression");
+                Console.WriteLine("4.  Test StringLogger");
+                Console.WriteLine("5.  Test SecureStringLogger");
 
                 Console.WriteLine("Press <Escape> To Exit");
                 var selection = Console.ReadKey();
@@ -29,6 +31,14 @@ namespace W.Demo
                     case ConsoleKey.D3:
                         Console.Clear();
                         TestCompressedSecureStringClient.Run();
+                        break;
+                    case ConsoleKey.D4:
+                        Console.Clear();
+                        TestStringLogger.Run();
+                        break;
+                    case ConsoleKey.D5:
+                        Console.Clear();
+                        TestSecureStringLogger.Run();
                         break;
                     case ConsoleKey.Escape:
                         exit = true;

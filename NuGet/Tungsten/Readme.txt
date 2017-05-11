@@ -1,5 +1,9 @@
 ﻿Tungsten is a C# library to make application development easier.  See the wiki @ https://github.com/mode51/Tungsten/wiki for details, examples and use.
 
+5.11.2017 v1.2.5
+Added W.StringExtensions (string.IsValidBase64())
+Added W.Logging.CustomLogger to make adding custom loggers easier
+
 5.2.2017 v1.2.4
 All target dlls are now named Tungsten.dll - this should help with cross-framework compatibility
 

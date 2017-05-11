@@ -10,9 +10,9 @@
     <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
     <PackageIconUrl>https://github.com/mode51/Tungsten/blob/master/Tungsten/Tungsten.ico</PackageIconUrl>
     <PackageTags>Tungsten Tungsten.IO.Pipes Pipe NamedPipe W C# library</PackageTags>
-    <AssemblyVersion>1.2.6.0</AssemblyVersion>
-    <FileVersion>1.2.6.0</FileVersion>
-    <Version>1.2.6.0</Version>
+    <AssemblyVersion>1.2.7.0</AssemblyVersion>
+    <FileVersion>1.2.7.0</FileVersion>
+    <Version>1.2.7</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
     <PackageReleaseNotes></PackageReleaseNotes>
@@ -34,7 +34,7 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
     <PackageReference Include="System.IO.Pipes" Version="4.3.0" />
-    <PackageReference Include="Tungsten" Version="1.2.4" />
+    <PackageReference Include="Tungsten" Version="1.2.5" />
   </ItemGroup>
 
 </Project>

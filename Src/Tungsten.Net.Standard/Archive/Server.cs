@@ -3,32 +3,28 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using System.Threading.Tasks;
 using W.Logging;
 
 namespace W.Net.Sockets
 {
     /// <summary>
-    /// Listens for socket connections and secures them with assymetric encryption
+    /// A socket server which listens for and handles client connections 
     /// </summary>
-    /// <typeparam name="TSocket">The type of Socket client to use</typeparam>
-    public class SecureServer<TSocket> : IDisposable where TSocket : class, ISecureSocket
-    {
-        private System.Net.Sockets.TcpListener _server;
+    /// <typeparam name="TClientType">The type of Socket client to use</typeparam>
+    public class Server<TClientType> : IDisposable where TClientType : class, IFormattedSocket  private System.Net.Sockets.TcpListener _server;
         private readonly object _lock = new object();
-        private readonly List<TSocket> _clients = new List<TSocket>();
+        private readonly List<TClientType> _clients = new List<TClientType>();
         private W.Threading.Thread _listenProc;
         private bool _isListening;
-        private W.Encryption.RSA _rsa = new W.Encryption.RSA();
 
         ///<summary>
         /// Called when a client connects to the server
         /// </summary>
-        public Action<TSocket> ClientConnected { get; set; }
+        public Action<TClientType> ClientConnected { get; set; }
         /// <summary>
         /// Called when a client disconnects normally or by exception
         /// </summary>
-        public Action<TSocket, IPEndPoint, Exception> ClientDisconnected { get; set; }
+        public Action<TClientType, IPEndPoint, Exception> ClientDisconnected { get; set; }
         /// <summary>
         /// Called when the value of IsListening changes to true or false
         /// </summary>
@@ -58,25 +54,26 @@ namespace W.Net.Sockets
         /// <summary>
         /// Constructs a new Server
         /// </summary>
-        public SecureServer()
+        public Server()
         {
         }
         /// <summary>
-        /// Disposes and deconstructs the SecureServer instance
+        /// Disposes and deconstructs the Server instance
         /// </summary>
-        ~SecureServer()
+        ~Server()
         {
             Dispose();
         }
 
         private void ListenForClientsProc_OnComplete(bool success, Exception e)
         {
-            Log.i("Tungsten.Net.SecureServer Shutdown Complete(result={0})", success);
+            Log.i("Tungsten.Net.SecureServer Shutdown Complete(result={0}", success);
             if (e != null)
                 Log.e(e);
             if (IsListening)
                 Stop();
         }
+
         private void ListenForClientsProc(CancellationTokenSource cts)
         {
             IsListeningChanged?.Invoke(true);
@@ -127,22 +124,35 @@ namespace W.Net.Sockets
                 IsListeningChanged?.Invoke(IsListening);
             }
         }
-
-        private void OnCreateClientHandler(TcpClient client)
+        protected virtual TClientType CreateClient(TcpClient client)
+        {
+            var handler = (TClientType)Activator.CreateInstance(typeof(TClientType), client);
+            return handler;
+        }
+        /// <summary>
+        /// Configures a new server-side client connection
+        /// </summary>
+        /// <param name="client">The new server-side client connection</param>
+        protected virtual void OnCreateClientHandler(TcpClient client)
         {
             //var handler = new TClientType(client);
-            var handler = (TSocket)Activator.CreateInstance(typeof(TSocket), client, _rsa);
-            //Notifications.ClientCreated?.Invoke(handler);
-            handler.As<IFormattedSocket>().Disconnected += (s, remoteEndPoint, exception) =>
+            var handler = CreateClient(client);// (TClientType)Activator.CreateInstance(typeof(TClientType), client);
+            handler.Disconnected += (s, remoteEndPoint, exception) =>
             {
-                //s.As<SecureStringClient>()?.SendPublicKey();
-                var secureSocket = s.As<TSocket>();
-                if (secureSocket == null)
-                    throw new ArgumentOutOfRangeException(nameof(s), "Parameter s should have been a legitimate instance of SecureByteClient");
-                if (_clients.Contains(secureSocket))
-                    _clients.Remove(secureSocket);
-                ClientDisconnected?.Invoke(secureSocket, remoteEndPoint, exception);
+                if (_clients.Contains(handler))
+                    _clients.Remove(handler);
+                ClientDisconnected?.Invoke(handler, remoteEndPoint, exception);
             };
+            //Notifications.ClientCreated?.Invoke(handler);
+            //handler.As<IFormattedSocket>().Disconnected += (s, remoteEndPoint, exception) =>
+            //{
+            //    var proxy = s.As<TClientType>();
+            //    if (proxy == null)
+            //        throw new ArgumentOutOfRangeException(nameof(s), "Parameter s should have been a legitimate instance of SecureByteClient");
+            //    if (_clients.Contains(proxy))
+            //        _clients.Remove(proxy);
+            //    ClientDisconnected?.Invoke(proxy, remoteEndPoint, exception);
+            //};
             _clients.Add(handler);
             ClientConnected?.Invoke(handler);
             Log.i("Server created client handler");
@@ -155,9 +165,13 @@ namespace W.Net.Sockets
         /// <param name="port">The port on which to listen</param>
         public void Start(IPAddress ipAddress, int port)
         {
+            Start(new IPEndPoint(ipAddress, port));
+        }
+        public void Start(IPEndPoint ipEndPoint)
+        {
             try
             {
-                _server = new TcpListener(ipAddress, port);
+                _server = new TcpListener(ipEndPoint.Address, ipEndPoint.Port);
                 _server.Start();
                 _listenProc = W.Threading.Thread.Create(ListenForClientsProc, ListenForClientsProc_OnComplete);
                 IsListening = true;
@@ -167,7 +181,6 @@ namespace W.Net.Sockets
                 Log.e(e);
             }
         }
-
         /// <summary>
         /// Stops listening for and disconnects all current connections
         /// </summary>

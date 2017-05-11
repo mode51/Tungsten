@@ -17,6 +17,7 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <TargetFrameworkProfile />
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -55,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Net\TestNet.cs" />
     <Compile Include="Tungsten.Domains\DomainTests.cs" />
     <Compile Include="Tungsten.IO.Pipes\TestPipes.cs" />
     <Compile Include="Tungsten.LiteDb\LiteDbTests.cs" />
@@ -85,6 +87,10 @@
     <ProjectReference Include="..\..\Src\Tungsten.LiteDb\Tungsten.LiteDb.csproj">
       <Project>{f2426bac-7157-423d-aac2-3caeb52d877b}</Project>
       <Name>Tungsten.LiteDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Src\Tungsten.Net\Tungsten.Net.csproj">
+      <Project>{f2fe9090-34c9-4f7e-a932-7f3cf8d00567}</Project>
+      <Name>Tungsten.Net</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Src\Tungsten\Tungsten.csproj">
       <Project>{46040e3b-ae52-42f9-9c1b-8566fc6765c5}</Project>

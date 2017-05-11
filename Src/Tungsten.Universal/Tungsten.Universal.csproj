@@ -16,6 +16,7 @@
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <AssemblyVersion>1.2.5.0</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -109,6 +110,15 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Tungsten.Standard\Logging\CustomLogger.cs">
+      <Link>Logging\CustomLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\Logging\Logging.cs">
+      <Link>Logging\Logging.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\StringExtensions.cs">
+      <Link>StringExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\Tungsten\ActionQueue.cs">
       <Link>ActionQueue.cs</Link>
     </Compile>
@@ -123,9 +133,6 @@
     </Compile>
     <Compile Include="..\Tungsten\Lockable.cs">
       <Link>Lockable.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten\Logging.cs">
-      <Link>Logging.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten\PropertyChangedNotifier.cs">
       <Link>PropertyChangedNotifier.cs</Link>

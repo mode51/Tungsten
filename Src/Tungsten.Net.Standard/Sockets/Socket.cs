@@ -44,13 +44,14 @@ namespace W.Net.Sockets
         /// <summary>
         /// The remote IPEndPoint for this socket
         /// </summary>
-        public IPEndPoint RemoteEndPoint
-        {
-            get
-            {
-                return _client?.Client?.RemoteEndPoint.As<IPEndPoint>() ?? null;
-            }
-        }
+        public IPEndPoint RemoteEndPoint { get; private set; }
+        //public IPEndPoint RemoteEndPoint
+        //{
+        //    get
+        //    {
+        //        return _client?.Client?.RemoteEndPoint.As<IPEndPoint>() ?? null;
+        //    }
+        //}
         /// <summary>
         /// Constructs a ByteClient
         /// </summary>
@@ -68,8 +69,11 @@ namespace W.Net.Sockets
             if (!tcpClient.Connected)
                 throw new ArgumentOutOfRangeException(nameof(tcpClient), "Client must already be connected");
             _client = tcpClient;
+            var ep = _client.Client.RemoteEndPoint.As<IPEndPoint>();
+            if (ep != null)
+                RemoteEndPoint = new IPEndPoint(ep.Address, ep.Port);
             if (_client != null)
-                FinalizeConnection(_client.Client.RemoteEndPoint.As<IPEndPoint>());
+                FinalizeConnection(RemoteEndPoint);
         }
         /// <summary>
         /// Disposes and deconstructs the Socket instance
@@ -104,9 +108,10 @@ namespace W.Net.Sockets
 
 
             //Name = Guid.NewGuid().ToString() + "." + _client.Client.RemoteEndPoint.As<IPEndPoint>()?.Address.ToString() ?? "";
-            var ipEndPoint = _client.Client.RemoteEndPoint.As<IPEndPoint>();
-            if (ipEndPoint != null)
-                Name = ipEndPoint.Address.ToString() + ":" + ipEndPoint.Port.ToString();
+            Name = RemoteEndPoint.ToString();
+            //var ipEndPoint = RemoteEndPoint;
+            //if (ipEndPoint != null)
+            //    Name = ipEndPoint.Address.ToString() + ":" + ipEndPoint.Port.ToString();
         }
 
         /// <summary>
@@ -146,7 +151,8 @@ namespace W.Net.Sockets
                 }
                 catch (Exception e)
                 {
-                    Log.e(e);
+                    System.Diagnostics.Debug.WriteLine(e.ToString());
+                    System.Diagnostics.Debugger.Break();
                 }
             }
             MessageReceived?.Invoke(this, message);
@@ -167,9 +173,9 @@ namespace W.Net.Sockets
         /// <param name="remotePort">The port on which the Tungsten RPC Server is listening</param>
         /// <returns>A bool specifying success/failure</returns>
         /// <remarks>If an exception occurs, the Disconnected delegate will be called with the specific exception</remarks>
-        public async Task ConnectAsync(string remoteAddress, int remotePort)
+        public async Task<bool> ConnectAsync(string remoteAddress, int remotePort)
         {
-            await ConnectAsync(IPAddress.Parse(remoteAddress), remotePort);
+            return await ConnectAsync(IPAddress.Parse(remoteAddress), remotePort);
         }
         /// <summary>
         /// Attempts to connect to a local or remote Tungsten RPC Server
@@ -178,42 +184,44 @@ namespace W.Net.Sockets
         /// <param name="remotePort">The port on which the Tungsten RPC Server is listening</param>
         /// <returns>A bool specifying success/failure</returns>
         /// <remarks>If an exception occurs, the Disconnected delegate will be called with the specific exception</remarks>
-        public async Task ConnectAsync(IPAddress remoteAddress, int remotePort)
+        public async Task<bool> ConnectAsync(IPAddress remoteAddress, int remotePort)
         {
             Exception ex = null;
             try
             {
+                RemoteEndPoint = new IPEndPoint(remoteAddress, remotePort);
                 _client = new TcpClient();
                 await _client.ConnectAsync(remoteAddress, remotePort);
             }
             catch (ArgumentNullException e) //the address parameter is null
             {
                 ex = e;
-                Log.e(e);
+                System.Diagnostics.Debug.WriteLine(string.Format("Argument Null Exception: {0}", e.Message));
             }
             catch (ArgumentOutOfRangeException e) //the port is not between MinPort and MaxPort
             {
                 ex = e;
-                Log.e(e);
+                System.Diagnostics.Debug.WriteLine(string.Format("Argument Out of Range Exception: {0}", e.Message));
             }
             catch (SocketException e) //an error occured while accessing the socket.
             {
                 ex = e;
                 var errorCode = Enum.GetName(typeof(System.Net.Sockets.SocketError), e.SocketErrorCode);
-                Log.e("Socket Exception({0}): {1}", errorCode, e.Message);
+                System.Diagnostics.Debug.WriteLine(string.Format("Socket Exception({0}): {1}", errorCode, e.Message));
             }
             catch (ObjectDisposedException e) //TcpClient is closed
             {
                 ex = e;
-                Log.e(e);
+                System.Diagnostics.Debug.WriteLine(string.Format("Object Disposed Exception: {0}", e.Message));
             }
             if (ex != null)
             {
                 Disconnect(ex);
-                return;
+                return false;
             }
-            FinalizeConnection(_client.Client.RemoteEndPoint.As<IPEndPoint>());
-            OnConnected(_client.Client.RemoteEndPoint.As<IPEndPoint>());
+            FinalizeConnection(RemoteEndPoint);
+            OnConnected(RemoteEndPoint);
+            return true;
         }
         /// <summary>
         /// Disconnects from the remote server and cleans up resources
@@ -223,7 +231,7 @@ namespace W.Net.Sockets
         {
             if (_client == null)
                 return;
-            var remoteEndPoint = _client.Client.RemoteEndPoint.As<IPEndPoint>(); //retain a reference
+            //var remoteEndPoint = _client.Client.RemoteEndPoint.As<IPEndPoint>(); //retain a reference
             _reader?.Stop();
             _reader = null;
             _writer?.Stop();
@@ -236,7 +244,16 @@ namespace W.Net.Sockets
             _client?.Close();
 #endif
             _client = null;
-            OnDisconnected(remoteEndPoint, e);
+            OnDisconnected(RemoteEndPoint, e);
+        }
+        /// <summary>
+        /// Enqueues message to send
+        /// </summary>
+        /// <param name="message">The message to send</param>
+        /// <param name="immediate">If true, the message is sent unformatted and immediately</param>
+        public virtual void Send(byte[] message)
+        {
+            Send(message, false, false);
         }
 
         /// <summary>
@@ -244,16 +261,16 @@ namespace W.Net.Sockets
         /// </summary>
         /// <param name="message">The message to send</param>
         /// <param name="immediate">If true, the message is sent unformatted and immediately</param>
-        public virtual void Send(byte[] message, bool immediate = false)
+        public virtual void Send(byte[] message, bool exact, bool immediate)
         {
             if (!IsConnected || message == null)
                 return;
-            if (UseCompression)
+            var size = message.Length;
+            if (!exact && UseCompression)
             {
-                var size = message.Length;
                 message = message.AsCompressed();
-                Log.v("Original Size = {0}, Compressed Size = {1}", size, message.Length);
             }
+            Console.WriteLine("Sending: Original Size = {0}, Actual Size = {1}", size, message.Length);
             if (immediate)
                 W.Net.TcpHelpers.SendMessageAsync(_networkStream, _client.SendBufferSize, message);
             else

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace W.Logging
 {
@@ -16,7 +17,7 @@ namespace W.Logging
             try
             {
                 System.Diagnostics.Debug.WriteLine($"{typeName}: {msg}");
-                Console.WriteLine($"{typeName}: {msg}");
+                //Console.WriteLine($"{typeName}: {msg}");
             }
             catch
             {

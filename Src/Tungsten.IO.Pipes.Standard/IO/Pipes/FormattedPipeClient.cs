@@ -10,7 +10,7 @@ namespace W.IO.Pipes
     /// <remarks>Override the FormatReceivedMessage and FormatMessageToSend functions to customize the formatting</remarks>
     public class FormattedPipeClient<TDataType> : PipeTransceiver<TDataType>, IPipeClient where TDataType : class /* Initialize and Dispose are implemented by PipeTransmitter */
     {
-        private Lockable<bool> IsConnected { get; } = new Lockable<bool>(false);
+        internal Lockable<bool> IsConnected { get; } = new Lockable<bool>(false);
 
         /// <summary>
         /// Called when the client connects to the server
@@ -54,7 +54,7 @@ namespace W.IO.Pipes
         }
 
         /// <summary>
-        /// Attempts to connect to the server
+        /// Attempts to connect to the local named pipe server
         /// </summary>
         /// <returns>True if a connection was established, otherwise false</returns>
         public bool Connect(string pipeName, PipeDirection pipeDirection = PipeDirection.InOut)
@@ -62,7 +62,7 @@ namespace W.IO.Pipes
             return Connect(".", pipeName, pipeDirection);
         }
         /// <summary>
-        /// Attempts to connect to the server
+        /// Attempts to connect to a local or remote named pipe server
         /// </summary>
         /// <returns>True if a connection was established, otherwise false</returns>
         public bool Connect(string serverName, string pipeName, PipeDirection pipeDirection = PipeDirection.InOut)
@@ -124,71 +124,30 @@ namespace W.IO.Pipes
             Dispose();
         }
 
-        private static System.Collections.Generic.SortedList<string, PipeClient> _clients = new System.Collections.Generic.SortedList<string, PipeClient>();
         /// <summary>
-        /// Writes a byte array to the specified pipe 
+        /// Writes a message to the specified local named pipe
         /// </summary>
         /// <param name="pipeName">The name of the named pipe</param>
-        /// <param name="message">The message to send</param>
+        /// <param name="message">The message to write</param>
         public static void Write(string pipeName, byte[] message)
         {
-            if (!_clients.ContainsKey(pipeName))
-            {
-                var newClient = new PipeClient();
-                newClient.Disconnected += (o, e) =>
-                {
-                    var c = o.As<W.IO.Pipes.PipeClient>();
-                    c.Dispose();
-                    if (_clients.ContainsValue(c))
-                        _clients.RemoveAt(_clients.IndexOfValue(c));
-                };
-                _clients.Add(pipeName, newClient);
-
-            }
-            var client = _clients[pipeName];
-
-            if (!client.IsConnected.Value)
-            {
-                if (!client.Connect(pipeName))
-                    return; //just fail
-            }
-            client.Write(message);
+            Write(".", pipeName, message);
         }
-
-        private static object _lockObj = new object();
-        public static void RemoveNamedPipeLogger()
+        /// <summary>
+        /// Writes a message to the specified named pipe
+        /// </summary>
+        /// <param name="serverName">The machine name on which the named pipe is hosted</param>
+        /// <param name="pipeName">The name of the named pipe</param>
+        /// <param name="message">The message to write</param>
+        public static void Write(string serverName, string pipeName, byte[] message)
         {
-            lock (_lockObj)
+            using (var client = new PipeClient())
             {
-                while (_clients.Count > 0)
+                if (client.Connect(serverName, pipeName, PipeDirection.InOut))
                 {
-                    var key = _clients.Keys[0];
-                    var client = _clients[key];
-                    client.Dispose();
-                    _clients.Remove(key);
+                    client.Write(message);
                 }
             }
-        }
-
-        private static string logPipeName = string.Empty;
-        /// <summary>
-        /// Configures W.Logging.Log to send information over a named pipe
-        /// </summary>
-        /// <param name="pipeName">The name of the named pipe</param>
-        /// <param name="autoAddTimestamp">If true, the message will be prefixed with a timestamp</param>
-        public static void AddNamedPipeLogger(string pipeName, bool autoAddTimestamp = true)
-        {
-            logPipeName = pipeName;
-            W.Logging.Log.LogTheMessage += (category, message) =>
-            {
-                if (autoAddTimestamp)
-#if NETSTANDARD1_4
-                    message = string.Format("{0}: {1} - {2}", DateTime.Now.TimeOfDay.ToString(), category.ToString(), message);
-#else
-                    message = string.Format("{0}: {1} - {2}", DateTime.Now.TimeOfDay.ToString(), category.ToString(), message);
-#endif
-                Write(logPipeName, message.AsBytes());
-            };
         }
     }
 }

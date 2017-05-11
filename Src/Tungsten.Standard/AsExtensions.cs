@@ -17,7 +17,7 @@ namespace W
     public static class AsExtensions
     {
         //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
-        //[System.Diagnostics.DebuggerStepThrough]
+        ////[System.Diagnostics.DebuggerStepThrough]
 
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace W
         /// <param name="this">The item to convert to type TType</param>
         /// <returns>Null if @this cannot be referenced as TType.  Otherwise, the item as TType</returns>
         /// <example><code>expression as type</code> becomes <code>expression&lt;type&gt;()</code></example>
-        [System.Diagnostics.DebuggerStepThrough]
+        ////[System.Diagnostics.DebuggerStepThrough]
         public static TType As<TType>(this object @this) where TType : class
         {
             return @this as TType;
@@ -37,7 +37,7 @@ namespace W
         /// </summary>
         /// <param name="this">The string to convert to Base64 encoding</param>
         /// <returns>The Base64 encoded string</returns>
-        [System.Diagnostics.DebuggerStepThrough]
+        ////[System.Diagnostics.DebuggerStepThrough]
         public static string AsBase64(this string @this)
         {
             return Convert.ToBase64String(@this.AsBytes());
@@ -47,7 +47,7 @@ namespace W
         /// </summary>
         /// <param name="this">The string to convert to Base64 encoding</param>
         /// <returns>The Base64 encoded string</returns>
-        [System.Diagnostics.DebuggerStepThrough]
+        //[System.Diagnostics.DebuggerStepThrough]
         public static string AsBase64(this byte[] @this)
         {
             return Convert.ToBase64String(@this);
@@ -57,7 +57,7 @@ namespace W
         /// </summary>
         /// <param name="this">The string to convert to an encoded byte array</param>
         /// <returns>A byte array encoding of the specified string</returns>
-        [System.Diagnostics.DebuggerStepThrough]
+        //[System.Diagnostics.DebuggerStepThrough]
         public static byte[] AsBytes(this string @this)
         {
             return System.Text.Encoding.UTF8.GetBytes(@this);
@@ -67,7 +67,7 @@ namespace W
         /// </summary>
         /// <param name="this">The encoded byte array to conver to a string</param>
         /// <returns>The string representation of the encoded byte array</returns>
-        [System.Diagnostics.DebuggerStepThrough]
+        //[System.Diagnostics.DebuggerStepThrough]
         public static string AsString(this byte[] @this)
         {
             return System.Text.Encoding.UTF8.GetString(@this);
@@ -79,7 +79,7 @@ namespace W
         /// <param name="index">The starting index</param>
         /// <param name="count">The number of bytes to convert</param>
         /// <returns>The string representation of the encoded byte array</returns>
-        [System.Diagnostics.DebuggerStepThrough]
+        //[System.Diagnostics.DebuggerStepThrough]
         public static string AsString(this byte[] @this, int index, int count)
         {
             return System.Text.Encoding.UTF8.GetString(@this, index, count);
@@ -89,7 +89,7 @@ namespace W
         /// </summary>
         /// <param name="this">The byte array used in creating the MemoryStream</param>
         /// <returns>A new MemoryStream initialized with the specified byte array</returns>
-        [System.Diagnostics.DebuggerStepThrough]
+        //[System.Diagnostics.DebuggerStepThrough]
         public static MemoryStream AsStream(this byte[] @this)
         {
             return new MemoryStream(@this);
@@ -99,7 +99,7 @@ namespace W
         /// </summary>
         /// <param name="this">The string used in creating the MemoryStream</param>
         /// <returns>A new MemoryStream initilized with the specified string</returns>
-        [System.Diagnostics.DebuggerStepThrough]
+        //[System.Diagnostics.DebuggerStepThrough]
         public static MemoryStream AsStream(this string @this)
         {
             return new MemoryStream(@this.AsBytes());
@@ -110,7 +110,7 @@ namespace W
         /// <typeparam name="TType">The type of object to serialize</typeparam>
         /// <param name="this">The object to serialize to Json</param>
         /// <returns>A Json formatted string representation of the specified object</returns>
-        [System.Diagnostics.DebuggerStepThrough]
+        //[System.Diagnostics.DebuggerStepThrough]
         public static string AsJson<TType>(this object @this)
         {
             var s = new System.Runtime.Serialization.Json.DataContractJsonSerializer(typeof(TType));
@@ -127,7 +127,7 @@ namespace W
         /// <typeparam name="TType">The type of object to serialize</typeparam>
         /// <param name="this">The object to serialize</param>
         /// <returns></returns>
-        [System.Diagnostics.DebuggerStepThrough]
+        //[System.Diagnostics.DebuggerStepThrough]
         public static string AsXml<TType>(this object @this)
         {
             var s = new System.Runtime.Serialization.DataContractSerializer(typeof(TType));
@@ -143,7 +143,7 @@ namespace W
         /// </summary>
         /// <param name="bytes">The byte array to compress</param>
         /// <returns>A byte array of compressed data</returns>
-        [System.Diagnostics.DebuggerStepThrough]
+        //[System.Diagnostics.DebuggerStepThrough]
         public static byte[] AsCompressed(this byte[] bytes)
         {
             //var output = new MemoryStream();
@@ -161,7 +161,7 @@ namespace W
         /// </summary>
         /// <param name="bytes">The byte array containing compressed data</param>
         /// <returns>A byte array of the decompressed data</returns>
-        [System.Diagnostics.DebuggerStepThrough]
+        //[System.Diagnostics.DebuggerStepThrough]
         public static byte[] AsDecompressed(this byte[] bytes)
         {
             var input = new MemoryStream(bytes);

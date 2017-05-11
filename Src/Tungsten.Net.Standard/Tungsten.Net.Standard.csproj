@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
-    <Version>1.2.4.1</Version>
+    <Version>1.2.5</Version>
     <Authors>Jordan Duerksen</Authors>
     <Company />
     <Product>Tungsten.Net</Product>
@@ -13,11 +13,12 @@
     <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
     <PackageTags>Tungsten.Net.Standard Tungsten.Net Tungsten W W.Net C# library tcp sockets client server</PackageTags>
-    <AssemblyVersion>1.2.4.1</AssemblyVersion>
-    <FileVersion>1.2.4.1</FileVersion>
+    <AssemblyVersion>1.2.5.0</AssemblyVersion>
+    <FileVersion>1.2.5.0</FileVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PostBuildEvent></PostBuildEvent>
     <AssemblyName>Tungsten.Net</AssemblyName>
+    <RootNamespace>W.Net</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -25,8 +26,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Archive\FormattedClient.cs" />
+    <Compile Remove="Archive\GenericClient.cs" />
+    <Compile Remove="Archive\GenericServer.cs" />
+    <Compile Remove="Archive\SecureStringClient.cs" />
+    <Compile Remove="Archive\SecureStringServer.cs" />
+    <Compile Remove="Archive\Server.cs" />
+    <Compile Remove="Archive\StringClient.cs" />
+    <Compile Remove="Archive\StringServer.cs" />
+    <Compile Remove="GenericClient.cs" />
+    <Compile Remove="GenericServer.cs" />
+    <Compile Remove="SecureStringClient.cs" />
+    <Compile Remove="SecureStringServer.cs" />
+    <Compile Remove="Sockets\FormattedClient.cs" />
+    <Compile Remove="Sockets\Server.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Archive\GenericClient.cs" />
+    <None Include="Archive\GenericServer.cs" />
+    <None Include="Archive\SecureStringClient.cs" />
+    <None Include="Archive\StringClient.cs" />
+    <None Include="Archive\StringServer.cs" />
+    <None Include="Archive\SecureStringServer.cs" />
+    <None Include="Archive\FormattedClient.cs" />
+    <None Include="Archive\Server.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
-    <PackageReference Include="Tungsten" Version="1.2.4" />
+    <PackageReference Include="Tungsten" Version="1.2.5" />
   </ItemGroup>
 
 </Project>

@@ -6,7 +6,7 @@ namespace W.Net.Sockets
     /// <summary>
     /// Implemented by FormattedSocket; required by W.Net.Sockets.Server and W.Net.Sockets.SecureServer.
     /// </summary>
-    public interface IFormattedSocket
+    public interface ISocket
     {
         /// <summary>
         /// The underlying Tungsten Socket

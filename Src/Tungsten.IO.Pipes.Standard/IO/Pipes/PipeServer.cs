@@ -34,6 +34,7 @@ namespace W.IO.Pipes
         private W.Threading.Thread _thread;
         private List<IPipeClient> _clients = new List<IPipeClient>();
         private object _lockCleanup = new object();
+        private System.Threading.Mutex _mutex = null;
 
         /// <summary>
         /// Called when the server starts
@@ -67,6 +68,9 @@ namespace W.IO.Pipes
         public PipeServer(string name)
         {
             _name = name;
+            _mutex = new Mutex(false, name);
+            if (!_mutex.WaitOne(5000)) //this should wait for another server to finish cleanup (if one is cleaning up)
+                throw new Exception("The named pipe is already in use");
         }
         /// <summary>
         /// Disposes the PipeServer
@@ -285,6 +289,9 @@ namespace W.IO.Pipes
         public void Dispose()
         {
             Stop();
+            _mutex?.ReleaseMutex();
+            _mutex?.Dispose();
+            _mutex = null;
         }
     }
 }

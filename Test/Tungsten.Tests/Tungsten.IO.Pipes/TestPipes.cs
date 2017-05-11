@@ -57,7 +57,7 @@ namespace W.Tests.Tungsten.IO.Pipes
                 {
                     Assert.IsTrue(client.Connect(PIPENAME));
                     client.Write("Test".AsBytes());
-                    Assert.IsTrue(mreMessageReceived.WaitOne(5000));
+                    Assert.IsTrue(mreMessageReceived.WaitOne(10000));
                     Console.WriteLine("{0} Client Disposing", sw.Elapsed);
                 }
                 Console.WriteLine("{0} Client Disposed", sw.Elapsed);
@@ -71,51 +71,53 @@ namespace W.Tests.Tungsten.IO.Pipes
         {
             var mreQuit = new System.Threading.ManualResetEvent(false);
             int count = 0;
-
-            W.IO.Pipes.PipeClient.AddNamedPipeLogger("ConsoleLogger");
-            using (var server = new W.IO.Pipes.PipeServer<W.IO.Pipes.PipeClient>("ConsoleLogger"))
+            using (var server = new W.IO.Pipes.PipeServer<W.IO.Pipes.PipeClient>(PIPENAME))
             {
                 server.ClientConnected += (r) =>
                 {
+                    Console.WriteLine("Server accepted client");
                     r.MessageReceived += (o, m) =>
                     {
                         count += 1;
                         Console.WriteLine(m.AsString());
                         if (count == 10)
                             mreQuit.Set();
-                        //o.As<W.IO.Pipes.PipeClient>().Write("".AsBytes());
                     };
                 };
                 server.Started += s =>
                 {
-                    Console.WriteLine("ConsoleLogger Started");
+                    Console.WriteLine("Started");
 
-                    for (int t = 0; t < 10; t++)
-                        W.Logging.Log.i("Test Log Message {0}", t);
-                    //mreQuit.Set();
+                    using (var client = new W.IO.Pipes.PipeClient())
+                    {
+                        if (client.Connect(PIPENAME, System.IO.Pipes.PipeDirection.InOut))
+                        {
+                            for (int t = 0; t < 10; t++)
+                                client.Write(string.Format("Test Message {0}", t).AsBytes());
+                            Assert.IsTrue(mreQuit.WaitOne(20000));
+                        }
+                        else
+                            Console.WriteLine("Failed to connect to the server");
+                    }
                 };
                 server.Start();
 
-                Assert.IsTrue(mreQuit.WaitOne(10000));
-                Console.WriteLine("ConsoleLogger Complete");
+                Assert.IsTrue(mreQuit.WaitOne(20000));
+                Console.WriteLine("Complete");
             }
-            //optionally, you can manually Stop the logging Pipe
-            W.IO.Pipes.PipeClient.RemoveNamedPipeLogger();
         }
 
         [Test]
         public void TestNamedPipeLogging()
         {
-            W.IO.Pipes.PipeClient.AddNamedPipeLogger("ConsoleLogger");
+            //To verify, an external server must be running
+            using (var pipeLogger = new W.IO.Pipes.PipeClientLogger("ConsoleLogger"))
+            {
+                for (int t = 0; t < 10; t++)
+                    W.Logging.Log.i("Test Log Message {0}", t);
 
-            for (int t = 0; t < 10; t++)
-                W.Logging.Log.i("Test Log Message {0}", t);
-
-            Console.WriteLine("ConsoleLogger Complete");
-
-            //optionally, you can manually Stop the logging Pipe
-            W.IO.Pipes.PipeClient.RemoveNamedPipeLogger();
+                Console.WriteLine("Complete");
+            }
         }
-
     }
 }

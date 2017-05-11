@@ -4,29 +4,30 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using W.Logging;
+using W.Net.Sockets;
 
-namespace W.Net.Sockets
+namespace W.Net
 {
     /// <summary>
     /// A socket server which listens for and handles client connections 
     /// </summary>
-    /// <typeparam name="TSocket">The type of Socket client to use</typeparam>
-    public class Server<TSocket> : IDisposable where TSocket : class, IFormattedSocket
+    /// <typeparam name="TClientType">The type of Socket client to use</typeparam>
+    public class Server<TClientType> : IDisposable where TClientType : class, ISocket
     {
         private System.Net.Sockets.TcpListener _server;
-        private object _lock = new object();
-        private readonly List<TSocket> _clients = new List<TSocket>();
+        private readonly object _lock = new object();
+        private readonly List<TClientType> _clients = new List<TClientType>();
         private W.Threading.Thread _listenProc;
         private bool _isListening;
 
         ///<summary>
         /// Called when a client connects to the server
         /// </summary>
-        public Action<TSocket> ClientConnected { get; set; }
+        public Action<TClientType> ClientConnected { get; set; }
         /// <summary>
         /// Called when a client disconnects normally or by exception
         /// </summary>
-        public Action<TSocket, IPEndPoint, Exception> ClientDisconnected { get; set; }
+        public Action<TClientType, IPEndPoint, Exception> ClientDisconnected { get; set; }
         /// <summary>
         /// Called when the value of IsListening changes to true or false
         /// </summary>
@@ -69,9 +70,9 @@ namespace W.Net.Sockets
 
         private void ListenForClientsProc_OnComplete(bool success, Exception e)
         {
-            Log.i("Tungsten.Net.SecureServer Shutdown Complete(result={0}", success);
+            System.Diagnostics.Debug.WriteLine("Tungsten.Net.SecureServer Shutdown Complete(result={0}", success);
             if (e != null)
-                Log.e(e);
+                System.Diagnostics.Debug.WriteLine(e.ToString());
             if (IsListening)
                 Stop();
         }
@@ -103,14 +104,14 @@ namespace W.Net.Sockets
                     catch (SocketException e)
                     {
                         if (e.SocketErrorCode != SocketError.Interrupted) //the server was stopped
-                            Log.e("SocketException: Socket Error Code {0}: {1}\n{2}", e.SocketErrorCode,
+                            System.Diagnostics.Debug.WriteLine(string.Format("SocketException: Socket Error Code {0}: {1}\n{2}", e.SocketErrorCode,
                                 Enum.GetName(typeof(System.Net.Sockets.SocketError), e.SocketErrorCode),
-                                e.ToString());
+                                e.ToString()));
                         break;
                     }
                     catch (Exception e)
                     {
-                        Log.e(e);
+                        System.Diagnostics.Debug.WriteLine(e.ToString());
                         break;
                     }
                     OnCreateClientHandler(client);
@@ -118,13 +119,18 @@ namespace W.Net.Sockets
             }
             catch (Exception e)
             {
-                Log.e(e);
+                System.Diagnostics.Debug.WriteLine(e.ToString());
             }
             finally
             {
                 IsListening = false;
                 IsListeningChanged?.Invoke(IsListening);
             }
+        }
+        protected virtual TClientType CreateClient(TcpClient client)
+        {
+            var handler = (TClientType)Activator.CreateInstance(typeof(TClientType), client);
+            return handler;
         }
         /// <summary>
         /// Configures a new server-side client connection
@@ -133,20 +139,26 @@ namespace W.Net.Sockets
         protected virtual void OnCreateClientHandler(TcpClient client)
         {
             //var handler = new TClientType(client);
-            var handler = (TSocket)Activator.CreateInstance(typeof(TSocket), client);
-            //Notifications.ClientCreated?.Invoke(handler);
-            handler.As<IFormattedSocket>().Disconnected += (s, remoteEndPoint, exception) =>
+            var handler = CreateClient(client);// (TClientType)Activator.CreateInstance(typeof(TClientType), client);
+            handler.Disconnected += (s, remoteEndPoint, exception) =>
             {
-                var proxy = s.As<TSocket>();
-                if (proxy == null)
-                    throw new ArgumentOutOfRangeException(nameof(s), "Parameter s should have been a legitimate instance of SecureByteClient");
-                if (_clients.Contains(proxy))
-                    _clients.Remove(proxy);
-                ClientDisconnected?.Invoke(proxy, remoteEndPoint, exception);
+                if (_clients.Contains(handler))
+                    _clients.Remove(handler);
+                ClientDisconnected?.Invoke(handler, remoteEndPoint, exception);
             };
+            //Notifications.ClientCreated?.Invoke(handler);
+            //handler.As<IFormattedSocket>().Disconnected += (s, remoteEndPoint, exception) =>
+            //{
+            //    var proxy = s.As<TClientType>();
+            //    if (proxy == null)
+            //        throw new ArgumentOutOfRangeException(nameof(s), "Parameter s should have been a legitimate instance of SecureByteClient");
+            //    if (_clients.Contains(proxy))
+            //        _clients.Remove(proxy);
+            //    ClientDisconnected?.Invoke(proxy, remoteEndPoint, exception);
+            //};
             _clients.Add(handler);
             ClientConnected?.Invoke(handler);
-            Log.i("Server created client handler");
+            System.Diagnostics.Debug.WriteLine("Server created client handler");
         }
 
         /// <summary>
@@ -156,12 +168,23 @@ namespace W.Net.Sockets
         /// <param name="port">The port on which to listen</param>
         public void Start(IPAddress ipAddress, int port)
         {
-            _server = new TcpListener(ipAddress, port);
-            _server.Start();
-            _listenProc = W.Threading.Thread.Create(ListenForClientsProc, ListenForClientsProc_OnComplete);
-            IsListening = true;
+            Start(new IPEndPoint(ipAddress, port));
         }
-
+        public void Start(IPEndPoint ipEndPoint)
+        {
+            try
+            {
+                _server = new TcpListener(ipEndPoint.Address, ipEndPoint.Port);
+                _server.Start();
+                _listenProc = W.Threading.Thread.Create(ListenForClientsProc, ListenForClientsProc_OnComplete);
+                IsListening = true;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debugger.Break();
+                System.Diagnostics.Debug.WriteLine(e.ToString());
+            }
+        }
         /// <summary>
         /// Stops listening for and disconnects all current connections
         /// </summary>

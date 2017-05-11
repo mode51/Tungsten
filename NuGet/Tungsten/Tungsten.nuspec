@@ -3,7 +3,7 @@
   <metadata>
     <id>Tungsten</id>
     <title>Tungsten</title>
-    <version>1.2.4.0</version>
+    <version>1.2.5</version>
     <authors>Jordan Duerksen</authors>
     <owners>Jordan Duerksen</owners>
     <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Tungsten is a C# library of classes which make application development easier.</description>
     <summary>Tungsten is a C# library of classes which make application development easier.</summary>
-    <releaseNotes>Changed netstandard target to 1.3 (was 1.4)</releaseNotes>
+    <releaseNotes>Added W.StringExtensions (string.IsValidBase64()).  Added W.Logging.CustomLogger to make adding custom loggers easier</releaseNotes>
     <copyright>Copyright 2017 Jordan Duerksen</copyright>
     <tags>Tungsten W C# library</tags>
     <dependencies>

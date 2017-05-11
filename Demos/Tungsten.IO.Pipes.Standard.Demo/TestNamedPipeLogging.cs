@@ -7,36 +7,35 @@ namespace W.Demo
     {
         public static void Run()
         {
-            W.IO.Pipes.PipeClient.AddNamedPipeLogger("ConsoleLogger");
-            var r = new Random();
-            while (true)
+            using (var pipeLogger = new W.IO.Pipes.PipeClientLogger("ConsoleLogger", true))
             {
-                Console.Write("Send <Return to Exit>:");
-                var msg = Console.ReadLine().Trim();
-                if (string.IsNullOrEmpty(msg))
-                    break;
-
-                switch(r.Next(0, 4))
+                var r = new Random();
+                while (true)
                 {
-                    case 0:
-                        W.Logging.Log.e(msg);
+                    Console.Write("Send <Return to Exit>:");
+                    var msg = Console.ReadLine().Trim();
+                    if (string.IsNullOrEmpty(msg))
                         break;
-                    case 1:
-                        W.Logging.Log.w(msg);
-                        break;
-                    case 2:
-                        W.Logging.Log.i(msg);
-                        break;
-                    case 3:
-                        W.Logging.Log.v(msg);
-                        break;
+
+                    switch (r.Next(0, 4))
+                    {
+                        case 0:
+                            W.Logging.Log.e(msg);
+                            break;
+                        case 1:
+                            W.Logging.Log.w(msg);
+                            break;
+                        case 2:
+                            W.Logging.Log.i(msg);
+                            break;
+                        case 3:
+                            W.Logging.Log.v(msg);
+                            break;
+                    }
                 }
+
+                Console.WriteLine("TestNamedPipeLogger Complete");
             }
-
-            Console.WriteLine("TestNamedPipeLogger Complete");
-
-            //optionally, you can manually Stop the logging Pipe
-            W.IO.Pipes.PipeClient.RemoveNamedPipeLogger();
         }
     }
 }

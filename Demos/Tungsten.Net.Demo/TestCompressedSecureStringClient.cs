@@ -20,7 +20,7 @@ namespace W.Demo
                         if (!string.IsNullOrEmpty(message))
                         {
                             Console.WriteLine("Server Echo: " + message);
-                            proxy.As<W.Net.SecureStringClient>().Send(message.ToUpper());
+                            proxy.As<W.Net.SecureClient<string>>().Send(message.ToUpper());
                         }
                     };
                 };
@@ -33,17 +33,17 @@ namespace W.Demo
                 };
                 server.Start(IPAddress.Parse("127.0.0.1"), 5150);
 
-                using (var secureClient = new W.Net.SecureStringClient())
+                using (var secureClient = new W.Net.SecureClient<string>())
                 {
                     secureClient.Connected += (ssc, remoteEndPoint) =>
                     {
                         Console.WriteLine("Client Connected: " + remoteEndPoint?.ToString());
                     };
-                    secureClient.ConnectionSecured += s =>
+                    secureClient.Connected += (scc, ep) =>
                     {
                         mre.Set();
                     };
-                    secureClient.Disconnected += (s, remoteEndPoint, exception) =>
+                    secureClient.Disconnected += (scc, remoteEndPoint, exception) =>
                     {
                         if (exception != null)
                             Console.WriteLine("Client Disconnected: " + remoteEndPoint?.ToString() + " - " + exception.Message);

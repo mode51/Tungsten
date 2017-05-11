@@ -13,34 +13,34 @@ namespace W.Demo
             {
                 server.ClientConnected += client =>
                 {
-                    Console.WriteLine("Server Connected To Client: " + client.As<W.Net.SecureStringClient>().Socket.Name);
+                    Console.WriteLine("Server Connected To Client: " + client.As<W.Net.SecureClient<string>>().Socket.Name);
                     client.MessageReceived += (proxy, message) =>
                     {
                         if (!string.IsNullOrEmpty(message))
                         {
                             Console.WriteLine("Server Echo: " + message);
-                            proxy.As<W.Net.SecureStringClient>().Send(message.ToUpper());
+                            proxy.As<W.Net.SecureClient<string>>().Send(message.ToUpper());
                         }
                     };
                 };
                 server.ClientDisconnected += (client, remoteEndPoint, exception) =>
                 {
                     if (exception != null)
-                        Console.WriteLine("Client Disconnected: " + client.As<W.Net.SecureStringClient>().Socket.Name + " - " + exception.Message);
+                        Console.WriteLine("Client Disconnected: " + client.As<W.Net.SecureClient<string>>().Socket.Name + " - " + exception.Message);
                     else
-                        Console.WriteLine("Client Disconnected: " + client.As<W.Net.SecureStringClient>().Socket.Name);
+                        Console.WriteLine("Client Disconnected: " + client.As<W.Net.SecureClient<string>>().Socket.Name);
 
                     Console.WriteLine("Server Disconnected From: " + remoteEndPoint?.ToString());
                 };
                 server.Start(IPAddress.Parse("127.0.0.1"), 5150);
 
-                using (var client = new W.Net.SecureStringClient())
+                using (var client = new W.Net.SecureClient<string>())
                 {
                     client.Connected += (ssc, remoteEndPoint) =>
                     {
-                        Console.WriteLine("Client Connected: " + ssc.As<W.Net.SecureStringClient>().Socket.Name);
+                        Console.WriteLine("Client Connected: " + ssc.As<W.Net.SecureClient<string>>().Socket.Name);
                     };
-                    client.ConnectionSecured += s =>
+                    client.Connected += (ssc, ep) =>
                     {
                         mre.Set();
                     };
