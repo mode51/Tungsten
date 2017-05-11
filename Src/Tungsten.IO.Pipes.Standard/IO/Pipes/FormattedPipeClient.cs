@@ -124,30 +124,35 @@ namespace W.IO.Pipes
             Dispose();
         }
 
-        /// <summary>
-        /// Writes a message to the specified local named pipe
-        /// </summary>
-        /// <param name="pipeName">The name of the named pipe</param>
-        /// <param name="message">The message to write</param>
-        public static void Write(string pipeName, byte[] message)
-        {
-            Write(".", pipeName, message);
-        }
-        /// <summary>
-        /// Writes a message to the specified named pipe
-        /// </summary>
-        /// <param name="serverName">The machine name on which the named pipe is hosted</param>
-        /// <param name="pipeName">The name of the named pipe</param>
-        /// <param name="message">The message to write</param>
-        public static void Write(string serverName, string pipeName, byte[] message)
-        {
-            using (var client = new PipeClient())
-            {
-                if (client.Connect(serverName, pipeName, PipeDirection.InOut))
-                {
-                    client.Write(message);
-                }
-            }
-        }
+        ///// <summary>
+        ///// Writes a message to the specified local named pipe
+        ///// </summary>
+        ///// <param name="pipeName">The name of the named pipe</param>
+        ///// <param name="message">The message to write</param>
+        ///// <returns>True if the message was written, otherwise False</returns>
+        //public static bool Write(string pipeName, byte[] message, int msTimeout = 1000)
+        //{
+        //    return Write(".", pipeName, message, msTimeout);
+        //}
+        ///// <summary>
+        ///// Writes a message to the specified named pipe
+        ///// </summary>
+        ///// <param name="serverName">The machine name on which the named pipe is hosted</param>
+        ///// <param name="pipeName">The name of the named pipe</param>
+        ///// <param name="message">The message to write</param>
+        ///// <param name="msTimeout">Times out after the specified time has elapsed</param>
+        ///// <returns>True if the message was written, otherwise False</returns>
+        //public static bool Write(string serverName, string pipeName, byte[] message, int msTimeout = 1000)
+        //{
+        //    using (var client = new PipeClient())
+        //    {
+        //        if (client.Connect(serverName, pipeName, PipeDirection.InOut))
+        //        {
+        //            client.Write(message);
+        //            return client.WaitForSendComplete(1000);
+        //        }
+        //    }
+        //    return false;
+        //}
     }
 }
