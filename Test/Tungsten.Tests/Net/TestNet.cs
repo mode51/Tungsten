@@ -12,6 +12,32 @@ namespace W.Tests.Net
     [TestFixture]
     public class TestNet
     {
+        //[Test]
+        //public void TestClientServer()
+        //{
+        //    var serverEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 5150);
+        //    using (var server = new W.Net.Server<W.Net.Client<string>>())
+        //    {
+        //        server.ClientConnected += c =>
+        //        {
+        //            Console.WriteLine("Server: Client Connected = {0}", c.Socket.RemoteEndPoint.ToString());
+        //        };
+        //        server.ClientDisconnected += (c, ep, e) =>
+        //        {
+        //            Console.WriteLine("Server: Client Disconnected = {0}, Exception = {1}", c.Socket.RemoteEndPoint.ToString(), e?.ToString() ?? "null");
+        //        };
+        //        server.IsListeningChanged += isListening =>
+        //        {
+        //            Console.WriteLine("Server: IsListening = {0}", isListening);
+        //        };
+        //        server.Start(serverEndPoint);
+
+        //        using (var client = new W.Net.Client<string>())
+        //        {
+        //        }
+
+        //    }
+        //}
         [Test]
         public void TestSecureStringClientLogger()
         {
@@ -21,7 +47,7 @@ namespace W.Tests.Net
 
 
             IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("192.168.2.12"), 2213);
-            using (var server = new W.Net.SecureStringServer())
+            using (var server = new W.Net.SecureServer<W.Net.SecureClient<string>>())
             {
                 server.ClientConnected += client =>
                 {
@@ -86,7 +112,7 @@ namespace W.Tests.Net
 
 
             IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("192.168.2.12"), 2213);
-            using (var server = new W.Net.StringServer())
+            using (var server = new W.Net.Server<W.Net.Client<string>>())
             {
                 server.ClientConnected += client =>
                 {

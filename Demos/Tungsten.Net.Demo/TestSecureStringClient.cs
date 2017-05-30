@@ -9,17 +9,17 @@ namespace W.Demo
         public static void Run()
         {
             var mre = new ManualResetEvent(false);
-            using (var server = new W.Net.SecureStringServer())
+            using (var server = new W.Net.SecureServer<W.Net.SecureClient<string>>())
             {
                 server.ClientConnected += client =>
                 {
                     Console.WriteLine("Server Connected To Client: " + client.As<W.Net.SecureClient<string>>().Socket.Name);
                     client.MessageReceived += (proxy, message) =>
                     {
-                        if (!string.IsNullOrEmpty(message))
+                        if (!string.IsNullOrEmpty(message.As<string>()))
                         {
                             Console.WriteLine("Server Echo: " + message);
-                            proxy.As<W.Net.SecureClient<string>>().Send(message.ToUpper());
+                            proxy.As<W.Net.SecureClient<string>>().Send(message.As<string>().ToUpper());
                         }
                     };
                 };
@@ -57,10 +57,12 @@ namespace W.Demo
                         Console.WriteLine("Client Received: " + message);
                         Console.Write("Send <Return To Disconnect>: ");
                     };
-                    client.MessageSent += s =>
-                    {
-                        Console.WriteLine("Client Message Sent");
-                    };
+
+                    //we can't decrypt the data because we don't have the private key (so we need a better way to track sent data)
+                    //client.MessageSent += (c, message) =>
+                    //{
+                    //    Console.WriteLine("Client Message Sent");
+                    //};
 
                     client.Socket.ConnectAsync(IPAddress.Parse("127.0.0.1"), 5150).Wait();
                     mre.WaitOne();

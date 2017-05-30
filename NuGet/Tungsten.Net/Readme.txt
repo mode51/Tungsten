@@ -1,5 +1,14 @@
 ﻿Tungsten.Net is a client/server tcp socket library. Client and server classes are provided, with and without assymetric encryption.
 
+5.30.2017 v1.2.5.3
+This update largely breaks backward compatability.  I'm hoping this is the last major change.
+Refactored, simplified and corrected clients, servers and interfaces.
+Renamed MessageSent multi-cast delegate to DataSent
+Removed SecureClient<TClientType>.MessageSent multi-cast delegate as tracking this would be too much overhead for it's worth.  DataSent still exists.
+Removed StringClient, it's related server, and the secure versions thereof because they can be declared easily with existing classes.
+Fixed a bug with server-side clients
+Added SerializationSettings which exposes the JsonSerializationSettings for Newtonsoft.Json
+
 5.11.2017 v1.2.5
 Near rewrite of clients and servers (secure clients and servers should be more stable now)
 Added StringClientLogger and SecureStringClientLogger to make it easy to add logging over TCP

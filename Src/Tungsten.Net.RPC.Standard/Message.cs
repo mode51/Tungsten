@@ -8,6 +8,7 @@ namespace W.Net.RPC
     //    public Guid Id { get; set; }
     //    public DateTime ExpireDateTime { get; set; }
     //}
+
     //this is the Message class used by the Client and Server
     internal class Message //: EncryptedMessageBase
     {
@@ -17,6 +18,6 @@ namespace W.Net.RPC
         public string Method { get; set; } = "";
         public List<object> Parameters { get; set; } = new List<object>();
         public object Response { get; set; } = null;
-        public Exception Exception { get; set; } = null;
+        public ExceptionInformation Exception { get; set; } = null;
     }
 }

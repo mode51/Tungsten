@@ -16,6 +16,7 @@ namespace W.Net.Sockets
         private TcpClientReader _reader;
         private TcpClientWriter _writer;
         private NetworkStream _networkStream;
+        private ulong _messageCount = 0;
 
         /// <summary>
         /// Called when the client connects to the server
@@ -29,11 +30,15 @@ namespace W.Net.Sockets
         /// <summary>
         /// Called when a message has been sent to the server
         /// </summary>
-        public Action<Socket> MessageSent { get; set; }
+        public Action<Socket, SocketData> DataSent { get; set; }
         /// <summary>
         /// Called when a message is received from the server
         /// </summary>
-        public Action<Socket, byte[]> MessageReceived { get; set; }
+        public Action<Socket, byte[]> RawDataReceived { get; set; }
+        /// <summary>
+        /// Called when a message is received from the server and decompressed (if UseCompression is True)
+        /// </summary>
+        public Action<Socket, byte[]> DataReceived { get; set; }
 
         /// <summary>
         /// Can be useful for large data sets.  Set to True to use compression, otherwise False.
@@ -103,7 +108,7 @@ namespace W.Net.Sockets
 
             _writer = new TcpClientWriter(_client);
             _writer.OnException += Disconnect;
-            _writer.OnMessageSent += () => { MessageSent?.Invoke(this); };
+            _writer.OnMessageSent += (message) => { DataSent?.Invoke(this, message); };
             _writer.Start();
 
 
@@ -137,6 +142,7 @@ namespace W.Net.Sockets
         /// <param name="message"></param>
         protected virtual void OnMessageReceived(byte[] message)
         {
+            RawDataReceived?.Invoke(this, message);
             if (message != null && message.Length > 0 && UseCompression)
             {
                 try
@@ -146,7 +152,7 @@ namespace W.Net.Sockets
                 }
                 catch (System.IO.InvalidDataException)
                 {
-                    //ignore - the key will be sent uncompressed
+                    //ignore - the public key could be sent uncompressed
                     //so just pass it on as is
                 }
                 catch (Exception e)
@@ -155,7 +161,7 @@ namespace W.Net.Sockets
                     System.Diagnostics.Debugger.Break();
                 }
             }
-            MessageReceived?.Invoke(this, message);
+            DataReceived?.Invoke(this, message);
         }
 
         /// <summary>
@@ -191,6 +197,7 @@ namespace W.Net.Sockets
             {
                 RemoteEndPoint = new IPEndPoint(remoteAddress, remotePort);
                 _client = new TcpClient();
+
                 await _client.ConnectAsync(remoteAddress, remotePort);
             }
             catch (ArgumentNullException e) //the address parameter is null
@@ -250,31 +257,35 @@ namespace W.Net.Sockets
         /// Enqueues message to send
         /// </summary>
         /// <param name="message">The message to send</param>
-        /// <param name="immediate">If true, the message is sent unformatted and immediately</param>
-        public virtual void Send(byte[] message)
+        public virtual ulong Send(byte[] message)
         {
-            Send(message, false, false);
+            return Send(message, false, false);
         }
 
         /// <summary>
         /// Enqueues message to send
         /// </summary>
         /// <param name="message">The message to send</param>
+        /// <param name="exact">Can be used to prevent compression</param>
         /// <param name="immediate">If true, the message is sent unformatted and immediately</param>
-        public virtual void Send(byte[] message, bool exact, bool immediate)
+        public virtual ulong Send(byte[] message, bool exact, bool immediate)
         {
             if (!IsConnected || message == null)
-                return;
+                return 0;
             var size = message.Length;
             if (!exact && UseCompression)
             {
                 message = message.AsCompressed();
             }
-            Console.WriteLine("Sending: Original Size = {0}, Actual Size = {1}", size, message.Length);
+            //if (System.Diagnostics.Debugger.IsAttached)
+                //Console.WriteLine("UseCompression = {0}: Original Size = {1}, Actual Size = {2}", UseCompression, size, message.Length);
+            System.Diagnostics.Debug.WriteLine("UseCompression = {0}: Original Size = {1}, Actual Size = {2}", UseCompression, size, message.Length);
+            _messageCount += 1;
             if (immediate)
                 W.Net.TcpHelpers.SendMessageAsync(_networkStream, _client.SendBufferSize, message);
             else
-                _writer.Send(message);
+                _writer.Send(new SocketData() { Id = _messageCount, Data = message });
+            return _messageCount;
         }
         ///// <summary>
         ///// Enqueues message to send

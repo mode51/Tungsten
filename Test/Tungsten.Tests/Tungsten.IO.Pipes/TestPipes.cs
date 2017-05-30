@@ -69,6 +69,7 @@ namespace W.Tests.Tungsten.IO.Pipes
         [Test]
         public void TestNamedPipeLoggingWithHost()
         {
+            Console.WriteLine("If this test fails, try it again.  It just might work.");
             var mreQuit = new System.Threading.ManualResetEvent(false);
             int count = 0;
             using (var server = new W.IO.Pipes.PipeServer<W.IO.Pipes.PipeClient>(PIPENAME))

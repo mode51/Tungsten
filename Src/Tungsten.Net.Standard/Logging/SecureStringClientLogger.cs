@@ -16,7 +16,7 @@ namespace W.Net
     /// </summary>
     public class SecureStringClientLogger : W.Logging.CustomLogger
     {
-        private SecureStringClient _client;
+        private SecureClient<string> _client;
 
         /// <summary>
         /// The IPEndPoint for the remote server
@@ -35,7 +35,7 @@ namespace W.Net
         /// <param name="message">The log message</param>
         protected override void LogMessage(W.Logging.Log.LogMessageCategory category, string message)
         {
-            if (_client.IsConnected && (_client?.Socket?.IsConnected ?? false)) //because the handler is added before the client connects
+            if (_client?.Socket?.IsConnected ?? false) //because the handler is added before the client connects
             {
                 message = FormatLogMessage(category, message);
                 _client.Send(message);
@@ -70,7 +70,7 @@ namespace W.Net
         public SecureStringClientLogger(IPEndPoint serverEndPoint, bool addTimestamp = true) : base(serverEndPoint.ToString(), addTimestamp)
         {
             RemoteEndPoint = serverEndPoint;
-            _client = new SecureStringClient();
+            _client = new SecureClient<string>();
 
             if (!_client.Socket.ConnectAsync(serverEndPoint.Address, serverEndPoint.Port).Result)
             {

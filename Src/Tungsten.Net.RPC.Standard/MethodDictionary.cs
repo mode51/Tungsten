@@ -62,6 +62,7 @@ namespace W.Net.RPC
             }
             Console.WriteLine($"Found {Count} RPC Methods");
         }
+        
         /// <summary>
         /// Call a method on the Tungsten.Net.RPC Server.
         /// </summary>
@@ -84,9 +85,9 @@ namespace W.Net.RPC
         /// <param name="method">The namespace, class name and method name of the method to call (ie: MyNamespace.MyClass.Method1)</param>
         /// <param name="args">Arguments, if any, to be passed into the remote method</param>
         /// <returns>A CallResult object describing the result of the call.  If the remote method does not have a return value, the value of CallResult.Result will be null.</returns>
-        public CallResult<object> Call(string method, params object[] args)
+        public W.CallResult<object> Call(string method, params object[] args)
         {
-            var result = new CallResult<object>(true, null);
+            var result = new W.CallResult<object>(true, null);
             MethodInfo mi = null;
             if (ContainsKey(method))
                 mi = this[method];

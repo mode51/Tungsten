@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Threading.Tasks;
 using W.Logging;
 using System.Threading;
 
@@ -8,11 +9,10 @@ namespace W.Net.RPC
     /// <summary>
     /// Supports remote instances of Tungsten.Net.RPC.Client to call local methods.
     /// </summary>
-    public class Server : IDisposable
+    public class RPCServer : IDisposable
     {
-        private SecureServer<SecureClient<Message>> _host;
+        private XServer<XClient<Message>> _host;
         private ManualResetEventSlim _mreIsListening;
-        private bool _useCompression = true;
 
         /// <summary>
         /// Exposes the dictionary of methods.  Custom, non-attributed methods may be added to this dictionary.
@@ -67,11 +67,11 @@ namespace W.Net.RPC
                 throw new ArgumentOutOfRangeException(nameof(port));
             Stop();
             _mreIsListening = new ManualResetEventSlim(false);
-            _host = new SecureServer<SecureClient<Message>>();
+            _host = new XServer<XClient<Message>>();
             _host.IsListeningChanged += (isListening) => { IsListeningChanged?.Invoke(isListening); _mreIsListening?.Set(); };
             _host.ClientConnected += (client) =>
             {
-                client.Socket.UseCompression = _useCompression;
+                client.Socket.UseCompression = true;
                 //Log.i("Client Connected: {0}", client.Name);
                 client.Disconnected += (c, remoteEndPoint, exception) =>
                 {
@@ -90,14 +90,9 @@ namespace W.Net.RPC
                             //Task.Run(() =>
                             //{
                             //send the result back to the client
-
-                            //c.SerializationSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-                            //c.SerializationSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.None;
-                            //c.Send(message);
-
+                            c.SerializationSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                            c.SerializationSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.None;
                             c.Send(message);
-                            //c.As<XClientSecure<Message>>()?.Send(message);
-
                             //});
                         }
                         catch (Exception e)
@@ -127,17 +122,14 @@ namespace W.Net.RPC
         /// <summary>
         /// Initializes the Tungsten.Net.RPC.Server and loads the RPC methods
         /// </summary>
-        /// <param name="useCompression">If True, data compression will be used during transmission.</param>
-        /// <remarks>The client must be declared with the same value.</remarks>
-        public Server(bool useCompression = true)
+        public RPCServer()
         {
-            _useCompression = useCompression;
             Methods.Refresh();
         }
         /// <summary>
         /// Calls Dispose and deconstructs the Tungsten.Net.RPC.Server
         /// </summary>
-        ~Server()
+        ~RPCServer()
         {
             Dispose();
         }

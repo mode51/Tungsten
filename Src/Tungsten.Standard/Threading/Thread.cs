@@ -124,7 +124,7 @@ namespace W.Threading
                 System.Threading.Thread.Sleep(msDelay);
                 result = true;
             }
-            catch (System.MissingMethodException e)
+            catch (System.MissingMethodException)
             {
             }
             if (!result)

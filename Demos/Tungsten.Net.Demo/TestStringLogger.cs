@@ -32,11 +32,11 @@ namespace W.Demo
         {
             ManualResetEventSlim mre = new ManualResetEventSlim(true);
             IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 2212);
-            using (var server = new W.Net.StringServer())
+            using (var server = new W.Net.Server<W.Net.Client<string>>())
             {
                 server.ClientConnected += client =>
                 {
-                    client.As<W.Net.StringClient>().MessageReceived += (o, message) =>
+                    client.As<W.Net.Client<string>>().MessageReceived += (o, message) =>
                     {
                         Console.WriteLine(message);
                         mre.Set();
@@ -79,7 +79,7 @@ namespace W.Demo
         }
         private static void ExternalHost()
         {
-            IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 2112);
+            IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("192.168.2.12"), 2112);
             //To verify this method, an external server must be listening
             using (var logger = new W.Net.StringClientLogger(ipEndPoint))
             {

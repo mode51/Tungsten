@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
-    <AssemblyVersion>1.2.5.0</AssemblyVersion>
+    <AssemblyVersion>1.2.5.2</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,12 +58,6 @@
     <Compile Include="..\Tungsten.Net.Standard\Clients\SecureClient.cs">
       <Link>Clients\SecureClient.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Clients\SecureStringClient.cs">
-      <Link>Clients\SecureStringClient.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Clients\StringClient.cs">
-      <Link>Clients\StringClient.cs</Link>
-    </Compile>
     <Compile Include="..\Tungsten.Net.Standard\Helpers\TcpClientReader.cs">
       <Link>Helpers\TcpClientReader.cs</Link>
     </Compile>
@@ -79,24 +73,6 @@
     <Compile Include="..\Tungsten.Net.Standard\Logging\StringClientLogger.cs">
       <Link>Logging\StringClientLogger.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Servers\SecureServer.cs">
-      <Link>Servers\SecureServer.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Servers\SecureStringServer.cs">
-      <Link>Servers\SecureStringServer.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Servers\Server.cs">
-      <Link>Servers\Server.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Servers\StringServer.cs">
-      <Link>Servers\StringServer.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Sockets\ISecureSocket.cs">
-      <Link>Sockets\ISecureSocket.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Sockets\ISocket.cs">
-      <Link>Sockets\ISocket.cs</Link>
-    </Compile>
     <None Include="Archive\GenericClient.cs" />
     <None Include="Archive\GenericServer.cs" />
     <None Include="Archive\Helpers\TcpClientReader.cs" />
@@ -110,8 +86,29 @@
     <None Include="Archive\Sockets\Socket.cs" />
     <None Include="Archive\StringClient.cs" />
     <None Include="Archive\StringServer.cs" />
+    <Compile Include="..\Tungsten.Net.Standard\Servers\SecureServer.cs">
+      <Link>Servers\SecureServer.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\Servers\Server.cs">
+      <Link>Servers\Server.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\Sockets\IDataSocket.cs">
+      <Link>Sockets\IDataSocket.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\Sockets\IMessageSocket.cs">
+      <Link>Sockets\IMessageSocket.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\Sockets\ISecureSocket.cs">
+      <Link>Sockets\ISecureSocket.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\Sockets\ISocket.cs">
+      <Link>Sockets\ISocket.cs</Link>
+    </Compile>
     <Compile Include="..\Tungsten.Net.Standard\Sockets\Socket.cs">
       <Link>Sockets\Socket.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\Sockets\SocketData.cs">
+      <Link>Sockets\SocketData.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -121,6 +118,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Tungsten.Net.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Test\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

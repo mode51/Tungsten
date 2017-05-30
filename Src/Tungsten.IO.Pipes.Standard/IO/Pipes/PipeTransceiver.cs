@@ -543,21 +543,21 @@ namespace W.IO.Pipes
                         ReadMessage();
                 }
 #if NETSTANDARD1_4
-                catch (System.Threading.Tasks.TaskCanceledException e)
+                catch (System.Threading.Tasks.TaskCanceledException)
                 {
                     //do nothing
                 }
 #else
-                catch (System.Threading.ThreadAbortException e)
+                catch (System.Threading.ThreadAbortException)
                 {
                     System.Threading.Thread.ResetAbort();
                 }
 #endif
-                catch (ObjectDisposedException e)
+                catch (ObjectDisposedException)
                 {
                     //ignore - this can happen if the PipeTransceiver is disposed after ReadMessageSize or ReadMessage are initiated
                 }
-                catch (AggregateException e)
+                catch (AggregateException)
                 {
                     //ignore - this happens when ReadMessageSize times out
                 }

@@ -10,17 +10,17 @@ namespace W.Net
     /// <summary>
     /// Encapsulates safe TcpClient writing.  Supports data larger than the SendBufferSize.
     /// </summary>
-    public class TcpClientWriter
+    public partial class TcpClientWriter
     {
         private readonly NetworkStream _stream;
         private readonly int _sendBufferSize;
         private W.Threading.Thread _thread;
-        private readonly ConcurrentQueue<byte[]> _sendQueue = new ConcurrentQueue<byte[]>();
+        private readonly ConcurrentQueue<SocketData> _sendQueue = new ConcurrentQueue<SocketData>();
 
         /// <summary>
         /// Delegate called whenever a message is successfully sent
         /// </summary>
-        public Action OnMessageSent; //use as multi-cast delegate
+        public Action<SocketData> OnMessageSent; //use as multi-cast delegate
         /// <summary>
         /// Delegate called whenever an exception occurs
         /// </summary>
@@ -70,8 +70,9 @@ namespace W.Net
         /// Enqueues data to be sent.
         /// </summary>
         /// <param name="data"></param>
-        public void Send(byte[] data)
+        public void Send(SocketData data)
         {
+            //var mi = new SocketData() { Id = messageId, Data = data };
             _sendQueue.Enqueue(data);
         }
 
@@ -83,15 +84,15 @@ namespace W.Net
                 {
                     if (!_sendQueue.IsEmpty && _stream != null)
                     {
-                        byte[] message;
+                        SocketData message;
                         if (_sendQueue.TryDequeue(out message))
                         {
-                            TcpHelpers.SendMessageAsync(_stream, _sendBufferSize, message, exception =>
+                            TcpHelpers.SendMessageAsync(_stream, _sendBufferSize, message.Data, exception =>
                                 {
                                     if (exception != null)
                                         OnException?.Invoke(exception);
                                     else
-                                        OnMessageSent?.Invoke();
+                                        OnMessageSent?.Invoke(message);
                                 }, cts).Wait();
                         }
                     }

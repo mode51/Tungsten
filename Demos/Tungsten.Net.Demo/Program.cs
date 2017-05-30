@@ -10,11 +10,13 @@ namespace W.Demo
             while (!exit)
             {
                 Console.WriteLine("Menu");
-                Console.WriteLine("1.  Test GenericClient/GenericServer");
+                Console.WriteLine("1.  Test Client/Server");
                 Console.WriteLine("2.  Test SecureStringClient");
                 Console.WriteLine("3.  Test SecureStringClient with compression");
                 Console.WriteLine("4.  Test StringLogger");
                 Console.WriteLine("5.  Test SecureStringLogger");
+                Console.WriteLine("6.  Test Client More");
+                Console.WriteLine("7.  Test SecureClient More");
 
                 Console.WriteLine("Press <Escape> To Exit");
                 var selection = Console.ReadKey();
@@ -22,7 +24,7 @@ namespace W.Demo
                 {
                     case ConsoleKey.D1:
                         Console.Clear();
-                        TestGenericClientServer.Run();
+                        TestClientServer.Run();
                         break;
                     case ConsoleKey.D2:
                         Console.Clear();
@@ -39,6 +41,14 @@ namespace W.Demo
                     case ConsoleKey.D5:
                         Console.Clear();
                         TestSecureStringLogger.Run();
+                        break;
+                    case ConsoleKey.D6:
+                        Console.Clear();
+                        TestClientServer2.Run();
+                        break;
+                    case ConsoleKey.D7:
+                        Console.Clear();
+                        TestSecureClientServer2.Run();
                         break;
                     case ConsoleKey.Escape:
                         exit = true;

@@ -11,7 +11,8 @@ namespace Tungsten.Net.RPC.Tests
             {
                 Console.WriteLine("Menu");
                 Console.WriteLine("1.  Test W.Net.RPC.Server (loading methods and calling them)");
-                Console.WriteLine("2.  Test W.Net.RPC.Client (connecting to the server and calling methods)");
+                //Console.WriteLine("2.  Test W.Net.RPC.Client (connecting to the server and calling methods)");
+                Console.WriteLine("2.  Test new W.Net.RPC.Client (connecting to the server and calling methods)");
 
                 Console.WriteLine("Press <Escape> To Exit");
                 var selection = Console.ReadKey();
@@ -21,9 +22,13 @@ namespace Tungsten.Net.RPC.Tests
                         Console.Clear();
                         W.Tests.Net_RPC_Standard_Server.Run();
                         break;
+                    //case ConsoleKey.D2:
+                    //    Console.Clear();
+                    //    W.Tests.Net_RPC_Standard_Client.Run().Wait();
+                    //    break;
                     case ConsoleKey.D2:
                         Console.Clear();
-                        W.Tests.Net_RPC_Standard_Client.Run().Wait();
+                        W.Tests.TestRPCClient.Run().Wait();
                         break;
                     case ConsoleKey.Escape:
                         exit = true;

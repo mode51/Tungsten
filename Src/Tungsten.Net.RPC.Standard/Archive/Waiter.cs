@@ -11,11 +11,11 @@ namespace W.Net.RPC
         {
             private W.Threading.Thread _thread = null;
             private Client _client = null;
-            private GenericClient<Message> _genericClient;
+            private Client<Message> _genericClient;
             //private CancellationTokenSource _cts = null;
             private Lockable<bool> _handling { get; } = new Lockable<bool>(false);
             private Lockable<bool> _disposing { get; } = new Lockable<bool>(false);
-            private ManualResetEvent _mreCompleted = new ManualResetEvent(false);
+            private ManualResetEventSlim _mreCompleted = new ManualResetEventSlim(false);
 
             public Message Message { get; set; }
             public MessageArrivedCallback Callback { get; set; }
@@ -59,26 +59,29 @@ namespace W.Net.RPC
             }
             public void Cancel()
             {
-                _thread.Cancel();
+                try //a hack
+                {
+                    _thread?.Cancel();
+                }
+                catch { }
                 //if (!_cts?.IsCancellationRequested ?? false)
                 //    _cts?.Cancel();
             }
-            public bool WaitOne()
+            public void WaitOne()
             {
                 if (!_disposing.Value)
-                    return _mreCompleted?.WaitOne() ?? true;
-                return true;
+                    _mreCompleted?.Wait();
             }
             public bool WaitOne(int msTimeout)
             {
                 if (!_disposing.Value)
-                    return _mreCompleted?.WaitOne(msTimeout) ?? true;
+                    return _mreCompleted?.Wait(msTimeout) ?? true;
                 return true;
             }
-            public Waiter(Client client, GenericClient<Message> genericClient, int msTimeout)
+            public Waiter(Client client, Client<Message> genericClient, int msTimeout)
             {
                 _client = client;
-                genericClient.GenericMessageReceived += OnMessageReceived;
+                genericClient.MessageReceived += OnMessageReceived;
                 //_cts = new CancellationTokenSource(msTimeout);
                 _thread = W.Threading.Thread.Create(cts =>
                 {
@@ -121,7 +124,7 @@ namespace W.Net.RPC
                 _mreCompleted?.Dispose();
                 _mreCompleted = null;
                 if (_genericClient != null)
-                    _genericClient.GenericMessageReceived -= OnMessageReceived;
+                    _genericClient.MessageReceived -= OnMessageReceived;
                 _genericClient = null;
                 GC.SuppressFinalize(this);
             }

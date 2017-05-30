@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using W.Logging;
 using W.Net.Sockets;
 
 namespace W.Net
@@ -11,7 +12,7 @@ namespace W.Net
     /// A socket server which listens for and handles client connections 
     /// </summary>
     /// <typeparam name="TClientType">The type of Socket client to use</typeparam>
-    public class Server<TClientType> : IDisposable where TClientType : class, IDataSocket
+    public class Server<TClientType> : IDisposable where TClientType : class, ISocket
     {
         private System.Net.Sockets.TcpListener _server;
         private readonly object _lock = new object();
@@ -127,9 +128,9 @@ namespace W.Net
             }
         }
         /// <summary>
-        /// Creates a new client of type TClientType
+        /// Creates a new Client handler
         /// </summary>
-        /// <param name="client">The TcpClient used to initialize the client</param>
+        /// <param name="client">The TcpClient used to initialize the client of TClientType</param>
         /// <returns>The new client of type TClientType</returns>
         protected virtual TClientType CreateClient(TcpClient client)
         {
@@ -177,7 +178,7 @@ namespace W.Net
         /// <summary>
         /// Starts listening for clients
         /// </summary>
-        /// <param name="ipEndPoint">The IP address and port to use</param>
+        /// <param name="ipEndPoint">The IP address and port on which to bind and listen for clients</param>
         public void Start(IPEndPoint ipEndPoint)
         {
             try
@@ -213,5 +214,6 @@ namespace W.Net
             Stop();
             GC.SuppressFinalize(this);
         }
+
     }
 }

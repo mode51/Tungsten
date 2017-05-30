@@ -9,18 +9,18 @@ namespace W.Demo
         public static void Run()
         {
             var mre = new ManualResetEvent(false);
-            using (var server = new W.Net.SecureStringServer())
+            using (var server = new W.Net.SecureServer<W.Net.SecureClient<string>>())
             {
                 server.ClientConnected += client =>
                 {
-                    client.UseCompression = true;
+                    client.Socket.UseCompression = true;
                     Console.WriteLine("Client Connected To Server");
                     client.MessageReceived += (proxy, message) =>
                     {
-                        if (!string.IsNullOrEmpty(message))
+                        if (!string.IsNullOrEmpty(message.As<string>()))
                         {
                             Console.WriteLine("Server Echo: " + message);
-                            proxy.As<W.Net.SecureClient<string>>().Send(message.ToUpper());
+                            proxy.As<W.Net.SecureClient<string>>().Send(message.As<string>().ToUpper());
                         }
                     };
                 };
@@ -56,11 +56,11 @@ namespace W.Demo
                         Console.WriteLine("Client Received: " + message);
                         Console.Write("Send <Return To Exit>: ");
                     };
-                    secureClient.MessageSent += s =>
-                    {
-                        Console.WriteLine("Client Message Sent");
-                    };
-                    secureClient.UseCompression = true;
+                    //secureClient.MessageSent += (c, message) =>
+                    //{
+                    //    Console.WriteLine("Client Message Sent");
+                    //};
+                    secureClient.Socket.UseCompression = true;
                     secureClient.Socket.ConnectAsync(IPAddress.Parse("127.0.0.1"), 5150).Wait();
                     mre.WaitOne();
 

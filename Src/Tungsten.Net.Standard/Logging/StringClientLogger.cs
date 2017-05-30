@@ -7,7 +7,7 @@ namespace W.Net
     /// </summary>
     public class StringClientLogger : W.Logging.CustomLogger
     {
-        private StringClient _client;
+        private Client<string> _client;
 
         /// <summary>
         /// The IPEndPoint for the remote server
@@ -26,7 +26,7 @@ namespace W.Net
         /// <param name="message">The log message</param>
         protected override void LogMessage(W.Logging.Log.LogMessageCategory category, string message)
         {
-            if (_client.IsConnected && (_client?.Socket?.IsConnected ?? false)) //because the handler is added before the client connects
+            if (_client?.Socket?.IsConnected ?? false) //because the handler is added before the client connects
             {
                 message = FormatLogMessage(category, message);
                 _client.Send(message);
@@ -61,7 +61,7 @@ namespace W.Net
         public StringClientLogger(IPEndPoint serverEndPoint, bool addTimestamp = true) : base(serverEndPoint.ToString(), addTimestamp)
         {
             RemoteEndPoint = serverEndPoint;
-            _client = new StringClient();
+            _client = new Client<string>();
 
             if (!_client.Socket.ConnectAsync(serverEndPoint.Address, serverEndPoint.Port).Result)
             {
@@ -69,12 +69,12 @@ namespace W.Net
                 System.Diagnostics.Debug.WriteLine("StringLogger failed to connect to the server.");
                 return;
             }
-            if (!_client.WaitForConnected(System.Diagnostics.Debugger.IsAttached ? -1 : 5000))
-            {
+            //if (!_client.WaitForConnected(System.Diagnostics.Debugger.IsAttached ? -1 : 5000))
+            //{
                 this.SocketError = System.Net.Sockets.SocketError.TimedOut;
                 //throw new TimeoutException("Connection timed out waiting for the server");
                 return;
-            }
+            //}
         }
     }
     ///// <summary>

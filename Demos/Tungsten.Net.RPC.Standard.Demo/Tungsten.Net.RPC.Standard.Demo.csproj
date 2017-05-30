@@ -6,6 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Archive\Net_RPC_Standard_Client.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Archive\Net_RPC_Standard_Client.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Src\Tungsten.Net.RPC.Standard\Tungsten.Net.RPC.Standard.csproj" />
   </ItemGroup>
 

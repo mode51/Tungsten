@@ -229,5 +229,43 @@ namespace W.Net
             }
             return false;
         }
+
+        /// <summary>
+        /// Determines if a string contains only Base64 characters
+        /// </summary>
+        /// <param name="value">The value to test</param>
+        /// <returns>True if the value contains only Base64 characters, otherwise False</returns>
+        /// <remarks>Obtained from: <see ref="https://stackoverflow.com/questions/8571501/how-to-check-whether-the-string-is-base64-encoded-or-not"/></remarks> 
+        internal static bool IsBase64Encoded(string value)
+        {
+            var result = false;
+            var regex = new System.Text.RegularExpressions.Regex(@"^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$");
+            result = regex.IsMatch(value);
+            return result;
+        }
+        /// <summary>
+        /// Converts the object to json and then to a byte array
+        /// </summary>
+        /// <param name="message">The object to convert</param>
+        /// <param name="settings">The JSON serialization settings to use during serialization</param>
+        /// <returns>A byte array containing the serialized object</returns>
+        internal static byte[] FormatMessageToSend<TLocalMessageType>(TLocalMessageType message, Newtonsoft.Json.JsonSerializerSettings settings)
+        {
+            var msg = Newtonsoft.Json.JsonConvert.SerializeObject(message, typeof(TLocalMessageType), settings);
+            var bytes = msg.AsBytes();
+            return bytes;
+        }
+        /// <summary>
+        /// Converts a byte array into a deserialized object
+        /// </summary>
+        /// <param name="bytes">The byte array to convert</param>
+        /// <param name="settings">The JSON serialization settings to use during serialization</param>
+        /// <returns>The deserialized object</returns>
+        internal static TLocalMessageType FormatReceivedMessage<TLocalMessageType>(byte[] bytes, Newtonsoft.Json.JsonSerializerSettings settings)
+        {
+            var message = bytes.AsString();
+            var obj = Newtonsoft.Json.JsonConvert.DeserializeObject<TLocalMessageType>(message, settings);
+            return obj;
+        }
     }
 }
