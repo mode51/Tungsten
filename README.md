@@ -62,25 +62,30 @@ A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable 
 * W.ActionQueue\<T\> - Merges a Thread with a ConcurrentQueue.  Executes the provided Action\<T\> or Func\<T, bool\>, on a background thread, whenever an item is added to the ConcurrentQueue.
 
 ### Tungsten.Net
-These two classes are designed to be the primary implementations
-* W.Net.GenericServer - a generic TCP server hosts secure client connections
-* W.Net.GenericClient - a secure generic TCP client to be used specifically with W.Net.GenericServer; sends and receives messages of any type
+##Clients
+Clients are designed to be used with their server counterpart (Client/Server and SecureClient/SecureServer)
+* W.Net.Client - a non-secure client which sends and receives byte arrays
+* W.Net.Client<TMessageType> - a non-secure generic client which sends and receives messages of any type
+* W.Net.SecureClient<TMessageType> - like, Client<TMessageType>, except the messages are encrypted
 
-These classes can be used if you don't need to transmit objects
-* W.Net.SecureStringServer - a secure server which hosts W.Net.SecureStringClient connections
-* W.Net.SecureStringClient - a secure client which 
-* W.Net.StringServer - a non-secure server which hosts non-secure W.Net.StringClient connections
-* W.Net.StringClient - a non-secure string client to be used specifically with W.Net.StringServer; sends and receives string messages
+##Servers
+* W.Net.Server<TClientType> - a server which hosts non-secure client connections
+** Sample declaration: var server = new W.Net.Server<W.Net.Client<string>>()
+* W.Net.SecureServer<TClientType> - a server which hosts encrypted clients (SecureClient)
+** Sample declaration: var server = new W.Net.SecureServer<W.Net.SecureClient<string>>()
 
-The following classes can be used to create more customized implementations
-* W.Net.Sockets.SecureServer - can be used with customized secure client connections
-* W.Net.Sockets.Server - a non-secure server; can be used with customized W.Net.Socket.FormattedSocket clients
-* W.Net.Sockets.FormattedSocket - can be used to create a custom client with a custom data type (as long as you can convert it to and from a byte array)
-* W.Net.Sockets.Socket - can be used to create a custom client which transmits byte arrays
+## Utility Classes (not really meant to be used directly)
+* W.Net.Sockets.Socket - provides root functionality of reading from and writing to a NetworkStream
+* W.Net.StringClientLogger - when instantiated, W.Logging.Log.X calls will also log via Client<string>
+* W.Net.SecureStringClientLogger - when instantiated, W.Logging.Log.X calls will also log via SecureClient<string>
+* W.Net.TcpHelpers - some static helper methods used by Tungsten.Net
+* W.Net.TcpClientReader - reads data from a NetworkStream
+* W.Net.TcpClientWriter - writes data to a NetworkStream
 
 ### Tungsten.Net.RPC
-* W.Net.RPC.Server - An RPC server (see Tungsten.Net.RPC.Standard.Demo for use)
-* W.Net.RPC.Client - An RPC client (see Tungsten.Net.RPC.Standard.Demo for use)
+The server must be running in an application which contains classes and methods which support the [RPCClass] and [RPCMethod] attributes.  The dll must be in-memory for the server to find the class methods.  Remote clients can then call these methods.  See the Tungsten.Net.RPC.Standard.Demo for more detailed use.
+* W.Net.RPC.Server - Allows remote applications to call local methods
+* W.Net.RPC.Client - Call methods exposed by a Tungsten.Net.RPC.Server
 
 ### Tungsten.Domains
 * W.Domains.DomainLoader - A handy class to make reloadable AppDomains easy
