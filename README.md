@@ -99,11 +99,12 @@ Clients are designed to be used with their server counterpart (Client/Server and
     }
     var server = new W.Net.SecureServer<W.Net.SecureClient<MyMessage>>();
 ```
+#### Utility Classes
+* W.Net.StringClientLogger - when instantiated, W.Logging.Log.X calls will also log via Client\<string\>
+* W.Net.SecureStringClientLogger - when instantiated, W.Logging.Log.X calls will also log via SecureClient\<string\>
 
-#### Utility Classes (not really meant to be used directly)
+#### Additional Utility Classes (not really meant to be used directly)
 * W.Net.Sockets.Socket - provides root functionality of reading from and writing to a NetworkStream
-* W.Net.StringClientLogger - when instantiated, W.Logging.Log.X calls will also log via Client<string>
-* W.Net.SecureStringClientLogger - when instantiated, W.Logging.Log.X calls will also log via SecureClient<string>
 * W.Net.TcpHelpers - some static helper methods used by Tungsten.Net
 * W.Net.TcpClientReader - reads data from a NetworkStream
 * W.Net.TcpClientWriter - writes data to a NetworkStream
