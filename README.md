@@ -65,14 +65,40 @@ A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable 
 #### Clients
 Clients are designed to be used with their server counterpart (Client/Server and SecureClient/SecureServer)
 * W.Net.Client - a non-secure client which sends and receives byte arrays
+```
+    var client = new W.Net.Client();
+```
 * W.Net.Client<TMessageType> - a non-secure generic client which sends and receives messages of any type
+```
+    var client = new W.Net.Client<string>();
+```
 * W.Net.SecureClient<TMessageType> - like, Client<TMessageType>, except the messages are encrypted
+```
+    var client = new W.Net.SecureClient<string>();
+```
 
 #### Servers
 * W.Net.Server<TClientType> - a server which hosts non-secure client connections
-** Sample declaration: var server = new W.Net.Server<W.Net.Client<string>>()
+```
+    var server = new W.Net.Server<W.Net.Client<string>>();
+    //or
+    public class MyMessage
+    {
+        public DateTime Timestamp { get; set; }
+        public string Message { get; set; }
+    }
+    var messageServer = new W.Net.Server<W.Net.Client<MyMessage>>();
+```
+
 * W.Net.SecureServer<TClientType> - a server which hosts encrypted clients (SecureClient)
-** Sample declaration: var server = new W.Net.SecureServer<W.Net.SecureClient<string>>()
+```
+    public class MyMessage
+    {
+        public DateTime Timestamp { get; set; }
+        public string Message { get; set; }
+    }
+    var server = new W.Net.SecureServer<W.Net.SecureClient<MyMessage>>();
+```
 
 #### Utility Classes (not really meant to be used directly)
 * W.Net.Sockets.Socket - provides root functionality of reading from and writing to a NetworkStream
