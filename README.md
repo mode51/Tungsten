@@ -68,17 +68,17 @@ Clients are designed to be used with their server counterpart (Client/Server and
 ```
     var client = new W.Net.Client();
 ```
-* W.Net.Client<TMessageType> - a non-secure generic client which sends and receives messages of any type
+* W.Net.Client\<TMessageType\> - a non-secure generic client which sends and receives messages of any type
 ```
     var client = new W.Net.Client<string>();
 ```
-* W.Net.SecureClient<TMessageType> - like, Client<TMessageType>, except the messages are encrypted
+* W.Net.SecureClient\<TMessageType\> - like Client\<TMessageType\>, except the messages are encrypted
 ```
     var client = new W.Net.SecureClient<string>();
 ```
 
 #### Servers
-* W.Net.Server<TClientType> - a server which hosts non-secure client connections
+* W.Net.Server\<TClientType\> - a server which hosts non-secure client connections
 ```
     var server = new W.Net.Server<W.Net.Client<string>>();
     //or
@@ -90,7 +90,7 @@ Clients are designed to be used with their server counterpart (Client/Server and
     var messageServer = new W.Net.Server<W.Net.Client<MyMessage>>();
 ```
 
-* W.Net.SecureServer<TClientType> - a server which hosts encrypted clients (SecureClient)
+* W.Net.SecureServer\<TClientType\> - a server which hosts encrypted clients (SecureClient)
 ```
     public class MyMessage
     {
