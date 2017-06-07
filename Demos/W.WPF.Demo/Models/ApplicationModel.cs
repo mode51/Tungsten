@@ -10,7 +10,7 @@ namespace W.WPF.Demo.Models
     {
         public ApplicationModel()
         {
-            ApplicationTitle.Value = "W.WPF.Demo - Demo App";
+            Title.Value = "W.WPF.Demo - Demo App";
         }
     }
 }

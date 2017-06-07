@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace W.WPF.Demo.Models
 {
-    public class SettingsModel : W.WPF.Models.ViewModel//.PageModel<W.WPF.Demo.Pages.Settings>
+    public class SettingsModel : W.WPF.Models.ViewModelBase//.PageModel<W.WPF.Demo.Pages.Settings>
     {
         public SettingsModel()
         {

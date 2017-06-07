@@ -16,7 +16,7 @@ namespace W.WPF.Models
     /// Base class for a WPF application model
     /// </summary>
     /// <typeparam name="TModel"></typeparam>
-    public class ApplicationModel<TModel> : DependencyObjectBase where TModel : ApplicationModel<TModel>, new()
+    public class ApplicationModel<TModel> : ViewModelBase where TModel : ApplicationModel<TModel>, new()
     {
         private static volatile TModel _instance;
         private static object _lock = new object();
@@ -42,10 +42,10 @@ namespace W.WPF.Models
             }
         }
 
-        /// <summary>
-        /// Get or set the application Title
-        /// </summary>
-        public Property<ApplicationModel<TModel>, string> ApplicationTitle { get; } = new Property<ApplicationModel<TModel>, string>("");
+        ///// <summary>
+        ///// Get or set the application Title
+        ///// </summary>
+        //public Property<ApplicationModel<TModel>, string> ApplicationTitle { get; } = new Property<ApplicationModel<TModel>, string>("");
         /// <summary>
         /// Gets whether the application is running in debug mode
         /// </summary>
@@ -133,7 +133,7 @@ namespace W.WPF.Models
         {
             base.OnCreate();
 
-            ApplicationTitle.Value = GetApplicationTitle();
+            Title.Value = GetApplicationTitle();
 
             AppDomain.CurrentDomain.SetPrincipalPolicy(PrincipalPolicy.WindowsPrincipal);
             var myPrincipal = System.Security.Principal.WindowsPrincipal.Current; //OR System.Threading.Thread.CurrentPrincipal
@@ -148,14 +148,15 @@ namespace W.WPF.Models
             //IsAdministrator.Value = true;// System.Security.Principal.WindowsPrincipal.Current.IsInRole("GAMMA\\Administrators");
 #endif
             if (IsDebugMode.Value)
-                this.ApplicationTitle.Value = this.ApplicationTitle.Value + "@";
+                this.Title.Value = this.Title.Value + "@";
             if (IsAdministrator.Value)
-                this.ApplicationTitle.Value = "@" + this.ApplicationTitle.Value;
+                this.Title.Value = "@" + this.Title.Value;
         }
+        
         /// <summary>
         /// Constructs a new ApplicationModel object
         /// </summary>
-        public ApplicationModel()
+        public ApplicationModel() : base()
         {
             this.InitializeProperties();
         }

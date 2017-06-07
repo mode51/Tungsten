@@ -88,11 +88,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\GenericMainMetroWindow.xaml">
+    <Page Include="Views\GenericMetroWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\MainMetroWindow.xaml">
+    <Page Include="Views\MetroWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -100,15 +100,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\GenericMainWindow.xaml">
+    <Page Include="Views\GenericWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\FrameHost.xaml">
+    <Page Include="Views\GenericFrameWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\MainWindow.xaml">
+    <Page Include="Views\StandardFrameWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StandardWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -118,23 +122,26 @@
     </Compile>
     <Compile Include="Models\ApplicationModel.cs" />
     <Compile Include="Models\MainWindowModel.cs" />
-    <Compile Include="Views\GenericMainMetroWindow.xaml.cs">
-      <DependentUpon>GenericMainMetroWindow.xaml</DependentUpon>
+    <Compile Include="Views\GenericMetroWindow.xaml.cs">
+      <DependentUpon>GenericMetroWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainMetroWindow.xaml.cs">
-      <DependentUpon>MainMetroWindow.xaml</DependentUpon>
+    <Compile Include="Views\MetroWindow.xaml.cs">
+      <DependentUpon>MetroWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AppWindow.xaml.cs">
       <DependentUpon>AppWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\GenericMainWindow.xaml.cs">
-      <DependentUpon>GenericMainWindow.xaml</DependentUpon>
+    <Compile Include="Views\GenericWindow.xaml.cs">
+      <DependentUpon>GenericWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrameHost.xaml.cs">
-      <DependentUpon>FrameHost.xaml</DependentUpon>
+    <Compile Include="Views\GenericFrameWindow.xaml.cs">
+      <DependentUpon>GenericFrameWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Views\StandardFrameWindow.xaml.cs">
+      <DependentUpon>StandardFrameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StandardWindow.xaml.cs">
+      <DependentUpon>StandardWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\Settings.xaml">

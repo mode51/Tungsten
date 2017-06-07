@@ -178,6 +178,10 @@ namespace W.WPF
         /// </summary>
         public Property<int> MaximumNumberOfPreviousPages { get; } = new Property<int>(99);
 
+        #region Commands
+        public Commands.NavigationCommands Navigation { get; private set; }
+        #endregion
+
         /// <summary>
         /// Destructs the PageFramework instance and frees resources
         /// </summary>
@@ -200,6 +204,7 @@ namespace W.WPF
         public PageFramework(IPageHost host)
         {
             _host = host;
+            Navigation = new NavigationCommands(this);
         }
     }
 

@@ -14,7 +14,7 @@ namespace W.WPF.Views
     /// A WPF window which supports PageFramework
     /// </summary>
     /// <typeparam name="TModel"></typeparam>
-    public class Window<TModel> : WindowBase, IPageHost where TModel : W.WPF.Models.ViewModel, new()
+    public class Window<TModel> : WindowBase, IPageHost where TModel : class, new()
     {
         /// <summary>
         /// Gets a handle to the View Model
@@ -87,7 +87,7 @@ namespace W.WPF.Views
             set { SetValue(PageFrameworkProperty, value); }
         }
 
-        public Commands.NavigationCommands Navigation { get; }
+        //alternatively create a navigate command for each one...
         //private W.WPF.Commands.RelayCommand _navigateCommand;
         ///// <summary>
         ///// A NavigateTo Command
@@ -162,7 +162,6 @@ namespace W.WPF.Views
         public Window(object viewModel)
         {
             PageFramework = new PageFramework(this);
-            Navigation = new Commands.NavigationCommands(PageFramework);
             ViewModel = viewModel ?? this;
             DataContext = ViewModel;
         }

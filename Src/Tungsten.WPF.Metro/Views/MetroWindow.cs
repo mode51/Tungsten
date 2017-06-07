@@ -16,7 +16,7 @@ namespace W.WPF.Views
     /// </summary>
     /// <typeparam name="TModel">The type of viewmodel to use. One will be created if one is not passed to the constructor.</typeparam>
     /// <remarks>This code behind is nearly duplicate of W.WPF.Views.Window</remarks>
-    public class MetroWindow<TModel> : MetroWindowBase, IPageHost where TModel : W.WPF.Models.ViewModel, new()
+    public class MetroWindow<TModel> : MetroWindowBase, IPageHost where TModel : class, new()
     {
         /// <summary>
         /// Gets a handle to the ViewModel

@@ -28,31 +28,37 @@ namespace W.WPF.Demo.Views
 
         private void btnMainWindow_Click(object sender, RoutedEventArgs e)
         {
-            var dlg = new MainWindow();
+            var dlg = new StandardWindow();
             dlg.Show();
         }
 
         private void btnMainMetroWindow_Click(object sender, RoutedEventArgs e)
         {
-            var dlg = new MainMetroWindow();
+            var dlg = new MetroWindow();
             dlg.Show();
         }
 
         private void btnGenericMainWindow_Click(object sender, RoutedEventArgs e)
         {
-            var dlg = new GenericMainWindow();
+            var dlg = new GenericWindow();
             dlg.Show();
         }
 
         private void btnGenericMainMetroWindow_Click(object sender, RoutedEventArgs e)
         {
-            var dlg = new GenericMainMetroWindow();
+            var dlg = new GenericMetroWindow();
             dlg.Show();
         }
 
         private void btnPageHost_Click(object sender, RoutedEventArgs e)
         {
-            var dlg = new FrameHost();
+            var dlg = new StandardFrameWindow();
+            dlg.Show();
+        }
+
+        private void btnGenericPageHost_Click(object sender, RoutedEventArgs e)
+        {
+            var dlg = new GenericFrameWindow();
             dlg.Show();
         }
     }

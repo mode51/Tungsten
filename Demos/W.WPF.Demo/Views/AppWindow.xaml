@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:models="clr-namespace:W.WPF.Demo.Models"
         mc:Ignorable="d"
-        Title="{Binding Source={x:Static models:ApplicationModel.Instance}, Path=ApplicationTitle.Value}"
+        Title="W.WPF.Demo Start Window"
         Height="350" Width="525"
         x:Name="thisMainWindow"
         >
@@ -48,6 +48,7 @@
                 <ColumnDefinition Width="54" />
             </Grid.ColumnDefinitions>
             <Button x:Name="btnPageHost" Grid.Column="0" Foreground="{DynamicResource AccentColorBrush}" Content="Page Host" Click="btnPageHost_Click" Margin="2" />
+            <Button x:Name="btnGenericPageHost" Grid.Column="1" Foreground="{DynamicResource AccentColorBrush}" Content="Generic Page Host" Click="btnGenericPageHost_Click" Margin="2" />
         </Grid>
         
         <!--<Border Grid.Row="1" Height="2" BorderBrush="{DynamicResource AccentColorBrush3}" BorderThickness="1" />-->

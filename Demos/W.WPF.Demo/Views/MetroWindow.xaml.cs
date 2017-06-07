@@ -18,13 +18,13 @@ namespace W.WPF.Demo.Views
     /// <summary>
     /// Interaction logic for MainMetroWindow.xaml
     /// </summary>
-    public partial class MainMetroWindow : W.WPF.Views.MetroWindow
+    public partial class MetroWindow : W.WPF.Views.MetroWindow
     {
         protected override void OnLoaded(object sender, RoutedEventArgs args)
         {
             PageFramework.NavigateTo("Home");
         }
-        public MainMetroWindow() : base(new MainWindowModel())
+        public MetroWindow() : base(new MainWindowModel())
         {
             InitializeComponent();
         }

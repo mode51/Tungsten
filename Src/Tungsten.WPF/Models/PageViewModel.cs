@@ -1,52 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using W;
-using W.Logging;
-using W.WPF.Core;
+﻿using System.Threading;
 using W.WPF.Commands;
 
 namespace W.WPF.Models
 {
-    /// <summary>
-    /// The base class for W.WPF PageFramework view models
-    /// </summary>
-    public class ViewModel : DisposableDependencyObject /*, IModel , ISaveCommander, IRefreshCommander*/
+    public class PageViewModel : ViewModelBase
     {
-        //private System.Threading.ManualResetEventSlim _delayStart = new ManualResetEventSlim(false);
-
-        /// <summary>
-        /// Information related to this model being busy
-        /// </summary>
-        public BusyIndication BusyIndication { get; } = new BusyIndication();
-        //#region IBusy
-        ///// <summary>
-        ///// Get or set the IsBusy flag
-        ///// </summary>
-        //public Property<ModelBase, bool> IsBusy { get; } = new Property<ModelBase, bool>((m, oldValue, newValue) => { m.BusyVisibility.Value = newValue ? Visibility.Visible : Visibility.Hidden; });
-        ///// <summary>
-        ///// Get or set a title string which can be displayed while busy
-        ///// </summary>
-        //public Property<string> BusyTitle { get; } = new Property<string>("Loading");
-        ///// <summary>
-        ///// Get or set a message to display while busy
-        ///// </summary>
-        //public Property<string> BusyMessage { get; } = new Property<string>("");
-        ///// <summary>
-        ///// Visible if IsBusy.Value is True, otherwise Hidden
-        ///// </summary>
-        //public Property<System.Windows.Visibility> BusyVisibility { get; } = new Property<System.Windows.Visibility>(Visibility.Hidden);
-        //#endregion
-
-        /// <summary>
-        /// Everything needs a title
-        /// </summary>
-        public Property<string> Title { get; } = new Property<string>("");
-
         /// <summary>
         /// A Refresh Command
         /// </summary>
@@ -128,56 +86,14 @@ namespace W.WPF.Models
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
         protected virtual void OnDeleteComplete(CancellationToken cancellationToken) { }
 
-        //protected virtual void OnDelayedStart()
-        //{
-
-        //}
-
-        /// <summary>
-        /// Called immediately upon object creation.  Place initialization code here.
-        /// </summary>
         protected override void OnInitialize()
         {
-            base.OnInitialize();
             RefreshCommander = new Commander(OnRefreshStarting, OnRefresh, OnRefreshComplete);
             SaveCommander = new Commander(OnSaveStarting, OnSave, OnSaveComplete);
             AddCommander = new Commander(OnAddStarting, OnAdd, OnAddComplete);
             DeleteCommander = new Commander(OnDeleteStarting, OnDelete, OnDeleteComplete);
+            base.OnInitialize();
         }
-        /// <summary>
-        /// Called instead of OnCreate if the code is running in DesignMode
-        /// </summary>
-        protected override void OnCreateInDesignMode()
-        {
-            base.OnCreateInDesignMode();
-        }
-        /// <summary>
-        /// Called immediately after OnInitialize (when no in DesignMode)
-        /// </summary>
-        protected override void OnCreate()
-        {
-            base.OnCreate();
-        }
-
-        /// <summary>
-        /// Constructs a new ViewModel
-        /// </summary>
-        public ViewModel() : base()
-        {
-            Log.i("{0}.InitializeProperties()", this.GetType().Name);
-            this.InitializeProperties();
-            //Task.Run(() => 
-            //{
-            //    _delayStart.Wait();
-            //    _delayStart.Dispose();
-            //    OnDelayedStart();
-            //});
-            //_delayStart.Set();
-        }
-        //public ModelBase(TModel owner) : this()
-        //{
-        //    UIHandle = owner;
-        //    //OnCreate is called before this code executes
-        //}
+        public PageViewModel() : base() { }
     }
 }

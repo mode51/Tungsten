@@ -1,5 +1,5 @@
 ﻿<wMetro:MetroWindow
-        x:Class="W.WPF.Demo.Views.GenericMainMetroWindow"
+        x:Class="W.WPF.Demo.Views.GenericMetroWindow"
         x:TypeArguments="models:MainWindowModel"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -12,7 +12,7 @@
         mc:Ignorable="d"
         BorderBrush="{DynamicResource AccentColorBrush}" BorderThickness="2"
         ShowTitleBar="True"
-        Title="GenericMainMetroWindow"
+        Title="{Binding Source={x:Static models:ApplicationModel.Instance}, Path=Title.Value}"
         Height="480" Width="640"
         x:Name="thisMainWindow"
     >

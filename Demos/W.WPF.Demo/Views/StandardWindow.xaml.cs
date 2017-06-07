@@ -18,9 +18,9 @@ namespace W.WPF.Demo.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : W.WPF.Views.Window
+    public partial class StandardWindow : W.WPF.Views.Window
     {
-        public MainWindow() : base(new MainWindowModel())
+        public StandardWindow() : base(new MainWindowModel())
         {
             InitializeComponent();
         }

@@ -18,7 +18,7 @@ namespace W.WPF.Demo.Views
     /// <summary>
     /// Interaction logic for MainMetroWindow.xaml
     /// </summary>
-    public partial class GenericMainMetroWindow : W.WPF.Views.MetroWindow<MainWindowModel>
+    public partial class GenericMetroWindow : W.WPF.Views.MetroWindow<MainWindowModel>
     {
         //private MetroApplicationModel.EAccent _accent = WPF.Models.MetroApplicationModel<MetroApplicationModel>.EAccent.Blue;
         //private MetroApplicationModel.ETheme _theme = WPF.Models.MetroApplicationModel<MetroApplicationModel>.ETheme.BaseLight;
@@ -29,7 +29,7 @@ namespace W.WPF.Demo.Views
         {
             PageFramework.NavigateTo("Home");
         }
-        public GenericMainMetroWindow() : base()
+        public GenericMetroWindow() : base()
         {
             InitializeComponent();
             ApplicationStyle.Value = new MetroStyle();

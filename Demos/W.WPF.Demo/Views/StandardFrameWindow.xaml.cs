@@ -10,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using W.WPF.Demo.Models;
 
@@ -19,31 +18,30 @@ namespace W.WPF.Demo.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class GenericMainWindow : W.WPF.Views.Window<MainWindowModel>
+    public partial class StandardFrameWindow : W.WPF.Views.Window
     {
-        public GenericMainWindow() : base()
-        {
-            InitializeComponent();
-        }
         protected override void OnLoaded(object sender, RoutedEventArgs args)
         {
-            base.OnLoaded(sender, args);
-            PageFramework.NavigateTo("Home");
+            PageFramework.NavigateTo("HomePage");
+        }
+        public StandardFrameWindow() : base(new MainWindowModel())
+        {
+            InitializeComponent();
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
-            PageFramework.NavigateTo("Home");
+            PageFramework.NavigateTo("HomePage");
         }
 
         private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
-            PageFramework.NavigateTo("Settings");
+            PageFramework.NavigateTo("SettingsPage");
         }
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.BusyIndication.IsBusy.Value = !ViewModel.BusyIndication.IsBusy.Value;
+            ViewModel.As<MainWindowModel>().BusyIndication.IsBusy.Value = !ViewModel.As<MainWindowModel>().BusyIndication.IsBusy.Value;
             //await ViewModel.RefreshCommander.Execute(null);
         }
 
