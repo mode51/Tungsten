@@ -139,17 +139,18 @@ The server must be running in an application which contains classes and methods 
 
 ### Tungsten.WPF
 * W.WPF - provides a framework for paging using UserControls or Pages and regular and generic versions of MVVM models
-'''
+```
     public partial class MainWindow : W.WPF.Views.Window
     {
         public MainWindow() : base(new MainWindowModel())
         {
             InitializeComponent();
+            PageFramework.NavigateTo("Home"); 
         }
     }
-'''
+```
 You can also use the generic version
-'''
+```
     public partial class GenericMainWindow : W.WPF.Views.Window<MainWindowModel>
     {
         public GenericMainWindow() : base()
@@ -157,25 +158,38 @@ You can also use the generic version
             InitializeComponent();
         }
     }
-'''
+```
 where the view model is
-'''
+```
     public class MainWindowModel : W.WPF.Models.WindowModel
     {
         public MainWindowModel() : base() 
         {
+            base.Title.Value = "Main Window";
         }
     }
-'''
-
+```
 Using a generic window means that your xaml has to provide x:TypeArguments as well
-'''
-<wViews:Window 
+```
+    <wViews:Window 
         x:Class="W.WPF.Demo.Views.GenericMainWindow"
         x:TypeArguments="models:MainWindowModel"        
         xmlns:wViews="clr-namespace:W.WPF.Views;assembly=Tungsten.WPF"
         xmlns:models="clr-namespace:W.WPF.Demo.Models"
-'''
+```
+If your pages are based on W.WPF.Pages.UserControlPage, then you host them in a ContentPresenter
+```
+    <ContentPresenter Content="{Binding ElementName=thisMainWindow, Path=ActivePage.FrameworkElement, Mode=OneWay}" />
+```
+If your pages are based on W.WPF.Pages.Page, then you host them in a Frame
+```
+    <Frame Content="{Binding ElementName=thisMainWindow, Path=ActivePage.FrameworkElement, Mode=OneWay}" />
+```
+
+The model for the Window is exposed via the ViewModel member (supported by both W.WPF.Views.Window and W.WPF.Views.MetroWindow)
+```
+        ViewModel.IsBusy.Value = True;
+```
 
 ### Tungsten.WPF.Metro
 * W.WPF.Metro - references MahApps.Metro and makes it easy to add accents and themes to individual windows or the whole application
