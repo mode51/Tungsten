@@ -139,6 +139,43 @@ The server must be running in an application which contains classes and methods 
 
 ### Tungsten.WPF
 * W.WPF - provides a framework for paging using UserControls or Pages and regular and generic versions of MVVM models
+'''
+    public partial class MainWindow : W.WPF.Views.Window
+    {
+        public MainWindow() : base(new MainWindowModel())
+        {
+            InitializeComponent();
+        }
+    }
+'''
+You can also use the generic version
+'''
+    public partial class GenericMainWindow : W.WPF.Views.Window<MainWindowModel>
+    {
+        public GenericMainWindow() : base()
+        {
+            InitializeComponent();
+        }
+    }
+'''
+where the view model is
+'''
+    public class MainWindowModel : W.WPF.Models.WindowModel
+    {
+        public MainWindowModel() : base() 
+        {
+        }
+    }
+'''
+
+Using a generic window means that your xaml has to provide x:TypeArguments as well
+'''
+<wViews:Window 
+        x:Class="W.WPF.Demo.Views.GenericMainWindow"
+        x:TypeArguments="models:MainWindowModel"        
+        xmlns:wViews="clr-namespace:W.WPF.Views;assembly=Tungsten.WPF"
+        xmlns:models="clr-namespace:W.WPF.Demo.Models"
+'''
 
 ### Tungsten.WPF.Metro
 * W.WPF.Metro - references MahApps.Metro and makes it easy to add accents and themes to individual windows or the whole application
