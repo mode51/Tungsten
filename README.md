@@ -177,6 +177,8 @@ Using a generic window means that your xaml has to provide x:TypeArguments as we
         xmlns:wViews="clr-namespace:W.WPF.Views;assembly=Tungsten.WPF"
         xmlns:models="clr-namespace:W.WPF.Demo.Models"
 ```
+#### Note that if you use generics in XAML, you MUST have a parameterless constructor (I believe, for both the window and the model).
+
 If your pages are based on W.WPF.Pages.UserControlPage, then you host them in a ContentPresenter
 ```
     <ContentPresenter Content="{Binding ElementName=thisMainWindow, Path=ActivePage.FrameworkElement, Mode=OneWay}" />
