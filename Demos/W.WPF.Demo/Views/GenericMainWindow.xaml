@@ -11,7 +11,7 @@
         mc:Ignorable="d"
         Title="{Binding Source={x:Static models:ApplicationModel.Instance}, Path=ApplicationTitle.Value}"
         Height="350" Width="525"
-        x:Name="winMainWindow"
+        x:Name="thisMainWindow"
         >
     <Grid>
         <Grid.RowDefinitions>
@@ -38,7 +38,7 @@
 
         <Grid Grid.Row="2">
             <!--<Border BorderBrush="CadetBlue" BorderThickness="2">-->
-            <ContentPresenter Content="{Binding ElementName=winMainWindow, Path=ActivePage.FrameworkElement, Mode=OneWay}" />
+            <ContentPresenter Content="{Binding ElementName=thisMainWindow, Path=ActivePage.FrameworkElement, Mode=OneWay}" />
             <!--<Frame Source="{Binding Path=CurrentPage, Mode=OneWay}" NavigationUIVisibility="Hidden"></Frame>-->
             <!--</Border>-->
         </Grid>

@@ -42,7 +42,6 @@ namespace W.WPF.Models
             }
         }
 
-
         /// <summary>
         /// Get or set the application Title
         /// </summary>
@@ -55,20 +54,20 @@ namespace W.WPF.Models
         /// Gets whether the application is running by an administrator
         /// </summary>
         public Property<ApplicationModel<TModel>, bool> IsAdministrator { get; } = new Property<ApplicationModel<TModel>, bool>(false);
-        /// <summary>
-        /// Get or set the MainFrame which is used for displaying pages
-        /// </summary>
-        public Property<ApplicationModel<TModel>, Frame> MainFrame { get; } = new Property<ApplicationModel<TModel>, Frame>((owner, oldFrame, newFrame) =>
-        {
-            newFrame.Navigating += (sender, args) => { Log.i("MainFrame.Navigating"); };
-            newFrame.Navigated += (sender, args) => { Log.i("MainFrame.Navigated"); /*owner.CurrentPage.Value = (System.Windows.Controls.Page)args.Content;*/ };
-            newFrame.ContentRendered += (sender, args) => { Log.i("MainFrame.ContentRendered"); };
-            newFrame.FragmentNavigation += (sender, args) => { Log.i("MainFrame.FragmentNavigation"); };
-            newFrame.LoadCompleted += (sender, args) => { Log.i("MainFrame.LoadCompleted"); };
-            newFrame.NavigationFailed += (sender, args) => { Log.i("MainFrame.NavigationFailed"); };
-            newFrame.NavigationProgress += (sender, args) => { Log.i("MainFrame.NavigationProgress"); };
-            newFrame.NavigationStopped += (sender, args) => { Log.i("MainFrame.NavigationStopped"); };
-        });
+        ///// <summary>
+        ///// Get or set the MainFrame which is used for displaying pages
+        ///// </summary>
+        //public Property<ApplicationModel<TModel>, Frame> MainFrame { get; } = new Property<ApplicationModel<TModel>, Frame>((owner, oldValue, newValue) =>
+        //{
+        //    newValue.Navigating += (sender, args) => { Log.i("MainFrame.Navigating"); };
+        //    newValue.Navigated += (sender, args) => { Log.i("MainFrame.Navigated"); /*owner.CurrentPage.Value = (System.Windows.Controls.Page)args.Content;*/ };
+        //    newValue.ContentRendered += (sender, args) => { Log.i("MainFrame.ContentRendered"); };
+        //    newValue.FragmentNavigation += (sender, args) => { Log.i("MainFrame.FragmentNavigation"); };
+        //    newValue.LoadCompleted += (sender, args) => { Log.i("MainFrame.LoadCompleted"); };
+        //    newValue.NavigationFailed += (sender, args) => { Log.i("MainFrame.NavigationFailed"); };
+        //    newValue.NavigationProgress += (sender, args) => { Log.i("MainFrame.NavigationProgress"); };
+        //    newValue.NavigationStopped += (sender, args) => { Log.i("MainFrame.NavigationStopped"); };
+        //});
         ///// <summary>
         ///// Get or set the currently displayed Page
         ///// </summary>
@@ -137,16 +136,14 @@ namespace W.WPF.Models
             ApplicationTitle.Value = GetApplicationTitle();
 
             AppDomain.CurrentDomain.SetPrincipalPolicy(PrincipalPolicy.WindowsPrincipal);
+            var myPrincipal = System.Security.Principal.WindowsPrincipal.Current; //OR System.Threading.Thread.CurrentPrincipal
+
 #if DEBUG
             IsDebugMode.Value = true;
             IsAdministrator.Value = true;// System.Security.Principal.WindowsPrincipal.Current.IsInRole("SERVER\\Domain Admins");
 #else
             IsDebugMode.Value = false;
-            var myPrincipal = System.Security.Principal.WindowsPrincipal.Current; //OR System.Threading.Thread.CurrentPrincipal
-
-            if (!IsAdministrator.Value)
-                IsAdministrator.Value = myPrincipal.IsInRole("BUILTIN\\Administrators");
-
+            IsAdministrator.Value = myPrincipal.IsInRole("BUILTIN\\Administrators");
 
             //IsAdministrator.Value = true;// System.Security.Principal.WindowsPrincipal.Current.IsInRole("GAMMA\\Administrators");
 #endif
@@ -154,9 +151,6 @@ namespace W.WPF.Models
                 this.ApplicationTitle.Value = this.ApplicationTitle.Value + "@";
             if (IsAdministrator.Value)
                 this.ApplicationTitle.Value = "@" + this.ApplicationTitle.Value;
-
-            //AllAccents.Value.AddRange(Enum.GetNames(typeof(Accents.Value)));
-            //AllThemes.Value.AddRange(Enum.GetNames(typeof(Themes.Value)));
         }
         /// <summary>
         /// Constructs a new ApplicationModel object

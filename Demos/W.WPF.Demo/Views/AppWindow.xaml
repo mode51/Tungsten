@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="{Binding Source={x:Static models:ApplicationModel.Instance}, Path=ApplicationTitle.Value}"
         Height="350" Width="525"
-        x:Name="winMainWindow"
+        x:Name="thisMainWindow"
         >
     <Grid>
         <Grid.RowDefinitions>

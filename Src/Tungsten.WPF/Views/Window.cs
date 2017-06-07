@@ -78,11 +78,31 @@ namespace W.WPF.Views
         public object ViewModel { get; set; }
 
         public static readonly DependencyProperty PageFrameworkProperty = DependencyProperty.Register("PageFrmework", typeof(PageFramework), typeof(Window));
+        /// <summary>
+        /// A local PageFramework which can be used to navigate pages in the current window
+        /// </summary>
         public PageFramework PageFramework
         {
             get { return (PageFramework)GetValue(PageFrameworkProperty); }
             set { SetValue(PageFrameworkProperty, value); }
         }
+
+        public Commands.NavigationCommands Navigation { get; }
+        //private W.WPF.Commands.RelayCommand _navigateCommand;
+        ///// <summary>
+        ///// A NavigateTo Command
+        ///// </summary>
+        //public System.Windows.Input.ICommand NavigateToCommand
+        //{
+        //    get
+        //    {
+        //        if (_navigateCommand == null)
+        //        {
+        //            _navigateCommand = new Commands.RelayCommand(page => { PageFramework.NavigateTo((string)page); });
+        //        }
+        //        return _navigateCommand;
+        //    }
+        //}
 
         #region IPageHost
         public static readonly DependencyProperty ActivePageProperty = DependencyProperty.Register("ActivePage", typeof(PageWrapper), typeof(Window), new PropertyMetadata(null, HandleActivePageChanged));
@@ -142,6 +162,7 @@ namespace W.WPF.Views
         public Window(object viewModel)
         {
             PageFramework = new PageFramework(this);
+            Navigation = new Commands.NavigationCommands(PageFramework);
             ViewModel = viewModel ?? this;
             DataContext = ViewModel;
         }
