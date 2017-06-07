@@ -20,13 +20,13 @@ namespace W.WPF.Demo.Views
     /// </summary>
     public partial class MainWindow : W.WPF.Views.Window
     {
-        protected override void OnLoaded(object sender, RoutedEventArgs args)
-        {
-            PageFramework.NavigateTo("Home");
-        }
         public MainWindow() : base(new MainWindowModel())
         {
             InitializeComponent();
+        }
+        protected override void OnLoaded(object sender, RoutedEventArgs args)
+        {
+            PageFramework.NavigateTo("Home");
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)

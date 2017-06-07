@@ -21,14 +21,14 @@ namespace W.WPF.Demo.Views
     /// </summary>
     public partial class GenericMainWindow : W.WPF.Views.Window<MainWindowModel>
     {
+        public GenericMainWindow() : base()
+        {
+            InitializeComponent();
+        }
         protected override void OnLoaded(object sender, RoutedEventArgs args)
         {
             base.OnLoaded(sender, args);
             PageFramework.NavigateTo("Home");
-        }
-        public GenericMainWindow() : base()
-        {
-            InitializeComponent();
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
@@ -43,7 +43,7 @@ namespace W.WPF.Demo.Views
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.As<MainWindowModel>().IsBusy.Value = !ViewModel.As<MainWindowModel>().IsBusy.Value;
+            ViewModel.IsBusy.Value = !ViewModel.IsBusy.Value;
             //await ViewModel.RefreshCommander.Execute(null);
         }
 
