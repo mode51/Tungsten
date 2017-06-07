@@ -14,7 +14,7 @@ namespace W.WPF.Views
     /// A WPF window which supports PageFramework
     /// </summary>
     /// <typeparam name="TModel"></typeparam>
-    public class Window<TModel> : WindowBase, IPageHost where TModel : W.WPF.Models.WindowModel, new()
+    public class Window<TModel> : WindowBase, IPageHost where TModel : W.WPF.Models.ViewModel, new()
     {
         /// <summary>
         /// Gets a handle to the View Model

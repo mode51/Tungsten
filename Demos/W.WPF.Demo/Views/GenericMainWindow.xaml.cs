@@ -43,7 +43,7 @@ namespace W.WPF.Demo.Views
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.IsBusy.Value = !ViewModel.IsBusy.Value;
+            ViewModel.BusyIndication.IsBusy.Value = !ViewModel.BusyIndication.IsBusy.Value;
             //await ViewModel.RefreshCommander.Execute(null);
         }
 

@@ -51,6 +51,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\BusyIndication.cs" />
     <Compile Include="Models\ApplicationModel.cs" />
     <Compile Include="Commands\Commander.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
@@ -60,7 +61,7 @@
     <Compile Include="Pages\UserControlPage.cs" />
     <Compile Include="Core\DependencyObjectBase.cs" />
     <Compile Include="Core\DisposableDependencyObject.cs" />
-    <Compile Include="Core\Singleton.cs" />
+    <None Include="Archive\Singleton.cs" />
     <Compile Include="Views\Window.cs" />
     <None Include="Archive\InstancedDependencyObject.cs" />
     <Compile Include="Core\InvokeExtensions.cs" />
@@ -68,10 +69,10 @@
     <None Include="Archive\IModel.cs" />
     <Compile Include="Interfaces\IPage.cs" />
     <Compile Include="Interfaces\IPageHost.cs" />
-    <Compile Include="Models\ControlModel.cs" />
-    <Compile Include="Models\ModelBase.cs" />
-    <Compile Include="Models\PageModel.cs" />
-    <Compile Include="Models\WindowModel.cs" />
+    <None Include="Archive\ControlModel.cs" />
+    <Compile Include="Models\ViewModel.cs" />
+    <None Include="Archive\PageModel.cs" />
+    <None Include="Archive\WindowModel.cs" />
     <Compile Include="PageFramework.cs" />
     <Compile Include="PageWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

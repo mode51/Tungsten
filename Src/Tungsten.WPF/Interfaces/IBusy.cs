@@ -14,16 +14,18 @@ namespace W.WPF
         /// <summary>
         /// Get or set the IsBusy flag
         /// </summary>
-        Property<W.WPF.Models.ModelBase, bool> IsBusy { get; }
+        Property<BusyIndication, bool> IsBusy { get; }
         /// <summary>
         /// Get or set a title string which can be displayed while busy
         /// </summary>
-        Property<string> BusyTitle { get; }
+        Property<string> Title { get; }
         /// <summary>
         /// Get or set a message to display while busy
         /// </summary>
-        Property<string> BusyMessage { get; }
-
-        Property<System.Windows.Visibility> BusyVisibility { get; }
+        Property<string> Message { get; }
+        /// <summary>
+        /// Visible if IsBusy.Value is True, otherwise Hidden
+        /// </summary>
+        Property<System.Windows.Visibility> Visibility { get; }
     }
 }

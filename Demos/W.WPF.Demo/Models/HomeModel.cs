@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace W.WPF.Demo.Models
 {
-    public class HomeModel : W.WPF.Models.PageModel<W.WPF.Demo.Pages.Home>
+    public class HomeModel : W.WPF.Models.ViewModel
     {
         public HomeModel()
         {
