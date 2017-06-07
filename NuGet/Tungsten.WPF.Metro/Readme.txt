@@ -3,6 +3,6 @@
 6.4.2017 v 1.0.0
 Initial Relase
 
-Thanks for using Tungsten.WPF.MahApps,
+Thanks for using Tungsten.WPF.Metro,
 
 Jordan Duerksen

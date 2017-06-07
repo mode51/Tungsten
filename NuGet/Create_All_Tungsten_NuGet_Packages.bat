@@ -8,6 +8,6 @@ nuget pack Tungsten.Firewall\Tungsten.Firewall.nuspec
 nuget pack Tungsten.IO.Pipes\Tungsten.IO.Pipes.nuspec
 nuget pack Tungsten.LiteDb\Tungsten.LiteDb.nuspec
 nuget pack Tungsten.WPF\Tungsten.WPF.nuspec
-nuget pack Tungsten.WPF.MahApps\Tungsten.WPF.MahApps.nuspec
+nuget pack Tungsten.WPF.Metro\Tungsten.WPF.Metro.nuspec
 
 pause

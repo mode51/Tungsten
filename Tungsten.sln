@@ -156,11 +156,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tungsten.WPF", "Tungsten.WP
 		NuGet\Tungsten.WPF\Tungsten.WPF.nuspec = NuGet\Tungsten.WPF\Tungsten.WPF.nuspec
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tungsten.WPF.MahApps", "Tungsten.WPF.MahApps", "{BF1BF4AE-500D-482F-8930-B325DC083DEC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tungsten.WPF.Metro", "Tungsten.WPF.Metro", "{BF1BF4AE-500D-482F-8930-B325DC083DEC}"
 	ProjectSection(SolutionItems) = preProject
-		NuGet\Tungsten.WPF.MahApps\Create_Tungsten.WPF.MahApps_Package.bat = NuGet\Tungsten.WPF.MahApps\Create_Tungsten.WPF.MahApps_Package.bat
-		NuGet\Tungsten.WPF.MahApps\Readme.txt = NuGet\Tungsten.WPF.MahApps\Readme.txt
-		NuGet\Tungsten.WPF.MahApps\Tungsten.WPF.MahApps.nuspec = NuGet\Tungsten.WPF.MahApps\Tungsten.WPF.MahApps.nuspec
+		NuGet\Tungsten.WPF.Metro\Create_Tungsten.WPF.Metro_Package.bat = NuGet\Tungsten.WPF.Metro\Create_Tungsten.WPF.Metro_Package.bat
+		NuGet\Tungsten.WPF.Metro\Readme.txt = NuGet\Tungsten.WPF.Metro\Readme.txt
+		NuGet\Tungsten.WPF.Metro\Tungsten.WPF.Metro.nuspec = NuGet\Tungsten.WPF.Metro\Tungsten.WPF.Metro.nuspec
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W.WPF.Demo", "Demos\W.WPF.Demo\W.WPF.Demo.csproj", "{1FBC4D68-AA71-43ED-BC74-C95433416B2F}"
