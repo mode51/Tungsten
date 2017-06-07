@@ -30,17 +30,24 @@ A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable 
 ### Tungsten.Firewall
 * Tungsten.Firewall - A minimal library, using NetFwTypeLib, to add and remove Windows firewall rules
 
+### Tungsten.WPF
+* Tungsten.WPF - Provides a general WPF framework to make WPF application development easier
+
+### Tungsten.WPF.Metro
+* Tungsten.WPF.Metro - Extends Tungsten.WPF with basic MahApps Accents and Themes
+
 # Demos
 * Tungsten.IO.Pipes.Standard - A NetStandard wrapper for named pipes (client and server)
 * Tungsten.Demo.Winforms - Uses tasks, Property and Gate to provide a responsive UI while handling background tasks
 * Tungsten.Demo.WPF - Illustrates how to use Tungsten in a WPF application
-* Tungsten.Standard.Demo - Demonstrates using some of the features in Tungsten.Standard
+* Tungsten.Standard.Demo - Illustrates using some of the features in Tungsten.Standard
 * Tungsten.Domains.Demo - Illustrates using Tungsten.Domains to host a reloadable AppDomain
 * Tungsten.Domains.Plugin.Demo - A sample plugin
 * Tungsten.Domains.Plugin.Interface.Demo - The interface used by the plugin demo
 * Tungsten.IO.Pipes.Standard.Demo - Illustrates using the named pipe client and server wrappers
 * Tungsten.Net.Demo - Illustrates how to create a tcp server and connect clients
 * Tungsten.Net.RPC.Standard.Demo - a client/server RPC demo
+* W.WPF.Demo - illustrates how to use the PageFramework and the W.WPF MVVM method (standard and generic)
 
 # Overview Of Classes By Project
 
@@ -129,3 +136,9 @@ The server must be running in an application which contains classes and methods 
 
 ### Tungsten.Firewall
 * W.Firewall - Provides static methods to add, remove and check the existance of, Windows firewall rules
+
+### Tungsten.WPF
+* W.WPF - provides a framework for paging using UserControls or Pages and regular and generic versions of MVVM models
+
+### Tungsten.WPF.Metro
+* W.WPF.Metro - references MahApps.Metro and makes it easy to add accents and themes to individual windows or the whole application
