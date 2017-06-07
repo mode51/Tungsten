@@ -1,0 +1,74 @@
+﻿<wMetro:MetroWindow
+        x:Class="W.WPF.Demo.Views.GenericMainMetroWindow"
+        x:TypeArguments="models:MainWindowModel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:wMetro="clr-namespace:W.WPF.Views;assembly=Tungsten.WPF.Metro"
+        xmlns:wMetroStyle="clr-namespace:W.WPF;assembly=Tungsten.WPF.Metro"
+        xmlns:models="clr-namespace:W.WPF.Demo.Models"
+        mc:Ignorable="d"
+        BorderBrush="{DynamicResource AccentColorBrush}" BorderThickness="2"
+        ShowTitleBar="True"
+        Title="GenericMainMetroWindow"
+        Height="480" Width="640"
+        x:Name="winMainWindow"
+    >
+
+    <mah:MetroWindow.LeftWindowCommands>
+        <mah:WindowCommands>
+            <Button x:Name="btnHome" Content="Home" IsEnabled="{Binding CanNavigateHome}" Click="btnHome_Click" />
+        </mah:WindowCommands>
+    </mah:MetroWindow.LeftWindowCommands>
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <Button x:Name="btnSettings" Content="Settings" Click="btnSettings_Click" />
+            <Button x:Name="btnAbout" Content="About" Click="btnAbout_Click" />
+            <!--<mah:ToggleSwitchButton x:Name="btnShowLogMessages" IsChecked="{Binding Source={x:Static models:ApplicationModel.Instance}, Path=LogWindow.IsVisible}" />-->
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <mah:ProgressRing x:Name="busyIndicatory" Grid.Row="0" Grid.RowSpan="99" Grid.Column="0" Grid.ColumnSpan="99" IsActive="{Binding IsBusy.Value, FallbackValue=False}" />
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Foreground="{DynamicResource AccentColorBrush}" Text="Window" Margin="2" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <ComboBox x:Name="cbAccents" Grid.Column="1" ItemsSource="{Binding Source={x:Static wMetroStyle:MetroStyle.AllAccents}, Path=Value}" SelectedItem="{Binding ElementName=winMainWindow, Path=LocalStyle.Value.Accent.Value}" Margin="2" />
+            <ComboBox x:Name="cbThemes" Grid.Column="2" ItemsSource="{Binding Source={x:Static wMetroStyle:MetroStyle.AllThemes}, Path=Value}" SelectedItem="{Binding ElementName=winMainWindow, Path=LocalStyle.Value.Theme.Value}" Margin="2" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Foreground="{DynamicResource AccentColorBrush}" Text="Application" Margin="2" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <ComboBox x:Name="cbAppAccents" Grid.Column="1" ItemsSource="{Binding Source={x:Static wMetroStyle:MetroStyle.AllAccents}, Path=Value}" SelectedItem="{Binding ElementName=winMainWindow, Path=ApplicationStyle.Value.Accent.Value}" Margin="2" />
+            <ComboBox x:Name="cbAppThemes" Grid.Column="2" ItemsSource="{Binding Source={x:Static wMetroStyle:MetroStyle.AllThemes}, Path=Value}" SelectedItem="{Binding ElementName=winMainWindow, Path=ApplicationStyle.Value.Theme.Value}" Margin="2" />
+        </Grid>
+
+        <!--<Border Grid.Row="1" Height="2" BorderBrush="{DynamicResource AccentColorBrush3}" BorderThickness="1" />-->
+
+        <Grid Grid.Row="2">
+            <!--<Border BorderBrush="CadetBlue" BorderThickness="2">-->
+            <ContentPresenter Content="{Binding ElementName=winMainWindow, Path=ActivePage.FrameworkElement, Mode=OneWay}" />
+            <!--<Frame Source="{Binding Path=CurrentPage, Mode=OneWay}" NavigationUIVisibility="Hidden"></Frame>-->
+            <!--</Border>-->
+        </Grid>
+    </Grid>
+</wMetro:MetroWindow>

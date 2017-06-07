@@ -125,6 +125,9 @@ namespace W.Net
         //    //if ((_messageSentCount > 1)) //skip the public key or if there are no listeners
         //    OnSecureDataSent(bytes);
         //}
+        /// <summary>
+        /// Called by Dispose.  Override to provide specific dispose functionality.
+        /// </summary>
         protected override void OnDispose()
         {
             base.OnDispose();

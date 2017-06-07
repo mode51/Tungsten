@@ -1,5 +1,8 @@
 ﻿namespace W.Net
 {
+    /// <summary>
+    /// Used by W.Net.Client.DataSent (might later be used for W.Net.Client.MessageSent)
+    /// </summary>
     public struct SocketData
     {
         /// <summary>

@@ -31,6 +31,12 @@ namespace W
         /// <summary>
         /// Constructs a new Property
         /// </summary>
+        /// <param name="defaultValue">The default and initial value of the property</param>
+        /// <param name="onValueChanged">A callback for when the property value changes</param>
+        public Property(TValue defaultValue, OnValueChangedDelegate onValueChanged = null) : this(default(TOwner), defaultValue, onValueChanged) { }
+        /// <summary>
+        /// Constructs a new Property
+        /// </summary>
         /// <param name="owner">The owner of the property</param>
         public Property(TOwner owner) : this(owner, default(TValue), null) { }
         /// <summary>

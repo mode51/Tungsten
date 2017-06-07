@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Tungsten.WPF.MahApps</id>
+    <title>Tungsten.WPF.MahApps</title>
+    <version>1.0.0</version>
+    <authors>Jordan Duerksen</authors>
+    <owners>Jordan Duerksen</owners>
+    <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/mode51/Tungsten</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Extends Tungsten.WPF with basic MahApps Accents and Themes</description>
+    <summary>Extends Tungsten.WPF with basic MahApps Accents and Themes</summary>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2017 Jordan Duerksen</copyright>
+    <tags>Tungsten Tungsten.WPF Tungsten.WPF.MahApps W WPF MahApps C# library</tags>
+    <dependencies>
+      <group targetFramework="net45">
+        <dependency id="Tungsten" version="1.2.5" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.WPF" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="MahApps.Metro" version="1.5.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Readme.txt" target="" />
+
+    <file src="..\..\Src\Tungsten.WPF.MahApps\bin\Release\Tungsten.WPF.MahApps.dll" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.WPF.MahApps\bin\Release\Tungsten.WPF.MahApps.xml" target="lib\net45" />
+
+  </files>
+</package>

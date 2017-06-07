@@ -116,6 +116,9 @@
     <Compile Include="..\Tungsten.Standard\Logging\Logging.cs">
       <Link>Logging\Logging.cs</Link>
     </Compile>
+    <Compile Include="..\Tungsten.Standard\Singleton.cs">
+      <Link>Singleton.cs</Link>
+    </Compile>
     <Compile Include="..\Tungsten.Standard\StringExtensions.cs">
       <Link>StringExtensions.cs</Link>
     </Compile>

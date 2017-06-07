@@ -99,6 +99,9 @@ namespace W.Net
             IsConnectedResetEvent.Set(); //have to set this because we're already connected
             ConfigureDelegates();
         }
+        /// <summary>
+        /// Destructs the Client and calls Dispose
+        /// </summary>
         ~Client()
         {
             Dispose();
