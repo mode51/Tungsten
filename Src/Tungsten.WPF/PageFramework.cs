@@ -81,7 +81,7 @@ namespace W.WPF
         private PageWrapper _currentPage = null;
         private IPageHost _host;
 
-        private Stack<T> TrimHistory<T>(Stack<T> @this, uint maxSize)
+        private Stack<T> TrimHistory<T>(Stack<T> @this, int maxSize)
         {
             if (@this.Count <= maxSize || @this.Count < 2)
                 return @this;
@@ -91,14 +91,14 @@ namespace W.WPF
             result.Push(items[items.Length - 1]); //re-add the last page, which is the Home page
             maxSize -= 1; //because we just re-added the Home page
             int endIndex = items.Length - 2;//skip the last one because we've already added it
-            int startIndex = 1 + (endIndex - (int)maxSize);
+            int startIndex = 1 + (endIndex - maxSize);
             for (var t = endIndex; t >= startIndex; t--)
             {
                 result.Push(items[t]);
             }
             return result;
         }
-        private PageWrapper NavigateTo(PageWrapper page, bool push = true, params object[] args)
+        private PageWrapper NavigateTo(PageWrapper page, int maxHistory, bool push = true, params object[] args)
         {
             try
             {
@@ -110,7 +110,7 @@ namespace W.WPF
                     {
                         var previousPage = _host.ActivePage?.AsPage;
                         previousPage?.OnNavigateFrom(page?.AsPage);
-                        _history = TrimHistory(_history, 5); //just picked a number to limit the size of the history
+                        _history = TrimHistory(_history, maxHistory); //just picked a number to limit the size of the history
                         if (push)
                             _history.Push(page);
                         _host.ActivePage = page;
@@ -126,38 +126,57 @@ namespace W.WPF
             }
             return page;
         }
-
+        /// <summary>
+        /// Navigate to the page of the given Type
+        /// </summary>
+        /// <param name="type">The type of page to navigate to</param>
+        /// <param name="args">Any arguments to pass into the page upon navigation</param>
+        /// <returns></returns>
         public PageWrapper NavigateTo(Type type, params object[] args)
         {
             var page = PageFramework.AllPages.FirstOrDefault(p => p.Type == type);
             if (page != null)
-                return NavigateTo(page, true, args);
+                return NavigateTo(page, MaximumNumberOfPreviousPages.Value, true, args);
             return null;
         }
         /// <summary>
-        /// Tell the framework to navigate to the page of the given type name
+        /// Navigate to the page of the given Type name
         /// </summary>
         /// <param name="typeName">The name of the page type</param>
-        /// <param name="args">Any arguments to pass into the page</param>
+        /// <param name="args">Any arguments to pass into the page upon navigation</param>
         /// <returns></returns>
         public PageWrapper NavigateTo(string typeName, params object[] args)
         {
             var page = PageFramework.AllPages.FirstOrDefault(p => p.Type.Name == typeName);
             if (page != null)
-                return NavigateTo(page, true, args);
+                return NavigateTo(page, MaximumNumberOfPreviousPages.Value, true, args);
             return null;
         }
+        /// <summary>
+        /// Navigate to the previous page
+        /// </summary>
+        /// <returns></returns>
         public PageWrapper NavigateBack()
         {
             if (_history.Count < 2)
                 return null;
             _history.Pop();//remove current page
             var page = _history.Peek();
-            return NavigateTo(page, false);
+            return NavigateTo(page, MaximumNumberOfPreviousPages.Value, false);
         }
-
+        /// <summary>
+        /// True if there is at least one previous page in the history
+        /// </summary>
         public Property<bool> CanNavigateBack { get; } = new Property<bool>(false);
-        public Property<bool> CanNavigateHome { get; } = new Property<bool>(false);
+        /// <summary>
+        /// Always True
+        /// </summary>
+        public Property<bool> CanNavigateHome { get; } = new Property<bool>(true);
+
+        /// <summary>
+        /// The number of previous pages to remember
+        /// </summary>
+        public Property<int> MaximumNumberOfPreviousPages { get; } = new Property<int>(99);
 
         /// <summary>
         /// Destructs the PageFramework instance and frees resources
