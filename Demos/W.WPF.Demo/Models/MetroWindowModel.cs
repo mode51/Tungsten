@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace W.WPF.Demo.Models
 {
-    public class MetroWindowModel : W.WPF.Models.ViewModelBase
+    public class MetroWindowModel : W.WPF.Models.ViewModel
     {
         public MetroWindowModel() : base()
         {

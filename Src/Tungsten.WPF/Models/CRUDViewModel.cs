@@ -3,7 +3,10 @@ using W.WPF.Commands;
 
 namespace W.WPF.Models
 {
-    public class PageViewModel : ViewModelBase
+    /// <summary>
+    /// A ViewModel with some initial functionality
+    /// </summary>
+    public class CRUDViewModel : ViewModel
     {
         /// <summary>
         /// A Refresh Command
@@ -85,7 +88,10 @@ namespace W.WPF.Models
         /// </summary>
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
         protected virtual void OnDeleteComplete(CancellationToken cancellationToken) { }
-
+        
+        /// <summary>
+        /// Called immediately by the constructor.  Initializes the CRUD commands.
+        /// </summary>
         protected override void OnInitialize()
         {
             RefreshCommander = new Commander(OnRefreshStarting, OnRefresh, OnRefreshComplete);
@@ -94,6 +100,9 @@ namespace W.WPF.Models
             DeleteCommander = new Commander(OnDeleteStarting, OnDelete, OnDeleteComplete);
             base.OnInitialize();
         }
-        public PageViewModel() : base() { }
+        /// <summary>
+        /// Construct a new CRUDViewModel
+        /// </summary>
+        public CRUDViewModel() : base() { }
     }
 }

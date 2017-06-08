@@ -11,9 +11,9 @@ using W.WPF.Core;
 namespace W.WPF.Models
 {
     /// <summary>
-    /// The base class for W.WPF PageFramework view models
+    /// A root viewmodel which provides some shared features
     /// </summary>
-    public class ViewModelBase : DependencyObjectBase /*, IModel , ISaveCommander, IRefreshCommander*/
+    public class ViewModel : DependencyObjectBase /*, IModel , ISaveCommander, IRefreshCommander*/
     {
         //#region IBusy
         ///// <summary>
@@ -68,7 +68,7 @@ namespace W.WPF.Models
         /// <summary>
         /// Constructs a new ViewModel
         /// </summary>
-        public ViewModelBase() : base()
+        public ViewModel() : base()
         {
             Log.i("{0}.InitializeProperties()", this.GetType().Name);
             this.InitializeProperties();

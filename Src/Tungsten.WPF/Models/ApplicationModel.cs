@@ -16,7 +16,7 @@ namespace W.WPF.Models
     /// Base class for a WPF application model
     /// </summary>
     /// <typeparam name="TModel"></typeparam>
-    public class ApplicationModel<TModel> : ViewModelBase where TModel : ApplicationModel<TModel>, new()
+    public class ApplicationModel<TModel> : ViewModel where TModel : ApplicationModel<TModel>, new()
     {
         private static volatile TModel _instance;
         private static object _lock = new object();
