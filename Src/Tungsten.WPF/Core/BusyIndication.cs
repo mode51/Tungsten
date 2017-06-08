@@ -8,7 +8,11 @@
         /// <summary>
         /// Get or set the IsBusy flag
         /// </summary>
-        public Property<BusyIndication, bool> IsBusy { get; } = new Property<BusyIndication, bool>((m, oldValue, newValue) => { m.Visibility.Value = newValue ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden; });
+        public Property<BusyIndication, bool> IsBusy { get; } = new Property<BusyIndication, bool>((m, oldValue, newValue) => { m.Visibility.Value = newValue ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden; m.IsNotBusy.Value = !newValue; });
+        /// <summary>
+        /// Simply the reverse of IsBusy
+        /// </summary>
+        public Property<bool> IsNotBusy { get; } = new Property<bool>(true);
         /// <summary>
         /// Get or set a title string which can be displayed while busy
         /// </summary>
