@@ -16,14 +16,14 @@ namespace W.WPF.Commands
     public class Commander //<TModel> where TModel : class, IBusy, new()
     {
         private CancellationTokenSource _executeCTS;
-        private Action<CancellationToken> _onExecuteStarting;
-        private Action<CancellationToken> _onExecute;
-        private Action<CancellationToken> _onExecuteComplete;
+        private Action<Commander, CancellationToken> _onExecuteStarting;
+        private Action<Commander, CancellationToken> _onExecute;
+        private Action<Commander, CancellationToken> _onExecuteComplete;
 
         //private ControlModelBase<TModel> _parent;
         private ICommand _command;
 
-        private async Task ExecuteAsync(Action<CancellationToken> onBeforeExecute, Action<CancellationToken> onExecute, Action<CancellationToken> onAfterExecute, Action<bool> onComplete = null, CancellationTokenSource cts = null)
+        private async Task ExecuteAsync(Action<Commander, CancellationToken> onBeforeExecute, Action<Commander, CancellationToken> onExecute, Action<Commander, CancellationToken> onAfterExecute, Action<Commander, bool> onComplete = null, CancellationTokenSource cts = null)
         {
             if (cts == null)
                 cts = new CancellationTokenSource();
@@ -33,7 +33,7 @@ namespace W.WPF.Commands
                 bool success = false;
                 try
                 {
-                    onBeforeExecute?.Invoke(cancellationToken);
+                    onBeforeExecute?.Invoke(this, cancellationToken);
                 }
                 catch (Exception e)
                 {
@@ -43,7 +43,7 @@ namespace W.WPF.Commands
                     return;
                 try
                 {
-                    onExecute?.Invoke(cancellationToken);
+                    onExecute?.Invoke(this, cancellationToken);
                     success = true;
                 }
                 catch (Exception e)
@@ -55,7 +55,7 @@ namespace W.WPF.Commands
 
                 try
                 {
-                    onAfterExecute?.Invoke(cancellationToken);
+                    onAfterExecute?.Invoke(this, cancellationToken);
                 }
                 catch (Exception e)
                 {
@@ -65,7 +65,7 @@ namespace W.WPF.Commands
                     return;
                 try
                 {
-                    onComplete?.Invoke(success);
+                    onComplete?.Invoke(this, success);
                 }
                 catch (Exception e)
                 {
@@ -102,28 +102,27 @@ namespace W.WPF.Commands
         /// </summary>
         /// <param name="onComplete">An action to execute when the command has completed.</param>
         /// <returns>The Task related to this command</returns>
-        public async Task Execute(Action<bool> onComplete = null)
+        public async Task Execute(Action<Commander, bool> onComplete = null)
         {
             _executeCTS = new CancellationTokenSource();
             await ExecuteAsync(
-                cts =>
+                (o, ct) =>
                 {
                     //_parent.Dispatcher.InvokeEx(() => { _parent.IsBusy.Value = true; });
-                    _onExecuteStarting(cts);
+                    _onExecuteStarting(o, ct);
                 },
-                cts => { _onExecute(cts); },
-                cts =>
+                (o, ct) => { _onExecute(o, ct); },
+                (o, ct) =>
                 {
                     //_parent.Dispatcher.InvokeEx(() => { _parent.IsBusy.Value = false; });
-                    _onExecuteComplete(cts);
+                    _onExecuteComplete(o, ct);
                 },
                 onComplete, _executeCTS);
         }
-        //TODO: 6.3.2017 - not sure CanExecute will work right (should the owner be the page or model instead?)
         /// <summary>
         /// If True, the command can be executed
         /// </summary>
-        public Property<Commander, bool> CanExecute { get; } = new Property<Commander, bool>(false);
+        public Property<bool> CanExecute { get; } = new Property<bool>(false);
         /// <summary>
         /// A handle to this Commander as an ICommand
         /// </summary>
@@ -144,12 +143,23 @@ namespace W.WPF.Commands
         /// <param name="onExecuteStarting">Code to execute before the command executes</param>
         /// <param name="onExecute">Code to execute for this command</param>
         /// <param name="onExecuteComplete">Code to execute after the command executes </param>
-        public Commander(Action<CancellationToken> onExecuteStarting, Action<CancellationToken> onExecute, Action<CancellationToken> onExecuteComplete)
+        public Commander(Action<Commander, CancellationToken> onExecuteStarting, Action<Commander, CancellationToken> onExecute, Action<Commander, CancellationToken> onExecuteComplete)
         {
             this.InitializeProperties();
             _onExecuteStarting = onExecuteStarting;
             _onExecute = onExecute;
             _onExecuteComplete = onExecuteComplete;
+        }
+        /// <summary>
+        /// Constructs a new Commander object
+        /// </summary>
+        /// <param name="onExecute">Code to execute for this command</param>
+        public Commander(Action<Commander, CancellationToken> onExecute)
+        {
+            this.InitializeProperties();
+            _onExecuteStarting = null;
+            _onExecute = onExecute;
+            _onExecuteComplete = null;
         }
     }
 }

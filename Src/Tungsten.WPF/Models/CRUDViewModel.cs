@@ -28,66 +28,78 @@ namespace W.WPF.Models
         /// <summary>
         /// Called before OnRefresh
         /// </summary>
+        /// <param name="commander">The Commander which is being executed</param>
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
-        protected virtual void OnRefreshStarting(CancellationToken cancellationToken) { BusyIndication.IsBusy.Value = true; RefreshCommander.CanExecute.Value = false; /*AsRefreshable.Value.CanRefresh.Value = false;*/ }
+        protected virtual void OnRefreshStarting(Commander commander, CancellationToken cancellationToken) { BusyIndication.IsBusy.Value = true; RefreshCommander.CanExecute.Value = false; /*AsRefreshable.Value.CanRefresh.Value = false;*/ }
         /// <summary>
         /// Place code to refresh the data here
         /// </summary>
+        /// <param name="commander">The Commander which is being executed</param>
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
-        protected virtual void OnRefresh(CancellationToken cancellationToken) { }
+        protected virtual void OnRefresh(Commander commander, CancellationToken cancellationToken) { }
         /// <summary>
         /// Called after the data has been refreshed
         /// </summary>
+        /// <param name="commander">The Commander which is being executed</param>
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
-        protected virtual void OnRefreshComplete(CancellationToken cancellationToken) { BusyIndication.IsBusy.Value = false; RefreshCommander.CanExecute.Value = true; /*AsRefreshable.Value.CanRefresh.Value = true;*/ }
+        protected virtual void OnRefreshComplete(Commander commander, CancellationToken cancellationToken) { BusyIndication.IsBusy.Value = false; RefreshCommander.CanExecute.Value = true; /*AsRefreshable.Value.CanRefresh.Value = true;*/ }
 
         /// <summary>
         /// Called before OnSave
         /// </summary>
+        /// <param name="commander">The Commander which is being executed</param>
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
-        protected virtual void OnSaveStarting(CancellationToken cancellationToken) { BusyIndication.IsBusy.Value = true; RefreshCommander.CanExecute.Value = false; /*AsRefreshable.Value.CanRefresh.Value = false;*/ }
+        protected virtual void OnSaveStarting(Commander commander, CancellationToken cancellationToken) { BusyIndication.IsBusy.Value = true; RefreshCommander.CanExecute.Value = false; /*AsRefreshable.Value.CanRefresh.Value = false;*/ }
         /// <summary>
         /// Place code to save data here
         /// </summary>
+        /// <param name="commander">The Commander which is being executed</param>
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
-        protected virtual void OnSave(CancellationToken cancellationToken) { }
+        protected virtual void OnSave(Commander commander, CancellationToken cancellationToken) { }
         /// <summary>
         /// Called after OnSave
         /// </summary>
+        /// <param name="commander">The Commander which is being executed</param>
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
-        protected virtual void OnSaveComplete(CancellationToken cancellationToken) { BusyIndication.IsBusy.Value = false; RefreshCommander.CanExecute.Value = true; /*AsRefreshable.Value.CanRefresh.Value = true;*/ }
+        protected virtual void OnSaveComplete(Commander commander, CancellationToken cancellationToken) { BusyIndication.IsBusy.Value = false; RefreshCommander.CanExecute.Value = true; /*AsRefreshable.Value.CanRefresh.Value = true;*/ }
 
         /// <summary>
         /// Called before OnAdd
         /// </summary>
+        /// <param name="commander">The Commander which is being executed</param>
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
-        protected virtual void OnAddStarting(CancellationToken cancellationToken) { }
+        protected virtual void OnAddStarting(Commander commander, CancellationToken cancellationToken) { }
         /// <summary>
         /// Place code to add data here
         /// </summary>
+        /// <param name="commander">The Commander which is being executed</param>
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
-        protected virtual void OnAdd(CancellationToken cancellationToken) { }
+        protected virtual void OnAdd(Commander commander, CancellationToken cancellationToken) { }
         /// <summary>
         /// Called after OnAdd
         /// </summary>
+        /// <param name="commander">The Commander which is being executed</param>
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
-        protected virtual void OnAddComplete(CancellationToken cancellationToken) { }
+        protected virtual void OnAddComplete(Commander commander, CancellationToken cancellationToken) { }
 
         /// <summary>
         /// Called before OnDelete
         /// </summary>
+        /// <param name="commander">The Commander which is being executed</param>
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
-        protected virtual void OnDeleteStarting(CancellationToken cancellationToken) { }
+        protected virtual void OnDeleteStarting(Commander commander, CancellationToken cancellationToken) { }
         /// <summary>
         /// Place code to delete data here
         /// </summary>
+        /// <param name="commander">The Commander which is being executed</param>
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
-        protected virtual void OnDelete(CancellationToken cancellationToken) { }
+        protected virtual void OnDelete(Commander commander, CancellationToken cancellationToken) { }
         /// <summary>
         /// Called after OnDelete
         /// </summary>
+        /// <param name="commander">The Commander which is being executed</param>
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
-        protected virtual void OnDeleteComplete(CancellationToken cancellationToken) { }
+        protected virtual void OnDeleteComplete(Commander commander, CancellationToken cancellationToken) { }
         
         /// <summary>
         /// Called immediately by the constructor.  Initializes the CRUD commands.
