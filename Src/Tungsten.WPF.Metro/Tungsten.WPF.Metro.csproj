@@ -53,6 +53,9 @@
     <Reference Include="Tungsten, Version=1.2.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Tungsten.1.2.5\lib\net45\Tungsten.dll</HintPath>
     </Reference>
+    <Reference Include="Tungsten.WPF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Tungsten.WPF.1.0.0\lib\net45\Tungsten.WPF.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -89,12 +92,6 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Resources\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Tungsten.WPF\Tungsten.WPF.csproj">
-      <Project>{c1042303-1b41-4082-93f9-2aad2e5a5660}</Project>
-      <Name>Tungsten.WPF</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
