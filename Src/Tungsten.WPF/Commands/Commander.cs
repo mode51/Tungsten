@@ -10,20 +10,74 @@ using W.WPF.Core;
 
 namespace W.WPF.Commands
 {
+    ///// <summary>
+    ///// Usefully wraps the functionality of a WPF Command
+    ///// </summary>
+    //public class Commander<TOwner> : Commander, IOwnedProperty
+    //{
+    //    private TOwner _owner = default(TOwner);
+
+    //    public void SetOwner(object owner)
+    //    {
+    //        _owner = (TOwner)owner;
+    //    }
+    //    /// <summary>
+    //    /// Constructs a new Commander object
+    //    /// </summary>
+    //    /// <param name="onExecuteStarting">Code to execute before the command executes</param>
+    //    /// <param name="onExecute">Code to execute for this command</param>
+    //    /// <param name="onExecuteComplete">Code to execute after the command executes </param>
+    //    public Commander(Action<TOwner, CancellationToken> onExecuteStarting, Action<TOwner, CancellationToken> onExecute, Action<TOwner, CancellationToken> onExecuteComplete) : base(onExecuteStarting, onExecute, onExecuteComplete)
+    //    {
+    //        this.InitializeProperties();
+    //    }
+    //    /// <summary>
+    //    /// Constructs a new Commander object
+    //    /// </summary>
+    //    /// <param name="onExecute">Code to execute for this command</param>
+    //    public Commander(Action<TOwner, CancellationToken> onExecute) : base(onExecute)
+    //    {
+    //        this.InitializeProperties();
+    //    }
+    //}
+
+
     /// <summary>
-    /// 
+    /// Usefully wraps the functionality of a WPF Command
     /// </summary>
-    public class Commander //<TModel> where TModel : class, IBusy, new()
+    public class Commander : Commander<Commander>
     {
+        /// <summary>
+        /// Constructs a new Commander object
+        /// </summary>
+        /// <param name="onExecuteStarting">Code to execute before the command executes</param>
+        /// <param name="onExecute">Code to execute for this command</param>
+        /// <param name="onExecuteComplete">Code to execute after the command executes </param>
+        public Commander(Action<Commander, CancellationToken> onExecuteStarting, Action<Commander, CancellationToken> onExecute, Action<Commander, CancellationToken> onExecuteComplete) : base(onExecuteStarting, onExecute, onExecuteComplete)
+        {
+        }
+        /// <summary>
+        /// Constructs a new Commander object
+        /// </summary>
+        /// <param name="onExecute">Code to execute for this command</param>
+        public Commander(Action<Commander, CancellationToken> onExecute) : base(onExecute)
+        {
+        }
+    }
+    /// <summary>
+    /// Usefully wraps the functionality of a WPF Command
+    /// </summary>
+    public class Commander<TOwner> : IOwnedProperty //<TModel> where TModel : class, IBusy, new()
+    {
+        private TOwner _owner = default(TOwner);
+
         private CancellationTokenSource _executeCTS;
-        private Action<Commander, CancellationToken> _onExecuteStarting;
-        private Action<Commander, CancellationToken> _onExecute;
-        private Action<Commander, CancellationToken> _onExecuteComplete;
-
-        //private ControlModelBase<TModel> _parent;
         private ICommand _command;
+        private Action<TOwner, CancellationToken> _onExecuteStarting = null;
+        private Action<TOwner, CancellationToken> _onExecute = null;
+        private Action<TOwner, CancellationToken> _onExecuteComplete = null;
 
-        private async Task ExecuteAsync(Action<Commander, CancellationToken> onBeforeExecute, Action<Commander, CancellationToken> onExecute, Action<Commander, CancellationToken> onAfterExecute, Action<Commander, bool> onComplete = null, CancellationTokenSource cts = null)
+        private async Task ExecuteAsync(Action<TOwner, CancellationToken> onBeforeExecute, Action<TOwner, CancellationToken> onExecute, Action<TOwner, CancellationToken> onAfterExecute, Action<TOwner, bool> onComplete = null, CancellationTokenSource cts = null)
         {
             if (cts == null)
                 cts = new CancellationTokenSource();
@@ -33,7 +87,7 @@ namespace W.WPF.Commands
                 bool success = false;
                 try
                 {
-                    onBeforeExecute?.Invoke(this, cancellationToken);
+                    onBeforeExecute?.Invoke(_owner, cancellationToken);
                 }
                 catch (Exception e)
                 {
@@ -43,7 +97,7 @@ namespace W.WPF.Commands
                     return;
                 try
                 {
-                    onExecute?.Invoke(this, cancellationToken);
+                    onExecute?.Invoke(_owner, cancellationToken);
                     success = true;
                 }
                 catch (Exception e)
@@ -55,7 +109,7 @@ namespace W.WPF.Commands
 
                 try
                 {
-                    onAfterExecute?.Invoke(this, cancellationToken);
+                    onAfterExecute?.Invoke(_owner, cancellationToken);
                 }
                 catch (Exception e)
                 {
@@ -65,7 +119,7 @@ namespace W.WPF.Commands
                     return;
                 try
                 {
-                    onComplete?.Invoke(this, success);
+                    onComplete?.Invoke(_owner, success);
                 }
                 catch (Exception e)
                 {
@@ -73,6 +127,7 @@ namespace W.WPF.Commands
                 }
             }, cancellationToken);
         }
+        
         /// <summary>
         /// Execute the command
         /// </summary>
@@ -90,6 +145,16 @@ namespace W.WPF.Commands
         {
             return true;
         }
+
+        /// <summary>
+        /// Sets the Owner of this property (the default value is itself)
+        /// </summary>
+        /// <param name="owner">The new owning object</param>
+        public void SetOwner(object owner)
+        {
+            _owner = (TOwner)owner;
+        }
+
         /// <summary>
         /// Notifies the command that it should cancel
         /// </summary>
@@ -102,7 +167,7 @@ namespace W.WPF.Commands
         /// </summary>
         /// <param name="onComplete">An action to execute when the command has completed.</param>
         /// <returns>The Task related to this command</returns>
-        public async Task Execute(Action<Commander, bool> onComplete = null)
+        public async Task Execute(Action<TOwner, bool> onComplete = null)
         {
             _executeCTS = new CancellationTokenSource();
             await ExecuteAsync(
@@ -123,6 +188,7 @@ namespace W.WPF.Commands
         /// If True, the command can be executed
         /// </summary>
         public Property<bool> CanExecute { get; } = new Property<bool>(false);
+        
         /// <summary>
         /// A handle to this Commander as an ICommand
         /// </summary>
@@ -137,29 +203,26 @@ namespace W.WPF.Commands
                 return _command;
             }
         }
+
+        /// <summary>
+        /// Constructs a new Commander object
+        /// </summary>
+        /// <param name="onExecute">Code to execute for this command</param>
+        public Commander(Action<TOwner, CancellationToken> onExecute) : this(null, onExecute, null)
+        {
+        }
         /// <summary>
         /// Constructs a new Commander object
         /// </summary>
         /// <param name="onExecuteStarting">Code to execute before the command executes</param>
         /// <param name="onExecute">Code to execute for this command</param>
         /// <param name="onExecuteComplete">Code to execute after the command executes </param>
-        public Commander(Action<Commander, CancellationToken> onExecuteStarting, Action<Commander, CancellationToken> onExecute, Action<Commander, CancellationToken> onExecuteComplete)
+        public Commander(Action<TOwner, CancellationToken> onExecuteStarting, Action<TOwner, CancellationToken> onExecute, Action<TOwner, CancellationToken> onExecuteComplete)
         {
             this.InitializeProperties();
             _onExecuteStarting = onExecuteStarting;
             _onExecute = onExecute;
             _onExecuteComplete = onExecuteComplete;
-        }
-        /// <summary>
-        /// Constructs a new Commander object
-        /// </summary>
-        /// <param name="onExecute">Code to execute for this command</param>
-        public Commander(Action<Commander, CancellationToken> onExecute)
-        {
-            this.InitializeProperties();
-            _onExecuteStarting = null;
-            _onExecute = onExecute;
-            _onExecuteComplete = null;
         }
     }
 }
