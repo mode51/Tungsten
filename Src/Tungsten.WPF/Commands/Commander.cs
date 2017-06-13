@@ -50,17 +50,17 @@ namespace W.WPF.Commands
         /// <summary>
         /// Constructs a new Commander object
         /// </summary>
-        /// <param name="onExecuteStarting">Code to execute before the command executes</param>
         /// <param name="onExecute">Code to execute for this command</param>
-        /// <param name="onExecuteComplete">Code to execute after the command executes </param>
-        public Commander(Action<Commander, CancellationToken> onExecuteStarting, Action<Commander, CancellationToken> onExecute, Action<Commander, CancellationToken> onExecuteComplete) : base(onExecuteStarting, onExecute, onExecuteComplete)
+        public Commander(Action<Commander, CancellationToken> onExecute) : this(null, onExecute, null)
         {
         }
         /// <summary>
         /// Constructs a new Commander object
         /// </summary>
+        /// <param name="onExecuteStarting">Code to execute before the command executes</param>
         /// <param name="onExecute">Code to execute for this command</param>
-        public Commander(Action<Commander, CancellationToken> onExecute) : base(onExecute)
+        /// <param name="onExecuteComplete">Code to execute after the command executes </param>
+        public Commander(Action<Commander, CancellationToken> onExecuteStarting, Action<Commander, CancellationToken> onExecute, Action<Commander, CancellationToken> onExecuteComplete) : base(onExecuteStarting, onExecute, onExecuteComplete)
         {
         }
     }
