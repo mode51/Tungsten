@@ -12,7 +12,7 @@
     <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</PackageIconUrl>
     <PackageTags>Tungsten.NuGet Tungsten W C# library</PackageTags>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <AssemblyVersion>1.2.6.0</AssemblyVersion>
     <FileVersion>1.2.6.0</FileVersion>
     <PackageReleaseNotes>Each Tungsten target now has it's own NuGet package</PackageReleaseNotes>
