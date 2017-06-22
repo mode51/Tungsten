@@ -14,7 +14,7 @@ namespace W.WPF
         /// <summary>
         /// Get or set the IsBusy flag
         /// </summary>
-        Property<BusyIndication, bool> IsBusy { get; }
+        Property<Busy, bool> IsBusy { get; }
         /// <summary>
         /// Get or set a title string which can be displayed while busy
         /// </summary>

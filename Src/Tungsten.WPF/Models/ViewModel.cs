@@ -37,7 +37,7 @@ namespace W.WPF.Models
         /// <summary>
         /// Information related to this model being busy
         /// </summary>
-        public BusyIndication BusyIndication { get; } = new BusyIndication();
+        public Busy Busy { get; } = new Busy();
         /// <summary>
         /// Everything needs a title
         /// </summary>

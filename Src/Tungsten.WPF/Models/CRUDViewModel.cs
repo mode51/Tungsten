@@ -30,7 +30,7 @@ namespace W.WPF.Models
         /// </summary>
         /// <param name="commander">The Commander which is being executed</param>
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
-        protected virtual void OnRefreshStarting(Commander commander, CancellationToken cancellationToken) { BusyIndication.IsBusy.Value = true; RefreshCommander.CanExecute.Value = false; /*AsRefreshable.Value.CanRefresh.Value = false;*/ }
+        protected virtual void OnRefreshStarting(Commander commander, CancellationToken cancellationToken) { Busy.IsBusy.Value = true; RefreshCommander.CanExecute.Value = false; /*AsRefreshable.Value.CanRefresh.Value = false;*/ }
         /// <summary>
         /// Place code to refresh the data here
         /// </summary>
@@ -42,14 +42,14 @@ namespace W.WPF.Models
         /// </summary>
         /// <param name="commander">The Commander which is being executed</param>
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
-        protected virtual void OnRefreshComplete(Commander commander, CancellationToken cancellationToken) { BusyIndication.IsBusy.Value = false; RefreshCommander.CanExecute.Value = true; /*AsRefreshable.Value.CanRefresh.Value = true;*/ }
+        protected virtual void OnRefreshComplete(Commander commander, CancellationToken cancellationToken) { Busy.IsBusy.Value = false; RefreshCommander.CanExecute.Value = true; /*AsRefreshable.Value.CanRefresh.Value = true;*/ }
 
         /// <summary>
         /// Called before OnSave
         /// </summary>
         /// <param name="commander">The Commander which is being executed</param>
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
-        protected virtual void OnSaveStarting(Commander commander, CancellationToken cancellationToken) { BusyIndication.IsBusy.Value = true; RefreshCommander.CanExecute.Value = false; /*AsRefreshable.Value.CanRefresh.Value = false;*/ }
+        protected virtual void OnSaveStarting(Commander commander, CancellationToken cancellationToken) { Busy.IsBusy.Value = true; RefreshCommander.CanExecute.Value = false; /*AsRefreshable.Value.CanRefresh.Value = false;*/ }
         /// <summary>
         /// Place code to save data here
         /// </summary>
@@ -61,7 +61,7 @@ namespace W.WPF.Models
         /// </summary>
         /// <param name="commander">The Commander which is being executed</param>
         /// <param name="cancellationToken">A CancellationToken which can be used to monitor cancellation</param>
-        protected virtual void OnSaveComplete(Commander commander, CancellationToken cancellationToken) { BusyIndication.IsBusy.Value = false; RefreshCommander.CanExecute.Value = true; /*AsRefreshable.Value.CanRefresh.Value = true;*/ }
+        protected virtual void OnSaveComplete(Commander commander, CancellationToken cancellationToken) { Busy.IsBusy.Value = false; RefreshCommander.CanExecute.Value = true; /*AsRefreshable.Value.CanRefresh.Value = true;*/ }
 
         /// <summary>
         /// Called before OnAdd

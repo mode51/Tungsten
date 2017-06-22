@@ -3,12 +3,12 @@
     /// <summary>
     /// Contains information related to a busy flag
     /// </summary>
-    public class BusyIndication : IBusy
+    public class Busy : IBusy
     {
         /// <summary>
         /// Get or set the IsBusy flag
         /// </summary>
-        public Property<BusyIndication, bool> IsBusy { get; } = new Property<BusyIndication, bool>((m, oldValue, newValue) => { m.Visibility.Value = newValue ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden; m.IsNotBusy.Value = !newValue; });
+        public Property<Busy, bool> IsBusy { get; } = new Property<Busy, bool>((m, oldValue, newValue) => { m.Visibility.Value = newValue ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden; m.IsNotBusy.Value = !newValue; });
         /// <summary>
         /// Simply the reverse of IsBusy
         /// </summary>
@@ -29,7 +29,7 @@
         /// <summary>
         /// Constructs a BusyIndicator
         /// </summary>
-        public BusyIndication()
+        public Busy()
         {
             this.InitializeProperties();
         }

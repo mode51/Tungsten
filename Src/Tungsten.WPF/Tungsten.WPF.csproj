@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\NavigationCommands.cs" />
-    <Compile Include="Core\BusyIndication.cs" />
+    <Compile Include="Core\Busy.cs" />
     <Compile Include="Models\ApplicationModel.cs" />
     <Compile Include="Commands\Commander.cs" />
     <Compile Include="Commands\RelayCommand.cs" />

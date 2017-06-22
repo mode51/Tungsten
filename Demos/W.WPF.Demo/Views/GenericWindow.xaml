@@ -43,6 +43,6 @@
             <!--</Border>-->
         </Grid>
 
-        <mah:ProgressRing x:Name="busyIndicatory" Grid.Row="0" Grid.RowSpan="99" Grid.Column="0" Grid.ColumnSpan="99" IsActive="{Binding BusyIndication.IsBusy.Value}" Visibility="{Binding BusyIndication.Visibility.Value, FallbackValue=False}" Foreground="{DynamicResource AccentColorBrush}" />
+        <mah:ProgressRing x:Name="busyIndicatory" Grid.Row="0" Grid.RowSpan="99" Grid.Column="0" Grid.ColumnSpan="99" IsActive="{Binding Busy.IsBusy.Value}" Visibility="{Binding Busy.Visibility.Value, FallbackValue=False}" Foreground="{DynamicResource AccentColorBrush}" />
     </Grid>
 </wViews:Window>
