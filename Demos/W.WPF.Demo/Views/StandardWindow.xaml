@@ -37,7 +37,7 @@
 
         <Grid Grid.Row="2">
             <!--<Border BorderBrush="CadetBlue" BorderThickness="2">-->
-            <ContentPresenter Content="{Binding ElementName=thisMainWindow, Path=ActivePage.FrameworkElement, Mode=OneWay}" />
+            <ContentPresenter Content="{Binding PageFramework.ActivePage.FrameworkElement, Mode=OneWay}" />
             <!--<Frame Source="{Binding Path=CurrentPage, Mode=OneWay}" NavigationUIVisibility="Hidden"></Frame>-->
             <!--</Border>-->
         </Grid>

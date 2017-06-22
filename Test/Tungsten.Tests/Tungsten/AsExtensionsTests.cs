@@ -16,14 +16,24 @@ namespace W.Tests.Tungsten
     internal class AsExtensionsTests
     {
         [Test]
-        public void AsCompressedDecompressed()
+        public void CompressDecompressBytes()
         {
             const string value = "Jordan                                                                                                            Duerksen";
-            var compressed = value.AsCompressed();
+            var compressed = value.AsBytes().AsCompressed();
             Console.WriteLine("Compressed Size = {0}", compressed.Length);
             var decompressed = compressed.AsDecompressed();
             Console.WriteLine("Decompressed Size = {0}", decompressed.Length);
-            Assert.IsTrue(decompressed == value);
+            Assert.IsTrue(decompressed.AsString() == value);
         }
+        //[Test]
+        //public void CompressDecompressString()
+        //{
+        //    const string value = "Jordan                                                                                                            Duerksen";
+        //    var compressed = value.AsCompressed();
+        //    Console.WriteLine("Compressed Size = {0}", compressed.Length);
+        //    var decompressed = compressed.AsDecompressed();
+        //    Console.WriteLine("Decompressed Size = {0}", decompressed.Length);
+        //    Assert.IsTrue(decompressed == value);
+        //}
     }
 }

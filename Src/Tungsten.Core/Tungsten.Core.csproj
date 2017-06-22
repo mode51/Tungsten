@@ -51,6 +51,7 @@
     <Compile Include="..\Tungsten.Standard\Threading\Thread.cs" Link="Threading\Thread.cs" />
     <Compile Include="..\Tungsten.Standard\Threading\ThreadBase.cs" Link="Threading\ThreadBase.cs" />
     <Compile Include="..\Tungsten.Standard\Threading\ThreadExtensions.cs" Link="Threading\ThreadExtensions.cs" />
+    <Compile Include="..\Tungsten.Standard\Threading\ThreadWithCustomData.cs" Link="Threading\ThreadWithCustomData.cs" />
   </ItemGroup>
 
   <ItemGroup>

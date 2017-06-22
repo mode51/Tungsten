@@ -22,7 +22,8 @@ namespace W.Threading
         /// <returns>Returns a reference to the new Thread</returns>
         public static W.Threading.Thread<T> CreateThread<T>(this T @this, Action<T, CancellationTokenSource> action, Action<bool, Exception> onComplete, CancellationTokenSource cts)
         {
-            return W.Threading.Thread<T>.Create(action, onComplete, cts, @this);
+            var thread = W.Threading.Thread<T>.Create(action, onComplete, cts, @this);
+            return thread;
         }
 #else
         /// <summary>

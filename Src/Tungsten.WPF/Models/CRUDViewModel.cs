@@ -115,6 +115,6 @@ namespace W.WPF.Models
         /// <summary>
         /// Construct a new CRUDViewModel
         /// </summary>
-        public CRUDViewModel() : base() { }
+        public CRUDViewModel(IPageHost host) : base(host) { }
     }
 }

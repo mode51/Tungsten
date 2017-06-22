@@ -27,7 +27,7 @@ namespace W.WPF.Demo.Views
 
         protected override void OnLoaded(object sender, RoutedEventArgs args)
         {
-            PageFramework.NavigateTo("Home");
+            ViewModel.PageFramework.NavigateTo("Home");
         }
         public GenericMetroWindow() : base()
         {
@@ -38,7 +38,7 @@ namespace W.WPF.Demo.Views
 
         private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
-            PageFramework.NavigateTo("Settings");
+            ViewModel.PageFramework.NavigateTo("Settings");
         }
 
         private void btnAbout_Click(object sender, RoutedEventArgs e)
@@ -48,7 +48,7 @@ namespace W.WPF.Demo.Views
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
-            PageFramework.NavigateTo("Home");
+            ViewModel.PageFramework.NavigateTo("Home");
         }
 
         private void btnToggleAccent_Click(object sender, RoutedEventArgs e)

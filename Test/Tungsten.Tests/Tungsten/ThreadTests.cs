@@ -74,14 +74,14 @@ namespace W.Tests.Tungsten
             var age = new Lockable<int>(25);
             var name = "Jordan";
 
-            var result = Thread<int>.Create((internalAge, cts) =>
+            var result = Thread<int>.Create<int>((internalAge, cts) =>
             {
                 Assert.IsTrue(age.Value == internalAge);
                 age.Value = 47;
             }, (b, exception) =>
             {
                 name = "Jordan Duerksen";
-            }, null, age.Value).Join(1000);
+            }, age.Value).Join(1000);
 
             Assert.IsTrue(age.Value == 47);
             Assert.IsTrue(result);
@@ -92,13 +92,13 @@ namespace W.Tests.Tungsten
         {
             Exception e = null;
 
-            var result = Thread<int>.Create((value, cts) =>
+            var result = Thread<int>.Create<int>((value, cts) =>
             {
                 throw new ArgumentNullException("Value");
             }, (b, exception) =>
             {
                 e = exception;
-            },null, 47).Join(1000);
+            }, 47).Join(1000);
 
             Assert.IsTrue(result);
             Assert.IsTrue(e != null);
@@ -108,14 +108,14 @@ namespace W.Tests.Tungsten
         {
             Exception e = null;
 
-            var result = Thread<int>.Create((value, cts) =>
+            var result = Thread<int>.Create<int>((value, cts) =>
             {
                 cts.Cancel();
                 throw new ArgumentNullException("Value");
             }, (b, exception) =>
             {
                 e = exception;
-            }, null, 47).Join(1000);
+            }, 47).Join(1000);
 
             Assert.IsTrue(result);
             Assert.IsTrue(e != null);

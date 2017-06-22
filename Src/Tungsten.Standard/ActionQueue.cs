@@ -8,7 +8,7 @@ namespace W
     /// Allows the programmer to enqueue items for processing on a separate thread.  The ActionQueue will process items sequentially whenever an item is added.
     /// </para></summary>
     /// <typeparam name="T">The type of data to enqueue and process</typeparam>
-    public class ActionQueue<T>
+    public class ActionQueue<T> : System.IDisposable
     {
         private string _caller;
 
@@ -21,6 +21,16 @@ namespace W
         /// </summary>
         public int Count => _queue.Count;
 
+        /// <summary>
+        /// The reference to the ConcurrentQueue being used
+        /// </summary>
+        public ConcurrentQueue<T> Queue
+        {
+            get
+            {
+                return _queue;
+            }
+        }
         /// <summary>
         /// Places an item in the queue
         /// </summary>
@@ -38,14 +48,12 @@ namespace W
         }
 
         /// <summary>
-        /// The reference to the ConcurrentQueue being used
+        /// Releases resources related to the ActionQueue
         /// </summary>
-        public ConcurrentQueue<T> Queue
+        public void Dispose()
         {
-            get
-            {
-                return _queue;
-            }
+            _cancellationTokenSource?.Dispose();
+            _threadReleaser?.Dispose();
         }
 
         /// <summary>
@@ -102,6 +110,13 @@ namespace W
                     }
                 }
             });
+        }
+        /// <summary>
+        /// Disposes the ActionQueue
+        /// </summary>
+        ~ActionQueue()
+        {
+            Dispose();
         }
     }
 }

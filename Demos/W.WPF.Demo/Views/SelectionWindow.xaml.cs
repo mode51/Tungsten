@@ -18,9 +18,9 @@ namespace W.WPF.Demo.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class AppWindow : Window
+    public partial class SelectionWindow : Window
     {
-        public AppWindow()
+        public SelectionWindow()
         {
             InitializeComponent();
             DataContext = this;

@@ -20,18 +20,19 @@ namespace W.WPF.Demo.Views
     /// </summary>
     public partial class MetroWindow : W.WPF.Views.MetroWindow
     {
-        protected override void OnLoaded(object sender, RoutedEventArgs args)
-        {
-            PageFramework.NavigateTo("Home");
-        }
         public MetroWindow() : base(new MainWindowModel())
         {
             InitializeComponent();
         }
 
+        protected override void OnLoaded(object sender, RoutedEventArgs args)
+        {
+            ViewModel.As<MainWindowModel>()?.PageFramework.NavigateTo("Home");
+        }
+
         private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
-            PageFramework.NavigateTo("Settings");
+            ViewModel.As<MainWindowModel>()?.PageFramework.NavigateTo("Settings");
         }
 
         private void btnAbout_Click(object sender, RoutedEventArgs e)
@@ -41,7 +42,7 @@ namespace W.WPF.Demo.Views
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
-            PageFramework.NavigateTo("Home");
+            ViewModel.As<MainWindowModel>()?.PageFramework.NavigateTo("Home");
         }
     }
 }

@@ -24,11 +24,12 @@
     <mah:MetroWindow.RightWindowCommands>
         <mah:WindowCommands>
             <Button x:Name="btnSettings" Content="Settings" Click="btnSettings_Click" />
+            <Button x:Name="btnAdvanced" Content="Advanced" Command="{Binding Path=PageFramework.Navigation.NavigateTo}" CommandParameter="Settings" />
+            <Button x:Name="btnHelp" Content="Help" Command="{Binding PageFramework.Navigation.NavigateTo}" CommandParameter="Settings" />
             <Button x:Name="btnAbout" Content="About" Click="btnAbout_Click" />
             <!--<mah:ToggleSwitchButton x:Name="btnShowLogMessages" IsChecked="{Binding Source={x:Static models:ApplicationModel.Instance}, Path=LogWindow.IsVisible}" />-->
         </mah:WindowCommands>
     </mah:MetroWindow.RightWindowCommands>
-
 
     <Grid>
         <Grid.RowDefinitions>
@@ -50,7 +51,7 @@
 
         <Grid Grid.Row="2">
             <!--<Border BorderBrush="CadetBlue" BorderThickness="2">-->
-            <ContentPresenter Content="{Binding ElementName=thisMainWindow, Path=ActivePage.FrameworkElement, Mode=OneWay}" />
+            <ContentPresenter x:Name="PageHost" Content="{Binding Path=PageFramework.ActivePage.FrameworkElement, Mode=OneWay}" />
             <!--<Frame Source="{Binding Path=CurrentPage, Mode=OneWay}" NavigationUIVisibility="Hidden"></Frame>-->
             <!--</Border>-->
         </Grid>

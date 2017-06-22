@@ -66,10 +66,27 @@ namespace W.WPF.Models
         }
 
         /// <summary>
+        /// If assigned, the viewmodel can control page navigation
+        /// </summary>
+        public PageFramework PageFramework { get; set; }
+
+        public void SetPageHost(IPageHost host)
+        {
+            PageFramework.SetPageHost(host);
+        }
+
+        /// <summary>
         /// Constructs a new ViewModel
         /// </summary>
-        public ViewModel() : base()
+        public ViewModel() : this(null)
         {
+        }
+        /// <summary>
+        /// Constructs a new ViewModel
+        /// </summary>
+        public ViewModel(IPageHost host) : base()
+        {
+            PageFramework = new PageFramework(host);
             Log.i("{0}.InitializeProperties()", this.GetType().Name);
             this.InitializeProperties();
         }

@@ -20,23 +20,23 @@ namespace W.WPF.Demo.Views
     /// </summary>
     public partial class GenericFrameWindow : W.WPF.Views.Window<MainWindowModel>
     {
-        protected override void OnLoaded(object sender, RoutedEventArgs args)
-        {
-            PageFramework.NavigateTo("HomePage");
-        }
         public GenericFrameWindow() : base()
         {
             InitializeComponent();
         }
+        protected override void OnLoaded(object sender, RoutedEventArgs args)
+        {
+            ViewModel.PageFramework.NavigateTo("HomePage");
+        }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
-            PageFramework.NavigateTo("HomePage");
+            ViewModel.PageFramework.NavigateTo("HomePage");
         }
 
         private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
-            PageFramework.NavigateTo("SettingsPage");
+            ViewModel.PageFramework.NavigateTo("SettingsPage");
         }
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)

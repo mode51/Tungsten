@@ -102,6 +102,8 @@ namespace W
         /// <param name="function">The function to call within a lock</param>
         public async void ExecuteInLockAsync(Func<TValue, TValue> function)
         {
+            if (function == null)
+                throw new ArgumentNullException(nameof(function));
             await Task.Run(() =>
             {
                 lock (_lockObject)

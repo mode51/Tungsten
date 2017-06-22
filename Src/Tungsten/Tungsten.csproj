@@ -52,11 +52,56 @@
     <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Tungsten.Standard\ActionQueue.cs">
+      <Link>ActionQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\AsExtensions.cs">
+      <Link>AsExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\CallResult.cs">
+      <Link>CallResult.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\FromExtensions.cs">
+      <Link>FromExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\InvokeExtensions.cs">
+      <Link>InvokeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\Lockable.cs">
+      <Link>Lockable.cs</Link>
+    </Compile>
     <Compile Include="..\Tungsten.Standard\Logging\CustomLogger.cs">
       <Link>Logging\CustomLogger.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Standard\Logging\Logging.cs">
       <Link>Logging\Logging.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\Property\IOwnedProperty.cs">
+      <Link>Property\IOwnedProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\Property\IProperty.cs">
+      <Link>Property\IProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\Property\Property.cs">
+      <Link>Property\Property.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\Property\PropertyBase.cs">
+      <Link>Property\PropertyBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\Property\PropertyChangedNotifier.cs">
+      <Link>Property\PropertyChangedNotifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\Property\PropertyHost.cs">
+      <Link>Property\PropertyHost.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\Property\PropertyHostMethods.cs">
+      <Link>Property\PropertyHostMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\Property\PropertyHostNotifier.cs">
+      <Link>Property\PropertyHostNotifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\Property\PropertyMethods.cs">
+      <Link>Property\PropertyMethods.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Standard\Singleton.cs">
       <Link>Singleton.cs</Link>
@@ -64,34 +109,47 @@
     <Compile Include="..\Tungsten.Standard\StringExtensions.cs">
       <Link>StringExtensions.cs</Link>
     </Compile>
-    <Compile Include="ActionQueue.cs" />
-    <Compile Include="AsExtensions.cs" />
-    <Compile Include="CallResult.cs" />
-    <Compile Include="FromExtensions.cs" />
-    <Compile Include="InvokeExtensions.cs" />
-    <Compile Include="Lockable.cs" />
-    <None Include="Logging.cs" />
-    <Compile Include="PropertyChangedNotifier.cs" />
+    <None Include="Archive\ActionQueue.cs" />
+    <None Include="Archive\AsExtensions.cs" />
+    <None Include="Archive\CallResult.cs" />
+    <None Include="Archive\FromExtensions.cs" />
+    <None Include="Archive\InvokeExtensions.cs" />
+    <None Include="Archive\Lockable.cs" />
+    <None Include="Archive\Logging.cs" />
+    <None Include="Archive\PropertyChangedNotifier.cs" />
+    <Compile Include="..\Tungsten.Standard\Threading\Gate.cs">
+      <Link>Threading\Gate.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\Threading\GateExtensions.cs">
+      <Link>Threading\GateExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\Threading\ThreadBase.cs">
+      <Link>Threading\ThreadBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\Threading\ThreadExtensions.cs">
+      <Link>Threading\ThreadExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard\Threading\ThreadWithCustomData.cs">
+      <Link>Threading\ThreadWithCustomData.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropertyHostNotifier.cs" />
-    <Compile Include="Property\IOwnedProperty.cs" />
-    <Compile Include="Property\IProperty.cs" />
-    <Compile Include="Property\Property.cs" />
-    <Compile Include="Property\PropertyBase.cs" />
-    <Compile Include="PropertyHost.cs" />
-    <Compile Include="PropertyHostMethods.cs" />
-    <Compile Include="Property\PropertyMethods.cs" />
+    <None Include="Archive\PropertyHostNotifier.cs" />
+    <None Include="Archive\IOwnedProperty.cs" />
+    <None Include="Archive\IProperty.cs" />
+    <None Include="Archive\Property.cs" />
+    <None Include="Archive\PropertyBase.cs" />
+    <None Include="Archive\PropertyHost.cs" />
+    <None Include="Archive\PropertyHostMethods.cs" />
+    <None Include="Archive\PropertyMethods.cs" />
     <Compile Include="RSA.cs" />
-    <Compile Include="Threading\Gate.cs" />
+    <None Include="Archive\Gate.cs" />
     <Compile Include="Threading\Thread.cs" />
-    <Compile Include="Threading\ThreadBase.cs" />
-    <Compile Include="Threading\ThreadExtensions.cs" />
+    <None Include="Archive\ThreadBase.cs" />
+    <None Include="Archive\ThreadExtensions.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Archive\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Threading\GateExtensions.cs" />
+    <None Include="Archive\GateExtensions.cs" />
     <Content Include="Tungsten.ico" />
     <None Include="Tungsten.nuspec">
       <SubType>Designer</SubType>

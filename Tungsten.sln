@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Test Projects", "_Test Projects", "{6E66335A-C00D-4B75-8D90-E1FDC012306F}"
 EndProject
@@ -11,22 +11,35 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{FEFB48AC-2D7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten", "Src\Tungsten\Tungsten.csproj", "{46040E3B-AE52-42F9-9C1B-8566FC6765C5}"
 	ProjectSection(ProjectDependencies) = postProject
-		{6280C716-960A-4588-8123-D96B30271C22} = {6280C716-960A-4588-8123-D96B30271C22}
-		{B64BEC39-7279-46C3-85BA-703751D441CD} = {B64BEC39-7279-46C3-85BA-703751D441CD}
 		{4C787F62-8CD4-4627-8058-1598E752135A} = {4C787F62-8CD4-4627-8058-1598E752135A}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.Portable", "Src\Tungsten.Portable\Tungsten.Portable.csproj", "{B64BEC39-7279-46C3-85BA-703751D441CD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4C787F62-8CD4-4627-8058-1598E752135A} = {4C787F62-8CD4-4627-8058-1598E752135A}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.Universal", "Src\Tungsten.Universal\Tungsten.Universal.csproj", "{6280C716-960A-4588-8123-D96B30271C22}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4C787F62-8CD4-4627-8058-1598E752135A} = {4C787F62-8CD4-4627-8058-1598E752135A}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tungsten.Standard", "Src\Tungsten.Standard\Tungsten.Standard.csproj", "{4C787F62-8CD4-4627-8058-1598E752135A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.Domains", "Src\Tungsten.Domains\Tungsten.Domains.csproj", "{6BE16433-6FEF-4266-84FF-8AE1C6B5B14A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{46040E3B-AE52-42F9-9C1B-8566FC6765C5} = {46040E3B-AE52-42F9-9C1B-8566FC6765C5}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tungsten.IO.Pipes.Standard", "Src\Tungsten.IO.Pipes.Standard\Tungsten.IO.Pipes.Standard.csproj", "{436D68A9-0BD2-4DD9-824B-4D1BD0528FEE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4C787F62-8CD4-4627-8058-1598E752135A} = {4C787F62-8CD4-4627-8058-1598E752135A}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.LiteDb", "Src\Tungsten.LiteDb\Tungsten.LiteDb.csproj", "{F2426BAC-7157-423D-AAC2-3CAEB52D877B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{46040E3B-AE52-42F9-9C1B-8566FC6765C5} = {46040E3B-AE52-42F9-9C1B-8566FC6765C5}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.Tests", "Test\Tungsten.Tests\Tungsten.Tests.csproj", "{32A9956C-74D6-46BC-B07D-C524F21AD07E}"
 EndProject
@@ -39,6 +52,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tungsten.IO.Pipes.Standard.Demo", "Demos\Tungsten.IO.Pipes.Standard.Demo\Tungsten.IO.Pipes.Standard.Demo.csproj", "{04D65BD4-D332-4E8C-9742-DBBBDA7B02C7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.Domains.Plugin.Interface.Demo", "Demos\Tungsten.Domains.Plugin.Interface.Demo\Tungsten.Domains.Plugin.Interface.Demo.csproj", "{8C0389BC-C0A2-4E84-B9DC-B54E1D75CC5B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{46040E3B-AE52-42F9-9C1B-8566FC6765C5} = {46040E3B-AE52-42F9-9C1B-8566FC6765C5}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.Domains.Plugin.Demo", "Demos\Tungsten.Domains.Plugin.Demo\Tungsten.Domains.Plugin.Demo.csproj", "{CF05AE75-5488-43BD-A09C-3408E2A5E3C4}"
 EndProject
@@ -79,6 +95,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tungsten.IO.Pipes", "Tungst
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.Net", "Src\Tungsten.Net\Tungsten.Net.csproj", "{F2FE9090-34C9-4F7E-A932-7F3CF8D00567}"
+	ProjectSection(ProjectDependencies) = postProject
+		{46040E3B-AE52-42F9-9C1B-8566FC6765C5} = {46040E3B-AE52-42F9-9C1B-8566FC6765C5}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tungsten.Domains", "Tungsten.Domains", "{7E45DFD5-5330-47D9-BAB5-5221658783D8}"
 	ProjectSection(SolutionItems) = preProject
@@ -88,6 +107,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tungsten.Domains", "Tungste
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tungsten.Net.RPC.Standard", "Src\Tungsten.Net.RPC.Standard\Tungsten.Net.RPC.Standard.csproj", "{00DD4608-5FA2-49C8-96BA-8C68C1A2C706}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4C787F62-8CD4-4627-8058-1598E752135A} = {4C787F62-8CD4-4627-8058-1598E752135A}
+		{8E174CD9-0D16-44C1-9841-9343182ED034} = {8E174CD9-0D16-44C1-9841-9343182ED034}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "W", "W", "{3F7980D6-C3B6-439C-8134-5EE4C598A5E6}"
 EndProject
@@ -96,8 +119,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "W.Net.RPC", "W.Net.RPC", "{4B35AEE0-3CE0-43C0-BE98-9014D202E9F1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tungsten.Net.Standard", "Src\Tungsten.Net.Standard\Tungsten.Net.Standard.csproj", "{8E174CD9-0D16-44C1-9841-9343182ED034}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4C787F62-8CD4-4627-8058-1598E752135A} = {4C787F62-8CD4-4627-8058-1598E752135A}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tungsten.Net.RPC.Standard.Demo", "Demos\Tungsten.Net.RPC.Standard.Demo\Tungsten.Net.RPC.Standard.Demo.csproj", "{E904129D-ADF0-4BE9-AC79-87149241608E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8E174CD9-0D16-44C1-9841-9343182ED034} = {8E174CD9-0D16-44C1-9841-9343182ED034}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "W", "W", "{0A815A9A-ABCE-44AD-9986-44CE3B9BFD3D}"
 EndProject
@@ -110,6 +139,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "W.Domains", "W.Domains", "{9A7AE056-58B8-46FE-B85C-F1A98D67C699}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.Net.RPC", "Src\Tungsten.Net.RPC\Tungsten.Net.RPC.csproj", "{BAFE340F-13B5-465B-B91D-17FEA7077B90}"
+	ProjectSection(ProjectDependencies) = postProject
+		{46040E3B-AE52-42F9-9C1B-8566FC6765C5} = {46040E3B-AE52-42F9-9C1B-8566FC6765C5}
+		{F2FE9090-34C9-4F7E-A932-7F3CF8D00567} = {F2FE9090-34C9-4F7E-A932-7F3CF8D00567}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tungsten.Net.RPC", "Tungsten.Net.RPC", "{270086E9-B488-40D0-A17A-4905992FE13B}"
 	ProjectSection(SolutionItems) = preProject
@@ -128,6 +161,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tungsten.LiteDb", "Tungsten
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tungsten.LiteDb.Standard", "Src\Tungsten.LiteDb.Standard\Tungsten.LiteDb.Standard.csproj", "{FA1C08F4-794B-4FF5-A266-6EDB15B42607}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4C787F62-8CD4-4627-8058-1598E752135A} = {4C787F62-8CD4-4627-8058-1598E752135A}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BA374E8B-412E-43E6-B2F9-391FA59A68A1}"
 	ProjectSection(SolutionItems) = preProject
@@ -135,6 +171,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.Firewall", "Src\Tungsten.Firewall\Tungsten.Firewall.csproj", "{1C99F7A3-1B92-411A-B588-CD5AD2C27743}"
+	ProjectSection(ProjectDependencies) = postProject
+		{46040E3B-AE52-42F9-9C1B-8566FC6765C5} = {46040E3B-AE52-42F9-9C1B-8566FC6765C5}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tungsten.Firewall", "Tungsten.Firewall", "{AE92FC38-7A4B-41BA-8AD1-7C6BC4FDB21A}"
 	ProjectSection(SolutionItems) = preProject
@@ -144,6 +183,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tungsten.Firewall", "Tungst
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.IO.Pipes", "Src\Tungsten.IO.Pipes\Tungsten.IO.Pipes.csproj", "{084B7039-1D07-4E79-9BBA-4E202F1A6BDB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{46040E3B-AE52-42F9-9C1B-8566FC6765C5} = {46040E3B-AE52-42F9-9C1B-8566FC6765C5}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "W.IO.Pipes", "W.IO.Pipes", "{271DEDDC-2535-4C4A-ADB7-10362E7388A7}"
 EndProject
@@ -166,8 +208,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W.WPF.Demo", "Demos\W.WPF.Demo\W.WPF.Demo.csproj", "{1FBC4D68-AA71-43ED-BC74-C95433416B2F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.WPF.Metro", "Src\Tungsten.WPF.Metro\Tungsten.WPF.Metro.csproj", "{3DDFA8BE-7497-4CED-A4FC-AEE2709C350D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C1042303-1B41-4082-93F9-2AAD2E5A5660} = {C1042303-1B41-4082-93F9-2AAD2E5A5660}
+		{46040E3B-AE52-42F9-9C1B-8566FC6765C5} = {46040E3B-AE52-42F9-9C1B-8566FC6765C5}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tungsten.Core", "Src\Tungsten.Core\Tungsten.Core.csproj", "{19662BBC-ED06-430E-BAA2-2A61FDBFB546}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tungsten.Core", "Src\Tungsten.Core\Tungsten.Core.csproj", "{19662BBC-ED06-430E-BAA2-2A61FDBFB546}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4C787F62-8CD4-4627-8058-1598E752135A} = {4C787F62-8CD4-4627-8058-1598E752135A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

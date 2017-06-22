@@ -18,7 +18,7 @@ namespace W.WPF
     /// <summary>
     /// A framework for using Pages in WPF
     /// </summary>
-    public class PageFramework
+    public class PageFramework : DependencyObject // DependencyObject for ActivePage property (so the UI knows to update page changes)
     {
         #region Static Members
         private static void DiscoverPages<IPageType>(Assembly asm = null)
@@ -78,8 +78,7 @@ namespace W.WPF
         #endregion
 
         private Stack<PageWrapper> _history = new Stack<PageWrapper>();
-        private PageWrapper _currentPage = null;
-        private IPageHost _host;
+        public IPageHost Host { get; private set; }
 
         private Stack<T> TrimHistory<T>(Stack<T> @this, int maxSize)
         {
@@ -102,21 +101,21 @@ namespace W.WPF
         {
             try
             {
-                if (_currentPage == page)
-                    return _currentPage;
-                _host.Dispatcher.InvokeEx(() =>
+                if (ActivePage == page)
+                    return ActivePage;
+                Host.Dispatcher.InvokeEx(() =>
                 {
-                    if (_host != null)
+                    if (Host != null)
                     {
-                        var previousPage = _host.ActivePage?.AsPage;
+                        var previousPage = ActivePage?.AsPage;
                         previousPage?.OnNavigateFrom(page?.AsPage);
                         _history = TrimHistory(_history, maxHistory); //just picked a number to limit the size of the history
                         if (push)
                             _history.Push(page);
-                        _host.ActivePage = page;
+                        ActivePage = page;
                         page?.AsPage?.OnNavigateTo(previousPage, args);
                         CanNavigateBack.Value = _history.Count > 1;
-                        _currentPage = page;
+                        //ActivePage = page;
                     }
                 });
             }
@@ -126,6 +125,18 @@ namespace W.WPF
             }
             return page;
         }
+
+        public static readonly DependencyProperty ActivePageProperty = DependencyProperty.Register("ActivePage", typeof(PageWrapper), typeof(PageFramework));
+        public PageWrapper ActivePage
+        {
+            get { return (PageWrapper)GetValue(ActivePageProperty); }
+            set { SetValue(ActivePageProperty, value); }
+        }
+        /// <summary>
+        /// Can be used to detect the currently active page
+        /// </summary>
+        //public Property<PageWrapper> ActivePage { get; }/* private set; }*/ = new Property<PageWrapper>();
+
         /// <summary>
         /// Navigate to the page of the given Type
         /// </summary>
@@ -179,9 +190,16 @@ namespace W.WPF
         public Property<int> MaximumNumberOfPreviousPages { get; } = new Property<int>(99);
 
         #region Commands
+        /// <summary>
+        /// Provides WPF Commands for navigation
+        /// </summary>
         public Commands.NavigationCommands Navigation { get; private set; }
         #endregion
 
+        public void SetPageHost(IPageHost host)
+        {
+            Host = host;
+        }
         /// <summary>
         /// Destructs the PageFramework instance and frees resources
         /// </summary>
@@ -189,7 +207,7 @@ namespace W.WPF
         {
             _history.Clear();
             _history = null;
-            _host = null;
+            Host = null;
             CanNavigateBack.Dispose();
             CanNavigateHome.Dispose();
         }
@@ -203,7 +221,7 @@ namespace W.WPF
         /// </summary>
         public PageFramework(IPageHost host)
         {
-            _host = host;
+            SetPageHost(host);
             Navigation = new NavigationCommands(this);
         }
     }

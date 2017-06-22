@@ -21,34 +21,41 @@ namespace W.WPF.Views
         /// </summary>
         public TModel ViewModel { get; private set; }
 
-        public static readonly DependencyProperty PageFrameworkProperty = DependencyProperty.Register("PageFrmework", typeof(PageFramework), typeof(Window<TModel>));
-        public PageFramework PageFramework
-        {
-            get { return (PageFramework)GetValue(PageFrameworkProperty); }
-            set { SetValue(PageFrameworkProperty, value); }
-        }
+        /// <summary>
+        /// A local PageFramework which can be used to navigate pages in the current window
+        /// </summary>
+        //public PageFramework PageFramework { get; private set; }
+        //public static readonly DependencyProperty PageFrameworkProperty = DependencyProperty.Register("PageFrmework", typeof(PageFramework), typeof(Window<TModel>));
+        ///// <summary>
+        ///// A local PageFramework which can be used to navigate pages in the current window
+        ///// </summary>
+        //public PageFramework PageFramework
+        //{
+        //    get { return (PageFramework)GetValue(PageFrameworkProperty); }
+        //    set { SetValue(PageFrameworkProperty, value); }
+        //}
 
-        #region IPageHost
-        public static readonly DependencyProperty ActivePageProperty = DependencyProperty.Register("ActivePage", typeof(PageWrapper), typeof(Window<TModel>), new PropertyMetadata(null, HandleActivePageChanged));
-        public PageWrapper ActivePage
-        {
-            get { return (PageWrapper)GetValue(ActivePageProperty); }
-            set { SetValue(ActivePageProperty, value); }
-        }
-        private static void HandleActivePageChanged(object sender, DependencyPropertyChangedEventArgs args)
-        {
-            var ctl = sender as Window;// W.WPF.Models.WindowModel<TModel>;
-            if (ctl != null)
-            {
-                var oldValue = args.OldValue.As<PageWrapper>();
-                var newValue = args.NewValue.As<PageWrapper>();
-                //var vm = ctl.ViewModel.As<W.WPF.Models.WindowModel<TModel>>();
-                //vm?.OnActivePageChanged(vm, oldValue, newValue);
-                //ctl.OnActivePageChanged(oldValue, newValue);
-            }
-        }
-        // IPageHost.Dispatcher - MetroWindow already exposes a Dispatcher
-        #endregion
+        //#region IPageHost
+        //public static readonly DependencyProperty ActivePageProperty = DependencyProperty.Register("ActivePage", typeof(PageWrapper), typeof(Window<TModel>), new PropertyMetadata(null, HandleActivePageChanged));
+        //public PageWrapper ActivePage
+        //{
+        //    get { return (PageWrapper)GetValue(ActivePageProperty); }
+        //    set { SetValue(ActivePageProperty, value); }
+        //}
+        //private static void HandleActivePageChanged(object sender, DependencyPropertyChangedEventArgs args)
+        //{
+        //    var ctl = sender as Window;// W.WPF.Models.WindowModel<TModel>;
+        //    if (ctl != null)
+        //    {
+        //        var oldValue = args.OldValue.As<PageWrapper>();
+        //        var newValue = args.NewValue.As<PageWrapper>();
+        //        //var vm = ctl.ViewModel.As<W.WPF.Models.WindowModel<TModel>>();
+        //        //vm?.OnActivePageChanged(vm, oldValue, newValue);
+        //        //ctl.OnActivePageChanged(oldValue, newValue);
+        //    }
+        //}
+        //// IPageHost.Dispatcher - MetroWindow already exposes a Dispatcher
+        //#endregion
 
         /// <summary>
         /// Constructs a new WPF Window which supports PageFramework
@@ -61,8 +68,9 @@ namespace W.WPF.Views
         /// <param name="viewModel">An existing viewmodel to use</param>
         public Window(TModel viewModel) : base()
         {
-            PageFramework = new PageFramework(this);
+            //PageFramework = new PageFramework(this);
             ViewModel = viewModel ?? new TModel();
+            ViewModel.As<W.WPF.Models.ViewModel>()?.SetPageHost(this);
             DataContext = ViewModel;
         }
     }
@@ -77,15 +85,20 @@ namespace W.WPF.Views
         /// </summary>
         public object ViewModel { get; set; }
 
-        public static readonly DependencyProperty PageFrameworkProperty = DependencyProperty.Register("PageFrmework", typeof(PageFramework), typeof(Window));
-        /// <summary>
-        /// A local PageFramework which can be used to navigate pages in the current window
-        /// </summary>
-        public PageFramework PageFramework
-        {
-            get { return (PageFramework)GetValue(PageFrameworkProperty); }
-            set { SetValue(PageFrameworkProperty, value); }
-        }
+        ///// <summary>
+        ///// A local PageFramework which can be used to navigate pages in the current window
+        ///// </summary>
+        //public PageFramework PageFramework { get; private set; }
+
+        //public static readonly DependencyProperty PageFrameworkProperty = DependencyProperty.Register("PageFrmework", typeof(PageFramework), typeof(Window));
+        ///// <summary>
+        ///// A local PageFramework which can be used to navigate pages in the current window
+        ///// </summary>
+        //public PageFramework PageFramework
+        //{
+        //    get { return (PageFramework)GetValue(PageFrameworkProperty); }
+        //    set { SetValue(PageFrameworkProperty, value); }
+        //}
 
         //alternatively create a navigate command for each one...
         //private W.WPF.Commands.RelayCommand _navigateCommand;
@@ -104,27 +117,27 @@ namespace W.WPF.Views
         //    }
         //}
 
-        #region IPageHost
-        public static readonly DependencyProperty ActivePageProperty = DependencyProperty.Register("ActivePage", typeof(PageWrapper), typeof(Window), new PropertyMetadata(null, HandleActivePageChanged));
-        public PageWrapper ActivePage
-        {
-            get { return (PageWrapper)GetValue(ActivePageProperty); }
-            set { SetValue(ActivePageProperty, value); }
-        }
-        private static void HandleActivePageChanged(object sender, DependencyPropertyChangedEventArgs args)
-        {
-            var ctl = sender as Window;// W.WPF.Models.WindowModel<TModel>;
-            if (ctl != null)
-            {
-                var oldValue = args.OldValue.As<PageWrapper>();
-                var newValue = args.NewValue.As<PageWrapper>();
-                //var vm = ctl.ViewModel.As<W.WPF.Models.WindowModel<TModel>>();
-                //vm?.OnActivePageChanged(vm, oldValue, newValue);
-                //ctl.OnActivePageChanged(oldValue, newValue);
-            }
-        }
-        // IPageHost.Dispatcher - MetroWindow already exposes a Dispatcher
-        #endregion
+        //#region IPageHost
+        //public static readonly DependencyProperty ActivePageProperty = DependencyProperty.Register("ActivePage", typeof(PageWrapper), typeof(Window), new PropertyMetadata(null, HandleActivePageChanged));
+        //public PageWrapper ActivePage
+        //{
+        //    get { return (PageWrapper)GetValue(ActivePageProperty); }
+        //    set { SetValue(ActivePageProperty, value); }
+        //}
+        //private static void HandleActivePageChanged(object sender, DependencyPropertyChangedEventArgs args)
+        //{
+        //    var ctl = sender as Window;// W.WPF.Models.WindowModel<TModel>;
+        //    if (ctl != null)
+        //    {
+        //        var oldValue = args.OldValue.As<PageWrapper>();
+        //        var newValue = args.NewValue.As<PageWrapper>();
+        //        //var vm = ctl.ViewModel.As<W.WPF.Models.WindowModel<TModel>>();
+        //        //vm?.OnActivePageChanged(vm, oldValue, newValue);
+        //        //ctl.OnActivePageChanged(oldValue, newValue);
+        //    }
+        //}
+        //// IPageHost.Dispatcher - MetroWindow already exposes a Dispatcher
+        //#endregion
 
         private void HandleLoaded(object sender, RoutedEventArgs args)
         {
@@ -161,8 +174,9 @@ namespace W.WPF.Views
         /// <param name="viewModel">An existing viewmodel to use</param>
         public Window(object viewModel)
         {
-            PageFramework = new PageFramework(this);
+            //PageFramework = new PageFramework(this);
             ViewModel = viewModel ?? this;
+            ViewModel.As<W.WPF.Models.ViewModel>()?.SetPageHost(this);
             DataContext = ViewModel;
         }
     }

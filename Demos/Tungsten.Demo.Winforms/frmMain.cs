@@ -36,7 +36,7 @@ namespace W.Demo.Winforms
             InitializeComponent();
             this.InitializeProperties();
 
-            _showSaveComplete.CustomData.Value = this; //this must be called, otherwise
+            _showSaveComplete.CustomData = this; //this must be called, otherwise
 
             //setup some event handlers
             base.Closing += (sender, args) => { _showSaveComplete.Dispose(); };

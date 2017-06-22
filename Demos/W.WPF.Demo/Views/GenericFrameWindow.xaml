@@ -33,9 +33,9 @@
             <Button x:Name="btnHome" Grid.Column="0" Foreground="{DynamicResource AccentColorBrush}" Content="Home" Click="btnHome_Click" Margin="2" />
             <Button x:Name="btnSettings" Grid.Column="1" Foreground="{DynamicResource AccentColorBrush2}" Content="Settings" Click="btnSettings_Click" Margin="2" />
             <Button x:Name="btnNavigateToByCommand" Grid.Column="2" Foreground="{DynamicResource AccentColorBrush2}" Content="NavigateTo Settings" Margin="2"
-                    Command="{Binding ElementName=thisGenericFrameHost, Path=PageFramework.Navigation.NavigateTo}" CommandParameter="Settings" />
+                    Command="{Binding Path=PageFramework.Navigation.NavigateTo}" CommandParameter="Settings" />
             <Button x:Name="btnNavigateBackByCommand" Grid.Column="3" Foreground="{DynamicResource AccentColorBrush2}" Content="NavigateBack" Margin="2"
-                    Command="{Binding ElementName=thisGenericFrameHost, Path=PageFramework.Navigation.NavigateBack}" />
+                    Command="{Binding Path=PageFramework.Navigation.NavigateBack}" />
             <Button x:Name="btnRefresh" Grid.Column="5" Foreground="{DynamicResource AccentColorBrush3}" Content="Refresh" Click="btnRefresh_Click" Margin="2" />
             <Button x:Name="btnAbout" Grid.Column="6" Foreground="{DynamicResource AccentColorBrush4}" Content="About" Click="btnAbout_Click" Margin="2" />
         </Grid>
@@ -44,7 +44,7 @@
 
         <Grid Grid.Row="2">
             <!--<Border BorderBrush="CadetBlue" BorderThickness="2">-->
-            <Frame x:Name="MainFrame" Content="{Binding ElementName=thisGenericFrameHost, Path=ActivePage.FrameworkElement, Mode=OneWay}" />
+            <Frame x:Name="MainFrame" Content="{Binding PageFramework.ActivePage.FrameworkElement, Mode=OneWay}" />
             <!--<ContentPresenter Content="{Binding ElementName=thisGenericFrameHost, Path=ActivePage.FrameworkElement, Mode=OneWay}" />-->
             <!--<Frame Source="{Binding Path=CurrentPage, Mode=OneWay}" NavigationUIVisibility="Hidden"></Frame>-->
             <!--</Border>-->

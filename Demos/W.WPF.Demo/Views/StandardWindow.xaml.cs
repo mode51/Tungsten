@@ -22,21 +22,22 @@ namespace W.WPF.Demo.Views
     {
         public StandardWindow() : base(new MainWindowModel())
         {
+            ViewModel.As<MainWindowModel>()?.SetPageHost(this);
             InitializeComponent();
         }
         protected override void OnLoaded(object sender, RoutedEventArgs args)
         {
-            PageFramework.NavigateTo("Home");
+            ViewModel.As<MainWindowModel>()?.PageFramework.NavigateTo("Home");
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
-            PageFramework.NavigateTo("Home");
+            ViewModel.As<MainWindowModel>()?.PageFramework.NavigateTo("Home");
         }
 
         private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
-            PageFramework.NavigateTo("Settings");
+            ViewModel.As<MainWindowModel>()?.PageFramework.NavigateTo("Settings");
         }
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)

@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Tungsten.WPF.xml</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Tungsten.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -45,9 +48,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tungsten, Version=1.2.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Tungsten.1.2.5\lib\net45\Tungsten.dll</HintPath>
-    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -80,8 +80,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Content Include="Tungsten.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Tungsten\Tungsten.csproj">
+      <Project>{46040e3b-ae52-42f9-9c1b-8566fc6765c5}</Project>
+      <Name>Tungsten</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Tungsten is a C# library of classes which make application development easier.</description>
     <summary>Tungsten is a C# library of classes which make application development easier.</summary>
-    <releaseNotes>Added W.StringExtensions (string.IsValidBase64()).  Added W.Logging.CustomLogger to make adding custom loggers easier</releaseNotes>
+    <releaseNotes></releaseNotes>
     <copyright>Copyright 2017 Jordan Duerksen</copyright>
     <tags>Tungsten W C# library</tags>
     <dependencies>

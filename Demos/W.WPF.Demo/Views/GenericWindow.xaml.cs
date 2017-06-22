@@ -28,17 +28,17 @@ namespace W.WPF.Demo.Views
         protected override void OnLoaded(object sender, RoutedEventArgs args)
         {
             base.OnLoaded(sender, args);
-            PageFramework.NavigateTo("Home");
+            ViewModel.PageFramework.NavigateTo("Home");
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
-            PageFramework.NavigateTo("Home");
+            ViewModel.PageFramework.NavigateTo("Home");
         }
 
         private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
-            PageFramework.NavigateTo("Settings");
+            ViewModel.PageFramework.NavigateTo("Settings");
         }
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)

@@ -70,7 +70,7 @@ namespace W
         //[System.Diagnostics.DebuggerStepThrough]
         public static string AsString(this byte[] @this)
         {
-            return System.Text.Encoding.UTF8.GetString(@this);
+            return System.Text.Encoding.UTF8.GetString(@this, 0, @this.Length);
         }
         /// <summary>
         /// Converts an encoded byte array to a string
@@ -175,5 +175,35 @@ namespace W
                 return output.ToArray();
             }
         }
+
+        //The string versions of AsCompressed and AsDecompressed cannot guarantee the text encoding is correct
+        //Therefore, I can't just use UTF-8 or some other encoding by default
+        //Therefore, I can't implement the string versions
+        //see https://stackoverflow.com/questions/18915633/determine-textfile-encoding
+
+        ///// <summary>
+        ///// Compresses the string using System.IO.Compression.DeflateStream
+        ///// </summary>
+        ///// <param name="item">The string to compress</param>
+        ///// <returns>A compressed string</returns>
+        //public static string AsCompressed(this string item)
+        //{
+        //    var bytes = System.Text.Encoding.Unicode.GetBytes(item);
+        //    var compressed = AsCompressed(bytes);
+        //    var result = System.Text.Encoding.Unicode.GetString(compressed, 0, compressed.Length);
+        //    return result;
+        //}
+        ///// <summary>
+        ///// Decompresses the string using System.IO.Compression.DeflateStream
+        ///// </summary>
+        ///// <param name="item">The string containing compressed data</param>
+        ///// <returns>A string of decompressed data</returns>
+        //public static string AsDecompressed(this string item)
+        //{
+        //    var bytes = System.Text.Encoding.Unicode.GetBytes(item);
+        //    var decompressed = AsDecompressed(bytes);
+        //    var result = System.Text.Encoding.Unicode.GetString(decompressed, 0, decompressed.Length);//.TrimEnd('\0');
+        //    return result;
+        //}
     }
 }

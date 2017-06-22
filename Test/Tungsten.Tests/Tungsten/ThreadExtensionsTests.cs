@@ -17,7 +17,7 @@ namespace W.Tests.Tungsten
             var age = new Lockable<int>();
             var name = "Jordan";
 
-            var result = name.CreateThread((n, cts) =>
+            var result = name.CreateThread<string>((n, cts) =>
             {
                 for (; age.Value < 47; age.Value++)
                 {
@@ -39,7 +39,7 @@ namespace W.Tests.Tungsten
         {
             Exception e = null;
 
-            var result = this.CreateThread((tests, cts) =>
+            var result = this.CreateThread<ThreadExtensionsTests>((tests, cts) =>
             {
                 System.Threading.Thread.Sleep(0);
             }, (b, exception) =>
@@ -56,7 +56,7 @@ namespace W.Tests.Tungsten
         {
             Exception e = null;
 
-            var result = this.CreateThread((tests, cts) =>
+            var result = this.CreateThread<ThreadExtensionsTests>((tests, cts) =>
             {
                 throw new ArgumentNullException("Value");
             }, (b, exception) =>
@@ -73,7 +73,7 @@ namespace W.Tests.Tungsten
         {
             Exception e = null;
 
-            var result = this.CreateThread((tests, cts) =>
+            var result = this.CreateThread<ThreadExtensionsTests>((tests, cts) =>
             {
                 cts.Cancel();
                 throw new ArgumentNullException("Value");

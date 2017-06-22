@@ -44,6 +44,19 @@ namespace W.Encryption
         public RSAParameters PublicKey { get; set; }
 
         /// <summary>
+        /// Gets the key sizes that are supported by the asymmetric algorithm
+        /// </summary>
+        /// <returns>An enumeration of the supported key sizes</returns>
+        public IEnumerable<KeySizes> LegalKeySizes
+        {
+            get
+            {
+                foreach (var value in _rsa.LegalKeySizes)
+                    yield return value;
+            }
+        }
+
+        /// <summary>
         /// constructs a new RSA object
         /// </summary>
         public RSA(int keySize = -1)

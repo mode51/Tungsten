@@ -12,10 +12,10 @@ namespace W.WPF
     /// </summary>
     public interface IPageHost
     {
-        /// <summary>
-        /// Get or set the currently displayed Page
-        /// </summary>
-        PageWrapper ActivePage { get; set; }
+        ///// <summary>
+        ///// Get or set the currently displayed Page
+        ///// </summary>
+        //PageWrapper ActivePage { get; set; }
 
         /// <summary>
         /// A handle to the IPageHost's dispatcher

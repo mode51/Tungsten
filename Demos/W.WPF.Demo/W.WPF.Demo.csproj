@@ -96,7 +96,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AppWindow.xaml">
+    <Page Include="Views\SelectionWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -128,8 +128,8 @@
     <Compile Include="Views\MetroWindow.xaml.cs">
       <DependentUpon>MetroWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AppWindow.xaml.cs">
-      <DependentUpon>AppWindow.xaml</DependentUpon>
+    <Compile Include="Views\SelectionWindow.xaml.cs">
+      <DependentUpon>SelectionWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\GenericWindow.xaml.cs">
       <DependentUpon>GenericWindow.xaml</DependentUpon>

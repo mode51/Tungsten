@@ -22,7 +22,7 @@ namespace W.WPF.Demo.Views
     {
         protected override void OnLoaded(object sender, RoutedEventArgs args)
         {
-            PageFramework.NavigateTo("HomePage");
+            ViewModel.As<MainWindowModel>()?.PageFramework.NavigateTo("HomePage");
         }
         public StandardFrameWindow() : base(new MainWindowModel())
         {
@@ -31,12 +31,12 @@ namespace W.WPF.Demo.Views
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
-            PageFramework.NavigateTo("HomePage");
+            ViewModel.As<MainWindowModel>()?.PageFramework.NavigateTo("HomePage");
         }
 
         private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
-            PageFramework.NavigateTo("SettingsPage");
+            ViewModel.As<MainWindowModel>()?.PageFramework.NavigateTo("SettingsPage");
         }
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)

@@ -156,7 +156,7 @@ namespace W.WPF.Models
         /// <summary>
         /// Constructs a new ApplicationModel object
         /// </summary>
-        public ApplicationModel() : base()
+        public ApplicationModel() : base(null)
         {
             this.InitializeProperties();
         }

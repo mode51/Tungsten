@@ -13,7 +13,7 @@ namespace W.Threading
     {
         private AutoResetEvent _are = new AutoResetEvent(false);
         private CancellationTokenSource _cts = new CancellationTokenSource();
-        private ManualResetEvent _mreComplete = new ManualResetEvent(false);
+        private ManualResetEventSlim _mreComplete = new ManualResetEventSlim(false);
 
         /// <summary>
         /// <para>
@@ -50,7 +50,7 @@ namespace W.Threading
                         catch (Exception e)
                         {
                             //ignore
-                            Console.WriteLine(e.Message);
+                            System.Diagnostics.Debug.WriteLine(e.Message);
                         }
                         finally
                         {
@@ -90,7 +90,7 @@ namespace W.Threading
         /// </summary>
         public override void Join()
         {
-            _mreComplete.WaitOne();
+            _mreComplete.Wait();
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace W.Threading
         /// <returns>True if the thread terminates within the timeout specified, otherwise false</returns>
         public override bool Join(int msTimeout)
         {
-            return _mreComplete.WaitOne(msTimeout);
+            return _mreComplete.Wait(msTimeout);
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace W.Threading
                         catch (Exception e)
                         {
                             //ignore
-                            Console.WriteLine(e.Message);
+                            System.Diagnostics.Debug.WriteLine(e.Message);
                         }
                         finally
                         {
@@ -206,7 +206,7 @@ namespace W.Threading
         /// </summary>
         public override void Join()
         {
-            _mreComplete.WaitOne();
+            _mreComplete?.WaitOne();
         }
 
         /// <summary>
@@ -216,24 +216,24 @@ namespace W.Threading
         /// <returns>True if the thread terminates within the timeout specified, otherwise false</returns>
         public override bool Join(int msTimeout)
         {
-            return _mreComplete.WaitOne(msTimeout);
+            return _mreComplete?.WaitOne(msTimeout) ?? true;
         }
         /// <summary>
         /// Signals the task to cancel
         /// </summary>
         public new void Cancel()
         {
-            _cts.Cancel(false);
+            _cts?.Cancel(false);
         }
 
         /// <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
         public override void Dispose()
         {
+            Cancel(); //to cancel _cts
             _mreComplete?.Dispose();
             _mreComplete = null;
             _cts?.Dispose();
             _cts = null;
-            Cancel(); //to cancel _cts
             base.Cancel(); //to cancel Cts
             base.Dispose();
         }
@@ -244,7 +244,8 @@ namespace W.Threading
         /// <param name="action">The action to execute in a background task</param>
         /// <param name="onExit">Called when the task completes</param>
         /// <param name="args"></param>
-        public Gate(Action<T, CancellationTokenSource> action, Action<bool, Exception> onExit = null, T args = default(T)) : base(action, onExit, args)
+        public Gate(Action<T, CancellationTokenSource> action, Action<bool, Exception> onExit = null, T args = default(T)) 
+            : base(action, onExit, args)
         {
         }
     }

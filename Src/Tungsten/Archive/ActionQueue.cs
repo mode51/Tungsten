@@ -13,8 +13,8 @@ namespace W
         private string _caller;
 
         private readonly ConcurrentQueue<T> _queue = new ConcurrentQueue<T>();
-        private CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
-        private ManualResetEvent _threadReleaser = new ManualResetEvent(false);
+        private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
+        private readonly ManualResetEvent _threadReleaser = new ManualResetEvent(false);
 
         /// <summary>
         /// Returns the number of items currently in the queue
@@ -43,9 +43,7 @@ namespace W
         public void Dispose()
         {
             _cancellationTokenSource?.Dispose();
-            _cancellationTokenSource = null;
             _threadReleaser?.Dispose();
-            _threadReleaser = null;
         }
 
         /// <summary>
