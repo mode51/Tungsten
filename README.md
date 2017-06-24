@@ -13,7 +13,7 @@ A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable 
 * **Tungsten.Standard** - A NetStandard version of Tungsten
   * Targets .NetStandard 1.4
 * **Tungsten.Core** - a .NetCore version of Tungsten
-  * Targets .NetCore1.0
+  * Targets .NetCoreApp 1.0
 
 ### Tungsten.Net
 * Tungsten.Net - A client/server tcp socket library
