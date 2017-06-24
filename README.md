@@ -12,6 +12,8 @@ A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable 
   * Targets Windows 10 (10.0; Build 10240)
 * **Tungsten.Standard** - A NetStandard version of Tungsten
   * Targets .NetStandard 1.4
+* **Tungsten.Core** - a .NetCore version of Tungsten
+  * Targets .NetCore1.0
 
 ### Tungsten.Net
 * Tungsten.Net - A client/server tcp socket library
