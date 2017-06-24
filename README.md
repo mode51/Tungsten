@@ -1,7 +1,7 @@
 # Projects
 
 ### Tungsten
-A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable application development easier.  See the Wiki page for details and use.
+A C# library to make Windows Forms, WPF, Windows Universal, .NetCore and Windows Portable application development easier.  See the Wiki page for details and use.
 
 ### Tungsten ###
 * **Tungsten** - A collection of useful classes for Winforms/WPF (some classes are listed below)
