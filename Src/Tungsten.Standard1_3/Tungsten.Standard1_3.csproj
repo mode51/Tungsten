@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <PackageId>Tungsten.Standard1_3</PackageId>
+    <Version>1.2.7</Version>
+    <Authors>Jordan Duerksen</Authors>
+    <Company>Jordan Duerksen</Company>
+    <Product>Tungsten</Product>
+    <Description>Tungsten is a C# library of classes which make application development easier</Description>
+    <Copyright>Copyright @ 2017 Jordan Duerksen</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</PackageIconUrl>
+    <PackageTags>Tungsten.NuGet Tungsten W C# library</PackageTags>
+    <PackageReleaseNotes>Each Tungsten target now has it's own NuGet package</PackageReleaseNotes>
+    <AssemblyVersion>1.2.7.0</AssemblyVersion>
+    <FileVersion>1.2.7.0</FileVersion>
+    <ApplicationIcon>Tungsten.ico</ApplicationIcon>
+    <RootNamespace>W</RootNamespace>
+    <AssemblyName>Tungsten</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard1.3\Tungsten.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Tungsten.Standard1_0\ActionQueue.cs" Link="ActionQueue.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\AsExtensions.cs" Link="AsExtensions.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\CallResult.cs" Link="CallResult.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Encryption\MD5.cs" Link="Encryption\MD5.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Encryption\PublicPrivateKeyPair.cs" Link="Encryption\PublicPrivateKeyPair.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Encryption\RSA.cs" Link="Encryption\RSA.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Encryption\RSAMethods.cs" Link="Encryption\RSAMethods.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\FromExtensions.cs" Link="FromExtensions.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\InvokeExtensions.cs" Link="InvokeExtensions.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Lockable.cs" Link="Lockable.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Logging\CustomLogger.cs" Link="Logging\CustomLogger.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Logging\Logging.cs" Link="Logging\Logging.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Logging\LogMessageHistory.cs" Link="Logging\LogMessageHistory.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Property\IOwnedProperty.cs" Link="Property\IOwnedProperty.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Property\IProperty.cs" Link="Property\IProperty.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Property\Property.cs" Link="Property\Property.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Property\PropertyBase.cs" Link="Property\PropertyBase.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Property\PropertyChangedNotifier.cs" Link="Property\PropertyChangedNotifier.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Property\PropertyHost.cs" Link="Property\PropertyHost.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Property\PropertyHostMethods.cs" Link="Property\PropertyHostMethods.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Property\PropertyHostNotifier.cs" Link="Property\PropertyHostNotifier.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Property\PropertyMethods.cs" Link="Property\PropertyMethods.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Singleton.cs" Link="Singleton.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\StringExtensions.cs" Link="StringExtensions.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Threading\Gate.cs" Link="Threading\Gate.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Threading\GateExtensions.cs" Link="Threading\GateExtensions.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Threading\Thread.cs" Link="Threading\Thread.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadBase.cs" Link="Threading\ThreadBase.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadExtensions.cs" Link="Threading\ThreadExtensions.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadWithCustomData.cs" Link="Threading\ThreadWithCustomData.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Serialization.Xml" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Encryption\" />
+    <Folder Include="Logging\" />
+    <Folder Include="Threading\" />
+    <Folder Include="Property\" />
+  </ItemGroup>
+
+</Project>

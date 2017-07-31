@@ -3,6 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Net;
+using W.Logging;
 using W.Net;
 
 namespace W.Net.RPC
@@ -34,6 +35,7 @@ namespace W.Net.RPC
                 msg.Id = Guid.NewGuid();
             msg.ExpireDateTime = DateTime.Now.AddMilliseconds(10000); //10 second expiration
 
+            Log.i("W.Net.RPC: Attempting to call {0} with {1} parameters", methodName, args?.Length);
             var handler = new RPCHandle(_client, msg);
             try
             {
@@ -46,6 +48,14 @@ namespace W.Net.RPC
             return handler;
         }
 
+        /// <summary>
+        /// Called when a connection has been established
+        /// </summary>
+        public Action<Client, IPEndPoint> Connected { get; set; }
+        /// <summary>
+        /// Called when the connection has been terminated
+        /// </summary>
+        public Action<Client, IPEndPoint, Exception> Disconnected { get; set; }
         /// <summary>
         /// True if the client is connected to the server, otherwise False
         /// </summary>
@@ -71,6 +81,8 @@ namespace W.Net.RPC
                 //{
                 RemoteEndPoint = remoteEndPoint;
                 _client = new SecureClient<Message>();
+                _client.Connected += (s, ep) => { Connected?.Invoke(this, ep); };
+                _client.Disconnected += (s, ep, e) => { Disconnected?.Invoke(this, ep, e); };
                 var result = await _client.Socket.ConnectAsync(remoteEndPoint.Address, remoteEndPoint.Port);
                 if (result)
                     result = _client.WaitForConnected(60000);

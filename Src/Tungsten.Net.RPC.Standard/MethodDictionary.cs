@@ -11,7 +11,11 @@ namespace W.Net.RPC
     /// </summary>
     public class MethodDictionary : Dictionary<string, MethodInfo>
     {
-        private void ExamineAssembly(Assembly asm)
+        /// <summary>
+        /// Scans an assembly for all the classes which have the RPCClass attribute and then find all of their methods with the RPCMethod attribute
+        /// </summary>
+        /// <param name="asm"></param>
+        public void FindAllRPCMethods(Assembly asm)
         {
             foreach (var t in asm.GetExportedTypes())
             {
@@ -26,7 +30,8 @@ namespace W.Net.RPC
                                 if (a2 is RPCMethodAttribute)
                                 {
                                     var key = t.Namespace + "." + t.Name + "." + mi.Name;
-                                    Add(key, mi);
+                                    if (!this.ContainsKey(key))
+                                        Add(key, mi);
                                 }
                             }
                         }
@@ -41,24 +46,43 @@ namespace W.Net.RPC
             //var assemblies2 = AppDomain.CurrentDomain.GetAssemblies();
             //var assemblies = Microsoft.Framework.Runtime.LibraryManager.DependencyContext.Default.RuntimeLibraries;
             //var srcPath2 = System.IO.Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
+#if NETSTANDARD1_3 || NETSTANDARD1_4
+            var assemblies = new Assembly[] { };
+            Assembly entryAsm = null;
+#elif NETSTANDARD1_5
             var assemblies = System.Reflection.Assembly.GetEntryAssembly().GetReferencedAssemblies().ToList();
-            var srcPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
-
+            //var srcPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+            Assembly entryAsm = System.Reflection.Assembly.GetEntryAssembly();
+#else
+            var assemblies = System.Reflection.Assembly.GetEntryAssembly().GetReferencedAssemblies().ToList();
+            Assembly entryAsm = System.Reflection.Assembly.GetEntryAssembly();
+#endif
             Clear();
-            ExamineAssembly(System.Reflection.Assembly.GetEntryAssembly());
+            //this only gets W.Net.RPC (not the entry asm) - FindAllRPCMethods(typeof(RPCClassAttribute).GetTypeInfo().Assembly);
+            if (entryAsm != null)
+                FindAllRPCMethods(entryAsm);// System.Reflection.Assembly.GetEntryAssembly());
             foreach (var asmName in assemblies)
             {
+#if NETSTANDARD1_3 || NETSTANDARD1_4
+                var assemblyName = asmName.GetName();
+#else
+                var assemblyName = asmName.Name;
                 //ignore System.X assemblies
-                if (asmName.Name.StartsWith("System."))
+                if (assemblyName.StartsWith("System."))
                     continue;
                 //ignore Microsoft.X assemblies
-                if (asmName.Name.StartsWith("Microsoft."))
+                if (assemblyName.StartsWith("Microsoft."))
                     continue;
                 //ignore nunitassemblies
-                if (asmName.Name.StartsWith("nunit.framework"))
+                if (assemblyName.StartsWith("nunit.framework"))
                     continue;
+#endif
+#if NETSTANDARD1_3 || NETSTANDARD1_4
+                var asm = System.Reflection.Assembly.Load(assemblyName);
+#else
                 var asm = System.Reflection.Assembly.Load(asmName);
-                ExamineAssembly(asm);
+#endif
+                FindAllRPCMethods(asm);
             }
             Console.WriteLine($"Found {Count} RPC Methods");
         }
@@ -74,6 +98,8 @@ namespace W.Net.RPC
         public TResult Call<TResult>(string method, params object[] args)
         {
             var result = Call(method, args).Result;
+            if (result == null) //7.19.2017
+                return default(TResult);
             var convertible = result as IConvertible;
             if (convertible == null)
                 return (TResult)result;

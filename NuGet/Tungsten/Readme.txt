@@ -1,5 +1,9 @@
 ﻿Tungsten is a C# library to make application development easier.  See the wiki @ https://github.com/mode51/Tungsten/wiki for details, examples and use.
 
+7.31.2017 v1.2.7
+Added W.Logging.Log.MessageHistory
+Added support for NetStandard1.0 with most functionality (no encryption or compression)
+
 6.22.2017 v1.2.6
 All Tungsten projects now share most of their code from Tungsten.Standard (Threading.Thread and Encryption.RSA are about the only items not able to be shared)
 Added NuGet targetframework netcoreapp1.0

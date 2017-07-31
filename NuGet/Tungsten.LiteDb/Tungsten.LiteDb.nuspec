@@ -32,9 +32,15 @@
 
     <file src="..\..\Src\Tungsten.LiteDb\bin\Release\Tungsten.LiteDb.dll" target="lib\net45" />
     <file src="..\..\Src\Tungsten.LiteDb\bin\Release\Tungsten.LiteDb.xml" target="lib\net45" />
+    
+    <!--<file src="..\..\Src\Tungsten.LiteDb.Core\bin\Release\net45\Tungsten.LiteDb.Core.dll" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.LiteDb.Core\bin\Release\net45\Tungsten.LiteDb.Core.xml" target="lib\net45" />-->
 
     <file src="..\..\Src\Tungsten.LiteDb.Standard\bin\Release\netstandard1.4\Tungsten.LiteDb.dll" target="lib\netstandard1.4" />
     <file src="..\..\Src\Tungsten.LiteDb.Standard\bin\Release\netstandard1.4\Tungsten.LiteDb.xml" target="lib\netstandard1.4" />
+
+    <!--<file src="..\..\Src\Tungsten.LiteDb.Core\bin\Release\netstandard1.3\Tungsten.LiteDb.Core.dll" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.LiteDb.Core\bin\Release\netstandard1.3\Tungsten.LiteDb.Core.xml" target="lib\netstandard1.3" />-->
 
   </files>
 </package>

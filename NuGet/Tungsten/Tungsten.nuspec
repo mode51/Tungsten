@@ -3,7 +3,7 @@
   <metadata>
     <id>Tungsten</id>
     <title>Tungsten</title>
-    <version>1.2.6</version>
+    <version>1.2.7</version>
     <authors>Jordan Duerksen</authors>
     <owners>Jordan Duerksen</owners>
     <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
@@ -21,18 +21,23 @@
         <!--<dependency id="System.Threading.Thread" version="4.0.10.0" exclude="Build,Analyzers" />
         <dependency id="System.Threading.Tasks" version="4.0.10.0" exclude="Build,Analyzers" />-->
       </group>
-      <group targetFramework=".NETPortable0.0-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20" />
-      <group targetFramework=".NETStandard1.3">
-        <dependency id="System.Runtime.Serialization.Json" version="4.3.0" exclude="Build,Analyzers" />
-        <dependency id="System.Threading.Thread" version="4.3.0" exclude="Build,Analyzers" />
-        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
-        <dependency id="System.Runtime.Serialization.Xml" version="4.3.0" exclude="Build,Analyzers" />
-      </group>
       <group targetFramework="netcoreapp1.0">
         <dependency id="System.Runtime.Serialization.Json" version="4.3.0" exclude="Build,Analyzers" />
         <dependency id="System.Runtime.Serialization.Xml" version="4.3.0" exclude="Build,Analyzers" />
         <!--<dependency id="System.Threading.Thread" version="4.3.0" exclude="Build,Analyzers" />
         <dependency id="System.Security.Cryptography.Algorithms" version="4.3.0" exclude="Build,Analyzers" />-->
+      </group>
+      <group targetFramework=".NETPortable0.0-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20" />
+      <group targetFramework=".NETStandard1.0">
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+        <dependency id="System.Runtime.Serialization.Json" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Runtime.Serialization.Xml" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+        <dependency id="System.Runtime.Serialization.Json" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Runtime.Serialization.Xml" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Thread" version="4.3.0" exclude="Build,Analyzers" />
       </group>
       <group targetFramework=".NETFramework4.5" />
     </dependencies>
@@ -43,27 +48,31 @@
     <!-- apparently uap10.0 needs to be first? -->
     <file src="..\..\Src\Tungsten.Universal\bin\Release\Tungsten.dll" target="lib\uap10.0" />
     <file src="..\..\Src\Tungsten.Universal\bin\Release\Tungsten.xml" target="lib\uap10.0" />
-    <file src="..\..\Src\Tungsten.Universal\bin\Release\Tungsten.dll" target="ref\uap10.0" />
+    <!--don't use this: <file src="..\..\Src\Tungsten.Universal\bin\Release\Tungsten.dll" target="ref\uap10.0" />-->
 
-    <file src="..\..\Src\Tungsten.Universal\bin\x86\Release\Tungsten.dll" target="runtimes\win10-x86\native" />
+    <!--below is the old way of doing things I guess?  Now it seems to work fine with just the uap10.0 target (Any CPU)-->
+    <!--<file src="..\..\Src\Tungsten.Universal\bin\x86\Release\Tungsten.dll" target="runtimes\win10-x86\native" />
     <file src="..\..\Src\Tungsten.Universal\bin\x86\Release\Tungsten.pri" target="runtimes\win10-x86\native" />
-    <!--<file src="..\..\Src\Tungsten\Tungsten.ico" target="runtimes\win10-x86\native\Tungsten.Universal" />-->
     <file src="..\..\Src\Tungsten.Universal\bin\x64\Release\Tungsten.dll" target="runtimes\win10-x64\native" />
     <file src="..\..\Src\Tungsten.Universal\bin\x64\Release\Tungsten.pri" target="runtimes\win10-x64\native" />
-    <!--<file src="..\..\Src\Tungsten\Tungsten.ico" target="runtimes\win10-x64\native\Tungsten.Universal" />-->
     <file src="..\..\Src\Tungsten.Universal\bin\ARM\Release\Tungsten.dll" target="runtimes\win10-arm\native" />
     <file src="..\..\Src\Tungsten.Universal\bin\ARM\Release\Tungsten.pri" target="runtimes\win10-arm\native" />
+    <file src="Tungsten.Universal.targets" target="build\native" />-->
+    <!--<file src="..\..\Src\Tungsten\Tungsten.ico" target="runtimes\win10-x86\native\Tungsten.Universal" />-->
+    <!--<file src="..\..\Src\Tungsten\Tungsten.ico" target="runtimes\win10-x64\native\Tungsten.Universal" />-->
     <!--<file src="..\..\Src\Tungsten\Tungsten.ico" target="runtimes\win10-arm\native\Tungsten.Universal" />-->
-    <file src="Tungsten.Universal.targets" target="build\native" />
 
     <file src="..\..\Src\Tungsten.Portable\bin\Release\Tungsten.dll" target="lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20" />
     <file src="..\..\Src\Tungsten.Portable\bin\Release\Tungsten.xml" target="lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20" />
 
-    <file src="..\..\Src\Tungsten.Standard\bin\Release\netstandard1.3\Tungsten.dll" target="lib\netstandard1.3" />
-    <file src="..\..\Src\Tungsten.Standard\bin\Release\netstandard1.3\Tungsten.xml" target="lib\netstandard1.3" />
-
     <file src="..\..\Src\Tungsten.Core\bin\Release\netcoreapp1.0\Tungsten.dll" target="lib\netcoreapp1.0" />
     <file src="..\..\Src\Tungsten.Core\bin\Release\netcoreapp1.0\Tungsten.xml" target="lib\netcoreapp1.0" />
+
+    <file src="..\..\Src\Tungsten.Standard1_0\bin\Release\netstandard1.0\Tungsten.dll" target="lib\netstandard1.0" />
+    <file src="..\..\Src\Tungsten.Standard1_0\bin\Release\netstandard1.0\Tungsten.xml" target="lib\netstandard1.0" />
+
+    <file src="..\..\Src\Tungsten.Standard1_3\bin\Release\netstandard1.3\Tungsten.dll" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.Standard1_3\bin\Release\netstandard1.3\Tungsten.xml" target="lib\netstandard1.3" />
 
     <file src="..\..\Src\Tungsten\bin\Release\Tungsten.dll" target="lib\net45" />
     <file src="..\..\Src\Tungsten\bin\Release\Tungsten.xml" target="lib\net45" />

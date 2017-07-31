@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\Tungsten.Standard\Tungsten.Standard.csproj" />
+    <ProjectReference Include="..\..\Src\Tungsten.Standard1_3\Tungsten.Standard1_3.csproj" />
   </ItemGroup>
 
 </Project>

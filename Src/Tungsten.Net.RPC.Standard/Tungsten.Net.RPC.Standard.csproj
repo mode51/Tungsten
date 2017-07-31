@@ -20,7 +20,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.5\Tungsten.Net.RPC.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard1.4\Tungsten.Net.RPC.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -48,7 +48,7 @@
     <PackageReference Include="System.Reflection.Extensions" Version="4.3.0" />
     <PackageReference Include="System.Reflection.Primitives" Version="4.3.0" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.3.0" />
-    <PackageReference Include="Tungsten" Version="1.2.5" />
+    <PackageReference Include="Tungsten" Version="1.2.7" />
     <PackageReference Include="Tungsten.Net" Version="1.2.5.3" />
   </ItemGroup>
 

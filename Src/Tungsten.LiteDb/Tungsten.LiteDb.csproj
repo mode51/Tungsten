@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="LiteDB, Version=3.1.0.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\LiteDB.3.1.0\lib\net35\LiteDB.dll</HintPath>
+      <HintPath>..\..\packages\LiteDB.3.1.1\lib\net35\LiteDB.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,8 +48,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tungsten, Version=1.2.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Tungsten.1.2.4\lib\net45\Tungsten.dll</HintPath>
+    <Reference Include="Tungsten, Version=1.2.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Tungsten.1.2.7\lib\net45\Tungsten.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
