@@ -10,8 +10,10 @@ A C# library to make Windows Forms, WPF, Windows Universal, .NetCore and Windows
   * Targets portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20
 * **Tungsten.Universal** - A Universal version of Tungsten
   * Targets Windows 10 (10.0; Build 10240)
-* **Tungsten.Standard** - A NetStandard version of Tungsten
-  * Targets .NetStandard 1.4
+* **Tungsten.Standard1_0** - A NetStandard version of Tungsten
+  * Targets .NetStandard 1.0
+* **Tungsten.Standard1_3** - A NetStandard version of Tungsten
+  * Targets .NetStandard 1.3
 * **Tungsten.Core** - a .NetCore version of Tungsten
   * Targets .NetCoreApp 1.0
 
