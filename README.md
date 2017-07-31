@@ -1,17 +1,21 @@
 # Projects
 
 ### Tungsten
-A C# library to make Windows Forms, WPF, Windows Universal and Windows Portable application development easier.  See the Wiki page for details and use.
+A C# library to make Windows Forms, WPF, Windows Universal, .NetCore and Windows Portable application development easier.  See the Wiki page for details and use.
 
 ### Tungsten ###
 * **Tungsten** - A collection of useful classes for Winforms/WPF (some classes are listed below)
   * Targets .Net Framework 4.5
+* **Tungsten.Core** - a .NetCore version of Tungsten
+  * Targets .NetCoreApp 1.0
 * **Tungsten.Portable** - A Portable version of Tungsten
   * Targets portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20
 * **Tungsten.Universal** - A Universal version of Tungsten
   * Targets Windows 10 (10.0; Build 10240)
-* **Tungsten.Standard** - A NetStandard version of Tungsten
-  * Targets .NetStandard 1.4
+* **Tungsten.Standard1_0** - A NetStandard version of Tungsten
+  * Targets .NetStandard 1.0
+* **Tungsten.Standard1_3** - A NetStandard version of Tungsten
+  * Targets .NetStandard 1.3
 
 ### Tungsten.Net
 * Tungsten.Net - A client/server tcp socket library
