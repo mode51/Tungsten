@@ -24,7 +24,7 @@
     <VisibleItems>InheritedMembers, InheritedFrameworkMembers, Protected, ProtectedInternalAsProtected</VisibleItems>
     <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
-    <HelpFileFormat>HtmlHelp1, Website</HelpFileFormat>
+    <HelpFileFormat>HtmlHelp1</HelpFileFormat>
     <IndentHtml>False</IndentHtml>
     <KeepLogFile>True</KeepLogFile>
     <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
@@ -43,9 +43,10 @@
     <CopyrightText>Copyright %40 2017 Jordan Duerksen</CopyrightText>
     <NamespaceSummaries>
       <NamespaceSummaryItem name="W" isDocumented="True">The root namespace for Tungsten.  W is used because it is the symbol for Tungsten on the periodic table of elements.</NamespaceSummaryItem>
-<NamespaceSummaryItem name="W.Encryption" isDocumented="True">Functionality related to encryption</NamespaceSummaryItem>
-<NamespaceSummaryItem name="W.Logging" isDocumented="True">Functionality related to information and error logging</NamespaceSummaryItem>
-<NamespaceSummaryItem name="W.Threading" isDocumented="True">Functionality related to multi-threading</NamespaceSummaryItem></NamespaceSummaries>
+      <NamespaceSummaryItem name="W.Encryption" isDocumented="True">Functionality related to encryption</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="W.Logging" isDocumented="True">Functionality related to information and error logging</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="W.Threading" isDocumented="True">Functionality related to multi-threading</NamespaceSummaryItem>
+    </NamespaceSummaries>
     <TocParentId>-1</TocParentId>
     <TocParentVersion>100</TocParentVersion>
     <TopicVersion>100</TopicVersion>
