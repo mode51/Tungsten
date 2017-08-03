@@ -11,7 +11,7 @@ namespace W
     /// <summary>
     /// Extension methods to provide code shortcuts to evaluate InvokeRequired and run code appropriately
     /// </summary>
-    public static class InvokeExtensions1_0
+    public static class InvokeExtensions
     {
 #if WINDOWS_UWP
         /// <summary>

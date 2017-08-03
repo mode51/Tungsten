@@ -66,7 +66,6 @@
   <ItemGroup>
     <Folder Include="Encryption\" />
     <Folder Include="Logging\" />
-    <Folder Include="Threading\" />
     <Folder Include="Property\" />
   </ItemGroup>
 

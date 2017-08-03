@@ -150,6 +150,12 @@
     <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadWithCustomData.cs">
       <Link>Threading\ThreadWithCustomData.cs</Link>
     </Compile>
+    <Compile Include="..\Tungsten.Standard1_3\Threading\Tungsten.Threading.Namespace.cs">
+      <Link>Threading\Tungsten.Threading.Namespace.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_3\Tungsten.Namespace.cs">
+      <Link>Tungsten.Namespace.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Archive\PropertyHostNotifier.cs" />
     <None Include="Archive\IOwnedProperty.cs" />

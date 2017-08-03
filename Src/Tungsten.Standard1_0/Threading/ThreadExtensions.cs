@@ -6,7 +6,7 @@ namespace W.Threading
     /// <summary>
     /// Contains a generic extension method to quickly start a new thread
     /// </summary>
-    public static class ThreadExtensions1_0
+    public static class ThreadExtensions
     {
         /// <summary>
         /// Starts a new thread
