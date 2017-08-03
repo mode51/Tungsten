@@ -14,7 +14,7 @@ namespace W
     /// <summary>
     /// Extensions which convert objects of one type to another
     /// </summary>
-    public static class AsExtensions1_0
+    public static class AsExtensions
     {
         //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
         ////[System.Diagnostics.DebuggerStepThrough]

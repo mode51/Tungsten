@@ -33,36 +33,36 @@
   <HelpKINode Title="ActionQueue&lt;T&gt;.Finalize method" Url="html/a8b1bd5c-b7f4-c958-d384-625d09f3c872.htm" />
   <HelpKINode Title="ActionQueue&lt;T&gt;.Queue property" Url="html/273adf9f-c44c-ed9d-ffff-fccc300633ec.htm" />
   <HelpKINode Title="AddTimestamp property" Url="html/87b1b303-bdff-a752-d704-e618440a95a3.htm" />
-  <HelpKINode Title="As(Of TType) method" Url="html/b1aa7168-14e4-7aab-2590-a3232b4b794a.htm" />
-  <HelpKINode Title="As&lt;TType&gt; method" Url="html/b1aa7168-14e4-7aab-2590-a3232b4b794a.htm" />
-  <HelpKINode Title="AsBase64 method" Url="html/ec8d7763-aa8f-2daa-52e9-4182dc028a9b.htm" />
-  <HelpKINode Title="AsBytes method" Url="html/adf123cf-4a96-60dd-9826-e420abf67a70.htm" />
-  <HelpKINode Title="AsCompressed method" Url="html/984c9dae-fcd8-54a8-c2dd-f2e21bf71837.htm" />
-  <HelpKINode Title="AsDecompressed method" Url="html/958b4758-0749-abac-8e33-d045811d792c.htm" />
-  <HelpKINode Title="AsExtensions1_0 class">
-    <HelpKINode Title="AsExtensions1_0 Class" Url="html/1b35520f-43c0-9a74-07f5-a38eb1b29242.htm" />
-    <HelpKINode Title="about AsExtensions1_0 class" Url="html/1b35520f-43c0-9a74-07f5-a38eb1b29242.htm" />
-    <HelpKINode Title="methods" Url="html/c04a2563-ec14-241f-6234-601ee9f3b9d0.htm" />
+  <HelpKINode Title="As(Of TType) method" Url="html/d441895a-e567-99e4-b1ce-18c4d43613ef.htm" />
+  <HelpKINode Title="As&lt;TType&gt; method" Url="html/d441895a-e567-99e4-b1ce-18c4d43613ef.htm" />
+  <HelpKINode Title="AsBase64 method" Url="html/1c18069f-317d-09f8-adce-4125b100898a.htm" />
+  <HelpKINode Title="AsBytes method" Url="html/c05e8f2f-86ef-23c3-9903-1ad792f0ef99.htm" />
+  <HelpKINode Title="AsCompressed method" Url="html/1d96b160-7d0f-949e-dd82-ffa6120cc995.htm" />
+  <HelpKINode Title="AsDecompressed method" Url="html/21bf9c44-c7b3-b96b-7b1a-25a115c3ebe8.htm" />
+  <HelpKINode Title="AsExtensions class">
+    <HelpKINode Title="AsExtensions Class" Url="html/f48a16e6-d42c-f167-9c69-ad0f5af8bebe.htm" />
+    <HelpKINode Title="about AsExtensions class" Url="html/f48a16e6-d42c-f167-9c69-ad0f5af8bebe.htm" />
+    <HelpKINode Title="methods" Url="html/d21e9fe6-28ce-6346-cd96-34563a31b9b6.htm" />
   </HelpKINode>
-  <HelpKINode Title="AsExtensions1_0.As(Of TType) method" Url="html/b1aa7168-14e4-7aab-2590-a3232b4b794a.htm" />
-  <HelpKINode Title="AsExtensions1_0.As&lt;TType&gt; method" Url="html/b1aa7168-14e4-7aab-2590-a3232b4b794a.htm" />
-  <HelpKINode Title="AsExtensions1_0.AsBase64 method" Url="html/ec8d7763-aa8f-2daa-52e9-4182dc028a9b.htm" />
-  <HelpKINode Title="AsExtensions1_0.AsBytes method" Url="html/adf123cf-4a96-60dd-9826-e420abf67a70.htm" />
-  <HelpKINode Title="AsExtensions1_0.AsCompressed method" Url="html/984c9dae-fcd8-54a8-c2dd-f2e21bf71837.htm" />
-  <HelpKINode Title="AsExtensions1_0.AsDecompressed method" Url="html/958b4758-0749-abac-8e33-d045811d792c.htm" />
-  <HelpKINode Title="AsExtensions1_0.AsJson(Of TType) method" Url="html/66ec0fba-d011-6629-46d6-d87035809099.htm" />
-  <HelpKINode Title="AsExtensions1_0.AsJson&lt;TType&gt; method" Url="html/66ec0fba-d011-6629-46d6-d87035809099.htm" />
-  <HelpKINode Title="AsExtensions1_0.AsStream method" Url="html/1ac4d040-3507-8fe4-fceb-2b3bbdc8955c.htm" />
-  <HelpKINode Title="AsExtensions1_0.AsString method" Url="html/eaf207b2-212a-33a3-cdbe-8b23d926b901.htm" />
-  <HelpKINode Title="AsExtensions1_0.AsXml(Of TType) method" Url="html/08643d1e-0ad8-34c9-f143-67bb5882a423.htm" />
-  <HelpKINode Title="AsExtensions1_0.AsXml&lt;TType&gt; method" Url="html/08643d1e-0ad8-34c9-f143-67bb5882a423.htm" />
+  <HelpKINode Title="AsExtensions.As(Of TType) method" Url="html/d441895a-e567-99e4-b1ce-18c4d43613ef.htm" />
+  <HelpKINode Title="AsExtensions.As&lt;TType&gt; method" Url="html/d441895a-e567-99e4-b1ce-18c4d43613ef.htm" />
+  <HelpKINode Title="AsExtensions.AsBase64 method" Url="html/1c18069f-317d-09f8-adce-4125b100898a.htm" />
+  <HelpKINode Title="AsExtensions.AsBytes method" Url="html/c05e8f2f-86ef-23c3-9903-1ad792f0ef99.htm" />
+  <HelpKINode Title="AsExtensions.AsCompressed method" Url="html/1d96b160-7d0f-949e-dd82-ffa6120cc995.htm" />
+  <HelpKINode Title="AsExtensions.AsDecompressed method" Url="html/21bf9c44-c7b3-b96b-7b1a-25a115c3ebe8.htm" />
+  <HelpKINode Title="AsExtensions.AsJson(Of TType) method" Url="html/55418f10-6153-6ac9-ac4b-6947948cec68.htm" />
+  <HelpKINode Title="AsExtensions.AsJson&lt;TType&gt; method" Url="html/55418f10-6153-6ac9-ac4b-6947948cec68.htm" />
+  <HelpKINode Title="AsExtensions.AsStream method" Url="html/fac0cce5-1d97-1e4b-d7e9-6a2721858e84.htm" />
+  <HelpKINode Title="AsExtensions.AsString method" Url="html/d77203fd-1c88-b3a7-73cd-3830a617c4bb.htm" />
+  <HelpKINode Title="AsExtensions.AsXml(Of TType) method" Url="html/933df27a-d459-be65-1ac1-ec2f1f1a19b2.htm" />
+  <HelpKINode Title="AsExtensions.AsXml&lt;TType&gt; method" Url="html/933df27a-d459-be65-1ac1-ec2f1f1a19b2.htm" />
   <HelpKINode Title="AsGate method" Url="html/770ed197-34e8-cfe0-1c80-6f8a56329c9b.htm" />
-  <HelpKINode Title="AsJson(Of TType) method" Url="html/66ec0fba-d011-6629-46d6-d87035809099.htm" />
-  <HelpKINode Title="AsJson&lt;TType&gt; method" Url="html/66ec0fba-d011-6629-46d6-d87035809099.htm" />
-  <HelpKINode Title="AsStream method" Url="html/1ac4d040-3507-8fe4-fceb-2b3bbdc8955c.htm" />
-  <HelpKINode Title="AsString method" Url="html/eaf207b2-212a-33a3-cdbe-8b23d926b901.htm" />
-  <HelpKINode Title="AsXml(Of TType) method" Url="html/08643d1e-0ad8-34c9-f143-67bb5882a423.htm" />
-  <HelpKINode Title="AsXml&lt;TType&gt; method" Url="html/08643d1e-0ad8-34c9-f143-67bb5882a423.htm" />
+  <HelpKINode Title="AsJson(Of TType) method" Url="html/55418f10-6153-6ac9-ac4b-6947948cec68.htm" />
+  <HelpKINode Title="AsJson&lt;TType&gt; method" Url="html/55418f10-6153-6ac9-ac4b-6947948cec68.htm" />
+  <HelpKINode Title="AsStream method" Url="html/fac0cce5-1d97-1e4b-d7e9-6a2721858e84.htm" />
+  <HelpKINode Title="AsString method" Url="html/d77203fd-1c88-b3a7-73cd-3830a617c4bb.htm" />
+  <HelpKINode Title="AsXml(Of TType) method" Url="html/933df27a-d459-be65-1ac1-ec2f1f1a19b2.htm" />
+  <HelpKINode Title="AsXml&lt;TType&gt; method" Url="html/933df27a-d459-be65-1ac1-ec2f1f1a19b2.htm" />
   <HelpKINode Title="CallInvokeAction method">
     <HelpKINode Title="Gate(T).CallInvokeAction Method " Url="html/3dabb8ad-7c82-c1fb-f437-616c3b566c62.htm" />
     <HelpKINode Title="Gate.CallInvokeAction Method " Url="html/63da9a65-163b-adcc-8fb1-f41762697cea.htm" />
@@ -703,7 +703,7 @@
   <HelpKINode Title="W namespace" Url="html/d180274f-e1b6-f3f3-7eda-f460c9a066b8.htm" />
   <HelpKINode Title="W.ActionQueue(Of T) class" Url="html/838ba085-7059-27f5-5885-5a44aa11fa4b.htm" />
   <HelpKINode Title="W.ActionQueue&lt;T&gt; class" Url="html/838ba085-7059-27f5-5885-5a44aa11fa4b.htm" />
-  <HelpKINode Title="W.AsExtensions1_0 class" Url="html/1b35520f-43c0-9a74-07f5-a38eb1b29242.htm" />
+  <HelpKINode Title="W.AsExtensions class" Url="html/f48a16e6-d42c-f167-9c69-ad0f5af8bebe.htm" />
   <HelpKINode Title="W.CallResult class" Url="html/d9ddedde-ccc9-dd24-462e-4d91dfa14a05.htm" />
   <HelpKINode Title="W.CallResult(Of TResult) class" Url="html/335ebe61-81a2-e7d9-bc08-e756e957d6b0.htm" />
   <HelpKINode Title="W.CallResult&lt;TResult&gt; class" Url="html/335ebe61-81a2-e7d9-bc08-e756e957d6b0.htm" />
