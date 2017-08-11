@@ -3,7 +3,7 @@
   <metadata>
     <id>Tungsten</id>
     <title>Tungsten</title>
-    <version>1.2.7</version>
+    <version>1.2.7.1</version>
     <authors>Jordan Duerksen</authors>
     <owners>Jordan Duerksen</owners>
     <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
@@ -27,7 +27,6 @@
         <!--<dependency id="System.Threading.Thread" version="4.3.0" exclude="Build,Analyzers" />
         <dependency id="System.Security.Cryptography.Algorithms" version="4.3.0" exclude="Build,Analyzers" />-->
       </group>
-      <group targetFramework=".NETPortable0.0-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20" />
       <group targetFramework=".NETStandard1.0">
         <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
         <dependency id="System.Runtime.Serialization.Json" version="4.3.0" exclude="Build,Analyzers" />
@@ -40,6 +39,7 @@
         <dependency id="System.Threading.Thread" version="4.3.0" exclude="Build,Analyzers" />
       </group>
       <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETPortable0.0-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20" />
     </dependencies>
   </metadata>
   <files>
@@ -62,9 +62,6 @@
     <!--<file src="..\..\Src\Tungsten\Tungsten.ico" target="runtimes\win10-x64\native\Tungsten.Universal" />-->
     <!--<file src="..\..\Src\Tungsten\Tungsten.ico" target="runtimes\win10-arm\native\Tungsten.Universal" />-->
 
-    <file src="..\..\Src\Tungsten.Portable\bin\Release\Tungsten.dll" target="lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20" />
-    <file src="..\..\Src\Tungsten.Portable\bin\Release\Tungsten.xml" target="lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20" />
-
     <file src="..\..\Src\Tungsten.Core\bin\Release\netcoreapp1.0\Tungsten.dll" target="lib\netcoreapp1.0" />
     <file src="..\..\Src\Tungsten.Core\bin\Release\netcoreapp1.0\Tungsten.xml" target="lib\netcoreapp1.0" />
 
@@ -76,6 +73,9 @@
 
     <file src="..\..\Src\Tungsten\bin\Release\Tungsten.dll" target="lib\net45" />
     <file src="..\..\Src\Tungsten\bin\Release\Tungsten.xml" target="lib\net45" />
+
+    <file src="..\..\Src\Tungsten.Portable\bin\Release\Tungsten.dll" target="lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20" />
+    <file src="..\..\Src\Tungsten.Portable\bin\Release\Tungsten.xml" target="lib\portable-net45+win+wpa81+MonoAndroid10+MonoTouch10+xamarinios10+xamarinmac20" />
 
   </files>
 </package>

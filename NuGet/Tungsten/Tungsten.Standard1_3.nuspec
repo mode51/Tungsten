@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Tungsten.Standard</id>
+    <title>Tungsten.Standard</title>
+    <version>1.2.5</version>
+    <authors>Jordan Duerksen</authors>
+    <owners>Jordan Duerksen</owners>
+    <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/mode51/Tungsten</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Tungsten is a C# library of classes which make application development easier.</description>
+    <summary>Tungsten is a C# library of classes which make application development easier.</summary>
+    <releaseNotes>This NuGet package is for local testing purposes</releaseNotes>
+    <copyright>Copyright 2017 Jordan Duerksen</copyright>
+    <tags>Tungsten W C# library netstandard</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="System.Runtime.Serialization.Json" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Thread" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+        <dependency id="System.Runtime.Serialization.Xml" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Readme.txt" target="" />
+
+    <file src="..\..\Src\Tungsten.Standard1_3\bin\Release\netstandard1.3\Tungsten.dll" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.Standard1_3\bin\Release\netstandard1.3\Tungsten.xml" target="lib\netstandard1.3" />
+
+  </files>
+</package>
