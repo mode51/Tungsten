@@ -34,7 +34,15 @@ namespace W.Threading
         /// </summary>
         protected virtual void InvokeAction(CancellationTokenSource cts)
         {
-            Action?.Invoke(cts);
+            try
+            {
+                IsBusy.Value = true;
+                Action?.Invoke(cts);
+            }
+            finally
+            {
+                IsBusy.Value = false;
+            }
         }
         /// <summary>
         /// Invokes the onExit action.  Virtual for customization.
@@ -57,7 +65,7 @@ namespace W.Threading
         /// <param name="e">An Exception object, if an exception occured</param>
         protected virtual void CallInvokeOnComplete(Exception e)
         {
-            IsBusy.Value = false;
+            //IsBusy.Value = false;
             InvokeOnComplete(e);
         }
         /// <summary>
@@ -124,7 +132,7 @@ namespace W.Threading
             Cts = cts ?? new CancellationTokenSource();
             Action = action;
             OnExit = onExit;
-            IsBusy.Value = true;
+            //IsBusy.Value = true;
         }
 
         /// <summary>

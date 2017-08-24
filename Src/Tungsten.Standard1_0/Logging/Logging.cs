@@ -54,9 +54,9 @@ namespace W.Logging
         /// Log an Exception
         /// </summary>
         /// <param name="e">The exception to log.  This will be boxed with ToString().</param>
-        public static void e(Exception e)
+        public static void e(Exception e, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
         {
-            var msg = e.ToString();
+            var msg = string.Format("{0}(line {1}): {2}", callerName, callerLineNumber, e.ToString());
             try
             {
                 LogTheMessage?.Invoke(LogMessageCategory.Error, msg);
@@ -80,14 +80,40 @@ namespace W.Logging
         /// <summary>
         /// Log a formatted warning message. This method uses string.Format to format the message.
         /// </summary>
+        /// <param name="message">Format of the message</param>
+        public static void w(string message, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
+        {
+            var msg = string.Format("{0}(line {1}): {2}", callerName, callerLineNumber, message);
+            try
+            { 
+                LogTheMessage?.Invoke(LogMessageCategory.Warning, msg);
+            }
+            catch { } //ignore any exceptions
+        }
+        /// <summary>
+        /// Log a formatted warning message. This method uses string.Format to format the message.
+        /// </summary>
         /// <param name="format">Format of the message</param>
         /// <param name="args">Parameters to be passed during message formatting</param>
         public static void w(string format, params object[] args)
         {
             var msg = string.Format(format, args);
             try
-            { 
+            {
                 LogTheMessage?.Invoke(LogMessageCategory.Warning, msg);
+            }
+            catch { } //ignore any exceptions
+        }
+        /// <summary>
+        /// Log a formatted informational message. This method uses string.Format to format the message.
+        /// </summary>
+        /// <param name="message">Format of the message</param>
+        public static void i(string message, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
+        {
+            var msg = string.Format("{0}(line {1}): {2}", callerName, callerLineNumber, message);
+            try
+            {
+                LogTheMessage?.Invoke(LogMessageCategory.Information, msg);
             }
             catch { } //ignore any exceptions
         }
@@ -102,6 +128,19 @@ namespace W.Logging
             try
             {
                 LogTheMessage?.Invoke(LogMessageCategory.Information, msg);
+            }
+            catch { } //ignore any exceptions
+        }
+        /// <summary>
+        /// Log a formatted verbose message. This method uses string.Format to format the message.
+        /// </summary>
+        /// <param name="message">Format of the message</param>
+        public static void v(string message, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
+        {
+            var msg = string.Format("{0}(line {1}): {2}", callerName, callerLineNumber, message);
+            try
+            {
+                LogTheMessage?.Invoke(LogMessageCategory.Verbose, msg);
             }
             catch { } //ignore any exceptions
         }

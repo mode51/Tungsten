@@ -66,6 +66,15 @@
         </topic>
         <topic id="Methods.T:W.CallResult`1" project="Tungsten" file="Methods_T_W_CallResult_1" />
       </topic>
+      <topic id="T:W.ExtensionMethods" project="Tungsten" file="T_W_ExtensionMethods">
+        <topic id="Methods.T:W.ExtensionMethods" project="Tungsten" file="Methods_T_W_ExtensionMethods">
+          <topic id="M:W.ExtensionMethods.Lock``1(``0,System.Action{``0})" project="Tungsten" file="M_W_ExtensionMethods_Lock__1" />
+          <topic id="Overload:W.ExtensionMethods.WaitForValue" project="Tungsten" file="Overload_W_ExtensionMethods_WaitForValue">
+            <topic id="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" project="Tungsten" file="M_W_ExtensionMethods_WaitForValue" />
+            <topic id="M:W.ExtensionMethods.WaitForValue``1(``0,System.Predicate{``0},System.Int32)" project="Tungsten" file="M_W_ExtensionMethods_WaitForValue__1" />
+          </topic>
+        </topic>
+      </topic>
       <topic id="T:W.FromExtensions" project="Tungsten" file="T_W_FromExtensions">
         <topic id="Methods.T:W.FromExtensions" project="Tungsten" file="Methods_T_W_FromExtensions">
           <topic id="Overload:W.FromExtensions.FromBase64" project="Tungsten" file="Overload_W_FromExtensions_FromBase64">
@@ -317,12 +326,21 @@
         </topic>
         <topic id="Methods.T:W.Logging.Log" project="Tungsten" file="Methods_T_W_Logging_Log">
           <topic id="Overload:W.Logging.Log.e" project="Tungsten" file="Overload_W_Logging_Log_e">
-            <topic id="M:W.Logging.Log.e(System.Exception)" project="Tungsten" file="M_W_Logging_Log_e" />
             <topic id="M:W.Logging.Log.e(System.String,System.Object[])" project="Tungsten" file="M_W_Logging_Log_e_1" />
+            <topic id="M:W.Logging.Log.e(System.Exception,System.String,System.Int32)" project="Tungsten" file="M_W_Logging_Log_e" />
           </topic>
-          <topic id="M:W.Logging.Log.i(System.String,System.Object[])" project="Tungsten" file="M_W_Logging_Log_i" />
-          <topic id="M:W.Logging.Log.v(System.String,System.Object[])" project="Tungsten" file="M_W_Logging_Log_v" />
-          <topic id="M:W.Logging.Log.w(System.String,System.Object[])" project="Tungsten" file="M_W_Logging_Log_w" />
+          <topic id="Overload:W.Logging.Log.i" project="Tungsten" file="Overload_W_Logging_Log_i">
+            <topic id="M:W.Logging.Log.i(System.String,System.Object[])" project="Tungsten" file="M_W_Logging_Log_i" />
+            <topic id="M:W.Logging.Log.i(System.String,System.String,System.Int32)" project="Tungsten" file="M_W_Logging_Log_i_1" />
+          </topic>
+          <topic id="Overload:W.Logging.Log.v" project="Tungsten" file="Overload_W_Logging_Log_v">
+            <topic id="M:W.Logging.Log.v(System.String,System.Object[])" project="Tungsten" file="M_W_Logging_Log_v" />
+            <topic id="M:W.Logging.Log.v(System.String,System.String,System.Int32)" project="Tungsten" file="M_W_Logging_Log_v_1" />
+          </topic>
+          <topic id="Overload:W.Logging.Log.w" project="Tungsten" file="Overload_W_Logging_Log_w">
+            <topic id="M:W.Logging.Log.w(System.String,System.Object[])" project="Tungsten" file="M_W_Logging_Log_w" />
+            <topic id="M:W.Logging.Log.w(System.String,System.String,System.Int32)" project="Tungsten" file="M_W_Logging_Log_w_1" />
+          </topic>
         </topic>
       </topic>
       <topic id="T:W.Logging.Log.LogMessageCategory" project="Tungsten" file="T_W_Logging_Log_LogMessageCategory" />

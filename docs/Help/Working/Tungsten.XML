@@ -657,7 +657,7 @@
             Denotes an error message
             </summary>
     </member>
-    <member name="M:W.Logging.Log.e(System.Exception)">
+    <member name="M:W.Logging.Log.e(System.Exception,System.String,System.Int32)">
       <summary>
             Log an Exception
             </summary>
@@ -670,6 +670,12 @@
       <param name="format">Format of the message</param>
       <param name="args">Parameters to be passed during message formatting</param>
     </member>
+    <member name="M:W.Logging.Log.w(System.String,System.String,System.Int32)">
+      <summary>
+            Log a formatted warning message. This method uses string.Format to format the message.
+            </summary>
+      <param name="message">Format of the message</param>
+    </member>
     <member name="M:W.Logging.Log.w(System.String,System.Object[])">
       <summary>
             Log a formatted warning message. This method uses string.Format to format the message.
@@ -677,12 +683,24 @@
       <param name="format">Format of the message</param>
       <param name="args">Parameters to be passed during message formatting</param>
     </member>
+    <member name="M:W.Logging.Log.i(System.String,System.String,System.Int32)">
+      <summary>
+            Log a formatted informational message. This method uses string.Format to format the message.
+            </summary>
+      <param name="message">Format of the message</param>
+    </member>
     <member name="M:W.Logging.Log.i(System.String,System.Object[])">
       <summary>
             Log a formatted informational message. This method uses string.Format to format the message.
             </summary>
       <param name="format">Format of the message</param>
       <param name="args">Parameters to be passed during message formatting</param>
+    </member>
+    <member name="M:W.Logging.Log.v(System.String,System.String,System.Int32)">
+      <summary>
+            Log a formatted verbose message. This method uses string.Format to format the message.
+            </summary>
+      <param name="message">Format of the message</param>
     </member>
     <member name="M:W.Logging.Log.v(System.String,System.Object[])">
       <summary>
@@ -1485,6 +1503,40 @@
       <param name="customData">Custom data to be passed into the thread</param>
       <param name="cts">A CancellationTokenSource which can be used to cancel the operation</param>
       <returns>A new long-running Thread object</returns>
+    </member>
+    <member name="T:W.ExtensionMethods">
+      <summary>
+            Tungsten extension methods
+            </summary>
+    </member>
+    <member name="M:W.ExtensionMethods.Lock``1(``0,System.Action{``0})">
+      <summary>
+            Performs the given action in a lock statement using the provided object for the lock
+            </summary>
+      <typeparam name="TItemType">The type of object on which the lock is made</typeparam>
+      <param name="this">The object to use in the lock</param>
+      <param name="action">The action to perform in a lock statement</param>
+      <code>
+            someValue.Lock(value =&gt; { value += 10; }); //lock on someValue and pass it into the action
+            </code>
+    </member>
+    <member name="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)">
+      <summary>
+            Initiates a Task which will wait for the given variable to have the specified value
+            </summary>
+      <param name="this">The value being inspected</param>
+      <param name="desiredValue">The value to wait for</param>
+      <param name="msTimeout">The task will time out within the specified number of milliseconds.  Use -1 to wait indefinitely.</param>
+      <returns>True if the value was acquired within the specified timeout, otherwise False</returns>
+    </member>
+    <member name="M:W.ExtensionMethods.WaitForValue``1(``0,System.Predicate{``0},System.Int32)">
+      <summary>
+            Initiates a Task which will wait for the specified condition to be met
+            </summary>
+      <param name="this">The value being inspected</param>
+      <param name="predicate">The condition to be met</param>
+      <param name="msTimeout">The task will time out within the specified number of milliseconds.  Use -1 to wait indefinitely.</param>
+      <returns>True if the condition was met within the specified timeout, otherwise False</returns>
     </member>
     <member name="N:W">
       <summary>The root namespace for Tungsten.  W is used because it is the symbol for Tungsten on the periodic table of elements.</summary>

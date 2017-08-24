@@ -165,6 +165,14 @@
   <HelpKINode Title="ExecuteInLock method" Url="html/Overload_W_Lockable_1_ExecuteInLock.htm" />
   <HelpKINode Title="ExecuteInLockAsync method" Url="html/Overload_W_Lockable_1_ExecuteInLockAsync.htm" />
   <HelpKINode Title="ExecuteOnValueChanged method" Url="html/M_W_PropertyBase_2_ExecuteOnValueChanged.htm" />
+  <HelpKINode Title="ExtensionMethods class">
+    <HelpKINode Title="ExtensionMethods Class" Url="html/T_W_ExtensionMethods.htm" />
+    <HelpKINode Title="about ExtensionMethods class" Url="html/T_W_ExtensionMethods.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_ExtensionMethods.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ExtensionMethods.Lock(Of TItemType) method" Url="html/M_W_ExtensionMethods_Lock__1.htm" />
+  <HelpKINode Title="ExtensionMethods.Lock&lt;TItemType&gt; method" Url="html/M_W_ExtensionMethods_Lock__1.htm" />
+  <HelpKINode Title="ExtensionMethods.WaitForValue method" Url="html/Overload_W_ExtensionMethods_WaitForValue.htm" />
   <HelpKINode Title="Finalize method">
     <HelpKINode Title="ActionQueue(T).Finalize Method " Url="html/M_W_ActionQueue_1_Finalize.htm" />
     <HelpKINode Title="PropertyBase(TOwner, TValue).Finalize Method " Url="html/M_W_PropertyBase_2_Finalize.htm" />
@@ -235,7 +243,7 @@
     <HelpKINode Title="PropertyBase(TOwner, TValue).GetValue Method " Url="html/M_W_PropertyBase_2_GetValue.htm" />
     <HelpKINode Title="PropertyChangedNotifier.GetValue Method " Url="html/M_W_PropertyChangedNotifier_GetValue.htm" />
   </HelpKINode>
-  <HelpKINode Title="i method" Url="html/M_W_Logging_Log_i.htm" />
+  <HelpKINode Title="i method" Url="html/Overload_W_Logging_Log_i.htm" />
   <HelpKINode Title="Information enumeration member" Url="html/T_W_Logging_Log_LogMessageCategory.htm" />
   <HelpKINode Title="InitializeProperties method" Url="html/M_W_PropertyHostMethods_InitializeProperties.htm" />
   <HelpKINode Title="Instance property" Url="html/P_W_Singleton_1_Instance.htm" />
@@ -294,6 +302,8 @@
   </HelpKINode>
   <HelpKINode Title="LegalKeySizes property" Url="html/P_W_Encryption_RSA_LegalKeySizes.htm" />
   <HelpKINode Title="LoadValue method" Url="html/M_W_PropertyBase_2_LoadValue.htm" />
+  <HelpKINode Title="Lock(Of TItemType) method" Url="html/M_W_ExtensionMethods_Lock__1.htm" />
+  <HelpKINode Title="Lock&lt;TItemType&gt; method" Url="html/M_W_ExtensionMethods_Lock__1.htm" />
   <HelpKINode Title="Lockable(Of TValue) class">
     <HelpKINode Title="Lockable(TValue) Class" Url="html/T_W_Lockable_1.htm" />
     <HelpKINode Title="about Lockable(Of TValue) class" Url="html/T_W_Lockable_1.htm" />
@@ -328,7 +338,7 @@
     <HelpKINode Title="properties" Url="html/Properties_T_W_Logging_Log.htm" />
   </HelpKINode>
   <HelpKINode Title="Log.e method" Url="html/Overload_W_Logging_Log_e.htm" />
-  <HelpKINode Title="Log.i method" Url="html/M_W_Logging_Log_i.htm" />
+  <HelpKINode Title="Log.i method" Url="html/Overload_W_Logging_Log_i.htm" />
   <HelpKINode Title="Log.LogMessageCategory enumeration" Url="html/T_W_Logging_Log_LogMessageCategory.htm" />
   <HelpKINode Title="Log.LogMessageHistory class">
     <HelpKINode Title="Log.LogMessageHistory Class" Url="html/T_W_Logging_Log_LogMessageHistory.htm" />
@@ -349,8 +359,8 @@
   <HelpKINode Title="Log.LogMessageHistory.Messages property" Url="html/P_W_Logging_Log_LogMessageHistory_Messages.htm" />
   <HelpKINode Title="Log.LogTheMessage property" Url="html/P_W_Logging_Log_LogTheMessage.htm" />
   <HelpKINode Title="Log.MessageHistory property" Url="html/P_W_Logging_Log_MessageHistory.htm" />
-  <HelpKINode Title="Log.v method" Url="html/M_W_Logging_Log_v.htm" />
-  <HelpKINode Title="Log.w method" Url="html/M_W_Logging_Log_w.htm" />
+  <HelpKINode Title="Log.v method" Url="html/Overload_W_Logging_Log_v.htm" />
+  <HelpKINode Title="Log.w method" Url="html/Overload_W_Logging_Log_w.htm" />
   <HelpKINode Title="LogMessage class">
     <HelpKINode Title="methods" Url="html/Methods_T_W_Logging_Log_LogMessageHistory_LogMessage.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_W_Logging_Log_LogMessageHistory_LogMessage.htm" />
@@ -689,7 +699,7 @@
   <HelpKINode Title="ThreadExtensions.CreateThread method" Url="html/Overload_W_Threading_ThreadExtensions_CreateThread.htm" />
   <HelpKINode Title="ThreadProc method" Url="html/M_W_Threading_ThreadBase_ThreadProc.htm" />
   <HelpKINode Title="UnlockedValue property" Url="html/P_W_Lockable_1_UnlockedValue.htm" />
-  <HelpKINode Title="v method" Url="html/M_W_Logging_Log_v.htm" />
+  <HelpKINode Title="v method" Url="html/Overload_W_Logging_Log_v.htm" />
   <HelpKINode Title="Value property">
     <HelpKINode Title="IProperty(TValue).Value Property " Url="html/P_W_IProperty_1_Value.htm" />
     <HelpKINode Title="Lockable(TValue).Value Property " Url="html/P_W_Lockable_1_Value.htm" />
@@ -699,7 +709,7 @@
   <HelpKINode Title="ValueChanging event" Url="html/E_W_PropertyBase_2_ValueChanging.htm" />
   <HelpKINode Title="Verbose enumeration member" Url="html/T_W_Logging_Log_LogMessageCategory.htm" />
   <HelpKINode Title="VerifyMd5Hash method" Url="html/M_W_Encryption_MD5_VerifyMd5Hash.htm" />
-  <HelpKINode Title="w method" Url="html/M_W_Logging_Log_w.htm" />
+  <HelpKINode Title="w method" Url="html/Overload_W_Logging_Log_w.htm" />
   <HelpKINode Title="W namespace" Url="html/N_W.htm" />
   <HelpKINode Title="W.ActionQueue(Of T) class" Url="html/T_W_ActionQueue_1.htm" />
   <HelpKINode Title="W.ActionQueue&lt;T&gt; class" Url="html/T_W_ActionQueue_1.htm" />
@@ -712,6 +722,7 @@
   <HelpKINode Title="W.Encryption.PublicPrivateKeyPair class" Url="html/T_W_Encryption_PublicPrivateKeyPair.htm" />
   <HelpKINode Title="W.Encryption.RSA class" Url="html/T_W_Encryption_RSA.htm" />
   <HelpKINode Title="W.Encryption.RSAMethods class" Url="html/T_W_Encryption_RSAMethods.htm" />
+  <HelpKINode Title="W.ExtensionMethods class" Url="html/T_W_ExtensionMethods.htm" />
   <HelpKINode Title="W.FromExtensions class" Url="html/T_W_FromExtensions.htm" />
   <HelpKINode Title="W.InvokeExtensions class" Url="html/T_W_InvokeExtensions.htm" />
   <HelpKINode Title="W.IOwnedProperty interface" Url="html/T_W_IOwnedProperty.htm" />
@@ -756,5 +767,6 @@
   <HelpKINode Title="W.Threading.ThreadBase class" Url="html/T_W_Threading_ThreadBase.htm" />
   <HelpKINode Title="W.Threading.ThreadExtensions class" Url="html/T_W_Threading_ThreadExtensions.htm" />
   <HelpKINode Title="WaitForChanged method" Url="html/M_W_PropertyBase_2_WaitForChanged.htm" />
+  <HelpKINode Title="WaitForValue method" Url="html/Overload_W_ExtensionMethods_WaitForValue.htm" />
   <HelpKINode Title="Warning enumeration member" Url="html/T_W_Logging_Log_LogMessageCategory.htm" />
 </HelpKI>

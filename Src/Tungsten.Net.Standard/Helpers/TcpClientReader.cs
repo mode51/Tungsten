@@ -70,17 +70,24 @@ namespace W.Net
             {
                 while (!cts?.IsCancellationRequested ?? false)
                 {
-                    if (TcpHelpers.IsMessageAvailable(_client, OnException))
+                    try
                     {
-                        TcpHelpers.ReadMessageAsync(_stream, _receiveBufferSize, (bytes, exception) =>
+                        if (TcpClientHelpers.IsMessageAvailable(_client, OnException))
                         {
-                            if (exception != null)
-                                OnException?.Invoke(exception);
-                            if (bytes != null)
-                                _messages.Enqueue(bytes);
-                        }, cts).Wait();
+                            StreamHelpers.ReadMessageAsync(_stream, _receiveBufferSize, (bytes, exception) =>
+                            {
+                                if (exception != null)
+                                    OnException?.Invoke(exception);
+                                if (bytes != null)
+                                    _messages.Enqueue(bytes);
+                            }, cts).Wait();
+                        }
+                        W.Threading.Thread.Sleep(1); //play nice with other threads
                     }
-                    W.Threading.Thread.Sleep(1); //play nice with other threads
+                    catch (System.Threading.Tasks.TaskCanceledException)
+                    {
+                        break;
+                    }
                 }
                 //cts.Dispose();
             }
@@ -96,20 +103,26 @@ namespace W.Net
             {
                 while (!cts?.IsCancellationRequested ?? false)
                 {
-                    byte[] message;
-                    if (_messages.TryDequeue(out message))
+                    if (!_messages.IsEmpty)
                     {
-                        if (message != null)
+                        byte[] message;
+                        var dequeued = _messages.TryDequeue(out message);
+                        if (dequeued)
                         {
-                            try
+                            if (message != null)
                             {
-                                OnMessageReceived?.Invoke(message);
-                            }
-                            catch (Exception e)
-                            {
-                                Log.e(e);
+                                try
+                                {
+                                    OnMessageReceived?.Invoke(message);
+                                }
+                                catch (Exception e)
+                                {
+                                    Log.e(e);
+                                }
                             }
                         }
+                        else
+                            Log.e("Failed to dequeue a message");
                     }
                     W.Threading.Thread.Sleep(1); //play nice with other threads
                 }

@@ -542,7 +542,7 @@ namespace W.IO.Pipes
                     if (cts != null && !cts.IsCancellationRequested)
                         ReadMessage();
                 }
-#if NETSTANDARD1_4
+#if NETSTANDARD1_4 //Tungsten.IO.Pipes.Standard is 1.4
                 catch (System.Threading.Tasks.TaskCanceledException)
                 {
                     //do nothing
@@ -608,12 +608,22 @@ namespace W.IO.Pipes
             var result = new Lockable<int>();
             var messageSizeBuffer = new byte[4];
             var cts = new CancellationTokenSource(100);
-
-            Stream.Value.ReadAsync(messageSizeBuffer, 0, 4, cts.Token).ContinueWith(task =>
+            try
             {
-                var len = BitConverter.ToInt32(messageSizeBuffer, 0);
-                result.Value = len;
-            }, TaskContinuationOptions.OnlyOnRanToCompletion).Wait();
+                Stream.Value.ReadAsync(messageSizeBuffer, 0, 4, cts.Token).ContinueWith(task =>
+                {
+                    var len = BitConverter.ToInt32(messageSizeBuffer, 0);
+                    result.Value = len;
+                }, TaskContinuationOptions.OnlyOnRanToCompletion).Wait();
+            }
+            catch (TaskCanceledException e)
+            {
+                //ignore
+            }
+            catch (AggregateException e)
+            {
+                //ignore - Log.e("PipeTransceiver.AggregateException: " + e.Message);
+            }
 
             return result.Value;
         }

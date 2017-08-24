@@ -309,6 +309,42 @@
       </UL>
       <UL>
         <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ExtensionMethods Class">
+          <param name="Local" value="html\T_W_ExtensionMethods.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="ExtensionMethods Methods">
+            <param name="Local" value="html\Methods_T_W_ExtensionMethods.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Lock(TItemType) Method ">
+              <param name="Local" value="html\M_W_ExtensionMethods_Lock__1.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="WaitForValue Method ">
+              <param name="Local" value="html\Overload_W_ExtensionMethods_WaitForValue.htm">
+            </OBJECT></LI>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="WaitForValue Method (Object, Object, Int32)">
+                <param name="Local" value="html\M_W_ExtensionMethods_WaitForValue.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="WaitForValue(TItemType) Method (TItemType, Predicate(TItemType), Int32)">
+                <param name="Local" value="html\M_W_ExtensionMethods_WaitForValue__1.htm">
+              </OBJECT></LI>
+            </UL>
+          </UL>
+        </UL>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
           <param name="Name" value="FromExtensions Class">
           <param name="Local" value="html\T_W_FromExtensions.htm">
         </OBJECT></LI>
@@ -1428,34 +1464,70 @@
             </OBJECT></LI>
             <UL>
               <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="e Method (Exception)">
-                <param name="Local" value="html\M_W_Logging_Log_e.htm">
+                <param name="Name" value="e Method (String, Object[])">
+                <param name="Local" value="html\M_W_Logging_Log_e_1.htm">
               </OBJECT></LI>
             </UL>
             <UL>
               <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="e Method (String, Object[])">
-                <param name="Local" value="html\M_W_Logging_Log_e_1.htm">
+                <param name="Name" value="e Method (Exception, String, Int32)">
+                <param name="Local" value="html\M_W_Logging_Log_e.htm">
               </OBJECT></LI>
             </UL>
           </UL>
           <UL>
             <LI><OBJECT type="text/sitemap">
               <param name="Name" value="i Method ">
-              <param name="Local" value="html\M_W_Logging_Log_i.htm">
+              <param name="Local" value="html\Overload_W_Logging_Log_i.htm">
             </OBJECT></LI>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="i Method (String, Object[])">
+                <param name="Local" value="html\M_W_Logging_Log_i.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="i Method (String, String, Int32)">
+                <param name="Local" value="html\M_W_Logging_Log_i_1.htm">
+              </OBJECT></LI>
+            </UL>
           </UL>
           <UL>
             <LI><OBJECT type="text/sitemap">
               <param name="Name" value="v Method ">
-              <param name="Local" value="html\M_W_Logging_Log_v.htm">
+              <param name="Local" value="html\Overload_W_Logging_Log_v.htm">
             </OBJECT></LI>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="v Method (String, Object[])">
+                <param name="Local" value="html\M_W_Logging_Log_v.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="v Method (String, String, Int32)">
+                <param name="Local" value="html\M_W_Logging_Log_v_1.htm">
+              </OBJECT></LI>
+            </UL>
           </UL>
           <UL>
             <LI><OBJECT type="text/sitemap">
               <param name="Name" value="w Method ">
-              <param name="Local" value="html\M_W_Logging_Log_w.htm">
+              <param name="Local" value="html\Overload_W_Logging_Log_w.htm">
             </OBJECT></LI>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="w Method (String, Object[])">
+                <param name="Local" value="html\M_W_Logging_Log_w.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="w Method (String, String, Int32)">
+                <param name="Local" value="html\M_W_Logging_Log_w_1.htm">
+              </OBJECT></LI>
+            </UL>
           </UL>
         </UL>
       </UL>

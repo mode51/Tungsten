@@ -6,7 +6,7 @@ namespace W.Demo
 {
     public class TestSecureStringClient
     {
-        public static void Run()
+        public static async void Run()
         {
             var mre = new ManualResetEvent(false);
             using (var server = new W.Net.SecureServer<W.Net.SecureClient<string>>())
@@ -64,8 +64,14 @@ namespace W.Demo
                     //    Console.WriteLine("Client Message Sent");
                     //};
 
-                    client.Socket.ConnectAsync(IPAddress.Parse("127.0.0.1"), 5150).Wait();
-                    mre.WaitOne();
+                    for (int t = 0; t < 20; t++)
+                    {
+                        var connected = client.Socket.ConnectAsync("127.0.0.1", 5150).Result;
+                        Console.WriteLine("Connected = {0}", connected);
+                        mre.WaitOne();
+                        client.Socket.Disconnect();
+                        //Console.WriteLine("Disconnected");
+                    }
 
                     Console.Write("Send <Return To Disconnect>: ");
                     while (client.Socket.IsConnected)
@@ -78,7 +84,7 @@ namespace W.Demo
                 }
             }
             Console.WriteLine("Press Any Key To Return");
-            Console.ReadKey();
+            Console.ReadKey(true);
         }
     }
 }

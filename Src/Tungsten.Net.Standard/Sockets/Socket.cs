@@ -282,7 +282,7 @@ namespace W.Net.Sockets
             System.Diagnostics.Debug.WriteLine("UseCompression = {0}: Original Size = {1}, Actual Size = {2}", UseCompression, size, message.Length);
             _messageCount += 1;
             if (immediate)
-                W.Net.TcpHelpers.SendMessageAsync(_networkStream, _client.SendBufferSize, message);
+                W.Net.StreamHelpers.SendMessageAsync(_networkStream, _client.SendBufferSize, message);
             else
                 _writer.Send(new SocketData() { Id = _messageCount, Data = message });
             return _messageCount;

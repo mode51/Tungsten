@@ -94,6 +94,7 @@ Scans the IsDirty value of each field and property of type IProperty
 ![Public Extension Method]                | [MarkAsClean][41]          | 
 Scans each field and property of type IProperty and sets it's IsDirty flag to false
  (Defined by [PropertyHostMethods][39].)                                                                                                  
+![Public Extension Method]                | [WaitForValue][42]         | Initiates a Task which will wait for the given variable to have the specified value (Defined by [ExtensionMethods][43].)                                                                                                         
 
 
 See Also
@@ -143,6 +144,8 @@ See Also
 [39]: ../../W/PropertyHostMethods/README.md
 [40]: ../../W/PropertyHostMethods/IsDirty.md
 [41]: ../../W/PropertyHostMethods/MarkAsClean.md
+[42]: ../../W/ExtensionMethods/WaitForValue.md
+[43]: ../../W/ExtensionMethods/README.md
 [Public method]: ../../_icons/pubmethod.gif "Public method"
 [Protected property]: ../../_icons/protproperty.gif "Protected property"
 [Public property]: ../../_icons/pubproperty.gif "Public property"

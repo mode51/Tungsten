@@ -39,7 +39,7 @@ namespace W.Tests
                     callTests.CallTestGetValue4().Wait();
                     callTests.CallTestGetValue5().Wait();
 
-                    callTests.CallRPCMethod1();
+                    await callTests.CallRPCMethod1();
                     callTests.CallRPCMethod2();
                     callTests.CallRPCMethod3();
 
@@ -198,9 +198,12 @@ namespace W.Tests
         }
 
         #region Previous Tests (some duplicate from above)
-        public void CallRPCMethod1()
+        public async Task CallRPCMethod1()
         {
-            if (_caller.ConnectAsync(RemoteEndPoint).Result)
+            var connected = await _caller.ConnectAsync(RemoteEndPoint);
+
+            if (connected)
+            //if (_caller.ConnectAsync(RemoteEndPoint).Result)
             {
                 var handler = _caller.Call("W.Tests.Sample_RPC_Class.Test1");
                 if (handler.CallException != null)
@@ -210,9 +213,11 @@ namespace W.Tests
                 _caller.Disconnect();
             }
         }
-        public void CallRPCMethod2()
+        public async Task CallRPCMethod2()
         {
-            if (_caller.ConnectAsync(RemoteEndPoint).Result)
+            var connected = await _caller.ConnectAsync(RemoteEndPoint);
+            if (connected)
+            //if (_caller.ConnectAsync(RemoteEndPoint).Result)
             {
                 var handler = _caller.Call("W.Tests.Sample_RPC_Class.Test2", "This is a sample message");
                 if (handler.CallException != null)
@@ -224,7 +229,9 @@ namespace W.Tests
         }
         public void CallRPCMethod3()
         {
-            if (_caller.ConnectAsync(RemoteEndPoint).Result)
+            var connected = _caller.ConnectAsync(RemoteEndPoint).Result;
+            if (connected)
+            //if (_caller.ConnectAsync(RemoteEndPoint).Result)
             {
                 var handler = _caller.Call("W.Tests.Sample_RPC_Class.Test3", "This is a {0} message", new object[] { "SAMPLE" });
                 if (handler.CallException != null)
@@ -289,7 +296,7 @@ namespace W.Tests
                     Console.WriteLine(handler.CallException.ToString());
                 else
                 {
-                    var result = handler.WaitForResponse<string>().Wait(3000);
+                    var result = handler.WaitForResponse<string>();//.Wait(3000);
                     Console.WriteLine("TestGetValue4 = {0}", result);
                 }
                 _caller.Disconnect();

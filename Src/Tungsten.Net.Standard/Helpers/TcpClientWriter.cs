@@ -87,7 +87,8 @@ namespace W.Net
                         SocketData message;
                         if (_sendQueue.TryDequeue(out message))
                         {
-                            TcpHelpers.SendMessageAsync(_stream, _sendBufferSize, message.Data, exception =>
+                            Log.v("Writing Id=" + message.Id + ", Data Length=" + message.Data.Length);
+                            StreamHelpers.SendMessageAsync(_stream, _sendBufferSize, message.Data, exception =>
                                 {
                                     if (exception != null)
                                         OnException?.Invoke(exception);

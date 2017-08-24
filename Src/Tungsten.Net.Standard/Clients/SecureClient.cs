@@ -2,8 +2,8 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Security.Cryptography;
-using W;
 using W.Net.Sockets;
+using W.Logging;
 
 namespace W.Net
 {
@@ -15,6 +15,7 @@ namespace W.Net
         private W.Encryption.RSA _rsa;
         private RSAParameters? _remotePublicKey = null;
         private long _messageSentCount = 0;
+        private System.Threading.ManualResetEventSlim _mreSecured = new System.Threading.ManualResetEventSlim(false);
 
         /// <summary>
         /// True if the public key for the remote has been set, otherwise False
@@ -36,9 +37,14 @@ namespace W.Net
         /// <param name="remoteEndPoint">The IPEndPoint of the remote machine</param>
         protected override void OnConnected(IPEndPoint remoteEndPoint)
         {
-            //base.OnConnected(remoteEndPoint); //don't call the base because we dont' want to call Connected yet
-            IsConnectedResetEvent.Reset();
+            //base.OnConnected(remoteEndPoint); //don't call the base because we don't want to call Connected yet
+            //IsConnectedResetEvent.Reset();
+            if (_rsa == null) //8.15.2017 - this has been called by the constructor, so don't do anything yet
+                return;
             SendPublicKey(); //immediately send the public key
+            //_mreSecured.Wait();
+            if (!_mreSecured.Wait(10000))
+                throw new TimeoutException("Unable to secure the connection");
         }
         /// <summary>
         /// Calls the Disconnected multi-cast delegate when the connection is terminated
@@ -47,6 +53,7 @@ namespace W.Net
         /// <param name="e">The Exception object if an exception occurred</param>
         protected override void OnDisconnected(IPEndPoint remoteEndPoint, Exception e)
         {
+            _mreSecured.Reset();
             _remotePublicKey = null;
             base.OnDisconnected(remoteEndPoint, e);
         }
@@ -64,24 +71,37 @@ namespace W.Net
             }
             else
             {
+                string json = string.Empty;
+                
                 try
                 {
-                    var json = result.AsString();//.FromBase64();
-                    if (TcpHelpers.IsBase64Encoded(json))
-                    {
-                        System.Diagnostics.Debug.WriteLine("Remote public key is curiously Base64 encoded");
-                        json = json.FromBase64(); //still not sure how this gets base64 encoded in the first place
-                    }
+                    var json_str = bytes.FromBase64();
+                    //var json_str = result.AsString();
+                    json = json_str;//.FromBase64();
+                    Console.WriteLine("Remote Public Key (json): " + json);
+                    //if (TcpHelpers.IsBase64Encoded(json))
+                    //{
+                    //    System.Diagnostics.Debug.WriteLine("Remote public key is curiously Base64 encoded");
+                    //    json = json.FromBase64(); //still not sure how this gets base64 encoded in the first place
+                    //}
+                    Logging.Log.v((IsServerSide ? "Server" : "Client") + " obtaining remote public key");
                     _remotePublicKey = Newtonsoft.Json.JsonConvert.DeserializeObject<RSAParameters>(json);
 
-                    System.Diagnostics.Debug.WriteLine("{0} received {1}'s public Key", IsServerSide ? "Server" : "Client", IsServerSide ? "client" : "server");
-                    IsConnectedResetEvent.Set();
-                    Connected?.Invoke(this, Socket.RemoteEndPoint);
+                    Logging.Log.v("{0} received {1}'s public Key", IsServerSide ? "Server" : "Client", IsServerSide ? "client" : "server");
+
+                    //Complete the connection
+                    base.OnConnected(Socket.RemoteEndPoint);
+                    //IsConnectedResetEvent.Set();
+                    //Connected?.Invoke(this, Socket.RemoteEndPoint);
+                    _mreSecured.Set();
                 }
                 catch (Exception e)
                 {
-                    System.Diagnostics.Debug.WriteLine(e.ToString());
-                    System.Diagnostics.Debugger.Break();
+                    //ignore this message and move on
+                    Log.e("SecureClient.OnDataReceived.Exception: " + e.ToString());
+                    Log.v("json = {0}", json);
+                    //System.Diagnostics.Debug.WriteLine(e.ToString());
+                    //System.Diagnostics.Debugger.Break();
                 }
             }
             return result;
@@ -93,6 +113,7 @@ namespace W.Net
         /// <returns>The decrypted data</returns>
         protected virtual byte[] OnSecureDataReceived(byte[] bytes)
         {
+            Logging.Log.v((IsServerSide ? "Server" : "Client") + " decrypting " + bytes.Length + " bytes");
             var message = _rsa.Decrypt(bytes.AsString()); //msg should be base64 encoded (by a previous Encrypt call) going into _rsa.Decrypt
             var msgBytes = message.AsBytes();
             SecureDataReceived?.Invoke(this, msgBytes);// FormatReceivedMessage<byte[]>(bytes));
@@ -139,7 +160,10 @@ namespace W.Net
         /// <param name="bytes">The data to encrypt and send</param>
         public override ulong Send(byte[] bytes)
         {
+            if (_remotePublicKey == null)
+                System.Diagnostics.Debugger.Break();
             //var bytes = base.FormatMessageToSend(message);
+            Logging.Log.v((IsServerSide ? "Server" : "Client") + " encrypting " + bytes.Length + " bytes");
             var msgBytes = _rsa.Encrypt(bytes, (RSAParameters)_remotePublicKey).AsBytes(); //Base64 encodes the message while encrypting //msg should be base64 encoded going into _rsa.Encrypt
             return base.Send(msgBytes);
             //base.Send()
@@ -163,7 +187,7 @@ namespace W.Net
             //no need to compress because encrypted is barely compressable
             //Socket.UseCompression = true;
             _rsa = rsa;
-            SendPublicKey(); //immediately send the public key
+            OnConnected(client.Client.RemoteEndPoint.As<IPEndPoint>());
         }
         private void SendPublicKey()
         {
@@ -171,10 +195,12 @@ namespace W.Net
             try
             {
                 publicKey = Newtonsoft.Json.JsonConvert.SerializeObject(_rsa.PublicKey);
-                var bytes = publicKey.AsBytes();
-                if (TcpHelpers.IsBase64Encoded(bytes.AsString()))
-                    System.Diagnostics.Debugger.Break();
-                Socket.Send(bytes, false, true); //don't send exact (allow compression of the key)
+                var bytes = publicKey.AsBase64().AsBytes();
+                Log.v((IsServerSide ? "Server" : "Client") + " sending public key: " + bytes.Length.ToString() + " bytes");
+                //if (TcpHelpers.IsBase64Encoded(bytes.AsString()))
+                //    System.Diagnostics.Debugger.Break();
+                //Socket.Send(bytes, false, true); //don't send exact (allow compression of the key)
+                Socket.Send(bytes); //don't send exact (allow compression of the key)
             }
             catch (Exception e)
             {
@@ -204,7 +230,7 @@ namespace W.Net
         protected override byte[] OnSecureDataReceived(byte[] bytes)
         {
             var result = base.OnSecureDataReceived(bytes); //decrypts the data
-            var message = TcpHelpers.FormatReceivedMessage<TMessageType>(result, SerializationSettings);
+            var message = StreamHelpers.FormatReceivedMessage<TMessageType>(result, SerializationSettings);
             MessageReceived?.Invoke(this, message);
             return result;
         }
@@ -222,7 +248,7 @@ namespace W.Net
         /// <param name="message">The message to send to the remote</param>
         public ulong Send(TMessageType message)
         {
-            var bytes = TcpHelpers.FormatMessageToSend<TMessageType>(message, SerializationSettings);
+            var bytes = StreamHelpers.FormatMessageToSend<TMessageType>(message, SerializationSettings);
             return base.Send(bytes);
         }
 

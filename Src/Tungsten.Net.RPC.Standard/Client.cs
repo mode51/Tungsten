@@ -73,10 +73,14 @@ namespace W.Net.RPC
         /// <returns>A Task specifying success/failure of the connection</returns>
         public async Task<bool> ConnectAsync(IPEndPoint remoteEndPoint)
         {
-            if (_client?.Socket?.IsConnected ?? false)
-                return true;
+            //8.14.2017 - moved this into the task
+            //if (_client?.Socket?.IsConnected ?? false)
+            //    return true;
             return await Task.Run(async () =>
             {
+                //8.14.2017 - moved the below check into the task
+                if (_client?.Socket?.IsConnected ?? false)
+                    return true;
                 //try
                 //{
                 RemoteEndPoint = remoteEndPoint;
@@ -84,8 +88,8 @@ namespace W.Net.RPC
                 _client.Connected += (s, ep) => { Connected?.Invoke(this, ep); };
                 _client.Disconnected += (s, ep, e) => { Disconnected?.Invoke(this, ep, e); };
                 var result = await _client.Socket.ConnectAsync(remoteEndPoint.Address, remoteEndPoint.Port);
-                if (result)
-                    result = _client.WaitForConnected(60000);
+                //if (result)
+                //    result = _client.WaitForConnected(60000);
                 if (result && _client.Socket.UseCompression != _useCompression)
                     _client.Socket.UseCompression = _useCompression;
                 return result;

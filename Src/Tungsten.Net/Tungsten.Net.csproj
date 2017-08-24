@@ -47,8 +47,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tungsten, Version=1.2.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Tungsten.1.2.7\lib\net45\Tungsten.dll</HintPath>
+    <Reference Include="Tungsten, Version=1.2.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Tungsten.1.2.8\lib\net45\Tungsten.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +103,9 @@
     </Compile>
     <Compile Include="..\Tungsten.Net.Standard\Sockets\ISocket.cs">
       <Link>Sockets\ISocket.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\Sockets\ISocketClient.cs">
+      <Link>Sockets\ISocketClient.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Net.Standard\Sockets\Socket.cs">
       <Link>Sockets\Socket.cs</Link>

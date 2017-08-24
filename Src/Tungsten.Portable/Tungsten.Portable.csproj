@@ -130,6 +130,9 @@
     <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadWithCustomData.cs">
       <Link>Threading\ThreadWithCustomData.cs</Link>
     </Compile>
+    <Compile Include="..\Tungsten.Standard1_3\ExtensionMethods.cs">
+      <Link>ExtensionMethods.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

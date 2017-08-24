@@ -61,7 +61,7 @@ namespace W.Demo
                     //    Console.WriteLine("Client Message Sent");
                     //};
                     secureClient.Socket.UseCompression = true;
-                    secureClient.Socket.ConnectAsync(IPAddress.Parse("127.0.0.1"), 5150).Wait();
+                    secureClient.Socket.ConnectAsync("127.0.0.1", 5150).Wait();
                     mre.WaitOne();
 
                     Console.Write("Send <Return To Exit>: ");

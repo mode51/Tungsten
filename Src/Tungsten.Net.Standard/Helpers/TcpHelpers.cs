@@ -8,9 +8,36 @@ using W.Logging;
 namespace W.Net
 {
     /// <summary>
-    /// Helper methods for TcpClient and NetworkStream
+    /// Helper methods for TcpClient
     /// </summary>
-    public class TcpHelpers
+    public class TcpClientHelpers
+    {
+        /// <summary>
+        /// Checks the TcpClient.Available value
+        /// </summary>
+        /// <param name="client">The TcpClient to check</param>
+        /// <param name="onException">Called if a SocketException occurs</param>
+        /// <returns>True if at least 4 bytes of data are available</returns>
+        public static bool IsMessageAvailable(TcpClient client, Action<Exception> onException)
+        {
+            try
+            {
+                return client?.Available > 3;
+            }
+            catch (SocketException e) //if remote host has been shut down or closed the connection
+            {
+                var errorCode = Enum.GetName(typeof(System.Net.Sockets.SocketError), e.SocketErrorCode);
+                Log.e("Socket Exception({0}): {1}", errorCode, e.Message);
+                onException?.Invoke(e);
+            }
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Helper methods for NetworkStream
+    /// </summary>
+    public class StreamHelpers
     {
         /// <summary>
         /// If True, messages will be logged
@@ -66,6 +93,7 @@ namespace W.Net
             {
                 int length = message.Length;
                 int numberOfBytesSent = 0;
+                //System.Diagnostics.Debug.WriteLine("Send Message Size = " + length.ToString());
                 if (LogMessages) Log.v("Send Message Size = {0}", length);
 
                 //send the size
@@ -183,6 +211,7 @@ namespace W.Net
             return Task.Run(() =>
             {
                 var size = GetMessageSize(stream, onComplete, cts);
+                System.Diagnostics.Debug.WriteLine("Read Message Size = " + size.ToString());
                 if (size > 0 && !(cts?.IsCancellationRequested ?? false))
                     ReadMessage(stream, size, receiveBufferSize, onComplete, cts);
             }, cts?.Token ?? CancellationToken.None);
@@ -200,26 +229,6 @@ namespace W.Net
                 if (stream == null)
                     return false;
                 return stream.DataAvailable;
-            }
-            catch (SocketException e) //if remote host has been shut down or closed the connection
-            {
-                var errorCode = Enum.GetName(typeof(System.Net.Sockets.SocketError), e.SocketErrorCode);
-                Log.e("Socket Exception({0}): {1}", errorCode, e.Message);
-                onException?.Invoke(e);
-            }
-            return false;
-        }
-        /// <summary>
-        /// Checks the TcpClient.Available value
-        /// </summary>
-        /// <param name="client">The TcpClient to check</param>
-        /// <param name="onException">Called if a SocketException occurs</param>
-        /// <returns>True if at least 4 bytes of data are available</returns>
-        public static bool IsMessageAvailable(TcpClient client, Action<Exception> onException)
-        {
-            try
-            {
-                return client?.Available > 3;
             }
             catch (SocketException e) //if remote host has been shut down or closed the connection
             {

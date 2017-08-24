@@ -28,7 +28,7 @@ namespace W.Tests
         {
             using (var server = new W.Net.RPC.Server())
             {
-                foreach(var method in server.Methods)
+                foreach (var method in server.Methods)
                 {
                     Console.WriteLine(method.Key);
                 }

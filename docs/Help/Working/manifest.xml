@@ -50,6 +50,12 @@
   <topic id="M:W.CallResult`1.#ctor(System.Boolean,`0,System.Exception)" type="API" />
   <topic id="P:W.CallResult`1.Empty" type="API" />
   <topic id="P:W.CallResult`1.Result" type="API" />
+  <topic id="T:W.ExtensionMethods" type="API" />
+  <topic id="Methods.T:W.ExtensionMethods" type="API" />
+  <topic id="Overload:W.ExtensionMethods.WaitForValue" type="API" />
+  <topic id="M:W.ExtensionMethods.Lock``1(``0,System.Action{``0})" type="API" />
+  <topic id="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" type="API" />
+  <topic id="M:W.ExtensionMethods.WaitForValue``1(``0,System.Predicate{``0},System.Int32)" type="API" />
   <topic id="T:W.FromExtensions" type="API" />
   <topic id="Methods.T:W.FromExtensions" type="API" />
   <topic id="Overload:W.FromExtensions.FromBase64" type="API" />
@@ -235,13 +241,19 @@
   <topic id="Methods.T:W.Logging.Log" type="API" />
   <topic id="Properties.T:W.Logging.Log" type="API" />
   <topic id="Overload:W.Logging.Log.e" type="API" />
-  <topic id="M:W.Logging.Log.e(System.Exception)" type="API" />
+  <topic id="Overload:W.Logging.Log.i" type="API" />
+  <topic id="Overload:W.Logging.Log.v" type="API" />
+  <topic id="Overload:W.Logging.Log.w" type="API" />
+  <topic id="M:W.Logging.Log.e(System.Exception,System.String,System.Int32)" type="API" />
   <topic id="M:W.Logging.Log.e(System.String,System.Object[])" type="API" />
   <topic id="M:W.Logging.Log.i(System.String,System.Object[])" type="API" />
+  <topic id="M:W.Logging.Log.i(System.String,System.String,System.Int32)" type="API" />
   <topic id="P:W.Logging.Log.LogTheMessage" type="API" />
   <topic id="P:W.Logging.Log.MessageHistory" type="API" />
   <topic id="M:W.Logging.Log.v(System.String,System.Object[])" type="API" />
+  <topic id="M:W.Logging.Log.v(System.String,System.String,System.Int32)" type="API" />
   <topic id="M:W.Logging.Log.w(System.String,System.Object[])" type="API" />
+  <topic id="M:W.Logging.Log.w(System.String,System.String,System.Int32)" type="API" />
   <topic id="T:W.Logging.Log.LogMessageCategory" type="API" />
   <topic id="T:W.Logging.Log.LogMessageHistory" type="API" />
   <topic id="Methods.T:W.Logging.Log.LogMessageHistory" type="API" />

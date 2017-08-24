@@ -37,6 +37,7 @@ html\Methods_T_W_Encryption_MD5.htm
 html\Methods_T_W_Encryption_PublicPrivateKeyPair.htm
 html\Methods_T_W_Encryption_RSA.htm
 html\Methods_T_W_Encryption_RSAMethods.htm
+html\Methods_T_W_ExtensionMethods.htm
 html\Methods_T_W_FromExtensions.htm
 html\Methods_T_W_InvokeExtensions.htm
 html\Methods_T_W_IOwnedProperty.htm
@@ -106,6 +107,9 @@ html\M_W_Encryption_RSA_Encrypt_1.htm
 html\M_W_Encryption_RSA_Encrypt_2.htm
 html\M_W_Encryption_RSA_Finalize.htm
 html\M_W_Encryption_RSA__ctor.htm
+html\M_W_ExtensionMethods_Lock__1.htm
+html\M_W_ExtensionMethods_WaitForValue.htm
+html\M_W_ExtensionMethods_WaitForValue__1.htm
 html\M_W_FromExtensions_FromBase64.htm
 html\M_W_FromExtensions_FromBase64_1.htm
 html\M_W_FromExtensions_FromCompressed.htm
@@ -131,10 +135,13 @@ html\M_W_Logging_CustomLogger__ctor.htm
 html\M_W_Logging_Log_e.htm
 html\M_W_Logging_Log_e_1.htm
 html\M_W_Logging_Log_i.htm
+html\M_W_Logging_Log_i_1.htm
 html\M_W_Logging_Log_LogMessageHistory_LogMessage__ctor.htm
 html\M_W_Logging_Log_LogMessageHistory__ctor.htm
 html\M_W_Logging_Log_v.htm
+html\M_W_Logging_Log_v_1.htm
 html\M_W_Logging_Log_w.htm
+html\M_W_Logging_Log_w_1.htm
 html\M_W_PropertyBase_2_Dispose.htm
 html\M_W_PropertyBase_2_ExecuteOnValueChanged.htm
 html\M_W_PropertyBase_2_Finalize.htm
@@ -231,6 +238,7 @@ html\Overload_W_Encryption_RSAMethods_Decrypt.htm
 html\Overload_W_Encryption_RSAMethods_Encrypt.htm
 html\Overload_W_Encryption_RSA_Decrypt.htm
 html\Overload_W_Encryption_RSA_Encrypt.htm
+html\Overload_W_ExtensionMethods_WaitForValue.htm
 html\Overload_W_FromExtensions_FromBase64.htm
 html\Overload_W_FromExtensions_FromJson.htm
 html\Overload_W_FromExtensions_FromXml.htm
@@ -239,6 +247,9 @@ html\Overload_W_Lockable_1_ExecuteInLock.htm
 html\Overload_W_Lockable_1_ExecuteInLockAsync.htm
 html\Overload_W_Lockable_1__ctor.htm
 html\Overload_W_Logging_Log_e.htm
+html\Overload_W_Logging_Log_i.htm
+html\Overload_W_Logging_Log_v.htm
+html\Overload_W_Logging_Log_w.htm
 html\Overload_W_Property_1__ctor.htm
 html\Overload_W_Property_2__ctor.htm
 html\Overload_W_Threading_GateMethods_AsGate.htm
@@ -325,6 +336,7 @@ html\T_W_Encryption_MD5.htm
 html\T_W_Encryption_PublicPrivateKeyPair.htm
 html\T_W_Encryption_RSA.htm
 html\T_W_Encryption_RSAMethods.htm
+html\T_W_ExtensionMethods.htm
 html\T_W_FromExtensions.htm
 html\T_W_InvokeExtensions.htm
 html\T_W_IOwnedProperty.htm

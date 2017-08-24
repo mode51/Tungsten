@@ -72,18 +72,19 @@ namespace W.Net
             RemoteEndPoint = serverEndPoint;
             _client = new SecureClient<string>();
 
-            if (!_client.Socket.ConnectAsync(serverEndPoint.Address, serverEndPoint.Port).Result)
+            var connected = _client.Socket.ConnectAsync(serverEndPoint.Address, serverEndPoint.Port).Result;
+            if (!connected)
             {
                 this.SocketError = System.Net.Sockets.SocketError.ConnectionRefused;
                 System.Diagnostics.Debug.WriteLine("SecureStringLogger failed to connect to the server.");
                 return;
             }
-            if (!_client.WaitForConnected(System.Diagnostics.Debugger.IsAttached ? -1 : 5000))
-            {
-                this.SocketError = System.Net.Sockets.SocketError.TimedOut;
-                //throw new TimeoutException("Connection timed out waiting for the server");
-                return;
-            }
+            //if (!_client.WaitForConnected(System.Diagnostics.Debugger.IsAttached ? -1 : 5000))
+            //{
+            //    this.SocketError = System.Net.Sockets.SocketError.TimedOut;
+            //    //throw new TimeoutException("Connection timed out waiting for the server");
+            //    return;
+            //}
         }
     }
     ///// <summary>

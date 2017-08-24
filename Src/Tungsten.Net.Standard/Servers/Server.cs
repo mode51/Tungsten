@@ -214,4 +214,21 @@ namespace W.Net
             GC.SuppressFinalize(this);
         }
     }
+
+    public class EchoServer : Server<Client<string>>
+    {
+        public EchoServer()
+        {
+            ClientConnected += (client) =>
+            {
+                client.MessageReceived += (c, message) =>
+                {
+                    if (!string.IsNullOrEmpty(message))
+                    {
+                        c.Send(message.As<string>().ToUpper());
+                    }
+                };
+            };
+        }
+    }
 }

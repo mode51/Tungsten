@@ -633,6 +633,36 @@
         <param name="Local" value="html/M_W_PropertyBase_2_ExecuteOnValueChanged.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="ExtensionMethods class">
+        <param name="See Also" value="ExtensionMethods class">
+      </OBJECT></LI>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ExtensionMethods Class">
+          <param name="Local" value="html/T_W_ExtensionMethods.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="about ExtensionMethods class">
+          <param name="Local" value="html/T_W_ExtensionMethods.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="methods">
+          <param name="Local" value="html/Methods_T_W_ExtensionMethods.htm">
+        </OBJECT></LI>
+      </UL>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="ExtensionMethods.Lock(Of TItemType) method">
+        <param name="Local" value="html/M_W_ExtensionMethods_Lock__1.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="ExtensionMethods.Lock&lt;TItemType&gt; method">
+        <param name="Local" value="html/M_W_ExtensionMethods_Lock__1.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="ExtensionMethods.WaitForValue method">
+        <param name="Local" value="html/Overload_W_ExtensionMethods_WaitForValue.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Finalize method">
         <param name="See Also" value="Finalize method">
       </OBJECT></LI>
@@ -900,7 +930,7 @@
       </UL>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="i method">
-        <param name="Local" value="html/M_W_Logging_Log_i.htm">
+        <param name="Local" value="html/Overload_W_Logging_Log_i.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Information enumeration member">
@@ -1119,6 +1149,14 @@
         <param name="Local" value="html/M_W_PropertyBase_2_LoadValue.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Lock(Of TItemType) method">
+        <param name="Local" value="html/M_W_ExtensionMethods_Lock__1.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Lock&lt;TItemType&gt; method">
+        <param name="Local" value="html/M_W_ExtensionMethods_Lock__1.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Lockable(Of TValue) class">
         <param name="See Also" value="Lockable(Of TValue) class">
       </OBJECT></LI>
@@ -1250,7 +1288,7 @@
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Log.i method">
-        <param name="Local" value="html/M_W_Logging_Log_i.htm">
+        <param name="Local" value="html/Overload_W_Logging_Log_i.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Log.LogMessageCategory enumeration">
@@ -1330,11 +1368,11 @@
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Log.v method">
-        <param name="Local" value="html/M_W_Logging_Log_v.htm">
+        <param name="Local" value="html/Overload_W_Logging_Log_v.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Log.w method">
-        <param name="Local" value="html/M_W_Logging_Log_w.htm">
+        <param name="Local" value="html/Overload_W_Logging_Log_w.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="LogMessage class">
@@ -2628,7 +2666,7 @@
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="v method">
-        <param name="Local" value="html/M_W_Logging_Log_v.htm">
+        <param name="Local" value="html/Overload_W_Logging_Log_v.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Value property">
@@ -2666,7 +2704,7 @@
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="w method">
-        <param name="Local" value="html/M_W_Logging_Log_w.htm">
+        <param name="Local" value="html/Overload_W_Logging_Log_w.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="W namespace">
@@ -2715,6 +2753,10 @@
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="W.Encryption.RSAMethods class">
         <param name="Local" value="html/T_W_Encryption_RSAMethods.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="W.ExtensionMethods class">
+        <param name="Local" value="html/T_W_ExtensionMethods.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="W.FromExtensions class">
@@ -2891,6 +2933,10 @@
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="WaitForChanged method">
         <param name="Local" value="html/M_W_PropertyBase_2_WaitForChanged.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="WaitForValue method">
+        <param name="Local" value="html/Overload_W_ExtensionMethods_WaitForValue.htm">
       </OBJECT></LI>
       <LI><OBJECT type="text/sitemap">
         <param name="Name" value="Warning enumeration member">

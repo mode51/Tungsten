@@ -6,6 +6,11 @@ namespace Tungsten.Net.RPC.Tests
     {
         static void Main(string[] args)
         {
+            W.Logging.Log.LogTheMessage = (category, message) =>
+            {
+                Console.WriteLine("{0} - {1}", category.ToString().ToUpper(), message);
+            };
+
             var exit = false;
             while (!exit)
             {

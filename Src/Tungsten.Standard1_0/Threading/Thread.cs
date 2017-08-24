@@ -26,28 +26,32 @@ namespace W.Threading
         //[DebuggerStepThrough]
         protected override Exception CallInvokeAction()
         {
-            Exception ex = null;
+            Exception result = null;
             try
             {
                 InvokeAction(Cts);
                 Success.Value = true;
             }
+            catch (AggregateException e)
+            {
+                System.Diagnostics.Debug.WriteLine("W.Threading.Thread.CallInvokeAction.AggregateException: " + e.Message);
+            }
             catch (TaskSchedulerException e)
             {
-                ex = e;
-                System.Diagnostics.Debug.WriteLine("ThreadExtensions.ThreadProc TaskSchedulerException:  " + e.Message);
+                result = e;
+                System.Diagnostics.Debug.WriteLine("W.Threading.Thread.CallInvokeAction.TaskSchedulerException: " + e.Message);
             }
             catch (TaskCanceledException e)
             {
-                ex = e;
+                result = e;
                 //System.Diagnostics.Debug.WriteLine("ThreadExtensions.ThreadProc Exception:  " + e.Message);
             }
             catch (Exception e)
             {
-                ex = e;
-                System.Diagnostics.Debug.WriteLine("ThreadExtensions.ThreadProc General Exception:  " + e.Message);
+                result = e;
+                System.Diagnostics.Debug.WriteLine("W.Threading.Thread.CallInvokeAction.Exception: " + e.Message);
             }
-            return ex;
+            return result;
         }
 
         /// <summary>
@@ -60,17 +64,21 @@ namespace W.Threading
             {
                 base.CallInvokeOnComplete(e);
             }
-            catch (TaskSchedulerException)
+            catch (AggregateException ex)
             {
-                System.Diagnostics.Debug.WriteLine("ThreadExtensions.ThreadProc TaskSchedulerException:  " + e.Message);
+                System.Diagnostics.Debug.WriteLine("W.Threading.Thread.CallInvokeOnComplete.AggregateException: " + ex.Message);
+            }
+            catch (TaskSchedulerException ex)
+            {
+                System.Diagnostics.Debug.WriteLine("ThreadExtensions.ThreadProc TaskSchedulerException:  " + ex.Message);
             }
             catch (TaskCanceledException)
             {
                 //System.Diagnostics.Debug.WriteLine("ThreadExtensions.ThreadProc Exception:  " + e.Message);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine("ThreadExtensions.ThreadProc General Exception:  " + e.Message);
+                System.Diagnostics.Debug.WriteLine("ThreadExtensions.ThreadProc General Exception:  " + ex.Message);
             }
         }
 

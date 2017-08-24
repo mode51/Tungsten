@@ -2,6 +2,7 @@
 using System.Net;
 using System.Net.Sockets;
 using W.Net.Sockets;
+using W.Logging;
 
 namespace W.Net
 {
@@ -10,7 +11,7 @@ namespace W.Net
     /// </summary>
     public class Client : IDisposable, IDataSocket
     {
-        private W.Net.Sockets.Socket _client = null;
+        private W.Net.Sockets.Socket _socket = null;
 
         /// <summary>
         /// A ManualResetEventSlim which is used to signal when a connection has been established
@@ -26,15 +27,15 @@ namespace W.Net
         /// </summary>
         public Newtonsoft.Json.JsonSerializerSettings SerializationSettings { get; private set; } = new Newtonsoft.Json.JsonSerializerSettings() { Formatting = Newtonsoft.Json.Formatting.Indented };// ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Error };
 
-        /// <summary>
-        /// Blocks the current thread until either a connection is established or the specified time elapses
-        /// </summary>
-        /// <param name="msTimeout"></param>
-        /// <returns></returns>
-        public bool WaitForConnected(int msTimeout = -1)
-        {
-            return IsConnectedResetEvent.Wait(msTimeout);
-        }
+        ///// <summary>
+        ///// Blocks the current thread until either a connection is established or the specified time elapses
+        ///// </summary>
+        ///// <param name="msTimeout"></param>
+        ///// <returns></returns>
+        //public bool WaitForConnected(int msTimeout = -1)
+        //{
+        //    return IsConnectedResetEvent.Wait(msTimeout);
+        //}
 
         #region Implicit ISocket
         /// <summary>
@@ -44,7 +45,7 @@ namespace W.Net
         /// <summary>
         /// Exposes the Socket used to send and receive data
         /// </summary>
-        public W.Net.Sockets.Socket Socket => _client;
+        public W.Net.Sockets.Socket Socket => _socket;
 
         /// <summary>
         /// Called when a connection has been established
@@ -68,7 +69,7 @@ namespace W.Net
         public Action<IDataSocket, SocketData> DataSent { get; set; }
 
         /// <summary>
-        /// Sends data to the server
+        /// Sends data to the remote
         /// </summary>
         /// <param name="bytes">The data to send</param>
         public virtual ulong Send(byte[] bytes)
@@ -76,7 +77,10 @@ namespace W.Net
             if (!IsConnected)
                 throw new InvalidOperationException("A connection has not been established");
             //var bytes = FormatMessageToSend(message);
-            return _client.Send(bytes);
+            //can't log over Tungsten.Net here, otherwise it'll be a recursive stack overflow
+            //Log.v((IsServerSide ? "Server" : "Client") + " sending " + bytes.Length + " bytes");
+            var data = OnSendingData(bytes);
+            return _socket.Send(data);
         }
         #endregion
 
@@ -85,7 +89,7 @@ namespace W.Net
         /// </summary>
         public Client()
         {
-            _client = new W.Net.Sockets.Socket();
+            _socket = new W.Net.Sockets.Socket();
             ConfigureDelegates();
         }
         /// <summary>
@@ -95,9 +99,11 @@ namespace W.Net
         public Client(TcpClient client)
         {
             IsServerSide = true;
-            _client = new W.Net.Sockets.Socket(client);
-            IsConnectedResetEvent.Set(); //have to set this because we're already connected
-            ConfigureDelegates();
+            _socket = new W.Net.Sockets.Socket(client);
+            ConfigureDelegates(); //8.15.2017 - moved this up a line
+            //because this might be a SecureClient, we must call OnConnected instead of handling it here
+            OnConnected(client.Client.RemoteEndPoint.As<IPEndPoint>());
+            //IsConnectedResetEvent.Set(); //have to set this because we're already connected
         }
         /// <summary>
         /// Destructs the Client and calls Dispose
@@ -155,39 +161,55 @@ namespace W.Net
             DataReceived?.Invoke(this, bytes);// message);
             return bytes;
         }
+        /// <summary>
+        /// May be overridden to format the data as desired before transmission
+        /// </summary>
+        /// <param name="bytes">The data to send</param>
+        /// <returns>The altered data to send</returns>
+        protected virtual byte[] OnSendingData(byte[] bytes)
+        {
+            return bytes;
+        }
+        /// <summary>
+        /// Calls the DataSent multi-cast delegate
+        /// </summary>
+        /// <param name="data"></param>
         protected virtual void OnDataSent(SocketData data)
         {
             DataSent?.Invoke(this, data);
         }
+        /// <summary>
+        /// Disposes the Client and releases resources
+        /// </summary>
         protected virtual void OnDispose()
         {
-            if (_client != null)
+            if (_socket != null)
             {
-                _client.Dispose();
-                _client = null;
+                _socket.Dispose();
+                _socket = null;
                 GC.SuppressFinalize(this);
             }
         }
 
         private void ConfigureDelegates()
         {
-            _client.Connected += (client, remoteEndPoint) =>
+            _socket.Connected += (client, remoteEndPoint) =>
             {
                 OnConnected(remoteEndPoint);
             };
-            _client.Disconnected += (socket, remoteEndPoint, e) =>
+            _socket.Disconnected += (socket, remoteEndPoint, e) =>
             {
                 OnDisconnected(remoteEndPoint, e);
             };
-            _client.RawDataReceived += (c, bytes) =>
+            _socket.RawDataReceived += (c, bytes) =>
             {
                 OnRawDataReceived(bytes);
             };
-            _client.DataReceived += (c, bytes) =>
+            _socket.DataReceived += (c, bytes) =>
             {
                 OnDataReceived(bytes);
             };
-            _client.DataSent += (c, message) =>
+            _socket.DataSent += (c, message) =>
             {
                 OnDataSent(message);
             };
@@ -244,14 +266,18 @@ namespace W.Net
         protected override byte[] OnDataReceived(byte[] bytes)
         {
             var result = base.OnDataReceived(bytes);
-            var msg = TcpHelpers.FormatReceivedMessage<TMessageType>(result, SerializationSettings);
+            var msg = StreamHelpers.FormatReceivedMessage<TMessageType>(result, SerializationSettings);
             MessageReceived?.Invoke(this, msg);
             return result;
         }
+        /// <summary>
+        /// Calls the MessageSent multi-cast delegate when a message has been sent
+        /// </summary>
+        /// <param name="data"></param>
         protected override void OnDataSent(SocketData data)
         {
             base.OnDataSent(data);
-            var msg = TcpHelpers.FormatReceivedMessage<TMessageType>(data.Data, SerializationSettings);
+            var msg = StreamHelpers.FormatReceivedMessage<TMessageType>(data.Data, SerializationSettings);
             MessageSent?.Invoke(this, msg);
         }
 
@@ -259,9 +285,9 @@ namespace W.Net
         /// Sends a message to the remote machine
         /// </summary>
         /// <param name="message">The message to send</param>
-        public ulong Send(TMessageType message)
+        public virtual ulong Send(TMessageType message)
         {
-            var bytes = TcpHelpers.FormatMessageToSend<TMessageType>(message, SerializationSettings);
+            var bytes = StreamHelpers.FormatMessageToSend<TMessageType>(message, SerializationSettings);
             return base.Send(bytes);
         }
 

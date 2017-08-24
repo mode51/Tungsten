@@ -1,6 +1,7 @@
 using System;
 using System.Net;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace W.Demo
 {
@@ -162,6 +163,40 @@ namespace W.Demo
             }
             Console.WriteLine("Press Any Key To Return");
             Console.ReadKey();
+        }
+    }
+    public class TestSecureClientServer3
+    {
+        public static void Run()
+        {
+            var localEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 5150);
+
+            var server = new W.Net.SecureEchoServer();
+            server.Start(localEndPoint);
+
+            for(int t=0; t<5; t++)
+            {
+                var mre = new ManualResetEventSlim(false);
+                var client = new W.Net.SecureClient<string>();
+                client.MessageReceived += (c, message) =>
+                {
+                    Console.WriteLine("Received {0}", message);
+                    mre.Set();
+                };
+                bool connected = client.Socket.ConnectAsync(localEndPoint.Address, localEndPoint.Port).Result;
+                if (connected)
+                {
+                    client.Send(string.Format("Message: {0}", t));
+                    if (!mre.Wait(30000))
+                        Console.WriteLine("Waiting for server timed out.");
+                    client.Socket.Disconnect();
+                }
+                client.Dispose();
+                mre.Dispose();
+            }
+
+            server.Stop();
+            server.Dispose();
         }
     }
 }

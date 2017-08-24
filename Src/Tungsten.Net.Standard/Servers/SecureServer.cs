@@ -23,4 +23,22 @@ namespace W.Net
             return result;
         }
     }
+    public class SecureEchoServer : SecureEchoServer<SecureClient<string>> { }
+    public class SecureEchoServer<TClientType> : SecureServer<TClientType> where TClientType : Client
+    {
+        public SecureEchoServer()
+        {
+            ClientConnected += (client) =>
+            {
+                client.DataReceived += (c, data) =>
+                {
+                    var message = data.AsString();
+                    if (!string.IsNullOrEmpty(message))
+                    {
+                        c.Send(message.ToUpper().AsBytes());
+                    }
+                };
+            };
+        }
+    }
 }

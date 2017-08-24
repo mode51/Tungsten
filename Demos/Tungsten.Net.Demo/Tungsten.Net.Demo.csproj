@@ -7,6 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="TestClientSlim.cs" />
+    <Compile Remove="TestSecureClient2.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="TestClientSlim.cs" />
+    <None Include="TestSecureClient2.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Src\Tungsten.Net.Standard\Tungsten.Net.Standard.csproj" />
   </ItemGroup>
 

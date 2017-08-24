@@ -2,7 +2,7 @@
 <reflection>
   <assemblies>
     <assembly name="Tungsten">
-      <assemblydata version="1.2.7.1" culture="" key="" hash="SHA1" />
+      <assemblydata version="1.2.8.0" culture="" key="" hash="SHA1" />
       <attributes>
         <attribute>
           <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
@@ -11,7 +11,7 @@
           <type api="T:System.Reflection.AssemblyFileVersionAttribute" ref="true" />
           <argument>
             <type api="T:System.String" ref="true" />
-            <value>1.2.7.1</value>
+            <value>1.2.8.0</value>
           </argument>
         </attribute>
       </attributes>
@@ -43,6 +43,7 @@
         <element api="T:W.PropertyHostNotifier" />
         <element api="T:W.Singleton`1" />
         <element api="T:W.StringExtensions" />
+        <element api="T:W.ExtensionMethods" />
       </elements>
     </api>
     <api id="T:W.ActionQueue`1">
@@ -219,6 +220,35 @@
             <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
             <namespace api="N:W" />
             <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
           </containers>
         </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
@@ -944,6 +974,35 @@
             <type api="T:W.PropertyHostMethods" ref="true" />
           </containers>
         </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -1262,6 +1321,35 @@
             <type api="T:W.PropertyHostMethods" ref="true" />
           </containers>
         </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -1403,6 +1491,140 @@
         <namespace api="N:W" />
         <type api="T:W.CallResult`1" ref="true" />
       </containers>
+    </api>
+    <api id="T:W.ExtensionMethods">
+      <apidata name="ExtensionMethods" group="type" subgroup="class" />
+      <typedata visibility="public" abstract="true" sealed="true" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <elements>
+        <element api="M:W.ExtensionMethods.Lock``1(``0,System.Action{``0})" />
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" />
+        <element api="M:W.ExtensionMethods.WaitForValue``1(``0,System.Predicate{``0},System.Int32)" />
+      </elements>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.ExtensionMethods.Lock``1(``0,System.Action{``0})">
+      <apidata name="Lock" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="TItemType" />
+      </templates>
+      <parameters>
+        <parameter name="this">
+          <template name="TItemType" index="0" api="M:W.ExtensionMethods.Lock``1(``0,System.Action{``0})" />
+        </parameter>
+        <parameter name="action">
+          <type api="T:System.Action`1" ref="true">
+            <specialization>
+              <template name="TItemType" index="0" api="M:W.ExtensionMethods.Lock``1(``0,System.Action{``0})" />
+            </specialization>
+          </type>
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.ExtensionMethods" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)">
+      <apidata name="WaitForValue" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="this">
+          <type api="T:System.Object" ref="true" />
+        </parameter>
+        <parameter name="desiredValue">
+          <type api="T:System.Object" ref="true" />
+        </parameter>
+        <parameter name="msTimeout" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>-1</value>
+          </argument>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Threading.Tasks.Task`1" ref="true">
+          <specialization>
+            <type api="T:System.Boolean" ref="false" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.ExtensionMethods" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
+    </api>
+    <api id="M:W.ExtensionMethods.WaitForValue``1(``0,System.Predicate{``0},System.Int32)">
+      <apidata name="WaitForValue" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <templates>
+        <template name="TItemType" />
+      </templates>
+      <parameters>
+        <parameter name="this">
+          <template name="TItemType" index="0" api="M:W.ExtensionMethods.WaitForValue``1(``0,System.Predicate{``0},System.Int32)" />
+        </parameter>
+        <parameter name="predicate">
+          <type api="T:System.Predicate`1" ref="true">
+            <specialization>
+              <template name="TItemType" index="0" api="M:W.ExtensionMethods.WaitForValue``1(``0,System.Predicate{``0},System.Int32)" />
+            </specialization>
+          </type>
+        </parameter>
+        <parameter name="msTimeout" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>-1</value>
+          </argument>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Threading.Tasks.Task`1" ref="true">
+          <specialization>
+            <type api="T:System.Boolean" ref="false" />
+          </specialization>
+        </type>
+      </returns>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W" />
+        <type api="T:W.ExtensionMethods" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
+        </attribute>
+      </attributes>
     </api>
     <api id="T:W.FromExtensions">
       <apidata name="FromExtensions" group="type" subgroup="class" />
@@ -2035,6 +2257,35 @@
             <type api="T:W.PropertyHostMethods" ref="true" />
           </containers>
         </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -2430,6 +2681,35 @@
             <type api="T:W.PropertyHostMethods" ref="true" />
           </containers>
         </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -2757,6 +3037,35 @@
             <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
             <namespace api="N:W" />
             <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
           </containers>
         </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
@@ -3169,6 +3478,35 @@
             <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
             <namespace api="N:W" />
             <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
           </containers>
         </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
@@ -3836,6 +4174,35 @@
             <type api="T:W.PropertyHostMethods" ref="true" />
           </containers>
         </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -4166,6 +4533,35 @@
             <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
             <namespace api="N:W" />
             <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
           </containers>
         </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
@@ -4516,6 +4912,35 @@
             <type api="T:W.PropertyHostMethods" ref="true" />
           </containers>
         </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -4774,6 +5199,35 @@
             <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
             <namespace api="N:W" />
             <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
           </containers>
         </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
@@ -5064,6 +5518,35 @@
             <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
             <namespace api="N:W" />
             <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
           </containers>
         </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
@@ -5357,6 +5840,35 @@
             <type api="T:W.PropertyHostMethods" ref="true" />
           </containers>
         </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -5619,6 +6131,35 @@
             <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
             <namespace api="N:W" />
             <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
           </containers>
         </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
@@ -6052,6 +6593,35 @@
             <type api="T:W.PropertyHostMethods" ref="true" />
           </containers>
         </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -6473,6 +7043,35 @@
             <type api="T:W.PropertyHostMethods" ref="true" />
           </containers>
         </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -6659,10 +7258,13 @@
         </ancestors>
       </family>
       <elements>
-        <element api="M:W.Logging.Log.e(System.Exception)" />
+        <element api="M:W.Logging.Log.e(System.Exception,System.String,System.Int32)" />
         <element api="M:W.Logging.Log.e(System.String,System.Object[])" />
+        <element api="M:W.Logging.Log.w(System.String,System.String,System.Int32)" />
         <element api="M:W.Logging.Log.w(System.String,System.Object[])" />
+        <element api="M:W.Logging.Log.i(System.String,System.String,System.Int32)" />
         <element api="M:W.Logging.Log.i(System.String,System.Object[])" />
+        <element api="M:W.Logging.Log.v(System.String,System.String,System.Int32)" />
         <element api="M:W.Logging.Log.v(System.String,System.Object[])" />
         <element api="P:W.Logging.Log.LogTheMessage" />
         <element api="P:W.Logging.Log.MessageHistory" />
@@ -6672,13 +7274,27 @@
         <namespace api="N:W.Logging" />
       </containers>
     </api>
-    <api id="M:W.Logging.Log.e(System.Exception)">
+    <api id="M:W.Logging.Log.e(System.Exception,System.String,System.Int32)">
       <apidata name="e" group="member" subgroup="method" />
       <memberdata visibility="public" static="true" />
       <proceduredata virtual="false" />
       <parameters>
         <parameter name="e">
           <type api="T:System.Exception" ref="true" />
+        </parameter>
+        <parameter name="callerName" optional="true">
+          <type api="T:System.String" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value />
+          </argument>
+        </parameter>
+        <parameter name="callerLineNumber" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>0</value>
+          </argument>
         </parameter>
       </parameters>
       <containers>
@@ -6719,6 +7335,35 @@
           <arrayOf rank="1">
             <type api="T:System.Object" ref="true" />
           </arrayOf>
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Logging" />
+        <type api="T:W.Logging.Log" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Logging.Log.i(System.String,System.String,System.Int32)">
+      <apidata name="i" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="message">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="callerName" optional="true">
+          <type api="T:System.String" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value />
+          </argument>
+        </parameter>
+        <parameter name="callerLineNumber" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>0</value>
+          </argument>
         </parameter>
       </parameters>
       <containers>
@@ -6787,6 +7432,35 @@
         <type api="T:W.Logging.Log" ref="true" />
       </containers>
     </api>
+    <api id="M:W.Logging.Log.v(System.String,System.String,System.Int32)">
+      <apidata name="v" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="message">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="callerName" optional="true">
+          <type api="T:System.String" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value />
+          </argument>
+        </parameter>
+        <parameter name="callerLineNumber" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>0</value>
+          </argument>
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Logging" />
+        <type api="T:W.Logging.Log" ref="true" />
+      </containers>
+    </api>
     <api id="M:W.Logging.Log.w(System.String,System.Object[])">
       <apidata name="w" group="member" subgroup="method" />
       <memberdata visibility="public" static="true" />
@@ -6799,6 +7473,35 @@
           <arrayOf rank="1">
             <type api="T:System.Object" ref="true" />
           </arrayOf>
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:W.Logging" />
+        <type api="T:W.Logging.Log" ref="true" />
+      </containers>
+    </api>
+    <api id="M:W.Logging.Log.w(System.String,System.String,System.Int32)">
+      <apidata name="w" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="message">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="callerName" optional="true">
+          <type api="T:System.String" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value />
+          </argument>
+        </parameter>
+        <parameter name="callerLineNumber" optional="true">
+          <type api="T:System.Int32" ref="false" />
+          <argument>
+            <type api="T:System.Int32" ref="false" />
+            <value>0</value>
+          </argument>
         </parameter>
       </parameters>
       <containers>
@@ -7071,6 +7774,35 @@
             <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
             <namespace api="N:W" />
             <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
           </containers>
         </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
@@ -7380,6 +8112,35 @@
             <type api="T:W.PropertyHostMethods" ref="true" />
           </containers>
         </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -7684,6 +8445,35 @@
             <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
             <namespace api="N:W" />
             <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
           </containers>
         </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
@@ -8049,6 +8839,35 @@
             <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
             <namespace api="N:W" />
             <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
           </containers>
         </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
@@ -8501,6 +9320,35 @@
             <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
             <namespace api="N:W" />
             <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
           </containers>
         </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
@@ -8964,6 +9812,35 @@
             <type api="T:W.PropertyHostMethods" ref="true" />
           </containers>
         </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
+          </containers>
+        </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
           <apidata name="CreateThread" group="member" subgroup="method" subsubgroup="extension" />
           <memberdata visibility="public" />
@@ -9353,6 +10230,35 @@
             <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
             <namespace api="N:W" />
             <type api="T:W.PropertyHostMethods" ref="true" />
+          </containers>
+        </element>
+        <element api="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" source="extension">
+          <apidata name="WaitForValue" group="member" subgroup="method" subsubgroup="extension" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="desiredValue">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="msTimeout" optional="true">
+              <type api="T:System.Int32" ref="false" />
+              <argument>
+                <type api="T:System.Int32" ref="false" />
+                <value>-1</value>
+              </argument>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Threading.Tasks.Task`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="Tungsten" module="Tungsten" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:W" />
+            <type api="T:W.ExtensionMethods" ref="true" />
           </containers>
         </element>
         <element api="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" source="extension">
