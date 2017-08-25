@@ -23,9 +23,18 @@ namespace W.Net
             return result;
         }
     }
+    /// <summary>
+    /// A SecureServer which echoes data back to the remote
+    /// </summary>
     public class SecureEchoServer : SecureEchoServer<SecureClient<string>> { }
+    /// <summary>
+    /// A SecureServer which echoes data back to the remote
+    /// </summary>
     public class SecureEchoServer<TClientType> : SecureServer<TClientType> where TClientType : Client
     {
+        /// <summary>
+        /// Constructs a new SecureEchoServer
+        /// </summary>
         public SecureEchoServer()
         {
             ClientConnected += (client) =>

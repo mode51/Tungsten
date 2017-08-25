@@ -215,8 +215,15 @@ namespace W.Net
         }
     }
 
+    /// <summary>
+    /// A Server which echoes data back to the remote
+    /// </summary>
+
     public class EchoServer : Server<Client<string>>
     {
+        /// <summary>
+        /// Constructs a new EchoServer
+        /// </summary>
         public EchoServer()
         {
             ClientConnected += (client) =>

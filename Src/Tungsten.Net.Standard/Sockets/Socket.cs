@@ -147,7 +147,7 @@ namespace W.Net.Sockets
             {
                 try
                 {
-                    var msg = message.AsDecompressed();
+                    var msg = message.FromCompressed();
                     message = msg;
                 }
                 catch (System.IO.InvalidDataException)

@@ -104,9 +104,6 @@
     <Compile Include="..\Tungsten.Net.Standard\Sockets\ISocket.cs">
       <Link>Sockets\ISocket.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Sockets\ISocketClient.cs">
-      <Link>Sockets\ISocketClient.cs</Link>
-    </Compile>
     <Compile Include="..\Tungsten.Net.Standard\Sockets\Socket.cs">
       <Link>Sockets\Socket.cs</Link>
     </Compile>
