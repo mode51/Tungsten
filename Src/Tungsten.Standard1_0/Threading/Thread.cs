@@ -81,7 +81,9 @@ namespace W.Threading
                 System.Diagnostics.Debug.WriteLine("ThreadExtensions.ThreadProc General Exception:  " + ex.Message);
             }
         }
-
+        /// <summary>
+        /// Cancels the thread.  This defaults to a 5 second allowance for the thread to quit on it's own.
+        /// </summary>
         public override void Cancel()
         {
             base.Cancel();
@@ -92,6 +94,10 @@ namespace W.Threading
             }
 #endif
         }
+        /// <summary>
+        /// Cancels the thread.  If the thread is still active after the specified number of milliseconds, it is forcefully aborted
+        /// </summary>
+        /// <param name="msForceAbortDelay"></param>
         public override void Cancel(int msForceAbortDelay)
         {
             base.Cancel(msForceAbortDelay);
@@ -129,6 +135,9 @@ namespace W.Threading
 #endif
         }
 
+        /// <summary>
+        /// Disposes the Thread and releases resources
+        /// </summary>
         public override void Dispose()
         {
 #if NET45
@@ -169,19 +178,26 @@ namespace W.Threading
         /// Blocks the calling thread for the specified time
         /// </summary>
         /// <param name="msDelay">The number of milliseconds to block the thread</param>
-        public static void Sleep(int msDelay)
+        /// <param name="useSpinWait">If True, a SpinWait.SpinUntil will be used instead of a call to Thread.Sleep (or Task.Delay).  Note that SpinWait should only be used on multi-core/cpu machines.</param>
+        public static void Sleep(int msDelay, bool useSpinWait = false)
         {
 #if NET45
             try
             {
-                System.Threading.Thread.Sleep(msDelay);
+                if (useSpinWait)
+                    System.Threading.SpinWait.SpinUntil(() => { return false; }, msDelay);
+                else
+                    System.Threading.Thread.Sleep(msDelay);
             }
             catch (System.MissingMethodException e)
             {
                 System.Diagnostics.Debug.WriteLine(e.ToString());
             }
 #else
-            System.Threading.Tasks.Task.Delay(msDelay);
+            if (useSpinWait)
+                System.Threading.SpinWait.SpinUntil(() => { return false; }, msDelay);
+            else
+                System.Threading.Tasks.Task.Delay(msDelay);
 #endif
         }
     }
