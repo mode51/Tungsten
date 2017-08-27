@@ -57,6 +57,7 @@
     <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadExtensions.cs" Link="Threading\ThreadExtensions.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadWithCustomData.cs" Link="Threading\ThreadWithCustomData.cs" />
     <Compile Include="..\Tungsten.Standard1_3\ExtensionMethods.cs" Link="ExtensionMethods.cs" />
+    <Compile Include="..\Tungsten.Standard1_3\Threading\CPUProfileEnum.cs" Link="Threading\CPUProfileEnum.cs" />
   </ItemGroup>
 
   <ItemGroup>

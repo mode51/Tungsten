@@ -200,5 +200,29 @@ namespace W.Threading
                 System.Threading.Tasks.Task.Delay(msDelay);
 #endif
         }
+        /// <summary>
+        /// Attempts to free the CPU for other processes, based on the desired level.  Consequences will vary depending on your hardware architecture.  The more processors/cores you have, the better performance you will have by selecting LowCPU.  Likewise, on a single-core processor, you may wish to select HighCPU.
+        /// </summary>
+        /// <param name="level">The desired level of CPU usage</param>
+        /// <remarks>Note results may vary.  LowCPU will spread the load onto multiple cores and can actually yield faster results depending on your hardware architecture.  This may not always be the case.</remarks>
+        public static void Sleep(CPUProfileEnum level)
+        {
+            switch (level)
+            {
+                case CPUProfileEnum.HighCPU:
+#if NET45
+                    System.Threading.Thread.Yield(); //seems fastest method on .Net Framework (pegs CPU)
+#else
+                    System.Threading.SpinWait.SpinUntil(() => { return false; }, 0);
+#endif
+                    break;
+                case CPUProfileEnum.NormalCPU:
+                    W.Threading.Thread.Sleep(1);
+                    break;
+                case CPUProfileEnum.LowCPU:
+                    System.Threading.SpinWait.SpinUntil(() => { return false; }, 1);
+                    break;
+            }
+        }
     }
 }

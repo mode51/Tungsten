@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <Compile Include="..\Tungsten.Standard1_3\ExtensionMethods.cs" Link="ExtensionMethods.cs" />
+    <Compile Include="..\Tungsten.Standard1_3\Threading\CPUProfileEnum.cs" Link="Threading\CPUProfileEnum.cs" />
   </ItemGroup>
 
   <ItemGroup>

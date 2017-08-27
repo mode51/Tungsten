@@ -153,6 +153,9 @@
     <Compile Include="..\Tungsten.Standard1_3\ExtensionMethods.cs">
       <Link>ExtensionMethods.cs</Link>
     </Compile>
+    <Compile Include="..\Tungsten.Standard1_3\Threading\CPUProfileEnum.cs">
+      <Link>Threading\CPUProfileEnum.cs</Link>
+    </Compile>
     <Compile Include="..\Tungsten.Standard1_3\Threading\Tungsten.Threading.Namespace.cs">
       <Link>Threading\Tungsten.Threading.Namespace.cs</Link>
     </Compile>
