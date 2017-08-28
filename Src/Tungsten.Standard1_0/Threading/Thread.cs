@@ -209,17 +209,22 @@ namespace W.Threading
         {
             switch (level)
             {
-                case CPUProfileEnum.HighCPU:
 #if NET45
+                case CPUProfileEnum.Yield:
                     System.Threading.Thread.Yield(); //seems fastest method on .Net Framework (pegs CPU)
-#else
-                    System.Threading.SpinWait.SpinUntil(() => { return false; }, 0);
+                break;
 #endif
+                case CPUProfileEnum.SpinWait0:
+//#if NET45
+//                    System.Threading.Thread.Yield(); //seems fastest method on .Net Framework (pegs CPU)
+//#else
+                    System.Threading.SpinWait.SpinUntil(() => { return false; }, 0);
+//#endif
                     break;
-                case CPUProfileEnum.NormalCPU:
+                case CPUProfileEnum.Sleep:
                     W.Threading.Thread.Sleep(1);
                     break;
-                case CPUProfileEnum.LowCPU:
+                case CPUProfileEnum.SpinWait1:
                     System.Threading.SpinWait.SpinUntil(() => { return false; }, 1);
                     break;
             }

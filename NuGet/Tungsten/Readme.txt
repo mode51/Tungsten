@@ -1,6 +1,7 @@
 ﻿Tungsten is a C# library to make application development easier.  See the wiki @ https://github.com/mode51/Tungsten/wiki for details, examples and use.
 
-8.15.2017 v1.2.8
+8.27.2017 v1.2.8
+Added W.Threading.Thread.Sleep(CPUProfileEnum level)
 Added overloads to W.Logging.Log.x methods which add callerName and callerLineNumber to the message
 Added W.ExtensionMethods.WaitForValue extensions
 
