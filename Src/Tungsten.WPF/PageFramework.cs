@@ -196,6 +196,10 @@ namespace W.WPF
         public Commands.NavigationCommands Navigation { get; private set; }
         #endregion
 
+        /// <summary>
+        /// Sets the Page Host
+        /// </summary>
+        /// <param name="host"></param>
         public void SetPageHost(IPageHost host)
         {
             Host = host;

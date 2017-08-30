@@ -45,7 +45,7 @@ using System.Security.Cryptography;
         /// </summary>
         public RSA(int keySize = 2048)
         {
-            _keySize = keySize;// != -1 ? keySize : _rsa.KeySize;
+            _keySize = keySize;// != -1 ? keySize : _rsa.LegalKeySizes?[0].MaxSize ?? _rsa.KeySize;
             using (var _rsa = new RSACryptoServiceProvider(_keySize))
             {
                 PrivateKey = _rsa.ExportParameters(true);
@@ -127,13 +127,14 @@ using System.Security.Cryptography;
         }
     }
 #elif NETSTANDARD1_3 || NETCOREAPP1_0
-using System.Security.Cryptography;
+    using System.Security.Cryptography;
     /// <summary>
     /// Provides RSA encryption functionality
     /// </summary>
     /// <remarks>
     /// Adapted from an online sample http://digitalsquid.co.uk/2009/01/rsa-crypto/
     /// </remarks>
+    [Obsolete("This class has been deprecated due to bugs.  Please use SimpleRSA instead.")]
     public class RSA : IDisposable
     {
         private System.Security.Cryptography.RSA _rsa = System.Security.Cryptography.RSA.Create();
@@ -166,7 +167,7 @@ using System.Security.Cryptography;
         /// </summary>
         public RSA(int keySize = -1)
         {
-            _keySize = keySize != -1 ? keySize : _rsa.KeySize;
+            _keySize = keySize != -1 ? keySize : _rsa.LegalKeySizes?[0].MaxSize ?? _rsa.KeySize;
             //foreach(var s in _rsa.LegalKeySizes)
             //    Log.i("Min:{0}, Max:{1}, Skip:{2}", s.MinSize, s.MaxSize, s.SkipSize);
             _rsa.KeySize = _keySize;
@@ -213,7 +214,7 @@ using System.Security.Cryptography;
 
             _rsa.ImportParameters(publicKey);
             //byte[] byteData = Encoding.UTF32.GetBytes(text);
-            const int maxLength = 214;
+            int maxLength = (_keySize / 8) - 42;// 214;
             int dataLength = byteData.Length;
             int iterations = dataLength / maxLength;
 
@@ -223,7 +224,7 @@ using System.Security.Cryptography;
                 var tempBytes = new byte[(dataLength - maxLength * i > maxLength) ? maxLength : dataLength - maxLength * i];
                 Buffer.BlockCopy(byteData, maxLength * i, tempBytes, 0, tempBytes.Length);
 
-                var encbyteData = _rsa.Encrypt(tempBytes, System.Security.Cryptography.RSAEncryptionPadding.Pkcs1);
+                var encbyteData = _rsa.Encrypt(tempBytes, RSAEncryptionPadding.Pkcs1);
                 sb.Append(Convert.ToBase64String(encbyteData));
             }
             var result = sb.ToString();
@@ -240,7 +241,7 @@ using System.Security.Cryptography;
             var result = new StringBuilder();
             _rsa.ImportParameters(key);
 
-            const int maxLength = 214;
+            int maxLength = (_keySize / 8) - 42;// 214;
             int dataLength = data.Length;
             int iterations = dataLength / maxLength;
 

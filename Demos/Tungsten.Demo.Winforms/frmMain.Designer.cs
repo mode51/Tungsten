@@ -39,6 +39,10 @@
             this.pbSaveProgress = new System.Windows.Forms.ProgressBar();
             this.lblSaveComplete = new System.Windows.Forms.Label();
             this.viewModelTestBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtEncryption = new System.Windows.Forms.TextBox();
+            this.btnEncrypt = new System.Windows.Forms.Button();
+            this.btnDecrypt = new System.Windows.Forms.Button();
             this.grpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewModelTestBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +84,7 @@
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSave.Location = new System.Drawing.Point(124, 106);
+            this.btnSave.Location = new System.Drawing.Point(234, 244);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 4;
@@ -101,6 +105,10 @@
             this.grpMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpMain.Controls.Add(this.btnDecrypt);
+            this.grpMain.Controls.Add(this.btnEncrypt);
+            this.grpMain.Controls.Add(this.label1);
+            this.grpMain.Controls.Add(this.txtEncryption);
             this.grpMain.Controls.Add(this.btnSave);
             this.grpMain.Controls.Add(this.lblFullName);
             this.grpMain.Controls.Add(this.lblLast);
@@ -109,25 +117,25 @@
             this.grpMain.Controls.Add(this.txtFirst);
             this.grpMain.Location = new System.Drawing.Point(0, 0);
             this.grpMain.Name = "grpMain";
-            this.grpMain.Size = new System.Drawing.Size(323, 137);
+            this.grpMain.Size = new System.Drawing.Size(542, 275);
             this.grpMain.TabIndex = 7;
             this.grpMain.TabStop = false;
             // 
             // pbSaveProgress
             // 
             this.pbSaveProgress.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pbSaveProgress.Location = new System.Drawing.Point(0, 137);
+            this.pbSaveProgress.Location = new System.Drawing.Point(0, 275);
             this.pbSaveProgress.Name = "pbSaveProgress";
-            this.pbSaveProgress.Size = new System.Drawing.Size(323, 23);
+            this.pbSaveProgress.Size = new System.Drawing.Size(542, 23);
             this.pbSaveProgress.TabIndex = 8;
             this.pbSaveProgress.Visible = false;
             // 
             // lblSaveComplete
             // 
             this.lblSaveComplete.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblSaveComplete.Location = new System.Drawing.Point(0, 124);
+            this.lblSaveComplete.Location = new System.Drawing.Point(0, 262);
             this.lblSaveComplete.Name = "lblSaveComplete";
-            this.lblSaveComplete.Size = new System.Drawing.Size(323, 13);
+            this.lblSaveComplete.Size = new System.Drawing.Size(542, 13);
             this.lblSaveComplete.TabIndex = 7;
             this.lblSaveComplete.Text = "Save Complete";
             this.lblSaveComplete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -135,13 +143,55 @@
             // 
             // viewModelTestBindingSource
             // 
-            this.viewModelTestBindingSource.DataSource = typeof(PersonModel);
+            this.viewModelTestBindingSource.DataSource = typeof(W.Demo.Winforms.PersonModel);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Encryption";
+            // 
+            // txtEncryption
+            // 
+            this.txtEncryption.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEncryption.Location = new System.Drawing.Point(12, 116);
+            this.txtEncryption.Multiline = true;
+            this.txtEncryption.Name = "txtEncryption";
+            this.txtEncryption.Size = new System.Drawing.Size(437, 90);
+            this.txtEncryption.TabIndex = 7;
+            this.txtEncryption.Text = "Type something here to test encryption.";
+            // 
+            // btnEncrypt
+            // 
+            this.btnEncrypt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEncrypt.Location = new System.Drawing.Point(455, 116);
+            this.btnEncrypt.Name = "btnEncrypt";
+            this.btnEncrypt.Size = new System.Drawing.Size(75, 23);
+            this.btnEncrypt.TabIndex = 9;
+            this.btnEncrypt.Text = "&Encrypt";
+            this.btnEncrypt.UseVisualStyleBackColor = true;
+            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
+            // 
+            // btnDecrypt
+            // 
+            this.btnDecrypt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDecrypt.Location = new System.Drawing.Point(455, 183);
+            this.btnDecrypt.Name = "btnDecrypt";
+            this.btnDecrypt.Size = new System.Drawing.Size(75, 23);
+            this.btnDecrypt.TabIndex = 10;
+            this.btnDecrypt.Text = "&Decrypt";
+            this.btnDecrypt.UseVisualStyleBackColor = true;
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 160);
+            this.ClientSize = new System.Drawing.Size(542, 298);
             this.Controls.Add(this.grpMain);
             this.Controls.Add(this.lblSaveComplete);
             this.Controls.Add(this.pbSaveProgress);
@@ -167,6 +217,10 @@
         private System.Windows.Forms.GroupBox grpMain;
         private System.Windows.Forms.ProgressBar pbSaveProgress;
         private System.Windows.Forms.Label lblSaveComplete;
+        private System.Windows.Forms.Button btnDecrypt;
+        private System.Windows.Forms.Button btnEncrypt;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtEncryption;
     }
 }
 

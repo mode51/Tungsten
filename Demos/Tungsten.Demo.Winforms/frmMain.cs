@@ -21,6 +21,8 @@ namespace W.Demo.Winforms
     {
         private readonly PersonModel _vm = new PersonModel(); //weak example of a viewmodel
         private bool _isLoading = true; //if this value could be read or modified on separate threads, you could use Lockable<bool> instead.
+        private W.Encryption.RSA _rsa;
+        private bool _isBusy = false;
 
         //this is an example of how to use W.Threading.Gate (though there's really no need to do it this way)
         //It's also probably a little more work because we have to assign CustomData and also dispose the gate
@@ -30,6 +32,20 @@ namespace W.Demo.Winforms
                 throw new Exception("You must assign a value to the Gate's CustomData");
             form.ShowSaveComplete();
         });
+
+        private bool IsBusy
+        {
+            get
+            {
+                return _isBusy;
+            }
+            set
+            {
+                _isBusy = value;
+                grpMain.Enabled = !value;
+                Cursor = value ? Cursors.WaitCursor : Cursors.Default;
+            }
+        }
 
         public frmMain()
         {
@@ -69,8 +85,9 @@ namespace W.Demo.Winforms
                 this.InvokeEx(f =>
                 {
                     //support a responsive window, yet disabled controls, while saving
-                    grpMain.Enabled = !newValue;
-                    Cursor = newValue ? Cursors.WaitCursor : Cursors.Default;
+                    IsBusy = newValue;
+                    //grpMain.Enabled = !newValue;
+                    //Cursor = newValue ? Cursors.WaitCursor : Cursors.Default;
                 });
             };
             //trap changes to SaveProgress and update the progressbar appropriately
@@ -85,6 +102,11 @@ namespace W.Demo.Winforms
 
             txtLast.Enter += (sender, args) => { txtLast.SelectAll(); };
             txtFirst.Enter += (sender, args) => { txtFirst.SelectAll(); };
+        }
+        ~frmMain()
+        {
+            if (_rsa != null)
+                _rsa.Dispose();
         }
 
         private void txtLast_TextChanged(object sender, EventArgs e)
@@ -125,6 +147,43 @@ namespace W.Demo.Winforms
             {
                 lblSaveComplete.Visible = false;
             });
+        }
+
+        private void CreateRSA()
+        {
+            if (_rsa == null)
+            {
+                _rsa = new Encryption.RSA(2048);
+            }
+        }
+        private void btnEncrypt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IsBusy = true;
+                CreateRSA();
+                var cipher = _rsa.Encrypt(txtEncryption.Text);
+                txtEncryption.Text = cipher;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        private void btnDecrypt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IsBusy = true;
+                CreateRSA();
+                var text = _rsa.Decrypt(txtEncryption.Text);
+                txtEncryption.Text = text;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
     }
 }

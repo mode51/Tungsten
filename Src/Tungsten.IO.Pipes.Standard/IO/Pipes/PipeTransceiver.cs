@@ -616,11 +616,11 @@ namespace W.IO.Pipes
                     result.Value = len;
                 }, TaskContinuationOptions.OnlyOnRanToCompletion).Wait();
             }
-            catch (TaskCanceledException e)
+            catch (TaskCanceledException)
             {
                 //ignore
             }
-            catch (AggregateException e)
+            catch (AggregateException)
             {
                 //ignore - Log.e("PipeTransceiver.AggregateException: " + e.Message);
             }
@@ -633,7 +633,7 @@ namespace W.IO.Pipes
             if (message == null || message.Length == 0)
                 return default(TDataType);
             if (UseCompression)
-                message = message.AsDecompressed();
+                message = message.FromCompressed();
             System.Diagnostics.Debug.WriteLine("Received: " + message.AsString());
             var formattedMessage = FormatReceivedMessage(message);
             return formattedMessage;

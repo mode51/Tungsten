@@ -18,12 +18,12 @@ namespace W.Demo
                 var bytes = msg.AsBytes().AsCompressed();
                 var compressed = bytes.AsString();
                 Console.WriteLine("Compressed: " + compressed);
-                var decompressed = bytes.AsDecompressed().AsString();
+                var decompressed = bytes.FromCompressed().AsString();
                 Console.WriteLine("Decompressed: " + decompressed);
 
                 var bytes2 = msg.AsBase64().AsBytes().AsCompressed();
                 Console.WriteLine("Base64 Compressed: " + bytes2.AsString());
-                decompressed = bytes2.AsDecompressed().FromBase64();
+                decompressed = bytes2.FromCompressed().FromBase64();
                 Console.WriteLine("Base64 Decompressed: " + decompressed);
             }
             Console.Clear();

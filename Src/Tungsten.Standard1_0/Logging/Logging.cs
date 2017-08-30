@@ -50,11 +50,14 @@ namespace W.Logging
             /// </summary>
             Error
         }
+#pragma warning disable CS1573
+        /// Parameter has no matching param tag in the XML comment (but other parameters do)
         /// <summary>
         /// Log an Exception
         /// </summary>
         /// <param name="e">The exception to log.  This will be boxed with ToString().</param>
         public static void e(Exception e, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
+#pragma warning restore CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
         {
             var msg = string.Format("{0}(line {1}): {2}", callerName, callerLineNumber, e.ToString());
             try
@@ -72,20 +75,23 @@ namespace W.Logging
         {
             var msg = string.Format(format, args);
             try
-            { 
+            {
                 LogTheMessage?.Invoke(LogMessageCategory.Error, msg);
             }
             catch { } //ignore any exceptions
         }
+#pragma warning disable CS1573
+        ///Parameter has no matching param tag in the XML comment (but other parameters do)
         /// <summary>
         /// Log a formatted warning message. This method uses string.Format to format the message.
         /// </summary>
         /// <param name="message">Format of the message</param>
         public static void w(string message, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
+#pragma warning restore CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
         {
             var msg = string.Format("{0}(line {1}): {2}", callerName, callerLineNumber, message);
             try
-            { 
+            {
                 LogTheMessage?.Invoke(LogMessageCategory.Warning, msg);
             }
             catch { } //ignore any exceptions
@@ -104,11 +110,14 @@ namespace W.Logging
             }
             catch { } //ignore any exceptions
         }
+#pragma warning disable CS1573
+        /// Parameter has no matching param tag in the XML comment (but other parameters do)
         /// <summary>
         /// Log a formatted informational message. This method uses string.Format to format the message.
         /// </summary>
         /// <param name="message">Format of the message</param>
         public static void i(string message, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
+#pragma warning restore CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
         {
             var msg = string.Format("{0}(line {1}): {2}", callerName, callerLineNumber, message);
             try
@@ -131,11 +140,14 @@ namespace W.Logging
             }
             catch { } //ignore any exceptions
         }
+#pragma warning disable CS1573
+        /// Parameter has no matching param tag in the XML comment (but other parameters do)
         /// <summary>
         /// Log a formatted verbose message. This method uses string.Format to format the message.
         /// </summary>
         /// <param name="message">Format of the message</param>
         public static void v(string message, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
+#pragma warning restore CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
         {
             var msg = string.Format("{0}(line {1}): {2}", callerName, callerLineNumber, message);
             try

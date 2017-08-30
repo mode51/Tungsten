@@ -20,7 +20,7 @@ namespace W.Tests.Tungsten
             const string value = "Jordan                                                                                                            Duerksen";
             var compressed = value.AsBytes().AsCompressed();
             Console.WriteLine("Compressed Size = {0}", compressed.Length);
-            var decompressed = compressed.AsDecompressed();
+            var decompressed = compressed.FromCompressed();
             Console.WriteLine("Decompressed Size = {0}", decompressed.Length);
             Assert.IsTrue(decompressed.AsString() == value);
         }

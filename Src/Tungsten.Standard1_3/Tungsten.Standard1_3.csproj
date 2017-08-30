@@ -50,12 +50,15 @@
     <Compile Include="..\Tungsten.Standard1_0\Property\PropertyMethods.cs" Link="Property\PropertyMethods.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Singleton.cs" Link="Singleton.cs" />
     <Compile Include="..\Tungsten.Standard1_0\StringExtensions.cs" Link="StringExtensions.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Threading\CPUProfileEnum.cs" Link="Threading\CPUProfileEnum.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Threading\Gate.cs" Link="Threading\Gate.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Threading\GateExtensions.cs" Link="Threading\GateExtensions.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Threading\Thread.cs" Link="Threading\Thread.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadBase.cs" Link="Threading\ThreadBase.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadExtensions.cs" Link="Threading\ThreadExtensions.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadWithCustomData.cs" Link="Threading\ThreadWithCustomData.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Threading\Tungsten.Threading.Namespace.cs" Link="Threading\Tungsten.Threading.Namespace.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Tungsten.Namespace.cs" Link="Tungsten.Namespace.cs" />
   </ItemGroup>
 
   <ItemGroup>

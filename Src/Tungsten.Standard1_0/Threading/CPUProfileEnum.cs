@@ -24,8 +24,9 @@ namespace W.Threading
         SpinWait1
 
 #if NET45
+        ,
         ///<summary>Only available for .Net Framework; uses Thread.Yield instead of Thread.Sleep.</summary>
-        ,Yield
+        Yield
 #endif
     }
 }
