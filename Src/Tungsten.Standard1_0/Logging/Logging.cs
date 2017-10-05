@@ -56,13 +56,13 @@ namespace W.Logging
         /// Log an Exception
         /// </summary>
         /// <param name="e">The exception to log.  This will be boxed with ToString().</param>
-        public static void e(Exception e, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
+        public static void e(Exception e)//, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
 #pragma warning restore CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
         {
-            var msg = string.Format("{0}(line {1}): {2}", callerName, callerLineNumber, e.ToString());
+            //var msg = string.Format("{0}(line {1}): {2}", callerName, callerLineNumber, e.ToString());
             try
             {
-                LogTheMessage?.Invoke(LogMessageCategory.Error, msg);
+                LogTheMessage?.Invoke(LogMessageCategory.Error, e.ToString());// msg);
             }
             catch { } //ignore any exceptions
         }

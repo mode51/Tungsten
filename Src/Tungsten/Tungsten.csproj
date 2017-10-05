@@ -69,6 +69,9 @@
     <Compile Include="..\Tungsten.Standard1_0\CallResult.cs">
       <Link>CallResult.cs</Link>
     </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\Disposable.cs">
+      <Link>Disposable.cs</Link>
+    </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Encryption\MD5.cs">
       <Link>Encryption\MD5.cs</Link>
     </Compile>
@@ -80,6 +83,9 @@
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Encryption\RSAMethods.cs">
       <Link>Encryption\RSAMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\EventTemplate.cs">
+      <Link>EventTemplate.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\FromExtensions.cs">
       <Link>FromExtensions.cs</Link>
@@ -144,14 +150,8 @@
     <Compile Include="..\Tungsten.Standard1_0\Threading\Thread.cs">
       <Link>Threading\Thread.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadBase.cs">
-      <Link>Threading\ThreadBase.cs</Link>
-    </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadExtensions.cs">
       <Link>Threading\ThreadExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadWithCustomData.cs">
-      <Link>Threading\ThreadWithCustomData.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Threading\Tungsten.Threading.Namespace.cs">
       <Link>Threading\Tungsten.Threading.Namespace.cs</Link>
@@ -162,6 +162,8 @@
     <Compile Include="..\Tungsten.Standard1_3\ExtensionMethods.cs">
       <Link>ExtensionMethods.cs</Link>
     </Compile>
+    <None Include="Archive\ThreadBase2.cs" />
+    <None Include="Archive\ThreadWithCustomData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Archive\PropertyHostNotifier.cs" />
     <None Include="Archive\IOwnedProperty.cs" />
@@ -173,7 +175,7 @@
     <None Include="Archive\PropertyMethods.cs" />
     <None Include="Archive\RSA.cs" />
     <None Include="Archive\Gate.cs" />
-    <None Include="Archive\ThreadBase.cs" />
+    <None Include="Archive\ThreadBase1.cs" />
     <None Include="Archive\ThreadExtensions.cs" />
   </ItemGroup>
   <ItemGroup />

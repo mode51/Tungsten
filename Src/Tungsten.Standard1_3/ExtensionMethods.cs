@@ -34,10 +34,10 @@ namespace W
         /// <param name="desiredValue">The value to wait for</param>
         /// <param name="msTimeout">The task will time out within the specified number of milliseconds.  Use -1 to wait indefinitely.</param>
         /// <returns>True if the value was acquired within the specified timeout, otherwise False</returns>
-        public static async Task<bool> WaitForValue(this object @this, object desiredValue, int msTimeout = -1)
+        public static async Task<bool> WaitForValueAsync(this object @this, object desiredValue, int msTimeout = -1)
         {
             System.Threading.CancellationTokenSource cts;
-            if (msTimeout > 0)
+            if (msTimeout >= 0)
                 cts = new System.Threading.CancellationTokenSource(msTimeout);
             else
                 cts = new System.Threading.CancellationTokenSource();
@@ -54,7 +54,8 @@ namespace W
                 return false;
             }, cts.Token).ContinueWith(task =>
             {
-                return (!task.IsCanceled);
+                //return (!task.IsCanceled);
+                return (task.Result);
             });
             return result;
         }
@@ -65,10 +66,10 @@ namespace W
         /// <param name="predicate">The condition to be met</param>
         /// <param name="msTimeout">The task will time out within the specified number of milliseconds.  Use -1 to wait indefinitely.</param>
         /// <returns>True if the condition was met within the specified timeout, otherwise False</returns>
-        public static async Task<bool> WaitForValue<TItemType>(this TItemType @this, Predicate<TItemType> predicate, int msTimeout = -1)
+        public static async Task<bool> WaitForValueAsync<TItemType>(this TItemType @this, Predicate<TItemType> predicate, int msTimeout = -1)
         {
             System.Threading.CancellationTokenSource cts;
-            if (msTimeout > 0)
+            if (msTimeout >= 0)
                 cts = new System.Threading.CancellationTokenSource(msTimeout);
             else
                 cts = new System.Threading.CancellationTokenSource();
@@ -85,8 +86,88 @@ namespace W
                 return false;
             }, cts.Token).ContinueWith(task =>
             {
-                return (!task.IsCanceled);
+                //return (!task.IsCanceled);
+                return (task.Result);
             });
+            return result;
+        }
+        /// <summary>
+        /// Initiates a Task which will wait for the specified condition to be met
+        /// </summary>
+        /// <param name="this">The value being inspected</param>
+        /// <param name="predicate">The condition to be met</param>
+        /// <param name="msTimeout">The task will time out within the specified number of milliseconds.  Use -1 to wait indefinitely.</param>
+        /// <returns>True if the condition was met within the specified timeout, otherwise False</returns>
+        public static bool WaitForValue<TItemType>(this TItemType @this, Predicate<TItemType> predicate, int msTimeout = -1)
+        {
+            var result = false;
+            var thread = W.Threading.Thread.Create(token =>
+            {
+                while (!token.IsCancellationRequested)
+                {
+                    if (predicate.Invoke(@this))
+                    {
+                        result = true;
+                        break;
+                    }
+                    W.Threading.Thread.Sleep(1);
+                }
+            }, false);
+            thread.Start(msLifetime: msTimeout);
+            thread.Join();
+            return result;
+        }
+
+        /// <summary>
+        /// Calls the delegate, passing in any arguments.  Provides error handling to allow all subscribers to handle the delegate.
+        /// </summary>
+        /// <param name="del">The delegate to call</param>
+        /// <param name="args">Parameters to pass into the delegate</param>
+        /// <returns>Exceptions if any are thrown</returns>
+        public static List<Exception> Raise(this Delegate del, params object[] args)
+        {
+            var result = new List<Exception>();
+            var evt = del; //not sure if this is necessary, but it can't hurt
+            //try
+            //{
+                foreach (var handler in evt?.GetInvocationList())
+                {
+                    Exception ex = null;
+                    try
+                    {
+                        if (args != null)
+                            handler.DynamicInvoke(args);
+                        else
+                            handler.DynamicInvoke();
+                    }
+                    catch (Exception e)
+                    {
+                        ex = e;
+                    }
+                    if (ex != null)
+                    {
+                        ex = new Exception("Exception in " + handler.Target?.GetType().Name, ex);
+                        //Debug.e(ex);
+                        System.Diagnostics.Debugger.Break();
+                        result.Add(ex);
+                    }
+                }
+//            }
+//#if NET45
+//            catch (System.Threading.ThreadAbortException e)
+//            {
+//                System.Threading.Thread.ResetAbort();
+//            }
+//#else
+//            catch (ObjectDisposedException)
+//            {
+//                //ignore it, the task is shutting down forcefully
+//            }
+//            catch (AggregateException)
+//            {
+//                //ignore it, the task might be shutting down forcefully
+//            }
+//#endif
             return result;
         }
     }

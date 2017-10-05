@@ -1,9 +1,14 @@
 ﻿Tungsten is a C# library to make application development easier.  See the wiki @ https://github.com/mode51/Tungsten/wiki for details, examples and use.
 
-8.27.2017 v1.2.8
+10.05.2017 v1.3.0
+Added W.EventTemplate which encapsulates event creation in a temlate
+Added W.Encryption.RSAMethods for NetStandard1_3 and NetCoreApp
+Effectively rewrote W.Threading.Thread and W.Threading.Gate because they weren't working correctly
 Added W.Threading.Thread.Sleep(CPUProfileEnum level)
 Added overloads to W.Logging.Log.x methods which add callerName and callerLineNumber to the message
 Added W.ExtensionMethods.WaitForValue extensions
+Removed W.Threading.Thread.Cancel(msTimeout) because it called Abort which is the wrong place for Abort to exist
+Added a W.Threading.Thread.Abort for .Net45
 
 8.10.2017 v1.2.7.1
 Corrected target framework order in NuGet package

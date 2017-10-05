@@ -9,124 +9,124 @@ using W.Logging;
 namespace W.Encryption
 {
 #if NET45
-using System.Security.Cryptography;
-    /// <summary>
-    /// Provides RSA encryption functionality
-    /// </summary>
-    public class RSA : IDisposable
-    {
-        //private RSACryptoServiceProvider _rsa = null;
-        private int _keySize;
+//using System.Security.Cryptography;
+//    /// <summary>
+//    /// Provides RSA encryption functionality
+//    /// </summary>
+//    public class RSA : IDisposable
+//    {
+//        //private RSACryptoServiceProvider _rsa = null;
+//        private int _keySize;
 
-        /// <summary>
-        /// The private key used to decrypt data(do not share)
-        /// </summary>
-        public System.Security.Cryptography.RSAParameters PrivateKey { get; set; }
-        /// <summary>
-        /// The public key used to encrypt data (should be shared)
-        /// </summary>
-        public System.Security.Cryptography.RSAParameters PublicKey { get; set; }
+//        /// <summary>
+//        /// The private key used to decrypt data(do not share)
+//        /// </summary>
+//        public System.Security.Cryptography.RSAParameters PrivateKey { get; set; }
+//        /// <summary>
+//        /// The public key used to encrypt data (should be shared)
+//        /// </summary>
+//        public System.Security.Cryptography.RSAParameters PublicKey { get; set; }
 
-        /// <summary>
-        /// Gets the key sizes that are supported by the asymmetric algorithm
-        /// </summary>
-        /// <returns>An enumeration of the supported key sizes</returns>
-        public IEnumerable<KeySizes> LegalKeySizes
-        {
-            get
-            {
-                foreach (var value in RSACryptoServiceProvider.Create().LegalKeySizes)
-                    yield return value;
-            }
-        }
+//        /// <summary>
+//        /// Gets the key sizes that are supported by the asymmetric algorithm
+//        /// </summary>
+//        /// <returns>An enumeration of the supported key sizes</returns>
+//        public IEnumerable<KeySizes> LegalKeySizes
+//        {
+//            get
+//            {
+//                foreach (var value in RSACryptoServiceProvider.Create().LegalKeySizes)
+//                    yield return value;
+//            }
+//        }
 
-        /// <summary>
-        /// constructs a new RSA object
-        /// </summary>
-        public RSA(int keySize = 2048)
-        {
-            _keySize = keySize;// != -1 ? keySize : _rsa.LegalKeySizes?[0].MaxSize ?? _rsa.KeySize;
-            using (var _rsa = new RSACryptoServiceProvider(_keySize))
-            {
-                PrivateKey = _rsa.ExportParameters(true);
-                PublicKey = _rsa.ExportParameters(false);
-            }
-        }
+//        /// <summary>
+//        /// constructs a new RSA object
+//        /// </summary>
+//        public RSA(int keySize = 2048)
+//        {
+//            _keySize = keySize;// != -1 ? keySize : _rsa.LegalKeySizes?[0].MaxSize ?? _rsa.KeySize;
+//            using (var _rsa = new RSACryptoServiceProvider(_keySize))
+//            {
+//                PrivateKey = _rsa.ExportParameters(true);
+//                PublicKey = _rsa.ExportParameters(false);
+//            }
+//        }
 
-        /// <summary>
-        /// Destructs the RSA object and calls Dispose 
-        /// </summary>
-        ~RSA()
-        {
-            Dispose();
-        }
+//        /// <summary>
+//        /// Destructs the RSA object and calls Dispose 
+//        /// </summary>
+//        ~RSA()
+//        {
+//            Dispose();
+//        }
 
-        /// <summary>
-        /// Encrypts a string
-        /// </summary>
-        /// <param name="text">The string to encrypt</param>
-        /// <returns>A string containing the encrypted value</returns>
-        public string Encrypt(string text)
-        {
-            return Encrypt(text.AsBytes(), PublicKey);
-        }
-        /// <summary>
-        /// Encrypts a string
-        /// </summary>
-        /// <param name="text">The string to encrypt</param>
-        /// <param name="publicKey">The public key used to encrypt the string</param>
-        /// <returns>A string containing the encrypted value</returns>
-        public string Encrypt(string text, RSAParameters publicKey)
-        {
-            return Encrypt(text.AsBytes(), publicKey);
-        }
-        /// <summary>
-        /// Encrypts a string
-        /// </summary>
-        /// <param name="byteData">The data to encrypt</param>
-        /// <param name="publicKey">The public key used to encrypt the data</param>
-        /// <returns>A string containing the encrypted data</returns>
-        public string Encrypt(byte[] byteData, RSAParameters publicKey)
-        {
-            return RSAMethods.Encrypt(byteData, publicKey, _keySize);
-        }
+//        /// <summary>
+//        /// Encrypts a string
+//        /// </summary>
+//        /// <param name="text">The string to encrypt</param>
+//        /// <returns>A string containing the encrypted value</returns>
+//        public string Encrypt(string text)
+//        {
+//            return Encrypt(text.AsBytes(), PublicKey);
+//        }
+//        /// <summary>
+//        /// Encrypts a string
+//        /// </summary>
+//        /// <param name="text">The string to encrypt</param>
+//        /// <param name="publicKey">The public key used to encrypt the string</param>
+//        /// <returns>A string containing the encrypted value</returns>
+//        public string Encrypt(string text, RSAParameters publicKey)
+//        {
+//            return Encrypt(text.AsBytes(), publicKey);
+//        }
+//        /// <summary>
+//        /// Encrypts a string
+//        /// </summary>
+//        /// <param name="byteData">The data to encrypt</param>
+//        /// <param name="publicKey">The public key used to encrypt the data</param>
+//        /// <returns>A string containing the encrypted data</returns>
+//        public string Encrypt(byte[] byteData, RSAParameters publicKey)
+//        {
+//            return RSAMethods.Encrypt(byteData, publicKey, _keySize);
+//        }
 
-        /// <summary>
-        /// Decrypts a string (previously encrypted with the Encrypt method)
-        /// </summary>
-        /// <param name="base64String">The encrypted string</param>
-        /// <returns>A string containing the decrypted value</returns>
-        public string Decrypt(string base64String)
-        {
-            return Decrypt(base64String, PrivateKey);
-        }
-        /// <summary>
-        /// Decrypts a string (previously encrypted with the Encrypt method)
-        /// </summary>
-        /// <param name="base64String">The encrypted string</param>
-        /// <param name="privateKey">The private key used to decrypt the string</param>
-        /// <returns>A string containing the decrypted value</returns>
-        public string Decrypt(string base64String, RSAParameters privateKey)
-        {
-            return RSAMethods.Decrypt(base64String, privateKey, _keySize);
-        }
+//        /// <summary>
+//        /// Decrypts a string (previously encrypted with the Encrypt method)
+//        /// </summary>
+//        /// <param name="base64String">The encrypted string</param>
+//        /// <returns>A string containing the decrypted value</returns>
+//        public string Decrypt(string base64String)
+//        {
+//            return Decrypt(base64String, PrivateKey);
+//        }
+//        /// <summary>
+//        /// Decrypts a string (previously encrypted with the Encrypt method)
+//        /// </summary>
+//        /// <param name="base64String">The encrypted string</param>
+//        /// <param name="privateKey">The private key used to decrypt the string</param>
+//        /// <returns>A string containing the decrypted value</returns>
+//        public string Decrypt(string base64String, RSAParameters privateKey)
+//        {
+//            return RSAMethods.Decrypt(base64String, privateKey, _keySize);
+//        }
 
-        //public byte[] Decrypt(byte[] cipher)
-        //{
-        //    return Decrypt(cipher, PrivateKey);
-        //}
-        //public byte[] Decrypt(byte[] cipher, RSAParameters privateKey)
-        //{
-        //    return RSA_Old.Decrypt(cipher, privateKey, _keySize);
-        //}
-        /// <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
-        public void Dispose()
-        {
-            //_rsa?.Dispose();
-            //_rsa = null;
-        }
-    }
-#elif NETSTANDARD1_3 || NETCOREAPP1_0
+//        //public byte[] Decrypt(byte[] cipher)
+//        //{
+//        //    return Decrypt(cipher, PrivateKey);
+//        //}
+//        //public byte[] Decrypt(byte[] cipher, RSAParameters privateKey)
+//        //{
+//        //    return RSA_Old.Decrypt(cipher, privateKey, _keySize);
+//        //}
+//        /// <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+//        public void Dispose()
+//        {
+//            //_rsa?.Dispose();
+//            //_rsa = null;
+//        }
+//    }
+#elif NET45 || NETSTANDARD1_3 || NETCOREAPP1_0
     using System.Security.Cryptography;
     /// <summary>
     /// Provides RSA encryption functionality

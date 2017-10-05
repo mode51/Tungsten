@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.0</TargetFramework>
     <PackageId>Tungsten.Standard1_0</PackageId>
-    <Version>1.2.8</Version>
+    <Version>1.3.0</Version>
     <Authors>Jordan Duerksen</Authors>
     <Company>Jordan Duerksen</Company>
     <Product>Tungsten</Product>
@@ -14,8 +14,8 @@
     <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</PackageIconUrl>
     <PackageTags>Tungsten.NuGet Tungsten W C# library</PackageTags>
     <PackageReleaseNotes>Each Tungsten target now has it's own NuGet package</PackageReleaseNotes>
-    <AssemblyVersion>1.2.8.0</AssemblyVersion>
-    <FileVersion>1.2.8.0</FileVersion>
+    <AssemblyVersion>1.3.0.0</AssemblyVersion>
+    <FileVersion>1.3.0.0</FileVersion>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
     <RootNamespace>W</RootNamespace>
     <AssemblyName>Tungsten</AssemblyName>

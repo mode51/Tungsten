@@ -49,6 +49,9 @@
     <Compile Include="..\Tungsten.Standard1_0\CallResult.cs">
       <Link>CallResult.cs</Link>
     </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\Disposable.cs">
+      <Link>Disposable.cs</Link>
+    </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Encryption\MD5.cs">
       <Link>Encryption\MD5.cs</Link>
     </Compile>
@@ -60,6 +63,9 @@
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Encryption\RSAMethods.cs">
       <Link>Encryption\RSAMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\EventTemplate.cs">
+      <Link>EventTemplate.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\FromExtensions.cs">
       <Link>FromExtensions.cs</Link>
@@ -124,14 +130,8 @@
     <Compile Include="..\Tungsten.Standard1_0\Threading\Thread.cs">
       <Link>Threading\Thread.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadBase.cs">
-      <Link>Threading\ThreadBase.cs</Link>
-    </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadExtensions.cs">
       <Link>Threading\ThreadExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadWithCustomData.cs">
-      <Link>Threading\ThreadWithCustomData.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Threading\Tungsten.Threading.Namespace.cs">
       <Link>Threading\Tungsten.Threading.Namespace.cs</Link>

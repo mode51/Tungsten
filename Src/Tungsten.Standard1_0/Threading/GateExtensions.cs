@@ -13,7 +13,7 @@ namespace W.Threading
         /// </summary>
         /// <param name="action">The Action to call when the gate is relased (when Run is called)</param>
         /// <returns>A reference to a new Gate</returns>
-        public static Gate AsGate(this Action<CancellationTokenSource> @action)
+        public static Gate AsGate(this Action<CancellationToken> @action)
         {
             return new Gate(action);
         }
@@ -22,7 +22,7 @@ namespace W.Threading
         /// </summary>
         /// <param name="action">The Action to call when the gate is relased (when Run is called)</param>
         /// <returns>A reference to a new Gate</returns>
-        public static Gate<T> AsGate<T>(this Action<T, CancellationTokenSource> @action)
+        public static Gate<T> AsGate<T>(this Action<T, CancellationToken> @action)
         {
             return new Gate<T>(action);
         }

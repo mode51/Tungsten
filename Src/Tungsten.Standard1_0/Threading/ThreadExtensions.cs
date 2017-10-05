@@ -8,30 +8,60 @@ namespace W.Threading
     /// </summary>
     public static class ThreadExtensions
     {
+        private class Test
+        {
+            public Test()
+            {
+                int value = 100;
+                value.CreateThread<int>((v, token) => { });
+            }
+        }
         /// <summary>
-        /// Starts a new thread
+        /// Creates and starts a new thread
         /// </summary>
         /// <param name="this">The object to send into a new Thread</param>
         /// <param name="action">Action to call on a thread</param>
-        /// <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
         /// <returns>A reference to the new W.Threading.Thread&lt;T&gt;</returns>
-        public static W.Threading.Thread<T> CreateThread<T>(this T @this, Action<T, CancellationTokenSource> action, Action<bool, Exception> onComplete)
+        public static W.Threading.Thread<TParameterType> CreateThread<TParameterType>(this TParameterType @this, Action<TParameterType, CancellationToken> action)
         {
-            var thread = W.Threading.Thread<T>.Create(action, onComplete, @this);
+            var thread = new W.Threading.Thread<TParameterType>(action, true);
             return thread;
         }
         /// <summary>
-        /// Starts a new thread
+        /// Creates a new thread
+        /// </summary>
+        /// <param name="this">The object to send into a new Thread</param>
+        /// <param name="action">Action to call on a thread</param>
+        /// <param name="autoStart">If True, the thread will immediately start running</param>
+        /// <returns>A reference to the new W.Threading.Thread&lt;T&gt;</returns>
+        public static W.Threading.Thread<TParameterType> CreateThread<TParameterType>(this TParameterType @this, Action<TParameterType, CancellationToken> action, bool autoStart)
+        {
+            var thread = new W.Threading.Thread<TParameterType>(action, autoStart);
+            return thread;
+        }
+        /// <summary>
+        /// Creates and starts a new thread and 
         /// </summary>
         /// <param name="this"></param>
         /// <param name="action">Action to call on a thread</param>
-        /// <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
-        /// <param name="customData">The data to pass to the thread (Action)</param>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TParameterType"></typeparam>
         /// <returns>A reference to the new W.Threading.Thread&lt;T&gt;</returns>
-        public static W.Threading.Thread<T> CreateThread<T>(this object @this, Action<T, CancellationTokenSource> action, Action<bool, Exception> onComplete, T customData)
+        public static W.Threading.Thread<TParameterType> CreateThread<TParameterType>(this object @this, Action<TParameterType, CancellationToken> action)
         {
-            var thread = W.Threading.Thread<T>.Create(action, onComplete, customData);
+            var thread = new W.Threading.Thread<TParameterType>(action, true);
+            return thread;
+        }
+        /// <summary>
+        /// Creates a new thread
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="action">Action to call on a thread</param>
+        /// <param name="autoStart">If True, the thread will immediately start running</param>
+        /// <typeparam name="TParameterType"></typeparam>
+        /// <returns>A reference to the new W.Threading.Thread&lt;T&gt;</returns>
+        public static W.Threading.Thread<TParameterType> CreateThread<TParameterType>(this object @this, Action<TParameterType, CancellationToken> action, bool autoStart)
+        {
+            var thread = new W.Threading.Thread<TParameterType>(action, autoStart);
             return thread;
         }
     }
