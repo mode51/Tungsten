@@ -35,6 +35,7 @@
     <Compile Include="..\Tungsten.Standard1_0\Encryption\RSA.cs" Link="Encryption\RSA.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Encryption\RSAMethods.cs" Link="Encryption\RSAMethods.cs" />
     <Compile Include="..\Tungsten.Standard1_0\EventTemplate.cs" Link="EventTemplate.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\ExtensionMethods.cs" Link="ExtensionMethods.cs" />
     <Compile Include="..\Tungsten.Standard1_0\FromExtensions.cs" Link="FromExtensions.cs" />
     <Compile Include="..\Tungsten.Standard1_0\InvokeExtensions.cs" Link="InvokeExtensions.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Lockable.cs" Link="Lockable.cs" />

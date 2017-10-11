@@ -26,10 +26,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\Tungsten.Standard1_3\ExtensionMethods.cs" Link="ExtensionMethods.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
     <PackageReference Include="System.Runtime.Serialization.Xml" Version="4.3.0" />
   </ItemGroup>
