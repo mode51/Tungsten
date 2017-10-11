@@ -309,6 +309,318 @@
       </UL>
       <UL>
         <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Disposable Class">
+          <param name="Local" value="html\T_W_Disposable.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Disposable Constructor ">
+            <param name="Local" value="html\M_W_Disposable__ctor.htm">
+          </OBJECT></LI>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Disposable Methods">
+            <param name="Local" value="html\Methods_T_W_Disposable.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Dispose Method ">
+              <param name="Local" value="html\M_W_Disposable_Dispose.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Finalize Method ">
+              <param name="Local" value="html\M_W_Disposable_Finalize.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="OnDispose Method ">
+              <param name="Local" value="html\M_W_Disposable_OnDispose.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="OnDisposeUnmanaged Method ">
+              <param name="Local" value="html\M_W_Disposable_OnDisposeUnmanaged.htm">
+            </OBJECT></LI>
+          </UL>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Disposable Fields">
+            <param name="Local" value="html\Fields_T_W_Disposable.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="IsDisposed Field">
+              <param name="Local" value="html\F_W_Disposable_IsDisposed.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="IsDisposing Field">
+              <param name="Local" value="html\F_W_Disposable_IsDisposing.htm">
+            </OBJECT></LI>
+          </UL>
+        </UL>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="EventTemplate Class">
+          <param name="Local" value="html\T_W_EventTemplate.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate Constructor ">
+            <param name="Local" value="html\M_W_EventTemplate__ctor.htm">
+          </OBJECT></LI>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate Methods">
+            <param name="Local" value="html\Methods_T_W_EventTemplate.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Raise Method ">
+              <param name="Local" value="html\M_W_EventTemplate_Raise.htm">
+            </OBJECT></LI>
+          </UL>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate Events">
+            <param name="Local" value="html\Events_T_W_EventTemplate.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="OnRaised Event">
+              <param name="Local" value="html\E_W_EventTemplate_OnRaised.htm">
+            </OBJECT></LI>
+          </UL>
+        </UL>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="EventTemplate.EventDelegate Delegate">
+          <param name="Local" value="html\T_W_EventTemplate_EventDelegate.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="EventTemplate(TEventArg) Class">
+          <param name="Local" value="html\T_W_EventTemplate_1.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate(TEventArg) Constructor ">
+            <param name="Local" value="html\M_W_EventTemplate_1__ctor.htm">
+          </OBJECT></LI>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate(TEventArg) Methods">
+            <param name="Local" value="html\Methods_T_W_EventTemplate_1.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Raise Method ">
+              <param name="Local" value="html\M_W_EventTemplate_1_Raise.htm">
+            </OBJECT></LI>
+          </UL>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate(TEventArg) Events">
+            <param name="Local" value="html\Events_T_W_EventTemplate_1.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="OnRaised Event">
+              <param name="Local" value="html\E_W_EventTemplate_1_OnRaised.htm">
+            </OBJECT></LI>
+          </UL>
+        </UL>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="EventTemplate(TEventArg).EventDelegate Delegate">
+          <param name="Local" value="html\T_W_EventTemplate_1_EventDelegate.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="EventTemplate(TEventArg1, TEventArg2) Class">
+          <param name="Local" value="html\T_W_EventTemplate_2.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate(TEventArg1, TEventArg2) Constructor ">
+            <param name="Local" value="html\M_W_EventTemplate_2__ctor.htm">
+          </OBJECT></LI>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate(TEventArg1, TEventArg2) Methods">
+            <param name="Local" value="html\Methods_T_W_EventTemplate_2.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Raise Method ">
+              <param name="Local" value="html\M_W_EventTemplate_2_Raise.htm">
+            </OBJECT></LI>
+          </UL>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate(TEventArg1, TEventArg2) Events">
+            <param name="Local" value="html\Events_T_W_EventTemplate_2.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="OnRaised Event">
+              <param name="Local" value="html\E_W_EventTemplate_2_OnRaised.htm">
+            </OBJECT></LI>
+          </UL>
+        </UL>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="EventTemplate(TEventArg1, TEventArg2).EventDelegate Delegate">
+          <param name="Local" value="html\T_W_EventTemplate_2_EventDelegate.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="EventTemplate(TEventArg1, TEventArg2, TEventArg3) Class">
+          <param name="Local" value="html\T_W_EventTemplate_3.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate(TEventArg1, TEventArg2, TEventArg3) Constructor ">
+            <param name="Local" value="html\M_W_EventTemplate_3__ctor.htm">
+          </OBJECT></LI>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate(TEventArg1, TEventArg2, TEventArg3) Methods">
+            <param name="Local" value="html\Methods_T_W_EventTemplate_3.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Raise Method ">
+              <param name="Local" value="html\M_W_EventTemplate_3_Raise.htm">
+            </OBJECT></LI>
+          </UL>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate(TEventArg1, TEventArg2, TEventArg3) Events">
+            <param name="Local" value="html\Events_T_W_EventTemplate_3.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="OnRaised Event">
+              <param name="Local" value="html\E_W_EventTemplate_3_OnRaised.htm">
+            </OBJECT></LI>
+          </UL>
+        </UL>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="EventTemplate(TEventArg1, TEventArg2, TEventArg3).EventDelegate Delegate">
+          <param name="Local" value="html\T_W_EventTemplate_3_EventDelegate.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4) Class">
+          <param name="Local" value="html\T_W_EventTemplate_4.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4) Constructor ">
+            <param name="Local" value="html\M_W_EventTemplate_4__ctor.htm">
+          </OBJECT></LI>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4) Methods">
+            <param name="Local" value="html\Methods_T_W_EventTemplate_4.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Raise Method ">
+              <param name="Local" value="html\M_W_EventTemplate_4_Raise.htm">
+            </OBJECT></LI>
+          </UL>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4) Events">
+            <param name="Local" value="html\Events_T_W_EventTemplate_4.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="OnRaised Event">
+              <param name="Local" value="html\E_W_EventTemplate_4_OnRaised.htm">
+            </OBJECT></LI>
+          </UL>
+        </UL>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4).EventDelegate Delegate">
+          <param name="Local" value="html\T_W_EventTemplate_4_EventDelegate.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5) Class">
+          <param name="Local" value="html\T_W_EventTemplate_5.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5) Constructor ">
+            <param name="Local" value="html\M_W_EventTemplate_5__ctor.htm">
+          </OBJECT></LI>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5) Methods">
+            <param name="Local" value="html\Methods_T_W_EventTemplate_5.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Raise Method ">
+              <param name="Local" value="html\M_W_EventTemplate_5_Raise.htm">
+            </OBJECT></LI>
+          </UL>
+        </UL>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5) Events">
+            <param name="Local" value="html\Events_T_W_EventTemplate_5.htm">
+          </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="OnRaised Event">
+              <param name="Local" value="html\E_W_EventTemplate_5_OnRaised.htm">
+            </OBJECT></LI>
+          </UL>
+        </UL>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5).EventDelegate Delegate">
+          <param name="Local" value="html\T_W_EventTemplate_5_EventDelegate.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
           <param name="Name" value="ExtensionMethods Class">
           <param name="Local" value="html\T_W_ExtensionMethods.htm">
         </OBJECT></LI>
@@ -325,19 +637,31 @@
           </UL>
           <UL>
             <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="WaitForValue Method ">
-              <param name="Local" value="html\Overload_W_ExtensionMethods_WaitForValue.htm">
+              <param name="Name" value="Raise Method ">
+              <param name="Local" value="html\M_W_ExtensionMethods_Raise.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="WaitForValue(TItemType) Method ">
+              <param name="Local" value="html\M_W_ExtensionMethods_WaitForValue__1.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="WaitForValueAsync Method ">
+              <param name="Local" value="html\Overload_W_ExtensionMethods_WaitForValueAsync.htm">
             </OBJECT></LI>
             <UL>
               <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="WaitForValue Method (Object, Object, Int32)">
-                <param name="Local" value="html\M_W_ExtensionMethods_WaitForValue.htm">
+                <param name="Name" value="WaitForValueAsync Method (Object, Object, Int32)">
+                <param name="Local" value="html\M_W_ExtensionMethods_WaitForValueAsync.htm">
               </OBJECT></LI>
             </UL>
             <UL>
               <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="WaitForValue(TItemType) Method (TItemType, Predicate(TItemType), Int32)">
-                <param name="Local" value="html\M_W_ExtensionMethods_WaitForValue__1.htm">
+                <param name="Name" value="WaitForValueAsync(TItemType) Method (TItemType, Predicate(TItemType), Int32)">
+                <param name="Local" value="html\M_W_ExtensionMethods_WaitForValueAsync__1.htm">
               </OBJECT></LI>
             </UL>
           </UL>
@@ -1197,102 +1521,6 @@
       </UL>
       <UL>
         <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="RSA Class">
-          <param name="Local" value="html\T_W_Encryption_RSA.htm">
-        </OBJECT></LI>
-        <UL>
-          <LI><OBJECT type="text/sitemap">
-            <param name="Name" value="RSA Constructor ">
-            <param name="Local" value="html\M_W_Encryption_RSA__ctor.htm">
-          </OBJECT></LI>
-        </UL>
-        <UL>
-          <LI><OBJECT type="text/sitemap">
-            <param name="Name" value="RSA Properties">
-            <param name="Local" value="html\Properties_T_W_Encryption_RSA.htm">
-          </OBJECT></LI>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="LegalKeySizes Property ">
-              <param name="Local" value="html\P_W_Encryption_RSA_LegalKeySizes.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="PrivateKey Property ">
-              <param name="Local" value="html\P_W_Encryption_RSA_PrivateKey.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="PublicKey Property ">
-              <param name="Local" value="html\P_W_Encryption_RSA_PublicKey.htm">
-            </OBJECT></LI>
-          </UL>
-        </UL>
-        <UL>
-          <LI><OBJECT type="text/sitemap">
-            <param name="Name" value="RSA Methods">
-            <param name="Local" value="html\Methods_T_W_Encryption_RSA.htm">
-          </OBJECT></LI>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="Decrypt Method ">
-              <param name="Local" value="html\Overload_W_Encryption_RSA_Decrypt.htm">
-            </OBJECT></LI>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Decrypt Method (String)">
-                <param name="Local" value="html\M_W_Encryption_RSA_Decrypt.htm">
-              </OBJECT></LI>
-            </UL>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Decrypt Method (String, RSAParameters)">
-                <param name="Local" value="html\M_W_Encryption_RSA_Decrypt_1.htm">
-              </OBJECT></LI>
-            </UL>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="Dispose Method ">
-              <param name="Local" value="html\M_W_Encryption_RSA_Dispose.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="Encrypt Method ">
-              <param name="Local" value="html\Overload_W_Encryption_RSA_Encrypt.htm">
-            </OBJECT></LI>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Encrypt Method (String)">
-                <param name="Local" value="html\M_W_Encryption_RSA_Encrypt_1.htm">
-              </OBJECT></LI>
-            </UL>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Encrypt Method (Byte[], RSAParameters)">
-                <param name="Local" value="html\M_W_Encryption_RSA_Encrypt.htm">
-              </OBJECT></LI>
-            </UL>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Encrypt Method (String, RSAParameters)">
-                <param name="Local" value="html\M_W_Encryption_RSA_Encrypt_2.htm">
-              </OBJECT></LI>
-            </UL>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="Finalize Method ">
-              <param name="Local" value="html\M_W_Encryption_RSA_Finalize.htm">
-            </OBJECT></LI>
-          </UL>
-        </UL>
-      </UL>
-      <UL>
-        <LI><OBJECT type="text/sitemap">
           <param name="Name" value="RSAMethods Class">
           <param name="Local" value="html\T_W_Encryption_RSAMethods.htm">
         </OBJECT></LI>
@@ -1309,51 +1537,39 @@
           </OBJECT></LI>
           <UL>
             <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="Decrypt Method ">
-              <param name="Local" value="html\Overload_W_Encryption_RSAMethods_Decrypt.htm">
+              <param name="Name" value="CreateKeyPair Method ">
+              <param name="Local" value="html\M_W_Encryption_RSAMethods_CreateKeyPair.htm">
             </OBJECT></LI>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Decrypt Method (String, RSAParameters, Int32)">
-                <param name="Local" value="html\M_W_Encryption_RSAMethods_Decrypt.htm">
-              </OBJECT></LI>
-            </UL>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Decrypt Method (String, String, Int32)">
-                <param name="Local" value="html\M_W_Encryption_RSAMethods_Decrypt_1.htm">
-              </OBJECT></LI>
-            </UL>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Decrypt Method ">
+              <param name="Local" value="html\M_W_Encryption_RSAMethods_Decrypt.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="DecryptAsync Method ">
+              <param name="Local" value="html\M_W_Encryption_RSAMethods_DecryptAsync.htm">
+            </OBJECT></LI>
           </UL>
           <UL>
             <LI><OBJECT type="text/sitemap">
               <param name="Name" value="Encrypt Method ">
-              <param name="Local" value="html\Overload_W_Encryption_RSAMethods_Encrypt.htm">
+              <param name="Local" value="html\M_W_Encryption_RSAMethods_Encrypt.htm">
             </OBJECT></LI>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Encrypt Method (Byte[], RSAParameters, Int32)">
-                <param name="Local" value="html\M_W_Encryption_RSAMethods_Encrypt.htm">
-              </OBJECT></LI>
-            </UL>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Encrypt Method (Byte[], String, Int32)">
-                <param name="Local" value="html\M_W_Encryption_RSAMethods_Encrypt_1.htm">
-              </OBJECT></LI>
-            </UL>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Encrypt Method (String, RSAParameters, Int32)">
-                <param name="Local" value="html\M_W_Encryption_RSAMethods_Encrypt_2.htm">
-              </OBJECT></LI>
-            </UL>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Encrypt Method (String, String, Int32)">
-                <param name="Local" value="html\M_W_Encryption_RSAMethods_Encrypt_3.htm">
-              </OBJECT></LI>
-            </UL>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="EncryptAsync Method ">
+              <param name="Local" value="html\M_W_Encryption_RSAMethods_EncryptAsync.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="LegalKeySizes Method ">
+              <param name="Local" value="html\M_W_Encryption_RSAMethods_LegalKeySizes.htm">
+            </OBJECT></LI>
           </UL>
         </UL>
       </UL>
@@ -1464,14 +1680,14 @@
             </OBJECT></LI>
             <UL>
               <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="e Method (String, Object[])">
-                <param name="Local" value="html\M_W_Logging_Log_e_1.htm">
+                <param name="Name" value="e Method (Exception)">
+                <param name="Local" value="html\M_W_Logging_Log_e.htm">
               </OBJECT></LI>
             </UL>
             <UL>
               <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="e Method (Exception, String, Int32)">
-                <param name="Local" value="html\M_W_Logging_Log_e.htm">
+                <param name="Name" value="e Method (String, Object[])">
+                <param name="Local" value="html\M_W_Logging_Log_e_1.htm">
               </OBJECT></LI>
             </UL>
           </UL>
@@ -1623,6 +1839,12 @@
       </OBJECT></LI>
       <UL>
         <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="CPUProfileEnum Enumeration">
+          <param name="Local" value="html\T_W_Threading_CPUProfileEnum.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
           <param name="Name" value="Gate Class">
           <param name="Local" value="html\T_W_Threading_Gate.htm">
         </OBJECT></LI>
@@ -1637,6 +1859,18 @@
             <param name="Name" value="Gate Properties">
             <param name="Local" value="html\Properties_T_W_Threading_Gate.htm">
           </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="IsComplete Property ">
+              <param name="Local" value="html\P_W_Threading_Gate_IsComplete.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="IsRunning Property ">
+              <param name="Local" value="html\P_W_Threading_Gate_IsRunning.htm">
+            </OBJECT></LI>
+          </UL>
         </UL>
         <UL>
           <LI><OBJECT type="text/sitemap">
@@ -1645,21 +1879,15 @@
           </OBJECT></LI>
           <UL>
             <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="CallInvokeAction Method ">
-              <param name="Local" value="html\M_W_Threading_Gate_CallInvokeAction.htm">
+              <param name="Name" value="CallAction Method ">
+              <param name="Local" value="html\M_W_Threading_Gate_CallAction.htm">
             </OBJECT></LI>
           </UL>
           <UL>
             <LI><OBJECT type="text/sitemap">
               <param name="Name" value="Cancel Method ">
-              <param name="Local" value="html\Overload_W_Threading_Gate_Cancel.htm">
+              <param name="Local" value="html\M_W_Threading_Gate_Cancel.htm">
             </OBJECT></LI>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Cancel Method ">
-                <param name="Local" value="html\M_W_Threading_Gate_Cancel.htm">
-              </OBJECT></LI>
-            </UL>
           </UL>
           <UL>
             <LI><OBJECT type="text/sitemap">
@@ -1695,73 +1923,61 @@
       </UL>
       <UL>
         <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="Gate(T) Class">
+          <param name="Name" value="Gate(TParameterType) Class">
           <param name="Local" value="html\T_W_Threading_Gate_1.htm">
         </OBJECT></LI>
         <UL>
           <LI><OBJECT type="text/sitemap">
-            <param name="Name" value="Gate(T) Constructor ">
-            <param name="Local" value="html\M_W_Threading_Gate_1__ctor.htm">
+            <param name="Name" value="Gate(TParameterType) Constructor ">
+            <param name="Local" value="html\Overload_W_Threading_Gate_1__ctor.htm">
           </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Gate(TParameterType) Constructor (Action(TParameterType, CancellationToken))">
+              <param name="Local" value="html\M_W_Threading_Gate_1__ctor.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Gate(TParameterType) Constructor (Action(TParameterType, CancellationToken), TParameterType)">
+              <param name="Local" value="html\M_W_Threading_Gate_1__ctor_1.htm">
+            </OBJECT></LI>
+          </UL>
         </UL>
         <UL>
           <LI><OBJECT type="text/sitemap">
-            <param name="Name" value="Gate(T) Properties">
+            <param name="Name" value="Gate(TParameterType) Properties">
             <param name="Local" value="html\Properties_T_W_Threading_Gate_1.htm">
           </OBJECT></LI>
         </UL>
         <UL>
           <LI><OBJECT type="text/sitemap">
-            <param name="Name" value="Gate(T) Methods">
+            <param name="Name" value="Gate(TParameterType) Methods">
             <param name="Local" value="html\Methods_T_W_Threading_Gate_1.htm">
           </OBJECT></LI>
           <UL>
             <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="CallInvokeAction Method ">
-              <param name="Local" value="html\M_W_Threading_Gate_1_CallInvokeAction.htm">
+              <param name="Name" value="CallAction Method ">
+              <param name="Local" value="html\M_W_Threading_Gate_1_CallAction.htm">
             </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="Cancel Method ">
-              <param name="Local" value="html\Overload_W_Threading_Gate_1_Cancel.htm">
-            </OBJECT></LI>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Cancel Method ">
-                <param name="Local" value="html\M_W_Threading_Gate_1_Cancel.htm">
-              </OBJECT></LI>
-            </UL>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="Dispose Method ">
-              <param name="Local" value="html\M_W_Threading_Gate_1_Dispose.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="Join Method ">
-              <param name="Local" value="html\Overload_W_Threading_Gate_1_Join.htm">
-            </OBJECT></LI>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Join Method ">
-                <param name="Local" value="html\M_W_Threading_Gate_1_Join.htm">
-              </OBJECT></LI>
-            </UL>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Join Method (Int32)">
-                <param name="Local" value="html\M_W_Threading_Gate_1_Join_1.htm">
-              </OBJECT></LI>
-            </UL>
           </UL>
           <UL>
             <LI><OBJECT type="text/sitemap">
               <param name="Name" value="Run Method ">
-              <param name="Local" value="html\M_W_Threading_Gate_1_Run.htm">
+              <param name="Local" value="html\Overload_W_Threading_Gate_1_Run.htm">
             </OBJECT></LI>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="Run Method ">
+                <param name="Local" value="html\M_W_Threading_Gate_1_Run.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="Run Method (TParameterType)">
+                <param name="Local" value="html\M_W_Threading_Gate_1_Run_1.htm">
+              </OBJECT></LI>
+            </UL>
           </UL>
         </UL>
       </UL>
@@ -1782,13 +1998,13 @@
             </OBJECT></LI>
             <UL>
               <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="AsGate Method (Action(CancellationTokenSource))">
+                <param name="Name" value="AsGate Method (Action(CancellationToken))">
                 <param name="Local" value="html\M_W_Threading_GateMethods_AsGate.htm">
               </OBJECT></LI>
             </UL>
             <UL>
               <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="AsGate(T) Method (Action(T, CancellationTokenSource))">
+                <param name="Name" value="AsGate(TParameterType) Method (Action(TParameterType, CancellationToken))">
                 <param name="Local" value="html\M_W_Threading_GateMethods_AsGate__1.htm">
               </OBJECT></LI>
             </UL>
@@ -1803,14 +2019,62 @@
         <UL>
           <LI><OBJECT type="text/sitemap">
             <param name="Name" value="Thread Constructor ">
-            <param name="Local" value="html\M_W_Threading_Thread__ctor.htm">
+            <param name="Local" value="html\Overload_W_Threading_Thread__ctor.htm">
           </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Thread Constructor (Action(CancellationToken))">
+              <param name="Local" value="html\M_W_Threading_Thread__ctor.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Thread Constructor (Action(CancellationToken), Boolean)">
+              <param name="Local" value="html\M_W_Threading_Thread__ctor_1.htm">
+            </OBJECT></LI>
+          </UL>
         </UL>
         <UL>
           <LI><OBJECT type="text/sitemap">
             <param name="Name" value="Thread Properties">
             <param name="Local" value="html\Properties_T_W_Threading_Thread.htm">
           </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Exception Property ">
+              <param name="Local" value="html\P_W_Threading_Thread_Exception.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="IsComplete Property ">
+              <param name="Local" value="html\P_W_Threading_Thread_IsComplete.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="IsFaulted Property ">
+              <param name="Local" value="html\P_W_Threading_Thread_IsFaulted.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="IsRunning Property ">
+              <param name="Local" value="html\P_W_Threading_Thread_IsRunning.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="IsStarted Property ">
+              <param name="Local" value="html\P_W_Threading_Thread_IsStarted.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Token Property ">
+              <param name="Local" value="html\P_W_Threading_Thread_Token.htm">
+            </OBJECT></LI>
+          </UL>
         </UL>
         <UL>
           <LI><OBJECT type="text/sitemap">
@@ -1819,39 +2083,45 @@
           </OBJECT></LI>
           <UL>
             <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="CallInvokeAction Method ">
-              <param name="Local" value="html\M_W_Threading_Thread_CallInvokeAction.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="CallInvokeOnComplete Method ">
-              <param name="Local" value="html\M_W_Threading_Thread_CallInvokeOnComplete.htm">
+              <param name="Name" value="CallAction Method ">
+              <param name="Local" value="html\M_W_Threading_Thread_CallAction.htm">
             </OBJECT></LI>
           </UL>
           <UL>
             <LI><OBJECT type="text/sitemap">
               <param name="Name" value="Cancel Method ">
-              <param name="Local" value="html\Overload_W_Threading_Thread_Cancel.htm">
+              <param name="Local" value="html\M_W_Threading_Thread_Cancel.htm">
             </OBJECT></LI>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Cancel Method ">
-                <param name="Local" value="html\M_W_Threading_Thread_Cancel.htm">
-              </OBJECT></LI>
-            </UL>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Cancel Method (Int32)">
-                <param name="Local" value="html\M_W_Threading_Thread_Cancel_1.htm">
-              </OBJECT></LI>
-            </UL>
           </UL>
           <UL>
             <LI><OBJECT type="text/sitemap">
               <param name="Name" value="Create Method ">
-              <param name="Local" value="html\M_W_Threading_Thread_Create.htm">
+              <param name="Local" value="html\Overload_W_Threading_Thread_Create.htm">
             </OBJECT></LI>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="Create Method (Action(CancellationToken))">
+                <param name="Local" value="html\M_W_Threading_Thread_Create.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="Create(TParameterType) Method (Action(TParameterType, CancellationToken))">
+                <param name="Local" value="html\M_W_Threading_Thread_Create__1.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="Create Method (Action(CancellationToken), Boolean)">
+                <param name="Local" value="html\M_W_Threading_Thread_Create_1.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="Create(TParameterType) Method (Action(TParameterType, CancellationToken), Boolean)">
+                <param name="Local" value="html\M_W_Threading_Thread_Create__1_1.htm">
+              </OBJECT></LI>
+            </UL>
           </UL>
           <UL>
             <LI><OBJECT type="text/sitemap">
@@ -1880,194 +2150,134 @@
           <UL>
             <LI><OBJECT type="text/sitemap">
               <param name="Name" value="Sleep Method ">
-              <param name="Local" value="html\M_W_Threading_Thread_Sleep.htm">
+              <param name="Local" value="html\Overload_W_Threading_Thread_Sleep.htm">
+            </OBJECT></LI>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="Sleep Method (Int32)">
+                <param name="Local" value="html\M_W_Threading_Thread_Sleep.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="Sleep Method (CPUProfileEnum)">
+                <param name="Local" value="html\M_W_Threading_Thread_Sleep_2.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="Sleep Method (Int32, Boolean)">
+                <param name="Local" value="html\M_W_Threading_Thread_Sleep_1.htm">
+              </OBJECT></LI>
+            </UL>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Start Method ">
+              <param name="Local" value="html\Overload_W_Threading_Thread_Start.htm">
+            </OBJECT></LI>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="Start Method ">
+                <param name="Local" value="html\M_W_Threading_Thread_Start.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="Start Method (Int32)">
+                <param name="Local" value="html\M_W_Threading_Thread_Start_1.htm">
+              </OBJECT></LI>
+            </UL>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Stop Method ">
+              <param name="Local" value="html\M_W_Threading_Thread_Stop.htm">
             </OBJECT></LI>
           </UL>
         </UL>
       </UL>
       <UL>
         <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="Thread(TCustomData) Class">
+          <param name="Name" value="Thread(TParameterType) Class">
           <param name="Local" value="html\T_W_Threading_Thread_1.htm">
         </OBJECT></LI>
         <UL>
           <LI><OBJECT type="text/sitemap">
-            <param name="Name" value="Thread(TCustomData) Constructor ">
-            <param name="Local" value="html\M_W_Threading_Thread_1__ctor.htm">
+            <param name="Name" value="Thread(TParameterType) Constructor ">
+            <param name="Local" value="html\Overload_W_Threading_Thread_1__ctor.htm">
           </OBJECT></LI>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Thread(TParameterType) Constructor (Action(TParameterType, CancellationToken))">
+              <param name="Local" value="html\M_W_Threading_Thread_1__ctor.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Thread(TParameterType) Constructor (Action(TParameterType, CancellationToken), Boolean)">
+              <param name="Local" value="html\M_W_Threading_Thread_1__ctor_1.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Thread(TParameterType) Constructor (Action(TParameterType, CancellationToken), TParameterType)">
+              <param name="Local" value="html\M_W_Threading_Thread_1__ctor_2.htm">
+            </OBJECT></LI>
+          </UL>
+          <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Thread(TParameterType) Constructor (Action(TParameterType, CancellationToken), TParameterType, Boolean)">
+              <param name="Local" value="html\M_W_Threading_Thread_1__ctor_3.htm">
+            </OBJECT></LI>
+          </UL>
         </UL>
         <UL>
           <LI><OBJECT type="text/sitemap">
-            <param name="Name" value="Thread(TCustomData) Properties">
+            <param name="Name" value="Thread(TParameterType) Properties">
             <param name="Local" value="html\Properties_T_W_Threading_Thread_1.htm">
           </OBJECT></LI>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="Action Property ">
-              <param name="Local" value="html\P_W_Threading_Thread_1_Action.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="CustomData Property ">
-              <param name="Local" value="html\P_W_Threading_Thread_1_CustomData.htm">
-            </OBJECT></LI>
-          </UL>
         </UL>
         <UL>
           <LI><OBJECT type="text/sitemap">
-            <param name="Name" value="Thread(TCustomData) Methods">
+            <param name="Name" value="Thread(TParameterType) Methods">
             <param name="Local" value="html\Methods_T_W_Threading_Thread_1.htm">
           </OBJECT></LI>
           <UL>
             <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="Create(TCustomDataType) Method ">
-              <param name="Local" value="html\M_W_Threading_Thread_1_Create__1.htm">
+              <param name="Name" value="CallAction Method ">
+              <param name="Local" value="html\M_W_Threading_Thread_1_CallAction.htm">
             </OBJECT></LI>
           </UL>
           <UL>
             <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="InvokeAction Method ">
-              <param name="Local" value="html\M_W_Threading_Thread_1_InvokeAction.htm">
-            </OBJECT></LI>
-          </UL>
-        </UL>
-      </UL>
-      <UL>
-        <LI><OBJECT type="text/sitemap">
-          <param name="Name" value="ThreadBase Class">
-          <param name="Local" value="html\T_W_Threading_ThreadBase.htm">
-        </OBJECT></LI>
-        <UL>
-          <LI><OBJECT type="text/sitemap">
-            <param name="Name" value="ThreadBase Constructor ">
-            <param name="Local" value="html\M_W_Threading_ThreadBase__ctor.htm">
-          </OBJECT></LI>
-        </UL>
-        <UL>
-          <LI><OBJECT type="text/sitemap">
-            <param name="Name" value="ThreadBase Properties">
-            <param name="Local" value="html\Properties_T_W_Threading_ThreadBase.htm">
-          </OBJECT></LI>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="Action Property ">
-              <param name="Local" value="html\P_W_Threading_ThreadBase_Action.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="Cts Property ">
-              <param name="Local" value="html\P_W_Threading_ThreadBase_Cts.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="IsBusy Property ">
-              <param name="Local" value="html\P_W_Threading_ThreadBase_IsBusy.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="IsRunning Property ">
-              <param name="Local" value="html\P_W_Threading_ThreadBase_IsRunning.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="OnExit Property ">
-              <param name="Local" value="html\P_W_Threading_ThreadBase_OnExit.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="Success Property ">
-              <param name="Local" value="html\P_W_Threading_ThreadBase_Success.htm">
-            </OBJECT></LI>
-          </UL>
-        </UL>
-        <UL>
-          <LI><OBJECT type="text/sitemap">
-            <param name="Name" value="ThreadBase Methods">
-            <param name="Local" value="html\Methods_T_W_Threading_ThreadBase.htm">
-          </OBJECT></LI>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="CallInvokeAction Method ">
-              <param name="Local" value="html\M_W_Threading_ThreadBase_CallInvokeAction.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="CallInvokeOnComplete Method ">
-              <param name="Local" value="html\M_W_Threading_ThreadBase_CallInvokeOnComplete.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="Cancel Method ">
-              <param name="Local" value="html\Overload_W_Threading_ThreadBase_Cancel.htm">
+              <param name="Name" value="Start Method ">
+              <param name="Local" value="html\Overload_W_Threading_Thread_1_Start.htm">
             </OBJECT></LI>
             <UL>
               <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Cancel Method ">
-                <param name="Local" value="html\M_W_Threading_ThreadBase_Cancel.htm">
+                <param name="Name" value="Start Method ">
+                <param name="Local" value="html\M_W_Threading_Thread_1_Start.htm">
               </OBJECT></LI>
             </UL>
             <UL>
               <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Cancel Method (Int32)">
-                <param name="Local" value="html\M_W_Threading_ThreadBase_Cancel_1.htm">
-              </OBJECT></LI>
-            </UL>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="Dispose Method ">
-              <param name="Local" value="html\M_W_Threading_ThreadBase_Dispose.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="Finalize Method ">
-              <param name="Local" value="html\M_W_Threading_ThreadBase_Finalize.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="InvokeAction Method ">
-              <param name="Local" value="html\M_W_Threading_ThreadBase_InvokeAction.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="InvokeOnComplete Method ">
-              <param name="Local" value="html\M_W_Threading_ThreadBase_InvokeOnComplete.htm">
-            </OBJECT></LI>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="Join Method ">
-              <param name="Local" value="html\Overload_W_Threading_ThreadBase_Join.htm">
-            </OBJECT></LI>
-            <UL>
-              <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Join Method ">
-                <param name="Local" value="html\M_W_Threading_ThreadBase_Join.htm">
+                <param name="Name" value="Start Method (Int32)">
+                <param name="Local" value="html\M_W_Threading_Thread_1_Start_1.htm">
               </OBJECT></LI>
             </UL>
             <UL>
               <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="Join Method (Int32)">
-                <param name="Local" value="html\M_W_Threading_ThreadBase_Join_1.htm">
+                <param name="Name" value="Start Method (TParameterType)">
+                <param name="Local" value="html\M_W_Threading_Thread_1_Start_2.htm">
               </OBJECT></LI>
             </UL>
-          </UL>
-          <UL>
-            <LI><OBJECT type="text/sitemap">
-              <param name="Name" value="ThreadProc Method ">
-              <param name="Local" value="html\M_W_Threading_ThreadBase_ThreadProc.htm">
-            </OBJECT></LI>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="Start Method (TParameterType, Int32)">
+                <param name="Local" value="html\M_W_Threading_Thread_1_Start_3.htm">
+              </OBJECT></LI>
+            </UL>
           </UL>
         </UL>
       </UL>
@@ -2088,14 +2298,26 @@
             </OBJECT></LI>
             <UL>
               <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="CreateThread(T) Method (T, Action(T, CancellationTokenSource), Action(Boolean, Exception))">
+                <param name="Name" value="CreateThread(TParameterType) Method (Object, Action(TParameterType, CancellationToken))">
+                <param name="Local" value="html\M_W_Threading_ThreadExtensions_CreateThread__1.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="CreateThread(TParameterType) Method (TParameterType, Action(TParameterType, CancellationToken))">
+                <param name="Local" value="html\M_W_Threading_ThreadExtensions_CreateThread__1_2.htm">
+              </OBJECT></LI>
+            </UL>
+            <UL>
+              <LI><OBJECT type="text/sitemap">
+                <param name="Name" value="CreateThread(TParameterType) Method (Object, Action(TParameterType, CancellationToken), Boolean)">
                 <param name="Local" value="html\M_W_Threading_ThreadExtensions_CreateThread__1_1.htm">
               </OBJECT></LI>
             </UL>
             <UL>
               <LI><OBJECT type="text/sitemap">
-                <param name="Name" value="CreateThread(T) Method (Object, Action(T, CancellationTokenSource), Action(Boolean, Exception), T)">
-                <param name="Local" value="html\M_W_Threading_ThreadExtensions_CreateThread__1.htm">
+                <param name="Name" value="CreateThread(TParameterType) Method (TParameterType, Action(TParameterType, CancellationToken), Boolean)">
+                <param name="Local" value="html\M_W_Threading_ThreadExtensions_CreateThread__1_3.htm">
               </OBJECT></LI>
             </UL>
           </UL>

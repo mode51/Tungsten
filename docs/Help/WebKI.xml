@@ -1,9 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpKI>
-  <HelpKINode Title="Action property">
-    <HelpKINode Title="Thread(TCustomData).Action Property " Url="html/P_W_Threading_Thread_1_Action.htm" />
-    <HelpKINode Title="ThreadBase.Action Property " Url="html/P_W_Threading_ThreadBase_Action.htm" />
-  </HelpKINode>
   <HelpKINode Title="ActionQueue(Of T) class">
     <HelpKINode Title="ActionQueue(T) Class" Url="html/T_W_ActionQueue_1.htm" />
     <HelpKINode Title="about ActionQueue(Of T) class" Url="html/T_W_ActionQueue_1.htm" />
@@ -63,15 +59,11 @@
   <HelpKINode Title="AsString method" Url="html/Overload_W_AsExtensions_AsString.htm" />
   <HelpKINode Title="AsXml(Of TType) method" Url="html/M_W_AsExtensions_AsXml__1.htm" />
   <HelpKINode Title="AsXml&lt;TType&gt; method" Url="html/M_W_AsExtensions_AsXml__1.htm" />
-  <HelpKINode Title="CallInvokeAction method">
-    <HelpKINode Title="Gate(T).CallInvokeAction Method " Url="html/M_W_Threading_Gate_1_CallInvokeAction.htm" />
-    <HelpKINode Title="Gate.CallInvokeAction Method " Url="html/M_W_Threading_Gate_CallInvokeAction.htm" />
-    <HelpKINode Title="Thread.CallInvokeAction Method " Url="html/M_W_Threading_Thread_CallInvokeAction.htm" />
-    <HelpKINode Title="ThreadBase.CallInvokeAction Method " Url="html/M_W_Threading_ThreadBase_CallInvokeAction.htm" />
-  </HelpKINode>
-  <HelpKINode Title="CallInvokeOnComplete method">
-    <HelpKINode Title="Thread.CallInvokeOnComplete Method " Url="html/M_W_Threading_Thread_CallInvokeOnComplete.htm" />
-    <HelpKINode Title="ThreadBase.CallInvokeOnComplete Method " Url="html/M_W_Threading_ThreadBase_CallInvokeOnComplete.htm" />
+  <HelpKINode Title="CallAction method">
+    <HelpKINode Title="Gate(TParameterType).CallAction Method " Url="html/M_W_Threading_Gate_1_CallAction.htm" />
+    <HelpKINode Title="Gate.CallAction Method " Url="html/M_W_Threading_Gate_CallAction.htm" />
+    <HelpKINode Title="Thread(TParameterType).CallAction Method " Url="html/M_W_Threading_Thread_1_CallAction.htm" />
+    <HelpKINode Title="Thread.CallAction Method " Url="html/M_W_Threading_Thread_CallAction.htm" />
   </HelpKINode>
   <HelpKINode Title="CallResult class">
     <HelpKINode Title="CallResult Class" Url="html/T_W_CallResult.htm" />
@@ -106,19 +98,15 @@
   <HelpKINode Title="CallResult&lt;TResult&gt;.Result property" Url="html/P_W_CallResult_1_Result.htm" />
   <HelpKINode Title="Cancel method">
     <HelpKINode Title="ActionQueue(T).Cancel Method " Url="html/M_W_ActionQueue_1_Cancel.htm" />
-    <HelpKINode Title="Gate(T).Cancel Method " Url="html/Overload_W_Threading_Gate_1_Cancel.htm" />
-    <HelpKINode Title="Gate.Cancel Method " Url="html/Overload_W_Threading_Gate_Cancel.htm" />
-    <HelpKINode Title="Thread.Cancel Method " Url="html/Overload_W_Threading_Thread_Cancel.htm" />
-    <HelpKINode Title="ThreadBase.Cancel Method " Url="html/Overload_W_Threading_ThreadBase_Cancel.htm" />
+    <HelpKINode Title="Gate.Cancel Method " Url="html/M_W_Threading_Gate_Cancel.htm" />
+    <HelpKINode Title="Thread.Cancel Method " Url="html/M_W_Threading_Thread_Cancel.htm" />
   </HelpKINode>
   <HelpKINode Title="Category property" Url="html/P_W_Logging_Log_LogMessageHistory_LogMessage_Category.htm" />
   <HelpKINode Title="Count property" Url="html/P_W_ActionQueue_1_Count.htm" />
-  <HelpKINode Title="Create method" Url="html/M_W_Threading_Thread_Create.htm" />
-  <HelpKINode Title="Create(Of TCustomDataType) method" Url="html/M_W_Threading_Thread_1_Create__1.htm" />
-  <HelpKINode Title="Create&lt;TCustomDataType&gt; method" Url="html/M_W_Threading_Thread_1_Create__1.htm" />
+  <HelpKINode Title="CPUProfileEnum enumeration" Url="html/T_W_Threading_CPUProfileEnum.htm" />
+  <HelpKINode Title="Create method" Url="html/Overload_W_Threading_Thread_Create.htm" />
+  <HelpKINode Title="CreateKeyPair method" Url="html/M_W_Encryption_RSAMethods_CreateKeyPair.htm" />
   <HelpKINode Title="CreateThread method" Url="html/Overload_W_Threading_ThreadExtensions_CreateThread.htm" />
-  <HelpKINode Title="Cts property" Url="html/P_W_Threading_ThreadBase_Cts.htm" />
-  <HelpKINode Title="CustomData property" Url="html/P_W_Threading_Thread_1_CustomData.htm" />
   <HelpKINode Title="CustomLogger class">
     <HelpKINode Title="CustomLogger Class" Url="html/T_W_Logging_CustomLogger.htm" />
     <HelpKINode Title="about CustomLogger class" Url="html/T_W_Logging_CustomLogger.htm" />
@@ -134,20 +122,30 @@
   <HelpKINode Title="CustomLogger.LogMessage method" Url="html/M_W_Logging_CustomLogger_LogMessage.htm" />
   <HelpKINode Title="CustomLogger.Name property" Url="html/P_W_Logging_CustomLogger_Name.htm" />
   <HelpKINode Title="CustomLogger.OnDispose method" Url="html/M_W_Logging_CustomLogger_OnDispose.htm" />
-  <HelpKINode Title="Decrypt method">
-    <HelpKINode Title="RSA.Decrypt Method " Url="html/Overload_W_Encryption_RSA_Decrypt.htm" />
-    <HelpKINode Title="RSAMethods.Decrypt Method " Url="html/Overload_W_Encryption_RSAMethods_Decrypt.htm" />
-  </HelpKINode>
+  <HelpKINode Title="Decrypt method" Url="html/M_W_Encryption_RSAMethods_Decrypt.htm" />
+  <HelpKINode Title="DecryptAsync method" Url="html/M_W_Encryption_RSAMethods_DecryptAsync.htm" />
   <HelpKINode Title="DefaultValue property" Url="html/P_W_PropertyBase_2_DefaultValue.htm" />
+  <HelpKINode Title="Disposable class">
+    <HelpKINode Title="Disposable Class" Url="html/T_W_Disposable.htm" />
+    <HelpKINode Title="about Disposable class" Url="html/T_W_Disposable.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Disposable__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_Disposable.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Disposable.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Disposable.Disposable constructor" Url="html/M_W_Disposable__ctor.htm" />
+  <HelpKINode Title="Disposable.Dispose method" Url="html/M_W_Disposable_Dispose.htm" />
+  <HelpKINode Title="Disposable.Finalize method" Url="html/M_W_Disposable_Finalize.htm" />
+  <HelpKINode Title="Disposable.IsDisposed field" Url="html/F_W_Disposable_IsDisposed.htm" />
+  <HelpKINode Title="Disposable.IsDisposing field" Url="html/F_W_Disposable_IsDisposing.htm" />
+  <HelpKINode Title="Disposable.OnDispose method" Url="html/M_W_Disposable_OnDispose.htm" />
+  <HelpKINode Title="Disposable.OnDisposeUnmanaged method" Url="html/M_W_Disposable_OnDisposeUnmanaged.htm" />
   <HelpKINode Title="Dispose method">
     <HelpKINode Title="ActionQueue(T).Dispose Method " Url="html/M_W_ActionQueue_1_Dispose.htm" />
     <HelpKINode Title="CustomLogger.Dispose Method " Url="html/M_W_Logging_CustomLogger_Dispose.htm" />
-    <HelpKINode Title="Gate(T).Dispose Method " Url="html/M_W_Threading_Gate_1_Dispose.htm" />
+    <HelpKINode Title="Disposable.Dispose Method " Url="html/M_W_Disposable_Dispose.htm" />
     <HelpKINode Title="Gate.Dispose Method " Url="html/M_W_Threading_Gate_Dispose.htm" />
     <HelpKINode Title="PropertyBase(TOwner, TValue).Dispose Method " Url="html/M_W_PropertyBase_2_Dispose.htm" />
-    <HelpKINode Title="RSA.Dispose Method " Url="html/M_W_Encryption_RSA_Dispose.htm" />
     <HelpKINode Title="Thread.Dispose Method " Url="html/M_W_Threading_Thread_Dispose.htm" />
-    <HelpKINode Title="ThreadBase.Dispose Method " Url="html/M_W_Threading_ThreadBase_Dispose.htm" />
   </HelpKINode>
   <HelpKINode Title="e method" Url="html/Overload_W_Logging_Log_e.htm" />
   <HelpKINode Title="Empty property">
@@ -155,13 +153,135 @@
     <HelpKINode Title="CallResult.Empty Property " Url="html/P_W_CallResult_Empty.htm" />
   </HelpKINode>
   <HelpKINode Title="Enabled property" Url="html/P_W_Logging_Log_LogMessageHistory_Enabled.htm" />
-  <HelpKINode Title="Encrypt method">
-    <HelpKINode Title="RSA.Encrypt Method " Url="html/Overload_W_Encryption_RSA_Encrypt.htm" />
-    <HelpKINode Title="RSAMethods.Encrypt Method " Url="html/Overload_W_Encryption_RSAMethods_Encrypt.htm" />
-  </HelpKINode>
+  <HelpKINode Title="Encrypt method" Url="html/M_W_Encryption_RSAMethods_Encrypt.htm" />
+  <HelpKINode Title="EncryptAsync method" Url="html/M_W_Encryption_RSAMethods_EncryptAsync.htm" />
   <HelpKINode Title="Enqueue method" Url="html/M_W_ActionQueue_1_Enqueue.htm" />
   <HelpKINode Title="Error enumeration member" Url="html/T_W_Logging_Log_LogMessageCategory.htm" />
-  <HelpKINode Title="Exception property" Url="html/P_W_CallResult_Exception.htm" />
+  <HelpKINode Title="EventTemplate class">
+    <HelpKINode Title="EventTemplate Class" Url="html/T_W_EventTemplate.htm" />
+    <HelpKINode Title="about EventTemplate class" Url="html/T_W_EventTemplate.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_EventTemplate__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EventTemplate(Of TEventArg) class">
+    <HelpKINode Title="EventTemplate(TEventArg) Class" Url="html/T_W_EventTemplate_1.htm" />
+    <HelpKINode Title="about EventTemplate(Of TEventArg) class" Url="html/T_W_EventTemplate_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_EventTemplate_1__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EventTemplate(Of TEventArg).EventDelegate delegate" Url="html/T_W_EventTemplate_1_EventDelegate.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg).EventTemplate constructor" Url="html/M_W_EventTemplate_1__ctor.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg).OnRaised event" Url="html/E_W_EventTemplate_1_OnRaised.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg).Raise method" Url="html/M_W_EventTemplate_1_Raise.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2) class">
+    <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2) Class" Url="html/T_W_EventTemplate_2.htm" />
+    <HelpKINode Title="about EventTemplate(Of TEventArg1, TEventArg2) class" Url="html/T_W_EventTemplate_2.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_EventTemplate_2__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_2.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2).EventDelegate delegate" Url="html/T_W_EventTemplate_2_EventDelegate.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2).EventTemplate constructor" Url="html/M_W_EventTemplate_2__ctor.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2).OnRaised event" Url="html/E_W_EventTemplate_2_OnRaised.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2).Raise method" Url="html/M_W_EventTemplate_2_Raise.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3) class">
+    <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2, TEventArg3) Class" Url="html/T_W_EventTemplate_3.htm" />
+    <HelpKINode Title="about EventTemplate(Of TEventArg1, TEventArg2, TEventArg3) class" Url="html/T_W_EventTemplate_3.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_EventTemplate_3__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_3.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3).EventDelegate delegate" Url="html/T_W_EventTemplate_3_EventDelegate.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3).EventTemplate constructor" Url="html/M_W_EventTemplate_3__ctor.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3).OnRaised event" Url="html/E_W_EventTemplate_3_OnRaised.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3).Raise method" Url="html/M_W_EventTemplate_3_Raise.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4) class">
+    <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4) Class" Url="html/T_W_EventTemplate_4.htm" />
+    <HelpKINode Title="about EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4) class" Url="html/T_W_EventTemplate_4.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_EventTemplate_4__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_4.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4).EventDelegate delegate" Url="html/T_W_EventTemplate_4_EventDelegate.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4).EventTemplate constructor" Url="html/M_W_EventTemplate_4__ctor.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4).OnRaised event" Url="html/E_W_EventTemplate_4_OnRaised.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4).Raise method" Url="html/M_W_EventTemplate_4_Raise.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5) class">
+    <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5) Class" Url="html/T_W_EventTemplate_5.htm" />
+    <HelpKINode Title="about EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5) class" Url="html/T_W_EventTemplate_5.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_EventTemplate_5__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_5.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5).EventDelegate delegate" Url="html/T_W_EventTemplate_5_EventDelegate.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5).EventTemplate constructor" Url="html/M_W_EventTemplate_5__ctor.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5).OnRaised event" Url="html/E_W_EventTemplate_5_OnRaised.htm" />
+  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5).Raise method" Url="html/M_W_EventTemplate_5_Raise.htm" />
+  <HelpKINode Title="EventTemplate.EventDelegate delegate" Url="html/T_W_EventTemplate_EventDelegate.htm" />
+  <HelpKINode Title="EventTemplate.EventTemplate constructor" Url="html/M_W_EventTemplate__ctor.htm" />
+  <HelpKINode Title="EventTemplate.OnRaised event" Url="html/E_W_EventTemplate_OnRaised.htm" />
+  <HelpKINode Title="EventTemplate.Raise method" Url="html/M_W_EventTemplate_Raise.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5&gt; class">
+    <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5) Class" Url="html/T_W_EventTemplate_5.htm" />
+    <HelpKINode Title="about EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5&gt; class" Url="html/T_W_EventTemplate_5.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_EventTemplate_5__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_5.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_5_EventDelegate.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5&gt;.EventTemplate constructor" Url="html/M_W_EventTemplate_5__ctor.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5&gt;.OnRaised event" Url="html/E_W_EventTemplate_5_OnRaised.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5&gt;.Raise method" Url="html/M_W_EventTemplate_5_Raise.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4&gt; class">
+    <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4) Class" Url="html/T_W_EventTemplate_4.htm" />
+    <HelpKINode Title="about EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4&gt; class" Url="html/T_W_EventTemplate_4.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_EventTemplate_4__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_4.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_4_EventDelegate.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4&gt;.EventTemplate constructor" Url="html/M_W_EventTemplate_4__ctor.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4&gt;.OnRaised event" Url="html/E_W_EventTemplate_4_OnRaised.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4&gt;.Raise method" Url="html/M_W_EventTemplate_4_Raise.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3&gt; class">
+    <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2, TEventArg3) Class" Url="html/T_W_EventTemplate_3.htm" />
+    <HelpKINode Title="about EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3&gt; class" Url="html/T_W_EventTemplate_3.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_EventTemplate_3__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_3.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_3_EventDelegate.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3&gt;.EventTemplate constructor" Url="html/M_W_EventTemplate_3__ctor.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3&gt;.OnRaised event" Url="html/E_W_EventTemplate_3_OnRaised.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3&gt;.Raise method" Url="html/M_W_EventTemplate_3_Raise.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2&gt; class">
+    <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2) Class" Url="html/T_W_EventTemplate_2.htm" />
+    <HelpKINode Title="about EventTemplate&lt;TEventArg1, TEventArg2&gt; class" Url="html/T_W_EventTemplate_2.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_EventTemplate_2__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_2.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_2_EventDelegate.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2&gt;.EventTemplate constructor" Url="html/M_W_EventTemplate_2__ctor.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2&gt;.OnRaised event" Url="html/E_W_EventTemplate_2_OnRaised.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2&gt;.Raise method" Url="html/M_W_EventTemplate_2_Raise.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg&gt; class">
+    <HelpKINode Title="EventTemplate(TEventArg) Class" Url="html/T_W_EventTemplate_1.htm" />
+    <HelpKINode Title="about EventTemplate&lt;TEventArg&gt; class" Url="html/T_W_EventTemplate_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_EventTemplate_1__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EventTemplate&lt;TEventArg&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_1_EventDelegate.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg&gt;.EventTemplate constructor" Url="html/M_W_EventTemplate_1__ctor.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg&gt;.OnRaised event" Url="html/E_W_EventTemplate_1_OnRaised.htm" />
+  <HelpKINode Title="EventTemplate&lt;TEventArg&gt;.Raise method" Url="html/M_W_EventTemplate_1_Raise.htm" />
+  <HelpKINode Title="Exception property">
+    <HelpKINode Title="CallResult.Exception Property " Url="html/P_W_CallResult_Exception.htm" />
+    <HelpKINode Title="Thread.Exception Property " Url="html/P_W_Threading_Thread_Exception.htm" />
+  </HelpKINode>
   <HelpKINode Title="ExecuteInLock method" Url="html/Overload_W_Lockable_1_ExecuteInLock.htm" />
   <HelpKINode Title="ExecuteInLockAsync method" Url="html/Overload_W_Lockable_1_ExecuteInLockAsync.htm" />
   <HelpKINode Title="ExecuteOnValueChanged method" Url="html/M_W_PropertyBase_2_ExecuteOnValueChanged.htm" />
@@ -172,12 +292,14 @@
   </HelpKINode>
   <HelpKINode Title="ExtensionMethods.Lock(Of TItemType) method" Url="html/M_W_ExtensionMethods_Lock__1.htm" />
   <HelpKINode Title="ExtensionMethods.Lock&lt;TItemType&gt; method" Url="html/M_W_ExtensionMethods_Lock__1.htm" />
-  <HelpKINode Title="ExtensionMethods.WaitForValue method" Url="html/Overload_W_ExtensionMethods_WaitForValue.htm" />
+  <HelpKINode Title="ExtensionMethods.Raise method" Url="html/M_W_ExtensionMethods_Raise.htm" />
+  <HelpKINode Title="ExtensionMethods.WaitForValue(Of TItemType) method" Url="html/M_W_ExtensionMethods_WaitForValue__1.htm" />
+  <HelpKINode Title="ExtensionMethods.WaitForValue&lt;TItemType&gt; method" Url="html/M_W_ExtensionMethods_WaitForValue__1.htm" />
+  <HelpKINode Title="ExtensionMethods.WaitForValueAsync method" Url="html/Overload_W_ExtensionMethods_WaitForValueAsync.htm" />
   <HelpKINode Title="Finalize method">
     <HelpKINode Title="ActionQueue(T).Finalize Method " Url="html/M_W_ActionQueue_1_Finalize.htm" />
+    <HelpKINode Title="Disposable.Finalize Method " Url="html/M_W_Disposable_Finalize.htm" />
     <HelpKINode Title="PropertyBase(TOwner, TValue).Finalize Method " Url="html/M_W_PropertyBase_2_Finalize.htm" />
-    <HelpKINode Title="RSA.Finalize Method " Url="html/M_W_Encryption_RSA_Finalize.htm" />
-    <HelpKINode Title="ThreadBase.Finalize Method " Url="html/M_W_Threading_ThreadBase_Finalize.htm" />
   </HelpKINode>
   <HelpKINode Title="FormatLogMessage method" Url="html/M_W_Logging_CustomLogger_FormatLogMessage.htm" />
   <HelpKINode Title="FromBase64 method" Url="html/Overload_W_FromExtensions_FromBase64.htm" />
@@ -200,38 +322,34 @@
     <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Gate.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Gate.htm" />
   </HelpKINode>
-  <HelpKINode Title="Gate(Of T) class">
-    <HelpKINode Title="Gate(T) Class" Url="html/T_W_Threading_Gate_1.htm" />
-    <HelpKINode Title="about Gate(Of T) class" Url="html/T_W_Threading_Gate_1.htm" />
-    <HelpKINode Title="constructor" Url="html/M_W_Threading_Gate_1__ctor.htm" />
+  <HelpKINode Title="Gate(Of TParameterType) class">
+    <HelpKINode Title="Gate(TParameterType) Class" Url="html/T_W_Threading_Gate_1.htm" />
+    <HelpKINode Title="about Gate(Of TParameterType) class" Url="html/T_W_Threading_Gate_1.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_W_Threading_Gate_1__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Gate_1.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Gate_1.htm" />
   </HelpKINode>
-  <HelpKINode Title="Gate(Of T).CallInvokeAction method" Url="html/M_W_Threading_Gate_1_CallInvokeAction.htm" />
-  <HelpKINode Title="Gate(Of T).Cancel method" Url="html/Overload_W_Threading_Gate_1_Cancel.htm" />
-  <HelpKINode Title="Gate(Of T).Dispose method" Url="html/M_W_Threading_Gate_1_Dispose.htm" />
-  <HelpKINode Title="Gate(Of T).Gate constructor" Url="html/M_W_Threading_Gate_1__ctor.htm" />
-  <HelpKINode Title="Gate(Of T).Join method" Url="html/Overload_W_Threading_Gate_1_Join.htm" />
-  <HelpKINode Title="Gate(Of T).Run method" Url="html/M_W_Threading_Gate_1_Run.htm" />
-  <HelpKINode Title="Gate.CallInvokeAction method" Url="html/M_W_Threading_Gate_CallInvokeAction.htm" />
-  <HelpKINode Title="Gate.Cancel method" Url="html/Overload_W_Threading_Gate_Cancel.htm" />
+  <HelpKINode Title="Gate(Of TParameterType).CallAction method" Url="html/M_W_Threading_Gate_1_CallAction.htm" />
+  <HelpKINode Title="Gate(Of TParameterType).Gate constructor" Url="html/Overload_W_Threading_Gate_1__ctor.htm" />
+  <HelpKINode Title="Gate(Of TParameterType).Run method" Url="html/Overload_W_Threading_Gate_1_Run.htm" />
+  <HelpKINode Title="Gate.CallAction method" Url="html/M_W_Threading_Gate_CallAction.htm" />
+  <HelpKINode Title="Gate.Cancel method" Url="html/M_W_Threading_Gate_Cancel.htm" />
   <HelpKINode Title="Gate.Dispose method" Url="html/M_W_Threading_Gate_Dispose.htm" />
   <HelpKINode Title="Gate.Gate constructor" Url="html/M_W_Threading_Gate__ctor.htm" />
+  <HelpKINode Title="Gate.IsComplete property" Url="html/P_W_Threading_Gate_IsComplete.htm" />
+  <HelpKINode Title="Gate.IsRunning property" Url="html/P_W_Threading_Gate_IsRunning.htm" />
   <HelpKINode Title="Gate.Join method" Url="html/Overload_W_Threading_Gate_Join.htm" />
   <HelpKINode Title="Gate.Run method" Url="html/M_W_Threading_Gate_Run.htm" />
-  <HelpKINode Title="Gate&lt;T&gt; class">
-    <HelpKINode Title="Gate(T) Class" Url="html/T_W_Threading_Gate_1.htm" />
-    <HelpKINode Title="about Gate&lt;T&gt; class" Url="html/T_W_Threading_Gate_1.htm" />
-    <HelpKINode Title="constructor" Url="html/M_W_Threading_Gate_1__ctor.htm" />
+  <HelpKINode Title="Gate&lt;TParameterType&gt; class">
+    <HelpKINode Title="Gate(TParameterType) Class" Url="html/T_W_Threading_Gate_1.htm" />
+    <HelpKINode Title="about Gate&lt;TParameterType&gt; class" Url="html/T_W_Threading_Gate_1.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_W_Threading_Gate_1__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Gate_1.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Gate_1.htm" />
   </HelpKINode>
-  <HelpKINode Title="Gate&lt;T&gt;.CallInvokeAction method" Url="html/M_W_Threading_Gate_1_CallInvokeAction.htm" />
-  <HelpKINode Title="Gate&lt;T&gt;.Cancel method" Url="html/Overload_W_Threading_Gate_1_Cancel.htm" />
-  <HelpKINode Title="Gate&lt;T&gt;.Dispose method" Url="html/M_W_Threading_Gate_1_Dispose.htm" />
-  <HelpKINode Title="Gate&lt;T&gt;.Gate constructor" Url="html/M_W_Threading_Gate_1__ctor.htm" />
-  <HelpKINode Title="Gate&lt;T&gt;.Join method" Url="html/Overload_W_Threading_Gate_1_Join.htm" />
-  <HelpKINode Title="Gate&lt;T&gt;.Run method" Url="html/M_W_Threading_Gate_1_Run.htm" />
+  <HelpKINode Title="Gate&lt;TParameterType&gt;.CallAction method" Url="html/M_W_Threading_Gate_1_CallAction.htm" />
+  <HelpKINode Title="Gate&lt;TParameterType&gt;.Gate constructor" Url="html/Overload_W_Threading_Gate_1__ctor.htm" />
+  <HelpKINode Title="Gate&lt;TParameterType&gt;.Run method" Url="html/Overload_W_Threading_Gate_1_Run.htm" />
   <HelpKINode Title="GateMethods class">
     <HelpKINode Title="GateMethods Class" Url="html/T_W_Threading_GateMethods.htm" />
     <HelpKINode Title="about GateMethods class" Url="html/T_W_Threading_GateMethods.htm" />
@@ -247,10 +365,6 @@
   <HelpKINode Title="Information enumeration member" Url="html/T_W_Logging_Log_LogMessageCategory.htm" />
   <HelpKINode Title="InitializeProperties method" Url="html/M_W_PropertyHostMethods_InitializeProperties.htm" />
   <HelpKINode Title="Instance property" Url="html/P_W_Singleton_1_Instance.htm" />
-  <HelpKINode Title="InvokeAction method">
-    <HelpKINode Title="Thread(TCustomData).InvokeAction Method " Url="html/M_W_Threading_Thread_1_InvokeAction.htm" />
-    <HelpKINode Title="ThreadBase.InvokeAction Method " Url="html/M_W_Threading_ThreadBase_InvokeAction.htm" />
-  </HelpKINode>
   <HelpKINode Title="InvokeEx method" Url="html/Overload_W_InvokeExtensions_InvokeEx.htm" />
   <HelpKINode Title="InvokeExtensions class">
     <HelpKINode Title="InvokeExtensions Class" Url="html/T_W_InvokeExtensions.htm" />
@@ -258,7 +372,6 @@
     <HelpKINode Title="methods" Url="html/Methods_T_W_InvokeExtensions.htm" />
   </HelpKINode>
   <HelpKINode Title="InvokeExtensions.InvokeEx method" Url="html/Overload_W_InvokeExtensions_InvokeEx.htm" />
-  <HelpKINode Title="InvokeOnComplete method" Url="html/M_W_Threading_ThreadBase_InvokeOnComplete.htm" />
   <HelpKINode Title="IOwnedProperty interface">
     <HelpKINode Title="IOwnedProperty Interface" Url="html/T_W_IOwnedProperty.htm" />
     <HelpKINode Title="about IOwnedProperty interface" Url="html/T_W_IOwnedProperty.htm" />
@@ -283,7 +396,10 @@
     <HelpKINode Title="properties" Url="html/Properties_T_W_IProperty_1.htm" />
   </HelpKINode>
   <HelpKINode Title="IProperty&lt;TValue&gt;.Value property" Url="html/P_W_IProperty_1_Value.htm" />
-  <HelpKINode Title="IsBusy property" Url="html/P_W_Threading_ThreadBase_IsBusy.htm" />
+  <HelpKINode Title="IsComplete property">
+    <HelpKINode Title="Gate.IsComplete Property " Url="html/P_W_Threading_Gate_IsComplete.htm" />
+    <HelpKINode Title="Thread.IsComplete Property " Url="html/P_W_Threading_Thread_IsComplete.htm" />
+  </HelpKINode>
   <HelpKINode Title="IsDirty method" Url="html/M_W_PropertyHostMethods_IsDirty.htm" />
   <HelpKINode Title="IsDirty property">
     <HelpKINode Title="IProperty.IsDirty Property " Url="html/P_W_IProperty_IsDirty.htm" />
@@ -291,16 +407,21 @@
     <HelpKINode Title="PropertyHost.IsDirty Property " Url="html/P_W_PropertyHost_IsDirty.htm" />
     <HelpKINode Title="PropertyHostNotifier.IsDirty Property " Url="html/P_W_PropertyHostNotifier_IsDirty.htm" />
   </HelpKINode>
+  <HelpKINode Title="IsDisposed field" Url="html/F_W_Disposable_IsDisposed.htm" />
   <HelpKINode Title="IsDisposed property" Url="html/P_W_Logging_CustomLogger_IsDisposed.htm" />
-  <HelpKINode Title="IsRunning property" Url="html/P_W_Threading_ThreadBase_IsRunning.htm" />
+  <HelpKINode Title="IsDisposing field" Url="html/F_W_Disposable_IsDisposing.htm" />
+  <HelpKINode Title="IsFaulted property" Url="html/P_W_Threading_Thread_IsFaulted.htm" />
+  <HelpKINode Title="IsRunning property">
+    <HelpKINode Title="Gate.IsRunning Property " Url="html/P_W_Threading_Gate_IsRunning.htm" />
+    <HelpKINode Title="Thread.IsRunning Property " Url="html/P_W_Threading_Thread_IsRunning.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IsStarted property" Url="html/P_W_Threading_Thread_IsStarted.htm" />
   <HelpKINode Title="IsValidBase64 method" Url="html/M_W_StringExtensions_IsValidBase64.htm" />
   <HelpKINode Title="Join method">
-    <HelpKINode Title="Gate(T).Join Method " Url="html/Overload_W_Threading_Gate_1_Join.htm" />
     <HelpKINode Title="Gate.Join Method " Url="html/Overload_W_Threading_Gate_Join.htm" />
     <HelpKINode Title="Thread.Join Method " Url="html/Overload_W_Threading_Thread_Join.htm" />
-    <HelpKINode Title="ThreadBase.Join Method " Url="html/Overload_W_Threading_ThreadBase_Join.htm" />
   </HelpKINode>
-  <HelpKINode Title="LegalKeySizes property" Url="html/P_W_Encryption_RSA_LegalKeySizes.htm" />
+  <HelpKINode Title="LegalKeySizes method" Url="html/M_W_Encryption_RSAMethods_LegalKeySizes.htm" />
   <HelpKINode Title="LoadValue method" Url="html/M_W_PropertyBase_2_LoadValue.htm" />
   <HelpKINode Title="Lock(Of TItemType) method" Url="html/M_W_ExtensionMethods_Lock__1.htm" />
   <HelpKINode Title="Lock&lt;TItemType&gt; method" Url="html/M_W_ExtensionMethods_Lock__1.htm" />
@@ -390,18 +511,26 @@
   <HelpKINode Title="MessageHistory property" Url="html/P_W_Logging_Log_MessageHistory.htm" />
   <HelpKINode Title="Messages property" Url="html/P_W_Logging_Log_LogMessageHistory_Messages.htm" />
   <HelpKINode Title="Name property" Url="html/P_W_Logging_CustomLogger_Name.htm" />
-  <HelpKINode Title="OnDispose method" Url="html/M_W_Logging_CustomLogger_OnDispose.htm" />
-  <HelpKINode Title="OnExit property" Url="html/P_W_Threading_ThreadBase_OnExit.htm" />
+  <HelpKINode Title="OnDispose method">
+    <HelpKINode Title="CustomLogger.OnDispose Method " Url="html/M_W_Logging_CustomLogger_OnDispose.htm" />
+    <HelpKINode Title="Disposable.OnDispose Method " Url="html/M_W_Disposable_OnDispose.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OnDisposeUnmanaged method" Url="html/M_W_Disposable_OnDisposeUnmanaged.htm" />
   <HelpKINode Title="OnPropertyChanged method">
     <HelpKINode Title="PropertyBase(TOwner, TValue).OnPropertyChanged Method " Url="html/M_W_PropertyBase_2_OnPropertyChanged.htm" />
     <HelpKINode Title="PropertyChangedNotifier.OnPropertyChanged Method " Url="html/M_W_PropertyChangedNotifier_OnPropertyChanged.htm" />
   </HelpKINode>
+  <HelpKINode Title="OnRaised event">
+    <HelpKINode Title="EventTemplate(TEventArg).OnRaised Event" Url="html/E_W_EventTemplate_1_OnRaised.htm" />
+    <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2).OnRaised Event" Url="html/E_W_EventTemplate_2_OnRaised.htm" />
+    <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2, TEventArg3).OnRaised Event" Url="html/E_W_EventTemplate_3_OnRaised.htm" />
+    <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4).OnRaised Event" Url="html/E_W_EventTemplate_4_OnRaised.htm" />
+    <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5).OnRaised Event" Url="html/E_W_EventTemplate_5_OnRaised.htm" />
+    <HelpKINode Title="EventTemplate.OnRaised Event" Url="html/E_W_EventTemplate_OnRaised.htm" />
+  </HelpKINode>
   <HelpKINode Title="OnValueChanged field" Url="html/F_W_PropertyBase_2_OnValueChanged.htm" />
   <HelpKINode Title="Owner property" Url="html/P_W_PropertyBase_2_Owner.htm" />
-  <HelpKINode Title="PrivateKey property">
-    <HelpKINode Title="PublicPrivateKeyPair.PrivateKey Property " Url="html/P_W_Encryption_PublicPrivateKeyPair_PrivateKey.htm" />
-    <HelpKINode Title="RSA.PrivateKey Property " Url="html/P_W_Encryption_RSA_PrivateKey.htm" />
-  </HelpKINode>
+  <HelpKINode Title="PrivateKey property" Url="html/P_W_Encryption_PublicPrivateKeyPair_PrivateKey.htm" />
   <HelpKINode Title="Property(Of TOwner, TValue) class">
     <HelpKINode Title="Property(TOwner, TValue) Class" Url="html/T_W_Property_2.htm" />
     <HelpKINode Title="about Property(Of TOwner, TValue) class" Url="html/T_W_Property_2.htm" />
@@ -547,10 +676,7 @@
   <HelpKINode Title="PropertyHostNotifier.IsDirty property" Url="html/P_W_PropertyHostNotifier_IsDirty.htm" />
   <HelpKINode Title="PropertyHostNotifier.MarkAsClean method" Url="html/M_W_PropertyHostNotifier_MarkAsClean.htm" />
   <HelpKINode Title="PropertyHostNotifier.PropertyHostNotifier constructor" Url="html/M_W_PropertyHostNotifier__ctor.htm" />
-  <HelpKINode Title="PublicKey property">
-    <HelpKINode Title="PublicPrivateKeyPair.PublicKey Property " Url="html/P_W_Encryption_PublicPrivateKeyPair_PublicKey.htm" />
-    <HelpKINode Title="RSA.PublicKey Property " Url="html/P_W_Encryption_RSA_PublicKey.htm" />
-  </HelpKINode>
+  <HelpKINode Title="PublicKey property" Url="html/P_W_Encryption_PublicPrivateKeyPair_PublicKey.htm" />
   <HelpKINode Title="PublicPrivateKeyPair class">
     <HelpKINode Title="PublicPrivateKeyPair Class" Url="html/T_W_Encryption_PublicPrivateKeyPair.htm" />
     <HelpKINode Title="about PublicPrivateKeyPair class" Url="html/T_W_Encryption_PublicPrivateKeyPair.htm" />
@@ -562,37 +688,35 @@
   <HelpKINode Title="PublicPrivateKeyPair.PublicKey property" Url="html/P_W_Encryption_PublicPrivateKeyPair_PublicKey.htm" />
   <HelpKINode Title="PublicPrivateKeyPair.PublicPrivateKeyPair constructor" Url="html/M_W_Encryption_PublicPrivateKeyPair__ctor.htm" />
   <HelpKINode Title="Queue property" Url="html/P_W_ActionQueue_1_Queue.htm" />
+  <HelpKINode Title="Raise method">
+    <HelpKINode Title="EventTemplate(TEventArg).Raise Method " Url="html/M_W_EventTemplate_1_Raise.htm" />
+    <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2).Raise Method " Url="html/M_W_EventTemplate_2_Raise.htm" />
+    <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2, TEventArg3).Raise Method " Url="html/M_W_EventTemplate_3_Raise.htm" />
+    <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4).Raise Method " Url="html/M_W_EventTemplate_4_Raise.htm" />
+    <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5).Raise Method " Url="html/M_W_EventTemplate_5_Raise.htm" />
+    <HelpKINode Title="EventTemplate.Raise Method " Url="html/M_W_EventTemplate_Raise.htm" />
+    <HelpKINode Title="ExtensionMethods.Raise Method " Url="html/M_W_ExtensionMethods_Raise.htm" />
+  </HelpKINode>
   <HelpKINode Title="RaiseOnPropertyChanged method" Url="html/M_W_PropertyChangedNotifier_RaiseOnPropertyChanged.htm" />
   <HelpKINode Title="RaisePropertyValueChanged method" Url="html/M_W_PropertyBase_2_RaisePropertyValueChanged.htm" />
   <HelpKINode Title="RaisePropertyValueChanging method" Url="html/M_W_PropertyBase_2_RaisePropertyValueChanging.htm" />
   <HelpKINode Title="ResetToDefaultValue method" Url="html/M_W_PropertyBase_2_ResetToDefaultValue.htm" />
   <HelpKINode Title="Result property" Url="html/P_W_CallResult_1_Result.htm" />
-  <HelpKINode Title="RSA class">
-    <HelpKINode Title="RSA Class" Url="html/T_W_Encryption_RSA.htm" />
-    <HelpKINode Title="about RSA class" Url="html/T_W_Encryption_RSA.htm" />
-    <HelpKINode Title="constructor" Url="html/M_W_Encryption_RSA__ctor.htm" />
-    <HelpKINode Title="methods" Url="html/Methods_T_W_Encryption_RSA.htm" />
-    <HelpKINode Title="properties" Url="html/Properties_T_W_Encryption_RSA.htm" />
-  </HelpKINode>
-  <HelpKINode Title="RSA.Decrypt method" Url="html/Overload_W_Encryption_RSA_Decrypt.htm" />
-  <HelpKINode Title="RSA.Dispose method" Url="html/M_W_Encryption_RSA_Dispose.htm" />
-  <HelpKINode Title="RSA.Encrypt method" Url="html/Overload_W_Encryption_RSA_Encrypt.htm" />
-  <HelpKINode Title="RSA.Finalize method" Url="html/M_W_Encryption_RSA_Finalize.htm" />
-  <HelpKINode Title="RSA.LegalKeySizes property" Url="html/P_W_Encryption_RSA_LegalKeySizes.htm" />
-  <HelpKINode Title="RSA.PrivateKey property" Url="html/P_W_Encryption_RSA_PrivateKey.htm" />
-  <HelpKINode Title="RSA.PublicKey property" Url="html/P_W_Encryption_RSA_PublicKey.htm" />
-  <HelpKINode Title="RSA.RSA constructor" Url="html/M_W_Encryption_RSA__ctor.htm" />
   <HelpKINode Title="RSAMethods class">
     <HelpKINode Title="RSAMethods Class" Url="html/T_W_Encryption_RSAMethods.htm" />
     <HelpKINode Title="about RSAMethods class" Url="html/T_W_Encryption_RSAMethods.htm" />
     <HelpKINode Title="constructor" Url="html/M_W_Encryption_RSAMethods__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_Encryption_RSAMethods.htm" />
   </HelpKINode>
-  <HelpKINode Title="RSAMethods.Decrypt method" Url="html/Overload_W_Encryption_RSAMethods_Decrypt.htm" />
-  <HelpKINode Title="RSAMethods.Encrypt method" Url="html/Overload_W_Encryption_RSAMethods_Encrypt.htm" />
+  <HelpKINode Title="RSAMethods.CreateKeyPair method" Url="html/M_W_Encryption_RSAMethods_CreateKeyPair.htm" />
+  <HelpKINode Title="RSAMethods.Decrypt method" Url="html/M_W_Encryption_RSAMethods_Decrypt.htm" />
+  <HelpKINode Title="RSAMethods.DecryptAsync method" Url="html/M_W_Encryption_RSAMethods_DecryptAsync.htm" />
+  <HelpKINode Title="RSAMethods.Encrypt method" Url="html/M_W_Encryption_RSAMethods_Encrypt.htm" />
+  <HelpKINode Title="RSAMethods.EncryptAsync method" Url="html/M_W_Encryption_RSAMethods_EncryptAsync.htm" />
+  <HelpKINode Title="RSAMethods.LegalKeySizes method" Url="html/M_W_Encryption_RSAMethods_LegalKeySizes.htm" />
   <HelpKINode Title="RSAMethods.RSAMethods constructor" Url="html/M_W_Encryption_RSAMethods__ctor.htm" />
   <HelpKINode Title="Run method">
-    <HelpKINode Title="Gate(T).Run Method " Url="html/M_W_Threading_Gate_1_Run.htm" />
+    <HelpKINode Title="Gate(TParameterType).Run Method " Url="html/Overload_W_Threading_Gate_1_Run.htm" />
     <HelpKINode Title="Gate.Run Method " Url="html/M_W_Threading_Gate_Run.htm" />
   </HelpKINode>
   <HelpKINode Title="SetOwner method" Url="html/M_W_IOwnedProperty_SetOwner.htm" />
@@ -618,86 +742,71 @@
   </HelpKINode>
   <HelpKINode Title="Singleton&lt;TSingletonType&gt;.Instance property" Url="html/P_W_Singleton_1_Instance.htm" />
   <HelpKINode Title="Singleton&lt;TSingletonType&gt;.Singleton constructor" Url="html/M_W_Singleton_1__ctor.htm" />
-  <HelpKINode Title="Sleep method" Url="html/M_W_Threading_Thread_Sleep.htm" />
+  <HelpKINode Title="Sleep enumeration member" Url="html/T_W_Threading_CPUProfileEnum.htm" />
+  <HelpKINode Title="Sleep method" Url="html/Overload_W_Threading_Thread_Sleep.htm" />
+  <HelpKINode Title="SpinWait0 enumeration member" Url="html/T_W_Threading_CPUProfileEnum.htm" />
+  <HelpKINode Title="SpinWait1 enumeration member" Url="html/T_W_Threading_CPUProfileEnum.htm" />
+  <HelpKINode Title="Start method">
+    <HelpKINode Title="Thread(TParameterType).Start Method " Url="html/Overload_W_Threading_Thread_1_Start.htm" />
+    <HelpKINode Title="Thread.Start Method " Url="html/Overload_W_Threading_Thread_Start.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Stop method" Url="html/M_W_Threading_Thread_Stop.htm" />
   <HelpKINode Title="StringExtensions class">
     <HelpKINode Title="StringExtensions Class" Url="html/T_W_StringExtensions.htm" />
     <HelpKINode Title="about StringExtensions class" Url="html/T_W_StringExtensions.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_StringExtensions.htm" />
   </HelpKINode>
   <HelpKINode Title="StringExtensions.IsValidBase64 method" Url="html/M_W_StringExtensions_IsValidBase64.htm" />
-  <HelpKINode Title="Success property">
-    <HelpKINode Title="CallResult.Success Property " Url="html/P_W_CallResult_Success.htm" />
-    <HelpKINode Title="ThreadBase.Success Property " Url="html/P_W_Threading_ThreadBase_Success.htm" />
-  </HelpKINode>
+  <HelpKINode Title="Success property" Url="html/P_W_CallResult_Success.htm" />
   <HelpKINode Title="Thread class">
     <HelpKINode Title="Thread Class" Url="html/T_W_Threading_Thread.htm" />
     <HelpKINode Title="about Thread class" Url="html/T_W_Threading_Thread.htm" />
-    <HelpKINode Title="constructor" Url="html/M_W_Threading_Thread__ctor.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_W_Threading_Thread__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Thread.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Thread.htm" />
   </HelpKINode>
-  <HelpKINode Title="Thread(Of TCustomData) class">
-    <HelpKINode Title="Thread(TCustomData) Class" Url="html/T_W_Threading_Thread_1.htm" />
-    <HelpKINode Title="about Thread(Of TCustomData) class" Url="html/T_W_Threading_Thread_1.htm" />
-    <HelpKINode Title="constructor" Url="html/M_W_Threading_Thread_1__ctor.htm" />
+  <HelpKINode Title="Thread(Of TParameterType) class">
+    <HelpKINode Title="Thread(TParameterType) Class" Url="html/T_W_Threading_Thread_1.htm" />
+    <HelpKINode Title="about Thread(Of TParameterType) class" Url="html/T_W_Threading_Thread_1.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_W_Threading_Thread_1__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Thread_1.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Thread_1.htm" />
   </HelpKINode>
-  <HelpKINode Title="Thread(Of TCustomData).Action property" Url="html/P_W_Threading_Thread_1_Action.htm" />
-  <HelpKINode Title="Thread(Of TCustomData).Create(Of TCustomDataType) method" Url="html/M_W_Threading_Thread_1_Create__1.htm" />
-  <HelpKINode Title="Thread(Of TCustomData).CustomData property" Url="html/P_W_Threading_Thread_1_CustomData.htm" />
-  <HelpKINode Title="Thread(Of TCustomData).InvokeAction method" Url="html/M_W_Threading_Thread_1_InvokeAction.htm" />
-  <HelpKINode Title="Thread(Of TCustomData).Thread constructor" Url="html/M_W_Threading_Thread_1__ctor.htm" />
-  <HelpKINode Title="Thread.CallInvokeAction method" Url="html/M_W_Threading_Thread_CallInvokeAction.htm" />
-  <HelpKINode Title="Thread.CallInvokeOnComplete method" Url="html/M_W_Threading_Thread_CallInvokeOnComplete.htm" />
-  <HelpKINode Title="Thread.Cancel method" Url="html/Overload_W_Threading_Thread_Cancel.htm" />
-  <HelpKINode Title="Thread.Create method" Url="html/M_W_Threading_Thread_Create.htm" />
+  <HelpKINode Title="Thread(Of TParameterType).CallAction method" Url="html/M_W_Threading_Thread_1_CallAction.htm" />
+  <HelpKINode Title="Thread(Of TParameterType).Start method" Url="html/Overload_W_Threading_Thread_1_Start.htm" />
+  <HelpKINode Title="Thread(Of TParameterType).Thread constructor" Url="html/Overload_W_Threading_Thread_1__ctor.htm" />
+  <HelpKINode Title="Thread.CallAction method" Url="html/M_W_Threading_Thread_CallAction.htm" />
+  <HelpKINode Title="Thread.Cancel method" Url="html/M_W_Threading_Thread_Cancel.htm" />
+  <HelpKINode Title="Thread.Create method" Url="html/Overload_W_Threading_Thread_Create.htm" />
   <HelpKINode Title="Thread.Dispose method" Url="html/M_W_Threading_Thread_Dispose.htm" />
+  <HelpKINode Title="Thread.Exception property" Url="html/P_W_Threading_Thread_Exception.htm" />
+  <HelpKINode Title="Thread.IsComplete property" Url="html/P_W_Threading_Thread_IsComplete.htm" />
+  <HelpKINode Title="Thread.IsFaulted property" Url="html/P_W_Threading_Thread_IsFaulted.htm" />
+  <HelpKINode Title="Thread.IsRunning property" Url="html/P_W_Threading_Thread_IsRunning.htm" />
+  <HelpKINode Title="Thread.IsStarted property" Url="html/P_W_Threading_Thread_IsStarted.htm" />
   <HelpKINode Title="Thread.Join method" Url="html/Overload_W_Threading_Thread_Join.htm" />
-  <HelpKINode Title="Thread.Sleep method" Url="html/M_W_Threading_Thread_Sleep.htm" />
-  <HelpKINode Title="Thread.Thread constructor" Url="html/M_W_Threading_Thread__ctor.htm" />
-  <HelpKINode Title="Thread&lt;TCustomData&gt; class">
-    <HelpKINode Title="Thread(TCustomData) Class" Url="html/T_W_Threading_Thread_1.htm" />
-    <HelpKINode Title="about Thread&lt;TCustomData&gt; class" Url="html/T_W_Threading_Thread_1.htm" />
-    <HelpKINode Title="constructor" Url="html/M_W_Threading_Thread_1__ctor.htm" />
+  <HelpKINode Title="Thread.Sleep method" Url="html/Overload_W_Threading_Thread_Sleep.htm" />
+  <HelpKINode Title="Thread.Start method" Url="html/Overload_W_Threading_Thread_Start.htm" />
+  <HelpKINode Title="Thread.Stop method" Url="html/M_W_Threading_Thread_Stop.htm" />
+  <HelpKINode Title="Thread.Thread constructor" Url="html/Overload_W_Threading_Thread__ctor.htm" />
+  <HelpKINode Title="Thread.Token property" Url="html/P_W_Threading_Thread_Token.htm" />
+  <HelpKINode Title="Thread&lt;TParameterType&gt; class">
+    <HelpKINode Title="Thread(TParameterType) Class" Url="html/T_W_Threading_Thread_1.htm" />
+    <HelpKINode Title="about Thread&lt;TParameterType&gt; class" Url="html/T_W_Threading_Thread_1.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_W_Threading_Thread_1__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Thread_1.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Thread_1.htm" />
   </HelpKINode>
-  <HelpKINode Title="Thread&lt;TCustomData&gt;.Action property" Url="html/P_W_Threading_Thread_1_Action.htm" />
-  <HelpKINode Title="Thread&lt;TCustomData&gt;.Create&lt;TCustomDataType&gt; method" Url="html/M_W_Threading_Thread_1_Create__1.htm" />
-  <HelpKINode Title="Thread&lt;TCustomData&gt;.CustomData property" Url="html/P_W_Threading_Thread_1_CustomData.htm" />
-  <HelpKINode Title="Thread&lt;TCustomData&gt;.InvokeAction method" Url="html/M_W_Threading_Thread_1_InvokeAction.htm" />
-  <HelpKINode Title="Thread&lt;TCustomData&gt;.Thread constructor" Url="html/M_W_Threading_Thread_1__ctor.htm" />
-  <HelpKINode Title="ThreadBase class">
-    <HelpKINode Title="ThreadBase Class" Url="html/T_W_Threading_ThreadBase.htm" />
-    <HelpKINode Title="about ThreadBase class" Url="html/T_W_Threading_ThreadBase.htm" />
-    <HelpKINode Title="constructor" Url="html/M_W_Threading_ThreadBase__ctor.htm" />
-    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_ThreadBase.htm" />
-    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_ThreadBase.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ThreadBase.Action property" Url="html/P_W_Threading_ThreadBase_Action.htm" />
-  <HelpKINode Title="ThreadBase.CallInvokeAction method" Url="html/M_W_Threading_ThreadBase_CallInvokeAction.htm" />
-  <HelpKINode Title="ThreadBase.CallInvokeOnComplete method" Url="html/M_W_Threading_ThreadBase_CallInvokeOnComplete.htm" />
-  <HelpKINode Title="ThreadBase.Cancel method" Url="html/Overload_W_Threading_ThreadBase_Cancel.htm" />
-  <HelpKINode Title="ThreadBase.Cts property" Url="html/P_W_Threading_ThreadBase_Cts.htm" />
-  <HelpKINode Title="ThreadBase.Dispose method" Url="html/M_W_Threading_ThreadBase_Dispose.htm" />
-  <HelpKINode Title="ThreadBase.Finalize method" Url="html/M_W_Threading_ThreadBase_Finalize.htm" />
-  <HelpKINode Title="ThreadBase.InvokeAction method" Url="html/M_W_Threading_ThreadBase_InvokeAction.htm" />
-  <HelpKINode Title="ThreadBase.InvokeOnComplete method" Url="html/M_W_Threading_ThreadBase_InvokeOnComplete.htm" />
-  <HelpKINode Title="ThreadBase.IsBusy property" Url="html/P_W_Threading_ThreadBase_IsBusy.htm" />
-  <HelpKINode Title="ThreadBase.IsRunning property" Url="html/P_W_Threading_ThreadBase_IsRunning.htm" />
-  <HelpKINode Title="ThreadBase.Join method" Url="html/Overload_W_Threading_ThreadBase_Join.htm" />
-  <HelpKINode Title="ThreadBase.OnExit property" Url="html/P_W_Threading_ThreadBase_OnExit.htm" />
-  <HelpKINode Title="ThreadBase.Success property" Url="html/P_W_Threading_ThreadBase_Success.htm" />
-  <HelpKINode Title="ThreadBase.ThreadBase constructor" Url="html/M_W_Threading_ThreadBase__ctor.htm" />
-  <HelpKINode Title="ThreadBase.ThreadProc method" Url="html/M_W_Threading_ThreadBase_ThreadProc.htm" />
+  <HelpKINode Title="Thread&lt;TParameterType&gt;.CallAction method" Url="html/M_W_Threading_Thread_1_CallAction.htm" />
+  <HelpKINode Title="Thread&lt;TParameterType&gt;.Start method" Url="html/Overload_W_Threading_Thread_1_Start.htm" />
+  <HelpKINode Title="Thread&lt;TParameterType&gt;.Thread constructor" Url="html/Overload_W_Threading_Thread_1__ctor.htm" />
   <HelpKINode Title="ThreadExtensions class">
     <HelpKINode Title="ThreadExtensions Class" Url="html/T_W_Threading_ThreadExtensions.htm" />
     <HelpKINode Title="about ThreadExtensions class" Url="html/T_W_Threading_ThreadExtensions.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_ThreadExtensions.htm" />
   </HelpKINode>
   <HelpKINode Title="ThreadExtensions.CreateThread method" Url="html/Overload_W_Threading_ThreadExtensions_CreateThread.htm" />
-  <HelpKINode Title="ThreadProc method" Url="html/M_W_Threading_ThreadBase_ThreadProc.htm" />
+  <HelpKINode Title="Token property" Url="html/P_W_Threading_Thread_Token.htm" />
   <HelpKINode Title="UnlockedValue property" Url="html/P_W_Lockable_1_UnlockedValue.htm" />
   <HelpKINode Title="v method" Url="html/Overload_W_Logging_Log_v.htm" />
   <HelpKINode Title="Value property">
@@ -717,11 +826,33 @@
   <HelpKINode Title="W.CallResult class" Url="html/T_W_CallResult.htm" />
   <HelpKINode Title="W.CallResult(Of TResult) class" Url="html/T_W_CallResult_1.htm" />
   <HelpKINode Title="W.CallResult&lt;TResult&gt; class" Url="html/T_W_CallResult_1.htm" />
+  <HelpKINode Title="W.Disposable class" Url="html/T_W_Disposable.htm" />
   <HelpKINode Title="W.Encryption namespace" Url="html/N_W_Encryption.htm" />
   <HelpKINode Title="W.Encryption.MD5 class" Url="html/T_W_Encryption_MD5.htm" />
   <HelpKINode Title="W.Encryption.PublicPrivateKeyPair class" Url="html/T_W_Encryption_PublicPrivateKeyPair.htm" />
-  <HelpKINode Title="W.Encryption.RSA class" Url="html/T_W_Encryption_RSA.htm" />
   <HelpKINode Title="W.Encryption.RSAMethods class" Url="html/T_W_Encryption_RSAMethods.htm" />
+  <HelpKINode Title="W.EventTemplate class" Url="html/T_W_EventTemplate.htm" />
+  <HelpKINode Title="W.EventTemplate(Of TEventArg) class" Url="html/T_W_EventTemplate_1.htm" />
+  <HelpKINode Title="W.EventTemplate(Of TEventArg).EventDelegate delegate" Url="html/T_W_EventTemplate_1_EventDelegate.htm" />
+  <HelpKINode Title="W.EventTemplate(Of TEventArg1, TEventArg2) class" Url="html/T_W_EventTemplate_2.htm" />
+  <HelpKINode Title="W.EventTemplate(Of TEventArg1, TEventArg2).EventDelegate delegate" Url="html/T_W_EventTemplate_2_EventDelegate.htm" />
+  <HelpKINode Title="W.EventTemplate(Of TEventArg1, TEventArg2, TEventArg3) class" Url="html/T_W_EventTemplate_3.htm" />
+  <HelpKINode Title="W.EventTemplate(Of TEventArg1, TEventArg2, TEventArg3).EventDelegate delegate" Url="html/T_W_EventTemplate_3_EventDelegate.htm" />
+  <HelpKINode Title="W.EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4) class" Url="html/T_W_EventTemplate_4.htm" />
+  <HelpKINode Title="W.EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4).EventDelegate delegate" Url="html/T_W_EventTemplate_4_EventDelegate.htm" />
+  <HelpKINode Title="W.EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5) class" Url="html/T_W_EventTemplate_5.htm" />
+  <HelpKINode Title="W.EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5).EventDelegate delegate" Url="html/T_W_EventTemplate_5_EventDelegate.htm" />
+  <HelpKINode Title="W.EventTemplate.EventDelegate delegate" Url="html/T_W_EventTemplate_EventDelegate.htm" />
+  <HelpKINode Title="W.EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5&gt; class" Url="html/T_W_EventTemplate_5.htm" />
+  <HelpKINode Title="W.EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_5_EventDelegate.htm" />
+  <HelpKINode Title="W.EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4&gt; class" Url="html/T_W_EventTemplate_4.htm" />
+  <HelpKINode Title="W.EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_4_EventDelegate.htm" />
+  <HelpKINode Title="W.EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3&gt; class" Url="html/T_W_EventTemplate_3.htm" />
+  <HelpKINode Title="W.EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_3_EventDelegate.htm" />
+  <HelpKINode Title="W.EventTemplate&lt;TEventArg1, TEventArg2&gt; class" Url="html/T_W_EventTemplate_2.htm" />
+  <HelpKINode Title="W.EventTemplate&lt;TEventArg1, TEventArg2&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_2_EventDelegate.htm" />
+  <HelpKINode Title="W.EventTemplate&lt;TEventArg&gt; class" Url="html/T_W_EventTemplate_1.htm" />
+  <HelpKINode Title="W.EventTemplate&lt;TEventArg&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_1_EventDelegate.htm" />
   <HelpKINode Title="W.ExtensionMethods class" Url="html/T_W_ExtensionMethods.htm" />
   <HelpKINode Title="W.FromExtensions class" Url="html/T_W_FromExtensions.htm" />
   <HelpKINode Title="W.InvokeExtensions class" Url="html/T_W_InvokeExtensions.htm" />
@@ -757,16 +888,19 @@
   <HelpKINode Title="W.Singleton&lt;TSingletonType&gt; class" Url="html/T_W_Singleton_1.htm" />
   <HelpKINode Title="W.StringExtensions class" Url="html/T_W_StringExtensions.htm" />
   <HelpKINode Title="W.Threading namespace" Url="html/N_W_Threading.htm" />
+  <HelpKINode Title="W.Threading.CPUProfileEnum enumeration" Url="html/T_W_Threading_CPUProfileEnum.htm" />
   <HelpKINode Title="W.Threading.Gate class" Url="html/T_W_Threading_Gate.htm" />
-  <HelpKINode Title="W.Threading.Gate(Of T) class" Url="html/T_W_Threading_Gate_1.htm" />
-  <HelpKINode Title="W.Threading.Gate&lt;T&gt; class" Url="html/T_W_Threading_Gate_1.htm" />
+  <HelpKINode Title="W.Threading.Gate(Of TParameterType) class" Url="html/T_W_Threading_Gate_1.htm" />
+  <HelpKINode Title="W.Threading.Gate&lt;TParameterType&gt; class" Url="html/T_W_Threading_Gate_1.htm" />
   <HelpKINode Title="W.Threading.GateMethods class" Url="html/T_W_Threading_GateMethods.htm" />
   <HelpKINode Title="W.Threading.Thread class" Url="html/T_W_Threading_Thread.htm" />
-  <HelpKINode Title="W.Threading.Thread(Of TCustomData) class" Url="html/T_W_Threading_Thread_1.htm" />
-  <HelpKINode Title="W.Threading.Thread&lt;TCustomData&gt; class" Url="html/T_W_Threading_Thread_1.htm" />
-  <HelpKINode Title="W.Threading.ThreadBase class" Url="html/T_W_Threading_ThreadBase.htm" />
+  <HelpKINode Title="W.Threading.Thread(Of TParameterType) class" Url="html/T_W_Threading_Thread_1.htm" />
+  <HelpKINode Title="W.Threading.Thread&lt;TParameterType&gt; class" Url="html/T_W_Threading_Thread_1.htm" />
   <HelpKINode Title="W.Threading.ThreadExtensions class" Url="html/T_W_Threading_ThreadExtensions.htm" />
   <HelpKINode Title="WaitForChanged method" Url="html/M_W_PropertyBase_2_WaitForChanged.htm" />
-  <HelpKINode Title="WaitForValue method" Url="html/Overload_W_ExtensionMethods_WaitForValue.htm" />
+  <HelpKINode Title="WaitForValue(Of TItemType) method" Url="html/M_W_ExtensionMethods_WaitForValue__1.htm" />
+  <HelpKINode Title="WaitForValue&lt;TItemType&gt; method" Url="html/M_W_ExtensionMethods_WaitForValue__1.htm" />
+  <HelpKINode Title="WaitForValueAsync method" Url="html/Overload_W_ExtensionMethods_WaitForValueAsync.htm" />
   <HelpKINode Title="Warning enumeration member" Url="html/T_W_Logging_Log_LogMessageCategory.htm" />
+  <HelpKINode Title="Yield enumeration member" Url="html/T_W_Threading_CPUProfileEnum.htm" />
 </HelpKI>

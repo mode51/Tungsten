@@ -26,8 +26,7 @@
       <summary>
             Places an item in the queue
             </summary>
-      <param name="item">
-      </param>
+      <param name="item">The item to place in the queue</param>
     </member>
     <member name="M:W.ActionQueue`1.Cancel">
       <summary>
@@ -44,12 +43,14 @@
             Creates a new ActionQueue
             </summary>
       <param name="onItemAdded">A callback which is called whenever an item has been enqueued</param>
+      <param name="caller">The name of the method which invoked this constructor</param>
     </member>
     <member name="M:W.ActionQueue`1.#ctor(System.Action{`0},System.String)">
       <summary>
             Creates a new ActionQueue
             </summary>
       <param name="onItemAdded">A callback which is called whenever an item has been enqueued</param>
+      <param name="caller">The name of the method which invoked this constructor</param>
     </member>
     <member name="M:W.ActionQueue`1.Finalize">
       <summary>
@@ -136,8 +137,7 @@
             </summary>
       <typeparam name="TType">The type of object to serialize</typeparam>
       <param name="this">The object to serialize</param>
-      <returns>
-      </returns>
+      <returns>A string containing the object as serialized into xml</returns>
     </member>
     <member name="M:W.AsExtensions.AsCompressed(System.Byte[])">
       <summary>
@@ -188,7 +188,7 @@
       <summary>
             Constructor accepting an initial Success value, an initial Result value and an initial Exception value
             </summary>
-      <param name="success">The initial Success value</param>
+      <param name="success">The initial value for Success</param>
       <param name="result">The initial Result value</param>
       <param name="e">An exception object, if an exception occurred</param>
     </member>
@@ -221,8 +221,7 @@
       <summary>
             Constructor which accepts an initial value for Success
             </summary>
-      <param name="success">
-      </param>
+      <param name="success">The initial value for Success</param>
     </member>
     <member name="M:W.CallResult.#ctor(System.Boolean,System.Exception)">
       <summary>
@@ -234,6 +233,41 @@
     <member name="P:W.CallResult.Empty">
       <summary>
             Provides a new instance of an uninitialized CallResult
+            </summary>
+    </member>
+    <member name="T:W.Disposable">
+      <summary>
+            Provides the Disposable pattern as a base class
+            </summary>
+    </member>
+    <member name="F:W.Disposable.IsDisposed">
+      <summary>
+            If True, the object has been disposed
+            </summary>
+    </member>
+    <member name="F:W.Disposable.IsDisposing">
+      <summary>
+            If True, the object is in the process of disposing
+            </summary>
+    </member>
+    <member name="M:W.Disposable.OnDisposeUnmanaged">
+      <summary>
+            Override to release unmanaged objects
+            </summary>
+    </member>
+    <member name="M:W.Disposable.OnDispose">
+      <summary>
+            Overload to dispose managed objects
+            </summary>
+    </member>
+    <member name="M:W.Disposable.Finalize">
+      <summary>
+            Override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
+            </summary>
+    </member>
+    <member name="M:W.Disposable.Dispose">
+      <summary>
+            This code added to correctly implement the disposable pattern.
             </summary>
     </member>
     <member name="T:W.Encryption.MD5">
@@ -279,136 +313,247 @@
             the public RSA key. Should be shared.
             </summary>
     </member>
-    <member name="T:W.Encryption.RSA">
+    <member name="T:W.Encryption.RSAMethods">
+            Warning is overriding an error
+            XML comment has syntactically incorrect cref attribute
+            <summary><para>
+            Replaces RSA.  This code was adaptd for NetStandard from an article published on CodeProject by Mathew John Schlabaugh in 2007.  It is less complicated but works more often than my initial RSA implementation. See: https://www.codeproject.com/Articles/10877/Public-Key-RSA-Encryption-in-C-NET
+            </para></summary><see cref="!:https://www.codeproject.com/Articles/10877/Public-Key-RSA-Encryption-in-C-NET" /></member>
+    <member name="M:W.Encryption.RSAMethods.LegalKeySizes">
       <summary>
-            Provides RSA encryption functionality
+            Returns an arrary containing the supported key sizes
             </summary>
+      <returns>An array of supported key sizes</returns>
     </member>
-    <member name="P:W.Encryption.RSA.PrivateKey">
+    <member name="M:W.Encryption.RSAMethods.CreateKeyPair(System.Int32)">
       <summary>
-            The private key used to decrypt data(do not share)
+            Generates a public/private key pair
             </summary>
+      <param name="keySize">The key size to use when creating the public and private keys</param>
+      <returns>A newly created PublicPrivateKeyPair containing the public and private keys</returns>
     </member>
-    <member name="P:W.Encryption.RSA.PublicKey">
+    <member name="M:W.Encryption.RSAMethods.Encrypt(System.String,System.Security.Cryptography.RSAParameters)">
       <summary>
-            The public key used to encrypt data (should be shared)
+            Encrypts a string using the specified keysize and public key
             </summary>
-    </member>
-    <member name="P:W.Encryption.RSA.LegalKeySizes">
-      <summary>
-            Gets the key sizes that are supported by the asymmetric algorithm
-            </summary>
-      <returns>An enumeration of the supported key sizes</returns>
-    </member>
-    <member name="M:W.Encryption.RSA.#ctor(System.Int32)">
-      <summary>
-            constructs a new RSA object
-            </summary>
-    </member>
-    <member name="M:W.Encryption.RSA.Finalize">
-      <summary>
-            Destructs the RSA object and calls Dispose 
-            </summary>
-    </member>
-    <member name="M:W.Encryption.RSA.Encrypt(System.String)">
-      <summary>
-            Encrypts a string
-            </summary>
-      <param name="text">The string to encrypt</param>
-      <returns>A string containing the encrypted value</returns>
-    </member>
-    <member name="M:W.Encryption.RSA.Encrypt(System.String,System.Security.Cryptography.RSAParameters)">
-      <summary>
-            Encrypts a string
-            </summary>
-      <param name="text">The string to encrypt</param>
-      <param name="publicKey">The public key used to encrypt the string</param>
-      <returns>A string containing the encrypted value</returns>
-    </member>
-    <member name="M:W.Encryption.RSA.Encrypt(System.Byte[],System.Security.Cryptography.RSAParameters)">
-      <summary>
-            Encrypts a string
-            </summary>
-      <param name="byteData">The data to encrypt</param>
+      <param name="inputString">The data to encrypt</param>
       <param name="publicKey">The public key used to encrypt the data</param>
       <returns>A string containing the encrypted data</returns>
     </member>
-    <member name="M:W.Encryption.RSA.Decrypt(System.String)">
+    <member name="M:W.Encryption.RSAMethods.Decrypt(System.String,System.Security.Cryptography.RSAParameters)">
       <summary>
-            Decrypts a string (previously encrypted with the Encrypt method)
+            Decrypts a string which was previously encrypted with the Encrypt method
             </summary>
-      <param name="base64String">The encrypted string</param>
-      <returns>A string containing the decrypted value</returns>
+      <param name="cipher">The encrypted byte array</param>
+      <param name="privateKey">The private key used to decrypt the data</param>
+      <returns>A byte array containing the decrypted value</returns>
     </member>
-    <member name="M:W.Encryption.RSA.Decrypt(System.String,System.Security.Cryptography.RSAParameters)">
+    <member name="M:W.Encryption.RSAMethods.EncryptAsync(System.String,System.Security.Cryptography.RSAParameters)">
       <summary>
-            Decrypts a string (previously encrypted with the Encrypt method)
+            Asynchronously encrypts a string using the specified keysize and public key
             </summary>
-      <param name="base64String">The encrypted string</param>
-      <param name="privateKey">The private key used to decrypt the string</param>
-      <returns>A string containing the decrypted value</returns>
+      <param name="inputString">The data to encrypt</param>
+      <param name="publicKey">The public key used to encrypt the data</param>
+      <returns>A string containing the encrypted data</returns>
     </member>
-    <member name="M:W.Encryption.RSA.Dispose">
-      <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
-    </member>
-    <member name="T:W.Encryption.RSAMethods">
+    <member name="M:W.Encryption.RSAMethods.DecryptAsync(System.String,System.Security.Cryptography.RSAParameters)">
       <summary>
-            Static Encrypt and Decrypt methods
+            Asynchronously decrypts a string which was previously encrypted with the Encrypt method
+            </summary>
+      <param name="cipher">The encrypted byte array</param>
+      <param name="privateKey">The private key used to decrypt the data</param>
+      <returns>A byte array containing the decrypted value</returns>
+    </member>
+    <member name="T:W.EventTemplate">
+      <summary>
+            Wraps the functionality of delegate, event and RaiseXXX into a single class
             </summary>
     </member>
-    <member name="M:W.Encryption.RSAMethods.Encrypt(System.String,System.String,System.Int32)">
+    <member name="T:W.EventTemplate.EventDelegate">
       <summary>
-            Encrypts a string with RSA encryption
+            The template delegate
             </summary>
-      <param name="text">The string to encrypt</param>
-      <param name="key">The public key to use to encrypt the string</param>
-      <param name="keySize">The keysize, in bits, of the public key</param>
-      <returns>The encrypted value of the specified data</returns>
+      <param name="sender">The object which raised this event</param>
+      <param name="callerMemberName">The name of the method which raised the event</param>
+      <param name="args">An array of untyped arguments</param>
     </member>
-    <member name="M:W.Encryption.RSAMethods.Encrypt(System.String,System.Security.Cryptography.RSAParameters,System.Int32)">
+    <member name="E:W.EventTemplate.OnRaised">
       <summary>
-            Encrypts a string with RSA encryption
+            The template event
             </summary>
-      <param name="text">The string to encrypt</param>
-      <param name="key">The public key to use to encrypt the string</param>
-      <param name="keySize">The keysize, in bits, of the public key</param>
-      <returns>The encrypted value of the specified data</returns>
     </member>
-    <member name="M:W.Encryption.RSAMethods.Encrypt(System.Byte[],System.String,System.Int32)">
+    <member name="M:W.EventTemplate.Raise(System.Object,System.String,System.Object[])">
       <summary>
-            Encrypts a byte array with RSA encryption
+            Raises the template event
             </summary>
-      <param name="byteData">The byte array to encrypt</param>
-      <param name="key">The public key to use to encrypt the byte array</param>
-      <param name="keySize">The keysize, in bits, of the public key</param>
-      <returns>The encrypted byte array of the specified data</returns>
+      <param name="sender">The object which raised this event</param>
+      <param name="callerMemberName">The name of the method which raised the event</param>
+      <param name="args">An array of untyped arguments</param>
     </member>
-    <member name="M:W.Encryption.RSAMethods.Encrypt(System.Byte[],System.Security.Cryptography.RSAParameters,System.Int32)">
+    <member name="T:W.EventTemplate`1">
       <summary>
-            Encrypts a byte array with RSA encryption
+            Wraps the functionality of delegate, event and RaiseXXX into a single class
             </summary>
-      <param name="byteData">The byte array to encrypt</param>
-      <param name="key">The public key to use to encrypt the byte array</param>
-      <param name="keySize">The keysize, in bits, of the public key</param>
-      <returns>The encrypted byte array of the specified data</returns>
+      <typeparam name="TEventArg">The detailed event argument</typeparam>
     </member>
-    <member name="M:W.Encryption.RSAMethods.Decrypt(System.String,System.String,System.Int32)">
+    <member name="T:W.EventTemplate`1.EventDelegate">
       <summary>
-            Decrypts a string previously encrypted with RSA encryption
+            The template delegate
             </summary>
-      <param name="text">The RSA encrypted string</param>
-      <param name="key">The private key to use for decrypting</param>
-      <param name="keySize">The keysize, in bits, of the private key</param>
-      <returns>The decrypted string</returns>
+      <param name="sender">The object which raised this event</param>
+      <param name="arg">The detailed event argument</param>
+      <param name="callerMemberName">The name of the method which raised the event</param>
     </member>
-    <member name="M:W.Encryption.RSAMethods.Decrypt(System.String,System.Security.Cryptography.RSAParameters,System.Int32)">
+    <member name="E:W.EventTemplate`1.OnRaised">
       <summary>
-            Decrypts a string previously encrypted with RSA encryption
+            The template event
             </summary>
-      <param name="text">The RSA encrypted string</param>
-      <param name="key">The private key to use for decrypting</param>
-      <param name="keySize">The keysize, in bits, of the private key</param>
-      <returns>The decrypted string</returns>
+    </member>
+    <member name="M:W.EventTemplate`1.Raise(System.Object,`0,System.String)">
+      <summary>
+            Raises the template event
+            </summary>
+      <param name="sender">The object which raised this event</param>
+      <param name="arg">The detailed event argument</param>
+      <param name="callerMemberName">The name of the method which raised the event</param>
+    </member>
+    <member name="T:W.EventTemplate`2">
+      <summary>
+            Wraps the functionality of delegate, event and RaiseXXX into a single class
+            </summary>
+      <typeparam name="TEventArg1">The first detailed event argument</typeparam>
+      <typeparam name="TEventArg2">The second detailed event argument</typeparam>
+    </member>
+    <member name="T:W.EventTemplate`2.EventDelegate">
+      <summary>
+            The template delegate
+            </summary>
+      <param name="sender">The object which raised this event</param>
+      <param name="arg1">The first detailed event argument</param>
+      <param name="arg2">The second detailed event argument</param>
+      <param name="callerMemberName">The name of the method which raised the event</param>
+    </member>
+    <member name="E:W.EventTemplate`2.OnRaised">
+      <summary>
+            The template event
+            </summary>
+    </member>
+    <member name="M:W.EventTemplate`2.Raise(System.Object,`0,`1,System.String)">
+      <summary>
+            Raises the template event
+            </summary>
+      <param name="sender">The object which raised this event</param>
+      <param name="arg1">The first detailed event argument</param>
+      <param name="arg2">The second detailed event argument</param>
+      <param name="callerMemberName">The name of the method which raised the event</param>
+    </member>
+    <member name="T:W.EventTemplate`3">
+      <summary>
+            Wraps the functionality of delegate, event and RaiseXXX into a single class
+            </summary>
+      <typeparam name="TEventArg1">The first detailed event argument</typeparam>
+      <typeparam name="TEventArg2">The second detailed event argument</typeparam>
+      <typeparam name="TEventArg3">The third detailed event argument</typeparam>
+    </member>
+    <member name="T:W.EventTemplate`3.EventDelegate">
+      <summary>
+            The template delegate
+            </summary>
+      <param name="sender">The object which raised this event</param>
+      <param name="arg1">The first detailed event argument</param>
+      <param name="arg2">The second detailed event argument</param>
+      <param name="arg3">The third detailed event argument</param>
+      <param name="callerMemberName">The name of the method which raised the event</param>
+    </member>
+    <member name="E:W.EventTemplate`3.OnRaised">
+      <summary>
+            The template event
+            </summary>
+    </member>
+    <member name="M:W.EventTemplate`3.Raise(System.Object,`0,`1,`2,System.String)">
+      <summary>
+            Raises the template event
+            </summary>
+      <param name="sender">The object which raised this event</param>
+      <param name="arg1">The first detailed event argument</param>
+      <param name="arg2">The second detailed event argument</param>
+      <param name="arg3">The third detailed event argument</param>
+      <param name="callerMemberName">The name of the method which raised the event</param>
+    </member>
+    <member name="T:W.EventTemplate`4">
+      <summary>
+            Wraps the functionality of delegate, event and RaiseXXX into a single class
+            </summary>
+      <typeparam name="TEventArg1">The first detailed event argument</typeparam>
+      <typeparam name="TEventArg2">The second detailed event argument</typeparam>
+      <typeparam name="TEventArg3">The third detailed event argument</typeparam>
+      <typeparam name="TEventArg4">The fourth detailed event argument</typeparam>
+    </member>
+    <member name="T:W.EventTemplate`4.EventDelegate">
+      <summary>
+            The template delegate
+            </summary>
+      <param name="sender">The object which raised this event</param>
+      <param name="arg1">The first detailed event argument</param>
+      <param name="arg2">The second detailed event argument</param>
+      <param name="arg3">The third detailed event argument</param>
+      <param name="arg4">The fourth detailed event argument</param>
+      <param name="callerMemberName">The name of the method which raised the event</param>
+    </member>
+    <member name="E:W.EventTemplate`4.OnRaised">
+      <summary>
+            The template event
+            </summary>
+    </member>
+    <member name="M:W.EventTemplate`4.Raise(System.Object,`0,`1,`2,`3,System.String)">
+      <summary>
+            Raises the template event
+            </summary>
+      <param name="sender">The object which raised this event</param>
+      <param name="arg1">The first detailed event argument</param>
+      <param name="arg2">The second detailed event argument</param>
+      <param name="arg3">The third detailed event argument</param>
+      <param name="arg4">The fourth detailed event argument</param>
+      <param name="callerMemberName">The name of the method which raised the event</param>
+    </member>
+    <member name="T:W.EventTemplate`5">
+      <summary>
+            Wraps the functionality of delegate, event and RaiseXXX into a single class
+            </summary>
+      <typeparam name="TEventArg1">The first detailed event argument</typeparam>
+      <typeparam name="TEventArg2">The second detailed event argument</typeparam>
+      <typeparam name="TEventArg3">The third detailed event argument</typeparam>
+      <typeparam name="TEventArg4">The fourth detailed event argument</typeparam>
+      <typeparam name="TEventArg5">The fifth detailed event argument</typeparam>
+    </member>
+    <member name="T:W.EventTemplate`5.EventDelegate">
+      <summary>
+            The template delegate
+            </summary>
+      <param name="sender">The object which raised this event</param>
+      <param name="arg1">The first detailed event argument</param>
+      <param name="arg2">The second detailed event argument</param>
+      <param name="arg3">The third detailed event argument</param>
+      <param name="arg4">The fourth detailed event argument</param>
+      <param name="arg5">The fifth detailed event argument</param>
+      <param name="callerMemberName">The name of the method which raised the event</param>
+    </member>
+    <member name="E:W.EventTemplate`5.OnRaised">
+      <summary>
+            The template event
+            </summary>
+    </member>
+    <member name="M:W.EventTemplate`5.Raise(System.Object,`0,`1,`2,`3,`4,System.String)">
+      <summary>
+            Raises the template event
+            </summary>
+      <param name="sender">The object which raised this event</param>
+      <param name="arg1">The first detailed event argument</param>
+      <param name="arg2">The second detailed event argument</param>
+      <param name="arg3">The third detailed event argument</param>
+      <param name="arg4">The fourth detailed event argument</param>
+      <param name="arg5">The fifth detailed event argument</param>
+      <param name="callerMemberName">The name of the method which raised the event</param>
     </member>
     <member name="T:W.FromExtensions">
       <summary>
@@ -506,8 +651,7 @@
             Provides thread safety via locking
             </para>
       </summary>
-      <typeparam name="TValue">
-      </typeparam>
+      <typeparam name="TValue">The Type of the lockable value</typeparam>
     </member>
     <member name="P:W.Lockable`1.LockObject">
       <summary>
@@ -592,8 +736,7 @@
             </summary>
       <param name="category">The log message category</param>
       <param name="message">The log message</param>
-      <returns>
-      </returns>
+      <returns>The formatted log message</returns>
     </member>
     <member name="M:W.Logging.CustomLogger.LogMessage(W.Logging.Log.LogMessageCategory,System.String)">
       <summary>
@@ -607,19 +750,17 @@
             Disposes the CustomLogger, releases resources and supresses the finalizer
             </summary>
     </member>
-    <member name="M:W.Logging.CustomLogger.#ctor(System.String,System.Boolean)">
-      <summary>
-            Constructs a new CustomLogger
-            </summary>
-      <param name="name">
-      </param>
-      <param name="addTimestamp">
-      </param>
-    </member>
     <member name="M:W.Logging.CustomLogger.Dispose">
       <summary>
             Disposes the CustomLogger and releases resources
             </summary>
+    </member>
+    <member name="M:W.Logging.CustomLogger.#ctor(System.String,System.Boolean)">
+      <summary>
+            Constructs a new CustomLogger
+            </summary>
+      <param name="name">The custom logger name</param>
+      <param name="addTimestamp">If True the log messages will be prefixed with a timestamp</param>
     </member>
     <member name="T:W.Logging.Log">
       <summary>
@@ -657,12 +798,11 @@
             Denotes an error message
             </summary>
     </member>
-    <member name="M:W.Logging.Log.e(System.Exception,System.String,System.Int32)">
-      <summary>
+    <member name="M:W.Logging.Log.e(System.Exception)">
+            Parameter has no matching param tag in the XML comment (but other parameters do)
+            <summary>
             Log an Exception
-            </summary>
-      <param name="e">The exception to log.  This will be boxed with ToString().</param>
-    </member>
+            </summary><param name="e">The exception to log.  This will be boxed with ToString().</param></member>
     <member name="M:W.Logging.Log.e(System.String,System.Object[])">
       <summary>
             Log a formatted exception message. This method uses string.Format to format the message.
@@ -671,11 +811,10 @@
       <param name="args">Parameters to be passed during message formatting</param>
     </member>
     <member name="M:W.Logging.Log.w(System.String,System.String,System.Int32)">
-      <summary>
-            Log a formatted warning message. This method uses string.Format to format the message.
-            </summary>
-      <param name="message">Format of the message</param>
-    </member>
+            Parameter has no matching param tag in the XML comment (but other parameters do)
+             <summary>
+             Log a formatted warning message. This method uses string.Format to format the message.
+             </summary><param name="message">Format of the message</param><param name="callerName">The name of the caller</param><param name="callerLineNumber">The line number of the caller</param></member>
     <member name="M:W.Logging.Log.w(System.String,System.Object[])">
       <summary>
             Log a formatted warning message. This method uses string.Format to format the message.
@@ -684,11 +823,10 @@
       <param name="args">Parameters to be passed during message formatting</param>
     </member>
     <member name="M:W.Logging.Log.i(System.String,System.String,System.Int32)">
-      <summary>
+            Parameter has no matching param tag in the XML comment (but other parameters do)
+            <summary>
             Log a formatted informational message. This method uses string.Format to format the message.
-            </summary>
-      <param name="message">Format of the message</param>
-    </member>
+            </summary><param name="message">Format of the message</param><param name="callerName">The name of the caller</param><param name="callerLineNumber">The line number of the caller</param></member>
     <member name="M:W.Logging.Log.i(System.String,System.Object[])">
       <summary>
             Log a formatted informational message. This method uses string.Format to format the message.
@@ -697,11 +835,10 @@
       <param name="args">Parameters to be passed during message formatting</param>
     </member>
     <member name="M:W.Logging.Log.v(System.String,System.String,System.Int32)">
-      <summary>
+            Parameter has no matching param tag in the XML comment (but other parameters do)
+            <summary>
             Log a formatted verbose message. This method uses string.Format to format the message.
-            </summary>
-      <param name="message">Format of the message</param>
-    </member>
+            </summary><param name="message">Format of the message</param><param name="callerName">The name of the caller</param><param name="callerLineNumber">The line number of the caller</param></member>
     <member name="M:W.Logging.Log.v(System.String,System.Object[])">
       <summary>
             Log a formatted verbose message. This method uses string.Format to format the message.
@@ -714,6 +851,52 @@
             A maintained history of log messages
             </summary>
       <remarks>The default log message limit is 10,000 messages</remarks>
+    </member>
+    <member name="T:W.Logging.Log.LogMessageHistory">
+      <summary>
+            Maintains a history of Log information
+            </summary>
+    </member>
+    <member name="T:W.Logging.Log.LogMessageHistory.LogMessage">
+      <summary>
+            An individual log message
+            </summary>
+    </member>
+    <member name="P:W.Logging.Log.LogMessageHistory.LogMessage.Category">
+      <summary>
+            The category of the log message
+            </summary>
+    </member>
+    <member name="P:W.Logging.Log.LogMessageHistory.LogMessage.Message">
+      <summary>
+            The logged message
+            </summary>
+    </member>
+    <member name="M:W.Logging.Log.LogMessageHistory.LogMessage.#ctor">
+      <summary>
+            Constructs a new LogMessage
+            </summary>
+    </member>
+    <member name="P:W.Logging.Log.LogMessageHistory.Messages">
+      <summary>
+            The history of log messages
+            </summary>
+    </member>
+    <member name="P:W.Logging.Log.LogMessageHistory.MaximumNumberOfMessages">
+      <summary>
+            The maximum number of historical messages to maintain.  When the maximum is reached, the oldest messages are removed as needed.
+            </summary>
+    </member>
+    <member name="P:W.Logging.Log.LogMessageHistory.Enabled">
+      <summary>
+            If True, log messages will be added to the history.  If False, no history is maintained.
+            </summary>
+    </member>
+    <member name="M:W.Logging.Log.LogMessageHistory.#ctor(System.Boolean)">
+      <summary>
+            Constructs a new LogMessageHistory
+            </summary>
+      <param name="newestFirst">If True, log messages are inserted at the start of the collection rather than appended to the end</param>
     </member>
     <member name="T:W.IOwnedProperty">
       <summary>
@@ -920,10 +1103,8 @@
       <summary>
             Allows the caller to suspend it's thread until Value changes
             </summary>
-      <param name="msTimeout">
-      </param>
-      <returns>
-      </returns>
+      <param name="msTimeout">The number of milliseconds to wait for the value to change</param>
+      <returns>True if the value changed within the specified timeout period, otherwise False</returns>
     </member>
     <member name="M:W.PropertyBase`2.LoadValue(`1)">
       <summary>
@@ -1009,10 +1190,8 @@
             Calls OnPropertyChanged.  This method does not make assignments.  Override this method to make assignments.
             </para>
       </summary>
-      <param name="value">
-      </param>
-      <param name="propertyName">
-      </param>
+      <param name="value">The new value</param>
+      <param name="propertyName">The name of the caller (the property being set)</param>
     </member>
     <member name="M:W.PropertyChangedNotifier.OnPropertyChanged(System.String)">
       <summary>
@@ -1020,7 +1199,7 @@
             Calls RaisePropertyChanged to raise the PropertyChanged event
             </para>
       </summary>
-      <param name="propertyName">The name of the property which changed</param>
+      <param name="propertyName">The name of the caller (the property which changed)</param>
     </member>
     <member name="M:W.PropertyChangedNotifier.RaiseOnPropertyChanged(System.Object,System.String)">
       <summary>
@@ -1029,7 +1208,7 @@
             </para>
       </summary>
       <param name="sender">The sender is the owner of the property</param>
-      <param name="propertyName">The name of the property which changed</param>
+      <param name="propertyName">The name of the caller (the property which changed)</param>
     </member>
     <member name="T:W.PropertyHost">
       <summary>
@@ -1067,8 +1246,7 @@
             This method should be called in the constructor of any class which has IOwnedProperty members
             </para>
       </summary>
-      <param name="this">
-      </param>
+      <param name="this">The object on which to find and initialize properties</param>
     </member>
     <member name="M:W.PropertyHostMethods.IsDirty(System.Object)">
       <summary>
@@ -1076,6 +1254,7 @@
             Scans the IsDirty value of each field and property of type IProperty 
             </para>
       </summary>
+      <param name="this">The object on which to inspect for dirty properties</param>
       <returns>True if any IProperty member's IsDirty value is true, otherwise false</returns>
     </member>
     <member name="M:W.PropertyHostMethods.MarkAsClean(System.Object)">
@@ -1084,6 +1263,7 @@
             Scans each field and property of type IProperty and sets it's IsDirty flag to false
             </para>
       </summary>
+      <param name="this">The object on which to mark all properties as clean</param>
     </member>
     <member name="T:W.PropertyHostNotifier">
       <summary>
@@ -1161,166 +1341,291 @@
         <para>This solution is based on a StackOverflow <see href="http://stackoverflow.com/questions/8571501/how-to-check-whether-the-string-is-base64-encoded-or-not">answer</see></para>
       </remarks>
     </member>
+    <member name="T:W.Threading.CPUProfileEnum">
+      <summary>
+            The preferred level of CPU usage
+            </summary>
+    </member>
+    <member name="F:W.Threading.CPUProfileEnum.SpinWait0">
+      <summary>High CPU usage, but fastest execution.  May be faster on single-core/cpu machines.  May be slower on multi-core/cpu machines.</summary>
+    </member>
+    <member name="F:W.Threading.CPUProfileEnum.Sleep">
+      <summary>Medium CPU usage.  Uses Thread.Sleep or Task.Delay to block the current thread.</summary>
+    </member>
+    <member name="F:W.Threading.CPUProfileEnum.SpinWait1">
+      <summary>Low CPU usage.  Should be faster on multi-core/cpu machines as the load will be divided among cores/cpus.  Slowest on single-core/cpu machines.</summary>
+    </member>
+    <member name="F:W.Threading.CPUProfileEnum.Yield">
+      <summary>Only available for .Net Framework; uses Thread.Yield instead of Thread.Sleep.</summary>
+    </member>
+    <member name="T:W.Threading.Gate`1">
+      <summary>
+            A thread Gate which supports passing in a typed parameter
+            </summary>
+      <typeparam name="TParameterType">The type of parameter that will be passed to the gated thread procedure</typeparam>
+    </member>
+    <member name="M:W.Threading.Gate`1.CallAction(System.Threading.CancellationToken)">
+      <summary>
+            Invokes the gated Action
+            </summary>
+      <param name="token">The CancellationToken which is passed into the Action and should be used to monitor whether the Gate has been cancelled</param>
+    </member>
+    <member name="M:W.Threading.Gate`1.Run">
+      <summary>
+            Opens the gate (allows the gated Action to be called), passing in the default value which was specified in the constructor
+            </summary>
+    </member>
+    <member name="M:W.Threading.Gate`1.Run(`0)">
+      <summary>
+            Opens the gate (allows the gated Action to be called), passing in the specified typed value
+            </summary>
+      <param name="arg">The argument to pass into the gated Action</param>
+    </member>
+    <member name="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationToken})">
+      <summary>
+            Constructs a new Gate
+            </summary>
+      <param name="action">The Action to call when the gate is opened</param>
+    </member>
+    <member name="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationToken},`0)">
+      <summary>
+            Constructs a new Gate
+            </summary>
+      <param name="action">The Action to call when the gate is opened</param>
+      <param name="defaultArg">A default value which will be passed to the gated Action, if not otherwise specified</param>
+    </member>
     <member name="T:W.Threading.Gate">
       <summary>
-        <para>
-            A Gated thread.  Execution of the Action will proceed when the Run method is called.
-            </para>
-      </summary>
+            A thread Gate is a background thread which is initially closed.  When a Gate is opened, the Action runs until completion.  The Gate can be opened (Run) any number of times.
+            </summary>
     </member>
-    <member name="M:W.Threading.Gate.CallInvokeAction">
+    <member name="M:W.Threading.Gate.CallAction(System.Threading.CancellationToken)">
       <summary>
-        <para>
-            Used to wrap the call to InvokeAction with try/catch handlers.  This method should call InvokeAction.
-            </para>
-      </summary>
-      <returns>An Exception if on occurs, otherwise null</returns>
+            Invokes the gated Action
+            </summary>
+      <param name="token">The CancellationToken which is passed into the Action and should be used to monitor whether the Gate has been cancelled</param>
+    </member>
+    <member name="P:W.Threading.Gate.IsRunning">
+      <summary>
+            True if the Gate is currently open (running), otherwise False
+            </summary>
+    </member>
+    <member name="P:W.Threading.Gate.IsComplete">
+      <summary>
+            True if the gated Action has completed, otherwise False
+            </summary>
     </member>
     <member name="M:W.Threading.Gate.Run">
       <summary>
-            Allows the Action to be called
+            Signals the thread to open the gate (allows the gated Action to be called).
             </summary>
     </member>
     <member name="M:W.Threading.Gate.Join">
       <summary>
-            Blocks the calling thread until the thread terminates
+            Blocks the calling thread until the gated Action is complete
             </summary>
     </member>
     <member name="M:W.Threading.Gate.Join(System.Int32)">
       <summary>
-            Blocks the calling thread until either the thread terminates or the specified milliseconds elapse
+            Blocks the calling thread until the gated Action is complete, or until the specified number of milliseconds has elapsed
             </summary>
-      <param name="msTimeout">The number of milliseconds to wait for the thread to terminate</param>
-      <returns>True if the thread terminates within the timeout specified, otherwise false</returns>
+      <param name="msTimeout">The number of milliseconds to wait for the gate to complete before timing out and returning False</param>
+      <returns>True if the gate completed within the specified timeout, otherwise False</returns>
     </member>
     <member name="M:W.Threading.Gate.Cancel">
       <summary>
-            Signals the task to cancel
+            Singals the gated Action that a Cancel has been requested
             </summary>
     </member>
     <member name="M:W.Threading.Gate.Dispose">
-      <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
-    </member>
-    <member name="M:W.Threading.Gate.#ctor(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})">
       <summary>
-            Construct a Gate
-            </summary>
-      <param name="action">The code to execute in a background task, when signaled</param>
-      <param name="onExit">Called after the </param>
-    </member>
-    <member name="T:W.Threading.Gate`1">
-      <summary>
-        <para>
-            A Gated thread.  Execution of the Action will proceed when the Run method is called.
-            </para>
-      </summary>
-    </member>
-    <member name="M:W.Threading.Gate`1.CallInvokeAction">
-      <summary>
-        <para>
-            Used to wrap the call to InvokeAction with try/catch handlers.  This method should call InvokeAction.
-            </para>
-      </summary>
-      <returns>An Exception if on occurs, otherwise null</returns>
-    </member>
-    <member name="M:W.Threading.Gate`1.Run">
-      <summary>
-            Allows the Action to be called
+            Cancels the gated Action, disposes the Gate and releases resources
             </summary>
     </member>
-    <member name="M:W.Threading.Gate`1.Join">
+    <member name="M:W.Threading.Gate.#ctor(System.Action{System.Threading.CancellationToken})">
       <summary>
-            Blocks the calling thread until the thread terminates
+            Constructs a new Gate
             </summary>
-    </member>
-    <member name="M:W.Threading.Gate`1.Join(System.Int32)">
-      <summary>
-            Blocks the calling thread until either the thread terminates or the specified milliseconds elapse
-            </summary>
-      <param name="msTimeout">The number of milliseconds to wait for the thread to terminate</param>
-      <returns>True if the thread terminates within the timeout specified, otherwise false</returns>
-    </member>
-    <member name="M:W.Threading.Gate`1.Cancel">
-      <summary>
-            Signals the task to cancel
-            </summary>
-    </member>
-    <member name="M:W.Threading.Gate`1.Dispose">
-      <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
-    </member>
-    <member name="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)">
-      <summary>
-            Construct a Gate
-            </summary>
-      <param name="action">The action to execute in a background task</param>
-      <param name="onExit">Called when the task completes</param>
-      <param name="args">
-      </param>
+      <param name="action">The Action to call when the gate is opened</param>
     </member>
     <member name="T:W.Threading.GateMethods">
       <summary>
             Extension methods on Action to Create a Gate
             </summary>
     </member>
-    <member name="M:W.Threading.GateMethods.AsGate(System.Action{System.Threading.CancellationTokenSource})">
+    <member name="M:W.Threading.GateMethods.AsGate(System.Action{System.Threading.CancellationToken})">
       <summary>
             Creates a Gate with the supplied action
             </summary>
       <param name="action">The Action to call when the gate is relased (when Run is called)</param>
       <returns>A reference to a new Gate</returns>
     </member>
-    <member name="M:W.Threading.GateMethods.AsGate``1(System.Action{``0,System.Threading.CancellationTokenSource})">
+    <member name="M:W.Threading.GateMethods.AsGate``1(System.Action{``0,System.Threading.CancellationToken})">
       <summary>
             Creates a Gate with the supplied action
             </summary>
-      <param name="action">The Action to call when the gate is relased (when Run is called)</param>
+      <typeparam name="TParameterType">The Type of the parameter to be passed in</typeparam>
+      <param name="action">The Action to call when the gate is released (when Run is called)</param>
       <returns>A reference to a new Gate</returns>
+    </member>
+    <member name="T:W.Threading.Thread`1">
+      <summary>
+            A thread class which can pass a typed parameter into the thread action
+            </summary>
+      <typeparam name="TParameterType">The argument Type to be passed into the thread action</typeparam>
+    </member>
+    <member name="M:W.Threading.Thread`1.CallAction(System.Threading.CancellationToken)">
+      <summary>
+            Calls the action encapsulated by this thread.  This method can be overridden to provide more specific functionality.
+            </summary>
+      <param name="token">The CancellationToken, passed into the action, which can be used to cancel the thread Action</param>
+    </member>
+    <member name="M:W.Threading.Thread`1.Start">
+      <summary>
+            Starts the thread if it's not already running
+            </summary>
+    </member>
+    <member name="M:W.Threading.Thread`1.Start(System.Int32)">
+      <summary>
+            Starts the thread if it's not already running
+            </summary>
+      <param name="msLifetime">The number of milliseconds before the thread is automatically cancelled. A negative value indicates an infinite lifetime.</param>
+    </member>
+    <member name="M:W.Threading.Thread`1.Start(`0)">
+      <summary>
+            Starts the thread if it's not already running, passing in the specified argument
+            </summary>
+      <param name="arg">The argument to pass into the threaded Action</param>
+    </member>
+    <member name="M:W.Threading.Thread`1.Start(`0,System.Int32)">
+      <summary>
+            Starts the thread if it's not already running
+            </summary>
+      <param name="arg">The argument to pass into the threaded Action</param>
+      <param name="msLifetime">The number of milliseconds before the thread is automatically cancelled. A negative value indicates an infinite lifetime.</param>
+    </member>
+    <member name="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationToken})">
+      <summary>
+            Constructs a new Thread which can accept a parameter
+            </summary>
+      <param name="action">The CancellationToken which can be used to cancel the thread</param>
+      <remarks>Calling this constructor will automatically start the thread</remarks>
+    </member>
+    <member name="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationToken},System.Boolean)">
+      <summary>
+            Constructs a new Thread which can accept a parameter
+            </summary>
+      <param name="action">The CancellationToken which can be used to cancel the thread</param>
+      <param name="autoStart">If True, the Thread will immediately start, otherwise the Start method will have to be called manually</param>
+    </member>
+    <member name="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationToken},`0)">
+      <summary>
+            Constructs a new Thread which can accept a parameter
+            </summary>
+      <param name="action">The CancellationToken which can be used to cancel the thread</param>
+      <param name="defaultArg">The default argument to pass into the thread procedure</param>
+      <remarks>Calling this constructor will automatically start the thread</remarks>
+    </member>
+    <member name="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationToken},`0,System.Boolean)">
+      <summary>
+            Constructs a new Thread which can accept a parameter
+            </summary>
+      <param name="action">The CancellationToken which can be used to cancel the thread</param>
+      <param name="defaultArg">The default argument to pass into the thread procedure</param>
+      <param name="autoStart">If True, the Thread will immediately start, otherwise the Start method will have to be called manually</param>
     </member>
     <member name="T:W.Threading.Thread">
       <summary>
-            A thread wrapper which makes multi-threading easier
+            A thread class
             </summary>
     </member>
-    <member name="M:W.Threading.Thread.CallInvokeAction">
+    <member name="M:W.Threading.Thread.CallAction(System.Threading.CancellationToken)">
       <summary>
-            Called by the host thread procedure, this method calls the Action
+            Calls the action encapsulated by this thread.  This method can be overridden to provide more specific functionality.
             </summary>
-      <returns>An Exception object, if an exception occured</returns>
+      <param name="token">The CancellationToken, passed into the action, which can be used to cancel the thread Action</param>
     </member>
-    <member name="M:W.Threading.Thread.CallInvokeOnComplete(System.Exception)">
+    <member name="P:W.Threading.Thread.IsStarted">
       <summary>
-            Calls the onExit Action when the thread returns
+            True if the thread has been started, otherwise False
             </summary>
-      <param name="e">An Exception object, if an exception occured</param>
+    </member>
+    <member name="P:W.Threading.Thread.IsComplete">
+      <summary>
+            True if the thread has completed, otherwise False
+            </summary>
+      <remarks>A True value does not indicate that the thread completed successfully</remarks>
+    </member>
+    <member name="P:W.Threading.Thread.IsFaulted">
+      <summary>
+            True if the thread raised an exception, otherwise False
+            </summary>
+    </member>
+    <member name="P:W.Threading.Thread.Exception">
+      <summary>
+            The exception, if one was caught
+            </summary>
+    </member>
+    <member name="P:W.Threading.Thread.Token">
+      <summary>
+            Not available until after Start has been called
+            </summary>
     </member>
     <member name="M:W.Threading.Thread.Join">
       <summary>
-            Blocks the calling thread until the thread terminates
+            Block the calling thread until this thread object has completed
             </summary>
     </member>
     <member name="M:W.Threading.Thread.Join(System.Int32)">
       <summary>
-            Blocks the calling thread until either the thread terminates or the specified milliseconds elapse
+            Block the calling thread until this thread object has completed or until the timeout has occurred
             </summary>
-      <param name="msTimeout">The number of milliseconds to wait for the thread to terminate</param>
-      <returns>True if the thread terminates within the timeout specified, otherwise false</returns>
+      <param name="msTimeout">The number of milliseconds to wait, for the thread Action to complete, before timing out</param>
+      <returns>True if the thread Action completed within the specified timeout, otherwise False</returns>
     </member>
-    <member name="M:W.Threading.Thread.#ctor(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},System.Threading.CancellationTokenSource)">
+    <member name="M:W.Threading.Thread.Start">
       <summary>
-            Constructs the Thread object
+            Start the thread
             </summary>
-      <param name="action">The Action to be called on a new thread</param>
-      <param name="onExit">The Action to be called when the thread completes</param>
-      <param name="cts">A CancellationTokenSource to use instead of the default</param>
     </member>
-    <member name="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},System.Threading.CancellationTokenSource)">
+    <member name="M:W.Threading.Thread.Start(System.Int32)">
       <summary>
-            Starts a new thread
+            Start the thread with a CancellationToken which will timeout in the specified milliseconds
             </summary>
-      <param name="action">Action to call on a thread</param>
-      <param name="onExit">Action to call upon comletion.  Executes on the same thread as Action.</param>
-      <param name="cts">A CancellationTokenSource to use instead of the default</param>
-      <returns>A new Thread</returns>
+      <param name="msLifetime">The number of milliseconds before the thread is automatically cancelled. A negative value indicates an infinite lifetime.</param>
+    </member>
+    <member name="M:W.Threading.Thread.Stop">
+      <summary>
+            Stop the thread.  This calls Cancel on the CancellationToken
+            </summary>
+    </member>
+    <member name="M:W.Threading.Thread.Dispose">
+      <summary>
+            Dispose the thread and free resources
+            </summary>
+    </member>
+    <member name="M:W.Threading.Thread.#ctor(System.Action{System.Threading.CancellationToken})">
+      <summary>
+            Constructs a new Thread
+            </summary>
+      <param name="action">The action to call on a thread</param>
+    </member>
+    <member name="M:W.Threading.Thread.#ctor(System.Action{System.Threading.CancellationToken},System.Boolean)">
+      <summary>
+            Constructs a new Thread
+            </summary>
+      <param name="action">The action to call on a thread</param>
+      <param name="autoStart">If True, the thread will immediately start.  Otherwise Start will have to be called.</param>
+    </member>
+    <member name="M:W.Threading.Thread.Cancel">
+      <summary>
+            Cancel the thread
+            </summary>
+    </member>
+    <member name="P:W.Threading.Thread.IsRunning">
+      <summary>
+            True if the thread is currently running, otherwise False
+            </summary>
     </member>
     <member name="M:W.Threading.Thread.Sleep(System.Int32)">
       <summary>
@@ -1328,181 +1633,94 @@
             </summary>
       <param name="msDelay">The number of milliseconds to block the thread</param>
     </member>
-    <member name="T:W.Threading.ThreadBase">
+    <member name="M:W.Threading.Thread.Sleep(System.Int32,System.Boolean)">
       <summary>
-            A base class for Thread which should work for all compiler Target types
+            Blocks the calling thread for the specified time
             </summary>
+      <param name="msDelay">The number of milliseconds to block the thread</param>
+      <param name="useSpinWait">If True, a SpinWait.SpinUntil will be used instead of a call to Thread.Sleep (or Task.Delay).  Note that SpinWait should only be used on multi-core/cpu machines.</param>
     </member>
-    <member name="P:W.Threading.ThreadBase.Action">
+    <member name="M:W.Threading.Thread.Sleep(W.Threading.CPUProfileEnum)">
       <summary>
-            The Action to execute on the thread
+            Attempts to free the CPU for other processes, based on the desired level.  Consequences will vary depending on your hardware architecture.  The more processors/cores you have, the better performance you will have by selecting LowCPU.  Likewise, on a single-core processor, you may wish to select HighCPU.
             </summary>
+      <param name="level">The desired level of CPU usage</param>
+      <remarks>Note results may vary.  LowCPU will spread the load onto multiple cores and can actually yield faster results depending on your hardware architecture.  This may not always be the case.</remarks>
     </member>
-    <member name="P:W.Threading.ThreadBase.OnExit">
-      <summary>
-            The Action to execute when the thread completes
-            </summary>
-    </member>
-    <member name="P:W.Threading.ThreadBase.Cts">
-      <summary>
-            The CancellationTokenSource which can be used to cancel the thread
-            </summary>
-    </member>
-    <member name="P:W.Threading.ThreadBase.IsBusy">
-      <summary>
-            Value is True if the thread is currently running, otherwise False
-            </summary>
-    </member>
-    <member name="P:W.Threading.ThreadBase.Success">
-      <summary>
-            The Value to send to the onExit Action.  True if the thread returns successfully, otherwise False.
-            </summary>
-    </member>
-    <member name="M:W.Threading.ThreadBase.InvokeAction(System.Threading.CancellationTokenSource)">
-      <summary>
-            Invokes the Action. Virtual for customization.
-            </summary>
-    </member>
-    <member name="M:W.Threading.ThreadBase.InvokeOnComplete(System.Exception)">
-      <summary>
-            Invokes the onExit action.  Virtual for customization.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="M:W.Threading.ThreadBase.CallInvokeAction">
-      <summary>
-            Must be overridden to provide exception handling
-            </summary>
-      <returns>An Exception object, if an exception occured</returns>
-    </member>
-    <member name="M:W.Threading.ThreadBase.CallInvokeOnComplete(System.Exception)">
-      <summary>
-            Calls the onExit Action when the thread returns
-            </summary>
-      <param name="e">An Exception object, if an exception occured</param>
-    </member>
-    <member name="M:W.Threading.ThreadBase.ThreadProc">
-      <summary>
-            The host thread procedure.  This method calls the Action and subsequent onExit.
-            </summary>
-    </member>
-    <member name="M:W.Threading.ThreadBase.Cancel">
-      <summary>
-        <para>
-            Cancels the thread by calling Cancel on the CancellationTokenSource.  The value should be checked in the code in the specified Action parameter.
-            </para>
-      </summary>
-    </member>
-    <member name="M:W.Threading.ThreadBase.Cancel(System.Int32)">
-      <summary>
-        <para>
-            Cancels the thread by calling Cancel on the CancellationTokenSource.  The value should be checked in the code in the specified Action parameter.
-            </para>
-      </summary>
-      <param name="msForceAbortDelay">Abort the thread if it doesn't terminate before the specified number of milliseconds elapse</param>
-    </member>
-    <member name="P:W.Threading.ThreadBase.IsRunning">
-      <summary>
-            True if the thread is running, otherwise false
-            </summary>
-    </member>
-    <member name="M:W.Threading.ThreadBase.Join">
-      <summary>
-            Blocks the calling thread until the thread terminates
-            </summary>
-    </member>
-    <member name="M:W.Threading.ThreadBase.Join(System.Int32)">
-      <summary>
-            Blocks the calling thread until either the thread terminates or the specified milliseconds elapse
-            </summary>
-      <param name="msTimeout">The number of milliseconds to wait for the thread to terminate</param>
-      <returns>True if the thread terminates within the timeout specified, otherwise false</returns>
-    </member>
-    <member name="M:W.Threading.ThreadBase.#ctor(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},System.Threading.CancellationTokenSource)">
+    <member name="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationToken})">
       <summary>
             Starts a new thread
             </summary>
       <param name="action">Action to call on a thread</param>
-      <param name="onExit">Action to call upon comletion.  Executes on the same thread as Action.</param>
-      <param name="cts">A CancellationTokenSource to use instead of creating a new one</param>
-      <returns>
-      </returns>
+      <returns>A new Thread</returns>
     </member>
-    <member name="M:W.Threading.ThreadBase.Finalize">
+    <member name="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationToken},System.Boolean)">
       <summary>
-            Destructs the ThreadBase object.  Calls Dispose.
+            Starts a new thread
             </summary>
+      <param name="action">Action to call on a thread</param>
+      <param name="autoStart">If True, the thread immediately starts</param>
+      <returns>A new Thread</returns>
     </member>
-    <member name="M:W.Threading.ThreadBase.Dispose">
-      <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+    <member name="M:W.Threading.Thread.Create``1(System.Action{``0,System.Threading.CancellationToken})">
+      <summary>
+            Creates and starts a new thread
+            </summary>
+      <typeparam name="TParameterType">The argument Type to be passed into the thread action</typeparam>
+      <param name="action">Action to call on a thread</param>
+      <returns>A new Thread</returns>
+    </member>
+    <member name="M:W.Threading.Thread.Create``1(System.Action{``0,System.Threading.CancellationToken},System.Boolean)">
+      <summary>
+            Creates a new thread
+            </summary>
+      <typeparam name="TParameterType">The argument Type to be passed into the thread action</typeparam>
+      <param name="action">Action to call on a thread</param>
+      <param name="autoStart">If True, the thread is immediately started</param>
+      <returns>A new Thread</returns>
     </member>
     <member name="T:W.Threading.ThreadExtensions">
       <summary>
             Contains a generic extension method to quickly start a new thread
             </summary>
     </member>
-    <member name="M:W.Threading.ThreadExtensions.CreateThread``1(``0,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})">
+    <member name="M:W.Threading.ThreadExtensions.CreateThread``1(``0,System.Action{``0,System.Threading.CancellationToken})">
       <summary>
-            Starts a new thread
+            Creates and starts a new thread
             </summary>
+      <typeparam name="TParameterType">The Type of the item being extended</typeparam>
       <param name="this">The object to send into a new Thread</param>
       <param name="action">Action to call on a thread</param>
-      <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
       <returns>A reference to the new W.Threading.Thread&lt;T&gt;</returns>
     </member>
-    <member name="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)">
+    <member name="M:W.Threading.ThreadExtensions.CreateThread``1(``0,System.Action{``0,System.Threading.CancellationToken},System.Boolean)">
       <summary>
-            Starts a new thread
+            Creates a new thread
             </summary>
-      <param name="this">
-      </param>
+      <typeparam name="TParameterType">The Type of the item being extended</typeparam>
+      <param name="this">The object to send into a new Thread</param>
       <param name="action">Action to call on a thread</param>
-      <param name="onComplete">Action to call upon comletion.  Executes on the same thread as Action.</param>
-      <param name="customData">The data to pass to the thread (Action)</param>
-      <typeparam name="T">
-      </typeparam>
+      <param name="autoStart">If True, the thread will immediately start running</param>
       <returns>A reference to the new W.Threading.Thread&lt;T&gt;</returns>
     </member>
-    <member name="T:W.Threading.Thread`1">
+    <member name="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationToken})">
       <summary>
-            A thread wrapper which makes multi-threading easier
+            Creates and starts a new thread and 
             </summary>
-      <typeparam name="TCustomData">The type of custom data to pass to the thread Action</typeparam>
-    </member>
-    <member name="P:W.Threading.Thread`1.CustomData">
-      <summary>
-            The custom data to pass into the Action
-            </summary>
-    </member>
-    <member name="P:W.Threading.Thread`1.Action">
-      <summary>
-            The Action to be run on a new thread
-            </summary>
-    </member>
-    <member name="M:W.Threading.Thread`1.InvokeAction(System.Threading.CancellationTokenSource)">
-      <summary>
-            Invokes the Action
-            </summary>
-    </member>
-    <member name="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0,System.Threading.CancellationTokenSource)">
-      <summary>
-            Constructs a new Thread object
-            </summary>
-      <param name="action">The Action to be called in the thread</param>
-      <param name="onExit">The Action to be called when the thread completes</param>
-      <param name="customData">The custom data to be passed into the thread</param>
-      <param name="cts">A CancellationTokenSource which can be used to cancel the thread</param>
-    </member>
-    <member name="M:W.Threading.Thread`1.Create``1(System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0,System.Threading.CancellationTokenSource)">
-      <summary>
-            Starts a new thread
-            </summary>
+      <typeparam name="TParameterType">The Type of the item being extended</typeparam>
+      <param name="this">The object to send into a new Thread</param>
       <param name="action">Action to call on a thread</param>
-      <param name="onExit">Action to call upon comletion.  Executes on the same thread as Action.</param>
-      <param name="customData">Custom data to be passed into the thread</param>
-      <param name="cts">A CancellationTokenSource which can be used to cancel the operation</param>
-      <returns>A new long-running Thread object</returns>
+      <returns>A reference to the new W.Threading.Thread&lt;T&gt;</returns>
+    </member>
+    <member name="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationToken},System.Boolean)">
+      <summary>
+            Creates a new thread
+            </summary>
+      <typeparam name="TParameterType">The Type of the item being extended</typeparam>
+      <param name="this">The object to send into a new Thread</param>
+      <param name="action">Action to call on a thread</param>
+      <param name="autoStart">If True, the thread will immediately start running</param>
+      <returns>A reference to the new W.Threading.Thread&lt;T&gt;</returns>
     </member>
     <member name="T:W.ExtensionMethods">
       <summary>
@@ -1520,7 +1738,7 @@
             someValue.Lock(value =&gt; { value += 10; }); //lock on someValue and pass it into the action
             </code>
     </member>
-    <member name="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)">
+    <member name="M:W.ExtensionMethods.WaitForValueAsync(System.Object,System.Object,System.Int32)">
       <summary>
             Initiates a Task which will wait for the given variable to have the specified value
             </summary>
@@ -1529,14 +1747,33 @@
       <param name="msTimeout">The task will time out within the specified number of milliseconds.  Use -1 to wait indefinitely.</param>
       <returns>True if the value was acquired within the specified timeout, otherwise False</returns>
     </member>
-    <member name="M:W.ExtensionMethods.WaitForValue``1(``0,System.Predicate{``0},System.Int32)">
+    <member name="M:W.ExtensionMethods.WaitForValueAsync``1(``0,System.Predicate{``0},System.Int32)">
       <summary>
             Initiates a Task which will wait for the specified condition to be met
             </summary>
+      <typeparam name="TItemType">The object Type of the item being extended</typeparam>
       <param name="this">The value being inspected</param>
       <param name="predicate">The condition to be met</param>
       <param name="msTimeout">The task will time out within the specified number of milliseconds.  Use -1 to wait indefinitely.</param>
       <returns>True if the condition was met within the specified timeout, otherwise False</returns>
+    </member>
+    <member name="M:W.ExtensionMethods.WaitForValue``1(``0,System.Predicate{``0},System.Int32)">
+      <summary>
+            Initiates a Task which will wait for the specified condition to be met
+            </summary>
+      <typeparam name="TItemType">The object Type of the item being extended</typeparam>
+      <param name="this">The value being inspected</param>
+      <param name="predicate">The condition to be met</param>
+      <param name="msTimeout">The task will time out within the specified number of milliseconds.  Use -1 to wait indefinitely.</param>
+      <returns>True if the condition was met within the specified timeout, otherwise False</returns>
+    </member>
+    <member name="M:W.ExtensionMethods.Raise(System.Delegate,System.Object[])">
+      <summary>
+            Calls the delegate, passing in any arguments.  Provides error handling to allow all subscribers to handle the delegate.
+            </summary>
+      <param name="del">The delegate to call</param>
+      <param name="args">Parameters to pass into the delegate</param>
+      <returns>Exceptions if any are thrown</returns>
     </member>
     <member name="N:W">
       <summary>The root namespace for Tungsten.  W is used because it is the symbol for Tungsten on the periodic table of elements.</summary>

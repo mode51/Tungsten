@@ -50,12 +50,66 @@
   <topic id="M:W.CallResult`1.#ctor(System.Boolean,`0,System.Exception)" type="API" />
   <topic id="P:W.CallResult`1.Empty" type="API" />
   <topic id="P:W.CallResult`1.Result" type="API" />
+  <topic id="T:W.Disposable" type="API" />
+  <topic id="Methods.T:W.Disposable" type="API" />
+  <topic id="Fields.T:W.Disposable" type="API" />
+  <topic id="M:W.Disposable.#ctor" type="API" />
+  <topic id="M:W.Disposable.Dispose" type="API" />
+  <topic id="M:W.Disposable.Finalize" type="API" />
+  <topic id="F:W.Disposable.IsDisposed" type="API" />
+  <topic id="F:W.Disposable.IsDisposing" type="API" />
+  <topic id="M:W.Disposable.OnDispose" type="API" />
+  <topic id="M:W.Disposable.OnDisposeUnmanaged" type="API" />
+  <topic id="T:W.EventTemplate" type="API" />
+  <topic id="Methods.T:W.EventTemplate" type="API" />
+  <topic id="Events.T:W.EventTemplate" type="API" />
+  <topic id="M:W.EventTemplate.#ctor" type="API" />
+  <topic id="E:W.EventTemplate.OnRaised" type="API" />
+  <topic id="M:W.EventTemplate.Raise(System.Object,System.String,System.Object[])" type="API" />
+  <topic id="T:W.EventTemplate`1" type="API" />
+  <topic id="Methods.T:W.EventTemplate`1" type="API" />
+  <topic id="Events.T:W.EventTemplate`1" type="API" />
+  <topic id="M:W.EventTemplate`1.#ctor" type="API" />
+  <topic id="E:W.EventTemplate`1.OnRaised" type="API" />
+  <topic id="M:W.EventTemplate`1.Raise(System.Object,`0,System.String)" type="API" />
+  <topic id="T:W.EventTemplate`1.EventDelegate" type="API" />
+  <topic id="T:W.EventTemplate`2" type="API" />
+  <topic id="Methods.T:W.EventTemplate`2" type="API" />
+  <topic id="Events.T:W.EventTemplate`2" type="API" />
+  <topic id="M:W.EventTemplate`2.#ctor" type="API" />
+  <topic id="E:W.EventTemplate`2.OnRaised" type="API" />
+  <topic id="M:W.EventTemplate`2.Raise(System.Object,`0,`1,System.String)" type="API" />
+  <topic id="T:W.EventTemplate`2.EventDelegate" type="API" />
+  <topic id="T:W.EventTemplate`3" type="API" />
+  <topic id="Methods.T:W.EventTemplate`3" type="API" />
+  <topic id="Events.T:W.EventTemplate`3" type="API" />
+  <topic id="M:W.EventTemplate`3.#ctor" type="API" />
+  <topic id="E:W.EventTemplate`3.OnRaised" type="API" />
+  <topic id="M:W.EventTemplate`3.Raise(System.Object,`0,`1,`2,System.String)" type="API" />
+  <topic id="T:W.EventTemplate`3.EventDelegate" type="API" />
+  <topic id="T:W.EventTemplate`4" type="API" />
+  <topic id="Methods.T:W.EventTemplate`4" type="API" />
+  <topic id="Events.T:W.EventTemplate`4" type="API" />
+  <topic id="M:W.EventTemplate`4.#ctor" type="API" />
+  <topic id="E:W.EventTemplate`4.OnRaised" type="API" />
+  <topic id="M:W.EventTemplate`4.Raise(System.Object,`0,`1,`2,`3,System.String)" type="API" />
+  <topic id="T:W.EventTemplate`4.EventDelegate" type="API" />
+  <topic id="T:W.EventTemplate`5" type="API" />
+  <topic id="Methods.T:W.EventTemplate`5" type="API" />
+  <topic id="Events.T:W.EventTemplate`5" type="API" />
+  <topic id="M:W.EventTemplate`5.#ctor" type="API" />
+  <topic id="E:W.EventTemplate`5.OnRaised" type="API" />
+  <topic id="M:W.EventTemplate`5.Raise(System.Object,`0,`1,`2,`3,`4,System.String)" type="API" />
+  <topic id="T:W.EventTemplate`5.EventDelegate" type="API" />
+  <topic id="T:W.EventTemplate.EventDelegate" type="API" />
   <topic id="T:W.ExtensionMethods" type="API" />
   <topic id="Methods.T:W.ExtensionMethods" type="API" />
-  <topic id="Overload:W.ExtensionMethods.WaitForValue" type="API" />
+  <topic id="Overload:W.ExtensionMethods.WaitForValueAsync" type="API" />
   <topic id="M:W.ExtensionMethods.Lock``1(``0,System.Action{``0})" type="API" />
-  <topic id="M:W.ExtensionMethods.WaitForValue(System.Object,System.Object,System.Int32)" type="API" />
+  <topic id="M:W.ExtensionMethods.Raise(System.Delegate,System.Object[])" type="API" />
   <topic id="M:W.ExtensionMethods.WaitForValue``1(``0,System.Predicate{``0},System.Int32)" type="API" />
+  <topic id="M:W.ExtensionMethods.WaitForValueAsync(System.Object,System.Object,System.Int32)" type="API" />
+  <topic id="M:W.ExtensionMethods.WaitForValueAsync``1(``0,System.Predicate{``0},System.Int32)" type="API" />
   <topic id="T:W.FromExtensions" type="API" />
   <topic id="Methods.T:W.FromExtensions" type="API" />
   <topic id="Overload:W.FromExtensions.FromBase64" type="API" />
@@ -198,33 +252,15 @@
   <topic id="M:W.Encryption.PublicPrivateKeyPair.#ctor" type="API" />
   <topic id="P:W.Encryption.PublicPrivateKeyPair.PrivateKey" type="API" />
   <topic id="P:W.Encryption.PublicPrivateKeyPair.PublicKey" type="API" />
-  <topic id="T:W.Encryption.RSA" type="API" />
-  <topic id="Methods.T:W.Encryption.RSA" type="API" />
-  <topic id="Properties.T:W.Encryption.RSA" type="API" />
-  <topic id="Overload:W.Encryption.RSA.Decrypt" type="API" />
-  <topic id="Overload:W.Encryption.RSA.Encrypt" type="API" />
-  <topic id="M:W.Encryption.RSA.#ctor(System.Int32)" type="API" />
-  <topic id="M:W.Encryption.RSA.Decrypt(System.String)" type="API" />
-  <topic id="M:W.Encryption.RSA.Decrypt(System.String,System.Security.Cryptography.RSAParameters)" type="API" />
-  <topic id="M:W.Encryption.RSA.Dispose" type="API" />
-  <topic id="M:W.Encryption.RSA.Encrypt(System.Byte[],System.Security.Cryptography.RSAParameters)" type="API" />
-  <topic id="M:W.Encryption.RSA.Encrypt(System.String)" type="API" />
-  <topic id="M:W.Encryption.RSA.Encrypt(System.String,System.Security.Cryptography.RSAParameters)" type="API" />
-  <topic id="M:W.Encryption.RSA.Finalize" type="API" />
-  <topic id="P:W.Encryption.RSA.LegalKeySizes" type="API" />
-  <topic id="P:W.Encryption.RSA.PrivateKey" type="API" />
-  <topic id="P:W.Encryption.RSA.PublicKey" type="API" />
   <topic id="T:W.Encryption.RSAMethods" type="API" />
   <topic id="Methods.T:W.Encryption.RSAMethods" type="API" />
-  <topic id="Overload:W.Encryption.RSAMethods.Decrypt" type="API" />
-  <topic id="Overload:W.Encryption.RSAMethods.Encrypt" type="API" />
   <topic id="M:W.Encryption.RSAMethods.#ctor" type="API" />
-  <topic id="M:W.Encryption.RSAMethods.Decrypt(System.String,System.Security.Cryptography.RSAParameters,System.Int32)" type="API" />
-  <topic id="M:W.Encryption.RSAMethods.Decrypt(System.String,System.String,System.Int32)" type="API" />
-  <topic id="M:W.Encryption.RSAMethods.Encrypt(System.Byte[],System.Security.Cryptography.RSAParameters,System.Int32)" type="API" />
-  <topic id="M:W.Encryption.RSAMethods.Encrypt(System.Byte[],System.String,System.Int32)" type="API" />
-  <topic id="M:W.Encryption.RSAMethods.Encrypt(System.String,System.Security.Cryptography.RSAParameters,System.Int32)" type="API" />
-  <topic id="M:W.Encryption.RSAMethods.Encrypt(System.String,System.String,System.Int32)" type="API" />
+  <topic id="M:W.Encryption.RSAMethods.CreateKeyPair(System.Int32)" type="API" />
+  <topic id="M:W.Encryption.RSAMethods.Decrypt(System.String,System.Security.Cryptography.RSAParameters)" type="API" />
+  <topic id="M:W.Encryption.RSAMethods.DecryptAsync(System.String,System.Security.Cryptography.RSAParameters)" type="API" />
+  <topic id="M:W.Encryption.RSAMethods.Encrypt(System.String,System.Security.Cryptography.RSAParameters)" type="API" />
+  <topic id="M:W.Encryption.RSAMethods.EncryptAsync(System.String,System.Security.Cryptography.RSAParameters)" type="API" />
+  <topic id="M:W.Encryption.RSAMethods.LegalKeySizes" type="API" />
   <topic id="N:W.Logging" type="API" />
   <topic id="T:W.Logging.CustomLogger" type="API" />
   <topic id="Methods.T:W.Logging.CustomLogger" type="API" />
@@ -244,7 +280,7 @@
   <topic id="Overload:W.Logging.Log.i" type="API" />
   <topic id="Overload:W.Logging.Log.v" type="API" />
   <topic id="Overload:W.Logging.Log.w" type="API" />
-  <topic id="M:W.Logging.Log.e(System.Exception,System.String,System.Int32)" type="API" />
+  <topic id="M:W.Logging.Log.e(System.Exception)" type="API" />
   <topic id="M:W.Logging.Log.e(System.String,System.Object[])" type="API" />
   <topic id="M:W.Logging.Log.i(System.String,System.Object[])" type="API" />
   <topic id="M:W.Logging.Log.i(System.String,System.String,System.Int32)" type="API" />
@@ -269,85 +305,86 @@
   <topic id="P:W.Logging.Log.LogMessageHistory.LogMessage.Category" type="API" />
   <topic id="P:W.Logging.Log.LogMessageHistory.LogMessage.Message" type="API" />
   <topic id="N:W.Threading" type="API" />
+  <topic id="T:W.Threading.CPUProfileEnum" type="API" />
   <topic id="T:W.Threading.Gate" type="API" />
   <topic id="Methods.T:W.Threading.Gate" type="API" />
   <topic id="Properties.T:W.Threading.Gate" type="API" />
-  <topic id="Overload:W.Threading.Gate.Cancel" type="API" />
   <topic id="Overload:W.Threading.Gate.Join" type="API" />
-  <topic id="M:W.Threading.Gate.#ctor(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" type="API" />
-  <topic id="M:W.Threading.Gate.CallInvokeAction" type="API" />
+  <topic id="M:W.Threading.Gate.#ctor(System.Action{System.Threading.CancellationToken})" type="API" />
+  <topic id="M:W.Threading.Gate.CallAction(System.Threading.CancellationToken)" type="API" />
   <topic id="M:W.Threading.Gate.Cancel" type="API" />
   <topic id="M:W.Threading.Gate.Dispose" type="API" />
+  <topic id="P:W.Threading.Gate.IsComplete" type="API" />
+  <topic id="P:W.Threading.Gate.IsRunning" type="API" />
   <topic id="M:W.Threading.Gate.Join" type="API" />
   <topic id="M:W.Threading.Gate.Join(System.Int32)" type="API" />
   <topic id="M:W.Threading.Gate.Run" type="API" />
   <topic id="T:W.Threading.Gate`1" type="API" />
   <topic id="Methods.T:W.Threading.Gate`1" type="API" />
   <topic id="Properties.T:W.Threading.Gate`1" type="API" />
-  <topic id="Overload:W.Threading.Gate`1.Cancel" type="API" />
-  <topic id="Overload:W.Threading.Gate`1.Join" type="API" />
-  <topic id="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0)" type="API" />
-  <topic id="M:W.Threading.Gate`1.CallInvokeAction" type="API" />
-  <topic id="M:W.Threading.Gate`1.Cancel" type="API" />
-  <topic id="M:W.Threading.Gate`1.Dispose" type="API" />
-  <topic id="M:W.Threading.Gate`1.Join" type="API" />
-  <topic id="M:W.Threading.Gate`1.Join(System.Int32)" type="API" />
+  <topic id="Overload:W.Threading.Gate`1.#ctor" type="API" />
+  <topic id="Overload:W.Threading.Gate`1.Run" type="API" />
+  <topic id="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationToken})" type="API" />
+  <topic id="M:W.Threading.Gate`1.#ctor(System.Action{`0,System.Threading.CancellationToken},`0)" type="API" />
+  <topic id="M:W.Threading.Gate`1.CallAction(System.Threading.CancellationToken)" type="API" />
   <topic id="M:W.Threading.Gate`1.Run" type="API" />
+  <topic id="M:W.Threading.Gate`1.Run(`0)" type="API" />
   <topic id="T:W.Threading.GateMethods" type="API" />
   <topic id="Methods.T:W.Threading.GateMethods" type="API" />
   <topic id="Overload:W.Threading.GateMethods.AsGate" type="API" />
-  <topic id="M:W.Threading.GateMethods.AsGate(System.Action{System.Threading.CancellationTokenSource})" type="API" />
-  <topic id="M:W.Threading.GateMethods.AsGate``1(System.Action{``0,System.Threading.CancellationTokenSource})" type="API" />
+  <topic id="M:W.Threading.GateMethods.AsGate(System.Action{System.Threading.CancellationToken})" type="API" />
+  <topic id="M:W.Threading.GateMethods.AsGate``1(System.Action{``0,System.Threading.CancellationToken})" type="API" />
   <topic id="T:W.Threading.Thread" type="API" />
   <topic id="Methods.T:W.Threading.Thread" type="API" />
   <topic id="Properties.T:W.Threading.Thread" type="API" />
-  <topic id="Overload:W.Threading.Thread.Cancel" type="API" />
+  <topic id="Overload:W.Threading.Thread.#ctor" type="API" />
+  <topic id="Overload:W.Threading.Thread.Create" type="API" />
   <topic id="Overload:W.Threading.Thread.Join" type="API" />
-  <topic id="M:W.Threading.Thread.#ctor(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},System.Threading.CancellationTokenSource)" type="API" />
-  <topic id="M:W.Threading.Thread.CallInvokeAction" type="API" />
-  <topic id="M:W.Threading.Thread.CallInvokeOnComplete(System.Exception)" type="API" />
+  <topic id="Overload:W.Threading.Thread.Sleep" type="API" />
+  <topic id="Overload:W.Threading.Thread.Start" type="API" />
+  <topic id="M:W.Threading.Thread.#ctor(System.Action{System.Threading.CancellationToken})" type="API" />
+  <topic id="M:W.Threading.Thread.#ctor(System.Action{System.Threading.CancellationToken},System.Boolean)" type="API" />
+  <topic id="M:W.Threading.Thread.CallAction(System.Threading.CancellationToken)" type="API" />
   <topic id="M:W.Threading.Thread.Cancel" type="API" />
-  <topic id="M:W.Threading.Thread.Cancel(System.Int32)" type="API" />
-  <topic id="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},System.Threading.CancellationTokenSource)" type="API" />
+  <topic id="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationToken})" type="API" />
+  <topic id="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationToken},System.Boolean)" type="API" />
+  <topic id="M:W.Threading.Thread.Create``1(System.Action{``0,System.Threading.CancellationToken})" type="API" />
+  <topic id="M:W.Threading.Thread.Create``1(System.Action{``0,System.Threading.CancellationToken},System.Boolean)" type="API" />
   <topic id="M:W.Threading.Thread.Dispose" type="API" />
+  <topic id="P:W.Threading.Thread.Exception" type="API" />
+  <topic id="P:W.Threading.Thread.IsComplete" type="API" />
+  <topic id="P:W.Threading.Thread.IsFaulted" type="API" />
+  <topic id="P:W.Threading.Thread.IsRunning" type="API" />
+  <topic id="P:W.Threading.Thread.IsStarted" type="API" />
   <topic id="M:W.Threading.Thread.Join" type="API" />
   <topic id="M:W.Threading.Thread.Join(System.Int32)" type="API" />
   <topic id="M:W.Threading.Thread.Sleep(System.Int32)" type="API" />
+  <topic id="M:W.Threading.Thread.Sleep(System.Int32,System.Boolean)" type="API" />
+  <topic id="M:W.Threading.Thread.Sleep(W.Threading.CPUProfileEnum)" type="API" />
+  <topic id="M:W.Threading.Thread.Start" type="API" />
+  <topic id="M:W.Threading.Thread.Start(System.Int32)" type="API" />
+  <topic id="M:W.Threading.Thread.Stop" type="API" />
+  <topic id="P:W.Threading.Thread.Token" type="API" />
   <topic id="T:W.Threading.Thread`1" type="API" />
   <topic id="Methods.T:W.Threading.Thread`1" type="API" />
   <topic id="Properties.T:W.Threading.Thread`1" type="API" />
-  <topic id="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},`0,System.Threading.CancellationTokenSource)" type="API" />
-  <topic id="P:W.Threading.Thread`1.Action" type="API" />
-  <topic id="M:W.Threading.Thread`1.Create``1(System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0,System.Threading.CancellationTokenSource)" type="API" />
-  <topic id="P:W.Threading.Thread`1.CustomData" type="API" />
-  <topic id="M:W.Threading.Thread`1.InvokeAction(System.Threading.CancellationTokenSource)" type="API" />
-  <topic id="T:W.Threading.ThreadBase" type="API" />
-  <topic id="Methods.T:W.Threading.ThreadBase" type="API" />
-  <topic id="Properties.T:W.Threading.ThreadBase" type="API" />
-  <topic id="Overload:W.Threading.ThreadBase.Cancel" type="API" />
-  <topic id="Overload:W.Threading.ThreadBase.Join" type="API" />
-  <topic id="M:W.Threading.ThreadBase.#ctor(System.Action{System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},System.Threading.CancellationTokenSource)" type="API" />
-  <topic id="P:W.Threading.ThreadBase.Action" type="API" />
-  <topic id="M:W.Threading.ThreadBase.CallInvokeAction" type="API" />
-  <topic id="M:W.Threading.ThreadBase.CallInvokeOnComplete(System.Exception)" type="API" />
-  <topic id="M:W.Threading.ThreadBase.Cancel" type="API" />
-  <topic id="M:W.Threading.ThreadBase.Cancel(System.Int32)" type="API" />
-  <topic id="P:W.Threading.ThreadBase.Cts" type="API" />
-  <topic id="M:W.Threading.ThreadBase.Dispose" type="API" />
-  <topic id="M:W.Threading.ThreadBase.Finalize" type="API" />
-  <topic id="M:W.Threading.ThreadBase.InvokeAction(System.Threading.CancellationTokenSource)" type="API" />
-  <topic id="M:W.Threading.ThreadBase.InvokeOnComplete(System.Exception)" type="API" />
-  <topic id="P:W.Threading.ThreadBase.IsBusy" type="API" />
-  <topic id="P:W.Threading.ThreadBase.IsRunning" type="API" />
-  <topic id="M:W.Threading.ThreadBase.Join" type="API" />
-  <topic id="M:W.Threading.ThreadBase.Join(System.Int32)" type="API" />
-  <topic id="P:W.Threading.ThreadBase.OnExit" type="API" />
-  <topic id="P:W.Threading.ThreadBase.Success" type="API" />
-  <topic id="M:W.Threading.ThreadBase.ThreadProc" type="API" />
+  <topic id="Overload:W.Threading.Thread`1.#ctor" type="API" />
+  <topic id="Overload:W.Threading.Thread`1.Start" type="API" />
+  <topic id="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationToken})" type="API" />
+  <topic id="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationToken},System.Boolean)" type="API" />
+  <topic id="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationToken},`0)" type="API" />
+  <topic id="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationToken},`0,System.Boolean)" type="API" />
+  <topic id="M:W.Threading.Thread`1.CallAction(System.Threading.CancellationToken)" type="API" />
+  <topic id="M:W.Threading.Thread`1.Start" type="API" />
+  <topic id="M:W.Threading.Thread`1.Start(System.Int32)" type="API" />
+  <topic id="M:W.Threading.Thread`1.Start(`0)" type="API" />
+  <topic id="M:W.Threading.Thread`1.Start(`0,System.Int32)" type="API" />
   <topic id="T:W.Threading.ThreadExtensions" type="API" />
   <topic id="Methods.T:W.Threading.ThreadExtensions" type="API" />
   <topic id="Overload:W.Threading.ThreadExtensions.CreateThread" type="API" />
-  <topic id="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)" type="API" />
-  <topic id="M:W.Threading.ThreadExtensions.CreateThread``1(``0,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})" type="API" />
+  <topic id="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationToken})" type="API" />
+  <topic id="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationToken},System.Boolean)" type="API" />
+  <topic id="M:W.Threading.ThreadExtensions.CreateThread``1(``0,System.Action{``0,System.Threading.CancellationToken})" type="API" />
+  <topic id="M:W.Threading.ThreadExtensions.CreateThread``1(``0,System.Action{``0,System.Threading.CancellationToken},System.Boolean)" type="API" />
   <topic id="R:Project_Tungsten" type="API" />
 </topics>
