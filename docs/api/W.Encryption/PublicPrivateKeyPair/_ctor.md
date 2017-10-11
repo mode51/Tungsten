@@ -1,6 +1,6 @@
 PublicPrivateKeyPair Constructor
 ================================
-  Initializes a new instance of the [PublicPrivateKeyPair][1] class
+   Initializes a new instance of the [PublicPrivateKeyPair][1] class
 
   **Namespace:**  [W.Encryption][2]  
   **Assembly:**  Tungsten (in Tungsten.dll)

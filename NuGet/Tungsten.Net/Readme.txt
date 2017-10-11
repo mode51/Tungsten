@@ -1,5 +1,11 @@
 ﻿Tungsten.Net is a client/server tcp socket library. Client and server classes are provided, with and without assymetric encryption.
 
+9.5.2017 v1.3.0
+Rewrite to stabalize SecureClient
+Added CPUProfile to allow the programmer to customize how the cpu is utilized (mostly only useful for servers)
+Now using ref and out to minimize memory usage
+Added SendAndWaitForResponse and SendRaw/SendRawAndWaitForResponse
+
 5.30.2017 v1.2.5.3
 This update largely breaks backward compatability.  I'm hoping this is the last major change.
 Refactored, simplified and corrected clients, servers and interfaces.

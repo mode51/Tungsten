@@ -1,6 +1,6 @@
 InvokeExtensions Class
 ======================
-  Extension methods to provide code shortcuts to evaluate InvokeRequired and run code appropriately
+   Extension methods to provide code shortcuts to evaluate InvokeRequired and run code appropriately
 
 
 Inheritance Hierarchy

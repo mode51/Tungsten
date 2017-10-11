@@ -1,6 +1,6 @@
 RSAMethods Constructor
 ======================
-  Initializes a new instance of the [RSAMethods][1] class
+   Initializes a new instance of the [RSAMethods][1] class
 
   **Namespace:**  [W.Encryption][2]  
   **Assembly:**  Tungsten (in Tungsten.dll)

@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.PropertyValueChangedDelegate Delegate
 =====================================================================
-  Raised when the value of the property changes
+   Raised when the value of the property changes
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

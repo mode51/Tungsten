@@ -1,6 +1,6 @@
 CustomLogger Constructor
 ========================
-  Constructs a new CustomLogger
+   Constructs a new CustomLogger
 
   **Namespace:**  [W.Logging][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -19,15 +19,11 @@ public CustomLogger(
 
 ##### *name*
 Type: [System.String][2]  
-
-[Missing &lt;param name="name"/> documentation for "M:W.Logging.CustomLogger.#ctor(System.String,System.Boolean)"]
-
+The custom logger name
 
 ##### *addTimestamp*
 Type: [System.Boolean][3]  
-
-[Missing &lt;param name="addTimestamp"/> documentation for "M:W.Logging.CustomLogger.#ctor(System.String,System.Boolean)"]
-
+If True the log messages will be prefixed with a timestamp
 
 
 See Also

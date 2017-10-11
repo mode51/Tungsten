@@ -1,6 +1,6 @@
 FromExtensions.FromBase64 Method (Byte[])
 =========================================
-  Converts a Base64 encoded byte array back to a normal byte array
+   Converts a Base64 encoded byte array back to a normal byte array
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

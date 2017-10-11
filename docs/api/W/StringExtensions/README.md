@@ -1,6 +1,6 @@
 StringExtensions Class
 ======================
-  Some useful string extensions
+   Some useful string extensions
 
 
 Inheritance Hierarchy

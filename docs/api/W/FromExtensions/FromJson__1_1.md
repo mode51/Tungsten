@@ -1,6 +1,6 @@
 FromExtensions.FromJson&lt;TType> Method (String)
 =================================================
-  Deserializes a Json string to an object
+   Deserializes a Json string to an object
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

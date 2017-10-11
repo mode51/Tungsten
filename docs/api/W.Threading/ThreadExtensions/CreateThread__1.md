@@ -1,6 +1,6 @@
-ThreadExtensions.CreateThread&lt;T> Method (Object, Action&lt;T, CancellationTokenSource>, Action&lt;Boolean, Exception>, T)
-============================================================================================================================
-  Starts a new thread
+ThreadExtensions.CreateThread&lt;TParameterType> Method (Object, Action&lt;TParameterType, CancellationToken>)
+==============================================================================================================
+   Creates and starts a new thread and
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -9,11 +9,9 @@ Syntax
 ------
 
 ```csharp
-public static Thread<T> CreateThread<T>(
+public static Thread<TParameterType> CreateThread<TParameterType>(
 	this Object this,
-	Action<T, CancellationTokenSource> action,
-	Action<bool, Exception> onComplete,
-	T customData
+	Action<TParameterType, CancellationToken> action
 )
 
 ```
@@ -22,49 +20,35 @@ public static Thread<T> CreateThread<T>(
 
 ##### *this*
 Type: [System.Object][2]  
-
-[Missing &lt;param name="this"/> documentation for "M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)"]
-
+The object to send into a new Thread
 
 ##### *action*
-Type: [System.Action][3]&lt;**T**, [CancellationTokenSource][4]>  
+Type: [System.Action][3]&lt;**TParameterType**, [CancellationToken][4]>  
 Action to call on a thread
-
-##### *onComplete*
-Type: [System.Action][3]&lt;[Boolean][5], [Exception][6]>  
-Action to call upon comletion. Executes on the same thread as Action.
-
-##### *customData*
-Type: **T**  
-The data to pass to the thread (Action)
 
 #### Type Parameters
 
-##### *T*
-
-[Missing &lt;typeparam name="T"/> documentation for "M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception},``0)"]
-
+##### *TParameterType*
+The Type of the item being extended
 
 #### Return Value
-Type: [Thread][7]&lt;**T**>  
+Type: [Thread][5]&lt;**TParameterType**>  
 A reference to the new W.Threading.Thread&lt;T>
 #### Usage Note
-In Visual Basic and C#, you can call this method as an instance method on any object of type [Object][2]. When you use instance method syntax to call this method, omit the first parameter. For more information, see [Extension Methods (Visual Basic)][8] or [Extension Methods (C# Programming Guide)][9].
+In Visual Basic and C#, you can call this method as an instance method on any object of type [Object][2]. When you use instance method syntax to call this method, omit the first parameter. For more information, see [Extension Methods (Visual Basic)][6] or [Extension Methods (C# Programming Guide)][7].
 
 See Also
 --------
 
 #### Reference
-[ThreadExtensions Class][10]  
+[ThreadExtensions Class][8]  
 [W.Threading Namespace][1]  
 
 [1]: ../README.md
 [2]: http://msdn.microsoft.com/en-us/library/e5kfa45b
 [3]: http://msdn.microsoft.com/en-us/library/bb549311
-[4]: http://msdn.microsoft.com/en-us/library/dd321629
-[5]: http://msdn.microsoft.com/en-us/library/a28wyd50
-[6]: http://msdn.microsoft.com/en-us/library/c18k6c59
-[7]: ../Thread_1/README.md
-[8]: http://msdn.microsoft.com/en-us/library/bb384936.aspx
-[9]: http://msdn.microsoft.com/en-us/library/bb383977.aspx
-[10]: README.md
+[4]: http://msdn.microsoft.com/en-us/library/dd384802
+[5]: ../Thread_1/README.md
+[6]: http://msdn.microsoft.com/en-us/library/bb384936.aspx
+[7]: http://msdn.microsoft.com/en-us/library/bb383977.aspx
+[8]: README.md

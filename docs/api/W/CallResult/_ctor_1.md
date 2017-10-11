@@ -1,6 +1,6 @@
 CallResult Constructor (Boolean)
 ================================
-  Constructor which accepts an initial value for Success
+   Constructor which accepts an initial value for Success
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -18,9 +18,7 @@ public CallResult(
 
 ##### *success*
 Type: [System.Boolean][2]  
-
-[Missing &lt;param name="success"/> documentation for "M:W.CallResult.#ctor(System.Boolean)"]
-
+The initial value for Success
 
 
 See Also

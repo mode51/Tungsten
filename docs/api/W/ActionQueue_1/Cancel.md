@@ -1,6 +1,6 @@
 ActionQueue&lt;T>.Cancel Method
 ===============================
-  Cancels processing of the queue
+   Cancels processing of the queue
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

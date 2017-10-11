@@ -1,6 +1,6 @@
 AsExtensions.AsDecompressed Method
 ==================================
-  
+   
 
 **Note: This API is now obsolete.**
 Decompresses the byte array using System.IO.Compression.DeflateStream

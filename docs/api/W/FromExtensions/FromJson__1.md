@@ -1,6 +1,6 @@
 FromExtensions.FromJson&lt;TType> Method (Byte[])
 =================================================
-  Deserializes an encoded byte array of Json to an object
+   Deserializes an encoded byte array of Json to an object
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

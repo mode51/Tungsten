@@ -8,7 +8,7 @@ namespace W
     /// Provides thread safety via locking
     /// </para>
     /// </summary>
-    /// <typeparam name="TValue"></typeparam>
+    /// <typeparam name="TValue">The Type of the lockable value</typeparam>
     public class Lockable<TValue>
     {
         private readonly object _lockObject = new object();

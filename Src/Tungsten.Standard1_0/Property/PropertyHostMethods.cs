@@ -48,7 +48,7 @@ namespace W
         /// This method should be called in the constructor of any class which has IOwnedProperty members
         /// </para>
         /// </summary>
-        /// <param name="this"></param>
+        /// <param name="this">The object on which to find and initialize properties</param>
         public static void InitializeProperties(this object @this)// where TOwner : class
         {
             var fieldInfos = @this.GetType().GetTypeInfo().DeclaredFields;//.GetFields(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
@@ -69,6 +69,7 @@ namespace W
         /// Scans the IsDirty value of each field and property of type IProperty 
         /// </para>
         /// </summary>
+        /// <param name="this">The object on which to inspect for dirty properties</param>
         /// <returns>True if any IProperty member's IsDirty value is true, otherwise false</returns>
         public static bool IsDirty(this object @this)// where TOwner : class
         {
@@ -103,6 +104,7 @@ namespace W
         /// Scans each field and property of type IProperty and sets it's IsDirty flag to false
         /// </para>
         /// </summary>
+        /// <param name="this">The object on which to mark all properties as clean</param>
         public static void MarkAsClean(this object @this)// where TOwner : class
         {
             var fieldInfos = @this.GetType().GetTypeInfo().DeclaredFields;//.GetFields(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();

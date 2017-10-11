@@ -1,6 +1,6 @@
 CallResult&lt;TResult> Constructor (Boolean, TResult)
 =====================================================
-  Constructor accepting an initial Success value and an initial Result value
+   Constructor accepting an initial Success value and an initial Result value
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue> Constructor
 ===========================================
-  Initializes a new instance of the [PropertyBase&lt;TOwner, TValue>][1] class
+   Initializes a new instance of the [PropertyBase&lt;TOwner, TValue>][1] class
 
   **Namespace:**  [W][2]  
   **Assembly:**  Tungsten (in Tungsten.dll)

@@ -1,6 +1,6 @@
 CallResult Constructor (Boolean, Exception)
 ===========================================
-  Constructor which accepts an initial value for Success and an initial value for Exception
+   Constructor which accepts an initial value for Success and an initial value for Exception
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

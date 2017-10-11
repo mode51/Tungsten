@@ -1,6 +1,6 @@
-RSAMethods.Encrypt Method (Byte[], RSAParameters, Int32)
-========================================================
-  Encrypts a byte array with RSA encryption
+RSAMethods.Encrypt Method
+=========================
+   Encrypts a string using the specified keysize and public key
 
   **Namespace:**  [W.Encryption][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -10,40 +10,33 @@ Syntax
 
 ```csharp
 public static string Encrypt(
-	byte[] byteData,
-	RSAParameters key,
-	int keySize = 2048
+	string inputString,
+	RSAParameters publicKey
 )
 ```
 
 #### Parameters
 
-##### *byteData*
-Type: [System.Byte][2][]  
-The byte array to encrypt
+##### *inputString*
+Type: [System.String][2]  
+The data to encrypt
 
-##### *key*
+##### *publicKey*
 Type: [System.Security.Cryptography.RSAParameters][3]  
-The public key to use to encrypt the byte array
-
-##### *keySize* (Optional)
-Type: [System.Int32][4]  
-The keysize, in bits, of the public key
+The public key used to encrypt the data
 
 #### Return Value
-Type: [String][5]  
-The encrypted byte array of the specified data
+Type: [String][2]  
+A string containing the encrypted data
 
 See Also
 --------
 
 #### Reference
-[RSAMethods Class][6]  
+[RSAMethods Class][4]  
 [W.Encryption Namespace][1]  
 
 [1]: ../README.md
-[2]: http://msdn.microsoft.com/en-us/library/yyb1w04y
+[2]: http://msdn.microsoft.com/en-us/library/s1wwdcbf
 [3]: http://msdn.microsoft.com/en-us/library/ke2te33h
-[4]: http://msdn.microsoft.com/en-us/library/td2s409d
-[5]: http://msdn.microsoft.com/en-us/library/s1wwdcbf
-[6]: README.md
+[4]: README.md

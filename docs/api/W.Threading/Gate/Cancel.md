@@ -1,6 +1,6 @@
 Gate.Cancel Method
 ==================
-  Signals the task to cancel
+   Singals the gated Action that a Cancel has been requested
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

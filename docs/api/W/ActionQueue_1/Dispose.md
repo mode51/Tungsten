@@ -1,6 +1,6 @@
 ActionQueue&lt;T>.Dispose Method
 ================================
-  Releases resources related to the ActionQueue
+   Releases resources related to the ActionQueue
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

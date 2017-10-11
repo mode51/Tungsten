@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.ValueChanging Event
 ===================================================
-  Raised before Value has changed. To prevent Value from changing set cancel to true.
+   Raised before Value has changed. To prevent Value from changing set cancel to true.
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

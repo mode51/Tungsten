@@ -1,6 +1,6 @@
 Singleton&lt;TSingletonType>.Instance Property
 ==============================================
-  Returns the singleton
+   Returns the singleton
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

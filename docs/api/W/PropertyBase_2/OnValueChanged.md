@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.OnValueChanged Field
 ====================================================
-  Callback type for use in the constructor (if one wants to avoid using the event)
+   Callback type for use in the constructor (if one wants to avoid using the event)
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

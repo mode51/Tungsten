@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.PropertyValueChangingDelegate Delegate
 ======================================================================
-  Raised prior to the value of the property changing. Allows the programmer to cancel the change.
+   Raised prior to the value of the property changing. Allows the programmer to cancel the change.
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

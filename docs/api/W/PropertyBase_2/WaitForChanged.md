@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.WaitForChanged Method
 =====================================================
-  Allows the caller to suspend it's thread until Value changes
+   Allows the caller to suspend it's thread until Value changes
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -18,15 +18,11 @@ public bool WaitForChanged(
 
 ##### *msTimeout* (Optional)
 Type: [System.Int32][2]  
-
-[Missing &lt;param name="msTimeout"/> documentation for "M:W.PropertyBase`2.WaitForChanged(System.Int32)"]
-
+The number of milliseconds to wait for the value to change
 
 #### Return Value
 Type: [Boolean][3]  
-
-[Missing &lt;returns> documentation for "M:W.PropertyBase`2.WaitForChanged(System.Int32)"]
-
+True if the value changed within the specified timeout period, otherwise False
 
 See Also
 --------

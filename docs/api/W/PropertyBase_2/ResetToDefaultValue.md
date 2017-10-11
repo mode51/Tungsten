@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.ResetToDefaultValue Method
 ==========================================================
-  Resets the Value to the value provided by DefaultValue
+   Resets the Value to the value provided by DefaultValue
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

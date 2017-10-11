@@ -34,7 +34,7 @@ namespace W
         /// <summary>
         /// Constructor accepting an initial Success value, an initial Result value and an initial Exception value
         /// </summary>
-        /// <param name="success">The initial Success value</param>
+        /// <param name="success">The initial value for Success</param>
         /// <param name="result">The initial Result value</param>
         /// <param name="e">An exception object, if an exception occurred</param>
         public CallResult(bool success, TResult result, Exception e)
@@ -71,7 +71,7 @@ namespace W
         /// <summary>
         /// Constructor which accepts an initial value for Success
         /// </summary>
-        /// <param name="success"></param>
+        /// <param name="success">The initial value for Success</param>
         public CallResult(bool success)
         {
             Success = success;

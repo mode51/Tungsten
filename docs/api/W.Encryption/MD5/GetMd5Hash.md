@@ -1,6 +1,6 @@
 MD5.GetMd5Hash Method (String)
 ==============================
-  Generates an MD5 hash of the input string
+   Generates an MD5 hash of the input string
 
   **Namespace:**  [W.Encryption][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

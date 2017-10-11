@@ -11,7 +11,13 @@ namespace W
     {
         private object _disposeLock = new object();
 
+        /// <summary>
+        /// If True, the object has been disposed
+        /// </summary>
         protected bool IsDisposed = false; // To detect redundant calls
+        /// <summary>
+        /// If True, the object is in the process of disposing
+        /// </summary>
         protected bool IsDisposing = false;
 
         /// <summary>

@@ -126,7 +126,7 @@ namespace W
         /// </summary>
         /// <typeparam name="TType">The type of object to serialize</typeparam>
         /// <param name="this">The object to serialize</param>
-        /// <returns></returns>
+        /// <returns>A string containing the object as serialized into xml</returns>
         //[System.Diagnostics.DebuggerStepThrough]
         public static string AsXml<TType>(this object @this)
         {

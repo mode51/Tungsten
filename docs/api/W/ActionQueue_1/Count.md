@@ -1,6 +1,6 @@
 ActionQueue&lt;T>.Count Property
 ================================
-  Returns the number of items currently in the queue
+   Returns the number of items currently in the queue
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

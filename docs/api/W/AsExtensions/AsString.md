@@ -1,6 +1,6 @@
 AsExtensions.AsString Method (Byte[])
 =====================================
-  Converts an encoded byte array to a string
+   Converts an encoded byte array to a string
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

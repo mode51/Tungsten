@@ -1,6 +1,6 @@
 AsExtensions.AsXml&lt;TType> Method
 ===================================
-  Serializes an object to an xml string
+   Serializes an object to an xml string
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -28,9 +28,7 @@ The type of object to serialize
 
 #### Return Value
 Type: [String][3]  
-
-[Missing &lt;returns> documentation for "M:W.AsExtensions.AsXml``1(System.Object)"]
-
+A string containing the object as serialized into xml
 #### Usage Note
 In Visual Basic and C#, you can call this method as an instance method on any object of type [Object][2]. When you use instance method syntax to call this method, omit the first parameter. For more information, see [Extension Methods (Visual Basic)][4] or [Extension Methods (C# Programming Guide)][5].
 

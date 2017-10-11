@@ -1,6 +1,6 @@
 PropertyChangedNotifier Constructor
 ===================================
-  Initializes a new instance of the [PropertyChangedNotifier][1] class
+   Initializes a new instance of the [PropertyChangedNotifier][1] class
 
   **Namespace:**  [W][2]  
   **Assembly:**  Tungsten (in Tungsten.dll)

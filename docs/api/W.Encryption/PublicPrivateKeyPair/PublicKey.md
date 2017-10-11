@@ -1,6 +1,6 @@
 PublicPrivateKeyPair.PublicKey Property
 =======================================
-  the public RSA key. Should be shared.
+   the public RSA key. Should be shared.
 
   **Namespace:**  [W.Encryption][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

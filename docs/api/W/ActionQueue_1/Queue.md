@@ -1,6 +1,6 @@
 ActionQueue&lt;T>.Queue Property
 ================================
-  The reference to the ConcurrentQueue being used
+   The reference to the ConcurrentQueue being used
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

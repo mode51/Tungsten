@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.Dispose Method
 ==============================================
-  Disposes the object and releases resources
+   Disposes the object and releases resources
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

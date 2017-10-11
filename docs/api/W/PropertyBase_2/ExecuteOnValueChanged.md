@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.ExecuteOnValueChanged Method
 ============================================================
-  Calls the OnValueChanged callback
+   Calls the OnValueChanged callback
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

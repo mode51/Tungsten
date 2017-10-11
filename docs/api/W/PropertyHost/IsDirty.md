@@ -1,6 +1,6 @@
 PropertyHost.IsDirty Property
 =============================
-  Finds all Properties and checks their IsDirty flag
+   Finds all Properties and checks their IsDirty flag
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

@@ -1,6 +1,6 @@
 PropertyHostMethods Class
 =========================
-  Exposes static PropertyHost extension methods
+   Exposes static PropertyHost extension methods
 
 
 Inheritance Hierarchy

@@ -1,6 +1,6 @@
 Lockable&lt;TValue> Constructor (TValue)
 ========================================
-  Constructor which initializes Value with the specified value
+   Constructor which initializes Value with the specified value
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

@@ -1,6 +1,6 @@
 PropertyHostMethods.InitializeProperties Method
 ===============================================
-  
+   
 Scans the fields and properties of "owner" and sets the member's Owner property to "owner" This method should be called in the constructor of any class which has IOwnedProperty members
 
 
@@ -20,9 +20,7 @@ public static void InitializeProperties(
 
 ##### *this*
 Type: [System.Object][2]  
-
-[Missing &lt;param name="this"/> documentation for "M:W.PropertyHostMethods.InitializeProperties(System.Object)"]
-
+The object on which to find and initialize properties
 
 #### Usage Note
 In Visual Basic and C#, you can call this method as an instance method on any object of type [Object][2]. When you use instance method syntax to call this method, omit the first parameter. For more information, see [Extension Methods (Visual Basic)][3] or [Extension Methods (C# Programming Guide)][4].

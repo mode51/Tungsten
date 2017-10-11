@@ -1,6 +1,6 @@
 PropertyChangedNotifier.SetValue Method
 =======================================
-  
+   
 Calls OnPropertyChanged. This method does not make assignments. Override this method to make assignments.
 
 
@@ -21,15 +21,11 @@ protected virtual void SetValue(
 
 ##### *value*
 Type: [System.Object][2]  
-
-[Missing &lt;param name="value"/> documentation for "M:W.PropertyChangedNotifier.SetValue(System.Object,System.String)"]
-
+The new value
 
 ##### *propertyName* (Optional)
 Type: [System.String][3]  
-
-[Missing &lt;param name="propertyName"/> documentation for "M:W.PropertyChangedNotifier.SetValue(System.Object,System.String)"]
-
+The name of the caller (the property being set)
 
 
 See Also

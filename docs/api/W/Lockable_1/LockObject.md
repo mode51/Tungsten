@@ -1,6 +1,6 @@
 Lockable&lt;TValue>.LockObject Property
 =======================================
-  The object used internally for lock statements
+   The object used internally for lock statements
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

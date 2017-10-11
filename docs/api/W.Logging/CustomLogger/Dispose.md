@@ -1,6 +1,6 @@
 CustomLogger.Dispose Method
 ===========================
-  Disposes the CustomLogger and releases resources
+   Disposes the CustomLogger and releases resources
 
   **Namespace:**  [W.Logging][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

@@ -1,6 +1,6 @@
 Property&lt;TValue> Constructor (PropertyBase&lt;Property&lt;TValue>, TValue>.OnValueChangedDelegate)
 =====================================================================================================
-  Constructs a new Property
+   Constructs a new Property
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

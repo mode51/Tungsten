@@ -1,6 +1,6 @@
 FromExtensions.FromXml&lt;TType> Method (String)
 ================================================
-  Deserializes an Xml string to an object
+   Deserializes an Xml string to an object
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

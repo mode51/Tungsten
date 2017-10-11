@@ -1,6 +1,6 @@
 AsExtensions.AsStream Method (Byte[])
 =====================================
-  Creates a MemoryStream object and initializes it with the specified byte array
+   Creates a MemoryStream object and initializes it with the specified byte array
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

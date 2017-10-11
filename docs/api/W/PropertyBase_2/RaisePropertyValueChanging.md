@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.RaisePropertyValueChanging Method
 =================================================================
-  Raises the ValueChanging event
+   Raises the ValueChanging event
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

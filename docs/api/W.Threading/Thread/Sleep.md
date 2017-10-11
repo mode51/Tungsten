@@ -1,6 +1,6 @@
-Thread.Sleep Method
-===================
-  Blocks the calling thread for the specified time
+Thread.Sleep Method (Int32)
+===========================
+   Blocks the calling thread for the specified time
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

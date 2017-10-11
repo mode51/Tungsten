@@ -1,6 +1,6 @@
 CallResult.Exception Property
 =============================
-  Provide exception data to the caller if desired
+   Provide exception data to the caller if desired
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

@@ -1,155 +1,155 @@
-Thread&lt;TCustomData> Class
-============================
-  A thread wrapper which makes multi-threading easier
+Thread&lt;TParameterType> Class
+===============================
+   A thread class which can pass a typed parameter into the thread action
 
 
 Inheritance Hierarchy
 ---------------------
 [System.Object][1]  
-  [W.Threading.ThreadBase][2]  
-    [W.Threading.Thread][3]  
-      **W.Threading.Thread<TCustomData>**  
-        [W.Threading.Gate&lt;T>][4]  
+  [W.Threading.Thread][2]  
+    **W.Threading.Thread<TParameterType>**  
 
-  **Namespace:**  [W.Threading][5]  
+  **Namespace:**  [W.Threading][3]  
   **Assembly:**  Tungsten (in Tungsten.dll)
 
 Syntax
 ------
 
 ```csharp
-public class Thread<TCustomData> : Thread
+public class Thread<TParameterType> : Thread
 
 ```
 
 #### Type Parameters
 
-##### *TCustomData*
-The type of custom data to pass to the thread Action
+##### *TParameterType*
+The argument Type to be passed into the thread action
 
-The **Thread<TCustomData>** type exposes the following members.
+The **Thread<TParameterType>** type exposes the following members.
 
 
 Constructors
 ------------
 
-                 | Name                        | Description                    
----------------- | --------------------------- | ------------------------------ 
-![Public method] | [Thread&lt;TCustomData>][6] | Constructs a new Thread object 
+                 | Name                                                                                                  | Description                                          
+---------------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------- 
+![Public method] | [Thread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>)][4]                          | Constructs a new Thread which can accept a parameter 
+![Public method] | [Thread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>, Boolean)][5]                 | Constructs a new Thread which can accept a parameter 
+![Public method] | [Thread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>, TParameterType)][6]          | Constructs a new Thread which can accept a parameter 
+![Public method] | [Thread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>, TParameterType, Boolean)][7] | Constructs a new Thread which can accept a parameter 
 
 
 Properties
 ----------
 
-                      | Name            | Description                                                                                                                         
---------------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------- 
-![Protected property] | [Action][7]     | The Action to be run on a new thread                                                                                                
-![Protected property] | [Cts][8]        | The CancellationTokenSource which can be used to cancel the thread (Inherited from [ThreadBase][2].)                                
-![Public property]    | [CustomData][9] | The custom data to pass into the Action                                                                                             
-![Protected property] | [IsBusy][10]    | Value is True if the thread is currently running, otherwise False (Inherited from [ThreadBase][2].)                                 
-![Public property]    | [IsRunning][11] | True if the thread is running, otherwise false (Inherited from [ThreadBase][2].)                                                    
-![Protected property] | [OnExit][12]    | The Action to execute when the thread completes (Inherited from [ThreadBase][2].)                                                   
-![Protected property] | [Success][13]   | The Value to send to the onExit Action. True if the thread returns successfully, otherwise False. (Inherited from [ThreadBase][2].) 
+                   | Name            | Description                                                                                         
+------------------ | --------------- | --------------------------------------------------------------------------------------------------- 
+![Public property] | [Exception][8]  | The exception, if one was caught (Inherited from [Thread][2].)                                      
+![Public property] | [IsComplete][9] | True if the thread has completed, otherwise False (Inherited from [Thread][2].)                     
+![Public property] | [IsFaulted][10] | True if the thread raised an exception, otherwise False (Inherited from [Thread][2].)               
+![Public property] | [IsRunning][11] |  **Obsolete.**True if the thread is currently running, otherwise False (Inherited from [Thread][2].) 
+![Public property] | [IsStarted][12] | True if the thread has been started, otherwise False (Inherited from [Thread][2].)                  
+![Public property] | [Token][13]     | Not available until after Start has been called (Inherited from [Thread][2].)                       
 
 
 Methods
 -------
 
-                                 | Name                             | Description                                                                                                                     
--------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- 
-![Protected method]              | [CallInvokeAction][14]           | Called by the host thread procedure, this method calls the Action (Inherited from [Thread][3].)                                 
-![Protected method]              | [CallInvokeOnComplete][15]       | Calls the onExit Action when the thread returns (Inherited from [Thread][3].)                                                   
-![Public method]                 | [Cancel()][16]                   | (Inherited from [Thread][3].)                                                                                                   
-![Public method]                 | [Cancel(Int32)][17]              | (Inherited from [Thread][3].)                                                                                                   
-![Public method]![Static member] | [Create&lt;TCustomDataType>][18] | Starts a new thread                                                                                                             
-![Public method]                 | [Dispose][19]                    | (Inherited from [Thread][3].)                                                                                                   
-![Public method]                 | [Equals][20]                     | (Inherited from [Object][1].)                                                                                                   
-![Protected method]              | [Finalize][21]                   | Destructs the ThreadBase object. Calls Dispose. (Inherited from [ThreadBase][2].)                                               
-![Public method]                 | [GetHashCode][22]                | (Inherited from [Object][1].)                                                                                                   
-![Public method]                 | [GetType][23]                    | (Inherited from [Object][1].)                                                                                                   
-![Protected method]              | [InvokeAction][24]               | Invokes the Action (Overrides [ThreadBase.InvokeAction(CancellationTokenSource)][25].)                                          
-![Protected method]              | [InvokeOnComplete][26]           | Invokes the onExit action. Virtual for customization. (Inherited from [ThreadBase][2].)                                         
-![Public method]                 | [Join()][27]                     | Blocks the calling thread until the thread terminates (Inherited from [Thread][3].)                                             
-![Public method]                 | [Join(Int32)][28]                | Blocks the calling thread until either the thread terminates or the specified milliseconds elapse (Inherited from [Thread][3].) 
-![Protected method]              | [MemberwiseClone][29]            | (Inherited from [Object][1].)                                                                                                   
-![Protected method]              | [ThreadProc][30]                 | The host thread procedure. This method calls the Action and subsequent onExit. (Inherited from [ThreadBase][2].)                
-![Public method]                 | [ToString][31]                   | (Inherited from [Object][1].)                                                                                                   
+                    | Name                               | Description                                                                                                                                                                 
+------------------- | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+![Protected method] | [CallAction][14]                   | Calls the action encapsulated by this thread. This method can be overridden to provide more specific functionality. (Overrides [Thread.CallAction(CancellationToken)][15].) 
+![Public method]    | [Cancel][16]                       |  **Obsolete.**Cancel the thread (Inherited from [Thread][2].)                                                                                                               
+![Public method]    | [Dispose][17]                      | Dispose the thread and free resources (Inherited from [Thread][2].)                                                                                                         
+![Public method]    | [Equals][18]                       | (Inherited from [Object][1].)                                                                                                                                               
+![Protected method] | [Finalize][19]                     | (Inherited from [Object][1].)                                                                                                                                               
+![Public method]    | [GetHashCode][20]                  | (Inherited from [Object][1].)                                                                                                                                               
+![Public method]    | [GetType][21]                      | (Inherited from [Object][1].)                                                                                                                                               
+![Public method]    | [Join()][22]                       | Block the calling thread until this thread object has completed (Inherited from [Thread][2].)                                                                               
+![Public method]    | [Join(Int32)][23]                  | Block the calling thread until this thread object has completed or until the timeout has occurred (Inherited from [Thread][2].)                                             
+![Protected method] | [MemberwiseClone][24]              | (Inherited from [Object][1].)                                                                                                                                               
+![Public method]    | [Start()][25]                      | Starts the thread if it's not already running (Overrides [Thread.Start()][26].)                                                                                             
+![Public method]    | [Start(Int32)][27]                 | Starts the thread if it's not already running (Overrides [Thread.Start(Int32)][28].)                                                                                        
+![Public method]    | [Start(TParameterType)][29]        | Starts the thread if it's not already running, passing in the specified argument                                                                                            
+![Public method]    | [Start(TParameterType, Int32)][30] | Starts the thread if it's not already running                                                                                                                               
+![Public method]    | [Stop][31]                         | Stop the thread. This calls Cancel on the CancellationToken (Inherited from [Thread][2].)                                                                                   
+![Public method]    | [ToString][32]                     | (Inherited from [Object][1].)                                                                                                                                               
 
 
 Extension Methods
 -----------------
 
-                                          | Name                       | Description                                                                                                                                                                                                                      
------------------------------------------ | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-![Public Extension Method]![Code example] | [As&lt;TType>][32]         | Use Generic syntax for the as operator. (Defined by [AsExtensions][33].)                                                                                                                                                         
-![Public Extension Method]                | [AsJson&lt;TType>][34]     | Serializes an object to a Json string (Defined by [AsExtensions][33].)                                                                                                                                                           
-![Public Extension Method]                | [AsXml&lt;TType>][35]      | Serializes an object to an xml string (Defined by [AsExtensions][33].)                                                                                                                                                           
-![Public Extension Method]                | [CreateThread&lt;T>][36]   | Starts a new thread (Defined by [ThreadExtensions][37].)                                                                                                                                                                         
-![Public Extension Method]                | [InitializeProperties][38] | 
+                                          | Name                                                                                         | Description                                                                                                                                                                                                                      
+----------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+![Public Extension Method]![Code example] | [As&lt;TType>][33]                                                                           | Use Generic syntax for the as operator. (Defined by [AsExtensions][34].)                                                                                                                                                         
+![Public Extension Method]                | [AsJson&lt;TType>][35]                                                                       | Serializes an object to a Json string (Defined by [AsExtensions][34].)                                                                                                                                                           
+![Public Extension Method]                | [AsXml&lt;TType>][36]                                                                        | Serializes an object to an xml string (Defined by [AsExtensions][34].)                                                                                                                                                           
+![Public Extension Method]                | [CreateThread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>)][37]          | Overloaded. Creates and starts a new thread and (Defined by [ThreadExtensions][38].)                                                                                                                                             
+![Public Extension Method]                | [CreateThread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>, Boolean)][39] | Overloaded. Creates a new thread (Defined by [ThreadExtensions][38].)                                                                                                                                                            
+![Public Extension Method]                | [InitializeProperties][40]                                                                   | 
 Scans the fields and properties of "owner" and sets the member's Owner property to "owner" This method should be called in the constructor of any class which has IOwnedProperty members
- (Defined by [PropertyHostMethods][39].) 
-![Public Extension Method]                | [IsDirty][40]              | 
+ (Defined by [PropertyHostMethods][41].) 
+![Public Extension Method]                | [IsDirty][42]                                                                                | 
 Scans the IsDirty value of each field and property of type IProperty
- (Defined by [PropertyHostMethods][39].)                                                                                                                 
-![Public Extension Method]                | [MarkAsClean][41]          | 
+ (Defined by [PropertyHostMethods][41].)                                                                                                                 
+![Public Extension Method]                | [MarkAsClean][43]                                                                            | 
 Scans each field and property of type IProperty and sets it's IsDirty flag to false
- (Defined by [PropertyHostMethods][39].)                                                                                                  
-![Public Extension Method]                | [WaitForValue][42]         | Initiates a Task which will wait for the given variable to have the specified value (Defined by [ExtensionMethods][43].)                                                                                                         
+ (Defined by [PropertyHostMethods][41].)                                                                                                  
+![Public Extension Method]                | [WaitForValueAsync][44]                                                                      | Initiates a Task which will wait for the given variable to have the specified value (Defined by [ExtensionMethods][45].)                                                                                                         
 
 
 See Also
 --------
 
 #### Reference
-[W.Threading Namespace][5]  
+[W.Threading Namespace][3]  
 
 [1]: http://msdn.microsoft.com/en-us/library/e5kfa45b
-[2]: ../ThreadBase/README.md
-[3]: ../Thread/README.md
-[4]: ../Gate_1/README.md
-[5]: ../README.md
-[6]: _ctor.md
-[7]: Action.md
-[8]: ../ThreadBase/Cts.md
-[9]: CustomData.md
-[10]: ../ThreadBase/IsBusy.md
-[11]: ../ThreadBase/IsRunning.md
-[12]: ../ThreadBase/OnExit.md
-[13]: ../ThreadBase/Success.md
-[14]: ../Thread/CallInvokeAction.md
-[15]: ../Thread/CallInvokeOnComplete.md
+[2]: ../Thread/README.md
+[3]: ../README.md
+[4]: _ctor.md
+[5]: _ctor_1.md
+[6]: _ctor_2.md
+[7]: _ctor_3.md
+[8]: ../Thread/Exception.md
+[9]: ../Thread/IsComplete.md
+[10]: ../Thread/IsFaulted.md
+[11]: ../Thread/IsRunning.md
+[12]: ../Thread/IsStarted.md
+[13]: ../Thread/Token.md
+[14]: CallAction.md
+[15]: ../Thread/CallAction.md
 [16]: ../Thread/Cancel.md
-[17]: ../Thread/Cancel_1.md
-[18]: Create__1.md
-[19]: ../Thread/Dispose.md
-[20]: http://msdn.microsoft.com/en-us/library/bsc2ak47
-[21]: ../ThreadBase/Finalize.md
-[22]: http://msdn.microsoft.com/en-us/library/zdee4b3y
-[23]: http://msdn.microsoft.com/en-us/library/dfwy45w9
-[24]: InvokeAction.md
-[25]: ../ThreadBase/InvokeAction.md
-[26]: ../ThreadBase/InvokeOnComplete.md
-[27]: ../Thread/Join.md
-[28]: ../Thread/Join_1.md
-[29]: http://msdn.microsoft.com/en-us/library/57ctke0a
-[30]: ../ThreadBase/ThreadProc.md
-[31]: http://msdn.microsoft.com/en-us/library/7bxwbwt2
-[32]: ../../W/AsExtensions/As__1.md
-[33]: ../../W/AsExtensions/README.md
-[34]: ../../W/AsExtensions/AsJson__1.md
-[35]: ../../W/AsExtensions/AsXml__1.md
-[36]: ../ThreadExtensions/CreateThread__1.md
-[37]: ../ThreadExtensions/README.md
-[38]: ../../W/PropertyHostMethods/InitializeProperties.md
-[39]: ../../W/PropertyHostMethods/README.md
-[40]: ../../W/PropertyHostMethods/IsDirty.md
-[41]: ../../W/PropertyHostMethods/MarkAsClean.md
-[42]: ../../W/ExtensionMethods/WaitForValue.md
-[43]: ../../W/ExtensionMethods/README.md
+[17]: ../Thread/Dispose.md
+[18]: http://msdn.microsoft.com/en-us/library/bsc2ak47
+[19]: http://msdn.microsoft.com/en-us/library/4k87zsw7
+[20]: http://msdn.microsoft.com/en-us/library/zdee4b3y
+[21]: http://msdn.microsoft.com/en-us/library/dfwy45w9
+[22]: ../Thread/Join.md
+[23]: ../Thread/Join_1.md
+[24]: http://msdn.microsoft.com/en-us/library/57ctke0a
+[25]: Start.md
+[26]: ../Thread/Start.md
+[27]: Start_1.md
+[28]: ../Thread/Start_1.md
+[29]: Start_2.md
+[30]: Start_3.md
+[31]: ../Thread/Stop.md
+[32]: http://msdn.microsoft.com/en-us/library/7bxwbwt2
+[33]: ../../W/AsExtensions/As__1.md
+[34]: ../../W/AsExtensions/README.md
+[35]: ../../W/AsExtensions/AsJson__1.md
+[36]: ../../W/AsExtensions/AsXml__1.md
+[37]: ../ThreadExtensions/CreateThread__1.md
+[38]: ../ThreadExtensions/README.md
+[39]: ../ThreadExtensions/CreateThread__1_1.md
+[40]: ../../W/PropertyHostMethods/InitializeProperties.md
+[41]: ../../W/PropertyHostMethods/README.md
+[42]: ../../W/PropertyHostMethods/IsDirty.md
+[43]: ../../W/PropertyHostMethods/MarkAsClean.md
+[44]: ../../W/ExtensionMethods/WaitForValueAsync.md
+[45]: ../../W/ExtensionMethods/README.md
 [Public method]: ../../_icons/pubmethod.gif "Public method"
-[Protected property]: ../../_icons/protproperty.gif "Protected property"
 [Public property]: ../../_icons/pubproperty.gif "Public property"
 [Protected method]: ../../_icons/protmethod.gif "Protected method"
-[Static member]: ../../_icons/static.gif "Static member"
 [Public Extension Method]: ../../_icons/pubextension.gif "Public Extension Method"
 [Code example]: ../../_icons/CodeExample.png "Code example"

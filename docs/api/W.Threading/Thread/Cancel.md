@@ -1,8 +1,9 @@
 Thread.Cancel Method
 ====================
-  
-[Missing &lt;summary> documentation for "M:W.Threading.Thread.Cancel"]
+   
 
+**Note: This API is now obsolete.**
+Cancel the thread
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -11,7 +12,8 @@ Syntax
 ------
 
 ```csharp
-public override void Cancel()
+[ObsoleteAttribute("Call Stop or Dispose instead.")]
+public void Cancel()
 ```
 
 

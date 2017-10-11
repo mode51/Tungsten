@@ -1,6 +1,6 @@
 PropertyChangedNotifier.OnPropertyChanged Method
 ================================================
-  
+   
 Calls RaisePropertyChanged to raise the PropertyChanged event
 
 
@@ -20,7 +20,7 @@ protected virtual void OnPropertyChanged(
 
 ##### *propertyName* (Optional)
 Type: [System.String][2]  
-The name of the property which changed
+The name of the caller (the property which changed)
 
 
 See Also

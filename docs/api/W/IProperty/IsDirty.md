@@ -1,6 +1,6 @@
 IProperty.IsDirty Property
 ==========================
-  True if the property's value has changed since initialization or since the last call to MarkAsClean
+   True if the property's value has changed since initialization or since the last call to MarkAsClean
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

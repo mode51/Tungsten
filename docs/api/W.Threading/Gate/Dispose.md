@@ -1,6 +1,6 @@
 Gate.Dispose Method
 ===================
-  Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+   Cancels the gated Action, disposes the Gate and releases resources
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -9,7 +9,7 @@ Syntax
 ------
 
 ```csharp
-public override void Dispose()
+public void Dispose()
 ```
 
 #### Implements

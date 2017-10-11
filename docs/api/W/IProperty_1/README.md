@@ -1,6 +1,6 @@
 IProperty&lt;TValue> Interface
 ==============================
-  The base interface which Property must support
+   The base interface which Property must support
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

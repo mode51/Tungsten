@@ -22,8 +22,9 @@ namespace W.Encryption
 #pragma warning restore CS1658 // Warning is overriding an error
 #pragma warning restore CS1584 // XML comment has syntactically incorrect cref attribute
         /// <summary>
-        /// Returns the arrary of legal key sizes
+        /// Returns an arrary containing the supported key sizes
         /// </summary>
+        /// <returns>An array of supported key sizes</returns>
         public static KeySizes[] LegalKeySizes()
         {
 #if NET45
@@ -41,8 +42,8 @@ namespace W.Encryption
         /// <summary>
         /// Generates a public/private key pair
         /// </summary>
-        /// <param name="keySize"></param>
-        /// <returns></returns>
+        /// <param name="keySize">The key size to use when creating the public and private keys</param>
+        /// <returns>A newly created PublicPrivateKeyPair containing the public and private keys</returns>
         public static PublicPrivateKeyPair CreateKeyPair(int keySize)
         {
 #if NET45

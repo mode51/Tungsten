@@ -1,6 +1,6 @@
 Lockable&lt;TValue>.ExecuteInLock Method (Func&lt;TValue, TValue>)
 ==================================================================
-  Executes an action within a lock of the LockObject
+   Executes an action within a lock of the LockObject
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

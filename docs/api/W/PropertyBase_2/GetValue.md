@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.GetValue Method
 ===============================================
-  Gets the property value
+   Gets the property value
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

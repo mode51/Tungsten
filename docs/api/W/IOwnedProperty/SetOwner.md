@@ -1,6 +1,6 @@
 IOwnedProperty.SetOwner Method
 ==============================
-  Sets the property owner to the specified value
+   Sets the property owner to the specified value
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

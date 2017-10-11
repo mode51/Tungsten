@@ -1,6 +1,6 @@
 Gate.Join Method
 ================
-  Blocks the calling thread until the thread terminates
+   Blocks the calling thread until the gated Action is complete
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -9,7 +9,7 @@ Syntax
 ------
 
 ```csharp
-public override void Join()
+public void Join()
 ```
 
 

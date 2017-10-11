@@ -1,6 +1,6 @@
 CallResult&lt;TResult> Constructor (Boolean, TResult, Exception)
 ================================================================
-  Constructor accepting an initial Success value, an initial Result value and an initial Exception value
+   Constructor accepting an initial Success value, an initial Result value and an initial Exception value
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -20,7 +20,7 @@ public CallResult(
 
 ##### *success*
 Type: [System.Boolean][2]  
-The initial Success value
+The initial value for Success
 
 ##### *result*
 Type: [TResult][3]  

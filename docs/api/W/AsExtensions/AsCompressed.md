@@ -1,6 +1,6 @@
 AsExtensions.AsCompressed Method
 ================================
-  Compresses the byte array using System.IO.Compression.DeflateStream
+   Compresses the byte array using System.IO.Compression.DeflateStream
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

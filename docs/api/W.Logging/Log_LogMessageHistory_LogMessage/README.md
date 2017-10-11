@@ -1,8 +1,6 @@
 Log.LogMessageHistory.LogMessage Class
 ======================================
-  
-[Missing &lt;summary> documentation for "T:W.Logging.Log.LogMessageHistory.LogMessage"]
-
+   An individual log message
 
 
 Inheritance Hierarchy
@@ -26,18 +24,18 @@ The **Log.LogMessageHistory.LogMessage** type exposes the following members.
 Constructors
 ------------
 
-                 | Name                                  | Description                                                                  
----------------- | ------------------------------------- | ---------------------------------------------------------------------------- 
-![Public method] | [Log.LogMessageHistory.LogMessage][3] | Initializes a new instance of the **Log.LogMessageHistory.LogMessage** class 
+                 | Name                                  | Description                 
+---------------- | ------------------------------------- | --------------------------- 
+![Public method] | [Log.LogMessageHistory.LogMessage][3] | Constructs a new LogMessage 
 
 
 Properties
 ----------
 
-                   | Name          | Description 
------------------- | ------------- | ----------- 
-![Public property] | [Category][4] |             
-![Public property] | [Message][5]  |             
+                   | Name          | Description                     
+------------------ | ------------- | ------------------------------- 
+![Public property] | [Category][4] | The category of the log message 
+![Public property] | [Message][5]  | The logged message              
 
 
 Methods
@@ -56,22 +54,23 @@ Methods
 Extension Methods
 -----------------
 
-                                          | Name                       | Description                                                                                                                                                                                                                      
------------------------------------------ | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-![Public Extension Method]![Code example] | [As&lt;TType>][12]         | Use Generic syntax for the as operator. (Defined by [AsExtensions][13].)                                                                                                                                                         
-![Public Extension Method]                | [AsJson&lt;TType>][14]     | Serializes an object to a Json string (Defined by [AsExtensions][13].)                                                                                                                                                           
-![Public Extension Method]                | [AsXml&lt;TType>][15]      | Serializes an object to an xml string (Defined by [AsExtensions][13].)                                                                                                                                                           
-![Public Extension Method]                | [CreateThread&lt;T>][16]   | Starts a new thread (Defined by [ThreadExtensions][17].)                                                                                                                                                                         
-![Public Extension Method]                | [InitializeProperties][18] | 
+                                          | Name                                                                                         | Description                                                                                                                                                                                                                      
+----------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+![Public Extension Method]![Code example] | [As&lt;TType>][12]                                                                           | Use Generic syntax for the as operator. (Defined by [AsExtensions][13].)                                                                                                                                                         
+![Public Extension Method]                | [AsJson&lt;TType>][14]                                                                       | Serializes an object to a Json string (Defined by [AsExtensions][13].)                                                                                                                                                           
+![Public Extension Method]                | [AsXml&lt;TType>][15]                                                                        | Serializes an object to an xml string (Defined by [AsExtensions][13].)                                                                                                                                                           
+![Public Extension Method]                | [CreateThread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>)][16]          | Overloaded. Creates and starts a new thread and (Defined by [ThreadExtensions][17].)                                                                                                                                             
+![Public Extension Method]                | [CreateThread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>, Boolean)][18] | Overloaded. Creates a new thread (Defined by [ThreadExtensions][17].)                                                                                                                                                            
+![Public Extension Method]                | [InitializeProperties][19]                                                                   | 
 Scans the fields and properties of "owner" and sets the member's Owner property to "owner" This method should be called in the constructor of any class which has IOwnedProperty members
- (Defined by [PropertyHostMethods][19].) 
-![Public Extension Method]                | [IsDirty][20]              | 
+ (Defined by [PropertyHostMethods][20].) 
+![Public Extension Method]                | [IsDirty][21]                                                                                | 
 Scans the IsDirty value of each field and property of type IProperty
- (Defined by [PropertyHostMethods][19].)                                                                                                                 
-![Public Extension Method]                | [MarkAsClean][21]          | 
+ (Defined by [PropertyHostMethods][20].)                                                                                                                 
+![Public Extension Method]                | [MarkAsClean][22]                                                                            | 
 Scans each field and property of type IProperty and sets it's IsDirty flag to false
- (Defined by [PropertyHostMethods][19].)                                                                                                  
-![Public Extension Method]                | [WaitForValue][22]         | Initiates a Task which will wait for the given variable to have the specified value (Defined by [ExtensionMethods][23].)                                                                                                         
+ (Defined by [PropertyHostMethods][20].)                                                                                                  
+![Public Extension Method]                | [WaitForValueAsync][23]                                                                      | Initiates a Task which will wait for the given variable to have the specified value (Defined by [ExtensionMethods][24].)                                                                                                         
 
 
 See Also
@@ -97,12 +96,13 @@ See Also
 [15]: ../../W/AsExtensions/AsXml__1.md
 [16]: ../../W.Threading/ThreadExtensions/CreateThread__1.md
 [17]: ../../W.Threading/ThreadExtensions/README.md
-[18]: ../../W/PropertyHostMethods/InitializeProperties.md
-[19]: ../../W/PropertyHostMethods/README.md
-[20]: ../../W/PropertyHostMethods/IsDirty.md
-[21]: ../../W/PropertyHostMethods/MarkAsClean.md
-[22]: ../../W/ExtensionMethods/WaitForValue.md
-[23]: ../../W/ExtensionMethods/README.md
+[18]: ../../W.Threading/ThreadExtensions/CreateThread__1_1.md
+[19]: ../../W/PropertyHostMethods/InitializeProperties.md
+[20]: ../../W/PropertyHostMethods/README.md
+[21]: ../../W/PropertyHostMethods/IsDirty.md
+[22]: ../../W/PropertyHostMethods/MarkAsClean.md
+[23]: ../../W/ExtensionMethods/WaitForValueAsync.md
+[24]: ../../W/ExtensionMethods/README.md
 [Public method]: ../../_icons/pubmethod.gif "Public method"
 [Public property]: ../../_icons/pubproperty.gif "Public property"
 [Protected method]: ../../_icons/protmethod.gif "Protected method"

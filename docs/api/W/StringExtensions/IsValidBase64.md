@@ -1,6 +1,6 @@
 StringExtensions.IsValidBase64 Method
 =====================================
-  Validates the given string conforms to Base64 encoding. It does not verify the value is a Base64 encoded value.
+   Validates the given string conforms to Base64 encoding. It does not verify the value is a Base64 encoded value.
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

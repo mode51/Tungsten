@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.Finalize Method
 ===============================================
-  Disposes the PropertyBase
+   Disposes the PropertyBase
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

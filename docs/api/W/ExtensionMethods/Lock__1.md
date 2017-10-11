@@ -1,6 +1,6 @@
 ExtensionMethods.Lock&lt;TItemType> Method
 ==========================================
-  Performs the given action in a lock statement using the provided object for the lock
+   Performs the given action in a lock statement using the provided object for the lock
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

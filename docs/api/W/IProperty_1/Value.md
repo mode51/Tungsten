@@ -1,6 +1,6 @@
 IProperty&lt;TValue>.Value Property
 ===================================
-  The value of the property
+   The value of the property
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

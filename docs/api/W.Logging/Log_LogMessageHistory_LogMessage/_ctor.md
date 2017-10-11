@@ -1,8 +1,8 @@
 Log.LogMessageHistory.LogMessage Constructor
 ============================================
-  Initializes a new instance of the [Log.LogMessageHistory.LogMessage][1] class
+   Constructs a new LogMessage
 
-  **Namespace:**  [W.Logging][2]  
+  **Namespace:**  [W.Logging][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
 
 Syntax
@@ -17,8 +17,8 @@ See Also
 --------
 
 #### Reference
-[Log.LogMessageHistory.LogMessage Class][1]  
-[W.Logging Namespace][2]  
+[Log.LogMessageHistory.LogMessage Class][2]  
+[W.Logging Namespace][1]  
 
-[1]: README.md
-[2]: ../README.md
+[1]: ../README.md
+[2]: README.md

@@ -1,6 +1,6 @@
 CustomLogger.FormatLogMessage Method
 ====================================
-  Formats the Log Messge (if AddTimestamp is true, the message is prefixed with a timestamp)
+   Formats the Log Messge (if AddTimestamp is true, the message is prefixed with a timestamp)
 
   **Namespace:**  [W.Logging][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -27,9 +27,7 @@ The log message
 
 #### Return Value
 Type: [String][3]  
-
-[Missing &lt;returns> documentation for "M:W.Logging.CustomLogger.FormatLogMessage(W.Logging.Log.LogMessageCategory,System.String)"]
-
+The formatted log message
 
 See Also
 --------

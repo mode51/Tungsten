@@ -1,6 +1,6 @@
 CustomLogger.AddTimestamp Property
 ==================================
-  If true, FormatLogMessage will, by default, add a timestamp prefix to the log message
+   If true, FormatLogMessage will, by default, add a timestamp prefix to the log message
 
   **Namespace:**  [W.Logging][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

@@ -1,8 +1,6 @@
 Log.LogMessageHistory.Messages Property
 =======================================
-  
-[Missing &lt;summary> documentation for "P:W.Logging.Log.LogMessageHistory.Messages"]
-
+   The history of log messages
 
   **Namespace:**  [W.Logging][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

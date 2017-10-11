@@ -36,6 +36,22 @@ namespace W.Logging
             private bool _newestFirst = true;
             private bool _enabled = true;
 
+            private void Truncate(bool newestFirst = true, bool truncateAll = false)
+            {
+                if (truncateAll)
+                {
+                    Messages.Clear();
+                }
+                else
+                {
+                    //This should only occur once per addition, so the while is just insurance
+                    if (newestFirst)
+                        while (Messages.Count > MaximumNumberOfMessages.Value) Messages.RemoveAt(Messages.Count - 1);
+                    else
+                        while (Messages.Count > MaximumNumberOfMessages.Value) Messages.RemoveAt(0);
+                }
+            }
+
             /// <summary>
             /// The history of log messages
             /// </summary>
@@ -52,7 +68,7 @@ namespace W.Logging
             /// <summary>
             /// Constructs a new LogMessageHistory
             /// </summary>
-            /// <param name="newestFirst"></param>
+            /// <param name="newestFirst">If True, log messages are inserted at the start of the collection rather than appended to the end</param>
             public LogMessageHistory(bool newestFirst = true)
             {
                 _newestFirst = newestFirst;
@@ -70,24 +86,6 @@ namespace W.Logging
                             Messages.Add(msg);
                     }
                 };
-            }
-            private void Truncate(bool newestFirst = true, bool truncateAll = false)
-            {
-                if (truncateAll)
-                {
-                    Messages.Clear();
-                }
-                else
-                {
-                    //this should only occur once per addition, so the location of the "newestFirst" condition doesn't really matter (you can't speed it up)
-                    while (Messages.Count > MaximumNumberOfMessages.Value)
-                    {
-                        if (newestFirst)
-                            Messages.RemoveAt(Messages.Count - 1);
-                        else
-                            Messages.RemoveAt(0);
-                    }
-                }
             }
         }
     }

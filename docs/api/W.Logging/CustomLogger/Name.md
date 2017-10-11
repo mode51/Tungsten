@@ -1,6 +1,6 @@
 CustomLogger.Name Property
 ==========================
-  The name of this custom logger
+   The name of this custom logger
 
   **Namespace:**  [W.Logging][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

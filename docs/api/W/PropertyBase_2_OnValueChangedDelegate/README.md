@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.OnValueChangedDelegate Delegate
 ===============================================================
-  Used by the constructor to handle the property change via a callback rather than the events
+   Used by the constructor to handle the property change via a callback rather than the events
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

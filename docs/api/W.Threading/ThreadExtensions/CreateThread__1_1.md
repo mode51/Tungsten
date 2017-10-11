@@ -1,6 +1,6 @@
-ThreadExtensions.CreateThread&lt;T> Method (T, Action&lt;T, CancellationTokenSource>, Action&lt;Boolean, Exception>)
-====================================================================================================================
-  Starts a new thread
+ThreadExtensions.CreateThread&lt;TParameterType> Method (Object, Action&lt;TParameterType, CancellationToken>, Boolean)
+=======================================================================================================================
+   Creates a new thread
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -9,10 +9,10 @@ Syntax
 ------
 
 ```csharp
-public static Thread<T> CreateThread<T>(
-	this T this,
-	Action<T, CancellationTokenSource> action,
-	Action<bool, Exception> onComplete
+public static Thread<TParameterType> CreateThread<TParameterType>(
+	this Object this,
+	Action<TParameterType, CancellationToken> action,
+	bool autoStart
 )
 
 ```
@@ -20,29 +20,27 @@ public static Thread<T> CreateThread<T>(
 #### Parameters
 
 ##### *this*
-Type: **T**  
+Type: [System.Object][2]  
 The object to send into a new Thread
 
 ##### *action*
-Type: [System.Action][2]&lt;**T**, [CancellationTokenSource][3]>  
+Type: [System.Action][3]&lt;**TParameterType**, [CancellationToken][4]>  
 Action to call on a thread
 
-##### *onComplete*
-Type: [System.Action][2]&lt;[Boolean][4], [Exception][5]>  
-Action to call upon comletion. Executes on the same thread as Action.
+##### *autoStart*
+Type: [System.Boolean][5]  
+If True, the thread will immediately start running
 
 #### Type Parameters
 
-##### *T*
-
-[Missing &lt;typeparam name="T"/> documentation for "M:W.Threading.ThreadExtensions.CreateThread``1(``0,System.Action{``0,System.Threading.CancellationTokenSource},System.Action{System.Boolean,System.Exception})"]
-
+##### *TParameterType*
+The Type of the item being extended
 
 #### Return Value
-Type: [Thread][6]&lt;**T**>  
+Type: [Thread][6]&lt;**TParameterType**>  
 A reference to the new W.Threading.Thread&lt;T>
 #### Usage Note
-In Visual Basic and C#, you can call this method as an instance method on any object of type . When you use instance method syntax to call this method, omit the first parameter. For more information, see [Extension Methods (Visual Basic)][7] or [Extension Methods (C# Programming Guide)][8].
+In Visual Basic and C#, you can call this method as an instance method on any object of type [Object][2]. When you use instance method syntax to call this method, omit the first parameter. For more information, see [Extension Methods (Visual Basic)][7] or [Extension Methods (C# Programming Guide)][8].
 
 See Also
 --------
@@ -52,10 +50,10 @@ See Also
 [W.Threading Namespace][1]  
 
 [1]: ../README.md
-[2]: http://msdn.microsoft.com/en-us/library/bb549311
-[3]: http://msdn.microsoft.com/en-us/library/dd321629
-[4]: http://msdn.microsoft.com/en-us/library/a28wyd50
-[5]: http://msdn.microsoft.com/en-us/library/c18k6c59
+[2]: http://msdn.microsoft.com/en-us/library/e5kfa45b
+[3]: http://msdn.microsoft.com/en-us/library/bb549311
+[4]: http://msdn.microsoft.com/en-us/library/dd384802
+[5]: http://msdn.microsoft.com/en-us/library/a28wyd50
 [6]: ../Thread_1/README.md
 [7]: http://msdn.microsoft.com/en-us/library/bb384936.aspx
 [8]: http://msdn.microsoft.com/en-us/library/bb383977.aspx

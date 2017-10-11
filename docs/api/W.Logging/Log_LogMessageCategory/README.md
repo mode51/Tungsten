@@ -1,6 +1,6 @@
 Log.LogMessageCategory Enumeration
 ==================================
-  The log message type
+   The log message type
 
   **Namespace:**  [W.Logging][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

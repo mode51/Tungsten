@@ -1,6 +1,6 @@
 Thread.Join Method
 ==================
-  Blocks the calling thread until the thread terminates
+   Block the calling thread until this thread object has completed
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -9,7 +9,7 @@ Syntax
 ------
 
 ```csharp
-public override void Join()
+public void Join()
 ```
 
 

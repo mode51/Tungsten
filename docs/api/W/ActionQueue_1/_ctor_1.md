@@ -1,6 +1,6 @@
 ActionQueue&lt;T> Constructor (Func&lt;T, Boolean>, String)
 ===========================================================
-  Creates a new ActionQueue
+   Creates a new ActionQueue
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -23,9 +23,7 @@ A callback which is called whenever an item has been enqueued
 
 ##### *caller* (Optional)
 Type: [System.String][5]  
-
-[Missing &lt;param name="caller"/> documentation for "M:W.ActionQueue`1.#ctor(System.Func{`0,System.Boolean},System.String)"]
-
+The name of the method which invoked this constructor
 
 
 See Also

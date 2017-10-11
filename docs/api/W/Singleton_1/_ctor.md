@@ -1,6 +1,6 @@
 Singleton&lt;TSingletonType> Constructor
 ========================================
-  Initializes a new instance of the [Singleton&lt;TSingletonType>][1] class
+   Initializes a new instance of the [Singleton&lt;TSingletonType>][1] class
 
   **Namespace:**  [W][2]  
   **Assembly:**  Tungsten (in Tungsten.dll)

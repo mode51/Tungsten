@@ -1,6 +1,6 @@
 AsExtensions.AsStream Method (String)
 =====================================
-  Creates a MemoryStream object and initializes it with the specified string
+   Creates a MemoryStream object and initializes it with the specified string
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

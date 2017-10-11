@@ -1,6 +1,6 @@
 CustomLogger.IsDisposed Property
 ================================
-  True if OnDispose has been called
+   True if OnDispose has been called
 
   **Namespace:**  [W.Logging][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

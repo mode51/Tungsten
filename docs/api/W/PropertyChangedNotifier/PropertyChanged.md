@@ -1,6 +1,6 @@
 PropertyChangedNotifier.PropertyChanged Event
 =============================================
-  Raised when a property changes
+   Raised when a property changes
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

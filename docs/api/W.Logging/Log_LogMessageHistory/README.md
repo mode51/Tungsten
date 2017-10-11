@@ -1,8 +1,6 @@
 Log.LogMessageHistory Class
 ===========================
-  
-[Missing &lt;summary> documentation for "T:W.Logging.Log.LogMessageHistory"]
-
+   Maintains a history of Log information
 
 
 Inheritance Hierarchy
@@ -27,20 +25,20 @@ The **Log.LogMessageHistory** type exposes the following members.
 Constructors
 ------------
 
-                 | Name                       | Description                                                       
----------------- | -------------------------- | ----------------------------------------------------------------- 
-![Public method] | [Log.LogMessageHistory][4] | Initializes a new instance of the **Log.LogMessageHistory** class 
+                 | Name                       | Description                        
+---------------- | -------------------------- | ---------------------------------- 
+![Public method] | [Log.LogMessageHistory][4] | Constructs a new LogMessageHistory 
 
 
 Properties
 ----------
 
-                   | Name                         | Description                                                                            
------------------- | ---------------------------- | -------------------------------------------------------------------------------------- 
-![Public property] | [Enabled][5]                 |                                                                                        
-![Public property] | [IsDirty][6]                 | Finds all Properties and checks their IsDirty flag (Inherited from [PropertyHost][2].) 
-![Public property] | [MaximumNumberOfMessages][7] |                                                                                        
-![Public property] | [Messages][8]                |                                                                                        
+                   | Name                         | Description                                                                                                                    
+------------------ | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------ 
+![Public property] | [Enabled][5]                 | If True, log messages will be added to the history. If False, no history is maintained.                                        
+![Public property] | [IsDirty][6]                 | Finds all Properties and checks their IsDirty flag (Inherited from [PropertyHost][2].)                                         
+![Public property] | [MaximumNumberOfMessages][7] | The maximum number of historical messages to maintain. When the maximum is reached, the oldest messages are removed as needed. 
+![Public property] | [Messages][8]                | The history of log messages                                                                                                    
 
 
 Methods
@@ -60,22 +58,23 @@ Methods
 Extension Methods
 -----------------
 
-                                          | Name                       | Description                                                                                                                                                                                                                      
------------------------------------------ | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-![Public Extension Method]![Code example] | [As&lt;TType>][16]         | Use Generic syntax for the as operator. (Defined by [AsExtensions][17].)                                                                                                                                                         
-![Public Extension Method]                | [AsJson&lt;TType>][18]     | Serializes an object to a Json string (Defined by [AsExtensions][17].)                                                                                                                                                           
-![Public Extension Method]                | [AsXml&lt;TType>][19]      | Serializes an object to an xml string (Defined by [AsExtensions][17].)                                                                                                                                                           
-![Public Extension Method]                | [CreateThread&lt;T>][20]   | Starts a new thread (Defined by [ThreadExtensions][21].)                                                                                                                                                                         
-![Public Extension Method]                | [InitializeProperties][22] | 
+                                          | Name                                                                                         | Description                                                                                                                                                                                                                      
+----------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+![Public Extension Method]![Code example] | [As&lt;TType>][16]                                                                           | Use Generic syntax for the as operator. (Defined by [AsExtensions][17].)                                                                                                                                                         
+![Public Extension Method]                | [AsJson&lt;TType>][18]                                                                       | Serializes an object to a Json string (Defined by [AsExtensions][17].)                                                                                                                                                           
+![Public Extension Method]                | [AsXml&lt;TType>][19]                                                                        | Serializes an object to an xml string (Defined by [AsExtensions][17].)                                                                                                                                                           
+![Public Extension Method]                | [CreateThread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>)][20]          | Overloaded. Creates and starts a new thread and (Defined by [ThreadExtensions][21].)                                                                                                                                             
+![Public Extension Method]                | [CreateThread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>, Boolean)][22] | Overloaded. Creates a new thread (Defined by [ThreadExtensions][21].)                                                                                                                                                            
+![Public Extension Method]                | [InitializeProperties][23]                                                                   | 
 Scans the fields and properties of "owner" and sets the member's Owner property to "owner" This method should be called in the constructor of any class which has IOwnedProperty members
- (Defined by [PropertyHostMethods][23].) 
-![Public Extension Method]                | [IsDirty][24]              | 
+ (Defined by [PropertyHostMethods][24].) 
+![Public Extension Method]                | [IsDirty][25]                                                                                | 
 Scans the IsDirty value of each field and property of type IProperty
- (Defined by [PropertyHostMethods][23].)                                                                                                                 
-![Public Extension Method]                | [MarkAsClean][25]          | 
+ (Defined by [PropertyHostMethods][24].)                                                                                                                 
+![Public Extension Method]                | [MarkAsClean][26]                                                                            | 
 Scans each field and property of type IProperty and sets it's IsDirty flag to false
- (Defined by [PropertyHostMethods][23].)                                                                                                  
-![Public Extension Method]                | [WaitForValue][26]         | Initiates a Task which will wait for the given variable to have the specified value (Defined by [ExtensionMethods][27].)                                                                                                         
+ (Defined by [PropertyHostMethods][24].)                                                                                                  
+![Public Extension Method]                | [WaitForValueAsync][27]                                                                      | Initiates a Task which will wait for the given variable to have the specified value (Defined by [ExtensionMethods][28].)                                                                                                         
 
 
 See Also
@@ -105,12 +104,13 @@ See Also
 [19]: ../../W/AsExtensions/AsXml__1.md
 [20]: ../../W.Threading/ThreadExtensions/CreateThread__1.md
 [21]: ../../W.Threading/ThreadExtensions/README.md
-[22]: ../../W/PropertyHostMethods/InitializeProperties.md
-[23]: ../../W/PropertyHostMethods/README.md
-[24]: ../../W/PropertyHostMethods/IsDirty.md
-[25]: ../../W/PropertyHostMethods/MarkAsClean.md
-[26]: ../../W/ExtensionMethods/WaitForValue.md
-[27]: ../../W/ExtensionMethods/README.md
+[22]: ../../W.Threading/ThreadExtensions/CreateThread__1_1.md
+[23]: ../../W/PropertyHostMethods/InitializeProperties.md
+[24]: ../../W/PropertyHostMethods/README.md
+[25]: ../../W/PropertyHostMethods/IsDirty.md
+[26]: ../../W/PropertyHostMethods/MarkAsClean.md
+[27]: ../../W/ExtensionMethods/WaitForValueAsync.md
+[28]: ../../W/ExtensionMethods/README.md
 [Public method]: ../../_icons/pubmethod.gif "Public method"
 [Public property]: ../../_icons/pubproperty.gif "Public property"
 [Protected method]: ../../_icons/protmethod.gif "Protected method"

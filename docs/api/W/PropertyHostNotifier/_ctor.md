@@ -1,6 +1,6 @@
 PropertyHostNotifier Constructor
 ================================
-  Calls PropertyHostMethods.InitializeProperties so you don't have to
+   Calls PropertyHostMethods.InitializeProperties so you don't have to
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

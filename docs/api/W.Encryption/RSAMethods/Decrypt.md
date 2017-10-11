@@ -1,6 +1,6 @@
-RSAMethods.Decrypt Method (String, RSAParameters, Int32)
-========================================================
-  Decrypts a string previously encrypted with RSA encryption
+RSAMethods.Decrypt Method
+=========================
+   Decrypts a string which was previously encrypted with the Encrypt method
 
   **Namespace:**  [W.Encryption][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -10,39 +10,33 @@ Syntax
 
 ```csharp
 public static string Decrypt(
-	string text,
-	RSAParameters key,
-	int keySize = 2048
+	string cipher,
+	RSAParameters privateKey
 )
 ```
 
 #### Parameters
 
-##### *text*
+##### *cipher*
 Type: [System.String][2]  
-The RSA encrypted string
+The encrypted byte array
 
-##### *key*
+##### *privateKey*
 Type: [System.Security.Cryptography.RSAParameters][3]  
-The private key to use for decrypting
-
-##### *keySize* (Optional)
-Type: [System.Int32][4]  
-The keysize, in bits, of the private key
+The private key used to decrypt the data
 
 #### Return Value
 Type: [String][2]  
-The decrypted string
+A byte array containing the decrypted value
 
 See Also
 --------
 
 #### Reference
-[RSAMethods Class][5]  
+[RSAMethods Class][4]  
 [W.Encryption Namespace][1]  
 
 [1]: ../README.md
 [2]: http://msdn.microsoft.com/en-us/library/s1wwdcbf
 [3]: http://msdn.microsoft.com/en-us/library/ke2te33h
-[4]: http://msdn.microsoft.com/en-us/library/td2s409d
-[5]: README.md
+[4]: README.md

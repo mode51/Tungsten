@@ -1,7 +1,7 @@
 ﻿Tungsten is a C# library to make application development easier.  See the wiki @ https://github.com/mode51/Tungsten/wiki for details, examples and use.
 
 10.05.2017 v1.3.0
-Added W.EventTemplate which encapsulates event creation in a temlate
+Added W.EventTemplate which encapsulates event creation in a template
 Added W.Encryption.RSAMethods for NetStandard1_3 and NetCoreApp
 Effectively rewrote W.Threading.Thread and W.Threading.Gate because they weren't working correctly
 Added W.Threading.Thread.Sleep(CPUProfileEnum level)

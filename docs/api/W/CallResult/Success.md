@@ -1,6 +1,6 @@
 CallResult.Success Property
 ===========================
-  Set to True if the function succeeds, otherwise False
+   Set to True if the function succeeds, otherwise False
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

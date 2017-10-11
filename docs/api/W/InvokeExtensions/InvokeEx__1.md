@@ -1,6 +1,6 @@
 InvokeExtensions.InvokeEx&lt;T> Method (T, Action&lt;T>)
 ========================================================
-  Runs the provided Action on the UI thread
+   Runs the provided Action on the UI thread
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

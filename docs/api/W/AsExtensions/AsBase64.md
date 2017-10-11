@@ -1,6 +1,6 @@
 AsExtensions.AsBase64 Method (Byte[])
 =====================================
-  Converts a byte array to a Base64 encoded string
+   Converts a byte array to a Base64 encoded string
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

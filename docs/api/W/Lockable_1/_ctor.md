@@ -1,6 +1,6 @@
 Lockable&lt;TValue> Constructor
 ===============================
-  
+   
 Constructor which initializes Value with the default of TValue
 
 

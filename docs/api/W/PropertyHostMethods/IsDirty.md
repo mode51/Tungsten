@@ -1,6 +1,6 @@
 PropertyHostMethods.IsDirty Method
 ==================================
-  
+   
 Scans the IsDirty value of each field and property of type IProperty
 
 
@@ -20,9 +20,7 @@ public static bool IsDirty(
 
 ##### *this*
 Type: [System.Object][2]  
-
-[Missing &lt;param name="this"/> documentation for "M:W.PropertyHostMethods.IsDirty(System.Object)"]
-
+The object on which to inspect for dirty properties
 
 #### Return Value
 Type: [Boolean][3]  

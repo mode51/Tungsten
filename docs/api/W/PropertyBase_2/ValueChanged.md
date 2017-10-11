@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.ValueChanged Event
 ==================================================
-  Raised after Value has changed
+   Raised after Value has changed
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

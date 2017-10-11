@@ -1,8 +1,6 @@
 Log.LogMessageHistory.Enabled Property
 ======================================
-  
-[Missing &lt;summary> documentation for "P:W.Logging.Log.LogMessageHistory.Enabled"]
-
+   If True, log messages will be added to the history. If False, no history is maintained.
 
   **Namespace:**  [W.Logging][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

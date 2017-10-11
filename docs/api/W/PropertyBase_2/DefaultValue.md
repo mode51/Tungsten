@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.DefaultValue Property
 =====================================================
-  
+   
 Allows the programmer to assign a default value which can be reset via the ResetToDefaultValue method. This value does not have to be the initial value.
 
 

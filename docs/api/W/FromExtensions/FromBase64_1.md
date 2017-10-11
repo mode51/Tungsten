@@ -1,6 +1,6 @@
 FromExtensions.FromBase64 Method (String)
 =========================================
-  Converts a Base64 encoded string back to a normal string
+   Converts a Base64 encoded string back to a normal string
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

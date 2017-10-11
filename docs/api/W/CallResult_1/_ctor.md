@@ -1,6 +1,6 @@
 CallResult&lt;TResult> Constructor
 ==================================
-  Default constructor
+   Default constructor
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

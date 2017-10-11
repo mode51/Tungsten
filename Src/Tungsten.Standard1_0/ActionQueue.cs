@@ -36,7 +36,7 @@ namespace W
         /// <summary>
         /// Places an item in the queue
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="item">The item to place in the queue</param>
         public void Enqueue(T item)
         {
             _queue.Enqueue(item);
@@ -62,6 +62,7 @@ namespace W
         /// Creates a new ActionQueue
         /// </summary>
         /// <param name="onItemAdded">A callback which is called whenever an item has been enqueued</param>
+        /// <param name="caller">The name of the method which invoked this constructor</param>
 #pragma warning disable CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
         public ActionQueue(Func<T, bool> onItemAdded, [System.Runtime.CompilerServices.CallerMemberName] string caller = "")
 #pragma warning restore CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
@@ -90,6 +91,7 @@ namespace W
         /// Creates a new ActionQueue
         /// </summary>
         /// <param name="onItemAdded">A callback which is called whenever an item has been enqueued</param>
+        /// <param name="caller">The name of the method which invoked this constructor</param>
 #pragma warning disable CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
         public ActionQueue(Action<T> onItemAdded, [System.Runtime.CompilerServices.CallerMemberName] string caller = "")
 #pragma warning restore CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)

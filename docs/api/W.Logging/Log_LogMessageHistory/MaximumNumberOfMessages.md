@@ -1,8 +1,6 @@
 Log.LogMessageHistory.MaximumNumberOfMessages Property
 ======================================================
-  
-[Missing &lt;summary> documentation for "P:W.Logging.Log.LogMessageHistory.MaximumNumberOfMessages"]
-
+   The maximum number of historical messages to maintain. When the maximum is reached, the oldest messages are removed as needed.
 
   **Namespace:**  [W.Logging][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

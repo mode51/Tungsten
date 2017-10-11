@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.LoadValue Method
 ================================================
-  Loads Value without raising events or calling the OnValueChanged callback
+   Loads Value without raising events or calling the OnValueChanged callback
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

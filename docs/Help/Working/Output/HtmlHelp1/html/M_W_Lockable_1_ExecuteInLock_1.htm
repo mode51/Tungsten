@@ -1,4 +1,40 @@
-﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" /><link rel="shortcut icon" href="../icons/favicon.ico" /><style type="text/css">.OH_CodeSnippetContainerTabLeftActive, .OH_CodeSnippetContainerTabLeft,.OH_CodeSnippetContainerTabLeftDisabled { }.OH_CodeSnippetContainerTabRightActive, .OH_CodeSnippetContainerTabRight,.OH_CodeSnippetContainerTabRightDisabled { }.OH_footer { }</style><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Lockable(TValue).ExecuteInLock Method (Func(TValue, TValue))</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="M:W.Lockable`1.ExecuteInLock(System.Func{`0,`0})" /><meta name="Description" content="Executes an action within a lock of the LockObject" /><meta name="Microsoft.Help.ContentType" content="Reference" /><meta name="BrandingAware" content="true" /><meta name="container" content="W" /><meta name="file" content="M_W_Lockable_1_ExecuteInLock_1" /><meta name="guid" content="M_W_Lockable_1_ExecuteInLock_1" /><link rel="stylesheet" type="text/css" href="../styles/branding-Help1.css" /></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="OH_outerDiv"><div class="OH_outerContent"><table class="TitleTable"><tr><td class="OH_tdTitleColumn"><h1>Lockable<span id="LSTD296A3A1_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_0?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script><span class="typeparameter">TValue</span><span id="LSTD296A3A1_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_1?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script><span id="LSTD296A3A1_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_2?cpp=::|nu=.");</script>ExecuteInLock Method (Func<span id="LSTD296A3A1_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_3?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script><span class="typeparameter">TValue</span>, <span class="typeparameter">TValue</span><span id="LSTD296A3A1_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_4?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script>)</h1></td><td class="OH_tdRunningTitleColumn">Tungsten</td></tr></table><div id="mainSection"><div id="mainBody"><span class="introStyle"></span> <div class="summary">
+﻿<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+    <link rel="shortcut icon" href="../icons/favicon.ico" />
+    <style type="text/css">.OH_CodeSnippetContainerTabLeftActive, .OH_CodeSnippetContainerTabLeft,.OH_CodeSnippetContainerTabLeftDisabled { }.OH_CodeSnippetContainerTabRightActive, .OH_CodeSnippetContainerTabRight,.OH_CodeSnippetContainerTabRightDisabled { }.OH_footer { }</style>
+    <link rel="stylesheet" type="text/css" href="../styles/branding.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" />
+    <script type="text/javascript" src="../scripts/branding.js"> </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Lockable(TValue).ExecuteInLock Method (Func(TValue, TValue))</title>
+    <meta name="Language" content="en-us" />
+    <meta name="Microsoft.Help.Id" content="M:W.Lockable`1.ExecuteInLock(System.Func{`0,`0})" />
+    <meta name="Description" content="Executes an action within a lock of the LockObject" />
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    <meta name="BrandingAware" content="true" />
+    
+    <meta name="container" content="W" />
+    <meta name="file" content="M_W_Lockable_1_ExecuteInLock_1" />
+    <meta name="guid" content="M_W_Lockable_1_ExecuteInLock_1" />
+    
+    <link rel="stylesheet" type="text/css" href="../styles/branding-Help1.css" />
+  </head>
+  <body onload="OnLoad('cs')">
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <div class="OH_outerDiv">
+      <div class="OH_outerContent">
+        <table class="TitleTable">
+          <tr>
+            <td class="OH_tdTitleColumn">
+              <h1>Lockable<span id="LSTD296A3A1_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_0?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script><span class="typeparameter">TValue</span><span id="LSTD296A3A1_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_1?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script><span id="LSTD296A3A1_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_2?cpp=::|nu=.");</script>ExecuteInLock Method (Func<span id="LSTD296A3A1_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_3?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script><span class="typeparameter">TValue</span>, <span class="typeparameter">TValue</span><span id="LSTD296A3A1_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_4?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script>)</h1>
+            </td>
+            <td class="OH_tdRunningTitleColumn">Tungsten</td>
+          </tr>
+        </table>
+        <div id="mainSection">
+          <div id="mainBody">
+            <span class="introStyle"></span> <div class="summary">
             Executes an action within a lock of the LockObject
             </div><p> </p>
     <strong>Namespace:</strong> 
@@ -13,4 +49,11 @@
 	<span class="identifier">Func</span>&lt;TValue, TValue&gt;^ <span class="parameter">function</span>
 )</pre></div><div id="ID0EDCA_code_Div4" class="OH_CodeSnippetContainerCode" style="display: none"><pre xml:space="preserve"><span class="keyword">member</span> <span class="identifier">ExecuteInLock</span> : 
         <span class="parameter">function</span> : <span class="identifier">Func</span>&lt;'TValue, 'TValue&gt; <span class="keyword">-&gt;</span> <span class="keyword">unit</span> 
-</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EDCA");</script><h4 class="subHeading">Parameters</h4><dl><dt><span class="parameter">function</span></dt><dd>Type: <a href="http://msdn2.microsoft.com/en-us/library/bb549151" target="_blank">System<span id="LSTD296A3A1_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_5?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Func</a><span id="LSTD296A3A1_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_6?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script><a href="T_W_Lockable_1.htm"><span class="typeparameter">TValue</span></a>, <a href="T_W_Lockable_1.htm"><span class="typeparameter">TValue</span></a><span id="LSTD296A3A1_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_7?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script><br />The function to call within a lock</dd></dl><div class="OH_CollapsibleAreaRegion" id="seeAlsoSection"><div class="OH_regiontitle">See Also</div><div class="OH_CollapsibleArea_HrDiv"><hr class="OH_CollapsibleArea_Hr" /></div></div><div class="OH_clear"> </div><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="T_W_Lockable_1.htm">Lockable<span id="LSTD296A3A1_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_8?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>TValue<span id="LSTD296A3A1_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_9?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script> Class</a></div><div class="seeAlsoStyle"><a href="Overload_W_Lockable_1_ExecuteInLock.htm">ExecuteInLock Overload</a></div><div class="seeAlsoStyle"><a href="N_W.htm">W Namespace</a></div></div></div></div></div><div id="OH_footer" class="OH_footer"><p>Copyright @ 2017 Jordan Duerksen</p> </div></body></html>
+</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EDCA");</script><h4 class="subHeading">Parameters</h4><dl><dt><span class="parameter">function</span></dt><dd>Type: <a href="http://msdn2.microsoft.com/en-us/library/bb549151" target="_blank">System<span id="LSTD296A3A1_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_5?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Func</a><span id="LSTD296A3A1_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_6?cs=&lt;|vb=(Of |cpp=&lt;|fs=&lt;'|nu=(");</script><a href="T_W_Lockable_1.htm"><span class="typeparameter">TValue</span></a>, <a href="T_W_Lockable_1.htm"><span class="typeparameter">TValue</span></a><span id="LSTD296A3A1_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_7?cs=&gt;|vb=)|cpp=&gt;|fs=&gt;|nu=)");</script><br />The function to call within a lock</dd></dl><div class="OH_CollapsibleAreaRegion" id="seeAlsoSection"><div class="OH_regiontitle">See Also</div><div class="OH_CollapsibleArea_HrDiv"><hr class="OH_CollapsibleArea_Hr" /></div></div><div class="OH_clear"> </div><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="T_W_Lockable_1.htm">Lockable<span id="LSTD296A3A1_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_8?cs=&lt;|vb=(Of |cpp=&lt;|nu=(|fs=&lt;'");</script>TValue<span id="LSTD296A3A1_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD296A3A1_9?cs=&gt;|vb=)|cpp=&gt;|nu=)|fs=&gt;");</script> Class</a></div><div class="seeAlsoStyle"><a href="Overload_W_Lockable_1_ExecuteInLock.htm">ExecuteInLock Overload</a></div><div class="seeAlsoStyle"><a href="N_W.htm">W Namespace</a></div></div>
+        </div>
+      </div>
+    </div>
+    <div id="OH_footer" class="OH_footer">
+      <p>Copyright @ 2017 Jordan Duerksen</p> </div>
+  </body>
+</html>

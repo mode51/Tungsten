@@ -1,8 +1,6 @@
 Log.LogMessageHistory.LogMessage.Category Property
 ==================================================
-  
-[Missing &lt;summary> documentation for "P:W.Logging.Log.LogMessageHistory.LogMessage.Category"]
-
+   The category of the log message
 
   **Namespace:**  [W.Logging][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

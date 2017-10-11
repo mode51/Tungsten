@@ -15,9 +15,9 @@
     <RootNamespace>Tungsten</RootNamespace>
     <AssemblyName>Tungsten</AssemblyName>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
-    <Version>1.2.8</Version>
-    <AssemblyVersion>1.2.8.0</AssemblyVersion>
-    <FileVersion>1.2.8.0</FileVersion>
+    <Version>1.3.0</Version>
+    <AssemblyVersion>1.3.0.0</AssemblyVersion>
+    <FileVersion>1.3.0.0</FileVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
@@ -29,10 +29,12 @@
     <Compile Include="..\Tungsten.Standard1_0\ActionQueue.cs" Link="ActionQueue.cs" />
     <Compile Include="..\Tungsten.Standard1_0\AsExtensions.cs" Link="AsExtensions.cs" />
     <Compile Include="..\Tungsten.Standard1_0\CallResult.cs" Link="CallResult.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Disposable.cs" Link="Disposable.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Encryption\MD5.cs" Link="Encryption\MD5.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Encryption\PublicPrivateKeyPair.cs" Link="Encryption\PublicPrivateKeyPair.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Encryption\RSA.cs" Link="Encryption\RSA.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Encryption\RSAMethods.cs" Link="Encryption\RSAMethods.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\EventTemplate.cs" Link="EventTemplate.cs" />
     <Compile Include="..\Tungsten.Standard1_0\FromExtensions.cs" Link="FromExtensions.cs" />
     <Compile Include="..\Tungsten.Standard1_0\InvokeExtensions.cs" Link="InvokeExtensions.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Lockable.cs" Link="Lockable.cs" />
@@ -54,9 +56,7 @@
     <Compile Include="..\Tungsten.Standard1_0\Threading\Gate.cs" Link="Threading\Gate.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Threading\GateExtensions.cs" Link="Threading\GateExtensions.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Threading\Thread.cs" Link="Threading\Thread.cs" />
-    <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadBase.cs" Link="Threading\ThreadBase.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadExtensions.cs" Link="Threading\ThreadExtensions.cs" />
-    <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadWithCustomData.cs" Link="Threading\ThreadWithCustomData.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Threading\Tungsten.Threading.Namespace.cs" Link="Threading\Tungsten.Threading.Namespace.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Tungsten.Namespace.cs" Link="Tungsten.Namespace.cs" />
     <Compile Include="..\Tungsten.Standard1_3\ExtensionMethods.cs" Link="ExtensionMethods.cs" />

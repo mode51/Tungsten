@@ -1,6 +1,6 @@
 Gate.Join Method (Int32)
 ========================
-  Blocks the calling thread until either the thread terminates or the specified milliseconds elapse
+   Blocks the calling thread until the gated Action is complete, or until the specified number of milliseconds has elapsed
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -9,7 +9,7 @@ Syntax
 ------
 
 ```csharp
-public override bool Join(
+public bool Join(
 	int msTimeout
 )
 ```
@@ -18,11 +18,11 @@ public override bool Join(
 
 ##### *msTimeout*
 Type: [System.Int32][2]  
-The number of milliseconds to wait for the thread to terminate
+The number of milliseconds to wait for the gate to complete before timing out and returning False
 
 #### Return Value
 Type: [Boolean][3]  
-True if the thread terminates within the timeout specified, otherwise false
+True if the gate completed within the specified timeout, otherwise False
 
 See Also
 --------

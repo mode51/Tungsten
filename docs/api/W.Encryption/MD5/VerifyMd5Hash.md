@@ -1,6 +1,6 @@
 MD5.VerifyMd5Hash Method
 ========================
-  Verifies a hash against a string
+   Verifies a hash against a string
 
   **Namespace:**  [W.Encryption][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

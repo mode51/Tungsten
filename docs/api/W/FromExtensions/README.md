@@ -1,6 +1,6 @@
 FromExtensions Class
 ====================
-  Extensions which convert objects of one type to another
+   Extensions which convert objects of one type to another
 
 
 Inheritance Hierarchy

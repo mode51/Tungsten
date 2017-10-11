@@ -1,6 +1,6 @@
 AsExtensions.As&lt;TType> Method
 ================================
-  Use Generic syntax for the as operator.
+   Use Generic syntax for the as operator.
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

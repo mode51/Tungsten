@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.Owner Property
 ==============================================
-  The property owner
+   The property owner
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

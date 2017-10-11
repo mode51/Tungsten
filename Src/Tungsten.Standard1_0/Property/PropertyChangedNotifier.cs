@@ -30,8 +30,8 @@ namespace W
         /// Calls OnPropertyChanged.  This method does not make assignments.  Override this method to make assignments.
         /// </para>
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="propertyName"></param>
+        /// <param name="value">The new value</param>
+        /// <param name="propertyName">The name of the caller (the property being set)</param>
         protected virtual void SetValue(object value, [CallerMemberName] string propertyName="")
         {
             OnPropertyChanged(propertyName);
@@ -41,7 +41,7 @@ namespace W
         /// Calls RaisePropertyChanged to raise the PropertyChanged event
         /// </para>
         /// </summary>
-        /// <param name="propertyName">The name of the property which changed</param>
+        /// <param name="propertyName">The name of the caller (the property which changed)</param>
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             RaiseOnPropertyChanged(this, propertyName);
@@ -52,7 +52,7 @@ namespace W
         /// </para>
         /// </summary>
         /// <param name="sender">The sender is the owner of the property</param>
-        /// <param name="propertyName">The name of the property which changed</param>
+        /// <param name="propertyName">The name of the caller (the property which changed)</param>
         protected virtual void RaiseOnPropertyChanged(object sender, string propertyName)
         {
             PropertyChanged?.Invoke(sender, new PropertyChangedEventArgs(propertyName));

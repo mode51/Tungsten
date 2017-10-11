@@ -1,6 +1,6 @@
 Lockable&lt;TValue>.UnlockedValue Property
 ==========================================
-  
+   
 To be used by caller, with LockObject, to batch read/writes under one lock)
 
 

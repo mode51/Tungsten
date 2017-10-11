@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.SetValue Method
 ===============================================
-  Sets the property value
+   Sets the property value
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

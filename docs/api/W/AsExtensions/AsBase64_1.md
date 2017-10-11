@@ -1,6 +1,6 @@
 AsExtensions.AsBase64 Method (String)
 =====================================
-  Converts a string to Base64 encoding
+   Converts a string to Base64 encoding
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

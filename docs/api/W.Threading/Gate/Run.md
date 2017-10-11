@@ -1,6 +1,6 @@
 Gate.Run Method
 ===============
-  Allows the Action to be called
+   Signals the thread to open the gate (allows the gated Action to be called).
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -9,7 +9,7 @@ Syntax
 ------
 
 ```csharp
-public void Run()
+public virtual void Run()
 ```
 
 

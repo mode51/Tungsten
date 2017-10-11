@@ -1,6 +1,6 @@
 ActionQueue&lt;T>.Enqueue Method
 ================================
-  Places an item in the queue
+   Places an item in the queue
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -18,9 +18,7 @@ public void Enqueue(
 
 ##### *item*
 Type: [T][2]  
-
-[Missing &lt;param name="item"/> documentation for "M:W.ActionQueue`1.Enqueue(`0)"]
-
+The item to place in the queue
 
 
 See Also

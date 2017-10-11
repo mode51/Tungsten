@@ -86,6 +86,8 @@ namespace W.Logging
         /// Log a formatted warning message. This method uses string.Format to format the message.
         /// </summary>
         /// <param name="message">Format of the message</param>
+        /// <param name="callerName">The name of the caller</param>
+        /// <param name="callerLineNumber">The line number of the caller</param>
         public static void w(string message, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
 #pragma warning restore CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
         {
@@ -116,6 +118,8 @@ namespace W.Logging
         /// Log a formatted informational message. This method uses string.Format to format the message.
         /// </summary>
         /// <param name="message">Format of the message</param>
+        /// <param name="callerName">The name of the caller</param>
+        /// <param name="callerLineNumber">The line number of the caller</param>
         public static void i(string message, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
 #pragma warning restore CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
         {
@@ -146,6 +150,8 @@ namespace W.Logging
         /// Log a formatted verbose message. This method uses string.Format to format the message.
         /// </summary>
         /// <param name="message">Format of the message</param>
+        /// <param name="callerName">The name of the caller</param>
+        /// <param name="callerLineNumber">The line number of the caller</param>
         public static void v(string message, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
 #pragma warning restore CS1573 // Parameter has no matching param tag in the XML comment (but other parameters do)
         {

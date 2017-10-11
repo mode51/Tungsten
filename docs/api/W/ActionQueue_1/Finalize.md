@@ -1,6 +1,6 @@
 ActionQueue&lt;T>.Finalize Method
 =================================
-  Disposes the ActionQueue
+   Disposes the ActionQueue
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

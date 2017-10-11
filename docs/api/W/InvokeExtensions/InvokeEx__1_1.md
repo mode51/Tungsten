@@ -1,6 +1,6 @@
 InvokeExtensions.InvokeEx&lt;T> Method (T, Func&lt;T, Object>)
 ==============================================================
-  Runs the provided Function on the UI thread. Avoids the cross-threaded exceptions.
+   Runs the provided Function on the UI thread. Avoids the cross-threaded exceptions.
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

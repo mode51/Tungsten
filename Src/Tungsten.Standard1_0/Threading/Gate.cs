@@ -1,45 +1,72 @@
 using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace W.Threading
 {
+    /// <summary>
+    /// A thread Gate which supports passing in a typed parameter
+    /// </summary>
+    /// <typeparam name="TParameterType">The type of parameter that will be passed to the gated thread procedure</typeparam>
     public class Gate<TParameterType> : Gate
     {
-        private new Action<TParameterType, CancellationToken> _action;
+        private Action<TParameterType, CancellationToken> _action;
         private TParameterType _arg;
         private TParameterType _defaultArg;
 
+        /// <summary>
+        /// Invokes the gated Action
+        /// </summary>
+        /// <param name="token">The CancellationToken which is passed into the Action and should be used to monitor whether the Gate has been cancelled</param>
         protected override void CallAction(CancellationToken token)
         {
+            //override base functionality to call our own _action
             _action.Invoke(_arg, token);
-            //base.CallAction();
         }
 
+        /// <summary>
+        /// Opens the gate (allows the gated Action to be called), passing in the default value which was specified in the constructor
+        /// </summary>
         public override void Run()
         {
             Run(_defaultArg);
         }
+        /// <summary>
+        /// Opens the gate (allows the gated Action to be called), passing in the specified typed value
+        /// </summary>
+        /// <param name="arg">The argument to pass into the gated Action</param>
         public void Run(TParameterType arg)
         {
             this._arg = arg;
             base.Run();
         }
 
+        /// <summary>
+        /// Constructs a new Gate
+        /// </summary>
+        /// <param name="action">The Action to call when the gate is opened</param>
         public Gate(Action<TParameterType, CancellationToken> action) : this(action, default(TParameterType))
         {
         }
+        /// <summary>
+        /// Constructs a new Gate
+        /// </summary>
+        /// <param name="action">The Action to call when the gate is opened</param>
+        /// <param name="defaultArg">A default value which will be passed to the gated Action, if not otherwise specified</param>
         public Gate(Action<TParameterType, CancellationToken> action, TParameterType defaultArg) : base(null)
         {
             _action = action;
             _defaultArg = defaultArg;
-            _thread.Start();
         }
     }
+    /// <summary>
+    /// A thread Gate is a background thread which is initially closed.  When a Gate is opened, the Action runs until completion.  The Gate can be opened (Run) any number of times.
+    /// </summary>
     public class Gate : IDisposable
     {
-        protected W.Threading.Thread _thread;
-        protected Action<CancellationToken> _action;
+        private W.Threading.Thread _thread;
+        private Action<CancellationToken> _action;
         private ManualResetEventSlim _mreGateOkToRun = new ManualResetEventSlim(false);
         private ManualResetEventSlim _mreIsRunning = new ManualResetEventSlim(false);
         private ManualResetEventSlim _mreGateComplete = new ManualResetEventSlim(false);
@@ -76,16 +103,26 @@ namespace W.Threading
                 }
             }
         }
+
+        /// <summary>
+        /// Invokes the gated Action
+        /// </summary>
+        /// <param name="token">The CancellationToken which is passed into the Action and should be used to monitor whether the Gate has been cancelled</param>
         protected virtual void CallAction(CancellationToken token)
         {
             _action.Invoke(token);
         }
 
-        //public bool IsStarted => _mreGateOkToRun.IsSet;
+        /// <summary>
+        /// True if the Gate is currently open (running), otherwise False
+        /// </summary>
         public bool IsRunning => _mreIsRunning.IsSet;
+        /// <summary>
+        /// True if the gated Action has completed, otherwise False
+        /// </summary>
         public bool IsComplete => _mreGateComplete.IsSet;
         /// <summary>
-        /// Allows the Action to be called
+        /// Signals the thread to open the gate (allows the gated Action to be called).
         /// </summary>
         public virtual void Run()
         {
@@ -96,16 +133,27 @@ namespace W.Threading
                 //_mreIsRunning.Wait();
             }
         }
+        /// <summary>
+        /// Blocks the calling thread until the gated Action is complete
+        /// </summary>
         public void Join()
         {
             _mreGateComplete.Wait();
         }
+        /// <summary>
+        /// Blocks the calling thread until the gated Action is complete, or until the specified number of milliseconds has elapsed
+        /// </summary>
+        /// <param name="msTimeout">The number of milliseconds to wait for the gate to complete before timing out and returning False</param>
+        /// <returns>True if the gate completed within the specified timeout, otherwise False</returns>
         public bool Join(int msTimeout)
         {
             //if (IsRunning && !IsComplete)
             return _mreGateComplete.Wait(msTimeout);//, _gateCts.Token);
             //return IsComplete;
         }
+        /// <summary>
+        /// Singals the gated Action that a Cancel has been requested
+        /// </summary>
         public void Cancel()
         {
             lock (_ctsLock)
@@ -113,10 +161,13 @@ namespace W.Threading
                 _gateCts?.Cancel();
             }
         }
-
+        /// <summary>
+        /// Cancels the gated Action, disposes the Gate and releases resources
+        /// </summary>
         public void Dispose()
         {
-            _thread.Cancel();
+            Cancel();
+            _thread.Stop();
             _mreGateOkToRun.Set();//let the thread exit gracefully
             _thread.Join();
             _thread.Dispose();
@@ -124,12 +175,132 @@ namespace W.Threading
             _mreGateOkToRun.Dispose();
             _mreGateComplete.Dispose();
         }
+        /// <summary>
+        /// Constructs a new Gate
+        /// </summary>
+        /// <param name="action">The Action to call when the gate is opened</param>
         public Gate(Action<CancellationToken> action)
         {
             _action = action;
-            _thread = new Thread(ThreadProc);
+            _thread = new W.Threading.Thread(ThreadProc, true);
         }
     }
+
+    //10.10.2017 - GateSlim is untested, but I think it should work just as well as Gate
+    ///// <summary>
+    ///// A simplified Gate
+    ///// </summary>
+    //public class GateSlim : IDisposable
+    //{
+    //    private ManualResetEventSlim _mreRun = new ManualResetEventSlim(false);
+    //    private ManualResetEventSlim _mreGateComplete = new ManualResetEventSlim(false);
+    //    private CancellationTokenSource _cts = new CancellationTokenSource();
+    //    private W.Threading.Thread _thread;
+    //    private CancellationToken _token;
+
+    //    /// <summary>
+    //    /// Delegate to handle an unhandled exception raised by the Action
+    //    /// </summary>
+    //    /// <param name="sender">The GateSlim which caught the exception</param>
+    //    /// <param name="e">The unhandled exception</param>
+    //    public delegate void ExceptionDelegate(object sender, Exception e);
+    //    /// <summary>
+    //    /// Raised when an unhandled exception is raised in the Action
+    //    /// </summary>
+    //    public event ExceptionDelegate Exception;
+
+    //    /// <summary>
+    //    /// The Action to call when the gate is opened (when Run is called)
+    //    /// </summary>
+    //    public Action<CancellationToken> Action { get; set; }
+    //    /// <summary>
+    //    /// True if the gate has been opened and the Action is running, otherwise False
+    //    /// </summary>
+    //    public bool IsRunning => _mreRun.IsSet;
+    //    /// <summary>
+    //    /// True if the Action has run at least once and has completed, otherwise False
+    //    /// </summary>
+    //    public bool IsComplete => _mreGateComplete.IsSet;
+
+    //    /// <summary>
+    //    /// Open the Gate (invoke the Action).  Can only be cancelled by disposing the GateSlim.
+    //    /// </summary>
+    //    public void Run() { Run(CancellationToken.None); }
+    //    /// <summary>
+    //    /// Open the Gate (invoke the Action), passing in a CancellationToken to support cancellation
+    //    /// </summary>
+    //    /// <param name="token">A CancellationToken which the Action can check</param>
+    //    public void Run(CancellationToken token)
+    //    {
+    //        _token = (token == CancellationToken.None) ? _cts.Token : token;
+    //        _mreGateComplete.Reset();
+    //        _mreRun.Set();
+    //    }
+    //    /// <summary>
+    //    /// Blocks the calling thread until the gated Action is complete
+    //    /// </summary>
+    //    public void Join()
+    //    {
+    //        _mreGateComplete.Wait();
+    //    }
+    //    /// <summary>
+    //    /// Blocks the calling thread until the gated Action is complete, or until the specified number of milliseconds has elapsed
+    //    /// </summary>
+    //    /// <param name="msTimeout">The number of milliseconds to wait for the gate to complete before timing out and returning False</param>
+    //    /// <returns>True if the gate completed within the specified timeout, otherwise False</returns>
+    //    public bool Join(int msTimeout)
+    //    {
+    //        return _mreGateComplete.Wait(msTimeout);
+    //    }
+    //    /// <summary>
+    //    /// Blocks the calling thread until the gated Action is complete, or until the specified CancellationToken has been cancelled
+    //    /// </summary>
+    //    /// <param name="token">The CancellationToken used to join the Action</param>
+    //    /// <returns>True if the gate completed before the CancellationToken was cancelled, otherwise False</returns>
+    //    public bool Join(CancellationToken token)
+    //    {
+    //        _mreGateComplete.Wait(token);
+    //        return !token.IsCancellationRequested;
+    //    }
+
+    //    /// <summary>
+    //    /// Cancels the Action if it's running, Disposes the GateSlim object and releases resources
+    //    /// </summary>
+    //    public void Dispose()
+    //    {
+    //        _cts.Cancel(); //first cancel the token
+    //        _mreRun.Set(); //if it's currently blocking, allow it to run (it'll check _cts.Token first and immediately exit)
+    //        _thread.Join(); //and wait for the thread to exit
+    //    }
+    //    /// <summary>
+    //    /// Constructs a new GateSlim
+    //    /// </summary>
+    //    public GateSlim()
+    //    {
+    //        _thread = new Thread(token =>
+    //        {
+    //            while (true)
+    //            {
+    //                _mreRun.Wait(token); //wait indefinitely, or until the token is cancelled
+    //                if (token.IsCancellationRequested || _cts.IsCancellationRequested)
+    //                    break;
+    //                try
+    //                {
+    //                    Action.Invoke(_token);
+    //                }
+    //                catch (Exception e)
+    //                {
+    //                    var evt = Exception;
+    //                    evt?.Invoke(this, e);
+    //                }
+    //                _mreGateComplete?.Set();
+    //                if (token.IsCancellationRequested || _cts.IsCancellationRequested)
+    //                    break;
+    //                _mreRun?.Reset();
+    //            }
+    //        });
+    //    }
+    //}
 }
 
 

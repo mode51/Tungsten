@@ -116,8 +116,8 @@ namespace W
         /// <summary>
         /// Allows the caller to suspend it's thread until Value changes
         /// </summary>
-        /// <param name="msTimeout"></param>
-        /// <returns></returns>
+        /// <param name="msTimeout">The number of milliseconds to wait for the value to change</param>
+        /// <returns>True if the value changed within the specified timeout period, otherwise False</returns>
         public bool WaitForChanged(int msTimeout = 0)
         {
             bool result = false;

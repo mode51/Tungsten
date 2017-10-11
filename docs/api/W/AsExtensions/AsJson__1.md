@@ -1,6 +1,6 @@
 AsExtensions.AsJson&lt;TType> Method
 ====================================
-  Serializes an object to a Json string
+   Serializes an object to a Json string
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

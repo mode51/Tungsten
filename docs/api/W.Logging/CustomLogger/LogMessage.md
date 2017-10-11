@@ -1,6 +1,6 @@
 CustomLogger.LogMessage Method
 ==============================
-  Log a message to the custom logger
+   Log a message to the custom logger
 
   **Namespace:**  [W.Logging][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

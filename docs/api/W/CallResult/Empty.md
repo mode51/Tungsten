@@ -1,6 +1,6 @@
 CallResult.Empty Property
 =========================
-  Provides a new instance of an uninitialized CallResult
+   Provides a new instance of an uninitialized CallResult
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

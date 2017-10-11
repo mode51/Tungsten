@@ -1,6 +1,6 @@
 PropertyChangedNotifier.GetValue Method
 =======================================
-  
+   
 Override this method to provide Get functionality
 
 

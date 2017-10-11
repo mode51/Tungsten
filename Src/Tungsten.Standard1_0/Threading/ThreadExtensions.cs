@@ -13,12 +13,17 @@ namespace W.Threading
             public Test()
             {
                 int value = 100;
-                value.CreateThread<int>((v, token) => { });
+                value.CreateThread<int>((v, token) => 
+                {
+                    //...do some work
+                    System.Diagnostics.Debug.WriteLine("Value = {0}", v);
+                });
             }
         }
         /// <summary>
         /// Creates and starts a new thread
         /// </summary>
+        /// <typeparam name="TParameterType">The Type of the item being extended</typeparam>
         /// <param name="this">The object to send into a new Thread</param>
         /// <param name="action">Action to call on a thread</param>
         /// <returns>A reference to the new W.Threading.Thread&lt;T&gt;</returns>
@@ -30,6 +35,7 @@ namespace W.Threading
         /// <summary>
         /// Creates a new thread
         /// </summary>
+        /// <typeparam name="TParameterType">The Type of the item being extended</typeparam>
         /// <param name="this">The object to send into a new Thread</param>
         /// <param name="action">Action to call on a thread</param>
         /// <param name="autoStart">If True, the thread will immediately start running</param>
@@ -42,9 +48,9 @@ namespace W.Threading
         /// <summary>
         /// Creates and starts a new thread and 
         /// </summary>
-        /// <param name="this"></param>
+        /// <typeparam name="TParameterType">The Type of the item being extended</typeparam>
+        /// <param name="this">The object to send into a new Thread</param>
         /// <param name="action">Action to call on a thread</param>
-        /// <typeparam name="TParameterType"></typeparam>
         /// <returns>A reference to the new W.Threading.Thread&lt;T&gt;</returns>
         public static W.Threading.Thread<TParameterType> CreateThread<TParameterType>(this object @this, Action<TParameterType, CancellationToken> action)
         {
@@ -54,10 +60,10 @@ namespace W.Threading
         /// <summary>
         /// Creates a new thread
         /// </summary>
-        /// <param name="this"></param>
+        /// <typeparam name="TParameterType">The Type of the item being extended</typeparam>
+        /// <param name="this">The object to send into a new Thread</param>
         /// <param name="action">Action to call on a thread</param>
         /// <param name="autoStart">If True, the thread will immediately start running</param>
-        /// <typeparam name="TParameterType"></typeparam>
         /// <returns>A reference to the new W.Threading.Thread&lt;T&gt;</returns>
         public static W.Threading.Thread<TParameterType> CreateThread<TParameterType>(this object @this, Action<TParameterType, CancellationToken> action, bool autoStart)
         {

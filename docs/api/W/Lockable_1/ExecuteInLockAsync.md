@@ -1,6 +1,6 @@
 Lockable&lt;TValue>.ExecuteInLockAsync Method (Action&lt;TValue>)
 =================================================================
-  Executes a task within a lock of the LockObject
+   Executes a task within a lock of the LockObject
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

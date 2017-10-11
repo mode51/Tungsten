@@ -1,6 +1,6 @@
 CallResult Constructor
 ======================
-  Default constructor, initializes Success to false
+   Default constructor, initializes Success to false
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

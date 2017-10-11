@@ -8,6 +8,25 @@ namespace W.Threading
     /// </summary>
     public static class GateMethods
     {
+        private class Test
+        {
+            private Action<int, CancellationToken> Action { get; set;}
+            public Test()
+            {
+                Action += (value, token) =>
+                {
+                    System.Diagnostics.Debug.WriteLine("Value = {0}", value);
+                };
+                Action.Invoke(5, CancellationToken.None);
+
+                var gate = Action.AsGate<int>();
+                gate.Run(5);
+                gate.Join();
+                gate.Run(50);
+                gate.Join();
+            }
+        }
+        
         /// <summary>
         /// Creates a Gate with the supplied action
         /// </summary>
@@ -20,11 +39,12 @@ namespace W.Threading
         /// <summary>
         /// Creates a Gate with the supplied action
         /// </summary>
-        /// <param name="action">The Action to call when the gate is relased (when Run is called)</param>
+        /// <typeparam name="TParameterType">The Type of the parameter to be passed in</typeparam>
+        /// <param name="action">The Action to call when the gate is released (when Run is called)</param>
         /// <returns>A reference to a new Gate</returns>
-        public static Gate<T> AsGate<T>(this Action<T, CancellationToken> @action)
+        public static Gate<TParameterType> AsGate<TParameterType>(this Action<TParameterType, CancellationToken> @action)
         {
-            return new Gate<T>(action);
+            return new Gate<TParameterType>(action);
         }
     }
 }

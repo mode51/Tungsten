@@ -1,6 +1,6 @@
-Gate&lt;T>.Run Method
-=====================
-  Allows the Action to be called
+Gate&lt;TParameterType>.Run Method
+==================================
+   Opens the gate (allows the gated Action to be called), passing in the default value which was specified in the constructor
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -9,7 +9,7 @@ Syntax
 ------
 
 ```csharp
-public void Run()
+public override void Run()
 ```
 
 
@@ -17,7 +17,7 @@ See Also
 --------
 
 #### Reference
-[Gate&lt;T> Class][2]  
+[Gate&lt;TParameterType> Class][2]  
 [W.Threading Namespace][1]  
 
 [1]: ../README.md

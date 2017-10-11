@@ -1,6 +1,6 @@
 IOwnedProperty Interface
 ========================
-  
+   
 Used by PropertyHostMethods.InitializeProperties to find properties on which to set the owner. This interface is not used by self-owned properties.
 
 

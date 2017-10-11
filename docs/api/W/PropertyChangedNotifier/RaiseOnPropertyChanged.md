@@ -1,6 +1,6 @@
 PropertyChangedNotifier.RaiseOnPropertyChanged Method
 =====================================================
-  
+   
 Raises the PropertyChanged event
 
 
@@ -25,7 +25,7 @@ The sender is the owner of the property
 
 ##### *propertyName*
 Type: [System.String][3]  
-The name of the property which changed
+The name of the caller (the property which changed)
 
 
 See Also

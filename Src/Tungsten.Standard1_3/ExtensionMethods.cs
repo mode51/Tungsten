@@ -62,6 +62,7 @@ namespace W
         /// <summary>
         /// Initiates a Task which will wait for the specified condition to be met
         /// </summary>
+        /// <typeparam name="TItemType">The object Type of the item being extended</typeparam>
         /// <param name="this">The value being inspected</param>
         /// <param name="predicate">The condition to be met</param>
         /// <param name="msTimeout">The task will time out within the specified number of milliseconds.  Use -1 to wait indefinitely.</param>
@@ -94,6 +95,7 @@ namespace W
         /// <summary>
         /// Initiates a Task which will wait for the specified condition to be met
         /// </summary>
+        /// <typeparam name="TItemType">The object Type of the item being extended</typeparam>
         /// <param name="this">The value being inspected</param>
         /// <param name="predicate">The condition to be met</param>
         /// <param name="msTimeout">The task will time out within the specified number of milliseconds.  Use -1 to wait indefinitely.</param>

@@ -1,6 +1,6 @@
 Property&lt;TValue> Constructor (TValue)
 ========================================
-  Constructs a new Property
+   Constructs a new Property
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

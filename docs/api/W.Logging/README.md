@@ -10,8 +10,8 @@ Classes
 --------------- | ------------------------------------- | ----------------------------------------------------------------------------------------------------- 
 ![Public class] | [CustomLogger][1]                     | Allows the programmer to add a custom message logger                                                  
 ![Public class] | [Log][2]                              | Exposes static methods for logging. LogTheMessage can be assigned a new value for customized logging. 
-![Public class] | [Log.LogMessageHistory][3]            |                                                                                                       
-![Public class] | [Log.LogMessageHistory.LogMessage][4] |                                                                                                       
+![Public class] | [Log.LogMessageHistory][3]            | Maintains a history of Log information                                                                
+![Public class] | [Log.LogMessageHistory.LogMessage][4] | An individual log message                                                                             
 
 
 Enumerations

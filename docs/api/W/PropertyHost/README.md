@@ -1,6 +1,6 @@
 PropertyHost Class
 ==================
-  
+   
 Provides a base class to automate the IsDirty, MarkAsClean and InitializeProperties functionality Note that this class does not support INotifyPropertyChanged and is not intented to host owned properties (though nothing prevents you from doing so)
 
 
@@ -57,22 +57,23 @@ Methods
 Extension Methods
 -----------------
 
-                                          | Name                       | Description                                                                                                                                                                                                                      
------------------------------------------ | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-![Public Extension Method]![Code example] | [As&lt;TType>][13]         | Use Generic syntax for the as operator. (Defined by [AsExtensions][14].)                                                                                                                                                         
-![Public Extension Method]                | [AsJson&lt;TType>][15]     | Serializes an object to a Json string (Defined by [AsExtensions][14].)                                                                                                                                                           
-![Public Extension Method]                | [AsXml&lt;TType>][16]      | Serializes an object to an xml string (Defined by [AsExtensions][14].)                                                                                                                                                           
-![Public Extension Method]                | [CreateThread&lt;T>][17]   | Starts a new thread (Defined by [ThreadExtensions][18].)                                                                                                                                                                         
-![Public Extension Method]                | [InitializeProperties][19] | 
+                                          | Name                                                                                         | Description                                                                                                                                                                                                                      
+----------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+![Public Extension Method]![Code example] | [As&lt;TType>][13]                                                                           | Use Generic syntax for the as operator. (Defined by [AsExtensions][14].)                                                                                                                                                         
+![Public Extension Method]                | [AsJson&lt;TType>][15]                                                                       | Serializes an object to a Json string (Defined by [AsExtensions][14].)                                                                                                                                                           
+![Public Extension Method]                | [AsXml&lt;TType>][16]                                                                        | Serializes an object to an xml string (Defined by [AsExtensions][14].)                                                                                                                                                           
+![Public Extension Method]                | [CreateThread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>)][17]          | Overloaded. Creates and starts a new thread and (Defined by [ThreadExtensions][18].)                                                                                                                                             
+![Public Extension Method]                | [CreateThread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>, Boolean)][19] | Overloaded. Creates a new thread (Defined by [ThreadExtensions][18].)                                                                                                                                                            
+![Public Extension Method]                | [InitializeProperties][20]                                                                   | 
 Scans the fields and properties of "owner" and sets the member's Owner property to "owner" This method should be called in the constructor of any class which has IOwnedProperty members
- (Defined by [PropertyHostMethods][20].) 
-![Public Extension Method]                | [IsDirty][21]              | 
+ (Defined by [PropertyHostMethods][21].) 
+![Public Extension Method]                | [IsDirty][22]                                                                                | 
 Scans the IsDirty value of each field and property of type IProperty
- (Defined by [PropertyHostMethods][20].)                                                                                                                 
-![Public Extension Method]                | [MarkAsClean][22]          | 
+ (Defined by [PropertyHostMethods][21].)                                                                                                                 
+![Public Extension Method]                | [MarkAsClean][23]                                                                            | 
 Scans each field and property of type IProperty and sets it's IsDirty flag to false
- (Defined by [PropertyHostMethods][20].)                                                                                                  
-![Public Extension Method]                | [WaitForValue][23]         | Initiates a Task which will wait for the given variable to have the specified value (Defined by [ExtensionMethods][24].)                                                                                                         
+ (Defined by [PropertyHostMethods][21].)                                                                                                  
+![Public Extension Method]                | [WaitForValueAsync][24]                                                                      | Initiates a Task which will wait for the given variable to have the specified value (Defined by [ExtensionMethods][25].)                                                                                                         
 
 
 See Also
@@ -99,12 +100,13 @@ See Also
 [16]: ../AsExtensions/AsXml__1.md
 [17]: ../../W.Threading/ThreadExtensions/CreateThread__1.md
 [18]: ../../W.Threading/ThreadExtensions/README.md
-[19]: ../PropertyHostMethods/InitializeProperties.md
-[20]: ../PropertyHostMethods/README.md
-[21]: ../PropertyHostMethods/IsDirty.md
-[22]: ../PropertyHostMethods/MarkAsClean.md
-[23]: ../ExtensionMethods/WaitForValue.md
-[24]: ../ExtensionMethods/README.md
+[19]: ../../W.Threading/ThreadExtensions/CreateThread__1_1.md
+[20]: ../PropertyHostMethods/InitializeProperties.md
+[21]: ../PropertyHostMethods/README.md
+[22]: ../PropertyHostMethods/IsDirty.md
+[23]: ../PropertyHostMethods/MarkAsClean.md
+[24]: ../ExtensionMethods/WaitForValueAsync.md
+[25]: ../ExtensionMethods/README.md
 [Public method]: ../../_icons/pubmethod.gif "Public method"
 [Public property]: ../../_icons/pubproperty.gif "Public property"
 [Protected method]: ../../_icons/protmethod.gif "Protected method"

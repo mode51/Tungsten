@@ -1,6 +1,6 @@
 GateMethods Class
 =================
-  Extension methods on Action to Create a Gate
+   Extension methods on Action to Create a Gate
 
 
 Inheritance Hierarchy
@@ -22,10 +22,10 @@ public static class GateMethods
 Methods
 -------
 
-                                 | Name                                                     | Description                             
--------------------------------- | -------------------------------------------------------- | --------------------------------------- 
-![Public method]![Static member] | [AsGate(Action&lt;CancellationTokenSource>)][3]          | Creates a Gate with the supplied action 
-![Public method]![Static member] | [AsGate&lt;T>(Action&lt;T, CancellationTokenSource>)][4] | Creates a Gate with the supplied action 
+                                 | Name                                                                         | Description                             
+-------------------------------- | ---------------------------------------------------------------------------- | --------------------------------------- 
+![Public method]![Static member] | [AsGate(Action&lt;CancellationToken>)][3]                                    | Creates a Gate with the supplied action 
+![Public method]![Static member] | [AsGate&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>)][4] | Creates a Gate with the supplied action 
 
 
 See Also

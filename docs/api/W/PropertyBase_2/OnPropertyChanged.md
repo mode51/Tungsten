@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.OnPropertyChanged Method
 ========================================================
-  Raises the OnPropertyChanged event
+   Raises the OnPropertyChanged event
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
