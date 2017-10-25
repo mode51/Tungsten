@@ -1,5 +1,7 @@
 The help files are built with [Sandcastle Help File Builder](https://github.com/EWSoftware/SHFB)
 
+Please note that Tungsten is a work in progress and this documentation may not be up to date or may be incomplete.
+
 # Projects
 
 ### Tungsten
