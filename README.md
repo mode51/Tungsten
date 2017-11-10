@@ -21,6 +21,10 @@ A C# library to make Windows Forms, WPF, Windows Universal, .NetCore and Windows
 * **Tungsten.Standard1_3** - A NetStandard version of Tungsten
   * Targets .NetStandard 1.3
 
+### Tungsten.IO.Pipes
+* Tungsten.IO.Pipes - A client/server pipe library
+* Tungsten.IO.Pipes.Standard - A NetStandard 1.4 version of Tungsten.IO.Pipes
+
 ### Tungsten.Net
 * Tungsten.Net - A client/server tcp socket library
 * Tungsten.Net.Standard - A NetStandard version of Tungsten.Net
@@ -45,7 +49,7 @@ A C# library to make Windows Forms, WPF, Windows Universal, .NetCore and Windows
 * Tungsten.WPF.Metro - Extends Tungsten.WPF with basic MahApps Accents and Themes
 
 # Demos
-* Tungsten.IO.Pipes.Standard - A NetStandard wrapper for named pipes (client and server)
+* Tungsten.IO.Pipes.Standard.Demo - Illustrates uses for Tungsten.IO.Pipes (client and server)
 * Tungsten.Demo.Winforms - Uses tasks, Property and Gate to provide a responsive UI while handling background tasks
 * Tungsten.Demo.WPF - Illustrates how to use Tungsten in a WPF application
 * Tungsten.Standard.Demo - Illustrates using some of the features in Tungsten.Standard
