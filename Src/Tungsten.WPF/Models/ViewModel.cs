@@ -7,6 +7,7 @@ using System.Windows;
 using W;
 using W.Logging;
 using W.WPF.Core;
+using W.PropertyHostExtensions;
 
 namespace W.WPF.Models
 {

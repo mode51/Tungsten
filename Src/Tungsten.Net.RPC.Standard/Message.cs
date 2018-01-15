@@ -18,6 +18,7 @@ namespace W.Net.RPC
         public string Method { get; set; } = "";
         public List<object> Parameters { get; set; } = new List<object>();
         public object Response { get; set; } = null;
-        public ExceptionInformation Exception { get; set; } = null;
+        //public ExceptionInformation Exception { get; set; } = null;
+        public string Exception { get; set; } = "";
     }
 }

@@ -63,14 +63,20 @@
     <Compile Include="..\Tungsten.Standard1_0\ActionQueue.cs">
       <Link>ActionQueue.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Standard1_0\AsExtensions.cs">
-      <Link>AsExtensions.cs</Link>
+    <Compile Include="..\Tungsten.Standard1_0\ArrayMethods.cs">
+      <Link>ArrayMethods.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\CallResult.cs">
       <Link>CallResult.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Disposable.cs">
       <Link>Disposable.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\Disposer.cs">
+      <Link>Disposer.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\Encryption\AssymetricEncryption.cs">
+      <Link>Encryption\AssymetricEncryption.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Encryption\MD5.cs">
       <Link>Encryption\MD5.cs</Link>
@@ -87,17 +93,41 @@
     <Compile Include="..\Tungsten.Standard1_0\EventTemplate.cs">
       <Link>EventTemplate.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Standard1_0\ExtensionMethods.cs">
-      <Link>ExtensionMethods.cs</Link>
+    <Compile Include="..\Tungsten.Standard1_0\ExtensionMethods\AsExtensions.cs">
+      <Link>ExtensionMethods\AsExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Standard1_0\FromExtensions.cs">
-      <Link>FromExtensions.cs</Link>
+    <Compile Include="..\Tungsten.Standard1_0\ExtensionMethods\DelegateExtensions.cs">
+      <Link>ExtensionMethods\DelegateExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Standard1_0\InvokeExtensions.cs">
-      <Link>InvokeExtensions.cs</Link>
+    <Compile Include="..\Tungsten.Standard1_0\ExtensionMethods\ExtensionMethods.cs">
+      <Link>ExtensionMethods\ExtensionMethods.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Standard1_0\Lockable.cs">
-      <Link>Lockable.cs</Link>
+    <Compile Include="..\Tungsten.Standard1_0\ExtensionMethods\FromExtensions.cs">
+      <Link>ExtensionMethods\FromExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\ExtensionMethods\GateExtensions.cs">
+      <Link>ExtensionMethods\GateExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\ExtensionMethods\InvokeExtensions.cs">
+      <Link>ExtensionMethods\InvokeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\ExtensionMethods\LockExtensions.cs">
+      <Link>ExtensionMethods\LockExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\ExtensionMethods\PropertyHostExtensions.cs">
+      <Link>ExtensionMethods\PropertyHostExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\ExtensionMethods\StringExtensions.cs">
+      <Link>ExtensionMethods\StringExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\ExtensionMethods\ThreadExtensions.cs">
+      <Link>ExtensionMethods\ThreadExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\Lockable\Lockable.cs">
+      <Link>Lockable\Lockable.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\Lockable\LockableSlim.cs">
+      <Link>Lockable\LockableSlim.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Logging\CustomLogger.cs">
       <Link>Logging\CustomLogger.cs</Link>
@@ -126,20 +156,17 @@
     <Compile Include="..\Tungsten.Standard1_0\Property\PropertyHost.cs">
       <Link>Property\PropertyHost.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Standard1_0\Property\PropertyHostMethods.cs">
-      <Link>Property\PropertyHostMethods.cs</Link>
-    </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Property\PropertyHostNotifier.cs">
       <Link>Property\PropertyHostNotifier.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Property\PropertyMethods.cs">
       <Link>Property\PropertyMethods.cs</Link>
     </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\Property\PropertySlim.cs">
+      <Link>Property\PropertySlim.cs</Link>
+    </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Singleton.cs">
       <Link>Singleton.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Standard1_0\StringExtensions.cs">
-      <Link>StringExtensions.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Threading\CPUProfileEnum.cs">
       <Link>Threading\CPUProfileEnum.cs</Link>
@@ -147,14 +174,38 @@
     <Compile Include="..\Tungsten.Standard1_0\Threading\Gate.cs">
       <Link>Threading\Gate.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Standard1_0\Threading\GateExtensions.cs">
-      <Link>Threading\GateExtensions.cs</Link>
+    <Compile Include="..\Tungsten.Standard1_0\Threading\Lockers\ILocker.cs">
+      <Link>Threading\Lockers\ILocker.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\Threading\Lockers\IStateLocker.cs">
+      <Link>Threading\Lockers\IStateLocker.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\Threading\Lockers\MonitorLocker.cs">
+      <Link>Threading\Lockers\MonitorLocker.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\Threading\Lockers\ReaderWriterLocker.cs">
+      <Link>Threading\Lockers\ReaderWriterLocker.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\Threading\Lockers\SemaphoreSlimLocker.cs">
+      <Link>Threading\Lockers\SemaphoreSlimLocker.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\Threading\Lockers\SpinLocker.cs">
+      <Link>Threading\Lockers\SpinLocker.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\Threading\Lockers\StateLocker.cs">
+      <Link>Threading\Lockers\StateLocker.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\Threading\ParameterizedThread.cs">
+      <Link>Threading\ParameterizedThread.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Threading\Thread.cs">
       <Link>Threading\Thread.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadExtensions.cs">
-      <Link>Threading\ThreadExtensions.cs</Link>
+    <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadMethod.cs">
+      <Link>Threading\ThreadMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\Threading\ThreadSlim.cs">
+      <Link>Threading\ThreadSlim.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Threading\Tungsten.Threading.Namespace.cs">
       <Link>Threading\Tungsten.Threading.Namespace.cs</Link>

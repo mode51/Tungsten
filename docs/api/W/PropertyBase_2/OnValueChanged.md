@@ -9,11 +9,11 @@ Syntax
 ------
 
 ```csharp
-protected PropertyBase<TOwner, TValue>.OnValueChangedDelegate OnValueChanged
+protected OnValueChangedDelegate<TOwner, TValue> OnValueChanged
 ```
 
 #### Field Value
-Type: [PropertyBase&lt;TOwner, TValue>.OnValueChangedDelegate][2]
+Type: [OnValueChangedDelegate][2]&lt;[TOwner][3], [TValue][3]>
 
 See Also
 --------
@@ -23,5 +23,5 @@ See Also
 [W Namespace][1]  
 
 [1]: ../README.md
-[2]: ../PropertyBase_2_OnValueChangedDelegate/README.md
+[2]: ../OnValueChangedDelegate_2/README.md
 [3]: README.md

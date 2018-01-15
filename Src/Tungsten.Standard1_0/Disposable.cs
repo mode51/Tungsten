@@ -38,31 +38,33 @@ namespace W
         {
             lock (_disposeLock)
             {
+                if (IsDisposing) //already disposing
+                    return;
                 IsDisposing = disposing;
                 if (!IsDisposed)
                 {
                     if (disposing)
                     {
-                        // TODO: dispose managed state (managed objects).
+                        // dispose managed state (managed objects)
                         OnDispose();
                     }
 
-                    // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
+                    // free unmanaged resources (unmanaged objects) and override a finalizer below
                     OnDisposeUnmanaged();
-                    // TODO: set large fields to null.
+                    // set large fields to null
                     IsDisposed = true;
                 }
             }
         }
 
-        /// <summary>
-        /// Override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
-        /// </summary>
-        ~Disposable()
-        {
-            // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-            Dispose(false);
-        }
+        ///// <summary>
+        ///// Override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
+        ///// </summary>
+        //~Disposable()
+        //{
+        //    // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+        //    Dispose(false);
+        //}
 
         /// <summary>
         /// This code added to correctly implement the disposable pattern.

@@ -21,11 +21,11 @@
       <DocumentationSource sourceFile="..\Src\Tungsten\bin\Release\Tungsten.XML" />
       <DocumentationSource sourceFile="..\Src\Tungsten\bin\Release\Tungsten.dll" />
     </DocumentationSources>
-    <VisibleItems>InheritedMembers, InheritedFrameworkMembers, Protected, ProtectedInternalAsProtected</VisibleItems>
+    <VisibleItems>ExplicitInterfaceImplementations, InheritedMembers, InheritedFrameworkMembers, Protected, ProtectedInternalAsProtected</VisibleItems>
     <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
     <HelpFileFormat>HtmlHelp1, Website</HelpFileFormat>
-    <IndentHtml>False</IndentHtml>
+    <IndentHtml>True</IndentHtml>
     <KeepLogFile>True</KeepLogFile>
     <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
     <CleanIntermediates>False</CleanIntermediates>
@@ -43,10 +43,20 @@
     <CopyrightText>Copyright %40 2017 Jordan Duerksen</CopyrightText>
     <NamespaceSummaries>
       <NamespaceSummaryItem name="W" isDocumented="True">The root namespace for Tungsten.  W is used because it is the symbol for Tungsten on the periodic table of elements.</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="W.Encryption" isDocumented="True">Functionality related to encryption</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="W.Logging" isDocumented="True">Functionality related to information and error logging</NamespaceSummaryItem>
-      <NamespaceSummaryItem name="W.Threading" isDocumented="True">Functionality related to multi-threading</NamespaceSummaryItem>
-    </NamespaceSummaries>
+<NamespaceSummaryItem name="W.Encryption" isDocumented="True">Functionality related to encryption</NamespaceSummaryItem>
+<NamespaceSummaryItem name="W.Logging" isDocumented="True">Functionality related to information and error logging</NamespaceSummaryItem>
+<NamespaceSummaryItem name="W.Threading" isDocumented="True">Functionality related to multi-threading</NamespaceSummaryItem>
+<NamespaceSummaryItem name="W.AsExtensions" isDocumented="True">Extensions which convert objects to another</NamespaceSummaryItem>
+<NamespaceSummaryItem name="W.Extensions" isDocumented="True">Extension methods which have not been classified as yet</NamespaceSummaryItem>
+<NamespaceSummaryItem name="W.FromExtensions" isDocumented="True">Extensions which convert objects from one type to another</NamespaceSummaryItem>
+<NamespaceSummaryItem name="W.InvokeExtensions" isDocumented="True">Extensions to provide code shortcuts to evaluate InvokeRequired and run code appropriately</NamespaceSummaryItem>
+<NamespaceSummaryItem name="W.StringExtensions" isDocumented="True">Extensions for the string type</NamespaceSummaryItem>
+<NamespaceSummaryItem name="W.DelegateExtensions" isDocumented="True">Extension methods for delegates</NamespaceSummaryItem>
+<NamespaceSummaryItem name="W.Threading.ThreadExtensions" isDocumented="True">Extension methods related to threading</NamespaceSummaryItem>
+<NamespaceSummaryItem name="W.PropertyHostExtensions" isDocumented="True">Extension methods related to W.PropertyHost or any class which has one or more W.Property members</NamespaceSummaryItem>
+<NamespaceSummaryItem name="W.Threading.GateExtensions" isDocumented="True">Extension methods on Action to Create a Gate</NamespaceSummaryItem>
+<NamespaceSummaryItem name="W.Threading.Lockers" isDocumented="True">Lockers are designed to make locking of thread resources easier and less verbose</NamespaceSummaryItem>
+<NamespaceSummaryItem name="W.LockExtensions" isDocumented="True">Extension methods for object, SpinLock, SemaphoreSlim, ReaderWriterLockSlim to provide less verbose resource locking</NamespaceSummaryItem></NamespaceSummaries>
     <TocParentId>-1</TocParentId>
     <TocParentVersion>100</TocParentVersion>
     <TopicVersion>100</TopicVersion>
@@ -57,6 +67,15 @@
     <CatalogVersion>100</CatalogVersion>
     <CatalogProductId>VS</CatalogProductId>
     <RootNamespaceTitle>Tungsten Namespaces</RootNamespaceTitle>
+    <PlugInConfigurations>
+      <PlugInConfig id="XPath Reflection File Filter" enabled="True" xmlns="">
+        <configuration>
+          <expressions>
+            <expression>/reflection/apis/api/elements/element[@source='extension' and @api = /reflection/apis/api/@id[../parameters/parameter[1]/type[@api='T:System.Object']]]</expression>
+          </expressions>
+        </configuration>
+      </PlugInConfig>
+    </PlugInConfigurations>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->

@@ -65,28 +65,6 @@ Methods
 ![Public method]    | [ToString][17]        | (Inherited from [Object][1].) 
 
 
-Extension Methods
------------------
-
-                                          | Name                                                                                         | Description                                                                                                                                                                                                                      
------------------------------------------ | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-![Public Extension Method]![Code example] | [As&lt;TType>][18]                                                                           | Use Generic syntax for the as operator. (Defined by [AsExtensions][19].)                                                                                                                                                         
-![Public Extension Method]                | [AsJson&lt;TType>][20]                                                                       | Serializes an object to a Json string (Defined by [AsExtensions][19].)                                                                                                                                                           
-![Public Extension Method]                | [AsXml&lt;TType>][21]                                                                        | Serializes an object to an xml string (Defined by [AsExtensions][19].)                                                                                                                                                           
-![Public Extension Method]                | [CreateThread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>)][22]          | Overloaded. Creates and starts a new thread and (Defined by [ThreadExtensions][23].)                                                                                                                                             
-![Public Extension Method]                | [CreateThread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>, Boolean)][24] | Overloaded. Creates a new thread (Defined by [ThreadExtensions][23].)                                                                                                                                                            
-![Public Extension Method]                | [InitializeProperties][25]                                                                   | 
-Scans the fields and properties of "owner" and sets the member's Owner property to "owner" This method should be called in the constructor of any class which has IOwnedProperty members
- (Defined by [PropertyHostMethods][26].) 
-![Public Extension Method]                | [IsDirty][27]                                                                                | 
-Scans the IsDirty value of each field and property of type IProperty
- (Defined by [PropertyHostMethods][26].)                                                                                                                 
-![Public Extension Method]                | [MarkAsClean][28]                                                                            | 
-Scans each field and property of type IProperty and sets it's IsDirty flag to false
- (Defined by [PropertyHostMethods][26].)                                                                                                  
-![Public Extension Method]                | [WaitForValueAsync][29]                                                                      | Initiates a Task which will wait for the given variable to have the specified value (Defined by [ExtensionMethods][30].)                                                                                                         
-
-
 See Also
 --------
 
@@ -110,22 +88,7 @@ See Also
 [15]: http://msdn.microsoft.com/en-us/library/dfwy45w9
 [16]: http://msdn.microsoft.com/en-us/library/57ctke0a
 [17]: http://msdn.microsoft.com/en-us/library/7bxwbwt2
-[18]: ../AsExtensions/As__1.md
-[19]: ../AsExtensions/README.md
-[20]: ../AsExtensions/AsJson__1.md
-[21]: ../AsExtensions/AsXml__1.md
-[22]: ../../W.Threading/ThreadExtensions/CreateThread__1.md
-[23]: ../../W.Threading/ThreadExtensions/README.md
-[24]: ../../W.Threading/ThreadExtensions/CreateThread__1_1.md
-[25]: ../PropertyHostMethods/InitializeProperties.md
-[26]: ../PropertyHostMethods/README.md
-[27]: ../PropertyHostMethods/IsDirty.md
-[28]: ../PropertyHostMethods/MarkAsClean.md
-[29]: ../ExtensionMethods/WaitForValueAsync.md
-[30]: ../ExtensionMethods/README.md
 [Public method]: ../../_icons/pubmethod.gif "Public method"
 [Public property]: ../../_icons/pubproperty.gif "Public property"
 [Static member]: ../../_icons/static.gif "Static member"
 [Protected method]: ../../_icons/protmethod.gif "Protected method"
-[Public Extension Method]: ../../_icons/pubextension.gif "Public Extension Method"
-[Code example]: ../../_icons/CodeExample.png "Code example"

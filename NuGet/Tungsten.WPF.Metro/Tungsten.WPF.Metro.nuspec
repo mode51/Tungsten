@@ -3,7 +3,7 @@
   <metadata>
     <id>Tungsten.WPF.Metro</id>
     <title>Tungsten.WPF.Metro</title>
-    <version>1.0.3</version>
+    <version>2.0.0</version>
     <authors>Jordan Duerksen</authors>
     <owners>Jordan Duerksen</owners>
     <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
@@ -17,8 +17,8 @@
     <tags>Tungsten Tungsten.WPF Tungsten.WPF.Metro W WPF Metro MahApps C# library</tags>
     <dependencies>
       <group targetFramework="net45">
-        <dependency id="Tungsten" version="1.2.5" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.WPF" version="1.0.3" exclude="Build,Analyzers" />
+        <dependency id="Tungsten" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.WPF" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="MahApps.Metro" version="1.5.0" exclude="Build,Analyzers" />
       </group>
     </dependencies>

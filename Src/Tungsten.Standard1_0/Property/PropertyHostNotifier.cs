@@ -12,14 +12,14 @@
         /// Finds all Properties and checks their IsDirty flag
         /// </summary>
         /// <returns>True if any Property's IsDirty flag is true. Otherwise false.</returns>
-        public bool IsDirty { get { return PropertyHostMethods.IsDirty(this); } }
+        public bool IsDirty { get { return PropertyHostExtensions.PropertyHostExtensions.IsDirty(this); } }
 
         /// <summary>
         /// Uses reflection to find all Properties and mark them as clean (call Property.MarkAsClean())
         /// </summary>
         public void MarkAsClean()
         {
-            PropertyHostMethods.MarkAsClean(this);
+            PropertyHostExtensions.PropertyHostExtensions.MarkAsClean(this);
         }
 
         /// <summary>
@@ -27,7 +27,7 @@
         /// </summary>
         public PropertyHostNotifier()
         {
-            PropertyHostMethods.InitializeProperties(this);
+            PropertyHostExtensions.PropertyHostExtensions.InitializeProperties(this);
         }
     }
 }

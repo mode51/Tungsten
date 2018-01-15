@@ -28,5 +28,7 @@ namespace W.Threading
         ///<summary>Only available for .Net Framework; uses Thread.Yield instead of Thread.Sleep.</summary>
         Yield
 #endif
+            ///<summary>Spins for the specified number of milliseconds.  Low CPU usage.  Should be faster on multi-core/cpu machines as the load will be divided among cores/cpus.  Slowest on single-core/cpu machines.</summary>
+            , SpinUntil
     }
 }

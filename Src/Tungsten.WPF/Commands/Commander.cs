@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using W.Logging;
 using W.WPF.Core;
+using W.PropertyHostExtensions;
 
 namespace W.WPF.Commands
 {

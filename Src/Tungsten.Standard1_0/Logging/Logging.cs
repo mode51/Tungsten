@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
+/// <summary>
+/// Exposes static methods for logging
+/// </summary>
 namespace W.Logging
 {
     /// <summary>

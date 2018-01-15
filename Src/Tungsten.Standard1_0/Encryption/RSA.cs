@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using W.AsExtensions;
 using W.Logging;
 
 namespace W.Encryption
@@ -125,7 +126,7 @@ namespace W.Encryption
 //            //_rsa?.Dispose();
 //            //_rsa = null;
 //        }
-//    }
+//    }m
 #elif NET45 || NETSTANDARD1_3 || NETCOREAPP1_0
     using System.Security.Cryptography;
     /// <summary>
@@ -134,7 +135,6 @@ namespace W.Encryption
     /// <remarks>
     /// Adapted from an online sample http://digitalsquid.co.uk/2009/01/rsa-crypto/
     /// </remarks>
-    [Obsolete("This class has been deprecated due to bugs.  Please use SimpleRSA instead.")]
     public class RSA : IDisposable
     {
         private System.Security.Cryptography.RSA _rsa = System.Security.Cryptography.RSA.Create();

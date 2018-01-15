@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using W.WPF.Core;
+using W.PropertyHostExtensions;
+using W.AsExtensions;
 
 namespace W.WPF
 {
@@ -13,11 +15,13 @@ namespace W.WPF
         private Window _window;
         public Property<MetroStyle, string> Accent { get; } = new Property<MetroStyle, string>((owner, oldValue, newValue) =>
         {
-            SetAccentAndTheme(newValue, owner.Theme.Value, owner._window);
+            var o = owner.As<MetroStyle>();
+            SetAccentAndTheme(newValue, o.Theme.Value, o._window);
         });
         public Property<MetroStyle, string> Theme { get; } = new Property<MetroStyle, string>((owner, oldValue, newValue) =>
         {
-            SetAccentAndTheme(owner.Accent.Value, newValue, owner._window);
+            var o = owner.As<MetroStyle>();
+            SetAccentAndTheme(o.Accent.Value, newValue, o._window);
         });
 
         public static CollectionProperty<string> AllAccents { get; } = new CollectionProperty<string>();

@@ -5,10 +5,13 @@ using System.Threading.Tasks;
 
 namespace W.Threading
 {
+    //TODO: 11.14.2017 (Tungsten v1.3) - remove Gate at a later date
+
     /// <summary>
     /// A thread Gate which supports passing in a typed parameter
     /// </summary>
     /// <typeparam name="TParameterType">The type of parameter that will be passed to the gated thread procedure</typeparam>
+    [Obsolete("Gate is incorrectly implemented and will be removed at a later date.  Please use ThreadMethod instead.")]
     public class Gate<TParameterType> : Gate
     {
         private Action<TParameterType, CancellationToken> _action;
@@ -63,6 +66,7 @@ namespace W.Threading
     /// <summary>
     /// A thread Gate is a background thread which is initially closed.  When a Gate is opened, the Action runs until completion.  The Gate can be opened (Run) any number of times.
     /// </summary>
+    [Obsolete("Gate is incorrectly implemented and will be removed at a later date.  Please use ThreadMethod instead.")]
     public class Gate : IDisposable
     {
         private W.Threading.Thread _thread;
@@ -182,7 +186,8 @@ namespace W.Threading
         public Gate(Action<CancellationToken> action)
         {
             _action = action;
-            _thread = new W.Threading.Thread(ThreadProc, true);
+            _thread = new W.Threading.Thread(ThreadProc);
+            _thread.Start();
         }
     }
 

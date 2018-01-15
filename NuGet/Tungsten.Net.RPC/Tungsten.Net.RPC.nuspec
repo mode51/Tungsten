@@ -3,7 +3,7 @@
   <metadata>
     <id>Tungsten.Net.RPC</id>
     <title>Tungsten.Net.RPC</title>
-    <version>1.2.7</version>
+    <version>2.0.0</version>
     <authors>Jordan Duerksen</authors>
     <owners>Jordan Duerksen</owners>
     <licenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</licenseUrl>
@@ -18,14 +18,14 @@
     <dependencies>
       <group targetFramework=".NETStandard1.3">
         <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
-        <dependency id="Tungsten" version="1.2.5" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Net" version="1.2.5.3" exclude="Build,Analyzers" />
-        <dependency id="Newtonsoft.Json" version="10.0.2" exclude="Build,Analyzers" />
+        <dependency id="Tungsten" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Net" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="10.0.3" exclude="Build,Analyzers" />
       </group>
       <group targetFramework="net45">
-        <dependency id="Tungsten" version="1.2.5" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Net" version="1.2.5.3" exclude="Build,Analyzers" />
-        <dependency id="Newtonsoft.Json" version="10.0.2" exclude="Build,Analyzers"/>
+        <dependency id="Tungsten" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Net" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="10.0.3" exclude="Build,Analyzers"/>
       </group>
     </dependencies>
   </metadata>

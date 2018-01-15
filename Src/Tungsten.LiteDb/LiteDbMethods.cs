@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using LiteDB;
+using W.AsExtensions;
 using W.Logging;
 
 namespace W.LiteDb

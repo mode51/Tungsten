@@ -1,8 +1,7 @@
 ﻿Named pipe wrappers to easily add asynchronous named pipes to your application.  Server and client are provided.
 
-? v?
-Added W.IO.Pipes.PipeTransceiver.WaitForSendComplete() so you can now wait for all messages to be sent
-Removed static Write methods in W.IO.Pipes.FormattedPipeClient because they're wasteful and bad practice
+1.7.2018 v2.0.0
+Entirely refactored W.IO.Pipes.  It should be more stable and easier to work with.
 
 5.11.2017 v1.2.7
 Added PipeClientLogger

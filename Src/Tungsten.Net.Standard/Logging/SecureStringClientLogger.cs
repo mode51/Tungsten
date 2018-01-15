@@ -5,9 +5,9 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using W;
+using W.AsExtensions;
 using W.Logging;
 using W.Net;
-using W.Net.Sockets;
 
 namespace W.Net
 {
@@ -16,7 +16,7 @@ namespace W.Net
     /// </summary>
     public class SecureStringClientLogger : W.Logging.CustomLogger
     {
-        private SecureClient<string> _client;
+        private W.Net.SecureClient _client;
 
         /// <summary>
         /// The IPEndPoint for the remote server
@@ -35,10 +35,11 @@ namespace W.Net
         /// <param name="message">The log message</param>
         protected override void LogMessage(W.Logging.Log.LogMessageCategory category, string message)
         {
-            if (_client?.Socket?.IsConnected ?? false) //because the handler is added before the client connects
+            if (_client?.IsConnected ?? false) //because the handler is added before the client connects
             {
                 message = FormatLogMessage(category, message);
-                _client.Send(message);
+                var bytes = message.AsBytes();
+                _client.Send(bytes);
             }
         }
         /// <summary>
@@ -49,7 +50,8 @@ namespace W.Net
             base.OnDispose();
             if (_client != null)
             {
-                _client.Dispose();
+                if (_client.IsConnected)
+                    _client.Disconnect();
                 _client = null;
             }
         }
@@ -70,74 +72,17 @@ namespace W.Net
         public SecureStringClientLogger(IPEndPoint serverEndPoint, bool addTimestamp = true) : base(serverEndPoint.ToString(), addTimestamp)
         {
             RemoteEndPoint = serverEndPoint;
-            _client = new SecureClient<string>();
+            _client = new SecureClient();
 
-            var connected = _client.Socket.ConnectAsync(serverEndPoint.Address, serverEndPoint.Port).Result;
-            if (!connected)
+            if (!_client.Connect(serverEndPoint))//.ContinueWith(task =>
             {
-                this.SocketError = System.Net.Sockets.SocketError.ConnectionRefused;
-                System.Diagnostics.Debug.WriteLine("SecureStringLogger failed to connect to the server.");
-                return;
-            }
-            //if (!_client.WaitForConnected(System.Diagnostics.Debugger.IsAttached ? -1 : 5000))
-            //{
-            //    this.SocketError = System.Net.Sockets.SocketError.TimedOut;
-            //    //throw new TimeoutException("Connection timed out waiting for the server");
-            //    return;
-            //}
+                //if (!_client.IsConnected)
+                {
+                    this.SocketError = System.Net.Sockets.SocketError.ConnectionRefused;
+                    System.Diagnostics.Debug.WriteLine("SecureStringLogger failed to connect to the server.");
+                    return;
+                }
+            }//);
         }
     }
-    ///// <summary>
-    ///// Adds support for sending log messages to an IP host
-    ///// </summary>
-    //public class Logging
-    //{
-    //    private static List<SecureStringLogger> _clients = new List<SecureStringLogger>();
-    //    private static object _lockObj = new object();
-
-    //    /// <summary>
-    //    /// Configures W.Logging.Log to send information to an IPEndPoint
-    //    /// </summary>
-    //    /// <param name="ipAddress"></param>
-    //    /// <param name="port"></param>
-    //    /// <param name="autoAddTimestamp">If true, each log message is automatically prefixed with a timestamp</param>
-    //    public static void Add(IPAddress ipAddress, int port, bool autoAddTimestamp = true)
-    //    {
-    //        var client = _clients.FirstOrDefault(c => c.IpAddress.Equals(ipAddress) && c.Port == port));
-    //        if (client == null)
-    //        {
-    //            var newClient = new SecureStringLogger(ipAddress, port, autoAddTimestamp);
-    //            _clients.Add(newClient);
-    //        }
-    //    }
-
-    //    /// <summary>
-    //    /// Disconnects and disposes all SecureStringClient loggers
-    //    /// </summary>
-    //    public static void RemoveAll()
-    //    {
-    //        lock (_lockObj)
-    //        {
-    //            while (_clients.Count > 0)
-    //            {
-    //                Remove(_clients[0].IpAddress, _clients[0].Port);
-    //            }
-    //        }
-    //    }
-    //    /// <summary>
-    //    /// Disconnects and disposes all SecureStringClient loggers
-    //    /// </summary>
-    //    public static void Remove(IPAddress ipAddress, int port)
-    //    {
-    //        lock (_lockObj)
-    //        {
-    //            var client = _clients.FirstOrDefault(c => c.IpAddress.Equals(ipAddress) && c.Port == port);
-    //            if (client != null)
-    //            {
-    //                client.Dispose();
-    //                _clients.Remove(client);
-    //            }
-    //        }
-    //    }
-    //}
 }

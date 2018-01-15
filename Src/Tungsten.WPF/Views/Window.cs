@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using W.AsExtensions;
 using W.Logging;
 
 namespace W.WPF.Views

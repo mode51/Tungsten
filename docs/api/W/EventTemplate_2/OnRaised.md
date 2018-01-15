@@ -9,11 +9,11 @@ Syntax
 ------
 
 ```csharp
-public event EventTemplate<TEventArg1, TEventArg2>.EventDelegate OnRaised
+public event EventTemplateDelegate<TEventArg1, TEventArg2> OnRaised
 ```
 
 #### Value
-Type: [W.EventTemplate&lt;TEventArg1, TEventArg2>.EventDelegate][2]
+Type: [W.EventTemplateDelegate][2]&lt;[TEventArg1][3], [TEventArg2][3]>
 
 See Also
 --------
@@ -23,5 +23,5 @@ See Also
 [W Namespace][1]  
 
 [1]: ../README.md
-[2]: ../EventTemplate_2_EventDelegate/README.md
+[2]: ../EventTemplateDelegate_2/README.md
 [3]: README.md

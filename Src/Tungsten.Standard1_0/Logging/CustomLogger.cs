@@ -9,7 +9,7 @@ namespace W.Logging
     /// </summary>
     public class CustomLogger : IDisposable
     {
-        private Lockable<bool> _isDisposed = new Lockable<bool>(false);
+        private LockableSlim<bool> _isDisposed = new LockableSlim<bool>(false);
         /// <summary>
         /// The name of this custom logger
         /// </summary>
@@ -51,14 +51,14 @@ namespace W.Logging
         /// </summary>
         protected virtual void OnDispose()
         {
-            _isDisposed.ExecuteInLock(value =>
+            _isDisposed.InLock(value =>
             {
                 if (!value)
                 {
                     W.Logging.Log.LogTheMessage -= LogMessage;
                     GC.SuppressFinalize(this);
                 }
-                return true;
+                //return true;
             });
         }
 

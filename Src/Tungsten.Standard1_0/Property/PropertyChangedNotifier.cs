@@ -1,5 +1,9 @@
+using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading;
 
 namespace W
 {
@@ -32,7 +36,7 @@ namespace W
         /// </summary>
         /// <param name="value">The new value</param>
         /// <param name="propertyName">The name of the caller (the property being set)</param>
-        protected virtual void SetValue(object value, [CallerMemberName] string propertyName="")
+        protected virtual void SetValue(object value, [CallerMemberName] string propertyName = "")
         {
             OnPropertyChanged(propertyName);
         }

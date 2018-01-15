@@ -10,10 +10,10 @@
     <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
     <PackageIconUrl>https://github.com/mode51/Tungsten/blob/master/Tungsten/Tungsten.ico</PackageIconUrl>
     <PackageTags>Tungsten Tungsten.IO.Pipes Pipe NamedPipe W C# library</PackageTags>
-    <AssemblyVersion>1.2.7.0</AssemblyVersion>
-    <FileVersion>1.2.7.0</FileVersion>
-    <Version>1.2.7</Version>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <Version>2.0</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
     <PackageReleaseNotes></PackageReleaseNotes>
     <PostBuildEvent></PostBuildEvent>
@@ -32,9 +32,35 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
+    <Compile Remove="Archive\Pipes_1_2_7\EPipeDirection.cs" />
+    <Compile Remove="Archive\Pipes_1_2_7\FormattedPipeClient.cs" />
+    <Compile Remove="Archive\Pipes_1_2_7\IPipeClient.cs" />
+    <Compile Remove="Archive\Pipes_1_2_7\PipeClient.cs" />
+    <Compile Remove="Archive\Pipes_1_2_7\PipeClientLogger.cs" />
+    <Compile Remove="Archive\Pipes_1_2_7\PipeServer.cs" />
+    <Compile Remove="Archive\Pipes_1_2_7\PipeStreamMethods.cs" />
+    <Compile Remove="Archive\Pipes_1_2_7\PipeTransceiver.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="System.IO.Pipes" Version="4.3.0" />
-    <PackageReference Include="Tungsten" Version="1.2.7" />
+    <PackageReference Include="Tungsten" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Alpha\" />
+    <Folder Include="Beta\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Archive\Pipes_1_2_7\EPipeDirection.cs" />
+    <None Include="Archive\Pipes_1_2_7\FormattedPipeClient.cs" />
+    <None Include="Archive\Pipes_1_2_7\IPipeClient.cs" />
+    <None Include="Archive\Pipes_1_2_7\PipeClient.cs" />
+    <None Include="Archive\Pipes_1_2_7\PipeStreamMethods.cs" />
+    <None Include="Archive\Pipes_1_2_7\PipeServer.cs" />
+    <None Include="Archive\Pipes_1_2_7\PipeTransceiver.cs" />
   </ItemGroup>
 
 </Project>

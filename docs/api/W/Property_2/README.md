@@ -37,16 +37,16 @@ The **Property<TOwner, TValue>** type exposes the following members.
 Constructors
 ------------
 
-                 | Name                                                                                                      | Description               
----------------- | --------------------------------------------------------------------------------------------------------- | ------------------------- 
-![Public method] | [Property&lt;TOwner, TValue>()][5]                                                                        | Constructs a new Property 
-![Public method] | [Property&lt;TOwner, TValue>(TOwner)][6]                                                                  | Constructs a new Property 
-![Public method] | [Property&lt;TOwner, TValue>(TValue)][7]                                                                  | Constructs a new Property 
-![Public method] | [Property&lt;TOwner, TValue>(PropertyBase&lt;TOwner, TValue>.OnValueChangedDelegate)][8]                  | Constructs a new Property 
-![Public method] | [Property&lt;TOwner, TValue>(TOwner, TValue)][9]                                                          | Constructs a new Property 
-![Public method] | [Property&lt;TOwner, TValue>(TOwner, PropertyBase&lt;TOwner, TValue>.OnValueChangedDelegate)][10]         | Constructs a new Property 
-![Public method] | [Property&lt;TOwner, TValue>(TValue, PropertyBase&lt;TOwner, TValue>.OnValueChangedDelegate)][11]         | Constructs a new Property 
-![Public method] | [Property&lt;TOwner, TValue>(TOwner, TValue, PropertyBase&lt;TOwner, TValue>.OnValueChangedDelegate)][12] | Constructs a new Property 
+                 | Name                                                                                         | Description               
+---------------- | -------------------------------------------------------------------------------------------- | ------------------------- 
+![Public method] | [Property&lt;TOwner, TValue>()][5]                                                           | Constructs a new Property 
+![Public method] | [Property&lt;TOwner, TValue>(TOwner)][6]                                                     | Constructs a new Property 
+![Public method] | [Property&lt;TOwner, TValue>(TValue)][7]                                                     | Constructs a new Property 
+![Public method] | [Property&lt;TOwner, TValue>(OnValueChangedDelegate&lt;TOwner, TValue>)][8]                  | Constructs a new Property 
+![Public method] | [Property&lt;TOwner, TValue>(TOwner, TValue)][9]                                             | Constructs a new Property 
+![Public method] | [Property&lt;TOwner, TValue>(TOwner, OnValueChangedDelegate&lt;TOwner, TValue>)][10]         | Constructs a new Property 
+![Public method] | [Property&lt;TOwner, TValue>(TValue, OnValueChangedDelegate&lt;TOwner, TValue>)][11]         | Constructs a new Property 
+![Public method] | [Property&lt;TOwner, TValue>(TOwner, TValue, OnValueChangedDelegate&lt;TOwner, TValue>)][12] | Constructs a new Property 
 
 
 Properties
@@ -106,26 +106,12 @@ Fields
 ![Protected field] | [OnValueChanged][37] | Callback type for use in the constructor (if one wants to avoid using the event) (Inherited from [PropertyBase&lt;TOwner, TValue>][3].) 
 
 
-Extension Methods
------------------
+Explicit Interface Implementations
+----------------------------------
 
-                                          | Name                                                                                         | Description                                                                                                                                                                                                                      
------------------------------------------ | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-![Public Extension Method]![Code example] | [As&lt;TType>][38]                                                                           | Use Generic syntax for the as operator. (Defined by [AsExtensions][39].)                                                                                                                                                         
-![Public Extension Method]                | [AsJson&lt;TType>][40]                                                                       | Serializes an object to a Json string (Defined by [AsExtensions][39].)                                                                                                                                                           
-![Public Extension Method]                | [AsXml&lt;TType>][41]                                                                        | Serializes an object to an xml string (Defined by [AsExtensions][39].)                                                                                                                                                           
-![Public Extension Method]                | [CreateThread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>)][42]          | Overloaded. Creates and starts a new thread and (Defined by [ThreadExtensions][43].)                                                                                                                                             
-![Public Extension Method]                | [CreateThread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>, Boolean)][44] | Overloaded. Creates a new thread (Defined by [ThreadExtensions][43].)                                                                                                                                                            
-![Public Extension Method]                | [InitializeProperties][45]                                                                   | 
-Scans the fields and properties of "owner" and sets the member's Owner property to "owner" This method should be called in the constructor of any class which has IOwnedProperty members
- (Defined by [PropertyHostMethods][46].) 
-![Public Extension Method]                | [IsDirty][47]                                                                                | 
-Scans the IsDirty value of each field and property of type IProperty
- (Defined by [PropertyHostMethods][46].)                                                                                                                 
-![Public Extension Method]                | [MarkAsClean][48]                                                                            | 
-Scans each field and property of type IProperty and sets it's IsDirty flag to false
- (Defined by [PropertyHostMethods][46].)                                                                                                  
-![Public Extension Method]                | [WaitForValueAsync][49]                                                                      | Initiates a Task which will wait for the given variable to have the specified value (Defined by [ExtensionMethods][50].)                                                                                                         
+                                                      | Name                          | Description 
+----------------------------------------------------- | ----------------------------- | ----------- 
+![Explicit interface implementation]![Private method] | [IOwnedProperty.SetOwner][38] |             
 
 
 See Also
@@ -171,23 +157,11 @@ See Also
 [35]: ../PropertyBase_2/ValueChanged.md
 [36]: ../PropertyBase_2/ValueChanging.md
 [37]: ../PropertyBase_2/OnValueChanged.md
-[38]: ../AsExtensions/As__1.md
-[39]: ../AsExtensions/README.md
-[40]: ../AsExtensions/AsJson__1.md
-[41]: ../AsExtensions/AsXml__1.md
-[42]: ../../W.Threading/ThreadExtensions/CreateThread__1.md
-[43]: ../../W.Threading/ThreadExtensions/README.md
-[44]: ../../W.Threading/ThreadExtensions/CreateThread__1_1.md
-[45]: ../PropertyHostMethods/InitializeProperties.md
-[46]: ../PropertyHostMethods/README.md
-[47]: ../PropertyHostMethods/IsDirty.md
-[48]: ../PropertyHostMethods/MarkAsClean.md
-[49]: ../ExtensionMethods/WaitForValueAsync.md
-[50]: ../ExtensionMethods/README.md
+[38]: W_IOwnedProperty_SetOwner.md
 [Public method]: ../../_icons/pubmethod.gif "Public method"
 [Public property]: ../../_icons/pubproperty.gif "Public property"
 [Protected method]: ../../_icons/protmethod.gif "Protected method"
 [Public event]: ../../_icons/pubevent.gif "Public event"
 [Protected field]: ../../_icons/protfield.gif "Protected field"
-[Public Extension Method]: ../../_icons/pubextension.gif "Public Extension Method"
-[Code example]: ../../_icons/CodeExample.png "Code example"
+[Explicit interface implementation]: ../../_icons/pubinterface.gif "Explicit interface implementation"
+[Private method]: ../../_icons/privmethod.gif "Private method"

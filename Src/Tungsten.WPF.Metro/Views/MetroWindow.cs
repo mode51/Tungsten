@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using mah = MahApps.Metro;
+using W.AsExtensions;
 
 namespace W.WPF.Views
 {

@@ -19,15 +19,17 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NET45</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;NET45</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Tungsten.IO.Pipes.xml</DocumentationFile>
@@ -47,28 +49,37 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tungsten, Version=1.2.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Tungsten.1.2.7\lib\net45\Tungsten.dll</HintPath>
+    <Reference Include="Tungsten, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Tungsten.2.0.0\lib\net45\Tungsten.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Tungsten.IO.Pipes.Standard\IO\Pipes\FormattedPipeClient.cs">
-      <Link>IO\Pipes\FormattedPipeClient.cs</Link>
+    <Compile Include="..\Tungsten.IO.Pipes.Standard\IO\Pipes\Example.cs">
+      <Link>IO\Pipes\Example.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.IO.Pipes.Standard\IO\Pipes\IPipeClient.cs">
-      <Link>IO\Pipes\IPipeClient.cs</Link>
+    <Compile Include="..\Tungsten.IO.Pipes.Standard\IO\Pipes\Helpers.cs">
+      <Link>IO\Pipes\Helpers.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.IO.Pipes.Standard\IO\Pipes\PipeClient.cs">
       <Link>IO\Pipes\PipeClient.cs</Link>
     </Compile>
+    <Compile Include="..\Tungsten.IO.Pipes.Standard\IO\Pipes\PipeClientExtensions.cs">
+      <Link>IO\Pipes\PipeClientExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\Tungsten.IO.Pipes.Standard\IO\Pipes\PipeClientLogger.cs">
       <Link>IO\Pipes\PipeClientLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.IO.Pipes.Standard\IO\Pipes\PipeHost.cs">
+      <Link>IO\Pipes\PipeHost.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.IO.Pipes.Standard\IO\Pipes\PipeResult.cs">
+      <Link>IO\Pipes\PipeResult.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.IO.Pipes.Standard\IO\Pipes\PipeServer.cs">
       <Link>IO\Pipes\PipeServer.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.IO.Pipes.Standard\IO\Pipes\PipeTransceiver.cs">
-      <Link>IO\Pipes\PipeTransceiver.cs</Link>
+    <Compile Include="..\Tungsten.IO.Pipes.Standard\IO\Pipes\PipeStatusEnum.cs">
+      <Link>IO\Pipes\PipeStatusEnum.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,6 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Alpha\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

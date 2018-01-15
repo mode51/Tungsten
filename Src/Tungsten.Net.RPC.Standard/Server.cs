@@ -2,6 +2,8 @@
 using System.Net;
 using W.Logging;
 using System.Threading;
+using W;
+using W.AsExtensions;
 
 namespace W.Net.RPC
 {
@@ -10,26 +12,33 @@ namespace W.Net.RPC
     /// </summary>
     public class Server : IDisposable
     {
-        private SecureServer<SecureClient<Message>> _host;
+        private W.Net.Server<W.Net.SecureClient<Message>> _host;
         private ManualResetEventSlim _mreIsListening;
-        private bool _useCompression = true;
 
         /// <summary>
         /// Exposes the dictionary of methods.  Custom, non-attributed methods may be added to this dictionary.
         /// </summary>
         public MethodDictionary Methods = new MethodDictionary();
-        /// <summary>
-        /// Multi-cast delegate will be called with the appropriate value whenever the server successfully starts or stops listening.
-        /// </summary>
-        /// <remarks>The value will be True if the server is listening, otherwise False</remarks>
-        public Action<bool> IsListeningChanged { get; set; }
+        ///// <summary>
+        ///// Multi-cast delegate will be called with the appropriate value whenever the server successfully starts or stops listening.
+        ///// </summary>
+        ///// <remarks>The value will be True if the server is listening, otherwise False</remarks>
+        //public Action<bool> IsListeningChanged { get; set; }
 
         private bool OnMessageReceived(ref Message message)
         {
-            var result = Methods.Call(message.Method, message.Parameters.ToArray());
-            message.Exception = new ExceptionInformation(result.Exception);
-            message.Response = result.Result;
-            return result.Success;
+            try
+            {
+                var result = Methods.Call(message.Method, message.Parameters.ToArray());
+                message.Exception = result.Exception?.ToString();
+                message.Response = result.Result;
+                return result.Success;
+            }
+            catch (Exception e)
+            {
+                message.Exception = e.ToString();
+            }
+            return false;
         }
 
         /// <summary>
@@ -59,19 +68,15 @@ namespace W.Net.RPC
         /// <summary>
         /// Starts listening for client connections on the specified network interface and port
         /// </summary>
-        /// <param name="ipAddress">The IP address on which to bind and listen for clients</param>
-        /// <param name="port">The port on which to listen.  Must be a positive value.</param>
-        public void Start(IPAddress ipAddress, int port)
+        /// <param name="ep">The IPEndpoint on which to bind and listen for clients</param>
+        public void Start(IPEndPoint ep)
         {
-            if (port <= 0)
-                throw new ArgumentOutOfRangeException(nameof(port));
             Stop();
             _mreIsListening = new ManualResetEventSlim(false);
-            _host = new SecureServer<SecureClient<Message>>();
-            _host.IsListeningChanged += (isListening) => { IsListeningChanged?.Invoke(isListening); _mreIsListening?.Set(); };
+            _host = new Server<SecureClient<Message>>();
+            //_host.IsListeningChanged += (isListening) => { IsListeningChanged?.Invoke(isListening); _mreIsListening?.Set(); };
             _host.ClientConnected += (client) =>
             {
-                client.Socket.UseCompression = _useCompression;
                 //Log.i("Client Connected: {0}", client.Name);
                 client.Disconnected += (c, remoteEndPoint, exception) =>
                 {
@@ -86,19 +91,8 @@ namespace W.Net.RPC
                         OnMessageReceived(ref message);
                         try
                         {
-                            //Put this in a task to multi-thread the encryption and compression
-                            //Task.Run(() =>
-                            //{
                             //send the result back to the client
-
-                            //c.SerializationSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-                            //c.SerializationSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.None;
-                            //c.Send(message);
-
-                            c.Send(message);
-                            //c.As<XClientSecure<Message>>()?.Send(message);
-
-                            //});
+                            c.As<SecureClient<Message>>().Send(ref message);
                         }
                         catch (Exception e)
                         {
@@ -111,7 +105,7 @@ namespace W.Net.RPC
                     }
                 };
             };
-            _host.Start(ipAddress, port);
+            _host.Start(ep);
         }
         /// <summary>
         /// Stops listening for client connections
@@ -131,7 +125,6 @@ namespace W.Net.RPC
         /// <remarks>The client must be declared with the same value.</remarks>
         public Server(bool useCompression = true)
         {
-            _useCompression = useCompression;
             Methods.Refresh();
         }
         /// <summary>

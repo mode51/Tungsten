@@ -1,297 +1,126 @@
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO.Pipes;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace W.IO.Pipes
 {
     /// <summary>
-    /// Specified the direction of data for the Pipe
+    /// Listens for a single PipeClient to connect
     /// </summary>
-    public enum EPipeDirection
+    /// <remarks>Pipes need to have a distinct PipeServer for each client connection.  See PipeHost to support multiple client connections./></remarks>
+    public class PipeServer : PipeClient
     {
-        /// <summary>
-        /// Receive data only
-        /// </summary>
-        In = PipeDirection.In,
-        /// <summary>
-        /// Send data only
-        /// </summary>
-        Out = PipeDirection.Out,
-        /// <summary>
-        /// Send and Receive data
-        /// </summary>
-        InOut = PipeDirection.InOut
-    }
-    /// <summary>
-    /// Wraps a NamedPipeServerStream for easier use
-    /// </summary>
-    public class PipeServer<TClientType> : IDisposable where TClientType : IPipeClient
-    {
-        private CancellationTokenSource _cts;
-        private readonly string _name;
-        private W.Threading.Thread _thread;
-        private List<IPipeClient> _clients = new List<IPipeClient>();
-        private object _lockCleanup = new object();
-        private System.Threading.Mutex _mutex = null;
+        private bool _useCompression = false;
 
         /// <summary>
-        /// Called when the server starts
+        /// Raised when the server receives a message from the client
         /// </summary>
-        public Action<PipeServer<TClientType>> Started { get; set; }
-        /// <summary>
-        /// Called when the server stops
-        /// </summary>
-        public Action<PipeServer<TClientType>> Stopped { get; set; }
+        public event Action<PipeServer, byte[]> BytesReceived;
 
-        /// <summary>
-        /// Called if an exception occurs
-        /// </summary>
-        public Action<PipeServer<TClientType>, Exception> Exception { get; set; }
-
-        /// <summary>
-        /// Called when a client connects
-        /// </summary>
-        public Action<TClientType> ClientConnected { get; set; }
-
-        /// <summary>
-        /// Can be useful for large data sets.  Set to True to use compression, otherwise False
-        /// </summary>
-        /// <remarks>Make sure both server and client have the same value</remarks>
-        public bool UseCompression { get; set; }
-
-        /// <summary>
-        /// Constructs a new PipeClient
-        /// </summary>
-        /// <param name="name">The name of the pipe to use</param>
-        public PipeServer(string name)
-        {
-            _name = name;
-            _mutex = new Mutex(false, name);
-            if (!_mutex.WaitOne(5000)) //this should wait for another server to finish cleanup (if one is cleaning up)
-                throw new Exception("The named pipe is already in use");
-        }
-        /// <summary>
-        /// Disposes the PipeServer
-        /// </summary>
-        ~PipeServer()
-        {
-            Dispose();
-        }
-
-        /// <summary>
-        /// Creates the underlying NamedPipeClientStream and connects to the server
-        /// </summary>
-        public void Start()
-        {
-            Start(-1, EPipeDirection.InOut);
-        }
-        /// <summary>
-        /// Creates the underlying NamedPipeClientStream and connects to the server
-        /// </summary>
-        public void Start(int maxConnections = -1, EPipeDirection direction = EPipeDirection.InOut)
-        {
-            Stop();
-            _cts = new CancellationTokenSource();
-            _thread = W.Threading.Thread.Create(cts =>
-            {
-                Task.Run(() => { Task.Delay(100); Started?.Invoke(this); });
-                while (!_cts?.IsCancellationRequested ?? false)
-                {
-                    NamedPipeServerStream stream = null;
-                    try
-                    {
-                        stream = new NamedPipeServerStream(_name, (PipeDirection)direction, maxConnections, PipeTransmissionMode.Byte, PipeOptions.Asynchronous);
-                        //Task.Run(() => { Started?.Invoke(this); });
-                    }
-                    catch (System.IO.IOException)
-                    {
-                        System.Threading.Thread.Sleep(100);
-                    }
-                    catch (Exception e)
-                    {
-                        Exception?.Invoke(this, e);
-                    }
-                    try
-                    {
-                        //blocks until a client has connected
-#if NETSTANDARD1_4
-                        stream?.WaitForConnectionAsync(_cts.Token).ContinueWith(task => InitializeClient(stream, cts)).Wait(cts.Token);
-#else
-                        stream.WaitForConnection();
-                        InitializeClient(stream, cts);
-                        //var test = stream.BeginWaitForConnection(ar => 
-                        //{
-                        //    var s = (NamedPipeServerStream)ar.AsyncState;
-                        //    s.EndWaitForConnection(ar);
-
-                        //}, stream);
-#endif
-//                        {
-//                            if (_cts?.IsCancellationRequested ?? true)
-//                            {
-//                                stream?.Dispose();
-//                                return;
-//                            }
-//                            if (stream?.IsConnected ?? false)
-//                            {
-//                                //var p = (TClientType)Activator.CreateInstance(typeof(TClientType), stream);
-//                                var client = (TClientType)Activator.CreateInstance(typeof(TClientType));
-//                                client.Initialize(stream, true);
-//                                client.Disconnected += (o, e) =>
-//                                {
-//                                    lock (_lockCleanup)
-//                                    {
-//                                        try
-//                                        {
-//                                            if (o != null && o is IPipeClient c)
-//                                            {
-//                                                c.Dispose();
-//                                                _clients.Remove(c);
-//                                            }
-//                                        }
-//                                        finally
-//                                        {
-//                                        }
-//                                    }
-//                                };
-//                                _clients.Add(client);
-//                                ClientConnected?.Invoke(client);
-//                            }
-//                        }
-//#if NETSTANDARD1_4
-//                        ).Wait(cts.Token);
-//#endif
-                    }
-#if !NETSTANDARD1_4
-                    catch (System.Threading.ThreadAbortException)
-                    {
-                        System.Threading.Thread.ResetAbort();
-                    }
-#endif
-                    catch (System.IO.IOException e)
-                    {
-                        System.Diagnostics.Debugger.Break(); //why are we here?
-                        Exception?.Invoke(this, e);
-                    }
-                    catch (System.Threading.Tasks.TaskCanceledException)
-                    {
-                        //ignore
-                        System.Diagnostics.Debugger.Break(); //why are we here?
-                        //Exception?.Invoke(this, e);
-                    }
-                    catch (System.OperationCanceledException) //happens when the server is closed
-                    {
-                        stream?.Dispose(); //dispose the last allocated stream
-                        //ignore
-                        //Exception?.Invoke(this, e);
-                    }
-                    catch (Exception e)
-                    {
-                        System.Diagnostics.Debugger.Break(); //why are we here?
-                        Exception?.Invoke(this, e);
-                    }
-                    System.Threading.Thread.Sleep(1); //play nice with other threads
-                } //while
-            });
-        }
-
-        private void InitializeClient(NamedPipeServerStream stream, CancellationTokenSource cts)
+        private void Listen()
         {
             try
             {
-                if (_cts?.IsCancellationRequested ?? true)
+                while (Stream?.IsConnected ?? false)
                 {
-                    stream?.Dispose();
-                    return;
-                }
-                if (stream?.IsConnected ?? false)
-                {
-                    //var p = (TClientType)Activator.CreateInstance(typeof(TClientType), stream);
-                    var client = (IPipeClient)Activator.CreateInstance(typeof(TClientType));
-                    client.Initialize(stream, true);
-                    client.UseCompression = this.UseCompression;
-                    client.Disconnected += (o, e) =>
-                    {
-                        lock (_lockCleanup)
-                        {
-                            try
-                            {
-                                if (o != null && o is IPipeClient c)
-                                {
-                                    c.Dispose();
-                                    _clients.Remove(c);
-                                }
-                            }
-                            finally
-                            {
-                            }
-                        }
-                    };
-                    _clients.Add(client);
-                    ClientConnected?.Invoke((TClientType)client);
+                    var bytes = WaitForMessageAsync(_useCompression, 100).Result;
+                    if (bytes != null)
+                        BytesReceived?.Invoke(this, bytes);
                 }
             }
-            catch (System.IO.IOException e)
+#if NET45
+            catch (System.Threading.ThreadAbortException)
             {
-                System.Diagnostics.Debugger.Break(); //why are we here?
-                Exception?.Invoke(this, e);
+                System.Threading.Thread.ResetAbort();
             }
-            catch (System.Threading.Tasks.TaskCanceledException)
+#endif
+            finally
             {
-                //ignore
-                System.Diagnostics.Debugger.Break(); //why are we here?
-                                                     //Exception?.Invoke(this, e);
-            }
-            catch (System.OperationCanceledException) //happens when the server is closed
-            {
-                stream?.Dispose(); //dispose the last allocated stream
-                                   //ignore
-                                   //Exception?.Invoke(this, e);
-            }
-            catch (Exception e)
-            {
-                System.Diagnostics.Debugger.Break(); //why are we here?
-                Exception?.Invoke(this, e);
+                RaiseDisconnected();
             }
         }
         /// <summary>
-        /// Stops the server and frees resources
+        /// Constructs a new PipeServer
         /// </summary>
-        public void Stop()
+        /// <param name="stream">The NamedPipeClientServer stream on which to listen for client messages</param>
+        /// <param name="useCompression">If True, data will be compressed before sending and decompressed upon reception</param>
+        public PipeServer(PipeStream stream, bool useCompression) : base(stream) { _useCompression = useCompression; }
+
+        /// <summary>
+        /// Creates a new PipeServer instance, initializing the NamedPipeServerStream instance with the specified parameters
+        /// </summary>
+        /// <param name="pipeName">The name of the pipe to create.  The name must follow typical Named Pipe naming rules.</param>
+        /// <param name="maxConnections">The maximum number of connections.  This is often limited by your platform.</param>
+        /// <param name="useCompression">If True, data will be compressed before sending and decompressed upon reception</param>
+        /// <returns>A CallResult instance containing success or failure of the call, an exception if one occurred and the resulting PipeServer.  Note that if the call fails, the Result member will be null.</returns>
+        public static CallResult<PipeServer> CreateServer(string pipeName, int maxConnections, bool useCompression)
         {
-            lock (_lockCleanup)
+            var result = new CallResult<PipeServer>();
+            Helpers.CreateServer(pipeName, maxConnections, s =>
             {
-                //ensure all clients are disconnected and disposed
-                while (_clients.Count > 0)
+                result.Result = new PipeServer(s, useCompression);
+            }, s =>
+            {
+                result.Result.Listen();
+            });
+            return result;
+        }
+    }
+
+    /// <summary>
+    /// Listens for a single PipeClient to connect
+    /// </summary>
+    /// <remarks>Pipes need to have a distinct PipeServer for each client connection.  See PipeHost to support multiple client connections./></remarks>
+    public class PipeServer<TType> : PipeClient where TType : class
+    {
+        private bool _useCompression = false;
+
+        /// <summary>
+        /// Raised when the server receives a message from the client
+        /// </summary>
+        public event Action<PipeServer<TType>, TType> MessageReceived;
+
+        private void Listen()
+        {
+            try
+            {
+                while (Stream?.IsConnected ?? false)
                 {
-                    try
-                    {
-                        var client = _clients[0];
-                        client.Dispose();
-                        _clients.Remove(client);
-                    }
-                    finally
-                    {
-                    }
+                    var bytes = WaitForMessageAsync<TType>(_useCompression, 100).Result;
+                    if (bytes != null)
+                        MessageReceived?.Invoke(this, bytes);
                 }
             }
-            _cts?.Cancel();
-            _cts?.Dispose();
-            _cts = null;
-            _thread?.Cancel();
-            _thread = null;
-            Stopped?.Invoke(this);
+            finally
+            {
+                RaiseDisconnected();
+            }
         }
 
-        /// <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
-        public void Dispose()
+        /// <summary>
+        /// Constructs a new PipeServer
+        /// </summary>
+        /// <param name="stream">The NamedPipeClientServer stream on which to listen for client messages</param>
+        /// <param name="useCompression">If True, data will be compressed before sending and decompressed upon reception</param>
+        public PipeServer(PipeStream stream, bool useCompression) : base(stream) { _useCompression = useCompression; }
+
+        /// <summary>
+        /// Creates a new PipeServer instance, initializing the NamedPipeServerStream instance with the specified parameters
+        /// </summary>
+        /// <param name="pipeName">The name of the pipe to create.  The name must follow typical Named Pipe naming rules.</param>
+        /// <param name="maxConnections">The maximum number of connections.  This is often limited by your platform.</param>
+        /// <param name="useCompression">If True, data will be compressed before sending and decompressed upon reception</param>
+        /// <returns>A CallResult containing success or failure of the call, an exception if one occurred and the resulting PipeServer.  Note that if the call fails, the Result member will be null.</returns>
+        public static CallResult<PipeServer<TType>> CreateServer(string pipeName, int maxConnections, bool useCompression)
         {
-            Stop();
-            _mutex?.ReleaseMutex();
-            _mutex?.Dispose();
-            _mutex = null;
+            var result = new CallResult<PipeServer<TType>>();
+            Helpers.CreateServer(pipeName, maxConnections, s =>
+            {
+                result.Result = new PipeServer<TType>(s, useCompression);
+            }, s =>
+            {
+                result.Result.Listen();
+            });
+            return result;
         }
     }
 }

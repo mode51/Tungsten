@@ -1,5 +1,8 @@
 ﻿Tungsten.WPF provides a general WPF framework to make WPF application development easier.  See the wiki @ https://github.com/mode51/Tungsten/wiki for details, examples and use.
 
+1.8.2018 v2.0.0
+Updated Tungsten reference to v2.0.0
+
 6.21.2017 v1.0.3
 Removed Views.Window.PageFramework (so now it's only in Models.ViewModel)
 

@@ -1,4 +1,7 @@
-﻿namespace W.WPF
+﻿using W.PropertyHostExtensions;
+using W.AsExtensions;
+
+namespace W.WPF
 {
     /// <summary>
     /// Contains information related to a busy flag
@@ -8,7 +11,7 @@
         /// <summary>
         /// Get or set the IsBusy flag
         /// </summary>
-        public Property<Busy, bool> IsBusy { get; } = new Property<Busy, bool>((m, oldValue, newValue) => { m.Visibility.Value = newValue ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden; m.IsNotBusy.Value = !newValue; });
+        public Property<Busy, bool> IsBusy { get; } = new Property<Busy, bool>();
         /// <summary>
         /// Simply the reverse of IsBusy
         /// </summary>
@@ -31,6 +34,11 @@
         /// </summary>
         public Busy()
         {
+            IsBusy.ValueChanged += (owner, oldValue, newValue) =>
+            {
+                var m = owner.As<Busy>();
+                m.Visibility.Value = newValue ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden; m.IsNotBusy.Value = !newValue;
+            };
             this.InitializeProperties();
         }
     }

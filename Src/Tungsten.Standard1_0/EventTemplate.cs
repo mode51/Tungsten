@@ -7,21 +7,67 @@ using System.Threading.Tasks;
 namespace W
 {
     /// <summary>
+    /// The template delegate
+    /// </summary>
+    /// <param name="sender">The object which raised this event</param>
+    /// <param name="callerMemberName">The name of the method which raised the event</param>
+    /// <param name="args">An array of untyped arguments</param>
+    public delegate void EventTemplateDelegate(object sender, string callerMemberName, params object[] args);
+    /// <summary>
+    /// The template delegate
+    /// </summary>
+    /// <param name="sender">The object which raised this event</param>
+    /// <param name="arg">The detailed event argument</param>
+    /// <param name="callerMemberName">The name of the method which raised the event</param>
+    public delegate void EventTemplateDelegate<TEventArg>(object sender, TEventArg arg, string callerMemberName);
+    /// <summary>
+    /// The template delegate
+    /// </summary>
+    /// <param name="sender">The object which raised this event</param>
+    /// <param name="arg1">The first detailed event argument</param>
+    /// <param name="arg2">The second detailed event argument</param>
+    /// <param name="callerMemberName">The name of the method which raised the event</param>
+    public delegate void EventTemplateDelegate<TEventArg1, TEventArg2>(object sender, TEventArg1 arg1, TEventArg2 arg2, string callerMemberName);
+    /// <summary>
+    /// The template delegate
+    /// </summary>
+    /// <param name="sender">The object which raised this event</param>
+    /// <param name="arg1">The first detailed event argument</param>
+    /// <param name="arg2">The second detailed event argument</param>
+    /// <param name="arg3">The third detailed event argument</param>
+    /// <param name="callerMemberName">The name of the method which raised the event</param>
+    public delegate void EventTemplateDelegate<TEventArg1, TEventArg2, TEventArg3>(object sender, TEventArg1 arg1, TEventArg2 arg2, TEventArg3 arg3, string callerMemberName);
+    /// <summary>
+    /// The template delegate
+    /// </summary>
+    /// <param name="sender">The object which raised this event</param>
+    /// <param name="arg1">The first detailed event argument</param>
+    /// <param name="arg2">The second detailed event argument</param>
+    /// <param name="arg3">The third detailed event argument</param>
+    /// <param name="arg4">The fourth detailed event argument</param>
+    /// <param name="callerMemberName">The name of the method which raised the event</param>
+    public delegate void EventTemplateDelegate<TEventArg1, TEventArg2, TEventArg3, TEventArg4>(object sender, TEventArg1 arg1, TEventArg2 arg2, TEventArg3 arg3, TEventArg4 arg4, string callerMemberName);
+    /// <summary>
+    /// The template delegate
+    /// </summary>
+    /// <param name="sender">The object which raised this event</param>
+    /// <param name="arg1">The first detailed event argument</param>
+    /// <param name="arg2">The second detailed event argument</param>
+    /// <param name="arg3">The third detailed event argument</param>
+    /// <param name="arg4">The fourth detailed event argument</param>
+    /// <param name="arg5">The fifth detailed event argument</param>
+    /// <param name="callerMemberName">The name of the method which raised the event</param>
+    public delegate void EventTemplateDelegate<TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5>(object sender, TEventArg1 arg1, TEventArg2 arg2, TEventArg3 arg3, TEventArg4 arg4, TEventArg5 arg5, string callerMemberName);
+
+    /// <summary>
     /// Wraps the functionality of delegate, event and RaiseXXX into a single class
     /// </summary>
     public class EventTemplate
     {
         /// <summary>
-        /// The template delegate
-        /// </summary>
-        /// <param name="sender">The object which raised this event</param>
-        /// <param name="callerMemberName">The name of the method which raised the event</param>
-        /// <param name="args">An array of untyped arguments</param>
-        public delegate void EventDelegate(object sender, string callerMemberName, params object[] args);
-        /// <summary>
         /// The template event
         /// </summary>
-        public event EventDelegate OnRaised;
+        public event EventTemplateDelegate OnRaised;
         /// <summary>
         /// Raises the template event
         /// </summary>
@@ -42,16 +88,9 @@ namespace W
     public class EventTemplate<TEventArg>
     {
         /// <summary>
-        /// The template delegate
-        /// </summary>
-        /// <param name="sender">The object which raised this event</param>
-        /// <param name="arg">The detailed event argument</param>
-        /// <param name="callerMemberName">The name of the method which raised the event</param>
-        public delegate void EventDelegate(object sender, TEventArg arg, string callerMemberName);
-        /// <summary>
         /// The template event
         /// </summary>
-        public event EventDelegate OnRaised;
+        public event EventTemplateDelegate<TEventArg> OnRaised;
         /// <summary>
         /// Raises the template event
         /// </summary>
@@ -72,17 +111,9 @@ namespace W
     public class EventTemplate<TEventArg1, TEventArg2>
     {
         /// <summary>
-        /// The template delegate
-        /// </summary>
-        /// <param name="sender">The object which raised this event</param>
-        /// <param name="arg1">The first detailed event argument</param>
-        /// <param name="arg2">The second detailed event argument</param>
-        /// <param name="callerMemberName">The name of the method which raised the event</param>
-        public delegate void EventDelegate(object sender, TEventArg1 arg1, TEventArg2 arg2, string callerMemberName);
-        /// <summary>
         /// The template event
         /// </summary>
-        public event EventDelegate OnRaised;
+        public event EventTemplateDelegate<TEventArg1, TEventArg2> OnRaised;
         /// <summary>
         /// Raises the template event
         /// </summary>
@@ -105,18 +136,9 @@ namespace W
     public class EventTemplate<TEventArg1, TEventArg2, TEventArg3>
     {
         /// <summary>
-        /// The template delegate
-        /// </summary>
-        /// <param name="sender">The object which raised this event</param>
-        /// <param name="arg1">The first detailed event argument</param>
-        /// <param name="arg2">The second detailed event argument</param>
-        /// <param name="arg3">The third detailed event argument</param>
-        /// <param name="callerMemberName">The name of the method which raised the event</param>
-        public delegate void EventDelegate(object sender, TEventArg1 arg1, TEventArg2 arg2, TEventArg3 arg3, string callerMemberName);
-        /// <summary>
         /// The template event
         /// </summary>
-        public event EventDelegate OnRaised;
+        public event EventTemplateDelegate<TEventArg1, TEventArg2, TEventArg3> OnRaised;
         /// <summary>
         /// Raises the template event
         /// </summary>
@@ -141,19 +163,9 @@ namespace W
     public class EventTemplate<TEventArg1, TEventArg2, TEventArg3, TEventArg4>
     {
         /// <summary>
-        /// The template delegate
-        /// </summary>
-        /// <param name="sender">The object which raised this event</param>
-        /// <param name="arg1">The first detailed event argument</param>
-        /// <param name="arg2">The second detailed event argument</param>
-        /// <param name="arg3">The third detailed event argument</param>
-        /// <param name="arg4">The fourth detailed event argument</param>
-        /// <param name="callerMemberName">The name of the method which raised the event</param>
-        public delegate void EventDelegate(object sender, TEventArg1 arg1, TEventArg2 arg2, TEventArg3 arg3, TEventArg4 arg4, string callerMemberName);
-        /// <summary>
         /// The template event
         /// </summary>
-        public event EventDelegate OnRaised;
+        public event EventTemplateDelegate<TEventArg1, TEventArg2, TEventArg3, TEventArg4> OnRaised;
         /// <summary>
         /// Raises the template event
         /// </summary>
@@ -180,20 +192,9 @@ namespace W
     public class EventTemplate<TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5>
     {
         /// <summary>
-        /// The template delegate
-        /// </summary>
-        /// <param name="sender">The object which raised this event</param>
-        /// <param name="arg1">The first detailed event argument</param>
-        /// <param name="arg2">The second detailed event argument</param>
-        /// <param name="arg3">The third detailed event argument</param>
-        /// <param name="arg4">The fourth detailed event argument</param>
-        /// <param name="arg5">The fifth detailed event argument</param>
-        /// <param name="callerMemberName">The name of the method which raised the event</param>
-        public delegate void EventDelegate(object sender, TEventArg1 arg1, TEventArg2 arg2, TEventArg3 arg3, TEventArg4 arg4, TEventArg5 arg5, string callerMemberName);
-        /// <summary>
         /// The template event
         /// </summary>
-        public event EventDelegate OnRaised;
+        public event EventTemplateDelegate<TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5> OnRaised;
         /// <summary>
         /// Raises the template event
         /// </summary>

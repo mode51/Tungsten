@@ -38,7 +38,7 @@
 
   <ItemGroup>
     <PackageReference Include="LiteDB" Version="3.1.1" />
-    <PackageReference Include="Tungsten" Version="1.2.7" />
+    <PackageReference Include="Tungsten" Version="2.0.0" />
   </ItemGroup>
 
 </Project>

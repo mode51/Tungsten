@@ -127,7 +127,7 @@ namespace W.Net.RPC
                         if (parameters != null)
                         {
                             if (parameters.Length != args.Length)
-                                throw new Exception("Wrong number of arguments");
+                                throw new ArgumentException("Wrong number of arguments");
                             for (int t = 0; t < args.Length; t++)
                             {
                                 if (args[t] is Newtonsoft.Json.Linq.JToken)
@@ -149,11 +149,19 @@ namespace W.Net.RPC
                             result.Result = mi?.Invoke(null, args);
                     }
                 }
+                else
+                    result.Exception = new NotImplementedException("Method not found: " + method);
+            }
+            catch (ArgumentException e)
+            {
+                result.Success = false;
+                result.Exception = new ArgumentException(e.Message);
+                Log.e(e);
             }
             catch (Exception e)
             {
                 result.Success = false;
-                result.Exception = e;
+                result.Exception = new Exception(e.Message);
                 Log.e(e);
             }
             return result;

@@ -1,23 +1,59 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Threading;
-using W.Net.Sockets;
+using W;
+using W.AsExtensions;
 
 namespace W.Net
 {
     /// <summary>
+    /// A socket server which listens for and handles client connections to automatically echo incoming messages
+    /// </summary>
+    /// <typeparam name="TClientType">The type of Socket client to use.  This type must derrive from W.Net.ClientBase</typeparam>
+    public class EchoServer<TClientType> : Server<TClientType> where TClientType : Client, new()
+    {
+        /// <summary>
+        /// Constructs an EchoServer
+        /// </summary>
+        public EchoServer()
+        {
+            base.ClientConnected += c =>
+            {
+                var client = c as Client;
+                client.DataReceived += (o, bytes) =>
+                {
+                    var client2 = o as Client;
+                    if (client2?.IsConnected ?? false) //because SecureClient won't be connected until after _remotePublicKey has been set
+                    {
+                        client2.Send(bytes);
+                        Console.WriteLine("Server Echoed {0} bytes", bytes.Length);
+                    }
+                };
+            };
+        }
+    }
+
+    /// <summary>
     /// A socket server which listens for and handles client connections 
     /// </summary>
     /// <typeparam name="TClientType">The type of Socket client to use</typeparam>
-    public class Server<TClientType> : IDisposable where TClientType : class, IDataSocket
+    public class Server<TClientType> : ITcpServer, IDisposable where TClientType : ITcpClient, new()
     {
-        private System.Net.Sockets.TcpListener _server;
-        private readonly object _lock = new object();
+        private int _backlog;
+        //private readonly System.Collections.Concurrent.ConcurrentDictionary<string, TClientType> _clients = new ConcurrentDictionary<string, TClientType>();
         private readonly List<TClientType> _clients = new List<TClientType>();
-        private W.Threading.Thread _listenProc;
-        private bool _isListening;
+        private object _clientsLock = new object();
+        private W.Threading.ParameterizedThread _listenProc;
+        private ManualResetEventSlim _mreServerListenComplete = new ManualResetEventSlim(false);
+
+        /// <summary>
+        /// Select the CPU profile to choose your needs
+        /// </summary>
+        public W.Threading.CPUProfileEnum CPUProfile { get; set; } = W.Threading.CPUProfileEnum.SpinWait1;
 
         ///<summary>
         /// Called when a client connects to the server
@@ -27,70 +63,61 @@ namespace W.Net
         /// Called when a client disconnects normally or by exception
         /// </summary>
         public Action<TClientType, IPEndPoint, Exception> ClientDisconnected { get; set; }
-        /// <summary>
-        /// Called when the value of IsListening changes to true or false
-        /// </summary>
-        public Action<bool> IsListeningChanged { get; set; }
 
         /// <summary>
         /// True if the server is listening for clients, otherwise false
         /// </summary>
-        public bool IsListening
+        public bool IsListening => (_listenProc?.IsStarted ?? false);
+        //{
+        //    get
+        //    {
+        //        return _listenProc?.IsStarted ?? false;
+        //    }
+        //}
+        /// <summary>
+        /// If True, the socket will compress data before sending and decompress data when receiving
+        /// </summary>
+        public bool UseCompression { get; set; }
+
+        private void RemoveDisconnectedClients()
         {
-            get
+            lock (_clientsLock)
             {
-                lock (_lock)
+                //remove disconnected clients
+                for (int t = _clients.Count - 1; t >= 0; t--)
                 {
-                    return _isListening;
+                    var client = _clients[t] as Client;
+                    if (!SocketExtensions.IsConnected(client.Socket))
+                        client.Disconnect();
                 }
             }
-            set
-            {
-                lock (_lock)
-                {
-                    _isListening = value;
-                }
-            }
         }
-
-        /// <summary>
-        /// Constructs a new Server
-        /// </summary>
-        public Server()
+        private void ListenForClientsProc(CancellationToken ct, params object[] args)
         {
-        }
-        /// <summary>
-        /// Disposes and deconstructs the Server instance
-        /// </summary>
-        ~Server()
-        {
-            Dispose();
-        }
-
-        private void ListenForClientsProc_OnComplete(bool success, Exception e)
-        {
-            System.Diagnostics.Debug.WriteLine("Tungsten.Net.SecureServer Shutdown Complete(result={0}", success);
-            if (e != null)
-                System.Diagnostics.Debug.WriteLine(e.ToString());
-            if (IsListening)
-                Stop();
-        }
-
-        private void ListenForClientsProc(CancellationTokenSource cts)
-        {
-            IsListeningChanged?.Invoke(true);
             try
             {
-                while (!cts?.Token.IsCancellationRequested ?? false && (_server != null))
+                var ipEndPoint = (IPEndPoint)args[0];
+                var server = new TcpListener(ipEndPoint.Address, ipEndPoint.Port);
+                server.Start(_backlog);
+                while (!ct.IsCancellationRequested)
                 {
-                    W.Threading.Thread.Sleep(1);
-                    if (IsListening && !_server.Pending())
+                    RemoveDisconnectedClients();//11.11.2017 - removing this call causes constantly increasing memory usage (_clients.Count continues to increase)
+                    if (IsListening && !(server?.Pending() ?? false))
+                    {
+                        W.Threading.Thread.Sleep(CPUProfile);
                         continue;
+                    }
 
-                    TcpClient client = null;
                     try
                     {
-                        client = _server.AcceptTcpClientAsync().Result;
+                        //awaiting the Accept causes the thread (Task) to continue into the ContinueWith (which then sets _mreComplete)
+                        //so we can't use the async method here
+                        var socket = server.AcceptSocketAsync().Result;
+                        if (socket != null)
+                            CreateServerClient(socket);
+                        //var client = server.AcceptTcpClientAsync().Result;
+                        //if (client != null)
+                        //    CreateServerClient(client);
                     }
                     catch (NullReferenceException)
                     {
@@ -100,70 +127,90 @@ namespace W.Net
                     {
                         break;
                     }
+                    catch (InvalidOperationException) //no longer listening
+                    {
+                        break;
+                    }
                     catch (SocketException e)
                     {
                         if (e.SocketErrorCode != SocketError.Interrupted) //the server was stopped
-                            System.Diagnostics.Debug.WriteLine(string.Format("SocketException: Socket Error Code {0}: {1}\n{2}", e.SocketErrorCode,
-                                Enum.GetName(typeof(System.Net.Sockets.SocketError), e.SocketErrorCode),
-                                e.ToString()));
+                        {
+                            var msg = string.Format("SocketException: Socket Error Code {0}: {1}\n{2}", e.SocketErrorCode, Enum.GetName(typeof(System.Net.Sockets.SocketError), e.SocketErrorCode), e.ToString());
+                            Debug.i(msg);
+                        }
                         break;
                     }
                     catch (Exception e)
                     {
-                        System.Diagnostics.Debug.WriteLine(e.ToString());
+                        Debug.e(e);
                         break;
                     }
-                    OnCreateClientHandler(client);
                 }
+                server.Stop();
+                //_server.Server.Dispose();
+            }
+            catch (Exception e)
+            {
+                Debug.e(e);
+            }
+            finally
+            {
+                _mreServerListenComplete.Set();
+            }
+        }
+        private void CreateServerClient(System.Net.Sockets.Socket socket)
+        {
+            try
+            {
+                var handler = new TClientType();
+                //_clients.TryAdd(client.Client.RemoteEndPoint.As<IPEndPoint>().ToString(), handler);
+                lock (_clientsLock)
+                {
+                    _clients.Add(handler);
+                }
+                handler.As<ITcpClient>().ConfigureForServerSide(this, socket, CPUProfile);
+                handler.As<Client>().UseCompression = UseCompression;
+                handler.As<Client>().Disconnected += (o, r, e) =>
+                {
+                    lock (_clientsLock)
+                    {
+                        if (_clients.Contains((TClientType)o))
+                            _clients.Remove((TClientType)o);
+                    }
+                };
+                Debug.i("Server created client handler");
+                ClientConnected?.Invoke(handler);
             }
             catch (Exception e)
             {
                 System.Diagnostics.Debug.WriteLine(e.ToString());
-            }
-            finally
-            {
-                IsListening = false;
-                IsListeningChanged?.Invoke(IsListening);
+                System.Diagnostics.Debugger.Break();
             }
         }
-        /// <summary>
-        /// Creates a new client of type TClientType
-        /// </summary>
-        /// <param name="client">The TcpClient used to initialize the client</param>
-        /// <returns>The new client of type TClientType</returns>
-        protected virtual TClientType CreateClient(TcpClient client)
+
+        #region Explicit ISocketServer
+        void ITcpServer.DisconnectClient(ITcpClient client, IPEndPoint remoteEndPoint, Exception e)
         {
-            var handler = (TClientType)Activator.CreateInstance(typeof(TClientType), client);
-            return handler;
-        }
-        /// <summary>
-        /// Configures a new server-side client connection
-        /// </summary>
-        /// <param name="client">The new server-side client connection</param>
-        protected virtual void OnCreateClientHandler(TcpClient client)
-        {
-            //var handler = new TClientType(client);
-            var handler = CreateClient(client);// (TClientType)Activator.CreateInstance(typeof(TClientType), client);
-            handler.Disconnected += (s, remoteEndPoint, exception) =>
+            try
             {
-                if (_clients.Contains(handler))
-                    _clients.Remove(handler);
-                ClientDisconnected?.Invoke(handler, remoteEndPoint, exception);
-            };
-            //Notifications.ClientCreated?.Invoke(handler);
-            //handler.As<IFormattedSocket>().Disconnected += (s, remoteEndPoint, exception) =>
-            //{
-            //    var proxy = s.As<TClientType>();
-            //    if (proxy == null)
-            //        throw new ArgumentOutOfRangeException(nameof(s), "Parameter s should have been a legitimate instance of SecureByteClient");
-            //    if (_clients.Contains(proxy))
-            //        _clients.Remove(proxy);
-            //    ClientDisconnected?.Invoke(proxy, remoteEndPoint, exception);
-            //};
-            _clients.Add(handler);
-            ClientConnected?.Invoke(handler);
-            System.Diagnostics.Debug.WriteLine("Server created client handler");
+                var tc = (TClientType)client;
+                lock (_clientsLock)
+                {
+                    if (_clients.Contains(tc))
+                    {
+                        _clients.Remove(tc);
+                        ClientDisconnected?.Invoke(tc, tc.RemoteEndPoint, e);
+                        Debug.i(string.Format("Removed {0}, Count = {1}", client.RemoteEndPoint, _clients.Count));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.e(ex);
+                System.Diagnostics.Debugger.Break();
+            }
         }
+        #endregion
 
         /// <summary>
         /// Starts listening for clients
@@ -182,15 +229,19 @@ namespace W.Net
         {
             try
             {
-                _server = new TcpListener(ipEndPoint.Address, ipEndPoint.Port);
-                _server.Start();
-                _listenProc = W.Threading.Thread.Create(ListenForClientsProc, ListenForClientsProc_OnComplete);
-                IsListening = true;
+                _mreServerListenComplete.Reset();
+                _listenProc = new W.Threading.ParameterizedThread(ListenForClientsProc);//, ListenForClientsProc_OnComplete);
+                _listenProc.Start(ipEndPoint);
+            }
+            catch (SocketException e)
+            {
+                Debug.e(e);
+                System.Diagnostics.Debugger.Break();
             }
             catch (Exception e)
             {
+                Debug.e(e);
                 System.Diagnostics.Debugger.Break();
-                System.Diagnostics.Debug.WriteLine(e.ToString());
             }
         }
         /// <summary>
@@ -198,13 +249,27 @@ namespace W.Net
         /// </summary>
         public void Stop()
         {
-            while (_clients.Count > 0)
-                _clients[0].Socket.Disconnect();
-            _listenProc?.Cancel();
-            _listenProc?.Join(1000);
-            _listenProc = null;
-            _server?.Stop();
-            IsListening = false;
+            try
+            {
+                //if (!IsListening)
+                //    return;
+                if (_listenProc != null) //because Dispose calls Stop too
+                {
+                    _listenProc.Stop();
+                    _mreServerListenComplete.Wait(); //redundant check because _listenProc.Stop should already be waiting for it to complete
+                    _listenProc.Dispose();
+                    _listenProc = null;
+                }
+                //if (_server != null) //because Dispose calls Stop too
+                //{
+                //    _server.Stop();
+                //    _server = null;
+                //}
+            }
+            catch (Exception e)
+            {
+                Debug.e(e);
+            }
         }
 
         /// <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
@@ -213,29 +278,26 @@ namespace W.Net
             Stop();
             GC.SuppressFinalize(this);
         }
-    }
-
-    /// <summary>
-    /// A Server which echoes data back to the remote
-    /// </summary>
-
-    public class EchoServer : Server<Client<string>>
-    {
         /// <summary>
-        /// Constructs a new EchoServer
+        /// Constructs a new Server
         /// </summary>
-        public EchoServer()
+        public Server() : this(20)
         {
-            ClientConnected += (client) =>
-            {
-                client.MessageReceived += (c, message) =>
-                {
-                    if (!string.IsNullOrEmpty(message))
-                    {
-                        c.Send(message.As<string>().ToUpper());
-                    }
-                };
-            };
         }
+        /// <summary>
+        /// Constructs a new Server
+        /// </summary>
+        /// <param name="backlog">The number of connections the server should pre-allocate resources for</param>
+        public Server(int backlog)
+        {
+            _backlog = backlog;
+        }
+        ///// <summary>
+        ///// Disposes and deconstructs the Server instance
+        ///// </summary>
+        //~Server()
+        //{
+        //    Dispose();
+        //}
     }
 }

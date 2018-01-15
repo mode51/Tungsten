@@ -100,28 +100,6 @@ Fields
 ![Protected field] | [OnValueChanged][35] | Callback type for use in the constructor (if one wants to avoid using the event) 
 
 
-Extension Methods
------------------
-
-                                          | Name                                                                                         | Description                                                                                                                                                                                                                      
------------------------------------------ | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-![Public Extension Method]![Code example] | [As&lt;TType>][36]                                                                           | Use Generic syntax for the as operator. (Defined by [AsExtensions][37].)                                                                                                                                                         
-![Public Extension Method]                | [AsJson&lt;TType>][38]                                                                       | Serializes an object to a Json string (Defined by [AsExtensions][37].)                                                                                                                                                           
-![Public Extension Method]                | [AsXml&lt;TType>][39]                                                                        | Serializes an object to an xml string (Defined by [AsExtensions][37].)                                                                                                                                                           
-![Public Extension Method]                | [CreateThread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>)][40]          | Overloaded. Creates and starts a new thread and (Defined by [ThreadExtensions][41].)                                                                                                                                             
-![Public Extension Method]                | [CreateThread&lt;TParameterType>(Action&lt;TParameterType, CancellationToken>, Boolean)][42] | Overloaded. Creates a new thread (Defined by [ThreadExtensions][41].)                                                                                                                                                            
-![Public Extension Method]                | [InitializeProperties][43]                                                                   | 
-Scans the fields and properties of "owner" and sets the member's Owner property to "owner" This method should be called in the constructor of any class which has IOwnedProperty members
- (Defined by [PropertyHostMethods][44].) 
-![Public Extension Method]                | [IsDirty][45]                                                                                | 
-Scans the IsDirty value of each field and property of type IProperty
- (Defined by [PropertyHostMethods][44].)                                                                                                                 
-![Public Extension Method]                | [MarkAsClean][46]                                                                            | 
-Scans each field and property of type IProperty and sets it's IsDirty flag to false
- (Defined by [PropertyHostMethods][44].)                                                                                                  
-![Public Extension Method]                | [WaitForValueAsync][47]                                                                      | Initiates a Task which will wait for the given variable to have the specified value (Defined by [ExtensionMethods][48].)                                                                                                         
-
-
 See Also
 --------
 
@@ -163,23 +141,8 @@ See Also
 [33]: ValueChanged.md
 [34]: ValueChanging.md
 [35]: OnValueChanged.md
-[36]: ../AsExtensions/As__1.md
-[37]: ../AsExtensions/README.md
-[38]: ../AsExtensions/AsJson__1.md
-[39]: ../AsExtensions/AsXml__1.md
-[40]: ../../W.Threading/ThreadExtensions/CreateThread__1.md
-[41]: ../../W.Threading/ThreadExtensions/README.md
-[42]: ../../W.Threading/ThreadExtensions/CreateThread__1_1.md
-[43]: ../PropertyHostMethods/InitializeProperties.md
-[44]: ../PropertyHostMethods/README.md
-[45]: ../PropertyHostMethods/IsDirty.md
-[46]: ../PropertyHostMethods/MarkAsClean.md
-[47]: ../ExtensionMethods/WaitForValueAsync.md
-[48]: ../ExtensionMethods/README.md
 [Protected method]: ../../_icons/protmethod.gif "Protected method"
 [Public property]: ../../_icons/pubproperty.gif "Public property"
 [Public method]: ../../_icons/pubmethod.gif "Public method"
 [Public event]: ../../_icons/pubevent.gif "Public event"
 [Protected field]: ../../_icons/protfield.gif "Protected field"
-[Public Extension Method]: ../../_icons/pubextension.gif "Public Extension Method"
-[Code example]: ../../_icons/CodeExample.png "Code example"

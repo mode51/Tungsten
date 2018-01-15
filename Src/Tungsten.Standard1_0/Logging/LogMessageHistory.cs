@@ -59,7 +59,7 @@ namespace W.Logging
             /// <summary>
             /// The maximum number of historical messages to maintain.  When the maximum is reached, the oldest messages are removed as needed.
             /// </summary>
-            public Property<int> MaximumNumberOfMessages { get; } = new Property<int>(10000, (p, oldValue, newValue) => { if (newValue < 0) throw new ArgumentOutOfRangeException("MaximumNumberOfMessages"); });
+            public Property<int> MaximumNumberOfMessages { get; } = new Property<int>(10000);//, (p, oldValue, newValue) => { if (newValue < 0) throw new ArgumentOutOfRangeException("MaximumNumberOfMessages"); });
             /// <summary>
             /// If True, log messages will be added to the history.  If False, no history is maintained.
             /// </summary>

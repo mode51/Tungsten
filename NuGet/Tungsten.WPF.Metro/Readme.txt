@@ -1,5 +1,8 @@
 ﻿Extends Tungsten.WPF with basic MahApps Accents and Themes  See the wiki @ https://github.com/mode51/Tungsten/wiki for details, examples and use.
 
+1.8.2018 v2.0.0
+Updated Tungsten reference to v2.0.0
+
 6.22.2017 v1.0.3
 Updated Tungsten.WPF reference
 Removed PageFramework as it's now in W.WPF.PageFramework

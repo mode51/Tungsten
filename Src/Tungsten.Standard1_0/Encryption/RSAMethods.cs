@@ -17,7 +17,7 @@ namespace W.Encryption
     /// Replaces RSA.  This code was adaptd for NetStandard from an article published on CodeProject by Mathew John Schlabaugh in 2007.  It is less complicated but works more often than my initial RSA implementation. See: https://www.codeproject.com/Articles/10877/Public-Key-RSA-Encryption-in-C-NET
     /// </para></summary>
     /// <see cref="https://www.codeproject.com/Articles/10877/Public-Key-RSA-Encryption-in-C-NET"/>
-    public class RSAMethods
+    public static class RSAMethods
     {
 #pragma warning restore CS1658 // Warning is overriding an error
 #pragma warning restore CS1584 // XML comment has syntactically incorrect cref attribute

@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Test Files\TestAnything.cs" Link="TestAnything.cs" />
+    <Compile Include="..\Test Files\W\ArrayMethodsTests.cs" Link="W\ArrayMethodsTests.cs" />
+    <Compile Include="..\Test Files\W\AsExtensionsTests.cs" Link="W\AsExtensionsTests.cs" />
+    <Compile Include="..\Test Files\W\CallResultTests.cs" Link="W\CallResultTests.cs" />
+    <Compile Include="..\Test Files\W\ExtensionMethodsTests.cs" Link="W\ExtensionMethodsTests.cs" />
+    <Compile Include="..\Test Files\W\GateTests.cs" Link="W\GateTests.cs" />
+    <Compile Include="..\Test Files\W\IntravertedLockableTests.cs" Link="W\IntravertedLockableTests.cs" />
+    <Compile Include="..\Test Files\W\IO\Pipes\PipeClientLoggerTests.cs" Link="W\IO\Pipes\PipeClientLoggerTests.cs" />
+    <Compile Include="..\Test Files\W\IO\Pipes\TestPipes.cs" Link="W\IO\Pipes\TestPipes.cs" />
+    <Compile Include="..\Test Files\W\LiteDb\LiteDbTests.cs" Link="W\LiteDb\LiteDbTests.cs" />
+    <Compile Include="..\Test Files\W\LockableSlimTests.cs" Link="W\LockableSlimTests.cs" />
+    <Compile Include="..\Test Files\W\LockableTests.cs" Link="W\LockableTests.cs" />
+    <Compile Include="..\Test Files\W\Net\TestNet.cs" Link="W\Net\TestNet.cs" />
+    <Compile Include="..\Test Files\W\PropertyHostMethodsTests.cs" Link="W\PropertyHostMethodsTests.cs" />
+    <Compile Include="..\Test Files\W\PropertyHostTests.cs" Link="W\PropertyHostTests.cs" />
+    <Compile Include="..\Test Files\W\PropertyTests.cs" Link="W\PropertyTests.cs" />
+    <Compile Include="..\Test Files\W\RSATests.cs" Link="W\RSATests.cs" />
+    <Compile Include="..\Test Files\W\ThreadExtensionsTests.cs" Link="W\ThreadExtensionsTests.cs" />
+    <Compile Include="..\Test Files\W\ThreadMethodTests.cs" Link="W\ThreadMethodTests.cs" />
+    <Compile Include="..\Test Files\W\ThreadSlimTests.cs" Link="W\ThreadSlimTests.cs" />
+    <Compile Include="..\Test Files\W\ThreadTests.cs" Link="W\ThreadTests.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiteDB" Version="3.1.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.1.18" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="System.IO.Pipes" Version="4.3.0" />
+    <PackageReference Include="Tungsten" Version="2.0.0" />
+    <PackageReference Include="Tungsten.IO.Pipes" Version="2.0.0" />
+    <PackageReference Include="Tungsten.LiteDb" Version="1.2.4" />
+    <PackageReference Include="Tungsten.Net" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="W\IO\Pipes\" />
+    <Folder Include="W\Net\" />
+    <Folder Include="W\LiteDb\" />
+  </ItemGroup>
+
+</Project>

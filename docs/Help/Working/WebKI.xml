@@ -29,41 +29,84 @@
   <HelpKINode Title="ActionQueue&lt;T&gt;.Finalize method" Url="html/M_W_ActionQueue_1_Finalize.htm" />
   <HelpKINode Title="ActionQueue&lt;T&gt;.Queue property" Url="html/P_W_ActionQueue_1_Queue.htm" />
   <HelpKINode Title="AddTimestamp property" Url="html/P_W_Logging_CustomLogger_AddTimestamp.htm" />
-  <HelpKINode Title="As(Of TType) method" Url="html/M_W_AsExtensions_As__1.htm" />
-  <HelpKINode Title="As&lt;TType&gt; method" Url="html/M_W_AsExtensions_As__1.htm" />
-  <HelpKINode Title="AsBase64 method" Url="html/Overload_W_AsExtensions_AsBase64.htm" />
-  <HelpKINode Title="AsBytes method" Url="html/M_W_AsExtensions_AsBytes.htm" />
-  <HelpKINode Title="AsCompressed method" Url="html/M_W_AsExtensions_AsCompressed.htm" />
-  <HelpKINode Title="AsDecompressed method" Url="html/M_W_AsExtensions_AsDecompressed.htm" />
-  <HelpKINode Title="AsExtensions class">
-    <HelpKINode Title="AsExtensions Class" Url="html/T_W_AsExtensions.htm" />
-    <HelpKINode Title="about AsExtensions class" Url="html/T_W_AsExtensions.htm" />
-    <HelpKINode Title="methods" Url="html/Methods_T_W_AsExtensions.htm" />
+  <HelpKINode Title="AnyMethodDelegate delegate" Url="html/T_W_Threading_AnyMethodDelegate.htm" />
+  <HelpKINode Title="Append(Of T) method" Url="html/M_W_ArrayMethods_Append__1.htm" />
+  <HelpKINode Title="Append&lt;T&gt; method" Url="html/M_W_ArrayMethods_Append__1.htm" />
+  <HelpKINode Title="ArrayMethods class">
+    <HelpKINode Title="ArrayMethods Class" Url="html/T_W_ArrayMethods.htm" />
+    <HelpKINode Title="about ArrayMethods class" Url="html/T_W_ArrayMethods.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_ArrayMethods.htm" />
   </HelpKINode>
-  <HelpKINode Title="AsExtensions.As(Of TType) method" Url="html/M_W_AsExtensions_As__1.htm" />
-  <HelpKINode Title="AsExtensions.As&lt;TType&gt; method" Url="html/M_W_AsExtensions_As__1.htm" />
-  <HelpKINode Title="AsExtensions.AsBase64 method" Url="html/Overload_W_AsExtensions_AsBase64.htm" />
-  <HelpKINode Title="AsExtensions.AsBytes method" Url="html/M_W_AsExtensions_AsBytes.htm" />
-  <HelpKINode Title="AsExtensions.AsCompressed method" Url="html/M_W_AsExtensions_AsCompressed.htm" />
-  <HelpKINode Title="AsExtensions.AsDecompressed method" Url="html/M_W_AsExtensions_AsDecompressed.htm" />
-  <HelpKINode Title="AsExtensions.AsJson(Of TType) method" Url="html/M_W_AsExtensions_AsJson__1.htm" />
-  <HelpKINode Title="AsExtensions.AsJson&lt;TType&gt; method" Url="html/M_W_AsExtensions_AsJson__1.htm" />
-  <HelpKINode Title="AsExtensions.AsStream method" Url="html/Overload_W_AsExtensions_AsStream.htm" />
-  <HelpKINode Title="AsExtensions.AsString method" Url="html/Overload_W_AsExtensions_AsString.htm" />
-  <HelpKINode Title="AsExtensions.AsXml(Of TType) method" Url="html/M_W_AsExtensions_AsXml__1.htm" />
-  <HelpKINode Title="AsExtensions.AsXml&lt;TType&gt; method" Url="html/M_W_AsExtensions_AsXml__1.htm" />
-  <HelpKINode Title="AsGate method" Url="html/Overload_W_Threading_GateMethods_AsGate.htm" />
-  <HelpKINode Title="AsJson(Of TType) method" Url="html/M_W_AsExtensions_AsJson__1.htm" />
-  <HelpKINode Title="AsJson&lt;TType&gt; method" Url="html/M_W_AsExtensions_AsJson__1.htm" />
-  <HelpKINode Title="AsStream method" Url="html/Overload_W_AsExtensions_AsStream.htm" />
-  <HelpKINode Title="AsString method" Url="html/Overload_W_AsExtensions_AsString.htm" />
-  <HelpKINode Title="AsXml(Of TType) method" Url="html/M_W_AsExtensions_AsXml__1.htm" />
-  <HelpKINode Title="AsXml&lt;TType&gt; method" Url="html/M_W_AsExtensions_AsXml__1.htm" />
+  <HelpKINode Title="ArrayMethods.Append(Of T) method" Url="html/M_W_ArrayMethods_Append__1.htm" />
+  <HelpKINode Title="ArrayMethods.Append&lt;T&gt; method" Url="html/M_W_ArrayMethods_Append__1.htm" />
+  <HelpKINode Title="ArrayMethods.Insert(Of T) method" Url="html/M_W_ArrayMethods_Insert__1.htm" />
+  <HelpKINode Title="ArrayMethods.Insert&lt;T&gt; method" Url="html/M_W_ArrayMethods_Insert__1.htm" />
+  <HelpKINode Title="ArrayMethods.Peek(Of T) method" Url="html/M_W_ArrayMethods_Peek__1.htm" />
+  <HelpKINode Title="ArrayMethods.Peek&lt;T&gt; method" Url="html/M_W_ArrayMethods_Peek__1.htm" />
+  <HelpKINode Title="ArrayMethods.PeekEnd(Of T) method" Url="html/M_W_ArrayMethods_PeekEnd__1.htm" />
+  <HelpKINode Title="ArrayMethods.PeekEnd&lt;T&gt; method" Url="html/M_W_ArrayMethods_PeekEnd__1.htm" />
+  <HelpKINode Title="ArrayMethods.PeekStart(Of T) method" Url="html/M_W_ArrayMethods_PeekStart__1.htm" />
+  <HelpKINode Title="ArrayMethods.PeekStart&lt;T&gt; method" Url="html/M_W_ArrayMethods_PeekStart__1.htm" />
+  <HelpKINode Title="ArrayMethods.Take(Of T) method" Url="html/M_W_ArrayMethods_Take__1.htm" />
+  <HelpKINode Title="ArrayMethods.Take&lt;T&gt; method" Url="html/M_W_ArrayMethods_Take__1.htm" />
+  <HelpKINode Title="ArrayMethods.TakeFromEnd(Of T) method" Url="html/M_W_ArrayMethods_TakeFromEnd__1.htm" />
+  <HelpKINode Title="ArrayMethods.TakeFromEnd&lt;T&gt; method" Url="html/M_W_ArrayMethods_TakeFromEnd__1.htm" />
+  <HelpKINode Title="ArrayMethods.TakeFromStart(Of T) method" Url="html/M_W_ArrayMethods_TakeFromStart__1.htm" />
+  <HelpKINode Title="ArrayMethods.TakeFromStart&lt;T&gt; method" Url="html/M_W_ArrayMethods_TakeFromStart__1.htm" />
+  <HelpKINode Title="ArrayMethods.Trim(Of T) method" Url="html/M_W_ArrayMethods_Trim__1.htm" />
+  <HelpKINode Title="ArrayMethods.Trim&lt;T&gt; method" Url="html/M_W_ArrayMethods_Trim__1.htm" />
+  <HelpKINode Title="ArrayMethods.TrimEnd(Of T) method" Url="html/M_W_ArrayMethods_TrimEnd__1.htm" />
+  <HelpKINode Title="ArrayMethods.TrimEnd&lt;T&gt; method" Url="html/M_W_ArrayMethods_TrimEnd__1.htm" />
+  <HelpKINode Title="ArrayMethods.TrimStart(Of T) method" Url="html/M_W_ArrayMethods_TrimStart__1.htm" />
+  <HelpKINode Title="ArrayMethods.TrimStart&lt;T&gt; method" Url="html/M_W_ArrayMethods_TrimStart__1.htm" />
+  <HelpKINode Title="As(Of TType) method" Url="html/M_W_AsExtensions_AsExtensions_As__1.htm" />
+  <HelpKINode Title="As&lt;TType&gt; method" Url="html/M_W_AsExtensions_AsExtensions_As__1.htm" />
+  <HelpKINode Title="AsBase64 method" Url="html/Overload_W_AsExtensions_AsExtensions_AsBase64.htm" />
+  <HelpKINode Title="AsBytes method" Url="html/M_W_AsExtensions_AsExtensions_AsBytes.htm" />
+  <HelpKINode Title="AsCompressed method" Url="html/M_W_AsExtensions_AsExtensions_AsCompressed.htm" />
+  <HelpKINode Title="AsDecompressed method" Url="html/M_W_AsExtensions_AsExtensions_AsDecompressed.htm" />
+  <HelpKINode Title="AsExtensions class">
+    <HelpKINode Title="AsExtensions Class" Url="html/T_W_AsExtensions_AsExtensions.htm" />
+    <HelpKINode Title="about AsExtensions class" Url="html/T_W_AsExtensions_AsExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_AsExtensions_AsExtensions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AsExtensions.As(Of TType) method" Url="html/M_W_AsExtensions_AsExtensions_As__1.htm" />
+  <HelpKINode Title="AsExtensions.As&lt;TType&gt; method" Url="html/M_W_AsExtensions_AsExtensions_As__1.htm" />
+  <HelpKINode Title="AsExtensions.AsBase64 method" Url="html/Overload_W_AsExtensions_AsExtensions_AsBase64.htm" />
+  <HelpKINode Title="AsExtensions.AsBytes method" Url="html/M_W_AsExtensions_AsExtensions_AsBytes.htm" />
+  <HelpKINode Title="AsExtensions.AsCompressed method" Url="html/M_W_AsExtensions_AsExtensions_AsCompressed.htm" />
+  <HelpKINode Title="AsExtensions.AsDecompressed method" Url="html/M_W_AsExtensions_AsExtensions_AsDecompressed.htm" />
+  <HelpKINode Title="AsExtensions.AsJson(Of TType) method" Url="html/M_W_AsExtensions_AsExtensions_AsJson__1.htm" />
+  <HelpKINode Title="AsExtensions.AsJson&lt;TType&gt; method" Url="html/M_W_AsExtensions_AsExtensions_AsJson__1.htm" />
+  <HelpKINode Title="AsExtensions.AsStream method" Url="html/Overload_W_AsExtensions_AsExtensions_AsStream.htm" />
+  <HelpKINode Title="AsExtensions.AsString method" Url="html/Overload_W_AsExtensions_AsExtensions_AsString.htm" />
+  <HelpKINode Title="AsExtensions.AsXml(Of TType) method" Url="html/M_W_AsExtensions_AsExtensions_AsXml__1.htm" />
+  <HelpKINode Title="AsExtensions.AsXml&lt;TType&gt; method" Url="html/M_W_AsExtensions_AsExtensions_AsXml__1.htm" />
+  <HelpKINode Title="AsGate method" Url="html/Overload_W_Threading_GateExtensions_GateExtensions_AsGate.htm" />
+  <HelpKINode Title="AsJson(Of TType) method" Url="html/M_W_AsExtensions_AsExtensions_AsJson__1.htm" />
+  <HelpKINode Title="AsJson&lt;TType&gt; method" Url="html/M_W_AsExtensions_AsExtensions_AsJson__1.htm" />
+  <HelpKINode Title="AsStream method" Url="html/Overload_W_AsExtensions_AsExtensions_AsStream.htm" />
+  <HelpKINode Title="AsString method" Url="html/Overload_W_AsExtensions_AsExtensions_AsString.htm" />
+  <HelpKINode Title="AssymetricEncryption class">
+    <HelpKINode Title="AssymetricEncryption Class" Url="html/T_W_Encryption_AssymetricEncryption.htm" />
+    <HelpKINode Title="about AssymetricEncryption class" Url="html/T_W_Encryption_AssymetricEncryption.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Encryption_AssymetricEncryption__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Encryption_AssymetricEncryption.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Encryption_AssymetricEncryption.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AssymetricEncryption.AssymetricEncryption constructor" Url="html/M_W_Encryption_AssymetricEncryption__ctor.htm" />
+  <HelpKINode Title="AssymetricEncryption.Decrypt method" Url="html/M_W_Encryption_AssymetricEncryption_Decrypt.htm" />
+  <HelpKINode Title="AssymetricEncryption.Encrypt method" Url="html/M_W_Encryption_AssymetricEncryption_Encrypt.htm" />
+  <HelpKINode Title="AssymetricEncryption.ExchangeKeys method" Url="html/M_W_Encryption_AssymetricEncryption_ExchangeKeys.htm" />
+  <HelpKINode Title="AssymetricEncryption.ExchangeKeysDelegate delegate" Url="html/T_W_Encryption_AssymetricEncryption_ExchangeKeysDelegate.htm" />
+  <HelpKINode Title="AssymetricEncryption.LegalKeySizes property" Url="html/P_W_Encryption_AssymetricEncryption_LegalKeySizes.htm" />
+  <HelpKINode Title="AssymetricEncryption.PublicKey property" Url="html/P_W_Encryption_AssymetricEncryption_PublicKey.htm" />
+  <HelpKINode Title="AssymetricEncryption.RemotePublicKey property" Url="html/P_W_Encryption_AssymetricEncryption_RemotePublicKey.htm" />
+  <HelpKINode Title="AsXml(Of TType) method" Url="html/M_W_AsExtensions_AsExtensions_AsXml__1.htm" />
+  <HelpKINode Title="AsXml&lt;TType&gt; method" Url="html/M_W_AsExtensions_AsExtensions_AsXml__1.htm" />
   <HelpKINode Title="CallAction method">
     <HelpKINode Title="Gate(TParameterType).CallAction Method " Url="html/M_W_Threading_Gate_1_CallAction.htm" />
     <HelpKINode Title="Gate.CallAction Method " Url="html/M_W_Threading_Gate_CallAction.htm" />
-    <HelpKINode Title="Thread(TParameterType).CallAction Method " Url="html/M_W_Threading_Thread_1_CallAction.htm" />
-    <HelpKINode Title="Thread.CallAction Method " Url="html/M_W_Threading_Thread_CallAction.htm" />
   </HelpKINode>
   <HelpKINode Title="CallResult class">
     <HelpKINode Title="CallResult Class" Url="html/T_W_CallResult.htm" />
@@ -99,14 +142,18 @@
   <HelpKINode Title="Cancel method">
     <HelpKINode Title="ActionQueue(T).Cancel Method " Url="html/M_W_ActionQueue_1_Cancel.htm" />
     <HelpKINode Title="Gate.Cancel Method " Url="html/M_W_Threading_Gate_Cancel.htm" />
-    <HelpKINode Title="Thread.Cancel Method " Url="html/M_W_Threading_Thread_Cancel.htm" />
   </HelpKINode>
   <HelpKINode Title="Category property" Url="html/P_W_Logging_Log_LogMessageHistory_LogMessage_Category.htm" />
+  <HelpKINode Title="Cleanup method" Url="html/Overload_W_Disposer_Cleanup.htm" />
   <HelpKINode Title="Count property" Url="html/P_W_ActionQueue_1_Count.htm" />
   <HelpKINode Title="CPUProfileEnum enumeration" Url="html/T_W_Threading_CPUProfileEnum.htm" />
-  <HelpKINode Title="Create method" Url="html/Overload_W_Threading_Thread_Create.htm" />
+  <HelpKINode Title="Create method">
+    <HelpKINode Title="ParameterizedThread.Create Method " Url="html/M_W_Threading_ParameterizedThread_Create.htm" />
+    <HelpKINode Title="Thread.Create Method " Url="html/Overload_W_Threading_Thread_Create.htm" />
+    <HelpKINode Title="ThreadMethod.Create Method " Url="html/Overload_W_Threading_ThreadMethod_Create.htm" />
+    <HelpKINode Title="ThreadSlim.Create Method " Url="html/Overload_W_Threading_ThreadSlim_Create.htm" />
+  </HelpKINode>
   <HelpKINode Title="CreateKeyPair method" Url="html/M_W_Encryption_RSAMethods_CreateKeyPair.htm" />
-  <HelpKINode Title="CreateThread method" Url="html/Overload_W_Threading_ThreadExtensions_CreateThread.htm" />
   <HelpKINode Title="CustomLogger class">
     <HelpKINode Title="CustomLogger Class" Url="html/T_W_Logging_CustomLogger.htm" />
     <HelpKINode Title="about CustomLogger class" Url="html/T_W_Logging_CustomLogger.htm" />
@@ -122,9 +169,18 @@
   <HelpKINode Title="CustomLogger.LogMessage method" Url="html/M_W_Logging_CustomLogger_LogMessage.htm" />
   <HelpKINode Title="CustomLogger.Name property" Url="html/P_W_Logging_CustomLogger_Name.htm" />
   <HelpKINode Title="CustomLogger.OnDispose method" Url="html/M_W_Logging_CustomLogger_OnDispose.htm" />
-  <HelpKINode Title="Decrypt method" Url="html/M_W_Encryption_RSAMethods_Decrypt.htm" />
+  <HelpKINode Title="Decrypt method">
+    <HelpKINode Title="AssymetricEncryption.Decrypt Method " Url="html/M_W_Encryption_AssymetricEncryption_Decrypt.htm" />
+    <HelpKINode Title="RSAMethods.Decrypt Method " Url="html/M_W_Encryption_RSAMethods_Decrypt.htm" />
+  </HelpKINode>
   <HelpKINode Title="DecryptAsync method" Url="html/M_W_Encryption_RSAMethods_DecryptAsync.htm" />
   <HelpKINode Title="DefaultValue property" Url="html/P_W_PropertyBase_2_DefaultValue.htm" />
+  <HelpKINode Title="DelegateExtensions class">
+    <HelpKINode Title="DelegateExtensions Class" Url="html/T_W_DelegateExtensions_DelegateExtensions.htm" />
+    <HelpKINode Title="about DelegateExtensions class" Url="html/T_W_DelegateExtensions_DelegateExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_DelegateExtensions_DelegateExtensions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DelegateExtensions.Raise method" Url="html/M_W_DelegateExtensions_DelegateExtensions_Raise.htm" />
   <HelpKINode Title="Disposable class">
     <HelpKINode Title="Disposable Class" Url="html/T_W_Disposable.htm" />
     <HelpKINode Title="about Disposable class" Url="html/T_W_Disposable.htm" />
@@ -134,7 +190,6 @@
   </HelpKINode>
   <HelpKINode Title="Disposable.Disposable constructor" Url="html/M_W_Disposable__ctor.htm" />
   <HelpKINode Title="Disposable.Dispose method" Url="html/M_W_Disposable_Dispose.htm" />
-  <HelpKINode Title="Disposable.Finalize method" Url="html/M_W_Disposable_Finalize.htm" />
   <HelpKINode Title="Disposable.IsDisposed field" Url="html/F_W_Disposable_IsDisposed.htm" />
   <HelpKINode Title="Disposable.IsDisposing field" Url="html/F_W_Disposable_IsDisposing.htm" />
   <HelpKINode Title="Disposable.OnDispose method" Url="html/M_W_Disposable_OnDispose.htm" />
@@ -144,16 +199,34 @@
     <HelpKINode Title="CustomLogger.Dispose Method " Url="html/M_W_Logging_CustomLogger_Dispose.htm" />
     <HelpKINode Title="Disposable.Dispose Method " Url="html/M_W_Disposable_Dispose.htm" />
     <HelpKINode Title="Gate.Dispose Method " Url="html/M_W_Threading_Gate_Dispose.htm" />
-    <HelpKINode Title="PropertyBase(TOwner, TValue).Dispose Method " Url="html/M_W_PropertyBase_2_Dispose.htm" />
+    <HelpKINode Title="Lockable(TValue).Dispose Method " Url="html/M_W_Lockable_1_Dispose.htm" />
+    <HelpKINode Title="ReaderWriterLocker(TState).Dispose Method " Url="html/M_W_Threading_Lockers_ReaderWriterLocker_1_Dispose.htm" />
+    <HelpKINode Title="ReaderWriterLocker.Dispose Method " Url="html/M_W_Threading_Lockers_ReaderWriterLocker_Dispose.htm" />
+    <HelpKINode Title="SemaphoreSlimLocker.Dispose Method " Url="html/M_W_Threading_Lockers_SemaphoreSlimLocker_Dispose.htm" />
     <HelpKINode Title="Thread.Dispose Method " Url="html/M_W_Threading_Thread_Dispose.htm" />
+    <HelpKINode Title="ThreadMethod.Dispose Method " Url="html/M_W_Threading_ThreadMethod_Dispose.htm" />
+    <HelpKINode Title="ThreadSlim.Dispose Method " Url="html/M_W_Threading_ThreadSlim_Dispose.htm" />
   </HelpKINode>
+  <HelpKINode Title="Disposer class">
+    <HelpKINode Title="Disposer Class" Url="html/T_W_Disposer.htm" />
+    <HelpKINode Title="about Disposer class" Url="html/T_W_Disposer.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Disposer__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Disposer.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Disposer.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Disposer.Cleanup method" Url="html/Overload_W_Disposer_Cleanup.htm" />
+  <HelpKINode Title="Disposer.Disposer constructor" Url="html/M_W_Disposer__ctor.htm" />
+  <HelpKINode Title="Disposer.IsDisposed property" Url="html/P_W_Disposer_IsDisposed.htm" />
   <HelpKINode Title="e method" Url="html/Overload_W_Logging_Log_e.htm" />
   <HelpKINode Title="Empty property">
     <HelpKINode Title="CallResult(TResult).Empty Property " Url="html/P_W_CallResult_1_Empty.htm" />
     <HelpKINode Title="CallResult.Empty Property " Url="html/P_W_CallResult_Empty.htm" />
   </HelpKINode>
   <HelpKINode Title="Enabled property" Url="html/P_W_Logging_Log_LogMessageHistory_Enabled.htm" />
-  <HelpKINode Title="Encrypt method" Url="html/M_W_Encryption_RSAMethods_Encrypt.htm" />
+  <HelpKINode Title="Encrypt method">
+    <HelpKINode Title="AssymetricEncryption.Encrypt Method " Url="html/M_W_Encryption_AssymetricEncryption_Encrypt.htm" />
+    <HelpKINode Title="RSAMethods.Encrypt Method " Url="html/M_W_Encryption_RSAMethods_Encrypt.htm" />
+  </HelpKINode>
   <HelpKINode Title="EncryptAsync method" Url="html/M_W_Encryption_RSAMethods_EncryptAsync.htm" />
   <HelpKINode Title="Enqueue method" Url="html/M_W_ActionQueue_1_Enqueue.htm" />
   <HelpKINode Title="Error enumeration member" Url="html/T_W_Logging_Log_LogMessageCategory.htm" />
@@ -171,7 +244,6 @@
     <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_1.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_1.htm" />
   </HelpKINode>
-  <HelpKINode Title="EventTemplate(Of TEventArg).EventDelegate delegate" Url="html/T_W_EventTemplate_1_EventDelegate.htm" />
   <HelpKINode Title="EventTemplate(Of TEventArg).EventTemplate constructor" Url="html/M_W_EventTemplate_1__ctor.htm" />
   <HelpKINode Title="EventTemplate(Of TEventArg).OnRaised event" Url="html/E_W_EventTemplate_1_OnRaised.htm" />
   <HelpKINode Title="EventTemplate(Of TEventArg).Raise method" Url="html/M_W_EventTemplate_1_Raise.htm" />
@@ -182,7 +254,6 @@
     <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_2.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_2.htm" />
   </HelpKINode>
-  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2).EventDelegate delegate" Url="html/T_W_EventTemplate_2_EventDelegate.htm" />
   <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2).EventTemplate constructor" Url="html/M_W_EventTemplate_2__ctor.htm" />
   <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2).OnRaised event" Url="html/E_W_EventTemplate_2_OnRaised.htm" />
   <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2).Raise method" Url="html/M_W_EventTemplate_2_Raise.htm" />
@@ -193,7 +264,6 @@
     <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_3.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_3.htm" />
   </HelpKINode>
-  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3).EventDelegate delegate" Url="html/T_W_EventTemplate_3_EventDelegate.htm" />
   <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3).EventTemplate constructor" Url="html/M_W_EventTemplate_3__ctor.htm" />
   <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3).OnRaised event" Url="html/E_W_EventTemplate_3_OnRaised.htm" />
   <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3).Raise method" Url="html/M_W_EventTemplate_3_Raise.htm" />
@@ -204,7 +274,6 @@
     <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_4.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_4.htm" />
   </HelpKINode>
-  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4).EventDelegate delegate" Url="html/T_W_EventTemplate_4_EventDelegate.htm" />
   <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4).EventTemplate constructor" Url="html/M_W_EventTemplate_4__ctor.htm" />
   <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4).OnRaised event" Url="html/E_W_EventTemplate_4_OnRaised.htm" />
   <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4).Raise method" Url="html/M_W_EventTemplate_4_Raise.htm" />
@@ -215,11 +284,9 @@
     <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_5.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_5.htm" />
   </HelpKINode>
-  <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5).EventDelegate delegate" Url="html/T_W_EventTemplate_5_EventDelegate.htm" />
   <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5).EventTemplate constructor" Url="html/M_W_EventTemplate_5__ctor.htm" />
   <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5).OnRaised event" Url="html/E_W_EventTemplate_5_OnRaised.htm" />
   <HelpKINode Title="EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5).Raise method" Url="html/M_W_EventTemplate_5_Raise.htm" />
-  <HelpKINode Title="EventTemplate.EventDelegate delegate" Url="html/T_W_EventTemplate_EventDelegate.htm" />
   <HelpKINode Title="EventTemplate.EventTemplate constructor" Url="html/M_W_EventTemplate__ctor.htm" />
   <HelpKINode Title="EventTemplate.OnRaised event" Url="html/E_W_EventTemplate_OnRaised.htm" />
   <HelpKINode Title="EventTemplate.Raise method" Url="html/M_W_EventTemplate_Raise.htm" />
@@ -230,7 +297,6 @@
     <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_5.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_5.htm" />
   </HelpKINode>
-  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_5_EventDelegate.htm" />
   <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5&gt;.EventTemplate constructor" Url="html/M_W_EventTemplate_5__ctor.htm" />
   <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5&gt;.OnRaised event" Url="html/E_W_EventTemplate_5_OnRaised.htm" />
   <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5&gt;.Raise method" Url="html/M_W_EventTemplate_5_Raise.htm" />
@@ -241,7 +307,6 @@
     <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_4.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_4.htm" />
   </HelpKINode>
-  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_4_EventDelegate.htm" />
   <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4&gt;.EventTemplate constructor" Url="html/M_W_EventTemplate_4__ctor.htm" />
   <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4&gt;.OnRaised event" Url="html/E_W_EventTemplate_4_OnRaised.htm" />
   <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4&gt;.Raise method" Url="html/M_W_EventTemplate_4_Raise.htm" />
@@ -252,7 +317,6 @@
     <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_3.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_3.htm" />
   </HelpKINode>
-  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_3_EventDelegate.htm" />
   <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3&gt;.EventTemplate constructor" Url="html/M_W_EventTemplate_3__ctor.htm" />
   <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3&gt;.OnRaised event" Url="html/E_W_EventTemplate_3_OnRaised.htm" />
   <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3&gt;.Raise method" Url="html/M_W_EventTemplate_3_Raise.htm" />
@@ -263,7 +327,6 @@
     <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_2.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_2.htm" />
   </HelpKINode>
-  <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_2_EventDelegate.htm" />
   <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2&gt;.EventTemplate constructor" Url="html/M_W_EventTemplate_2__ctor.htm" />
   <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2&gt;.OnRaised event" Url="html/E_W_EventTemplate_2_OnRaised.htm" />
   <HelpKINode Title="EventTemplate&lt;TEventArg1, TEventArg2&gt;.Raise method" Url="html/M_W_EventTemplate_2_Raise.htm" />
@@ -274,47 +337,43 @@
     <HelpKINode Title="events" Url="html/Events_T_W_EventTemplate_1.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_EventTemplate_1.htm" />
   </HelpKINode>
-  <HelpKINode Title="EventTemplate&lt;TEventArg&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_1_EventDelegate.htm" />
   <HelpKINode Title="EventTemplate&lt;TEventArg&gt;.EventTemplate constructor" Url="html/M_W_EventTemplate_1__ctor.htm" />
   <HelpKINode Title="EventTemplate&lt;TEventArg&gt;.OnRaised event" Url="html/E_W_EventTemplate_1_OnRaised.htm" />
   <HelpKINode Title="EventTemplate&lt;TEventArg&gt;.Raise method" Url="html/M_W_EventTemplate_1_Raise.htm" />
+  <HelpKINode Title="EventTemplateDelegate delegate" Url="html/T_W_EventTemplateDelegate.htm" />
+  <HelpKINode Title="EventTemplateDelegate(Of TEventArg) delegate" Url="html/T_W_EventTemplateDelegate_1.htm" />
+  <HelpKINode Title="EventTemplateDelegate(Of TEventArg1, TEventArg2) delegate" Url="html/T_W_EventTemplateDelegate_2.htm" />
+  <HelpKINode Title="EventTemplateDelegate(Of TEventArg1, TEventArg2, TEventArg3) delegate" Url="html/T_W_EventTemplateDelegate_3.htm" />
+  <HelpKINode Title="EventTemplateDelegate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4) delegate" Url="html/T_W_EventTemplateDelegate_4.htm" />
+  <HelpKINode Title="EventTemplateDelegate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5) delegate" Url="html/T_W_EventTemplateDelegate_5.htm" />
+  <HelpKINode Title="EventTemplateDelegate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5&gt; delegate" Url="html/T_W_EventTemplateDelegate_5.htm" />
+  <HelpKINode Title="EventTemplateDelegate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4&gt; delegate" Url="html/T_W_EventTemplateDelegate_4.htm" />
+  <HelpKINode Title="EventTemplateDelegate&lt;TEventArg1, TEventArg2, TEventArg3&gt; delegate" Url="html/T_W_EventTemplateDelegate_3.htm" />
+  <HelpKINode Title="EventTemplateDelegate&lt;TEventArg1, TEventArg2&gt; delegate" Url="html/T_W_EventTemplateDelegate_2.htm" />
+  <HelpKINode Title="EventTemplateDelegate&lt;TEventArg&gt; delegate" Url="html/T_W_EventTemplateDelegate_1.htm" />
   <HelpKINode Title="Exception property">
     <HelpKINode Title="CallResult.Exception Property " Url="html/P_W_CallResult_Exception.htm" />
-    <HelpKINode Title="Thread.Exception Property " Url="html/P_W_Threading_Thread_Exception.htm" />
+    <HelpKINode Title="ParameterizedThread.Exception Property " Url="html/P_W_Threading_ParameterizedThread_Exception.htm" />
   </HelpKINode>
-  <HelpKINode Title="ExecuteInLock method" Url="html/Overload_W_Lockable_1_ExecuteInLock.htm" />
-  <HelpKINode Title="ExecuteInLockAsync method" Url="html/Overload_W_Lockable_1_ExecuteInLockAsync.htm" />
-  <HelpKINode Title="ExecuteOnValueChanged method" Url="html/M_W_PropertyBase_2_ExecuteOnValueChanged.htm" />
-  <HelpKINode Title="ExtensionMethods class">
-    <HelpKINode Title="ExtensionMethods Class" Url="html/T_W_ExtensionMethods.htm" />
-    <HelpKINode Title="about ExtensionMethods class" Url="html/T_W_ExtensionMethods.htm" />
-    <HelpKINode Title="methods" Url="html/Methods_T_W_ExtensionMethods.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ExtensionMethods.Lock(Of TItemType) method" Url="html/M_W_ExtensionMethods_Lock__1.htm" />
-  <HelpKINode Title="ExtensionMethods.Lock&lt;TItemType&gt; method" Url="html/M_W_ExtensionMethods_Lock__1.htm" />
-  <HelpKINode Title="ExtensionMethods.Raise method" Url="html/M_W_ExtensionMethods_Raise.htm" />
-  <HelpKINode Title="ExtensionMethods.WaitForValue(Of TItemType) method" Url="html/M_W_ExtensionMethods_WaitForValue__1.htm" />
-  <HelpKINode Title="ExtensionMethods.WaitForValue&lt;TItemType&gt; method" Url="html/M_W_ExtensionMethods_WaitForValue__1.htm" />
-  <HelpKINode Title="ExtensionMethods.WaitForValueAsync method" Url="html/Overload_W_ExtensionMethods_WaitForValueAsync.htm" />
+  <HelpKINode Title="ExchangeKeys method" Url="html/M_W_Encryption_AssymetricEncryption_ExchangeKeys.htm" />
   <HelpKINode Title="Finalize method">
     <HelpKINode Title="ActionQueue(T).Finalize Method " Url="html/M_W_ActionQueue_1_Finalize.htm" />
-    <HelpKINode Title="Disposable.Finalize Method " Url="html/M_W_Disposable_Finalize.htm" />
-    <HelpKINode Title="PropertyBase(TOwner, TValue).Finalize Method " Url="html/M_W_PropertyBase_2_Finalize.htm" />
+    <HelpKINode Title="ThreadMethod.Finalize Method " Url="html/M_W_Threading_ThreadMethod_Finalize.htm" />
   </HelpKINode>
   <HelpKINode Title="FormatLogMessage method" Url="html/M_W_Logging_CustomLogger_FormatLogMessage.htm" />
-  <HelpKINode Title="FromBase64 method" Url="html/Overload_W_FromExtensions_FromBase64.htm" />
-  <HelpKINode Title="FromCompressed method" Url="html/M_W_FromExtensions_FromCompressed.htm" />
+  <HelpKINode Title="FromBase64 method" Url="html/Overload_W_FromExtensions_FromExtensions_FromBase64.htm" />
+  <HelpKINode Title="FromCompressed method" Url="html/M_W_FromExtensions_FromExtensions_FromCompressed.htm" />
   <HelpKINode Title="FromExtensions class">
-    <HelpKINode Title="FromExtensions Class" Url="html/T_W_FromExtensions.htm" />
-    <HelpKINode Title="about FromExtensions class" Url="html/T_W_FromExtensions.htm" />
-    <HelpKINode Title="methods" Url="html/Methods_T_W_FromExtensions.htm" />
+    <HelpKINode Title="FromExtensions Class" Url="html/T_W_FromExtensions_FromExtensions.htm" />
+    <HelpKINode Title="about FromExtensions class" Url="html/T_W_FromExtensions_FromExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_FromExtensions_FromExtensions.htm" />
   </HelpKINode>
-  <HelpKINode Title="FromExtensions.FromBase64 method" Url="html/Overload_W_FromExtensions_FromBase64.htm" />
-  <HelpKINode Title="FromExtensions.FromCompressed method" Url="html/M_W_FromExtensions_FromCompressed.htm" />
-  <HelpKINode Title="FromExtensions.FromJson method" Url="html/Overload_W_FromExtensions_FromJson.htm" />
-  <HelpKINode Title="FromExtensions.FromXml method" Url="html/Overload_W_FromExtensions_FromXml.htm" />
-  <HelpKINode Title="FromJson method" Url="html/Overload_W_FromExtensions_FromJson.htm" />
-  <HelpKINode Title="FromXml method" Url="html/Overload_W_FromExtensions_FromXml.htm" />
+  <HelpKINode Title="FromExtensions.FromBase64 method" Url="html/Overload_W_FromExtensions_FromExtensions_FromBase64.htm" />
+  <HelpKINode Title="FromExtensions.FromCompressed method" Url="html/M_W_FromExtensions_FromExtensions_FromCompressed.htm" />
+  <HelpKINode Title="FromExtensions.FromJson method" Url="html/Overload_W_FromExtensions_FromExtensions_FromJson.htm" />
+  <HelpKINode Title="FromExtensions.FromXml method" Url="html/Overload_W_FromExtensions_FromExtensions_FromXml.htm" />
+  <HelpKINode Title="FromJson method" Url="html/Overload_W_FromExtensions_FromExtensions_FromJson.htm" />
+  <HelpKINode Title="FromXml method" Url="html/Overload_W_FromExtensions_FromExtensions_FromXml.htm" />
   <HelpKINode Title="Gate class">
     <HelpKINode Title="Gate Class" Url="html/T_W_Threading_Gate.htm" />
     <HelpKINode Title="about Gate class" Url="html/T_W_Threading_Gate.htm" />
@@ -350,33 +409,88 @@
   <HelpKINode Title="Gate&lt;TParameterType&gt;.CallAction method" Url="html/M_W_Threading_Gate_1_CallAction.htm" />
   <HelpKINode Title="Gate&lt;TParameterType&gt;.Gate constructor" Url="html/Overload_W_Threading_Gate_1__ctor.htm" />
   <HelpKINode Title="Gate&lt;TParameterType&gt;.Run method" Url="html/Overload_W_Threading_Gate_1_Run.htm" />
-  <HelpKINode Title="GateMethods class">
-    <HelpKINode Title="GateMethods Class" Url="html/T_W_Threading_GateMethods.htm" />
-    <HelpKINode Title="about GateMethods class" Url="html/T_W_Threading_GateMethods.htm" />
-    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_GateMethods.htm" />
+  <HelpKINode Title="GateExtensions class">
+    <HelpKINode Title="GateExtensions Class" Url="html/T_W_Threading_GateExtensions_GateExtensions.htm" />
+    <HelpKINode Title="about GateExtensions class" Url="html/T_W_Threading_GateExtensions_GateExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_GateExtensions_GateExtensions.htm" />
   </HelpKINode>
-  <HelpKINode Title="GateMethods.AsGate method" Url="html/Overload_W_Threading_GateMethods_AsGate.htm" />
+  <HelpKINode Title="GateExtensions.AsGate method" Url="html/Overload_W_Threading_GateExtensions_GateExtensions_AsGate.htm" />
+  <HelpKINode Title="GenericThreadDelegate delegate" Url="html/T_W_Threading_GenericThreadDelegate.htm" />
   <HelpKINode Title="GetMd5Hash method" Url="html/Overload_W_Encryption_MD5_GetMd5Hash.htm" />
   <HelpKINode Title="GetValue method">
-    <HelpKINode Title="PropertyBase(TOwner, TValue).GetValue Method " Url="html/M_W_PropertyBase_2_GetValue.htm" />
+    <HelpKINode Title="LockableSlim(TValue).GetValue Method " Url="html/M_W_LockableSlim_1_GetValue.htm" />
     <HelpKINode Title="PropertyChangedNotifier.GetValue Method " Url="html/M_W_PropertyChangedNotifier_GetValue.htm" />
   </HelpKINode>
   <HelpKINode Title="i method" Url="html/Overload_W_Logging_Log_i.htm" />
-  <HelpKINode Title="Information enumeration member" Url="html/T_W_Logging_Log_LogMessageCategory.htm" />
-  <HelpKINode Title="InitializeProperties method" Url="html/M_W_PropertyHostMethods_InitializeProperties.htm" />
-  <HelpKINode Title="Instance property" Url="html/P_W_Singleton_1_Instance.htm" />
-  <HelpKINode Title="InvokeEx method" Url="html/Overload_W_InvokeExtensions_InvokeEx.htm" />
-  <HelpKINode Title="InvokeExtensions class">
-    <HelpKINode Title="InvokeExtensions Class" Url="html/T_W_InvokeExtensions.htm" />
-    <HelpKINode Title="about InvokeExtensions class" Url="html/T_W_InvokeExtensions.htm" />
-    <HelpKINode Title="methods" Url="html/Methods_T_W_InvokeExtensions.htm" />
+  <HelpKINode Title="ILocker interface">
+    <HelpKINode Title="ILocker Interface" Url="html/T_W_Threading_Lockers_ILocker.htm" />
+    <HelpKINode Title="about ILocker interface" Url="html/T_W_Threading_Lockers_ILocker.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_ILocker.htm" />
   </HelpKINode>
-  <HelpKINode Title="InvokeExtensions.InvokeEx method" Url="html/Overload_W_InvokeExtensions_InvokeEx.htm" />
+  <HelpKINode Title="ILocker(Of TLocker) interface">
+    <HelpKINode Title="ILocker(TLocker) Interface" Url="html/T_W_Threading_Lockers_ILocker_1.htm" />
+    <HelpKINode Title="about ILocker(Of TLocker) interface" Url="html/T_W_Threading_Lockers_ILocker_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_ILocker_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_ILocker_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ILocker(Of TLocker).Locker property" Url="html/P_W_Threading_Lockers_ILocker_1_Locker.htm" />
+  <HelpKINode Title="ILocker.InLock method" Url="html/Overload_W_Threading_Lockers_ILocker_InLock.htm" />
+  <HelpKINode Title="ILocker.InLockAsync method" Url="html/Overload_W_Threading_Lockers_ILocker_InLockAsync.htm" />
+  <HelpKINode Title="ILocker&lt;TLocker&gt; interface">
+    <HelpKINode Title="ILocker(TLocker) Interface" Url="html/T_W_Threading_Lockers_ILocker_1.htm" />
+    <HelpKINode Title="about ILocker&lt;TLocker&gt; interface" Url="html/T_W_Threading_Lockers_ILocker_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_ILocker_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_ILocker_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ILocker&lt;TLocker&gt;.Locker property" Url="html/P_W_Threading_Lockers_ILocker_1_Locker.htm" />
+  <HelpKINode Title="Information enumeration member" Url="html/T_W_Logging_Log_LogMessageCategory.htm" />
+  <HelpKINode Title="InformWaiters method" Url="html/M_W_Lockable_1_InformWaiters.htm" />
+  <HelpKINode Title="Initialize method" Url="html/M_W_Threading_ThreadMethod_Initialize.htm" />
+  <HelpKINode Title="InitializeProperties method" Url="html/M_W_PropertyHostExtensions_PropertyHostExtensions_InitializeProperties.htm" />
+  <HelpKINode Title="InLock method">
+    <HelpKINode Title="ILocker.InLock Method " Url="html/Overload_W_Threading_Lockers_ILocker_InLock.htm" />
+    <HelpKINode Title="IStateLocker(TLocker, TState).InLock Method " Url="html/Overload_W_Threading_Lockers_IStateLocker_2_InLock.htm" />
+    <HelpKINode Title="MonitorExtensions.InLock Method " Url="html/Overload_W_LockExtensions_MonitorExtensions_InLock.htm" />
+    <HelpKINode Title="MonitorLocker.InLock Method " Url="html/Overload_W_Threading_Lockers_MonitorLocker_InLock.htm" />
+    <HelpKINode Title="ReaderWriterLocker(TState).InLock Method " Url="html/Overload_W_Threading_Lockers_ReaderWriterLocker_1_InLock.htm" />
+    <HelpKINode Title="ReaderWriterLocker.InLock Method " Url="html/Overload_W_Threading_Lockers_ReaderWriterLocker_InLock.htm" />
+    <HelpKINode Title="ReaderWriterLockSlimExtensions.InLock Method " Url="html/Overload_W_LockExtensions_ReaderWriterLockSlimExtensions_InLock.htm" />
+    <HelpKINode Title="SemaphoreSlimExtensions.InLock Method " Url="html/Overload_W_LockExtensions_SemaphoreSlimExtensions_InLock.htm" />
+    <HelpKINode Title="SemaphoreSlimLocker.InLock Method " Url="html/Overload_W_Threading_Lockers_SemaphoreSlimLocker_InLock.htm" />
+    <HelpKINode Title="SpinLocker.InLock Method " Url="html/Overload_W_Threading_Lockers_SpinLocker_InLock.htm" />
+    <HelpKINode Title="SpinLockExtensions.InLock Method " Url="html/Overload_W_LockExtensions_SpinLockExtensions_InLock.htm" />
+    <HelpKINode Title="StateLocker(TLocker, TState).InLock Method " Url="html/Overload_W_Threading_Lockers_StateLocker_2_InLock.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InLockAsync method">
+    <HelpKINode Title="ILocker.InLockAsync Method " Url="html/Overload_W_Threading_Lockers_ILocker_InLockAsync.htm" />
+    <HelpKINode Title="IStateLocker(TLocker, TState).InLockAsync Method " Url="html/Overload_W_Threading_Lockers_IStateLocker_2_InLockAsync.htm" />
+    <HelpKINode Title="MonitorExtensions.InLockAsync Method " Url="html/Overload_W_LockExtensions_MonitorExtensions_InLockAsync.htm" />
+    <HelpKINode Title="MonitorLocker.InLockAsync Method " Url="html/Overload_W_Threading_Lockers_MonitorLocker_InLockAsync.htm" />
+    <HelpKINode Title="ReaderWriterLocker(TState).InLockAsync Method " Url="html/Overload_W_Threading_Lockers_ReaderWriterLocker_1_InLockAsync.htm" />
+    <HelpKINode Title="ReaderWriterLocker.InLockAsync Method " Url="html/Overload_W_Threading_Lockers_ReaderWriterLocker_InLockAsync.htm" />
+    <HelpKINode Title="ReaderWriterLockSlimExtensions.InLockAsync Method " Url="html/Overload_W_LockExtensions_ReaderWriterLockSlimExtensions_InLockAsync.htm" />
+    <HelpKINode Title="SemaphoreSlimExtensions.InLockAsync Method " Url="html/Overload_W_LockExtensions_SemaphoreSlimExtensions_InLockAsync.htm" />
+    <HelpKINode Title="SemaphoreSlimLocker.InLockAsync Method " Url="html/Overload_W_Threading_Lockers_SemaphoreSlimLocker_InLockAsync.htm" />
+    <HelpKINode Title="SpinLocker.InLockAsync Method " Url="html/Overload_W_Threading_Lockers_SpinLocker_InLockAsync.htm" />
+    <HelpKINode Title="SpinLockExtensions.InLockAsync Method " Url="html/Overload_W_LockExtensions_SpinLockExtensions_InLockAsync.htm" />
+    <HelpKINode Title="StateLocker(TLocker, TState).InLockAsync Method " Url="html/Overload_W_Threading_Lockers_StateLocker_2_InLockAsync.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Insert(Of T) method" Url="html/M_W_ArrayMethods_Insert__1.htm" />
+  <HelpKINode Title="Insert&lt;T&gt; method" Url="html/M_W_ArrayMethods_Insert__1.htm" />
+  <HelpKINode Title="Instance property" Url="html/P_W_Singleton_1_Instance.htm" />
+  <HelpKINode Title="InvokeEx method" Url="html/Overload_W_InvokeExtensions_InvokeExtensions_InvokeEx.htm" />
+  <HelpKINode Title="InvokeExtensions class">
+    <HelpKINode Title="InvokeExtensions Class" Url="html/T_W_InvokeExtensions_InvokeExtensions.htm" />
+    <HelpKINode Title="about InvokeExtensions class" Url="html/T_W_InvokeExtensions_InvokeExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_InvokeExtensions_InvokeExtensions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InvokeExtensions.InvokeEx method" Url="html/Overload_W_InvokeExtensions_InvokeExtensions_InvokeEx.htm" />
   <HelpKINode Title="IOwnedProperty interface">
     <HelpKINode Title="IOwnedProperty Interface" Url="html/T_W_IOwnedProperty.htm" />
     <HelpKINode Title="about IOwnedProperty interface" Url="html/T_W_IOwnedProperty.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_IOwnedProperty.htm" />
   </HelpKINode>
+  <HelpKINode Title="IOwnedProperty.SetOwner explicitly implemented method" Url="html/M_W_Property_2_W_IOwnedProperty_SetOwner.htm" />
   <HelpKINode Title="IOwnedProperty.SetOwner method" Url="html/M_W_IOwnedProperty_SetOwner.htm" />
   <HelpKINode Title="IProperty interface">
     <HelpKINode Title="IProperty Interface" Url="html/T_W_IProperty.htm" />
@@ -398,9 +512,11 @@
   <HelpKINode Title="IProperty&lt;TValue&gt;.Value property" Url="html/P_W_IProperty_1_Value.htm" />
   <HelpKINode Title="IsComplete property">
     <HelpKINode Title="Gate.IsComplete Property " Url="html/P_W_Threading_Gate_IsComplete.htm" />
-    <HelpKINode Title="Thread.IsComplete Property " Url="html/P_W_Threading_Thread_IsComplete.htm" />
+    <HelpKINode Title="ParameterizedThread.IsComplete Property " Url="html/P_W_Threading_ParameterizedThread_IsComplete.htm" />
+    <HelpKINode Title="ThreadMethod.IsComplete Property " Url="html/P_W_Threading_ThreadMethod_IsComplete.htm" />
+    <HelpKINode Title="ThreadSlim.IsComplete Property " Url="html/P_W_Threading_ThreadSlim_IsComplete.htm" />
   </HelpKINode>
-  <HelpKINode Title="IsDirty method" Url="html/M_W_PropertyHostMethods_IsDirty.htm" />
+  <HelpKINode Title="IsDirty method" Url="html/M_W_PropertyHostExtensions_PropertyHostExtensions_IsDirty.htm" />
   <HelpKINode Title="IsDirty property">
     <HelpKINode Title="IProperty.IsDirty Property " Url="html/P_W_IProperty_IsDirty.htm" />
     <HelpKINode Title="PropertyBase(TOwner, TValue).IsDirty Property " Url="html/P_W_PropertyBase_2_IsDirty.htm" />
@@ -408,50 +524,115 @@
     <HelpKINode Title="PropertyHostNotifier.IsDirty Property " Url="html/P_W_PropertyHostNotifier_IsDirty.htm" />
   </HelpKINode>
   <HelpKINode Title="IsDisposed field" Url="html/F_W_Disposable_IsDisposed.htm" />
-  <HelpKINode Title="IsDisposed property" Url="html/P_W_Logging_CustomLogger_IsDisposed.htm" />
+  <HelpKINode Title="IsDisposed property">
+    <HelpKINode Title="CustomLogger.IsDisposed Property " Url="html/P_W_Logging_CustomLogger_IsDisposed.htm" />
+    <HelpKINode Title="Disposer.IsDisposed Property " Url="html/P_W_Disposer_IsDisposed.htm" />
+  </HelpKINode>
   <HelpKINode Title="IsDisposing field" Url="html/F_W_Disposable_IsDisposing.htm" />
-  <HelpKINode Title="IsFaulted property" Url="html/P_W_Threading_Thread_IsFaulted.htm" />
+  <HelpKINode Title="IsFaulted property" Url="html/P_W_Threading_ParameterizedThread_IsFaulted.htm" />
   <HelpKINode Title="IsRunning property">
     <HelpKINode Title="Gate.IsRunning Property " Url="html/P_W_Threading_Gate_IsRunning.htm" />
-    <HelpKINode Title="Thread.IsRunning Property " Url="html/P_W_Threading_Thread_IsRunning.htm" />
+    <HelpKINode Title="ThreadMethod.IsRunning Property " Url="html/P_W_Threading_ThreadMethod_IsRunning.htm" />
+    <HelpKINode Title="ThreadSlim.IsRunning Property " Url="html/P_W_Threading_ThreadSlim_IsRunning.htm" />
   </HelpKINode>
-  <HelpKINode Title="IsStarted property" Url="html/P_W_Threading_Thread_IsStarted.htm" />
-  <HelpKINode Title="IsValidBase64 method" Url="html/M_W_StringExtensions_IsValidBase64.htm" />
+  <HelpKINode Title="IsStarted property">
+    <HelpKINode Title="ParameterizedThread.IsStarted Property " Url="html/P_W_Threading_ParameterizedThread_IsStarted.htm" />
+    <HelpKINode Title="ThreadMethod.IsStarted Property " Url="html/P_W_Threading_ThreadMethod_IsStarted.htm" />
+    <HelpKINode Title="ThreadSlim.IsStarted Property " Url="html/P_W_Threading_ThreadSlim_IsStarted.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IStateLocker(Of TLocker, TState) interface">
+    <HelpKINode Title="IStateLocker(TLocker, TState) Interface" Url="html/T_W_Threading_Lockers_IStateLocker_2.htm" />
+    <HelpKINode Title="about IStateLocker(Of TLocker, TState) interface" Url="html/T_W_Threading_Lockers_IStateLocker_2.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_IStateLocker_2.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_IStateLocker_2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IStateLocker(Of TLocker, TState).InLock method" Url="html/Overload_W_Threading_Lockers_IStateLocker_2_InLock.htm" />
+  <HelpKINode Title="IStateLocker(Of TLocker, TState).InLockAsync method" Url="html/Overload_W_Threading_Lockers_IStateLocker_2_InLockAsync.htm" />
+  <HelpKINode Title="IStateLocker&lt;TLocker, TState&gt; interface">
+    <HelpKINode Title="IStateLocker(TLocker, TState) Interface" Url="html/T_W_Threading_Lockers_IStateLocker_2.htm" />
+    <HelpKINode Title="about IStateLocker&lt;TLocker, TState&gt; interface" Url="html/T_W_Threading_Lockers_IStateLocker_2.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_IStateLocker_2.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_IStateLocker_2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IStateLocker&lt;TLocker, TState&gt;.InLock method" Url="html/Overload_W_Threading_Lockers_IStateLocker_2_InLock.htm" />
+  <HelpKINode Title="IStateLocker&lt;TLocker, TState&gt;.InLockAsync method" Url="html/Overload_W_Threading_Lockers_IStateLocker_2_InLockAsync.htm" />
+  <HelpKINode Title="IsValidBase64 method" Url="html/M_W_StringExtensions_StringExtensions_IsValidBase64.htm" />
   <HelpKINode Title="Join method">
     <HelpKINode Title="Gate.Join Method " Url="html/Overload_W_Threading_Gate_Join.htm" />
+    <HelpKINode Title="ParameterizedThread.Join Method " Url="html/Overload_W_Threading_ParameterizedThread_Join.htm" />
     <HelpKINode Title="Thread.Join Method " Url="html/Overload_W_Threading_Thread_Join.htm" />
   </HelpKINode>
   <HelpKINode Title="LegalKeySizes method" Url="html/M_W_Encryption_RSAMethods_LegalKeySizes.htm" />
+  <HelpKINode Title="LegalKeySizes property" Url="html/P_W_Encryption_AssymetricEncryption_LegalKeySizes.htm" />
   <HelpKINode Title="LoadValue method" Url="html/M_W_PropertyBase_2_LoadValue.htm" />
-  <HelpKINode Title="Lock(Of TItemType) method" Url="html/M_W_ExtensionMethods_Lock__1.htm" />
-  <HelpKINode Title="Lock&lt;TItemType&gt; method" Url="html/M_W_ExtensionMethods_Lock__1.htm" />
+  <HelpKINode Title="Lock method" Url="html/M_W_LockExtensions_ReaderWriterLockSlimExtensions_Lock.htm" />
   <HelpKINode Title="Lockable(Of TValue) class">
     <HelpKINode Title="Lockable(TValue) Class" Url="html/T_W_Lockable_1.htm" />
     <HelpKINode Title="about Lockable(Of TValue) class" Url="html/T_W_Lockable_1.htm" />
     <HelpKINode Title="constructor" Url="html/Overload_W_Lockable_1__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_W_Lockable_1.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_Lockable_1.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_Lockable_1.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_W_Lockable_1.htm" />
   </HelpKINode>
-  <HelpKINode Title="Lockable(Of TValue).ExecuteInLock method" Url="html/Overload_W_Lockable_1_ExecuteInLock.htm" />
-  <HelpKINode Title="Lockable(Of TValue).ExecuteInLockAsync method" Url="html/Overload_W_Lockable_1_ExecuteInLockAsync.htm" />
+  <HelpKINode Title="Lockable(Of TValue).Dispose method" Url="html/M_W_Lockable_1_Dispose.htm" />
+  <HelpKINode Title="Lockable(Of TValue).InformWaiters method" Url="html/M_W_Lockable_1_InformWaiters.htm" />
   <HelpKINode Title="Lockable(Of TValue).Lockable constructor" Url="html/Overload_W_Lockable_1__ctor.htm" />
-  <HelpKINode Title="Lockable(Of TValue).LockObject property" Url="html/P_W_Lockable_1_LockObject.htm" />
-  <HelpKINode Title="Lockable(Of TValue).UnlockedValue property" Url="html/P_W_Lockable_1_UnlockedValue.htm" />
-  <HelpKINode Title="Lockable(Of TValue).Value property" Url="html/P_W_Lockable_1_Value.htm" />
+  <HelpKINode Title="Lockable(Of TValue).OnValueChanged method" Url="html/M_W_Lockable_1_OnValueChanged.htm" />
+  <HelpKINode Title="Lockable(Of TValue).RaiseValueChanged method" Url="html/M_W_Lockable_1_RaiseValueChanged.htm" />
+  <HelpKINode Title="Lockable(Of TValue).SetValue method" Url="html/M_W_Lockable_1_SetValue.htm" />
+  <HelpKINode Title="Lockable(Of TValue).ValueChanged event" Url="html/E_W_Lockable_1_ValueChanged.htm" />
+  <HelpKINode Title="Lockable(Of TValue).WaitForValueChanged method" Url="html/M_W_Lockable_1_WaitForValueChanged.htm" />
   <HelpKINode Title="Lockable&lt;TValue&gt; class">
     <HelpKINode Title="Lockable(TValue) Class" Url="html/T_W_Lockable_1.htm" />
     <HelpKINode Title="about Lockable&lt;TValue&gt; class" Url="html/T_W_Lockable_1.htm" />
     <HelpKINode Title="constructor" Url="html/Overload_W_Lockable_1__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_W_Lockable_1.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_Lockable_1.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_Lockable_1.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_W_Lockable_1.htm" />
   </HelpKINode>
-  <HelpKINode Title="Lockable&lt;TValue&gt;.ExecuteInLock method" Url="html/Overload_W_Lockable_1_ExecuteInLock.htm" />
-  <HelpKINode Title="Lockable&lt;TValue&gt;.ExecuteInLockAsync method" Url="html/Overload_W_Lockable_1_ExecuteInLockAsync.htm" />
+  <HelpKINode Title="Lockable&lt;TValue&gt;.Dispose method" Url="html/M_W_Lockable_1_Dispose.htm" />
+  <HelpKINode Title="Lockable&lt;TValue&gt;.InformWaiters method" Url="html/M_W_Lockable_1_InformWaiters.htm" />
   <HelpKINode Title="Lockable&lt;TValue&gt;.Lockable constructor" Url="html/Overload_W_Lockable_1__ctor.htm" />
-  <HelpKINode Title="Lockable&lt;TValue&gt;.LockObject property" Url="html/P_W_Lockable_1_LockObject.htm" />
-  <HelpKINode Title="Lockable&lt;TValue&gt;.UnlockedValue property" Url="html/P_W_Lockable_1_UnlockedValue.htm" />
-  <HelpKINode Title="Lockable&lt;TValue&gt;.Value property" Url="html/P_W_Lockable_1_Value.htm" />
-  <HelpKINode Title="LockObject property" Url="html/P_W_Lockable_1_LockObject.htm" />
+  <HelpKINode Title="Lockable&lt;TValue&gt;.OnValueChanged method" Url="html/M_W_Lockable_1_OnValueChanged.htm" />
+  <HelpKINode Title="Lockable&lt;TValue&gt;.RaiseValueChanged method" Url="html/M_W_Lockable_1_RaiseValueChanged.htm" />
+  <HelpKINode Title="Lockable&lt;TValue&gt;.SetValue method" Url="html/M_W_Lockable_1_SetValue.htm" />
+  <HelpKINode Title="Lockable&lt;TValue&gt;.ValueChanged event" Url="html/E_W_Lockable_1_ValueChanged.htm" />
+  <HelpKINode Title="Lockable&lt;TValue&gt;.WaitForValueChanged method" Url="html/M_W_Lockable_1_WaitForValueChanged.htm" />
+  <HelpKINode Title="LockableSlim(Of TValue) class">
+    <HelpKINode Title="LockableSlim(TValue) Class" Url="html/T_W_LockableSlim_1.htm" />
+    <HelpKINode Title="about LockableSlim(Of TValue) class" Url="html/T_W_LockableSlim_1.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_W_LockableSlim_1__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_LockableSlim_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_LockableSlim_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_LockableSlim_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LockableSlim(Of TValue).GetValue method" Url="html/M_W_LockableSlim_1_GetValue.htm" />
+  <HelpKINode Title="LockableSlim(Of TValue).LockableSlim constructor" Url="html/Overload_W_LockableSlim_1__ctor.htm" />
+  <HelpKINode Title="LockableSlim(Of TValue).SetValue method" Url="html/M_W_LockableSlim_1_SetValue.htm" />
+  <HelpKINode Title="LockableSlim(Of TValue).Value property" Url="html/P_W_LockableSlim_1_Value.htm" />
+  <HelpKINode Title="LockableSlim&lt;TValue&gt; class">
+    <HelpKINode Title="LockableSlim(TValue) Class" Url="html/T_W_LockableSlim_1.htm" />
+    <HelpKINode Title="about LockableSlim&lt;TValue&gt; class" Url="html/T_W_LockableSlim_1.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_W_LockableSlim_1__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_LockableSlim_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_LockableSlim_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_LockableSlim_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LockableSlim&lt;TValue&gt;.GetValue method" Url="html/M_W_LockableSlim_1_GetValue.htm" />
+  <HelpKINode Title="LockableSlim&lt;TValue&gt;.LockableSlim constructor" Url="html/Overload_W_LockableSlim_1__ctor.htm" />
+  <HelpKINode Title="LockableSlim&lt;TValue&gt;.SetValue method" Url="html/M_W_LockableSlim_1_SetValue.htm" />
+  <HelpKINode Title="LockableSlim&lt;TValue&gt;.Value property" Url="html/P_W_LockableSlim_1_Value.htm" />
+  <HelpKINode Title="Locker property">
+    <HelpKINode Title="ILocker(TLocker).Locker Property " Url="html/P_W_Threading_Lockers_ILocker_1_Locker.htm" />
+    <HelpKINode Title="MonitorLocker.Locker Property " Url="html/P_W_Threading_Lockers_MonitorLocker_Locker.htm" />
+    <HelpKINode Title="ReaderWriterLocker.Locker Property " Url="html/P_W_Threading_Lockers_ReaderWriterLocker_Locker.htm" />
+    <HelpKINode Title="SemaphoreSlimLocker.Locker Property " Url="html/P_W_Threading_Lockers_SemaphoreSlimLocker_Locker.htm" />
+    <HelpKINode Title="SpinLocker.Locker Property " Url="html/P_W_Threading_Lockers_SpinLocker_Locker.htm" />
+    <HelpKINode Title="StateLocker(TLocker, TState).Locker Property " Url="html/P_W_Threading_Lockers_StateLocker_2_Locker.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LockTypeEnum enumeration" Url="html/T_W_Threading_Lockers_LockTypeEnum.htm" />
   <HelpKINode Title="Log class">
     <HelpKINode Title="Log Class" Url="html/T_W_Logging_Log.htm" />
     <HelpKINode Title="about Log class" Url="html/T_W_Logging_Log.htm" />
@@ -494,7 +675,7 @@
   <HelpKINode Title="LogTheMessage property" Url="html/P_W_Logging_Log_LogTheMessage.htm" />
   <HelpKINode Title="MarkAsClean method">
     <HelpKINode Title="PropertyHost.MarkAsClean Method " Url="html/M_W_PropertyHost_MarkAsClean.htm" />
-    <HelpKINode Title="PropertyHostMethods.MarkAsClean Method " Url="html/M_W_PropertyHostMethods_MarkAsClean.htm" />
+    <HelpKINode Title="PropertyHostExtensions.MarkAsClean Method " Url="html/M_W_PropertyHostExtensions_PropertyHostExtensions_MarkAsClean.htm" />
     <HelpKINode Title="PropertyHostNotifier.MarkAsClean Method " Url="html/M_W_PropertyHostNotifier_MarkAsClean.htm" />
   </HelpKINode>
   <HelpKINode Title="MaximumNumberOfMessages property" Url="html/P_W_Logging_Log_LogMessageHistory_MaximumNumberOfMessages.htm" />
@@ -510,15 +691,61 @@
   <HelpKINode Title="Message property" Url="html/P_W_Logging_Log_LogMessageHistory_LogMessage_Message.htm" />
   <HelpKINode Title="MessageHistory property" Url="html/P_W_Logging_Log_MessageHistory.htm" />
   <HelpKINode Title="Messages property" Url="html/P_W_Logging_Log_LogMessageHistory_Messages.htm" />
-  <HelpKINode Title="Name property" Url="html/P_W_Logging_CustomLogger_Name.htm" />
+  <HelpKINode Title="MonitorExtensions class">
+    <HelpKINode Title="MonitorExtensions Class" Url="html/T_W_LockExtensions_MonitorExtensions.htm" />
+    <HelpKINode Title="about MonitorExtensions class" Url="html/T_W_LockExtensions_MonitorExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_LockExtensions_MonitorExtensions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MonitorExtensions.InLock method" Url="html/Overload_W_LockExtensions_MonitorExtensions_InLock.htm" />
+  <HelpKINode Title="MonitorExtensions.InLockAsync method" Url="html/Overload_W_LockExtensions_MonitorExtensions_InLockAsync.htm" />
+  <HelpKINode Title="MonitorLocker class">
+    <HelpKINode Title="MonitorLocker Class" Url="html/T_W_Threading_Lockers_MonitorLocker.htm" />
+    <HelpKINode Title="about MonitorLocker class" Url="html/T_W_Threading_Lockers_MonitorLocker.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Threading_Lockers_MonitorLocker__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_MonitorLocker.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_MonitorLocker.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MonitorLocker(Of TState) class">
+    <HelpKINode Title="MonitorLocker(TState) Class" Url="html/T_W_Threading_Lockers_MonitorLocker_1.htm" />
+    <HelpKINode Title="about MonitorLocker(Of TState) class" Url="html/T_W_Threading_Lockers_MonitorLocker_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Threading_Lockers_MonitorLocker_1__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_Threading_Lockers_MonitorLocker_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_MonitorLocker_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_MonitorLocker_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MonitorLocker(Of TState).MonitorLocker constructor" Url="html/M_W_Threading_Lockers_MonitorLocker_1__ctor.htm" />
+  <HelpKINode Title="MonitorLocker.InLock method" Url="html/Overload_W_Threading_Lockers_MonitorLocker_InLock.htm" />
+  <HelpKINode Title="MonitorLocker.InLockAsync method" Url="html/Overload_W_Threading_Lockers_MonitorLocker_InLockAsync.htm" />
+  <HelpKINode Title="MonitorLocker.Locker property" Url="html/P_W_Threading_Lockers_MonitorLocker_Locker.htm" />
+  <HelpKINode Title="MonitorLocker.MonitorLocker constructor" Url="html/M_W_Threading_Lockers_MonitorLocker__ctor.htm" />
+  <HelpKINode Title="MonitorLocker&lt;TState&gt; class">
+    <HelpKINode Title="MonitorLocker(TState) Class" Url="html/T_W_Threading_Lockers_MonitorLocker_1.htm" />
+    <HelpKINode Title="about MonitorLocker&lt;TState&gt; class" Url="html/T_W_Threading_Lockers_MonitorLocker_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Threading_Lockers_MonitorLocker_1__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_Threading_Lockers_MonitorLocker_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_MonitorLocker_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_MonitorLocker_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MonitorLocker&lt;TState&gt;.MonitorLocker constructor" Url="html/M_W_Threading_Lockers_MonitorLocker_1__ctor.htm" />
+  <HelpKINode Title="Name property">
+    <HelpKINode Title="CustomLogger.Name Property " Url="html/P_W_Logging_CustomLogger_Name.htm" />
+    <HelpKINode Title="ThreadMethod.Name Property " Url="html/P_W_Threading_ThreadMethod_Name.htm" />
+    <HelpKINode Title="ThreadSlim.Name Property " Url="html/P_W_Threading_ThreadSlim_Name.htm" />
+  </HelpKINode>
   <HelpKINode Title="OnDispose method">
     <HelpKINode Title="CustomLogger.OnDispose Method " Url="html/M_W_Logging_CustomLogger_OnDispose.htm" />
     <HelpKINode Title="Disposable.OnDispose Method " Url="html/M_W_Disposable_OnDispose.htm" />
+    <HelpKINode Title="ParameterizedThread.OnDispose Method " Url="html/M_W_Threading_ParameterizedThread_OnDispose.htm" />
   </HelpKINode>
   <HelpKINode Title="OnDisposeUnmanaged method" Url="html/M_W_Disposable_OnDisposeUnmanaged.htm" />
   <HelpKINode Title="OnPropertyChanged method">
     <HelpKINode Title="PropertyBase(TOwner, TValue).OnPropertyChanged Method " Url="html/M_W_PropertyBase_2_OnPropertyChanged.htm" />
     <HelpKINode Title="PropertyChangedNotifier.OnPropertyChanged Method " Url="html/M_W_PropertyChangedNotifier_OnPropertyChanged.htm" />
+    <HelpKINode Title="PropertySlim(TValue).OnPropertyChanged Method " Url="html/M_W_PropertySlim_1_OnPropertyChanged.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OnPropertyChanging method">
+    <HelpKINode Title="PropertyBase(TOwner, TValue).OnPropertyChanging Method " Url="html/M_W_PropertyBase_2_OnPropertyChanging.htm" />
+    <HelpKINode Title="PropertySlim(TValue).OnPropertyChanging Method " Url="html/M_W_PropertySlim_1_OnPropertyChanging.htm" />
   </HelpKINode>
   <HelpKINode Title="OnRaised event">
     <HelpKINode Title="EventTemplate(TEventArg).OnRaised Event" Url="html/E_W_EventTemplate_1_OnRaised.htm" />
@@ -528,8 +755,37 @@
     <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5).OnRaised Event" Url="html/E_W_EventTemplate_5_OnRaised.htm" />
     <HelpKINode Title="EventTemplate.OnRaised Event" Url="html/E_W_EventTemplate_OnRaised.htm" />
   </HelpKINode>
-  <HelpKINode Title="OnValueChanged field" Url="html/F_W_PropertyBase_2_OnValueChanged.htm" />
+  <HelpKINode Title="OnValueChanged method">
+    <HelpKINode Title="Lockable(TValue).OnValueChanged Method " Url="html/M_W_Lockable_1_OnValueChanged.htm" />
+    <HelpKINode Title="PropertyBase(TOwner, TValue).OnValueChanged Method " Url="html/M_W_PropertyBase_2_OnValueChanged.htm" />
+  </HelpKINode>
   <HelpKINode Title="Owner property" Url="html/P_W_PropertyBase_2_Owner.htm" />
+  <HelpKINode Title="ParameterizedThread class">
+    <HelpKINode Title="ParameterizedThread Class" Url="html/T_W_Threading_ParameterizedThread.htm" />
+    <HelpKINode Title="about ParameterizedThread class" Url="html/T_W_Threading_ParameterizedThread.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Threading_ParameterizedThread__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_Threading_ParameterizedThread.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_ParameterizedThread.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_ParameterizedThread.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ParameterizedThread.Create method" Url="html/M_W_Threading_ParameterizedThread_Create.htm" />
+  <HelpKINode Title="ParameterizedThread.Exception property" Url="html/P_W_Threading_ParameterizedThread_Exception.htm" />
+  <HelpKINode Title="ParameterizedThread.IsComplete property" Url="html/P_W_Threading_ParameterizedThread_IsComplete.htm" />
+  <HelpKINode Title="ParameterizedThread.IsFaulted property" Url="html/P_W_Threading_ParameterizedThread_IsFaulted.htm" />
+  <HelpKINode Title="ParameterizedThread.IsStarted property" Url="html/P_W_Threading_ParameterizedThread_IsStarted.htm" />
+  <HelpKINode Title="ParameterizedThread.Join method" Url="html/Overload_W_Threading_ParameterizedThread_Join.htm" />
+  <HelpKINode Title="ParameterizedThread.OnDispose method" Url="html/M_W_Threading_ParameterizedThread_OnDispose.htm" />
+  <HelpKINode Title="ParameterizedThread.ParameterizedThread constructor" Url="html/M_W_Threading_ParameterizedThread__ctor.htm" />
+  <HelpKINode Title="ParameterizedThread.Start method" Url="html/Overload_W_Threading_ParameterizedThread_Start.htm" />
+  <HelpKINode Title="ParameterizedThread.Stop method" Url="html/M_W_Threading_ParameterizedThread_Stop.htm" />
+  <HelpKINode Title="ParameterizedThread.Task property" Url="html/P_W_Threading_ParameterizedThread_Task.htm" />
+  <HelpKINode Title="ParameterizedThread.Token property" Url="html/P_W_Threading_ParameterizedThread_Token.htm" />
+  <HelpKINode Title="Peek(Of T) method" Url="html/M_W_ArrayMethods_Peek__1.htm" />
+  <HelpKINode Title="Peek&lt;T&gt; method" Url="html/M_W_ArrayMethods_Peek__1.htm" />
+  <HelpKINode Title="PeekEnd(Of T) method" Url="html/M_W_ArrayMethods_PeekEnd__1.htm" />
+  <HelpKINode Title="PeekEnd&lt;T&gt; method" Url="html/M_W_ArrayMethods_PeekEnd__1.htm" />
+  <HelpKINode Title="PeekStart(Of T) method" Url="html/M_W_ArrayMethods_PeekStart__1.htm" />
+  <HelpKINode Title="PeekStart&lt;T&gt; method" Url="html/M_W_ArrayMethods_PeekStart__1.htm" />
   <HelpKINode Title="PrivateKey property" Url="html/P_W_Encryption_PublicPrivateKeyPair_PrivateKey.htm" />
   <HelpKINode Title="Property(Of TOwner, TValue) class">
     <HelpKINode Title="Property(TOwner, TValue) Class" Url="html/T_W_Property_2.htm" />
@@ -540,6 +796,7 @@
     <HelpKINode Title="methods" Url="html/Methods_T_W_Property_2.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_W_Property_2.htm" />
   </HelpKINode>
+  <HelpKINode Title="Property(Of TOwner, TValue).IOwnedProperty.SetOwner explicitly implemented method" Url="html/M_W_Property_2_W_IOwnedProperty_SetOwner.htm" />
   <HelpKINode Title="Property(Of TOwner, TValue).Property constructor" Url="html/Overload_W_Property_2__ctor.htm" />
   <HelpKINode Title="Property(Of TValue) class">
     <HelpKINode Title="Property(TValue) Class" Url="html/T_W_Property_1.htm" />
@@ -560,6 +817,7 @@
     <HelpKINode Title="methods" Url="html/Methods_T_W_Property_2.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_W_Property_2.htm" />
   </HelpKINode>
+  <HelpKINode Title="Property&lt;TOwner, TValue&gt;.IOwnedProperty.SetOwner explicitly implemented method" Url="html/M_W_Property_2_W_IOwnedProperty_SetOwner.htm" />
   <HelpKINode Title="Property&lt;TOwner, TValue&gt;.Property constructor" Url="html/Overload_W_Property_2__ctor.htm" />
   <HelpKINode Title="Property&lt;TValue&gt; class">
     <HelpKINode Title="Property(TValue) Class" Url="html/T_W_Property_1.htm" />
@@ -574,66 +832,43 @@
   <HelpKINode Title="PropertyBase(Of TOwner, TValue) class">
     <HelpKINode Title="PropertyBase(TOwner, TValue) Class" Url="html/T_W_PropertyBase_2.htm" />
     <HelpKINode Title="about PropertyBase(Of TOwner, TValue) class" Url="html/T_W_PropertyBase_2.htm" />
-    <HelpKINode Title="constructor" Url="html/M_W_PropertyBase_2__ctor.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_W_PropertyBase_2__ctor.htm" />
     <HelpKINode Title="events" Url="html/Events_T_W_PropertyBase_2.htm" />
     <HelpKINode Title="fields" Url="html/Fields_T_W_PropertyBase_2.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_PropertyBase_2.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_W_PropertyBase_2.htm" />
   </HelpKINode>
   <HelpKINode Title="PropertyBase(Of TOwner, TValue).DefaultValue property" Url="html/P_W_PropertyBase_2_DefaultValue.htm" />
-  <HelpKINode Title="PropertyBase(Of TOwner, TValue).Dispose method" Url="html/M_W_PropertyBase_2_Dispose.htm" />
-  <HelpKINode Title="PropertyBase(Of TOwner, TValue).ExecuteOnValueChanged method" Url="html/M_W_PropertyBase_2_ExecuteOnValueChanged.htm" />
-  <HelpKINode Title="PropertyBase(Of TOwner, TValue).Finalize method" Url="html/M_W_PropertyBase_2_Finalize.htm" />
-  <HelpKINode Title="PropertyBase(Of TOwner, TValue).GetValue method" Url="html/M_W_PropertyBase_2_GetValue.htm" />
   <HelpKINode Title="PropertyBase(Of TOwner, TValue).IsDirty property" Url="html/P_W_PropertyBase_2_IsDirty.htm" />
   <HelpKINode Title="PropertyBase(Of TOwner, TValue).LoadValue method" Url="html/M_W_PropertyBase_2_LoadValue.htm" />
   <HelpKINode Title="PropertyBase(Of TOwner, TValue).OnPropertyChanged method" Url="html/M_W_PropertyBase_2_OnPropertyChanged.htm" />
-  <HelpKINode Title="PropertyBase(Of TOwner, TValue).OnValueChanged field" Url="html/F_W_PropertyBase_2_OnValueChanged.htm" />
-  <HelpKINode Title="PropertyBase(Of TOwner, TValue).OnValueChangedDelegate delegate" Url="html/T_W_PropertyBase_2_OnValueChangedDelegate.htm" />
+  <HelpKINode Title="PropertyBase(Of TOwner, TValue).OnPropertyChanging method" Url="html/M_W_PropertyBase_2_OnPropertyChanging.htm" />
+  <HelpKINode Title="PropertyBase(Of TOwner, TValue).OnValueChanged method" Url="html/M_W_PropertyBase_2_OnValueChanged.htm" />
   <HelpKINode Title="PropertyBase(Of TOwner, TValue).Owner property" Url="html/P_W_PropertyBase_2_Owner.htm" />
-  <HelpKINode Title="PropertyBase(Of TOwner, TValue).PropertyBase constructor" Url="html/M_W_PropertyBase_2__ctor.htm" />
-  <HelpKINode Title="PropertyBase(Of TOwner, TValue).PropertyValueChangedDelegate delegate" Url="html/T_W_PropertyBase_2_PropertyValueChangedDelegate.htm" />
-  <HelpKINode Title="PropertyBase(Of TOwner, TValue).PropertyValueChangingDelegate delegate" Url="html/T_W_PropertyBase_2_PropertyValueChangingDelegate.htm" />
-  <HelpKINode Title="PropertyBase(Of TOwner, TValue).RaisePropertyValueChanged method" Url="html/M_W_PropertyBase_2_RaisePropertyValueChanged.htm" />
-  <HelpKINode Title="PropertyBase(Of TOwner, TValue).RaisePropertyValueChanging method" Url="html/M_W_PropertyBase_2_RaisePropertyValueChanging.htm" />
+  <HelpKINode Title="PropertyBase(Of TOwner, TValue).PropertyBase constructor" Url="html/Overload_W_PropertyBase_2__ctor.htm" />
   <HelpKINode Title="PropertyBase(Of TOwner, TValue).ResetToDefaultValue method" Url="html/M_W_PropertyBase_2_ResetToDefaultValue.htm" />
-  <HelpKINode Title="PropertyBase(Of TOwner, TValue).SetValue method" Url="html/M_W_PropertyBase_2_SetValue.htm" />
-  <HelpKINode Title="PropertyBase(Of TOwner, TValue).Value property" Url="html/P_W_PropertyBase_2_Value.htm" />
-  <HelpKINode Title="PropertyBase(Of TOwner, TValue).ValueChanged event" Url="html/E_W_PropertyBase_2_ValueChanged.htm" />
-  <HelpKINode Title="PropertyBase(Of TOwner, TValue).ValueChanging event" Url="html/E_W_PropertyBase_2_ValueChanging.htm" />
-  <HelpKINode Title="PropertyBase(Of TOwner, TValue).WaitForChanged method" Url="html/M_W_PropertyBase_2_WaitForChanged.htm" />
   <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt; class">
     <HelpKINode Title="PropertyBase(TOwner, TValue) Class" Url="html/T_W_PropertyBase_2.htm" />
     <HelpKINode Title="about PropertyBase&lt;TOwner, TValue&gt; class" Url="html/T_W_PropertyBase_2.htm" />
-    <HelpKINode Title="constructor" Url="html/M_W_PropertyBase_2__ctor.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_W_PropertyBase_2__ctor.htm" />
     <HelpKINode Title="events" Url="html/Events_T_W_PropertyBase_2.htm" />
     <HelpKINode Title="fields" Url="html/Fields_T_W_PropertyBase_2.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_PropertyBase_2.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_W_PropertyBase_2.htm" />
   </HelpKINode>
   <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.DefaultValue property" Url="html/P_W_PropertyBase_2_DefaultValue.htm" />
-  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.Dispose method" Url="html/M_W_PropertyBase_2_Dispose.htm" />
-  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.ExecuteOnValueChanged method" Url="html/M_W_PropertyBase_2_ExecuteOnValueChanged.htm" />
-  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.Finalize method" Url="html/M_W_PropertyBase_2_Finalize.htm" />
-  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.GetValue method" Url="html/M_W_PropertyBase_2_GetValue.htm" />
   <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.IsDirty property" Url="html/P_W_PropertyBase_2_IsDirty.htm" />
   <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.LoadValue method" Url="html/M_W_PropertyBase_2_LoadValue.htm" />
   <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.OnPropertyChanged method" Url="html/M_W_PropertyBase_2_OnPropertyChanged.htm" />
-  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.OnValueChanged field" Url="html/F_W_PropertyBase_2_OnValueChanged.htm" />
-  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.OnValueChangedDelegate delegate" Url="html/T_W_PropertyBase_2_OnValueChangedDelegate.htm" />
+  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.OnPropertyChanging method" Url="html/M_W_PropertyBase_2_OnPropertyChanging.htm" />
+  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.OnValueChanged method" Url="html/M_W_PropertyBase_2_OnValueChanged.htm" />
   <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.Owner property" Url="html/P_W_PropertyBase_2_Owner.htm" />
-  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.PropertyBase constructor" Url="html/M_W_PropertyBase_2__ctor.htm" />
-  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.PropertyValueChangedDelegate delegate" Url="html/T_W_PropertyBase_2_PropertyValueChangedDelegate.htm" />
-  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.PropertyValueChangingDelegate delegate" Url="html/T_W_PropertyBase_2_PropertyValueChangingDelegate.htm" />
-  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.RaisePropertyValueChanged method" Url="html/M_W_PropertyBase_2_RaisePropertyValueChanged.htm" />
-  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.RaisePropertyValueChanging method" Url="html/M_W_PropertyBase_2_RaisePropertyValueChanging.htm" />
+  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.PropertyBase constructor" Url="html/Overload_W_PropertyBase_2__ctor.htm" />
   <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.ResetToDefaultValue method" Url="html/M_W_PropertyBase_2_ResetToDefaultValue.htm" />
-  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.SetValue method" Url="html/M_W_PropertyBase_2_SetValue.htm" />
-  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.Value property" Url="html/P_W_PropertyBase_2_Value.htm" />
-  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.ValueChanged event" Url="html/E_W_PropertyBase_2_ValueChanged.htm" />
-  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.ValueChanging event" Url="html/E_W_PropertyBase_2_ValueChanging.htm" />
-  <HelpKINode Title="PropertyBase&lt;TOwner, TValue&gt;.WaitForChanged method" Url="html/M_W_PropertyBase_2_WaitForChanged.htm" />
-  <HelpKINode Title="PropertyChanged event" Url="html/E_W_PropertyChangedNotifier_PropertyChanged.htm" />
+  <HelpKINode Title="PropertyChanged event">
+    <HelpKINode Title="PropertyChangedNotifier.PropertyChanged Event" Url="html/E_W_PropertyChangedNotifier_PropertyChanged.htm" />
+    <HelpKINode Title="PropertySlim(TValue).PropertyChanged Event" Url="html/E_W_PropertySlim_1_PropertyChanged.htm" />
+  </HelpKINode>
   <HelpKINode Title="PropertyChangedNotifier class">
     <HelpKINode Title="PropertyChangedNotifier Class" Url="html/T_W_PropertyChangedNotifier.htm" />
     <HelpKINode Title="about PropertyChangedNotifier class" Url="html/T_W_PropertyChangedNotifier.htm" />
@@ -647,6 +882,7 @@
   <HelpKINode Title="PropertyChangedNotifier.PropertyChangedNotifier constructor" Url="html/M_W_PropertyChangedNotifier__ctor.htm" />
   <HelpKINode Title="PropertyChangedNotifier.RaiseOnPropertyChanged method" Url="html/M_W_PropertyChangedNotifier_RaiseOnPropertyChanged.htm" />
   <HelpKINode Title="PropertyChangedNotifier.SetValue method" Url="html/M_W_PropertyChangedNotifier_SetValue.htm" />
+  <HelpKINode Title="PropertyChanging event" Url="html/E_W_PropertySlim_1_PropertyChanging.htm" />
   <HelpKINode Title="PropertyHost class">
     <HelpKINode Title="PropertyHost Class" Url="html/T_W_PropertyHost.htm" />
     <HelpKINode Title="about PropertyHost class" Url="html/T_W_PropertyHost.htm" />
@@ -657,14 +893,14 @@
   <HelpKINode Title="PropertyHost.IsDirty property" Url="html/P_W_PropertyHost_IsDirty.htm" />
   <HelpKINode Title="PropertyHost.MarkAsClean method" Url="html/M_W_PropertyHost_MarkAsClean.htm" />
   <HelpKINode Title="PropertyHost.PropertyHost constructor" Url="html/M_W_PropertyHost__ctor.htm" />
-  <HelpKINode Title="PropertyHostMethods class">
-    <HelpKINode Title="PropertyHostMethods Class" Url="html/T_W_PropertyHostMethods.htm" />
-    <HelpKINode Title="about PropertyHostMethods class" Url="html/T_W_PropertyHostMethods.htm" />
-    <HelpKINode Title="methods" Url="html/Methods_T_W_PropertyHostMethods.htm" />
+  <HelpKINode Title="PropertyHostExtensions class">
+    <HelpKINode Title="PropertyHostExtensions Class" Url="html/T_W_PropertyHostExtensions_PropertyHostExtensions.htm" />
+    <HelpKINode Title="about PropertyHostExtensions class" Url="html/T_W_PropertyHostExtensions_PropertyHostExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_PropertyHostExtensions_PropertyHostExtensions.htm" />
   </HelpKINode>
-  <HelpKINode Title="PropertyHostMethods.InitializeProperties method" Url="html/M_W_PropertyHostMethods_InitializeProperties.htm" />
-  <HelpKINode Title="PropertyHostMethods.IsDirty method" Url="html/M_W_PropertyHostMethods_IsDirty.htm" />
-  <HelpKINode Title="PropertyHostMethods.MarkAsClean method" Url="html/M_W_PropertyHostMethods_MarkAsClean.htm" />
+  <HelpKINode Title="PropertyHostExtensions.InitializeProperties method" Url="html/M_W_PropertyHostExtensions_PropertyHostExtensions_InitializeProperties.htm" />
+  <HelpKINode Title="PropertyHostExtensions.IsDirty method" Url="html/M_W_PropertyHostExtensions_PropertyHostExtensions_IsDirty.htm" />
+  <HelpKINode Title="PropertyHostExtensions.MarkAsClean method" Url="html/M_W_PropertyHostExtensions_PropertyHostExtensions_MarkAsClean.htm" />
   <HelpKINode Title="PropertyHostNotifier class">
     <HelpKINode Title="PropertyHostNotifier Class" Url="html/T_W_PropertyHostNotifier.htm" />
     <HelpKINode Title="about PropertyHostNotifier class" Url="html/T_W_PropertyHostNotifier.htm" />
@@ -676,7 +912,44 @@
   <HelpKINode Title="PropertyHostNotifier.IsDirty property" Url="html/P_W_PropertyHostNotifier_IsDirty.htm" />
   <HelpKINode Title="PropertyHostNotifier.MarkAsClean method" Url="html/M_W_PropertyHostNotifier_MarkAsClean.htm" />
   <HelpKINode Title="PropertyHostNotifier.PropertyHostNotifier constructor" Url="html/M_W_PropertyHostNotifier__ctor.htm" />
-  <HelpKINode Title="PublicKey property" Url="html/P_W_Encryption_PublicPrivateKeyPair_PublicKey.htm" />
+  <HelpKINode Title="PropertySlim(Of TValue) class">
+    <HelpKINode Title="PropertySlim(TValue) Class" Url="html/T_W_PropertySlim_1.htm" />
+    <HelpKINode Title="about PropertySlim(Of TValue) class" Url="html/T_W_PropertySlim_1.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_W_PropertySlim_1__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_W_PropertySlim_1.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_PropertySlim_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_PropertySlim_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_PropertySlim_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PropertySlim(Of TValue).OnPropertyChanged method" Url="html/M_W_PropertySlim_1_OnPropertyChanged.htm" />
+  <HelpKINode Title="PropertySlim(Of TValue).OnPropertyChanging method" Url="html/M_W_PropertySlim_1_OnPropertyChanging.htm" />
+  <HelpKINode Title="PropertySlim(Of TValue).PropertyChanged event" Url="html/E_W_PropertySlim_1_PropertyChanged.htm" />
+  <HelpKINode Title="PropertySlim(Of TValue).PropertyChanging event" Url="html/E_W_PropertySlim_1_PropertyChanging.htm" />
+  <HelpKINode Title="PropertySlim(Of TValue).PropertySlim constructor" Url="html/Overload_W_PropertySlim_1__ctor.htm" />
+  <HelpKINode Title="PropertySlim(Of TValue).RaiseOnPropertyChanged method" Url="html/M_W_PropertySlim_1_RaiseOnPropertyChanged.htm" />
+  <HelpKINode Title="PropertySlim(Of TValue).RaiseOnPropertyChanging method" Url="html/M_W_PropertySlim_1_RaiseOnPropertyChanging.htm" />
+  <HelpKINode Title="PropertySlim(Of TValue).SetValue method" Url="html/M_W_PropertySlim_1_SetValue.htm" />
+  <HelpKINode Title="PropertySlim&lt;TValue&gt; class">
+    <HelpKINode Title="PropertySlim(TValue) Class" Url="html/T_W_PropertySlim_1.htm" />
+    <HelpKINode Title="about PropertySlim&lt;TValue&gt; class" Url="html/T_W_PropertySlim_1.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_W_PropertySlim_1__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_W_PropertySlim_1.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_PropertySlim_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_PropertySlim_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_PropertySlim_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PropertySlim&lt;TValue&gt;.OnPropertyChanged method" Url="html/M_W_PropertySlim_1_OnPropertyChanged.htm" />
+  <HelpKINode Title="PropertySlim&lt;TValue&gt;.OnPropertyChanging method" Url="html/M_W_PropertySlim_1_OnPropertyChanging.htm" />
+  <HelpKINode Title="PropertySlim&lt;TValue&gt;.PropertyChanged event" Url="html/E_W_PropertySlim_1_PropertyChanged.htm" />
+  <HelpKINode Title="PropertySlim&lt;TValue&gt;.PropertyChanging event" Url="html/E_W_PropertySlim_1_PropertyChanging.htm" />
+  <HelpKINode Title="PropertySlim&lt;TValue&gt;.PropertySlim constructor" Url="html/Overload_W_PropertySlim_1__ctor.htm" />
+  <HelpKINode Title="PropertySlim&lt;TValue&gt;.RaiseOnPropertyChanged method" Url="html/M_W_PropertySlim_1_RaiseOnPropertyChanged.htm" />
+  <HelpKINode Title="PropertySlim&lt;TValue&gt;.RaiseOnPropertyChanging method" Url="html/M_W_PropertySlim_1_RaiseOnPropertyChanging.htm" />
+  <HelpKINode Title="PropertySlim&lt;TValue&gt;.SetValue method" Url="html/M_W_PropertySlim_1_SetValue.htm" />
+  <HelpKINode Title="PublicKey property">
+    <HelpKINode Title="AssymetricEncryption.PublicKey Property " Url="html/P_W_Encryption_AssymetricEncryption_PublicKey.htm" />
+    <HelpKINode Title="PublicPrivateKeyPair.PublicKey Property " Url="html/P_W_Encryption_PublicPrivateKeyPair_PublicKey.htm" />
+  </HelpKINode>
   <HelpKINode Title="PublicPrivateKeyPair class">
     <HelpKINode Title="PublicPrivateKeyPair Class" Url="html/T_W_Encryption_PublicPrivateKeyPair.htm" />
     <HelpKINode Title="about PublicPrivateKeyPair class" Url="html/T_W_Encryption_PublicPrivateKeyPair.htm" />
@@ -689,23 +962,72 @@
   <HelpKINode Title="PublicPrivateKeyPair.PublicPrivateKeyPair constructor" Url="html/M_W_Encryption_PublicPrivateKeyPair__ctor.htm" />
   <HelpKINode Title="Queue property" Url="html/P_W_ActionQueue_1_Queue.htm" />
   <HelpKINode Title="Raise method">
+    <HelpKINode Title="DelegateExtensions.Raise Method " Url="html/M_W_DelegateExtensions_DelegateExtensions_Raise.htm" />
     <HelpKINode Title="EventTemplate(TEventArg).Raise Method " Url="html/M_W_EventTemplate_1_Raise.htm" />
     <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2).Raise Method " Url="html/M_W_EventTemplate_2_Raise.htm" />
     <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2, TEventArg3).Raise Method " Url="html/M_W_EventTemplate_3_Raise.htm" />
     <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4).Raise Method " Url="html/M_W_EventTemplate_4_Raise.htm" />
     <HelpKINode Title="EventTemplate(TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5).Raise Method " Url="html/M_W_EventTemplate_5_Raise.htm" />
     <HelpKINode Title="EventTemplate.Raise Method " Url="html/M_W_EventTemplate_Raise.htm" />
-    <HelpKINode Title="ExtensionMethods.Raise Method " Url="html/M_W_ExtensionMethods_Raise.htm" />
   </HelpKINode>
-  <HelpKINode Title="RaiseOnPropertyChanged method" Url="html/M_W_PropertyChangedNotifier_RaiseOnPropertyChanged.htm" />
-  <HelpKINode Title="RaisePropertyValueChanged method" Url="html/M_W_PropertyBase_2_RaisePropertyValueChanged.htm" />
-  <HelpKINode Title="RaisePropertyValueChanging method" Url="html/M_W_PropertyBase_2_RaisePropertyValueChanging.htm" />
+  <HelpKINode Title="RaiseOnPropertyChanged method">
+    <HelpKINode Title="PropertyChangedNotifier.RaiseOnPropertyChanged Method " Url="html/M_W_PropertyChangedNotifier_RaiseOnPropertyChanged.htm" />
+    <HelpKINode Title="PropertySlim(TValue).RaiseOnPropertyChanged Method " Url="html/M_W_PropertySlim_1_RaiseOnPropertyChanged.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RaiseOnPropertyChanging method" Url="html/M_W_PropertySlim_1_RaiseOnPropertyChanging.htm" />
+  <HelpKINode Title="RaiseValueChanged method" Url="html/M_W_Lockable_1_RaiseValueChanged.htm" />
+  <HelpKINode Title="Read enumeration member" Url="html/T_W_Threading_Lockers_LockTypeEnum.htm" />
+  <HelpKINode Title="ReaderWriterLocker class">
+    <HelpKINode Title="ReaderWriterLocker Class" Url="html/T_W_Threading_Lockers_ReaderWriterLocker.htm" />
+    <HelpKINode Title="about ReaderWriterLocker class" Url="html/T_W_Threading_Lockers_ReaderWriterLocker.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_W_Threading_Lockers_ReaderWriterLocker__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_ReaderWriterLocker.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_ReaderWriterLocker.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ReaderWriterLocker(Of TState) class">
+    <HelpKINode Title="ReaderWriterLocker(TState) Class" Url="html/T_W_Threading_Lockers_ReaderWriterLocker_1.htm" />
+    <HelpKINode Title="about ReaderWriterLocker(Of TState) class" Url="html/T_W_Threading_Lockers_ReaderWriterLocker_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Threading_Lockers_ReaderWriterLocker_1__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_Threading_Lockers_ReaderWriterLocker_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_ReaderWriterLocker_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_ReaderWriterLocker_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ReaderWriterLocker(Of TState).Dispose method" Url="html/M_W_Threading_Lockers_ReaderWriterLocker_1_Dispose.htm" />
+  <HelpKINode Title="ReaderWriterLocker(Of TState).InLock method" Url="html/Overload_W_Threading_Lockers_ReaderWriterLocker_1_InLock.htm" />
+  <HelpKINode Title="ReaderWriterLocker(Of TState).InLockAsync method" Url="html/Overload_W_Threading_Lockers_ReaderWriterLocker_1_InLockAsync.htm" />
+  <HelpKINode Title="ReaderWriterLocker(Of TState).ReaderWriterLocker constructor" Url="html/M_W_Threading_Lockers_ReaderWriterLocker_1__ctor.htm" />
+  <HelpKINode Title="ReaderWriterLocker.Dispose method" Url="html/M_W_Threading_Lockers_ReaderWriterLocker_Dispose.htm" />
+  <HelpKINode Title="ReaderWriterLocker.InLock method" Url="html/Overload_W_Threading_Lockers_ReaderWriterLocker_InLock.htm" />
+  <HelpKINode Title="ReaderWriterLocker.InLockAsync method" Url="html/Overload_W_Threading_Lockers_ReaderWriterLocker_InLockAsync.htm" />
+  <HelpKINode Title="ReaderWriterLocker.Locker property" Url="html/P_W_Threading_Lockers_ReaderWriterLocker_Locker.htm" />
+  <HelpKINode Title="ReaderWriterLocker.ReaderWriterLocker constructor" Url="html/Overload_W_Threading_Lockers_ReaderWriterLocker__ctor.htm" />
+  <HelpKINode Title="ReaderWriterLocker&lt;TState&gt; class">
+    <HelpKINode Title="ReaderWriterLocker(TState) Class" Url="html/T_W_Threading_Lockers_ReaderWriterLocker_1.htm" />
+    <HelpKINode Title="about ReaderWriterLocker&lt;TState&gt; class" Url="html/T_W_Threading_Lockers_ReaderWriterLocker_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Threading_Lockers_ReaderWriterLocker_1__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_Threading_Lockers_ReaderWriterLocker_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_ReaderWriterLocker_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_ReaderWriterLocker_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ReaderWriterLocker&lt;TState&gt;.Dispose method" Url="html/M_W_Threading_Lockers_ReaderWriterLocker_1_Dispose.htm" />
+  <HelpKINode Title="ReaderWriterLocker&lt;TState&gt;.InLock method" Url="html/Overload_W_Threading_Lockers_ReaderWriterLocker_1_InLock.htm" />
+  <HelpKINode Title="ReaderWriterLocker&lt;TState&gt;.InLockAsync method" Url="html/Overload_W_Threading_Lockers_ReaderWriterLocker_1_InLockAsync.htm" />
+  <HelpKINode Title="ReaderWriterLocker&lt;TState&gt;.ReaderWriterLocker constructor" Url="html/M_W_Threading_Lockers_ReaderWriterLocker_1__ctor.htm" />
+  <HelpKINode Title="ReaderWriterLockSlimExtensions class">
+    <HelpKINode Title="ReaderWriterLockSlimExtensions Class" Url="html/T_W_LockExtensions_ReaderWriterLockSlimExtensions.htm" />
+    <HelpKINode Title="about ReaderWriterLockSlimExtensions class" Url="html/T_W_LockExtensions_ReaderWriterLockSlimExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_LockExtensions_ReaderWriterLockSlimExtensions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ReaderWriterLockSlimExtensions.InLock method" Url="html/Overload_W_LockExtensions_ReaderWriterLockSlimExtensions_InLock.htm" />
+  <HelpKINode Title="ReaderWriterLockSlimExtensions.InLockAsync method" Url="html/Overload_W_LockExtensions_ReaderWriterLockSlimExtensions_InLockAsync.htm" />
+  <HelpKINode Title="ReaderWriterLockSlimExtensions.Lock method" Url="html/M_W_LockExtensions_ReaderWriterLockSlimExtensions_Lock.htm" />
+  <HelpKINode Title="ReaderWriterLockSlimExtensions.Unlock method" Url="html/M_W_LockExtensions_ReaderWriterLockSlimExtensions_Unlock.htm" />
+  <HelpKINode Title="RemotePublicKey property" Url="html/P_W_Encryption_AssymetricEncryption_RemotePublicKey.htm" />
   <HelpKINode Title="ResetToDefaultValue method" Url="html/M_W_PropertyBase_2_ResetToDefaultValue.htm" />
   <HelpKINode Title="Result property" Url="html/P_W_CallResult_1_Result.htm" />
   <HelpKINode Title="RSAMethods class">
     <HelpKINode Title="RSAMethods Class" Url="html/T_W_Encryption_RSAMethods.htm" />
     <HelpKINode Title="about RSAMethods class" Url="html/T_W_Encryption_RSAMethods.htm" />
-    <HelpKINode Title="constructor" Url="html/M_W_Encryption_RSAMethods__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_Encryption_RSAMethods.htm" />
   </HelpKINode>
   <HelpKINode Title="RSAMethods.CreateKeyPair method" Url="html/M_W_Encryption_RSAMethods_CreateKeyPair.htm" />
@@ -714,16 +1036,56 @@
   <HelpKINode Title="RSAMethods.Encrypt method" Url="html/M_W_Encryption_RSAMethods_Encrypt.htm" />
   <HelpKINode Title="RSAMethods.EncryptAsync method" Url="html/M_W_Encryption_RSAMethods_EncryptAsync.htm" />
   <HelpKINode Title="RSAMethods.LegalKeySizes method" Url="html/M_W_Encryption_RSAMethods_LegalKeySizes.htm" />
-  <HelpKINode Title="RSAMethods.RSAMethods constructor" Url="html/M_W_Encryption_RSAMethods__ctor.htm" />
   <HelpKINode Title="Run method">
     <HelpKINode Title="Gate(TParameterType).Run Method " Url="html/Overload_W_Threading_Gate_1_Run.htm" />
     <HelpKINode Title="Gate.Run Method " Url="html/M_W_Threading_Gate_Run.htm" />
   </HelpKINode>
+  <HelpKINode Title="RunSynchronously method" Url="html/M_W_Threading_ThreadMethod_RunSynchronously.htm" />
+  <HelpKINode Title="SemaphoreSlimExtensions class">
+    <HelpKINode Title="SemaphoreSlimExtensions Class" Url="html/T_W_LockExtensions_SemaphoreSlimExtensions.htm" />
+    <HelpKINode Title="about SemaphoreSlimExtensions class" Url="html/T_W_LockExtensions_SemaphoreSlimExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_LockExtensions_SemaphoreSlimExtensions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SemaphoreSlimExtensions.InLock method" Url="html/Overload_W_LockExtensions_SemaphoreSlimExtensions_InLock.htm" />
+  <HelpKINode Title="SemaphoreSlimExtensions.InLockAsync method" Url="html/Overload_W_LockExtensions_SemaphoreSlimExtensions_InLockAsync.htm" />
+  <HelpKINode Title="SemaphoreSlimLocker class">
+    <HelpKINode Title="SemaphoreSlimLocker Class" Url="html/T_W_Threading_Lockers_SemaphoreSlimLocker.htm" />
+    <HelpKINode Title="about SemaphoreSlimLocker class" Url="html/T_W_Threading_Lockers_SemaphoreSlimLocker.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_W_Threading_Lockers_SemaphoreSlimLocker__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_SemaphoreSlimLocker.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_SemaphoreSlimLocker.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SemaphoreSlimLocker(Of TState) class">
+    <HelpKINode Title="SemaphoreSlimLocker(TState) Class" Url="html/T_W_Threading_Lockers_SemaphoreSlimLocker_1.htm" />
+    <HelpKINode Title="about SemaphoreSlimLocker(Of TState) class" Url="html/T_W_Threading_Lockers_SemaphoreSlimLocker_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Threading_Lockers_SemaphoreSlimLocker_1__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_Threading_Lockers_SemaphoreSlimLocker_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_SemaphoreSlimLocker_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_SemaphoreSlimLocker_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SemaphoreSlimLocker(Of TState).SemaphoreSlimLocker constructor" Url="html/M_W_Threading_Lockers_SemaphoreSlimLocker_1__ctor.htm" />
+  <HelpKINode Title="SemaphoreSlimLocker.Dispose method" Url="html/M_W_Threading_Lockers_SemaphoreSlimLocker_Dispose.htm" />
+  <HelpKINode Title="SemaphoreSlimLocker.InLock method" Url="html/Overload_W_Threading_Lockers_SemaphoreSlimLocker_InLock.htm" />
+  <HelpKINode Title="SemaphoreSlimLocker.InLockAsync method" Url="html/Overload_W_Threading_Lockers_SemaphoreSlimLocker_InLockAsync.htm" />
+  <HelpKINode Title="SemaphoreSlimLocker.Locker property" Url="html/P_W_Threading_Lockers_SemaphoreSlimLocker_Locker.htm" />
+  <HelpKINode Title="SemaphoreSlimLocker.SemaphoreSlimLocker constructor" Url="html/Overload_W_Threading_Lockers_SemaphoreSlimLocker__ctor.htm" />
+  <HelpKINode Title="SemaphoreSlimLocker&lt;TState&gt; class">
+    <HelpKINode Title="SemaphoreSlimLocker(TState) Class" Url="html/T_W_Threading_Lockers_SemaphoreSlimLocker_1.htm" />
+    <HelpKINode Title="about SemaphoreSlimLocker&lt;TState&gt; class" Url="html/T_W_Threading_Lockers_SemaphoreSlimLocker_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Threading_Lockers_SemaphoreSlimLocker_1__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_Threading_Lockers_SemaphoreSlimLocker_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_SemaphoreSlimLocker_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_SemaphoreSlimLocker_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SemaphoreSlimLocker&lt;TState&gt;.SemaphoreSlimLocker constructor" Url="html/M_W_Threading_Lockers_SemaphoreSlimLocker_1__ctor.htm" />
   <HelpKINode Title="SetOwner method" Url="html/M_W_IOwnedProperty_SetOwner.htm" />
   <HelpKINode Title="SetValue method">
-    <HelpKINode Title="PropertyBase(TOwner, TValue).SetValue Method " Url="html/M_W_PropertyBase_2_SetValue.htm" />
+    <HelpKINode Title="Lockable(TValue).SetValue Method " Url="html/M_W_Lockable_1_SetValue.htm" />
+    <HelpKINode Title="LockableSlim(TValue).SetValue Method " Url="html/M_W_LockableSlim_1_SetValue.htm" />
     <HelpKINode Title="PropertyChangedNotifier.SetValue Method " Url="html/M_W_PropertyChangedNotifier_SetValue.htm" />
+    <HelpKINode Title="PropertySlim(TValue).SetValue Method " Url="html/M_W_PropertySlim_1_SetValue.htm" />
   </HelpKINode>
+  <HelpKINode Title="SignalToStop method" Url="html/M_W_Threading_ThreadSlim_SignalToStop.htm" />
   <HelpKINode Title="Singleton(Of TSingletonType) class">
     <HelpKINode Title="Singleton(TSingletonType) Class" Url="html/T_W_Singleton_1.htm" />
     <HelpKINode Title="about Singleton(Of TSingletonType) class" Url="html/T_W_Singleton_1.htm" />
@@ -744,20 +1106,102 @@
   <HelpKINode Title="Singleton&lt;TSingletonType&gt;.Singleton constructor" Url="html/M_W_Singleton_1__ctor.htm" />
   <HelpKINode Title="Sleep enumeration member" Url="html/T_W_Threading_CPUProfileEnum.htm" />
   <HelpKINode Title="Sleep method" Url="html/Overload_W_Threading_Thread_Sleep.htm" />
+  <HelpKINode Title="SpinLocker class">
+    <HelpKINode Title="SpinLocker Class" Url="html/T_W_Threading_Lockers_SpinLocker.htm" />
+    <HelpKINode Title="about SpinLocker class" Url="html/T_W_Threading_Lockers_SpinLocker.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Threading_Lockers_SpinLocker__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_SpinLocker.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_SpinLocker.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SpinLocker(Of TState) class">
+    <HelpKINode Title="SpinLocker(TState) Class" Url="html/T_W_Threading_Lockers_SpinLocker_1.htm" />
+    <HelpKINode Title="about SpinLocker(Of TState) class" Url="html/T_W_Threading_Lockers_SpinLocker_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Threading_Lockers_SpinLocker_1__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_Threading_Lockers_SpinLocker_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_SpinLocker_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_SpinLocker_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SpinLocker(Of TState).SpinLocker constructor" Url="html/M_W_Threading_Lockers_SpinLocker_1__ctor.htm" />
+  <HelpKINode Title="SpinLocker.InLock method" Url="html/Overload_W_Threading_Lockers_SpinLocker_InLock.htm" />
+  <HelpKINode Title="SpinLocker.InLockAsync method" Url="html/Overload_W_Threading_Lockers_SpinLocker_InLockAsync.htm" />
+  <HelpKINode Title="SpinLocker.Locker property" Url="html/P_W_Threading_Lockers_SpinLocker_Locker.htm" />
+  <HelpKINode Title="SpinLocker.SpinLocker constructor" Url="html/M_W_Threading_Lockers_SpinLocker__ctor.htm" />
+  <HelpKINode Title="SpinLocker&lt;TState&gt; class">
+    <HelpKINode Title="SpinLocker(TState) Class" Url="html/T_W_Threading_Lockers_SpinLocker_1.htm" />
+    <HelpKINode Title="about SpinLocker&lt;TState&gt; class" Url="html/T_W_Threading_Lockers_SpinLocker_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Threading_Lockers_SpinLocker_1__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_Threading_Lockers_SpinLocker_1.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_SpinLocker_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_SpinLocker_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SpinLocker&lt;TState&gt;.SpinLocker constructor" Url="html/M_W_Threading_Lockers_SpinLocker_1__ctor.htm" />
+  <HelpKINode Title="SpinLockExtensions class">
+    <HelpKINode Title="SpinLockExtensions Class" Url="html/T_W_LockExtensions_SpinLockExtensions.htm" />
+    <HelpKINode Title="about SpinLockExtensions class" Url="html/T_W_LockExtensions_SpinLockExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_LockExtensions_SpinLockExtensions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SpinLockExtensions.InLock method" Url="html/Overload_W_LockExtensions_SpinLockExtensions_InLock.htm" />
+  <HelpKINode Title="SpinLockExtensions.InLockAsync method" Url="html/Overload_W_LockExtensions_SpinLockExtensions_InLockAsync.htm" />
+  <HelpKINode Title="SpinUntil enumeration member" Url="html/T_W_Threading_CPUProfileEnum.htm" />
   <HelpKINode Title="SpinWait0 enumeration member" Url="html/T_W_Threading_CPUProfileEnum.htm" />
   <HelpKINode Title="SpinWait1 enumeration member" Url="html/T_W_Threading_CPUProfileEnum.htm" />
   <HelpKINode Title="Start method">
-    <HelpKINode Title="Thread(TParameterType).Start Method " Url="html/Overload_W_Threading_Thread_1_Start.htm" />
-    <HelpKINode Title="Thread.Start Method " Url="html/Overload_W_Threading_Thread_Start.htm" />
+    <HelpKINode Title="ParameterizedThread.Start Method " Url="html/Overload_W_Threading_ParameterizedThread_Start.htm" />
+    <HelpKINode Title="ThreadMethod.Start Method " Url="html/M_W_Threading_ThreadMethod_Start.htm" />
+    <HelpKINode Title="ThreadSlim.Start Method " Url="html/M_W_Threading_ThreadSlim_Start.htm" />
   </HelpKINode>
-  <HelpKINode Title="Stop method" Url="html/M_W_Threading_Thread_Stop.htm" />
+  <HelpKINode Title="StartAsync method">
+    <HelpKINode Title="Thread(TType).StartAsync Method " Url="html/Overload_W_Threading_Thread_1_StartAsync.htm" />
+    <HelpKINode Title="ThreadMethod.StartAsync Method " Url="html/M_W_Threading_ThreadMethod_StartAsync.htm" />
+    <HelpKINode Title="ThreadSlim.StartAsync Method " Url="html/M_W_Threading_ThreadSlim_StartAsync.htm" />
+  </HelpKINode>
+  <HelpKINode Title="State field" Url="html/F_W_Threading_Lockers_StateLocker_2_State.htm" />
+  <HelpKINode Title="StateAssignmentDelegate(Of TState) delegate" Url="html/T_W_Threading_Lockers_StateAssignmentDelegate_1.htm" />
+  <HelpKINode Title="StateAssignmentDelegate&lt;TState&gt; delegate" Url="html/T_W_Threading_Lockers_StateAssignmentDelegate_1.htm" />
+  <HelpKINode Title="StateLocker(Of TLocker, TState) class">
+    <HelpKINode Title="StateLocker(TLocker, TState) Class" Url="html/T_W_Threading_Lockers_StateLocker_2.htm" />
+    <HelpKINode Title="about StateLocker(Of TLocker, TState) class" Url="html/T_W_Threading_Lockers_StateLocker_2.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Threading_Lockers_StateLocker_2__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_Threading_Lockers_StateLocker_2.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_StateLocker_2.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_StateLocker_2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StateLocker(Of TLocker, TState).InLock method" Url="html/Overload_W_Threading_Lockers_StateLocker_2_InLock.htm" />
+  <HelpKINode Title="StateLocker(Of TLocker, TState).InLockAsync method" Url="html/Overload_W_Threading_Lockers_StateLocker_2_InLockAsync.htm" />
+  <HelpKINode Title="StateLocker(Of TLocker, TState).Locker property" Url="html/P_W_Threading_Lockers_StateLocker_2_Locker.htm" />
+  <HelpKINode Title="StateLocker(Of TLocker, TState).State field" Url="html/F_W_Threading_Lockers_StateLocker_2_State.htm" />
+  <HelpKINode Title="StateLocker(Of TLocker, TState).StateLocker constructor" Url="html/M_W_Threading_Lockers_StateLocker_2__ctor.htm" />
+  <HelpKINode Title="StateLocker&lt;TLocker, TState&gt; class">
+    <HelpKINode Title="StateLocker(TLocker, TState) Class" Url="html/T_W_Threading_Lockers_StateLocker_2.htm" />
+    <HelpKINode Title="about StateLocker&lt;TLocker, TState&gt; class" Url="html/T_W_Threading_Lockers_StateLocker_2.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Threading_Lockers_StateLocker_2__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_W_Threading_Lockers_StateLocker_2.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Lockers_StateLocker_2.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Lockers_StateLocker_2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StateLocker&lt;TLocker, TState&gt;.InLock method" Url="html/Overload_W_Threading_Lockers_StateLocker_2_InLock.htm" />
+  <HelpKINode Title="StateLocker&lt;TLocker, TState&gt;.InLockAsync method" Url="html/Overload_W_Threading_Lockers_StateLocker_2_InLockAsync.htm" />
+  <HelpKINode Title="StateLocker&lt;TLocker, TState&gt;.Locker property" Url="html/P_W_Threading_Lockers_StateLocker_2_Locker.htm" />
+  <HelpKINode Title="StateLocker&lt;TLocker, TState&gt;.State field" Url="html/F_W_Threading_Lockers_StateLocker_2_State.htm" />
+  <HelpKINode Title="StateLocker&lt;TLocker, TState&gt;.StateLocker constructor" Url="html/M_W_Threading_Lockers_StateLocker_2__ctor.htm" />
+  <HelpKINode Title="Stop method">
+    <HelpKINode Title="ParameterizedThread.Stop Method " Url="html/M_W_Threading_ParameterizedThread_Stop.htm" />
+    <HelpKINode Title="ThreadSlim.Stop Method " Url="html/Overload_W_Threading_ThreadSlim_Stop.htm" />
+  </HelpKINode>
   <HelpKINode Title="StringExtensions class">
-    <HelpKINode Title="StringExtensions Class" Url="html/T_W_StringExtensions.htm" />
-    <HelpKINode Title="about StringExtensions class" Url="html/T_W_StringExtensions.htm" />
-    <HelpKINode Title="methods" Url="html/Methods_T_W_StringExtensions.htm" />
+    <HelpKINode Title="StringExtensions Class" Url="html/T_W_StringExtensions_StringExtensions.htm" />
+    <HelpKINode Title="about StringExtensions class" Url="html/T_W_StringExtensions_StringExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_StringExtensions_StringExtensions.htm" />
   </HelpKINode>
-  <HelpKINode Title="StringExtensions.IsValidBase64 method" Url="html/M_W_StringExtensions_IsValidBase64.htm" />
+  <HelpKINode Title="StringExtensions.IsValidBase64 method" Url="html/M_W_StringExtensions_StringExtensions_IsValidBase64.htm" />
   <HelpKINode Title="Success property" Url="html/P_W_CallResult_Success.htm" />
+  <HelpKINode Title="Take(Of T) method" Url="html/M_W_ArrayMethods_Take__1.htm" />
+  <HelpKINode Title="Take&lt;T&gt; method" Url="html/M_W_ArrayMethods_Take__1.htm" />
+  <HelpKINode Title="TakeFromEnd(Of T) method" Url="html/M_W_ArrayMethods_TakeFromEnd__1.htm" />
+  <HelpKINode Title="TakeFromEnd&lt;T&gt; method" Url="html/M_W_ArrayMethods_TakeFromEnd__1.htm" />
+  <HelpKINode Title="TakeFromStart(Of T) method" Url="html/M_W_ArrayMethods_TakeFromStart__1.htm" />
+  <HelpKINode Title="TakeFromStart&lt;T&gt; method" Url="html/M_W_ArrayMethods_TakeFromStart__1.htm" />
+  <HelpKINode Title="Task property" Url="html/P_W_Threading_ParameterizedThread_Task.htm" />
   <HelpKINode Title="Thread class">
     <HelpKINode Title="Thread Class" Url="html/T_W_Threading_Thread.htm" />
     <HelpKINode Title="about Thread class" Url="html/T_W_Threading_Thread.htm" />
@@ -765,103 +1209,150 @@
     <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Thread.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Thread.htm" />
   </HelpKINode>
-  <HelpKINode Title="Thread(Of TParameterType) class">
-    <HelpKINode Title="Thread(TParameterType) Class" Url="html/T_W_Threading_Thread_1.htm" />
-    <HelpKINode Title="about Thread(Of TParameterType) class" Url="html/T_W_Threading_Thread_1.htm" />
-    <HelpKINode Title="constructor" Url="html/Overload_W_Threading_Thread_1__ctor.htm" />
+  <HelpKINode Title="Thread(Of TType) class">
+    <HelpKINode Title="Thread(TType) Class" Url="html/T_W_Threading_Thread_1.htm" />
+    <HelpKINode Title="about Thread(Of TType) class" Url="html/T_W_Threading_Thread_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Threading_Thread_1__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Thread_1.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Thread_1.htm" />
   </HelpKINode>
-  <HelpKINode Title="Thread(Of TParameterType).CallAction method" Url="html/M_W_Threading_Thread_1_CallAction.htm" />
-  <HelpKINode Title="Thread(Of TParameterType).Start method" Url="html/Overload_W_Threading_Thread_1_Start.htm" />
-  <HelpKINode Title="Thread(Of TParameterType).Thread constructor" Url="html/Overload_W_Threading_Thread_1__ctor.htm" />
-  <HelpKINode Title="Thread.CallAction method" Url="html/M_W_Threading_Thread_CallAction.htm" />
-  <HelpKINode Title="Thread.Cancel method" Url="html/M_W_Threading_Thread_Cancel.htm" />
+  <HelpKINode Title="Thread(Of TType).StartAsync method" Url="html/Overload_W_Threading_Thread_1_StartAsync.htm" />
+  <HelpKINode Title="Thread(Of TType).Thread constructor" Url="html/M_W_Threading_Thread_1__ctor.htm" />
   <HelpKINode Title="Thread.Create method" Url="html/Overload_W_Threading_Thread_Create.htm" />
   <HelpKINode Title="Thread.Dispose method" Url="html/M_W_Threading_Thread_Dispose.htm" />
-  <HelpKINode Title="Thread.Exception property" Url="html/P_W_Threading_Thread_Exception.htm" />
-  <HelpKINode Title="Thread.IsComplete property" Url="html/P_W_Threading_Thread_IsComplete.htm" />
-  <HelpKINode Title="Thread.IsFaulted property" Url="html/P_W_Threading_Thread_IsFaulted.htm" />
-  <HelpKINode Title="Thread.IsRunning property" Url="html/P_W_Threading_Thread_IsRunning.htm" />
-  <HelpKINode Title="Thread.IsStarted property" Url="html/P_W_Threading_Thread_IsStarted.htm" />
   <HelpKINode Title="Thread.Join method" Url="html/Overload_W_Threading_Thread_Join.htm" />
   <HelpKINode Title="Thread.Sleep method" Url="html/Overload_W_Threading_Thread_Sleep.htm" />
-  <HelpKINode Title="Thread.Start method" Url="html/Overload_W_Threading_Thread_Start.htm" />
-  <HelpKINode Title="Thread.Stop method" Url="html/M_W_Threading_Thread_Stop.htm" />
   <HelpKINode Title="Thread.Thread constructor" Url="html/Overload_W_Threading_Thread__ctor.htm" />
-  <HelpKINode Title="Thread.Token property" Url="html/P_W_Threading_Thread_Token.htm" />
-  <HelpKINode Title="Thread&lt;TParameterType&gt; class">
-    <HelpKINode Title="Thread(TParameterType) Class" Url="html/T_W_Threading_Thread_1.htm" />
-    <HelpKINode Title="about Thread&lt;TParameterType&gt; class" Url="html/T_W_Threading_Thread_1.htm" />
-    <HelpKINode Title="constructor" Url="html/Overload_W_Threading_Thread_1__ctor.htm" />
+  <HelpKINode Title="Thread&lt;TType&gt; class">
+    <HelpKINode Title="Thread(TType) Class" Url="html/T_W_Threading_Thread_1.htm" />
+    <HelpKINode Title="about Thread&lt;TType&gt; class" Url="html/T_W_Threading_Thread_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Threading_Thread_1__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_Thread_1.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_Thread_1.htm" />
   </HelpKINode>
-  <HelpKINode Title="Thread&lt;TParameterType&gt;.CallAction method" Url="html/M_W_Threading_Thread_1_CallAction.htm" />
-  <HelpKINode Title="Thread&lt;TParameterType&gt;.Start method" Url="html/Overload_W_Threading_Thread_1_Start.htm" />
-  <HelpKINode Title="Thread&lt;TParameterType&gt;.Thread constructor" Url="html/Overload_W_Threading_Thread_1__ctor.htm" />
+  <HelpKINode Title="Thread&lt;TType&gt;.StartAsync method" Url="html/Overload_W_Threading_Thread_1_StartAsync.htm" />
+  <HelpKINode Title="Thread&lt;TType&gt;.Thread constructor" Url="html/M_W_Threading_Thread_1__ctor.htm" />
+  <HelpKINode Title="ThreadDelegate delegate" Url="html/T_W_Threading_ThreadDelegate.htm" />
   <HelpKINode Title="ThreadExtensions class">
-    <HelpKINode Title="ThreadExtensions Class" Url="html/T_W_Threading_ThreadExtensions.htm" />
-    <HelpKINode Title="about ThreadExtensions class" Url="html/T_W_Threading_ThreadExtensions.htm" />
-    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_ThreadExtensions.htm" />
+    <HelpKINode Title="ThreadExtensions Class" Url="html/T_W_Threading_ThreadExtensions_ThreadExtensions.htm" />
+    <HelpKINode Title="about ThreadExtensions class" Url="html/T_W_Threading_ThreadExtensions_ThreadExtensions.htm" />
   </HelpKINode>
-  <HelpKINode Title="ThreadExtensions.CreateThread method" Url="html/Overload_W_Threading_ThreadExtensions_CreateThread.htm" />
-  <HelpKINode Title="Token property" Url="html/P_W_Threading_Thread_Token.htm" />
-  <HelpKINode Title="UnlockedValue property" Url="html/P_W_Lockable_1_UnlockedValue.htm" />
+  <HelpKINode Title="ThreadMethod class">
+    <HelpKINode Title="ThreadMethod Class" Url="html/T_W_Threading_ThreadMethod.htm" />
+    <HelpKINode Title="about ThreadMethod class" Url="html/T_W_Threading_ThreadMethod.htm" />
+    <HelpKINode Title="constructor" Url="html/M_W_Threading_ThreadMethod__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_ThreadMethod.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_ThreadMethod.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ThreadMethod.Create method" Url="html/Overload_W_Threading_ThreadMethod_Create.htm" />
+  <HelpKINode Title="ThreadMethod.Dispose method" Url="html/M_W_Threading_ThreadMethod_Dispose.htm" />
+  <HelpKINode Title="ThreadMethod.Finalize method" Url="html/M_W_Threading_ThreadMethod_Finalize.htm" />
+  <HelpKINode Title="ThreadMethod.Initialize method" Url="html/M_W_Threading_ThreadMethod_Initialize.htm" />
+  <HelpKINode Title="ThreadMethod.IsComplete property" Url="html/P_W_Threading_ThreadMethod_IsComplete.htm" />
+  <HelpKINode Title="ThreadMethod.IsRunning property" Url="html/P_W_Threading_ThreadMethod_IsRunning.htm" />
+  <HelpKINode Title="ThreadMethod.IsStarted property" Url="html/P_W_Threading_ThreadMethod_IsStarted.htm" />
+  <HelpKINode Title="ThreadMethod.Name property" Url="html/P_W_Threading_ThreadMethod_Name.htm" />
+  <HelpKINode Title="ThreadMethod.RunSynchronously method" Url="html/M_W_Threading_ThreadMethod_RunSynchronously.htm" />
+  <HelpKINode Title="ThreadMethod.Start method" Url="html/M_W_Threading_ThreadMethod_Start.htm" />
+  <HelpKINode Title="ThreadMethod.StartAsync method" Url="html/M_W_Threading_ThreadMethod_StartAsync.htm" />
+  <HelpKINode Title="ThreadMethod.ThreadMethod constructor" Url="html/M_W_Threading_ThreadMethod__ctor.htm" />
+  <HelpKINode Title="ThreadMethod.Wait method" Url="html/Overload_W_Threading_ThreadMethod_Wait.htm" />
+  <HelpKINode Title="ThreadSlim class">
+    <HelpKINode Title="ThreadSlim Class" Url="html/T_W_Threading_ThreadSlim.htm" />
+    <HelpKINode Title="about ThreadSlim class" Url="html/T_W_Threading_ThreadSlim.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_W_Threading_ThreadSlim__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_W_Threading_ThreadSlim.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_W_Threading_ThreadSlim.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ThreadSlim.Create method" Url="html/Overload_W_Threading_ThreadSlim_Create.htm" />
+  <HelpKINode Title="ThreadSlim.Dispose method" Url="html/M_W_Threading_ThreadSlim_Dispose.htm" />
+  <HelpKINode Title="ThreadSlim.IsComplete property" Url="html/P_W_Threading_ThreadSlim_IsComplete.htm" />
+  <HelpKINode Title="ThreadSlim.IsRunning property" Url="html/P_W_Threading_ThreadSlim_IsRunning.htm" />
+  <HelpKINode Title="ThreadSlim.IsStarted property" Url="html/P_W_Threading_ThreadSlim_IsStarted.htm" />
+  <HelpKINode Title="ThreadSlim.Name property" Url="html/P_W_Threading_ThreadSlim_Name.htm" />
+  <HelpKINode Title="ThreadSlim.SignalToStop method" Url="html/M_W_Threading_ThreadSlim_SignalToStop.htm" />
+  <HelpKINode Title="ThreadSlim.Start method" Url="html/M_W_Threading_ThreadSlim_Start.htm" />
+  <HelpKINode Title="ThreadSlim.StartAsync method" Url="html/M_W_Threading_ThreadSlim_StartAsync.htm" />
+  <HelpKINode Title="ThreadSlim.Stop method" Url="html/Overload_W_Threading_ThreadSlim_Stop.htm" />
+  <HelpKINode Title="ThreadSlim.ThreadSlim constructor" Url="html/Overload_W_Threading_ThreadSlim__ctor.htm" />
+  <HelpKINode Title="ThreadSlim.Wait method" Url="html/Overload_W_Threading_ThreadSlim_Wait.htm" />
+  <HelpKINode Title="Token property" Url="html/P_W_Threading_ParameterizedThread_Token.htm" />
+  <HelpKINode Title="Trim(Of T) method" Url="html/M_W_ArrayMethods_Trim__1.htm" />
+  <HelpKINode Title="Trim&lt;T&gt; method" Url="html/M_W_ArrayMethods_Trim__1.htm" />
+  <HelpKINode Title="TrimEnd(Of T) method" Url="html/M_W_ArrayMethods_TrimEnd__1.htm" />
+  <HelpKINode Title="TrimEnd&lt;T&gt; method" Url="html/M_W_ArrayMethods_TrimEnd__1.htm" />
+  <HelpKINode Title="TrimStart(Of T) method" Url="html/M_W_ArrayMethods_TrimStart__1.htm" />
+  <HelpKINode Title="TrimStart&lt;T&gt; method" Url="html/M_W_ArrayMethods_TrimStart__1.htm" />
+  <HelpKINode Title="Unlock method" Url="html/M_W_LockExtensions_ReaderWriterLockSlimExtensions_Unlock.htm" />
   <HelpKINode Title="v method" Url="html/Overload_W_Logging_Log_v.htm" />
   <HelpKINode Title="Value property">
     <HelpKINode Title="IProperty(TValue).Value Property " Url="html/P_W_IProperty_1_Value.htm" />
-    <HelpKINode Title="Lockable(TValue).Value Property " Url="html/P_W_Lockable_1_Value.htm" />
-    <HelpKINode Title="PropertyBase(TOwner, TValue).Value Property " Url="html/P_W_PropertyBase_2_Value.htm" />
+    <HelpKINode Title="LockableSlim(TValue).Value Property " Url="html/P_W_LockableSlim_1_Value.htm" />
   </HelpKINode>
-  <HelpKINode Title="ValueChanged event" Url="html/E_W_PropertyBase_2_ValueChanged.htm" />
-  <HelpKINode Title="ValueChanging event" Url="html/E_W_PropertyBase_2_ValueChanging.htm" />
+  <HelpKINode Title="ValueChanged event" Url="html/E_W_Lockable_1_ValueChanged.htm" />
+  <HelpKINode Title="ValueChangedDelegate(Of TValue) delegate" Url="html/T_W_ValueChangedDelegate_1.htm" />
+  <HelpKINode Title="ValueChangedDelegate&lt;TValue&gt; delegate" Url="html/T_W_ValueChangedDelegate_1.htm" />
   <HelpKINode Title="Verbose enumeration member" Url="html/T_W_Logging_Log_LogMessageCategory.htm" />
   <HelpKINode Title="VerifyMd5Hash method" Url="html/M_W_Encryption_MD5_VerifyMd5Hash.htm" />
   <HelpKINode Title="w method" Url="html/Overload_W_Logging_Log_w.htm" />
   <HelpKINode Title="W namespace" Url="html/N_W.htm" />
   <HelpKINode Title="W.ActionQueue(Of T) class" Url="html/T_W_ActionQueue_1.htm" />
   <HelpKINode Title="W.ActionQueue&lt;T&gt; class" Url="html/T_W_ActionQueue_1.htm" />
-  <HelpKINode Title="W.AsExtensions class" Url="html/T_W_AsExtensions.htm" />
+  <HelpKINode Title="W.ArrayMethods class" Url="html/T_W_ArrayMethods.htm" />
+  <HelpKINode Title="W.AsExtensions namespace" Url="html/N_W_AsExtensions.htm" />
+  <HelpKINode Title="W.AsExtensions.AsExtensions class" Url="html/T_W_AsExtensions_AsExtensions.htm" />
   <HelpKINode Title="W.CallResult class" Url="html/T_W_CallResult.htm" />
   <HelpKINode Title="W.CallResult(Of TResult) class" Url="html/T_W_CallResult_1.htm" />
   <HelpKINode Title="W.CallResult&lt;TResult&gt; class" Url="html/T_W_CallResult_1.htm" />
+  <HelpKINode Title="W.DelegateExtensions namespace" Url="html/N_W_DelegateExtensions.htm" />
+  <HelpKINode Title="W.DelegateExtensions.DelegateExtensions class" Url="html/T_W_DelegateExtensions_DelegateExtensions.htm" />
   <HelpKINode Title="W.Disposable class" Url="html/T_W_Disposable.htm" />
+  <HelpKINode Title="W.Disposer class" Url="html/T_W_Disposer.htm" />
   <HelpKINode Title="W.Encryption namespace" Url="html/N_W_Encryption.htm" />
+  <HelpKINode Title="W.Encryption.AssymetricEncryption class" Url="html/T_W_Encryption_AssymetricEncryption.htm" />
+  <HelpKINode Title="W.Encryption.AssymetricEncryption.ExchangeKeysDelegate delegate" Url="html/T_W_Encryption_AssymetricEncryption_ExchangeKeysDelegate.htm" />
   <HelpKINode Title="W.Encryption.MD5 class" Url="html/T_W_Encryption_MD5.htm" />
   <HelpKINode Title="W.Encryption.PublicPrivateKeyPair class" Url="html/T_W_Encryption_PublicPrivateKeyPair.htm" />
   <HelpKINode Title="W.Encryption.RSAMethods class" Url="html/T_W_Encryption_RSAMethods.htm" />
   <HelpKINode Title="W.EventTemplate class" Url="html/T_W_EventTemplate.htm" />
   <HelpKINode Title="W.EventTemplate(Of TEventArg) class" Url="html/T_W_EventTemplate_1.htm" />
-  <HelpKINode Title="W.EventTemplate(Of TEventArg).EventDelegate delegate" Url="html/T_W_EventTemplate_1_EventDelegate.htm" />
   <HelpKINode Title="W.EventTemplate(Of TEventArg1, TEventArg2) class" Url="html/T_W_EventTemplate_2.htm" />
-  <HelpKINode Title="W.EventTemplate(Of TEventArg1, TEventArg2).EventDelegate delegate" Url="html/T_W_EventTemplate_2_EventDelegate.htm" />
   <HelpKINode Title="W.EventTemplate(Of TEventArg1, TEventArg2, TEventArg3) class" Url="html/T_W_EventTemplate_3.htm" />
-  <HelpKINode Title="W.EventTemplate(Of TEventArg1, TEventArg2, TEventArg3).EventDelegate delegate" Url="html/T_W_EventTemplate_3_EventDelegate.htm" />
   <HelpKINode Title="W.EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4) class" Url="html/T_W_EventTemplate_4.htm" />
-  <HelpKINode Title="W.EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4).EventDelegate delegate" Url="html/T_W_EventTemplate_4_EventDelegate.htm" />
   <HelpKINode Title="W.EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5) class" Url="html/T_W_EventTemplate_5.htm" />
-  <HelpKINode Title="W.EventTemplate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5).EventDelegate delegate" Url="html/T_W_EventTemplate_5_EventDelegate.htm" />
-  <HelpKINode Title="W.EventTemplate.EventDelegate delegate" Url="html/T_W_EventTemplate_EventDelegate.htm" />
   <HelpKINode Title="W.EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5&gt; class" Url="html/T_W_EventTemplate_5.htm" />
-  <HelpKINode Title="W.EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_5_EventDelegate.htm" />
   <HelpKINode Title="W.EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4&gt; class" Url="html/T_W_EventTemplate_4.htm" />
-  <HelpKINode Title="W.EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_4_EventDelegate.htm" />
   <HelpKINode Title="W.EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3&gt; class" Url="html/T_W_EventTemplate_3.htm" />
-  <HelpKINode Title="W.EventTemplate&lt;TEventArg1, TEventArg2, TEventArg3&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_3_EventDelegate.htm" />
   <HelpKINode Title="W.EventTemplate&lt;TEventArg1, TEventArg2&gt; class" Url="html/T_W_EventTemplate_2.htm" />
-  <HelpKINode Title="W.EventTemplate&lt;TEventArg1, TEventArg2&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_2_EventDelegate.htm" />
   <HelpKINode Title="W.EventTemplate&lt;TEventArg&gt; class" Url="html/T_W_EventTemplate_1.htm" />
-  <HelpKINode Title="W.EventTemplate&lt;TEventArg&gt;.EventDelegate delegate" Url="html/T_W_EventTemplate_1_EventDelegate.htm" />
-  <HelpKINode Title="W.ExtensionMethods class" Url="html/T_W_ExtensionMethods.htm" />
-  <HelpKINode Title="W.FromExtensions class" Url="html/T_W_FromExtensions.htm" />
-  <HelpKINode Title="W.InvokeExtensions class" Url="html/T_W_InvokeExtensions.htm" />
+  <HelpKINode Title="W.EventTemplateDelegate delegate" Url="html/T_W_EventTemplateDelegate.htm" />
+  <HelpKINode Title="W.EventTemplateDelegate(Of TEventArg) delegate" Url="html/T_W_EventTemplateDelegate_1.htm" />
+  <HelpKINode Title="W.EventTemplateDelegate(Of TEventArg1, TEventArg2) delegate" Url="html/T_W_EventTemplateDelegate_2.htm" />
+  <HelpKINode Title="W.EventTemplateDelegate(Of TEventArg1, TEventArg2, TEventArg3) delegate" Url="html/T_W_EventTemplateDelegate_3.htm" />
+  <HelpKINode Title="W.EventTemplateDelegate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4) delegate" Url="html/T_W_EventTemplateDelegate_4.htm" />
+  <HelpKINode Title="W.EventTemplateDelegate(Of TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5) delegate" Url="html/T_W_EventTemplateDelegate_5.htm" />
+  <HelpKINode Title="W.EventTemplateDelegate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4, TEventArg5&gt; delegate" Url="html/T_W_EventTemplateDelegate_5.htm" />
+  <HelpKINode Title="W.EventTemplateDelegate&lt;TEventArg1, TEventArg2, TEventArg3, TEventArg4&gt; delegate" Url="html/T_W_EventTemplateDelegate_4.htm" />
+  <HelpKINode Title="W.EventTemplateDelegate&lt;TEventArg1, TEventArg2, TEventArg3&gt; delegate" Url="html/T_W_EventTemplateDelegate_3.htm" />
+  <HelpKINode Title="W.EventTemplateDelegate&lt;TEventArg1, TEventArg2&gt; delegate" Url="html/T_W_EventTemplateDelegate_2.htm" />
+  <HelpKINode Title="W.EventTemplateDelegate&lt;TEventArg&gt; delegate" Url="html/T_W_EventTemplateDelegate_1.htm" />
+  <HelpKINode Title="W.FromExtensions namespace" Url="html/N_W_FromExtensions.htm" />
+  <HelpKINode Title="W.FromExtensions.FromExtensions class" Url="html/T_W_FromExtensions_FromExtensions.htm" />
+  <HelpKINode Title="W.InvokeExtensions namespace" Url="html/N_W_InvokeExtensions.htm" />
+  <HelpKINode Title="W.InvokeExtensions.InvokeExtensions class" Url="html/T_W_InvokeExtensions_InvokeExtensions.htm" />
   <HelpKINode Title="W.IOwnedProperty interface" Url="html/T_W_IOwnedProperty.htm" />
   <HelpKINode Title="W.IProperty interface" Url="html/T_W_IProperty.htm" />
   <HelpKINode Title="W.IProperty(Of TValue) interface" Url="html/T_W_IProperty_1.htm" />
   <HelpKINode Title="W.IProperty&lt;TValue&gt; interface" Url="html/T_W_IProperty_1.htm" />
   <HelpKINode Title="W.Lockable(Of TValue) class" Url="html/T_W_Lockable_1.htm" />
   <HelpKINode Title="W.Lockable&lt;TValue&gt; class" Url="html/T_W_Lockable_1.htm" />
+  <HelpKINode Title="W.LockableSlim(Of TValue) class" Url="html/T_W_LockableSlim_1.htm" />
+  <HelpKINode Title="W.LockableSlim&lt;TValue&gt; class" Url="html/T_W_LockableSlim_1.htm" />
+  <HelpKINode Title="W.LockExtensions namespace" Url="html/N_W_LockExtensions.htm" />
+  <HelpKINode Title="W.LockExtensions.MonitorExtensions class" Url="html/T_W_LockExtensions_MonitorExtensions.htm" />
+  <HelpKINode Title="W.LockExtensions.ReaderWriterLockSlimExtensions class" Url="html/T_W_LockExtensions_ReaderWriterLockSlimExtensions.htm" />
+  <HelpKINode Title="W.LockExtensions.SemaphoreSlimExtensions class" Url="html/T_W_LockExtensions_SemaphoreSlimExtensions.htm" />
+  <HelpKINode Title="W.LockExtensions.SpinLockExtensions class" Url="html/T_W_LockExtensions_SpinLockExtensions.htm" />
   <HelpKINode Title="W.Logging namespace" Url="html/N_W_Logging.htm" />
   <HelpKINode Title="W.Logging.CustomLogger class" Url="html/T_W_Logging_CustomLogger.htm" />
   <HelpKINode Title="W.Logging.Log class" Url="html/T_W_Logging_Log.htm" />
@@ -873,34 +1364,67 @@
   <HelpKINode Title="W.Property&lt;TOwner, TValue&gt; class" Url="html/T_W_Property_2.htm" />
   <HelpKINode Title="W.Property&lt;TValue&gt; class" Url="html/T_W_Property_1.htm" />
   <HelpKINode Title="W.PropertyBase(Of TOwner, TValue) class" Url="html/T_W_PropertyBase_2.htm" />
-  <HelpKINode Title="W.PropertyBase(Of TOwner, TValue).OnValueChangedDelegate delegate" Url="html/T_W_PropertyBase_2_OnValueChangedDelegate.htm" />
-  <HelpKINode Title="W.PropertyBase(Of TOwner, TValue).PropertyValueChangedDelegate delegate" Url="html/T_W_PropertyBase_2_PropertyValueChangedDelegate.htm" />
-  <HelpKINode Title="W.PropertyBase(Of TOwner, TValue).PropertyValueChangingDelegate delegate" Url="html/T_W_PropertyBase_2_PropertyValueChangingDelegate.htm" />
   <HelpKINode Title="W.PropertyBase&lt;TOwner, TValue&gt; class" Url="html/T_W_PropertyBase_2.htm" />
-  <HelpKINode Title="W.PropertyBase&lt;TOwner, TValue&gt;.OnValueChangedDelegate delegate" Url="html/T_W_PropertyBase_2_OnValueChangedDelegate.htm" />
-  <HelpKINode Title="W.PropertyBase&lt;TOwner, TValue&gt;.PropertyValueChangedDelegate delegate" Url="html/T_W_PropertyBase_2_PropertyValueChangedDelegate.htm" />
-  <HelpKINode Title="W.PropertyBase&lt;TOwner, TValue&gt;.PropertyValueChangingDelegate delegate" Url="html/T_W_PropertyBase_2_PropertyValueChangingDelegate.htm" />
   <HelpKINode Title="W.PropertyChangedNotifier class" Url="html/T_W_PropertyChangedNotifier.htm" />
   <HelpKINode Title="W.PropertyHost class" Url="html/T_W_PropertyHost.htm" />
-  <HelpKINode Title="W.PropertyHostMethods class" Url="html/T_W_PropertyHostMethods.htm" />
+  <HelpKINode Title="W.PropertyHostExtensions namespace" Url="html/N_W_PropertyHostExtensions.htm" />
+  <HelpKINode Title="W.PropertyHostExtensions.PropertyHostExtensions class" Url="html/T_W_PropertyHostExtensions_PropertyHostExtensions.htm" />
   <HelpKINode Title="W.PropertyHostNotifier class" Url="html/T_W_PropertyHostNotifier.htm" />
+  <HelpKINode Title="W.PropertySlim(Of TValue) class" Url="html/T_W_PropertySlim_1.htm" />
+  <HelpKINode Title="W.PropertySlim&lt;TValue&gt; class" Url="html/T_W_PropertySlim_1.htm" />
   <HelpKINode Title="W.Singleton(Of TSingletonType) class" Url="html/T_W_Singleton_1.htm" />
   <HelpKINode Title="W.Singleton&lt;TSingletonType&gt; class" Url="html/T_W_Singleton_1.htm" />
-  <HelpKINode Title="W.StringExtensions class" Url="html/T_W_StringExtensions.htm" />
+  <HelpKINode Title="W.StringExtensions namespace" Url="html/N_W_StringExtensions.htm" />
+  <HelpKINode Title="W.StringExtensions.StringExtensions class" Url="html/T_W_StringExtensions_StringExtensions.htm" />
   <HelpKINode Title="W.Threading namespace" Url="html/N_W_Threading.htm" />
+  <HelpKINode Title="W.Threading.AnyMethodDelegate delegate" Url="html/T_W_Threading_AnyMethodDelegate.htm" />
   <HelpKINode Title="W.Threading.CPUProfileEnum enumeration" Url="html/T_W_Threading_CPUProfileEnum.htm" />
   <HelpKINode Title="W.Threading.Gate class" Url="html/T_W_Threading_Gate.htm" />
   <HelpKINode Title="W.Threading.Gate(Of TParameterType) class" Url="html/T_W_Threading_Gate_1.htm" />
   <HelpKINode Title="W.Threading.Gate&lt;TParameterType&gt; class" Url="html/T_W_Threading_Gate_1.htm" />
-  <HelpKINode Title="W.Threading.GateMethods class" Url="html/T_W_Threading_GateMethods.htm" />
+  <HelpKINode Title="W.Threading.GateExtensions namespace" Url="html/N_W_Threading_GateExtensions.htm" />
+  <HelpKINode Title="W.Threading.GateExtensions.GateExtensions class" Url="html/T_W_Threading_GateExtensions_GateExtensions.htm" />
+  <HelpKINode Title="W.Threading.GenericThreadDelegate delegate" Url="html/T_W_Threading_GenericThreadDelegate.htm" />
+  <HelpKINode Title="W.Threading.Lockers namespace" Url="html/N_W_Threading_Lockers.htm" />
+  <HelpKINode Title="W.Threading.Lockers.ILocker interface" Url="html/T_W_Threading_Lockers_ILocker.htm" />
+  <HelpKINode Title="W.Threading.Lockers.ILocker(Of TLocker) interface" Url="html/T_W_Threading_Lockers_ILocker_1.htm" />
+  <HelpKINode Title="W.Threading.Lockers.ILocker&lt;TLocker&gt; interface" Url="html/T_W_Threading_Lockers_ILocker_1.htm" />
+  <HelpKINode Title="W.Threading.Lockers.IStateLocker(Of TLocker, TState) interface" Url="html/T_W_Threading_Lockers_IStateLocker_2.htm" />
+  <HelpKINode Title="W.Threading.Lockers.IStateLocker&lt;TLocker, TState&gt; interface" Url="html/T_W_Threading_Lockers_IStateLocker_2.htm" />
+  <HelpKINode Title="W.Threading.Lockers.LockTypeEnum enumeration" Url="html/T_W_Threading_Lockers_LockTypeEnum.htm" />
+  <HelpKINode Title="W.Threading.Lockers.MonitorLocker class" Url="html/T_W_Threading_Lockers_MonitorLocker.htm" />
+  <HelpKINode Title="W.Threading.Lockers.MonitorLocker(Of TState) class" Url="html/T_W_Threading_Lockers_MonitorLocker_1.htm" />
+  <HelpKINode Title="W.Threading.Lockers.MonitorLocker&lt;TState&gt; class" Url="html/T_W_Threading_Lockers_MonitorLocker_1.htm" />
+  <HelpKINode Title="W.Threading.Lockers.ReaderWriterLocker class" Url="html/T_W_Threading_Lockers_ReaderWriterLocker.htm" />
+  <HelpKINode Title="W.Threading.Lockers.ReaderWriterLocker(Of TState) class" Url="html/T_W_Threading_Lockers_ReaderWriterLocker_1.htm" />
+  <HelpKINode Title="W.Threading.Lockers.ReaderWriterLocker&lt;TState&gt; class" Url="html/T_W_Threading_Lockers_ReaderWriterLocker_1.htm" />
+  <HelpKINode Title="W.Threading.Lockers.SemaphoreSlimLocker class" Url="html/T_W_Threading_Lockers_SemaphoreSlimLocker.htm" />
+  <HelpKINode Title="W.Threading.Lockers.SemaphoreSlimLocker(Of TState) class" Url="html/T_W_Threading_Lockers_SemaphoreSlimLocker_1.htm" />
+  <HelpKINode Title="W.Threading.Lockers.SemaphoreSlimLocker&lt;TState&gt; class" Url="html/T_W_Threading_Lockers_SemaphoreSlimLocker_1.htm" />
+  <HelpKINode Title="W.Threading.Lockers.SpinLocker class" Url="html/T_W_Threading_Lockers_SpinLocker.htm" />
+  <HelpKINode Title="W.Threading.Lockers.SpinLocker(Of TState) class" Url="html/T_W_Threading_Lockers_SpinLocker_1.htm" />
+  <HelpKINode Title="W.Threading.Lockers.SpinLocker&lt;TState&gt; class" Url="html/T_W_Threading_Lockers_SpinLocker_1.htm" />
+  <HelpKINode Title="W.Threading.Lockers.StateAssignmentDelegate(Of TState) delegate" Url="html/T_W_Threading_Lockers_StateAssignmentDelegate_1.htm" />
+  <HelpKINode Title="W.Threading.Lockers.StateAssignmentDelegate&lt;TState&gt; delegate" Url="html/T_W_Threading_Lockers_StateAssignmentDelegate_1.htm" />
+  <HelpKINode Title="W.Threading.Lockers.StateLocker(Of TLocker, TState) class" Url="html/T_W_Threading_Lockers_StateLocker_2.htm" />
+  <HelpKINode Title="W.Threading.Lockers.StateLocker&lt;TLocker, TState&gt; class" Url="html/T_W_Threading_Lockers_StateLocker_2.htm" />
+  <HelpKINode Title="W.Threading.ParameterizedThread class" Url="html/T_W_Threading_ParameterizedThread.htm" />
   <HelpKINode Title="W.Threading.Thread class" Url="html/T_W_Threading_Thread.htm" />
-  <HelpKINode Title="W.Threading.Thread(Of TParameterType) class" Url="html/T_W_Threading_Thread_1.htm" />
-  <HelpKINode Title="W.Threading.Thread&lt;TParameterType&gt; class" Url="html/T_W_Threading_Thread_1.htm" />
-  <HelpKINode Title="W.Threading.ThreadExtensions class" Url="html/T_W_Threading_ThreadExtensions.htm" />
-  <HelpKINode Title="WaitForChanged method" Url="html/M_W_PropertyBase_2_WaitForChanged.htm" />
-  <HelpKINode Title="WaitForValue(Of TItemType) method" Url="html/M_W_ExtensionMethods_WaitForValue__1.htm" />
-  <HelpKINode Title="WaitForValue&lt;TItemType&gt; method" Url="html/M_W_ExtensionMethods_WaitForValue__1.htm" />
-  <HelpKINode Title="WaitForValueAsync method" Url="html/Overload_W_ExtensionMethods_WaitForValueAsync.htm" />
+  <HelpKINode Title="W.Threading.Thread(Of TType) class" Url="html/T_W_Threading_Thread_1.htm" />
+  <HelpKINode Title="W.Threading.Thread&lt;TType&gt; class" Url="html/T_W_Threading_Thread_1.htm" />
+  <HelpKINode Title="W.Threading.ThreadDelegate delegate" Url="html/T_W_Threading_ThreadDelegate.htm" />
+  <HelpKINode Title="W.Threading.ThreadExtensions namespace" Url="html/N_W_Threading_ThreadExtensions.htm" />
+  <HelpKINode Title="W.Threading.ThreadExtensions.ThreadExtensions class" Url="html/T_W_Threading_ThreadExtensions_ThreadExtensions.htm" />
+  <HelpKINode Title="W.Threading.ThreadMethod class" Url="html/T_W_Threading_ThreadMethod.htm" />
+  <HelpKINode Title="W.Threading.ThreadSlim class" Url="html/T_W_Threading_ThreadSlim.htm" />
+  <HelpKINode Title="W.ValueChangedDelegate(Of TValue) delegate" Url="html/T_W_ValueChangedDelegate_1.htm" />
+  <HelpKINode Title="W.ValueChangedDelegate&lt;TValue&gt; delegate" Url="html/T_W_ValueChangedDelegate_1.htm" />
+  <HelpKINode Title="Wait method">
+    <HelpKINode Title="ThreadMethod.Wait Method " Url="html/Overload_W_Threading_ThreadMethod_Wait.htm" />
+    <HelpKINode Title="ThreadSlim.Wait Method " Url="html/Overload_W_Threading_ThreadSlim_Wait.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WaitForValueChanged method" Url="html/M_W_Lockable_1_WaitForValueChanged.htm" />
   <HelpKINode Title="Warning enumeration member" Url="html/T_W_Logging_Log_LogMessageCategory.htm" />
+  <HelpKINode Title="Write enumeration member" Url="html/T_W_Threading_Lockers_LockTypeEnum.htm" />
   <HelpKINode Title="Yield enumeration member" Url="html/T_W_Threading_CPUProfileEnum.htm" />
 </HelpKI>

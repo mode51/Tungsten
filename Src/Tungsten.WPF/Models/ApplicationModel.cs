@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using W.Logging;
 using W.WPF.Core;
+using W.PropertyHostExtensions;
 
 namespace W.WPF.Models
 {

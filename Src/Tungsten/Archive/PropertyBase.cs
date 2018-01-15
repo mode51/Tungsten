@@ -4,6 +4,30 @@ using System.Threading;
 
 namespace W
 {
+    //These delegates/events require the base class to support TOwner (otherwise, the owner parameter would have to be of object type)
+    /// <summary>
+    /// Raised prior to the value of the property changing.  Allows the programmer to cancel the change.
+    /// </summary>
+    /// <param name="owner">The owner of the property</param>
+    /// <param name="oldValue">The old value</param>
+    /// <param name="newValue">The expected new value</param>
+    /// <param name="cancel">Set to True to prevent the property value from changing</param>
+    public delegate void PropertyValueChangingDelegate(TOwner owner, TValue oldValue, TValue newValue, ref bool cancel);
+    /// <summary>
+    /// Raised when the value of the property changes
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="oldValue"></param>
+    /// <param name="newValue"></param>
+    public delegate void PropertyValueChangedDelegate(TOwner sender, TValue oldValue, TValue newValue);
+    /// <summary>
+    /// Used by the constructor to handle the property change via a callback rather than the events
+    /// </summary>
+    /// <param name="owner">The property owner</param>
+    /// <param name="oldValue">The previous value</param>
+    /// <param name="newValue">The new value</param>
+    public delegate void OnValueChangedDelegate(TOwner owner, TValue oldValue, TValue newValue);
+
     /// <summary>
     /// Provides the functionality for the Property classes
     /// </summary>
@@ -11,30 +35,6 @@ namespace W
     /// <typeparam name="TValue">The type of the property value</typeparam>
     public abstract class PropertyBase<TOwner, TValue> : PropertyChangedNotifier, IDisposable, IProperty<TValue> where TOwner : class
     {
-        //These delegates/events require the base class to support TOwner (otherwise, the owner parameter would have to be of object type)
-        /// <summary>
-        /// Raised prior to the value of the property changing.  Allows the programmer to cancel the change.
-        /// </summary>
-        /// <param name="owner">The owner of the property</param>
-        /// <param name="oldValue">The old value</param>
-        /// <param name="newValue">The expected new value</param>
-        /// <param name="cancel">Set to True to prevent the property value from changing</param>
-        public delegate void PropertyValueChangingDelegate(TOwner owner, TValue oldValue, TValue newValue, ref bool cancel);
-        /// <summary>
-        /// Raised when the value of the property changes
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="oldValue"></param>
-        /// <param name="newValue"></param>
-        public delegate void PropertyValueChangedDelegate(TOwner sender, TValue oldValue, TValue newValue);
-        /// <summary>
-        /// Used by the constructor to handle the property change via a callback rather than the events
-        /// </summary>
-        /// <param name="owner">The property owner</param>
-        /// <param name="oldValue">The previous value</param>
-        /// <param name="newValue">The new value</param>
-        public delegate void OnValueChangedDelegate(TOwner owner, TValue oldValue, TValue newValue);
-
         /// <summary>
         /// Raised after Value has changed
         /// </summary>

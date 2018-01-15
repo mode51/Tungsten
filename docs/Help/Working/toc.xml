@@ -18,26 +18,19 @@
           <topic id="M:W.ActionQueue`1.Finalize" project="Tungsten" file="M_W_ActionQueue_1_Finalize" />
         </topic>
       </topic>
-      <topic id="T:W.AsExtensions" project="Tungsten" file="T_W_AsExtensions">
-        <topic id="Methods.T:W.AsExtensions" project="Tungsten" file="Methods_T_W_AsExtensions">
-          <topic id="M:W.AsExtensions.As``1(System.Object)" project="Tungsten" file="M_W_AsExtensions_As__1" />
-          <topic id="Overload:W.AsExtensions.AsBase64" project="Tungsten" file="Overload_W_AsExtensions_AsBase64">
-            <topic id="M:W.AsExtensions.AsBase64(System.Byte[])" project="Tungsten" file="M_W_AsExtensions_AsBase64" />
-            <topic id="M:W.AsExtensions.AsBase64(System.String)" project="Tungsten" file="M_W_AsExtensions_AsBase64_1" />
-          </topic>
-          <topic id="M:W.AsExtensions.AsBytes(System.String)" project="Tungsten" file="M_W_AsExtensions_AsBytes" />
-          <topic id="M:W.AsExtensions.AsCompressed(System.Byte[])" project="Tungsten" file="M_W_AsExtensions_AsCompressed" />
-          <topic id="M:W.AsExtensions.AsDecompressed(System.Byte[])" project="Tungsten" file="M_W_AsExtensions_AsDecompressed" />
-          <topic id="M:W.AsExtensions.AsJson``1(System.Object)" project="Tungsten" file="M_W_AsExtensions_AsJson__1" />
-          <topic id="Overload:W.AsExtensions.AsStream" project="Tungsten" file="Overload_W_AsExtensions_AsStream">
-            <topic id="M:W.AsExtensions.AsStream(System.Byte[])" project="Tungsten" file="M_W_AsExtensions_AsStream" />
-            <topic id="M:W.AsExtensions.AsStream(System.String)" project="Tungsten" file="M_W_AsExtensions_AsStream_1" />
-          </topic>
-          <topic id="Overload:W.AsExtensions.AsString" project="Tungsten" file="Overload_W_AsExtensions_AsString">
-            <topic id="M:W.AsExtensions.AsString(System.Byte[])" project="Tungsten" file="M_W_AsExtensions_AsString" />
-            <topic id="M:W.AsExtensions.AsString(System.Byte[],System.Int32,System.Int32)" project="Tungsten" file="M_W_AsExtensions_AsString_1" />
-          </topic>
-          <topic id="M:W.AsExtensions.AsXml``1(System.Object)" project="Tungsten" file="M_W_AsExtensions_AsXml__1" />
+      <topic id="T:W.ArrayMethods" project="Tungsten" file="T_W_ArrayMethods">
+        <topic id="Methods.T:W.ArrayMethods" project="Tungsten" file="Methods_T_W_ArrayMethods">
+          <topic id="M:W.ArrayMethods.Append``1(``0[]@,``0[])" project="Tungsten" file="M_W_ArrayMethods_Append__1" />
+          <topic id="M:W.ArrayMethods.Insert``1(``0[]@,``0[],System.Int32)" project="Tungsten" file="M_W_ArrayMethods_Insert__1" />
+          <topic id="M:W.ArrayMethods.Peek``1(``0[],System.Int32,System.Int32)" project="Tungsten" file="M_W_ArrayMethods_Peek__1" />
+          <topic id="M:W.ArrayMethods.PeekEnd``1(``0[],System.Int32)" project="Tungsten" file="M_W_ArrayMethods_PeekEnd__1" />
+          <topic id="M:W.ArrayMethods.PeekStart``1(``0[],System.Int32)" project="Tungsten" file="M_W_ArrayMethods_PeekStart__1" />
+          <topic id="M:W.ArrayMethods.Take``1(``0[]@,System.Int32,System.Int32)" project="Tungsten" file="M_W_ArrayMethods_Take__1" />
+          <topic id="M:W.ArrayMethods.TakeFromEnd``1(``0[]@,System.Int32)" project="Tungsten" file="M_W_ArrayMethods_TakeFromEnd__1" />
+          <topic id="M:W.ArrayMethods.TakeFromStart``1(``0[]@,System.Int32)" project="Tungsten" file="M_W_ArrayMethods_TakeFromStart__1" />
+          <topic id="M:W.ArrayMethods.Trim``1(``0[]@,System.Int32,System.Int32)" project="Tungsten" file="M_W_ArrayMethods_Trim__1" />
+          <topic id="M:W.ArrayMethods.TrimEnd``1(``0[]@,System.Int32)" project="Tungsten" file="M_W_ArrayMethods_TrimEnd__1" />
+          <topic id="M:W.ArrayMethods.TrimStart``1(``0[]@,System.Int32)" project="Tungsten" file="M_W_ArrayMethods_TrimStart__1" />
         </topic>
       </topic>
       <topic id="T:W.CallResult" project="Tungsten" file="T_W_CallResult">
@@ -70,13 +63,24 @@
         <topic id="M:W.Disposable.#ctor" project="Tungsten" file="M_W_Disposable__ctor" />
         <topic id="Methods.T:W.Disposable" project="Tungsten" file="Methods_T_W_Disposable">
           <topic id="M:W.Disposable.Dispose" project="Tungsten" file="M_W_Disposable_Dispose" />
-          <topic id="M:W.Disposable.Finalize" project="Tungsten" file="M_W_Disposable_Finalize" />
           <topic id="M:W.Disposable.OnDispose" project="Tungsten" file="M_W_Disposable_OnDispose" />
           <topic id="M:W.Disposable.OnDisposeUnmanaged" project="Tungsten" file="M_W_Disposable_OnDisposeUnmanaged" />
         </topic>
         <topic id="Fields.T:W.Disposable" project="Tungsten" file="Fields_T_W_Disposable">
           <topic id="F:W.Disposable.IsDisposed" project="Tungsten" file="F_W_Disposable_IsDisposed" />
           <topic id="F:W.Disposable.IsDisposing" project="Tungsten" file="F_W_Disposable_IsDisposing" />
+        </topic>
+      </topic>
+      <topic id="T:W.Disposer" project="Tungsten" file="T_W_Disposer">
+        <topic id="M:W.Disposer.#ctor" project="Tungsten" file="M_W_Disposer__ctor" />
+        <topic id="Properties.T:W.Disposer" project="Tungsten" file="Properties_T_W_Disposer">
+          <topic id="P:W.Disposer.IsDisposed" project="Tungsten" file="P_W_Disposer_IsDisposed" />
+        </topic>
+        <topic id="Methods.T:W.Disposer" project="Tungsten" file="Methods_T_W_Disposer">
+          <topic id="Overload:W.Disposer.Cleanup" project="Tungsten" file="Overload_W_Disposer_Cleanup">
+            <topic id="M:W.Disposer.Cleanup(System.Action)" project="Tungsten" file="M_W_Disposer_Cleanup" />
+            <topic id="M:W.Disposer.Cleanup(System.Object,System.Action)" project="Tungsten" file="M_W_Disposer_Cleanup_1" />
+          </topic>
         </topic>
       </topic>
       <topic id="T:W.EventTemplate" project="Tungsten" file="T_W_EventTemplate">
@@ -88,7 +92,6 @@
           <topic id="E:W.EventTemplate.OnRaised" project="Tungsten" file="E_W_EventTemplate_OnRaised" />
         </topic>
       </topic>
-      <topic id="T:W.EventTemplate.EventDelegate" project="Tungsten" file="T_W_EventTemplate_EventDelegate" />
       <topic id="T:W.EventTemplate`1" project="Tungsten" file="T_W_EventTemplate_1">
         <topic id="M:W.EventTemplate`1.#ctor" project="Tungsten" file="M_W_EventTemplate_1__ctor" />
         <topic id="Methods.T:W.EventTemplate`1" project="Tungsten" file="Methods_T_W_EventTemplate_1">
@@ -98,7 +101,6 @@
           <topic id="E:W.EventTemplate`1.OnRaised" project="Tungsten" file="E_W_EventTemplate_1_OnRaised" />
         </topic>
       </topic>
-      <topic id="T:W.EventTemplate`1.EventDelegate" project="Tungsten" file="T_W_EventTemplate_1_EventDelegate" />
       <topic id="T:W.EventTemplate`2" project="Tungsten" file="T_W_EventTemplate_2">
         <topic id="M:W.EventTemplate`2.#ctor" project="Tungsten" file="M_W_EventTemplate_2__ctor" />
         <topic id="Methods.T:W.EventTemplate`2" project="Tungsten" file="Methods_T_W_EventTemplate_2">
@@ -108,7 +110,6 @@
           <topic id="E:W.EventTemplate`2.OnRaised" project="Tungsten" file="E_W_EventTemplate_2_OnRaised" />
         </topic>
       </topic>
-      <topic id="T:W.EventTemplate`2.EventDelegate" project="Tungsten" file="T_W_EventTemplate_2_EventDelegate" />
       <topic id="T:W.EventTemplate`3" project="Tungsten" file="T_W_EventTemplate_3">
         <topic id="M:W.EventTemplate`3.#ctor" project="Tungsten" file="M_W_EventTemplate_3__ctor" />
         <topic id="Methods.T:W.EventTemplate`3" project="Tungsten" file="Methods_T_W_EventTemplate_3">
@@ -118,7 +119,6 @@
           <topic id="E:W.EventTemplate`3.OnRaised" project="Tungsten" file="E_W_EventTemplate_3_OnRaised" />
         </topic>
       </topic>
-      <topic id="T:W.EventTemplate`3.EventDelegate" project="Tungsten" file="T_W_EventTemplate_3_EventDelegate" />
       <topic id="T:W.EventTemplate`4" project="Tungsten" file="T_W_EventTemplate_4">
         <topic id="M:W.EventTemplate`4.#ctor" project="Tungsten" file="M_W_EventTemplate_4__ctor" />
         <topic id="Methods.T:W.EventTemplate`4" project="Tungsten" file="Methods_T_W_EventTemplate_4">
@@ -128,7 +128,6 @@
           <topic id="E:W.EventTemplate`4.OnRaised" project="Tungsten" file="E_W_EventTemplate_4_OnRaised" />
         </topic>
       </topic>
-      <topic id="T:W.EventTemplate`4.EventDelegate" project="Tungsten" file="T_W_EventTemplate_4_EventDelegate" />
       <topic id="T:W.EventTemplate`5" project="Tungsten" file="T_W_EventTemplate_5">
         <topic id="M:W.EventTemplate`5.#ctor" project="Tungsten" file="M_W_EventTemplate_5__ctor" />
         <topic id="Methods.T:W.EventTemplate`5" project="Tungsten" file="Methods_T_W_EventTemplate_5">
@@ -138,44 +137,12 @@
           <topic id="E:W.EventTemplate`5.OnRaised" project="Tungsten" file="E_W_EventTemplate_5_OnRaised" />
         </topic>
       </topic>
-      <topic id="T:W.EventTemplate`5.EventDelegate" project="Tungsten" file="T_W_EventTemplate_5_EventDelegate" />
-      <topic id="T:W.ExtensionMethods" project="Tungsten" file="T_W_ExtensionMethods">
-        <topic id="Methods.T:W.ExtensionMethods" project="Tungsten" file="Methods_T_W_ExtensionMethods">
-          <topic id="M:W.ExtensionMethods.Lock``1(``0,System.Action{``0})" project="Tungsten" file="M_W_ExtensionMethods_Lock__1" />
-          <topic id="M:W.ExtensionMethods.Raise(System.Delegate,System.Object[])" project="Tungsten" file="M_W_ExtensionMethods_Raise" />
-          <topic id="M:W.ExtensionMethods.WaitForValue``1(``0,System.Predicate{``0},System.Int32)" project="Tungsten" file="M_W_ExtensionMethods_WaitForValue__1" />
-          <topic id="Overload:W.ExtensionMethods.WaitForValueAsync" project="Tungsten" file="Overload_W_ExtensionMethods_WaitForValueAsync">
-            <topic id="M:W.ExtensionMethods.WaitForValueAsync(System.Object,System.Object,System.Int32)" project="Tungsten" file="M_W_ExtensionMethods_WaitForValueAsync" />
-            <topic id="M:W.ExtensionMethods.WaitForValueAsync``1(``0,System.Predicate{``0},System.Int32)" project="Tungsten" file="M_W_ExtensionMethods_WaitForValueAsync__1" />
-          </topic>
-        </topic>
-      </topic>
-      <topic id="T:W.FromExtensions" project="Tungsten" file="T_W_FromExtensions">
-        <topic id="Methods.T:W.FromExtensions" project="Tungsten" file="Methods_T_W_FromExtensions">
-          <topic id="Overload:W.FromExtensions.FromBase64" project="Tungsten" file="Overload_W_FromExtensions_FromBase64">
-            <topic id="M:W.FromExtensions.FromBase64(System.Byte[])" project="Tungsten" file="M_W_FromExtensions_FromBase64" />
-            <topic id="M:W.FromExtensions.FromBase64(System.String)" project="Tungsten" file="M_W_FromExtensions_FromBase64_1" />
-          </topic>
-          <topic id="M:W.FromExtensions.FromCompressed(System.Byte[])" project="Tungsten" file="M_W_FromExtensions_FromCompressed" />
-          <topic id="Overload:W.FromExtensions.FromJson" project="Tungsten" file="Overload_W_FromExtensions_FromJson">
-            <topic id="M:W.FromExtensions.FromJson``1(System.Byte[])" project="Tungsten" file="M_W_FromExtensions_FromJson__1" />
-            <topic id="M:W.FromExtensions.FromJson``1(System.String)" project="Tungsten" file="M_W_FromExtensions_FromJson__1_1" />
-          </topic>
-          <topic id="Overload:W.FromExtensions.FromXml" project="Tungsten" file="Overload_W_FromExtensions_FromXml">
-            <topic id="M:W.FromExtensions.FromXml``1(System.Byte[])" project="Tungsten" file="M_W_FromExtensions_FromXml__1" />
-            <topic id="M:W.FromExtensions.FromXml``1(System.String)" project="Tungsten" file="M_W_FromExtensions_FromXml__1_1" />
-          </topic>
-        </topic>
-      </topic>
-      <topic id="T:W.InvokeExtensions" project="Tungsten" file="T_W_InvokeExtensions">
-        <topic id="Methods.T:W.InvokeExtensions" project="Tungsten" file="Methods_T_W_InvokeExtensions">
-          <topic id="Overload:W.InvokeExtensions.InvokeEx" project="Tungsten" file="Overload_W_InvokeExtensions_InvokeEx">
-            <topic id="M:W.InvokeExtensions.InvokeEx``1(``0,System.Action{``0})" project="Tungsten" file="M_W_InvokeExtensions_InvokeEx__1" />
-            <topic id="M:W.InvokeExtensions.InvokeEx``1(``0,System.Func{``0,System.Object})" project="Tungsten" file="M_W_InvokeExtensions_InvokeEx__1_1" />
-            <topic id="M:W.InvokeExtensions.InvokeEx``2(``0,System.Func{``0,``1})" project="Tungsten" file="M_W_InvokeExtensions_InvokeEx__2" />
-          </topic>
-        </topic>
-      </topic>
+      <topic id="T:W.EventTemplateDelegate" project="Tungsten" file="T_W_EventTemplateDelegate" />
+      <topic id="T:W.EventTemplateDelegate`1" project="Tungsten" file="T_W_EventTemplateDelegate_1" />
+      <topic id="T:W.EventTemplateDelegate`2" project="Tungsten" file="T_W_EventTemplateDelegate_2" />
+      <topic id="T:W.EventTemplateDelegate`3" project="Tungsten" file="T_W_EventTemplateDelegate_3" />
+      <topic id="T:W.EventTemplateDelegate`4" project="Tungsten" file="T_W_EventTemplateDelegate_4" />
+      <topic id="T:W.EventTemplateDelegate`5" project="Tungsten" file="T_W_EventTemplateDelegate_5" />
       <topic id="T:W.IOwnedProperty" project="Tungsten" file="T_W_IOwnedProperty">
         <topic id="Methods.T:W.IOwnedProperty" project="Tungsten" file="Methods_T_W_IOwnedProperty">
           <topic id="M:W.IOwnedProperty.SetOwner(System.Object)" project="Tungsten" file="M_W_IOwnedProperty_SetOwner" />
@@ -194,30 +161,44 @@
       <topic id="T:W.Lockable`1" project="Tungsten" file="T_W_Lockable_1">
         <topic id="Overload:W.Lockable`1.#ctor" project="Tungsten" file="Overload_W_Lockable_1__ctor">
           <topic id="M:W.Lockable`1.#ctor" project="Tungsten" file="M_W_Lockable_1__ctor" />
-          <topic id="M:W.Lockable`1.#ctor(`0)" project="Tungsten" file="M_W_Lockable_1__ctor_1" />
+          <topic id="M:W.Lockable`1.#ctor(System.Action{System.Object,`0,`0})" project="Tungsten" file="M_W_Lockable_1__ctor_1" />
+          <topic id="M:W.Lockable`1.#ctor(`0)" project="Tungsten" file="M_W_Lockable_1__ctor_2" />
+          <topic id="M:W.Lockable`1.#ctor(`0,System.Action{System.Object,`0,`0})" project="Tungsten" file="M_W_Lockable_1__ctor_3" />
         </topic>
-        <topic id="Properties.T:W.Lockable`1" project="Tungsten" file="Properties_T_W_Lockable_1">
-          <topic id="P:W.Lockable`1.LockObject" project="Tungsten" file="P_W_Lockable_1_LockObject" />
-          <topic id="P:W.Lockable`1.UnlockedValue" project="Tungsten" file="P_W_Lockable_1_UnlockedValue" />
-          <topic id="P:W.Lockable`1.Value" project="Tungsten" file="P_W_Lockable_1_Value" />
-        </topic>
+        <topic id="Properties.T:W.Lockable`1" project="Tungsten" file="Properties_T_W_Lockable_1" />
         <topic id="Methods.T:W.Lockable`1" project="Tungsten" file="Methods_T_W_Lockable_1">
-          <topic id="Overload:W.Lockable`1.ExecuteInLock" project="Tungsten" file="Overload_W_Lockable_1_ExecuteInLock">
-            <topic id="M:W.Lockable`1.ExecuteInLock(System.Action{`0})" project="Tungsten" file="M_W_Lockable_1_ExecuteInLock" />
-            <topic id="M:W.Lockable`1.ExecuteInLock(System.Func{`0,`0})" project="Tungsten" file="M_W_Lockable_1_ExecuteInLock_1" />
-          </topic>
-          <topic id="Overload:W.Lockable`1.ExecuteInLockAsync" project="Tungsten" file="Overload_W_Lockable_1_ExecuteInLockAsync">
-            <topic id="M:W.Lockable`1.ExecuteInLockAsync(System.Action{`0})" project="Tungsten" file="M_W_Lockable_1_ExecuteInLockAsync" />
-            <topic id="M:W.Lockable`1.ExecuteInLockAsync(System.Func{`0,`0})" project="Tungsten" file="M_W_Lockable_1_ExecuteInLockAsync_1" />
-          </topic>
+          <topic id="M:W.Lockable`1.Dispose" project="Tungsten" file="M_W_Lockable_1_Dispose" />
+          <topic id="M:W.Lockable`1.InformWaiters" project="Tungsten" file="M_W_Lockable_1_InformWaiters" />
+          <topic id="M:W.Lockable`1.OnValueChanged(System.Object,`0,`0)" project="Tungsten" file="M_W_Lockable_1_OnValueChanged" />
+          <topic id="M:W.Lockable`1.RaiseValueChanged(System.Object,`0,`0)" project="Tungsten" file="M_W_Lockable_1_RaiseValueChanged" />
+          <topic id="M:W.Lockable`1.SetValue(`0)" project="Tungsten" file="M_W_Lockable_1_SetValue" />
+          <topic id="M:W.Lockable`1.WaitForValueChanged(System.Int32)" project="Tungsten" file="M_W_Lockable_1_WaitForValueChanged" />
         </topic>
+        <topic id="Events.T:W.Lockable`1" project="Tungsten" file="Events_T_W_Lockable_1">
+          <topic id="E:W.Lockable`1.ValueChanged" project="Tungsten" file="E_W_Lockable_1_ValueChanged" />
+        </topic>
+        <topic id="Fields.T:W.Lockable`1" project="Tungsten" file="Fields_T_W_Lockable_1" />
+      </topic>
+      <topic id="T:W.LockableSlim`1" project="Tungsten" file="T_W_LockableSlim_1">
+        <topic id="Overload:W.LockableSlim`1.#ctor" project="Tungsten" file="Overload_W_LockableSlim_1__ctor">
+          <topic id="M:W.LockableSlim`1.#ctor" project="Tungsten" file="M_W_LockableSlim_1__ctor" />
+          <topic id="M:W.LockableSlim`1.#ctor(`0)" project="Tungsten" file="M_W_LockableSlim_1__ctor_1" />
+        </topic>
+        <topic id="Properties.T:W.LockableSlim`1" project="Tungsten" file="Properties_T_W_LockableSlim_1">
+          <topic id="P:W.LockableSlim`1.Value" project="Tungsten" file="P_W_LockableSlim_1_Value" />
+        </topic>
+        <topic id="Methods.T:W.LockableSlim`1" project="Tungsten" file="Methods_T_W_LockableSlim_1">
+          <topic id="M:W.LockableSlim`1.GetValue" project="Tungsten" file="M_W_LockableSlim_1_GetValue" />
+          <topic id="M:W.LockableSlim`1.SetValue(`0)" project="Tungsten" file="M_W_LockableSlim_1_SetValue" />
+        </topic>
+        <topic id="Fields.T:W.LockableSlim`1" project="Tungsten" file="Fields_T_W_LockableSlim_1" />
       </topic>
       <topic id="T:W.Property`1" project="Tungsten" file="T_W_Property_1">
         <topic id="Overload:W.Property`1.#ctor" project="Tungsten" file="Overload_W_Property_1__ctor">
           <topic id="M:W.Property`1.#ctor" project="Tungsten" file="M_W_Property_1__ctor" />
-          <topic id="M:W.Property`1.#ctor(`0)" project="Tungsten" file="M_W_Property_1__ctor_1" />
-          <topic id="M:W.Property`1.#ctor(W.PropertyBase{W.Property{`0},`0}.OnValueChangedDelegate)" project="Tungsten" file="M_W_Property_1__ctor_3" />
-          <topic id="M:W.Property`1.#ctor(`0,W.PropertyBase{W.Property{`0},`0}.OnValueChangedDelegate)" project="Tungsten" file="M_W_Property_1__ctor_2" />
+          <topic id="M:W.Property`1.#ctor(System.Action{System.Object,`0,`0})" project="Tungsten" file="M_W_Property_1__ctor_1" />
+          <topic id="M:W.Property`1.#ctor(`0)" project="Tungsten" file="M_W_Property_1__ctor_2" />
+          <topic id="M:W.Property`1.#ctor(`0,System.Action{System.Object,`0,`0})" project="Tungsten" file="M_W_Property_1__ctor_3" />
         </topic>
         <topic id="Properties.T:W.Property`1" project="Tungsten" file="Properties_T_W_Property_1" />
         <topic id="Methods.T:W.Property`1" project="Tungsten" file="Methods_T_W_Property_1" />
@@ -227,51 +208,47 @@
       <topic id="T:W.Property`2" project="Tungsten" file="T_W_Property_2">
         <topic id="Overload:W.Property`2.#ctor" project="Tungsten" file="Overload_W_Property_2__ctor">
           <topic id="M:W.Property`2.#ctor" project="Tungsten" file="M_W_Property_2__ctor" />
-          <topic id="M:W.Property`2.#ctor(`0)" project="Tungsten" file="M_W_Property_2__ctor_1" />
-          <topic id="M:W.Property`2.#ctor(`1)" project="Tungsten" file="M_W_Property_2__ctor_5" />
-          <topic id="M:W.Property`2.#ctor(W.PropertyBase{`0,`1}.OnValueChangedDelegate)" project="Tungsten" file="M_W_Property_2__ctor_7" />
-          <topic id="M:W.Property`2.#ctor(`0,`1)" project="Tungsten" file="M_W_Property_2__ctor_2" />
-          <topic id="M:W.Property`2.#ctor(`0,W.PropertyBase{`0,`1}.OnValueChangedDelegate)" project="Tungsten" file="M_W_Property_2__ctor_4" />
-          <topic id="M:W.Property`2.#ctor(`1,W.PropertyBase{`0,`1}.OnValueChangedDelegate)" project="Tungsten" file="M_W_Property_2__ctor_6" />
-          <topic id="M:W.Property`2.#ctor(`0,`1,W.PropertyBase{`0,`1}.OnValueChangedDelegate)" project="Tungsten" file="M_W_Property_2__ctor_3" />
+          <topic id="M:W.Property`2.#ctor(System.Action{System.Object,`1,`1})" project="Tungsten" file="M_W_Property_2__ctor_1" />
+          <topic id="M:W.Property`2.#ctor(`0)" project="Tungsten" file="M_W_Property_2__ctor_2" />
+          <topic id="M:W.Property`2.#ctor(`1)" project="Tungsten" file="M_W_Property_2__ctor_6" />
+          <topic id="M:W.Property`2.#ctor(`0,System.Action{System.Object,`1,`1})" project="Tungsten" file="M_W_Property_2__ctor_3" />
+          <topic id="M:W.Property`2.#ctor(`0,`1)" project="Tungsten" file="M_W_Property_2__ctor_4" />
+          <topic id="M:W.Property`2.#ctor(`1,System.Action{System.Object,`1,`1})" project="Tungsten" file="M_W_Property_2__ctor_7" />
+          <topic id="M:W.Property`2.#ctor(`0,`1,System.Action{System.Object,`1,`1})" project="Tungsten" file="M_W_Property_2__ctor_5" />
         </topic>
         <topic id="Properties.T:W.Property`2" project="Tungsten" file="Properties_T_W_Property_2" />
-        <topic id="Methods.T:W.Property`2" project="Tungsten" file="Methods_T_W_Property_2" />
+        <topic id="Methods.T:W.Property`2" project="Tungsten" file="Methods_T_W_Property_2">
+          <topic id="M:W.Property`2.W#IOwnedProperty#SetOwner(System.Object)" project="Tungsten" file="M_W_Property_2_W_IOwnedProperty_SetOwner" />
+        </topic>
         <topic id="Events.T:W.Property`2" project="Tungsten" file="Events_T_W_Property_2" />
         <topic id="Fields.T:W.Property`2" project="Tungsten" file="Fields_T_W_Property_2" />
       </topic>
       <topic id="T:W.PropertyBase`2" project="Tungsten" file="T_W_PropertyBase_2">
-        <topic id="M:W.PropertyBase`2.#ctor" project="Tungsten" file="M_W_PropertyBase_2__ctor" />
+        <topic id="Overload:W.PropertyBase`2.#ctor" project="Tungsten" file="Overload_W_PropertyBase_2__ctor">
+          <topic id="M:W.PropertyBase`2.#ctor" project="Tungsten" file="M_W_PropertyBase_2__ctor" />
+          <topic id="M:W.PropertyBase`2.#ctor(System.Action{System.Object,`1,`1})" project="Tungsten" file="M_W_PropertyBase_2__ctor_1" />
+          <topic id="M:W.PropertyBase`2.#ctor(`0)" project="Tungsten" file="M_W_PropertyBase_2__ctor_2" />
+          <topic id="M:W.PropertyBase`2.#ctor(`1)" project="Tungsten" file="M_W_PropertyBase_2__ctor_6" />
+          <topic id="M:W.PropertyBase`2.#ctor(`0,System.Action{System.Object,`1,`1})" project="Tungsten" file="M_W_PropertyBase_2__ctor_3" />
+          <topic id="M:W.PropertyBase`2.#ctor(`0,`1)" project="Tungsten" file="M_W_PropertyBase_2__ctor_4" />
+          <topic id="M:W.PropertyBase`2.#ctor(`1,System.Action{System.Object,`1,`1})" project="Tungsten" file="M_W_PropertyBase_2__ctor_7" />
+          <topic id="M:W.PropertyBase`2.#ctor(`0,`1,System.Action{System.Object,`1,`1})" project="Tungsten" file="M_W_PropertyBase_2__ctor_5" />
+        </topic>
         <topic id="Properties.T:W.PropertyBase`2" project="Tungsten" file="Properties_T_W_PropertyBase_2">
           <topic id="P:W.PropertyBase`2.DefaultValue" project="Tungsten" file="P_W_PropertyBase_2_DefaultValue" />
           <topic id="P:W.PropertyBase`2.IsDirty" project="Tungsten" file="P_W_PropertyBase_2_IsDirty" />
           <topic id="P:W.PropertyBase`2.Owner" project="Tungsten" file="P_W_PropertyBase_2_Owner" />
-          <topic id="P:W.PropertyBase`2.Value" project="Tungsten" file="P_W_PropertyBase_2_Value" />
         </topic>
         <topic id="Methods.T:W.PropertyBase`2" project="Tungsten" file="Methods_T_W_PropertyBase_2">
-          <topic id="M:W.PropertyBase`2.Dispose" project="Tungsten" file="M_W_PropertyBase_2_Dispose" />
-          <topic id="M:W.PropertyBase`2.ExecuteOnValueChanged(`1,`1)" project="Tungsten" file="M_W_PropertyBase_2_ExecuteOnValueChanged" />
-          <topic id="M:W.PropertyBase`2.Finalize" project="Tungsten" file="M_W_PropertyBase_2_Finalize" />
-          <topic id="M:W.PropertyBase`2.GetValue" project="Tungsten" file="M_W_PropertyBase_2_GetValue" />
           <topic id="M:W.PropertyBase`2.LoadValue(`1)" project="Tungsten" file="M_W_PropertyBase_2_LoadValue" />
           <topic id="M:W.PropertyBase`2.OnPropertyChanged(System.String)" project="Tungsten" file="M_W_PropertyBase_2_OnPropertyChanged" />
-          <topic id="M:W.PropertyBase`2.RaisePropertyValueChanged(`1,`1)" project="Tungsten" file="M_W_PropertyBase_2_RaisePropertyValueChanged" />
-          <topic id="M:W.PropertyBase`2.RaisePropertyValueChanging(`1,`1,System.Boolean@)" project="Tungsten" file="M_W_PropertyBase_2_RaisePropertyValueChanging" />
+          <topic id="M:W.PropertyBase`2.OnPropertyChanging(System.String)" project="Tungsten" file="M_W_PropertyBase_2_OnPropertyChanging" />
+          <topic id="M:W.PropertyBase`2.OnValueChanged(System.Object,`1,`1)" project="Tungsten" file="M_W_PropertyBase_2_OnValueChanged" />
           <topic id="M:W.PropertyBase`2.ResetToDefaultValue(System.Boolean)" project="Tungsten" file="M_W_PropertyBase_2_ResetToDefaultValue" />
-          <topic id="M:W.PropertyBase`2.SetValue(System.Object,System.String)" project="Tungsten" file="M_W_PropertyBase_2_SetValue" />
-          <topic id="M:W.PropertyBase`2.WaitForChanged(System.Int32)" project="Tungsten" file="M_W_PropertyBase_2_WaitForChanged" />
         </topic>
-        <topic id="Events.T:W.PropertyBase`2" project="Tungsten" file="Events_T_W_PropertyBase_2">
-          <topic id="E:W.PropertyBase`2.ValueChanged" project="Tungsten" file="E_W_PropertyBase_2_ValueChanged" />
-          <topic id="E:W.PropertyBase`2.ValueChanging" project="Tungsten" file="E_W_PropertyBase_2_ValueChanging" />
-        </topic>
-        <topic id="Fields.T:W.PropertyBase`2" project="Tungsten" file="Fields_T_W_PropertyBase_2">
-          <topic id="F:W.PropertyBase`2.OnValueChanged" project="Tungsten" file="F_W_PropertyBase_2_OnValueChanged" />
-        </topic>
+        <topic id="Events.T:W.PropertyBase`2" project="Tungsten" file="Events_T_W_PropertyBase_2" />
+        <topic id="Fields.T:W.PropertyBase`2" project="Tungsten" file="Fields_T_W_PropertyBase_2" />
       </topic>
-      <topic id="T:W.PropertyBase`2.OnValueChangedDelegate" project="Tungsten" file="T_W_PropertyBase_2_OnValueChangedDelegate" />
-      <topic id="T:W.PropertyBase`2.PropertyValueChangedDelegate" project="Tungsten" file="T_W_PropertyBase_2_PropertyValueChangedDelegate" />
-      <topic id="T:W.PropertyBase`2.PropertyValueChangingDelegate" project="Tungsten" file="T_W_PropertyBase_2_PropertyValueChangingDelegate" />
       <topic id="T:W.PropertyChangedNotifier" project="Tungsten" file="T_W_PropertyChangedNotifier">
         <topic id="M:W.PropertyChangedNotifier.#ctor" project="Tungsten" file="M_W_PropertyChangedNotifier__ctor" />
         <topic id="Methods.T:W.PropertyChangedNotifier" project="Tungsten" file="Methods_T_W_PropertyChangedNotifier">
@@ -293,13 +270,6 @@
           <topic id="M:W.PropertyHost.MarkAsClean" project="Tungsten" file="M_W_PropertyHost_MarkAsClean" />
         </topic>
       </topic>
-      <topic id="T:W.PropertyHostMethods" project="Tungsten" file="T_W_PropertyHostMethods">
-        <topic id="Methods.T:W.PropertyHostMethods" project="Tungsten" file="Methods_T_W_PropertyHostMethods">
-          <topic id="M:W.PropertyHostMethods.InitializeProperties(System.Object)" project="Tungsten" file="M_W_PropertyHostMethods_InitializeProperties" />
-          <topic id="M:W.PropertyHostMethods.IsDirty(System.Object)" project="Tungsten" file="M_W_PropertyHostMethods_IsDirty" />
-          <topic id="M:W.PropertyHostMethods.MarkAsClean(System.Object)" project="Tungsten" file="M_W_PropertyHostMethods_MarkAsClean" />
-        </topic>
-      </topic>
       <topic id="T:W.PropertyHostNotifier" project="Tungsten" file="T_W_PropertyHostNotifier">
         <topic id="M:W.PropertyHostNotifier.#ctor" project="Tungsten" file="M_W_PropertyHostNotifier__ctor" />
         <topic id="Properties.T:W.PropertyHostNotifier" project="Tungsten" file="Properties_T_W_PropertyHostNotifier">
@@ -310,6 +280,27 @@
         </topic>
         <topic id="Events.T:W.PropertyHostNotifier" project="Tungsten" file="Events_T_W_PropertyHostNotifier" />
       </topic>
+      <topic id="T:W.PropertySlim`1" project="Tungsten" file="T_W_PropertySlim_1">
+        <topic id="Overload:W.PropertySlim`1.#ctor" project="Tungsten" file="Overload_W_PropertySlim_1__ctor">
+          <topic id="M:W.PropertySlim`1.#ctor" project="Tungsten" file="M_W_PropertySlim_1__ctor" />
+          <topic id="M:W.PropertySlim`1.#ctor(System.Action{System.Object,`0,`0})" project="Tungsten" file="M_W_PropertySlim_1__ctor_1" />
+          <topic id="M:W.PropertySlim`1.#ctor(`0)" project="Tungsten" file="M_W_PropertySlim_1__ctor_2" />
+          <topic id="M:W.PropertySlim`1.#ctor(`0,System.Action{System.Object,`0,`0})" project="Tungsten" file="M_W_PropertySlim_1__ctor_3" />
+        </topic>
+        <topic id="Properties.T:W.PropertySlim`1" project="Tungsten" file="Properties_T_W_PropertySlim_1" />
+        <topic id="Methods.T:W.PropertySlim`1" project="Tungsten" file="Methods_T_W_PropertySlim_1">
+          <topic id="M:W.PropertySlim`1.OnPropertyChanged(System.String)" project="Tungsten" file="M_W_PropertySlim_1_OnPropertyChanged" />
+          <topic id="M:W.PropertySlim`1.OnPropertyChanging(System.String)" project="Tungsten" file="M_W_PropertySlim_1_OnPropertyChanging" />
+          <topic id="M:W.PropertySlim`1.RaiseOnPropertyChanged(System.Object,System.String)" project="Tungsten" file="M_W_PropertySlim_1_RaiseOnPropertyChanged" />
+          <topic id="M:W.PropertySlim`1.RaiseOnPropertyChanging(System.Object,System.String)" project="Tungsten" file="M_W_PropertySlim_1_RaiseOnPropertyChanging" />
+          <topic id="M:W.PropertySlim`1.SetValue(`0)" project="Tungsten" file="M_W_PropertySlim_1_SetValue" />
+        </topic>
+        <topic id="Events.T:W.PropertySlim`1" project="Tungsten" file="Events_T_W_PropertySlim_1">
+          <topic id="E:W.PropertySlim`1.PropertyChanged" project="Tungsten" file="E_W_PropertySlim_1_PropertyChanged" />
+          <topic id="E:W.PropertySlim`1.PropertyChanging" project="Tungsten" file="E_W_PropertySlim_1_PropertyChanging" />
+        </topic>
+        <topic id="Fields.T:W.PropertySlim`1" project="Tungsten" file="Fields_T_W_PropertySlim_1" />
+      </topic>
       <topic id="T:W.Singleton`1" project="Tungsten" file="T_W_Singleton_1">
         <topic id="M:W.Singleton`1.#ctor" project="Tungsten" file="M_W_Singleton_1__ctor" />
         <topic id="Properties.T:W.Singleton`1" project="Tungsten" file="Properties_T_W_Singleton_1">
@@ -317,13 +308,54 @@
         </topic>
         <topic id="Methods.T:W.Singleton`1" project="Tungsten" file="Methods_T_W_Singleton_1" />
       </topic>
-      <topic id="T:W.StringExtensions" project="Tungsten" file="T_W_StringExtensions">
-        <topic id="Methods.T:W.StringExtensions" project="Tungsten" file="Methods_T_W_StringExtensions">
-          <topic id="M:W.StringExtensions.IsValidBase64(System.String)" project="Tungsten" file="M_W_StringExtensions_IsValidBase64" />
+      <topic id="T:W.ValueChangedDelegate`1" project="Tungsten" file="T_W_ValueChangedDelegate_1" />
+    </topic>
+    <topic id="N:W.AsExtensions" project="_Namespaces" file="N_W_AsExtensions">
+      <topic id="T:W.AsExtensions.AsExtensions" project="Tungsten" file="T_W_AsExtensions_AsExtensions">
+        <topic id="Methods.T:W.AsExtensions.AsExtensions" project="Tungsten" file="Methods_T_W_AsExtensions_AsExtensions">
+          <topic id="M:W.AsExtensions.AsExtensions.As``1(System.Object)" project="Tungsten" file="M_W_AsExtensions_AsExtensions_As__1" />
+          <topic id="Overload:W.AsExtensions.AsExtensions.AsBase64" project="Tungsten" file="Overload_W_AsExtensions_AsExtensions_AsBase64">
+            <topic id="M:W.AsExtensions.AsExtensions.AsBase64(System.Byte[])" project="Tungsten" file="M_W_AsExtensions_AsExtensions_AsBase64" />
+            <topic id="M:W.AsExtensions.AsExtensions.AsBase64(System.String)" project="Tungsten" file="M_W_AsExtensions_AsExtensions_AsBase64_1" />
+          </topic>
+          <topic id="M:W.AsExtensions.AsExtensions.AsBytes(System.String)" project="Tungsten" file="M_W_AsExtensions_AsExtensions_AsBytes" />
+          <topic id="M:W.AsExtensions.AsExtensions.AsCompressed(System.Byte[])" project="Tungsten" file="M_W_AsExtensions_AsExtensions_AsCompressed" />
+          <topic id="M:W.AsExtensions.AsExtensions.AsDecompressed(System.Byte[])" project="Tungsten" file="M_W_AsExtensions_AsExtensions_AsDecompressed" />
+          <topic id="M:W.AsExtensions.AsExtensions.AsJson``1(System.Object)" project="Tungsten" file="M_W_AsExtensions_AsExtensions_AsJson__1" />
+          <topic id="Overload:W.AsExtensions.AsExtensions.AsStream" project="Tungsten" file="Overload_W_AsExtensions_AsExtensions_AsStream">
+            <topic id="M:W.AsExtensions.AsExtensions.AsStream(System.Byte[])" project="Tungsten" file="M_W_AsExtensions_AsExtensions_AsStream" />
+            <topic id="M:W.AsExtensions.AsExtensions.AsStream(System.String)" project="Tungsten" file="M_W_AsExtensions_AsExtensions_AsStream_1" />
+          </topic>
+          <topic id="Overload:W.AsExtensions.AsExtensions.AsString" project="Tungsten" file="Overload_W_AsExtensions_AsExtensions_AsString">
+            <topic id="M:W.AsExtensions.AsExtensions.AsString(System.Byte[])" project="Tungsten" file="M_W_AsExtensions_AsExtensions_AsString" />
+            <topic id="M:W.AsExtensions.AsExtensions.AsString(System.Byte[],System.Int32,System.Int32)" project="Tungsten" file="M_W_AsExtensions_AsExtensions_AsString_1" />
+          </topic>
+          <topic id="M:W.AsExtensions.AsExtensions.AsXml``1(System.Object)" project="Tungsten" file="M_W_AsExtensions_AsExtensions_AsXml__1" />
+        </topic>
+      </topic>
+    </topic>
+    <topic id="N:W.DelegateExtensions" project="_Namespaces" file="N_W_DelegateExtensions">
+      <topic id="T:W.DelegateExtensions.DelegateExtensions" project="Tungsten" file="T_W_DelegateExtensions_DelegateExtensions">
+        <topic id="Methods.T:W.DelegateExtensions.DelegateExtensions" project="Tungsten" file="Methods_T_W_DelegateExtensions_DelegateExtensions">
+          <topic id="M:W.DelegateExtensions.DelegateExtensions.Raise(System.Delegate,System.Object[])" project="Tungsten" file="M_W_DelegateExtensions_DelegateExtensions_Raise" />
         </topic>
       </topic>
     </topic>
     <topic id="N:W.Encryption" project="_Namespaces" file="N_W_Encryption">
+      <topic id="T:W.Encryption.AssymetricEncryption" project="Tungsten" file="T_W_Encryption_AssymetricEncryption">
+        <topic id="M:W.Encryption.AssymetricEncryption.#ctor(System.Int32)" project="Tungsten" file="M_W_Encryption_AssymetricEncryption__ctor" />
+        <topic id="Properties.T:W.Encryption.AssymetricEncryption" project="Tungsten" file="Properties_T_W_Encryption_AssymetricEncryption">
+          <topic id="P:W.Encryption.AssymetricEncryption.LegalKeySizes" project="Tungsten" file="P_W_Encryption_AssymetricEncryption_LegalKeySizes" />
+          <topic id="P:W.Encryption.AssymetricEncryption.PublicKey" project="Tungsten" file="P_W_Encryption_AssymetricEncryption_PublicKey" />
+          <topic id="P:W.Encryption.AssymetricEncryption.RemotePublicKey" project="Tungsten" file="P_W_Encryption_AssymetricEncryption_RemotePublicKey" />
+        </topic>
+        <topic id="Methods.T:W.Encryption.AssymetricEncryption" project="Tungsten" file="Methods_T_W_Encryption_AssymetricEncryption">
+          <topic id="M:W.Encryption.AssymetricEncryption.Decrypt(System.Byte[]@)" project="Tungsten" file="M_W_Encryption_AssymetricEncryption_Decrypt" />
+          <topic id="M:W.Encryption.AssymetricEncryption.Encrypt(System.Byte[]@)" project="Tungsten" file="M_W_Encryption_AssymetricEncryption_Encrypt" />
+          <topic id="M:W.Encryption.AssymetricEncryption.ExchangeKeys(W.Encryption.AssymetricEncryption.ExchangeKeysDelegate)" project="Tungsten" file="M_W_Encryption_AssymetricEncryption_ExchangeKeys" />
+        </topic>
+      </topic>
+      <topic id="T:W.Encryption.AssymetricEncryption.ExchangeKeysDelegate" project="Tungsten" file="T_W_Encryption_AssymetricEncryption_ExchangeKeysDelegate" />
       <topic id="T:W.Encryption.MD5" project="Tungsten" file="T_W_Encryption_MD5">
         <topic id="M:W.Encryption.MD5.#ctor" project="Tungsten" file="M_W_Encryption_MD5__ctor" />
         <topic id="Methods.T:W.Encryption.MD5" project="Tungsten" file="Methods_T_W_Encryption_MD5">
@@ -343,7 +375,6 @@
         <topic id="Methods.T:W.Encryption.PublicPrivateKeyPair" project="Tungsten" file="Methods_T_W_Encryption_PublicPrivateKeyPair" />
       </topic>
       <topic id="T:W.Encryption.RSAMethods" project="Tungsten" file="T_W_Encryption_RSAMethods">
-        <topic id="M:W.Encryption.RSAMethods.#ctor" project="Tungsten" file="M_W_Encryption_RSAMethods__ctor" />
         <topic id="Methods.T:W.Encryption.RSAMethods" project="Tungsten" file="Methods_T_W_Encryption_RSAMethods">
           <topic id="M:W.Encryption.RSAMethods.CreateKeyPair(System.Int32)" project="Tungsten" file="M_W_Encryption_RSAMethods_CreateKeyPair" />
           <topic id="M:W.Encryption.RSAMethods.Decrypt(System.String,System.Security.Cryptography.RSAParameters)" project="Tungsten" file="M_W_Encryption_RSAMethods_Decrypt" />
@@ -351,6 +382,88 @@
           <topic id="M:W.Encryption.RSAMethods.Encrypt(System.String,System.Security.Cryptography.RSAParameters)" project="Tungsten" file="M_W_Encryption_RSAMethods_Encrypt" />
           <topic id="M:W.Encryption.RSAMethods.EncryptAsync(System.String,System.Security.Cryptography.RSAParameters)" project="Tungsten" file="M_W_Encryption_RSAMethods_EncryptAsync" />
           <topic id="M:W.Encryption.RSAMethods.LegalKeySizes" project="Tungsten" file="M_W_Encryption_RSAMethods_LegalKeySizes" />
+        </topic>
+      </topic>
+    </topic>
+    <topic id="N:W.FromExtensions" project="_Namespaces" file="N_W_FromExtensions">
+      <topic id="T:W.FromExtensions.FromExtensions" project="Tungsten" file="T_W_FromExtensions_FromExtensions">
+        <topic id="Methods.T:W.FromExtensions.FromExtensions" project="Tungsten" file="Methods_T_W_FromExtensions_FromExtensions">
+          <topic id="Overload:W.FromExtensions.FromExtensions.FromBase64" project="Tungsten" file="Overload_W_FromExtensions_FromExtensions_FromBase64">
+            <topic id="M:W.FromExtensions.FromExtensions.FromBase64(System.Byte[])" project="Tungsten" file="M_W_FromExtensions_FromExtensions_FromBase64" />
+            <topic id="M:W.FromExtensions.FromExtensions.FromBase64(System.String)" project="Tungsten" file="M_W_FromExtensions_FromExtensions_FromBase64_1" />
+          </topic>
+          <topic id="M:W.FromExtensions.FromExtensions.FromCompressed(System.Byte[])" project="Tungsten" file="M_W_FromExtensions_FromExtensions_FromCompressed" />
+          <topic id="Overload:W.FromExtensions.FromExtensions.FromJson" project="Tungsten" file="Overload_W_FromExtensions_FromExtensions_FromJson">
+            <topic id="M:W.FromExtensions.FromExtensions.FromJson``1(System.Byte[])" project="Tungsten" file="M_W_FromExtensions_FromExtensions_FromJson__1" />
+            <topic id="M:W.FromExtensions.FromExtensions.FromJson``1(System.String)" project="Tungsten" file="M_W_FromExtensions_FromExtensions_FromJson__1_1" />
+          </topic>
+          <topic id="Overload:W.FromExtensions.FromExtensions.FromXml" project="Tungsten" file="Overload_W_FromExtensions_FromExtensions_FromXml">
+            <topic id="M:W.FromExtensions.FromExtensions.FromXml``1(System.Byte[])" project="Tungsten" file="M_W_FromExtensions_FromExtensions_FromXml__1" />
+            <topic id="M:W.FromExtensions.FromExtensions.FromXml``1(System.String)" project="Tungsten" file="M_W_FromExtensions_FromExtensions_FromXml__1_1" />
+          </topic>
+        </topic>
+      </topic>
+    </topic>
+    <topic id="N:W.InvokeExtensions" project="_Namespaces" file="N_W_InvokeExtensions">
+      <topic id="T:W.InvokeExtensions.InvokeExtensions" project="Tungsten" file="T_W_InvokeExtensions_InvokeExtensions">
+        <topic id="Methods.T:W.InvokeExtensions.InvokeExtensions" project="Tungsten" file="Methods_T_W_InvokeExtensions_InvokeExtensions">
+          <topic id="Overload:W.InvokeExtensions.InvokeExtensions.InvokeEx" project="Tungsten" file="Overload_W_InvokeExtensions_InvokeExtensions_InvokeEx">
+            <topic id="M:W.InvokeExtensions.InvokeExtensions.InvokeEx``1(``0,System.Action{``0})" project="Tungsten" file="M_W_InvokeExtensions_InvokeExtensions_InvokeEx__1" />
+            <topic id="M:W.InvokeExtensions.InvokeExtensions.InvokeEx``1(``0,System.Func{``0,System.Object})" project="Tungsten" file="M_W_InvokeExtensions_InvokeExtensions_InvokeEx__1_1" />
+            <topic id="M:W.InvokeExtensions.InvokeExtensions.InvokeEx``2(``0,System.Func{``0,``1})" project="Tungsten" file="M_W_InvokeExtensions_InvokeExtensions_InvokeEx__2" />
+          </topic>
+        </topic>
+      </topic>
+    </topic>
+    <topic id="N:W.LockExtensions" project="_Namespaces" file="N_W_LockExtensions">
+      <topic id="T:W.LockExtensions.MonitorExtensions" project="Tungsten" file="T_W_LockExtensions_MonitorExtensions">
+        <topic id="Methods.T:W.LockExtensions.MonitorExtensions" project="Tungsten" file="Methods_T_W_LockExtensions_MonitorExtensions">
+          <topic id="Overload:W.LockExtensions.MonitorExtensions.InLock" project="Tungsten" file="Overload_W_LockExtensions_MonitorExtensions_InLock">
+            <topic id="M:W.LockExtensions.MonitorExtensions.InLock(System.Object,System.Action)" project="Tungsten" file="M_W_LockExtensions_MonitorExtensions_InLock" />
+            <topic id="M:W.LockExtensions.MonitorExtensions.InLock``1(System.Object,System.Func{``0})" project="Tungsten" file="M_W_LockExtensions_MonitorExtensions_InLock__1" />
+          </topic>
+          <topic id="Overload:W.LockExtensions.MonitorExtensions.InLockAsync" project="Tungsten" file="Overload_W_LockExtensions_MonitorExtensions_InLockAsync">
+            <topic id="M:W.LockExtensions.MonitorExtensions.InLockAsync(System.Object,System.Action)" project="Tungsten" file="M_W_LockExtensions_MonitorExtensions_InLockAsync" />
+            <topic id="M:W.LockExtensions.MonitorExtensions.InLockAsync``1(System.Object,System.Func{``0})" project="Tungsten" file="M_W_LockExtensions_MonitorExtensions_InLockAsync__1" />
+          </topic>
+        </topic>
+      </topic>
+      <topic id="T:W.LockExtensions.ReaderWriterLockSlimExtensions" project="Tungsten" file="T_W_LockExtensions_ReaderWriterLockSlimExtensions">
+        <topic id="Methods.T:W.LockExtensions.ReaderWriterLockSlimExtensions" project="Tungsten" file="Methods_T_W_LockExtensions_ReaderWriterLockSlimExtensions">
+          <topic id="Overload:W.LockExtensions.ReaderWriterLockSlimExtensions.InLock" project="Tungsten" file="Overload_W_LockExtensions_ReaderWriterLockSlimExtensions_InLock">
+            <topic id="M:W.LockExtensions.ReaderWriterLockSlimExtensions.InLock(System.Threading.ReaderWriterLockSlim,W.Threading.Lockers.LockTypeEnum,System.Action)" project="Tungsten" file="M_W_LockExtensions_ReaderWriterLockSlimExtensions_InLock" />
+            <topic id="M:W.LockExtensions.ReaderWriterLockSlimExtensions.InLock``1(System.Threading.ReaderWriterLockSlim,W.Threading.Lockers.LockTypeEnum,System.Func{``0})" project="Tungsten" file="M_W_LockExtensions_ReaderWriterLockSlimExtensions_InLock__1" />
+          </topic>
+          <topic id="Overload:W.LockExtensions.ReaderWriterLockSlimExtensions.InLockAsync" project="Tungsten" file="Overload_W_LockExtensions_ReaderWriterLockSlimExtensions_InLockAsync">
+            <topic id="M:W.LockExtensions.ReaderWriterLockSlimExtensions.InLockAsync(System.Threading.ReaderWriterLockSlim,W.Threading.Lockers.LockTypeEnum,System.Action)" project="Tungsten" file="M_W_LockExtensions_ReaderWriterLockSlimExtensions_InLockAsync" />
+            <topic id="M:W.LockExtensions.ReaderWriterLockSlimExtensions.InLockAsync``1(System.Threading.ReaderWriterLockSlim,W.Threading.Lockers.LockTypeEnum,System.Func{``0})" project="Tungsten" file="M_W_LockExtensions_ReaderWriterLockSlimExtensions_InLockAsync__1" />
+          </topic>
+          <topic id="M:W.LockExtensions.ReaderWriterLockSlimExtensions.Lock(System.Threading.ReaderWriterLockSlim,W.Threading.Lockers.LockTypeEnum)" project="Tungsten" file="M_W_LockExtensions_ReaderWriterLockSlimExtensions_Lock" />
+          <topic id="M:W.LockExtensions.ReaderWriterLockSlimExtensions.Unlock(System.Threading.ReaderWriterLockSlim,W.Threading.Lockers.LockTypeEnum)" project="Tungsten" file="M_W_LockExtensions_ReaderWriterLockSlimExtensions_Unlock" />
+        </topic>
+      </topic>
+      <topic id="T:W.LockExtensions.SemaphoreSlimExtensions" project="Tungsten" file="T_W_LockExtensions_SemaphoreSlimExtensions">
+        <topic id="Methods.T:W.LockExtensions.SemaphoreSlimExtensions" project="Tungsten" file="Methods_T_W_LockExtensions_SemaphoreSlimExtensions">
+          <topic id="Overload:W.LockExtensions.SemaphoreSlimExtensions.InLock" project="Tungsten" file="Overload_W_LockExtensions_SemaphoreSlimExtensions_InLock">
+            <topic id="M:W.LockExtensions.SemaphoreSlimExtensions.InLock(System.Threading.SemaphoreSlim,System.Action)" project="Tungsten" file="M_W_LockExtensions_SemaphoreSlimExtensions_InLock" />
+            <topic id="M:W.LockExtensions.SemaphoreSlimExtensions.InLock``1(System.Threading.SemaphoreSlim,System.Func{``0})" project="Tungsten" file="M_W_LockExtensions_SemaphoreSlimExtensions_InLock__1" />
+          </topic>
+          <topic id="Overload:W.LockExtensions.SemaphoreSlimExtensions.InLockAsync" project="Tungsten" file="Overload_W_LockExtensions_SemaphoreSlimExtensions_InLockAsync">
+            <topic id="M:W.LockExtensions.SemaphoreSlimExtensions.InLockAsync(System.Threading.SemaphoreSlim,System.Action)" project="Tungsten" file="M_W_LockExtensions_SemaphoreSlimExtensions_InLockAsync" />
+            <topic id="M:W.LockExtensions.SemaphoreSlimExtensions.InLockAsync``1(System.Threading.SemaphoreSlim,System.Func{``0})" project="Tungsten" file="M_W_LockExtensions_SemaphoreSlimExtensions_InLockAsync__1" />
+          </topic>
+        </topic>
+      </topic>
+      <topic id="T:W.LockExtensions.SpinLockExtensions" project="Tungsten" file="T_W_LockExtensions_SpinLockExtensions">
+        <topic id="Methods.T:W.LockExtensions.SpinLockExtensions" project="Tungsten" file="Methods_T_W_LockExtensions_SpinLockExtensions">
+          <topic id="Overload:W.LockExtensions.SpinLockExtensions.InLock" project="Tungsten" file="Overload_W_LockExtensions_SpinLockExtensions_InLock">
+            <topic id="M:W.LockExtensions.SpinLockExtensions.InLock(System.Threading.SpinLock,System.Action)" project="Tungsten" file="M_W_LockExtensions_SpinLockExtensions_InLock" />
+            <topic id="M:W.LockExtensions.SpinLockExtensions.InLock``1(System.Threading.SpinLock,System.Func{``0})" project="Tungsten" file="M_W_LockExtensions_SpinLockExtensions_InLock__1" />
+          </topic>
+          <topic id="Overload:W.LockExtensions.SpinLockExtensions.InLockAsync" project="Tungsten" file="Overload_W_LockExtensions_SpinLockExtensions_InLockAsync">
+            <topic id="M:W.LockExtensions.SpinLockExtensions.InLockAsync(System.Threading.SpinLock,System.Action)" project="Tungsten" file="M_W_LockExtensions_SpinLockExtensions_InLockAsync" />
+            <topic id="M:W.LockExtensions.SpinLockExtensions.InLockAsync``1(System.Threading.SpinLock,System.Func{``0})" project="Tungsten" file="M_W_LockExtensions_SpinLockExtensions_InLockAsync__1" />
+          </topic>
         </topic>
       </topic>
     </topic>
@@ -412,7 +525,24 @@
         <topic id="Methods.T:W.Logging.Log.LogMessageHistory.LogMessage" project="Tungsten" file="Methods_T_W_Logging_Log_LogMessageHistory_LogMessage" />
       </topic>
     </topic>
+    <topic id="N:W.PropertyHostExtensions" project="_Namespaces" file="N_W_PropertyHostExtensions">
+      <topic id="T:W.PropertyHostExtensions.PropertyHostExtensions" project="Tungsten" file="T_W_PropertyHostExtensions_PropertyHostExtensions">
+        <topic id="Methods.T:W.PropertyHostExtensions.PropertyHostExtensions" project="Tungsten" file="Methods_T_W_PropertyHostExtensions_PropertyHostExtensions">
+          <topic id="M:W.PropertyHostExtensions.PropertyHostExtensions.InitializeProperties(System.Object)" project="Tungsten" file="M_W_PropertyHostExtensions_PropertyHostExtensions_InitializeProperties" />
+          <topic id="M:W.PropertyHostExtensions.PropertyHostExtensions.IsDirty(System.Object)" project="Tungsten" file="M_W_PropertyHostExtensions_PropertyHostExtensions_IsDirty" />
+          <topic id="M:W.PropertyHostExtensions.PropertyHostExtensions.MarkAsClean(System.Object)" project="Tungsten" file="M_W_PropertyHostExtensions_PropertyHostExtensions_MarkAsClean" />
+        </topic>
+      </topic>
+    </topic>
+    <topic id="N:W.StringExtensions" project="_Namespaces" file="N_W_StringExtensions">
+      <topic id="T:W.StringExtensions.StringExtensions" project="Tungsten" file="T_W_StringExtensions_StringExtensions">
+        <topic id="Methods.T:W.StringExtensions.StringExtensions" project="Tungsten" file="Methods_T_W_StringExtensions_StringExtensions">
+          <topic id="M:W.StringExtensions.StringExtensions.IsValidBase64(System.String)" project="Tungsten" file="M_W_StringExtensions_StringExtensions_IsValidBase64" />
+        </topic>
+      </topic>
+    </topic>
     <topic id="N:W.Threading" project="_Namespaces" file="N_W_Threading">
+      <topic id="T:W.Threading.AnyMethodDelegate" project="Tungsten" file="T_W_Threading_AnyMethodDelegate" />
       <topic id="T:W.Threading.CPUProfileEnum" project="Tungsten" file="T_W_Threading_CPUProfileEnum" />
       <topic id="T:W.Threading.Gate" project="Tungsten" file="T_W_Threading_Gate">
         <topic id="M:W.Threading.Gate.#ctor(System.Action{System.Threading.CancellationToken})" project="Tungsten" file="M_W_Threading_Gate__ctor" />
@@ -445,81 +575,317 @@
           </topic>
         </topic>
       </topic>
-      <topic id="T:W.Threading.GateMethods" project="Tungsten" file="T_W_Threading_GateMethods">
-        <topic id="Methods.T:W.Threading.GateMethods" project="Tungsten" file="Methods_T_W_Threading_GateMethods">
-          <topic id="Overload:W.Threading.GateMethods.AsGate" project="Tungsten" file="Overload_W_Threading_GateMethods_AsGate">
-            <topic id="M:W.Threading.GateMethods.AsGate(System.Action{System.Threading.CancellationToken})" project="Tungsten" file="M_W_Threading_GateMethods_AsGate" />
-            <topic id="M:W.Threading.GateMethods.AsGate``1(System.Action{``0,System.Threading.CancellationToken})" project="Tungsten" file="M_W_Threading_GateMethods_AsGate__1" />
-          </topic>
+      <topic id="T:W.Threading.GenericThreadDelegate" project="Tungsten" file="T_W_Threading_GenericThreadDelegate" />
+      <topic id="T:W.Threading.ParameterizedThread" project="Tungsten" file="T_W_Threading_ParameterizedThread">
+        <topic id="M:W.Threading.ParameterizedThread.#ctor(W.Threading.GenericThreadDelegate)" project="Tungsten" file="M_W_Threading_ParameterizedThread__ctor" />
+        <topic id="Properties.T:W.Threading.ParameterizedThread" project="Tungsten" file="Properties_T_W_Threading_ParameterizedThread">
+          <topic id="P:W.Threading.ParameterizedThread.Exception" project="Tungsten" file="P_W_Threading_ParameterizedThread_Exception" />
+          <topic id="P:W.Threading.ParameterizedThread.IsComplete" project="Tungsten" file="P_W_Threading_ParameterizedThread_IsComplete" />
+          <topic id="P:W.Threading.ParameterizedThread.IsFaulted" project="Tungsten" file="P_W_Threading_ParameterizedThread_IsFaulted" />
+          <topic id="P:W.Threading.ParameterizedThread.IsStarted" project="Tungsten" file="P_W_Threading_ParameterizedThread_IsStarted" />
+          <topic id="P:W.Threading.ParameterizedThread.Task" project="Tungsten" file="P_W_Threading_ParameterizedThread_Task" />
+          <topic id="P:W.Threading.ParameterizedThread.Token" project="Tungsten" file="P_W_Threading_ParameterizedThread_Token" />
         </topic>
+        <topic id="Methods.T:W.Threading.ParameterizedThread" project="Tungsten" file="Methods_T_W_Threading_ParameterizedThread">
+          <topic id="M:W.Threading.ParameterizedThread.Create(W.Threading.GenericThreadDelegate)" project="Tungsten" file="M_W_Threading_ParameterizedThread_Create" />
+          <topic id="Overload:W.Threading.ParameterizedThread.Join" project="Tungsten" file="Overload_W_Threading_ParameterizedThread_Join">
+            <topic id="M:W.Threading.ParameterizedThread.Join" project="Tungsten" file="M_W_Threading_ParameterizedThread_Join" />
+            <topic id="M:W.Threading.ParameterizedThread.Join(System.Int32)" project="Tungsten" file="M_W_Threading_ParameterizedThread_Join_1" />
+          </topic>
+          <topic id="M:W.Threading.ParameterizedThread.OnDispose" project="Tungsten" file="M_W_Threading_ParameterizedThread_OnDispose" />
+          <topic id="Overload:W.Threading.ParameterizedThread.Start" project="Tungsten" file="Overload_W_Threading_ParameterizedThread_Start">
+            <topic id="M:W.Threading.ParameterizedThread.Start(System.Object[])" project="Tungsten" file="M_W_Threading_ParameterizedThread_Start_1" />
+            <topic id="M:W.Threading.ParameterizedThread.Start(System.Int32,System.Object[])" project="Tungsten" file="M_W_Threading_ParameterizedThread_Start" />
+          </topic>
+          <topic id="M:W.Threading.ParameterizedThread.Stop" project="Tungsten" file="M_W_Threading_ParameterizedThread_Stop" />
+        </topic>
+        <topic id="Fields.T:W.Threading.ParameterizedThread" project="Tungsten" file="Fields_T_W_Threading_ParameterizedThread" />
       </topic>
       <topic id="T:W.Threading.Thread" project="Tungsten" file="T_W_Threading_Thread">
         <topic id="Overload:W.Threading.Thread.#ctor" project="Tungsten" file="Overload_W_Threading_Thread__ctor">
           <topic id="M:W.Threading.Thread.#ctor(System.Action{System.Threading.CancellationToken})" project="Tungsten" file="M_W_Threading_Thread__ctor" />
-          <topic id="M:W.Threading.Thread.#ctor(System.Action{System.Threading.CancellationToken},System.Boolean)" project="Tungsten" file="M_W_Threading_Thread__ctor_1" />
+          <topic id="M:W.Threading.Thread.#ctor(W.Threading.ThreadDelegate)" project="Tungsten" file="M_W_Threading_Thread__ctor_1" />
         </topic>
-        <topic id="Properties.T:W.Threading.Thread" project="Tungsten" file="Properties_T_W_Threading_Thread">
-          <topic id="P:W.Threading.Thread.Exception" project="Tungsten" file="P_W_Threading_Thread_Exception" />
-          <topic id="P:W.Threading.Thread.IsComplete" project="Tungsten" file="P_W_Threading_Thread_IsComplete" />
-          <topic id="P:W.Threading.Thread.IsFaulted" project="Tungsten" file="P_W_Threading_Thread_IsFaulted" />
-          <topic id="P:W.Threading.Thread.IsRunning" project="Tungsten" file="P_W_Threading_Thread_IsRunning" />
-          <topic id="P:W.Threading.Thread.IsStarted" project="Tungsten" file="P_W_Threading_Thread_IsStarted" />
-          <topic id="P:W.Threading.Thread.Token" project="Tungsten" file="P_W_Threading_Thread_Token" />
-        </topic>
+        <topic id="Properties.T:W.Threading.Thread" project="Tungsten" file="Properties_T_W_Threading_Thread" />
         <topic id="Methods.T:W.Threading.Thread" project="Tungsten" file="Methods_T_W_Threading_Thread">
-          <topic id="M:W.Threading.Thread.CallAction(System.Threading.CancellationToken)" project="Tungsten" file="M_W_Threading_Thread_CallAction" />
-          <topic id="M:W.Threading.Thread.Cancel" project="Tungsten" file="M_W_Threading_Thread_Cancel" />
           <topic id="Overload:W.Threading.Thread.Create" project="Tungsten" file="Overload_W_Threading_Thread_Create">
             <topic id="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationToken})" project="Tungsten" file="M_W_Threading_Thread_Create" />
-            <topic id="M:W.Threading.Thread.Create``1(System.Action{``0,System.Threading.CancellationToken})" project="Tungsten" file="M_W_Threading_Thread_Create__1" />
-            <topic id="M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationToken},System.Boolean)" project="Tungsten" file="M_W_Threading_Thread_Create_1" />
-            <topic id="M:W.Threading.Thread.Create``1(System.Action{``0,System.Threading.CancellationToken},System.Boolean)" project="Tungsten" file="M_W_Threading_Thread_Create__1_1" />
+            <topic id="M:W.Threading.Thread.Create``1(System.Action{System.Threading.CancellationToken,``0})" project="Tungsten" file="M_W_Threading_Thread_Create__1" />
           </topic>
           <topic id="M:W.Threading.Thread.Dispose" project="Tungsten" file="M_W_Threading_Thread_Dispose" />
           <topic id="Overload:W.Threading.Thread.Join" project="Tungsten" file="Overload_W_Threading_Thread_Join">
             <topic id="M:W.Threading.Thread.Join" project="Tungsten" file="M_W_Threading_Thread_Join" />
             <topic id="M:W.Threading.Thread.Join(System.Int32)" project="Tungsten" file="M_W_Threading_Thread_Join_1" />
+            <topic id="M:W.Threading.Thread.Join(System.Threading.CancellationToken)" project="Tungsten" file="M_W_Threading_Thread_Join_2" />
           </topic>
           <topic id="Overload:W.Threading.Thread.Sleep" project="Tungsten" file="Overload_W_Threading_Thread_Sleep">
             <topic id="M:W.Threading.Thread.Sleep(System.Int32)" project="Tungsten" file="M_W_Threading_Thread_Sleep" />
             <topic id="M:W.Threading.Thread.Sleep(W.Threading.CPUProfileEnum)" project="Tungsten" file="M_W_Threading_Thread_Sleep_2" />
             <topic id="M:W.Threading.Thread.Sleep(System.Int32,System.Boolean)" project="Tungsten" file="M_W_Threading_Thread_Sleep_1" />
+            <topic id="M:W.Threading.Thread.Sleep(W.Threading.CPUProfileEnum,System.Int32)" project="Tungsten" file="M_W_Threading_Thread_Sleep_3" />
           </topic>
-          <topic id="Overload:W.Threading.Thread.Start" project="Tungsten" file="Overload_W_Threading_Thread_Start">
-            <topic id="M:W.Threading.Thread.Start" project="Tungsten" file="M_W_Threading_Thread_Start" />
-            <topic id="M:W.Threading.Thread.Start(System.Int32)" project="Tungsten" file="M_W_Threading_Thread_Start_1" />
-          </topic>
-          <topic id="M:W.Threading.Thread.Stop" project="Tungsten" file="M_W_Threading_Thread_Stop" />
         </topic>
       </topic>
       <topic id="T:W.Threading.Thread`1" project="Tungsten" file="T_W_Threading_Thread_1">
-        <topic id="Overload:W.Threading.Thread`1.#ctor" project="Tungsten" file="Overload_W_Threading_Thread_1__ctor">
-          <topic id="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationToken})" project="Tungsten" file="M_W_Threading_Thread_1__ctor" />
-          <topic id="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationToken},System.Boolean)" project="Tungsten" file="M_W_Threading_Thread_1__ctor_1" />
-          <topic id="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationToken},`0)" project="Tungsten" file="M_W_Threading_Thread_1__ctor_2" />
-          <topic id="M:W.Threading.Thread`1.#ctor(System.Action{`0,System.Threading.CancellationToken},`0,System.Boolean)" project="Tungsten" file="M_W_Threading_Thread_1__ctor_3" />
-        </topic>
+        <topic id="M:W.Threading.Thread`1.#ctor(System.Action{System.Threading.CancellationToken,`0})" project="Tungsten" file="M_W_Threading_Thread_1__ctor" />
         <topic id="Properties.T:W.Threading.Thread`1" project="Tungsten" file="Properties_T_W_Threading_Thread_1" />
         <topic id="Methods.T:W.Threading.Thread`1" project="Tungsten" file="Methods_T_W_Threading_Thread_1">
-          <topic id="M:W.Threading.Thread`1.CallAction(System.Threading.CancellationToken)" project="Tungsten" file="M_W_Threading_Thread_1_CallAction" />
-          <topic id="Overload:W.Threading.Thread`1.Start" project="Tungsten" file="Overload_W_Threading_Thread_1_Start">
-            <topic id="M:W.Threading.Thread`1.Start" project="Tungsten" file="M_W_Threading_Thread_1_Start" />
-            <topic id="M:W.Threading.Thread`1.Start(System.Int32)" project="Tungsten" file="M_W_Threading_Thread_1_Start_1" />
-            <topic id="M:W.Threading.Thread`1.Start(`0)" project="Tungsten" file="M_W_Threading_Thread_1_Start_2" />
-            <topic id="M:W.Threading.Thread`1.Start(`0,System.Int32)" project="Tungsten" file="M_W_Threading_Thread_1_Start_3" />
+          <topic id="Overload:W.Threading.Thread`1.StartAsync" project="Tungsten" file="Overload_W_Threading_Thread_1_StartAsync">
+            <topic id="M:W.Threading.Thread`1.StartAsync(`0)" project="Tungsten" file="M_W_Threading_Thread_1_StartAsync" />
           </topic>
         </topic>
       </topic>
-      <topic id="T:W.Threading.ThreadExtensions" project="Tungsten" file="T_W_Threading_ThreadExtensions">
-        <topic id="Methods.T:W.Threading.ThreadExtensions" project="Tungsten" file="Methods_T_W_Threading_ThreadExtensions">
-          <topic id="Overload:W.Threading.ThreadExtensions.CreateThread" project="Tungsten" file="Overload_W_Threading_ThreadExtensions_CreateThread">
-            <topic id="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationToken})" project="Tungsten" file="M_W_Threading_ThreadExtensions_CreateThread__1" />
-            <topic id="M:W.Threading.ThreadExtensions.CreateThread``1(``0,System.Action{``0,System.Threading.CancellationToken})" project="Tungsten" file="M_W_Threading_ThreadExtensions_CreateThread__1_2" />
-            <topic id="M:W.Threading.ThreadExtensions.CreateThread``1(System.Object,System.Action{``0,System.Threading.CancellationToken},System.Boolean)" project="Tungsten" file="M_W_Threading_ThreadExtensions_CreateThread__1_1" />
-            <topic id="M:W.Threading.ThreadExtensions.CreateThread``1(``0,System.Action{``0,System.Threading.CancellationToken},System.Boolean)" project="Tungsten" file="M_W_Threading_ThreadExtensions_CreateThread__1_3" />
+      <topic id="T:W.Threading.ThreadDelegate" project="Tungsten" file="T_W_Threading_ThreadDelegate" />
+      <topic id="T:W.Threading.ThreadMethod" project="Tungsten" file="T_W_Threading_ThreadMethod">
+        <topic id="M:W.Threading.ThreadMethod.#ctor(W.Threading.AnyMethodDelegate)" project="Tungsten" file="M_W_Threading_ThreadMethod__ctor" />
+        <topic id="Properties.T:W.Threading.ThreadMethod" project="Tungsten" file="Properties_T_W_Threading_ThreadMethod">
+          <topic id="P:W.Threading.ThreadMethod.IsComplete" project="Tungsten" file="P_W_Threading_ThreadMethod_IsComplete" />
+          <topic id="P:W.Threading.ThreadMethod.IsRunning" project="Tungsten" file="P_W_Threading_ThreadMethod_IsRunning" />
+          <topic id="P:W.Threading.ThreadMethod.IsStarted" project="Tungsten" file="P_W_Threading_ThreadMethod_IsStarted" />
+          <topic id="P:W.Threading.ThreadMethod.Name" project="Tungsten" file="P_W_Threading_ThreadMethod_Name" />
+        </topic>
+        <topic id="Methods.T:W.Threading.ThreadMethod" project="Tungsten" file="Methods_T_W_Threading_ThreadMethod">
+          <topic id="Overload:W.Threading.ThreadMethod.Create" project="Tungsten" file="Overload_W_Threading_ThreadMethod_Create">
+            <topic id="M:W.Threading.ThreadMethod.Create(System.Action)" project="Tungsten" file="M_W_Threading_ThreadMethod_Create" />
+            <topic id="M:W.Threading.ThreadMethod.Create``1(System.Action{``0})" project="Tungsten" file="M_W_Threading_ThreadMethod_Create__1" />
+            <topic id="M:W.Threading.ThreadMethod.Create``2(System.Action{``0,``1})" project="Tungsten" file="M_W_Threading_ThreadMethod_Create__2" />
+            <topic id="M:W.Threading.ThreadMethod.Create``3(System.Action{``0,``1,``2})" project="Tungsten" file="M_W_Threading_ThreadMethod_Create__3" />
+            <topic id="M:W.Threading.ThreadMethod.Create``4(System.Action{``0,``1,``2,``3})" project="Tungsten" file="M_W_Threading_ThreadMethod_Create__4" />
+            <topic id="M:W.Threading.ThreadMethod.Create``5(System.Action{``0,``1,``2,``3,``4})" project="Tungsten" file="M_W_Threading_ThreadMethod_Create__5" />
+            <topic id="M:W.Threading.ThreadMethod.Create(W.Threading.AnyMethodDelegate)" project="Tungsten" file="M_W_Threading_ThreadMethod_Create_1" />
+          </topic>
+          <topic id="M:W.Threading.ThreadMethod.Dispose" project="Tungsten" file="M_W_Threading_ThreadMethod_Dispose" />
+          <topic id="M:W.Threading.ThreadMethod.Finalize" project="Tungsten" file="M_W_Threading_ThreadMethod_Finalize" />
+          <topic id="M:W.Threading.ThreadMethod.Initialize" project="Tungsten" file="M_W_Threading_ThreadMethod_Initialize" />
+          <topic id="M:W.Threading.ThreadMethod.RunSynchronously(System.Object[])" project="Tungsten" file="M_W_Threading_ThreadMethod_RunSynchronously" />
+          <topic id="M:W.Threading.ThreadMethod.Start(System.Object[])" project="Tungsten" file="M_W_Threading_ThreadMethod_Start" />
+          <topic id="M:W.Threading.ThreadMethod.StartAsync(System.Object[])" project="Tungsten" file="M_W_Threading_ThreadMethod_StartAsync" />
+          <topic id="Overload:W.Threading.ThreadMethod.Wait" project="Tungsten" file="Overload_W_Threading_ThreadMethod_Wait">
+            <topic id="M:W.Threading.ThreadMethod.Wait" project="Tungsten" file="M_W_Threading_ThreadMethod_Wait" />
+            <topic id="M:W.Threading.ThreadMethod.Wait(System.Int32)" project="Tungsten" file="M_W_Threading_ThreadMethod_Wait_1" />
+            <topic id="M:W.Threading.ThreadMethod.Wait(System.Threading.CancellationToken)" project="Tungsten" file="M_W_Threading_ThreadMethod_Wait_2" />
           </topic>
         </topic>
       </topic>
+      <topic id="T:W.Threading.ThreadSlim" project="Tungsten" file="T_W_Threading_ThreadSlim">
+        <topic id="Overload:W.Threading.ThreadSlim.#ctor" project="Tungsten" file="Overload_W_Threading_ThreadSlim__ctor">
+          <topic id="M:W.Threading.ThreadSlim.#ctor(System.Action{System.Threading.CancellationToken})" project="Tungsten" file="M_W_Threading_ThreadSlim__ctor" />
+          <topic id="M:W.Threading.ThreadSlim.#ctor(W.Threading.ThreadDelegate)" project="Tungsten" file="M_W_Threading_ThreadSlim__ctor_1" />
+        </topic>
+        <topic id="Properties.T:W.Threading.ThreadSlim" project="Tungsten" file="Properties_T_W_Threading_ThreadSlim">
+          <topic id="P:W.Threading.ThreadSlim.IsComplete" project="Tungsten" file="P_W_Threading_ThreadSlim_IsComplete" />
+          <topic id="P:W.Threading.ThreadSlim.IsRunning" project="Tungsten" file="P_W_Threading_ThreadSlim_IsRunning" />
+          <topic id="P:W.Threading.ThreadSlim.IsStarted" project="Tungsten" file="P_W_Threading_ThreadSlim_IsStarted" />
+          <topic id="P:W.Threading.ThreadSlim.Name" project="Tungsten" file="P_W_Threading_ThreadSlim_Name" />
+        </topic>
+        <topic id="Methods.T:W.Threading.ThreadSlim" project="Tungsten" file="Methods_T_W_Threading_ThreadSlim">
+          <topic id="Overload:W.Threading.ThreadSlim.Create" project="Tungsten" file="Overload_W_Threading_ThreadSlim_Create">
+            <topic id="M:W.Threading.ThreadSlim.Create(System.Action{System.Threading.CancellationToken})" project="Tungsten" file="M_W_Threading_ThreadSlim_Create" />
+            <topic id="M:W.Threading.ThreadSlim.Create``1(System.Action{System.Threading.CancellationToken,``0})" project="Tungsten" file="M_W_Threading_ThreadSlim_Create__1" />
+            <topic id="M:W.Threading.ThreadSlim.Create``2(System.Action{System.Threading.CancellationToken,``0,``1})" project="Tungsten" file="M_W_Threading_ThreadSlim_Create__2" />
+            <topic id="M:W.Threading.ThreadSlim.Create``3(System.Action{System.Threading.CancellationToken,``0,``1,``2})" project="Tungsten" file="M_W_Threading_ThreadSlim_Create__3" />
+            <topic id="M:W.Threading.ThreadSlim.Create``4(System.Action{System.Threading.CancellationToken,``0,``1,``2,``3})" project="Tungsten" file="M_W_Threading_ThreadSlim_Create__4" />
+            <topic id="M:W.Threading.ThreadSlim.Create``5(System.Action{System.Threading.CancellationToken,``0,``1,``2,``3,``4})" project="Tungsten" file="M_W_Threading_ThreadSlim_Create__5" />
+            <topic id="M:W.Threading.ThreadSlim.Create(W.Threading.ThreadDelegate)" project="Tungsten" file="M_W_Threading_ThreadSlim_Create_1" />
+          </topic>
+          <topic id="M:W.Threading.ThreadSlim.Dispose" project="Tungsten" file="M_W_Threading_ThreadSlim_Dispose" />
+          <topic id="M:W.Threading.ThreadSlim.SignalToStop" project="Tungsten" file="M_W_Threading_ThreadSlim_SignalToStop" />
+          <topic id="M:W.Threading.ThreadSlim.Start(System.Object[])" project="Tungsten" file="M_W_Threading_ThreadSlim_Start" />
+          <topic id="M:W.Threading.ThreadSlim.StartAsync(System.Object[])" project="Tungsten" file="M_W_Threading_ThreadSlim_StartAsync" />
+          <topic id="Overload:W.Threading.ThreadSlim.Stop" project="Tungsten" file="Overload_W_Threading_ThreadSlim_Stop">
+            <topic id="M:W.Threading.ThreadSlim.Stop" project="Tungsten" file="M_W_Threading_ThreadSlim_Stop" />
+            <topic id="M:W.Threading.ThreadSlim.Stop(System.Int32)" project="Tungsten" file="M_W_Threading_ThreadSlim_Stop_1" />
+            <topic id="M:W.Threading.ThreadSlim.Stop(System.Threading.CancellationToken)" project="Tungsten" file="M_W_Threading_ThreadSlim_Stop_2" />
+          </topic>
+          <topic id="Overload:W.Threading.ThreadSlim.Wait" project="Tungsten" file="Overload_W_Threading_ThreadSlim_Wait">
+            <topic id="M:W.Threading.ThreadSlim.Wait" project="Tungsten" file="M_W_Threading_ThreadSlim_Wait" />
+            <topic id="M:W.Threading.ThreadSlim.Wait(System.Int32)" project="Tungsten" file="M_W_Threading_ThreadSlim_Wait_1" />
+            <topic id="M:W.Threading.ThreadSlim.Wait(System.Threading.CancellationToken)" project="Tungsten" file="M_W_Threading_ThreadSlim_Wait_2" />
+          </topic>
+        </topic>
+      </topic>
+    </topic>
+    <topic id="N:W.Threading.GateExtensions" project="_Namespaces" file="N_W_Threading_GateExtensions">
+      <topic id="T:W.Threading.GateExtensions.GateExtensions" project="Tungsten" file="T_W_Threading_GateExtensions_GateExtensions">
+        <topic id="Methods.T:W.Threading.GateExtensions.GateExtensions" project="Tungsten" file="Methods_T_W_Threading_GateExtensions_GateExtensions">
+          <topic id="Overload:W.Threading.GateExtensions.GateExtensions.AsGate" project="Tungsten" file="Overload_W_Threading_GateExtensions_GateExtensions_AsGate">
+            <topic id="M:W.Threading.GateExtensions.GateExtensions.AsGate(System.Action{System.Threading.CancellationToken})" project="Tungsten" file="M_W_Threading_GateExtensions_GateExtensions_AsGate" />
+            <topic id="M:W.Threading.GateExtensions.GateExtensions.AsGate``1(System.Action{``0,System.Threading.CancellationToken})" project="Tungsten" file="M_W_Threading_GateExtensions_GateExtensions_AsGate__1" />
+          </topic>
+        </topic>
+      </topic>
+    </topic>
+    <topic id="N:W.Threading.Lockers" project="_Namespaces" file="N_W_Threading_Lockers">
+      <topic id="T:W.Threading.Lockers.ILocker" project="Tungsten" file="T_W_Threading_Lockers_ILocker">
+        <topic id="Methods.T:W.Threading.Lockers.ILocker" project="Tungsten" file="Methods_T_W_Threading_Lockers_ILocker">
+          <topic id="Overload:W.Threading.Lockers.ILocker.InLock" project="Tungsten" file="Overload_W_Threading_Lockers_ILocker_InLock">
+            <topic id="M:W.Threading.Lockers.ILocker.InLock(System.Action)" project="Tungsten" file="M_W_Threading_Lockers_ILocker_InLock" />
+            <topic id="M:W.Threading.Lockers.ILocker.InLock``1(System.Func{``0})" project="Tungsten" file="M_W_Threading_Lockers_ILocker_InLock__1" />
+          </topic>
+          <topic id="Overload:W.Threading.Lockers.ILocker.InLockAsync" project="Tungsten" file="Overload_W_Threading_Lockers_ILocker_InLockAsync">
+            <topic id="M:W.Threading.Lockers.ILocker.InLockAsync(System.Action)" project="Tungsten" file="M_W_Threading_Lockers_ILocker_InLockAsync" />
+            <topic id="M:W.Threading.Lockers.ILocker.InLockAsync``1(System.Func{``0})" project="Tungsten" file="M_W_Threading_Lockers_ILocker_InLockAsync__1" />
+          </topic>
+        </topic>
+      </topic>
+      <topic id="T:W.Threading.Lockers.ILocker`1" project="Tungsten" file="T_W_Threading_Lockers_ILocker_1">
+        <topic id="Properties.T:W.Threading.Lockers.ILocker`1" project="Tungsten" file="Properties_T_W_Threading_Lockers_ILocker_1">
+          <topic id="P:W.Threading.Lockers.ILocker`1.Locker" project="Tungsten" file="P_W_Threading_Lockers_ILocker_1_Locker" />
+        </topic>
+        <topic id="Methods.T:W.Threading.Lockers.ILocker`1" project="Tungsten" file="Methods_T_W_Threading_Lockers_ILocker_1" />
+      </topic>
+      <topic id="T:W.Threading.Lockers.IStateLocker`2" project="Tungsten" file="T_W_Threading_Lockers_IStateLocker_2">
+        <topic id="Properties.T:W.Threading.Lockers.IStateLocker`2" project="Tungsten" file="Properties_T_W_Threading_Lockers_IStateLocker_2" />
+        <topic id="Methods.T:W.Threading.Lockers.IStateLocker`2" project="Tungsten" file="Methods_T_W_Threading_Lockers_IStateLocker_2">
+          <topic id="Overload:W.Threading.Lockers.IStateLocker`2.InLock" project="Tungsten" file="Overload_W_Threading_Lockers_IStateLocker_2_InLock">
+            <topic id="M:W.Threading.Lockers.IStateLocker`2.InLock(System.Action{`1})" project="Tungsten" file="M_W_Threading_Lockers_IStateLocker_2_InLock" />
+            <topic id="M:W.Threading.Lockers.IStateLocker`2.InLock(System.Func{`1,`1})" project="Tungsten" file="M_W_Threading_Lockers_IStateLocker_2_InLock_1" />
+          </topic>
+          <topic id="Overload:W.Threading.Lockers.IStateLocker`2.InLockAsync" project="Tungsten" file="Overload_W_Threading_Lockers_IStateLocker_2_InLockAsync">
+            <topic id="M:W.Threading.Lockers.IStateLocker`2.InLockAsync(System.Action{`1})" project="Tungsten" file="M_W_Threading_Lockers_IStateLocker_2_InLockAsync" />
+            <topic id="M:W.Threading.Lockers.IStateLocker`2.InLockAsync(System.Func{`1,`1})" project="Tungsten" file="M_W_Threading_Lockers_IStateLocker_2_InLockAsync_1" />
+          </topic>
+        </topic>
+      </topic>
+      <topic id="T:W.Threading.Lockers.LockTypeEnum" project="Tungsten" file="T_W_Threading_Lockers_LockTypeEnum" />
+      <topic id="T:W.Threading.Lockers.MonitorLocker" project="Tungsten" file="T_W_Threading_Lockers_MonitorLocker">
+        <topic id="M:W.Threading.Lockers.MonitorLocker.#ctor" project="Tungsten" file="M_W_Threading_Lockers_MonitorLocker__ctor" />
+        <topic id="Properties.T:W.Threading.Lockers.MonitorLocker" project="Tungsten" file="Properties_T_W_Threading_Lockers_MonitorLocker">
+          <topic id="P:W.Threading.Lockers.MonitorLocker.Locker" project="Tungsten" file="P_W_Threading_Lockers_MonitorLocker_Locker" />
+        </topic>
+        <topic id="Methods.T:W.Threading.Lockers.MonitorLocker" project="Tungsten" file="Methods_T_W_Threading_Lockers_MonitorLocker">
+          <topic id="Overload:W.Threading.Lockers.MonitorLocker.InLock" project="Tungsten" file="Overload_W_Threading_Lockers_MonitorLocker_InLock">
+            <topic id="M:W.Threading.Lockers.MonitorLocker.InLock(System.Action)" project="Tungsten" file="M_W_Threading_Lockers_MonitorLocker_InLock" />
+            <topic id="M:W.Threading.Lockers.MonitorLocker.InLock``1(System.Func{``0})" project="Tungsten" file="M_W_Threading_Lockers_MonitorLocker_InLock__1" />
+          </topic>
+          <topic id="Overload:W.Threading.Lockers.MonitorLocker.InLockAsync" project="Tungsten" file="Overload_W_Threading_Lockers_MonitorLocker_InLockAsync">
+            <topic id="M:W.Threading.Lockers.MonitorLocker.InLockAsync(System.Action)" project="Tungsten" file="M_W_Threading_Lockers_MonitorLocker_InLockAsync" />
+            <topic id="M:W.Threading.Lockers.MonitorLocker.InLockAsync``1(System.Func{``0})" project="Tungsten" file="M_W_Threading_Lockers_MonitorLocker_InLockAsync__1" />
+          </topic>
+        </topic>
+      </topic>
+      <topic id="T:W.Threading.Lockers.MonitorLocker`1" project="Tungsten" file="T_W_Threading_Lockers_MonitorLocker_1">
+        <topic id="M:W.Threading.Lockers.MonitorLocker`1.#ctor" project="Tungsten" file="M_W_Threading_Lockers_MonitorLocker_1__ctor" />
+        <topic id="Properties.T:W.Threading.Lockers.MonitorLocker`1" project="Tungsten" file="Properties_T_W_Threading_Lockers_MonitorLocker_1" />
+        <topic id="Methods.T:W.Threading.Lockers.MonitorLocker`1" project="Tungsten" file="Methods_T_W_Threading_Lockers_MonitorLocker_1" />
+        <topic id="Fields.T:W.Threading.Lockers.MonitorLocker`1" project="Tungsten" file="Fields_T_W_Threading_Lockers_MonitorLocker_1" />
+      </topic>
+      <topic id="T:W.Threading.Lockers.ReaderWriterLocker" project="Tungsten" file="T_W_Threading_Lockers_ReaderWriterLocker">
+        <topic id="Overload:W.Threading.Lockers.ReaderWriterLocker.#ctor" project="Tungsten" file="Overload_W_Threading_Lockers_ReaderWriterLocker__ctor">
+          <topic id="M:W.Threading.Lockers.ReaderWriterLocker.#ctor" project="Tungsten" file="M_W_Threading_Lockers_ReaderWriterLocker__ctor" />
+          <topic id="M:W.Threading.Lockers.ReaderWriterLocker.#ctor(System.Threading.LockRecursionPolicy)" project="Tungsten" file="M_W_Threading_Lockers_ReaderWriterLocker__ctor_1" />
+        </topic>
+        <topic id="Properties.T:W.Threading.Lockers.ReaderWriterLocker" project="Tungsten" file="Properties_T_W_Threading_Lockers_ReaderWriterLocker">
+          <topic id="P:W.Threading.Lockers.ReaderWriterLocker.Locker" project="Tungsten" file="P_W_Threading_Lockers_ReaderWriterLocker_Locker" />
+        </topic>
+        <topic id="Methods.T:W.Threading.Lockers.ReaderWriterLocker" project="Tungsten" file="Methods_T_W_Threading_Lockers_ReaderWriterLocker">
+          <topic id="M:W.Threading.Lockers.ReaderWriterLocker.Dispose" project="Tungsten" file="M_W_Threading_Lockers_ReaderWriterLocker_Dispose" />
+          <topic id="Overload:W.Threading.Lockers.ReaderWriterLocker.InLock" project="Tungsten" file="Overload_W_Threading_Lockers_ReaderWriterLocker_InLock">
+            <topic id="M:W.Threading.Lockers.ReaderWriterLocker.InLock(System.Action)" project="Tungsten" file="M_W_Threading_Lockers_ReaderWriterLocker_InLock" />
+            <topic id="M:W.Threading.Lockers.ReaderWriterLocker.InLock``1(System.Func{``0})" project="Tungsten" file="M_W_Threading_Lockers_ReaderWriterLocker_InLock__1" />
+            <topic id="M:W.Threading.Lockers.ReaderWriterLocker.InLock(W.Threading.Lockers.LockTypeEnum,System.Action)" project="Tungsten" file="M_W_Threading_Lockers_ReaderWriterLocker_InLock_1" />
+            <topic id="M:W.Threading.Lockers.ReaderWriterLocker.InLock``1(W.Threading.Lockers.LockTypeEnum,System.Func{``0})" project="Tungsten" file="M_W_Threading_Lockers_ReaderWriterLocker_InLock__1_1" />
+          </topic>
+          <topic id="Overload:W.Threading.Lockers.ReaderWriterLocker.InLockAsync" project="Tungsten" file="Overload_W_Threading_Lockers_ReaderWriterLocker_InLockAsync">
+            <topic id="M:W.Threading.Lockers.ReaderWriterLocker.InLockAsync(System.Action)" project="Tungsten" file="M_W_Threading_Lockers_ReaderWriterLocker_InLockAsync" />
+            <topic id="M:W.Threading.Lockers.ReaderWriterLocker.InLockAsync``1(System.Func{``0})" project="Tungsten" file="M_W_Threading_Lockers_ReaderWriterLocker_InLockAsync__1" />
+            <topic id="M:W.Threading.Lockers.ReaderWriterLocker.InLockAsync(W.Threading.Lockers.LockTypeEnum,System.Action)" project="Tungsten" file="M_W_Threading_Lockers_ReaderWriterLocker_InLockAsync_1" />
+            <topic id="M:W.Threading.Lockers.ReaderWriterLocker.InLockAsync``1(W.Threading.Lockers.LockTypeEnum,System.Func{``0})" project="Tungsten" file="M_W_Threading_Lockers_ReaderWriterLocker_InLockAsync__1_1" />
+          </topic>
+        </topic>
+      </topic>
+      <topic id="T:W.Threading.Lockers.ReaderWriterLocker`1" project="Tungsten" file="T_W_Threading_Lockers_ReaderWriterLocker_1">
+        <topic id="M:W.Threading.Lockers.ReaderWriterLocker`1.#ctor" project="Tungsten" file="M_W_Threading_Lockers_ReaderWriterLocker_1__ctor" />
+        <topic id="Properties.T:W.Threading.Lockers.ReaderWriterLocker`1" project="Tungsten" file="Properties_T_W_Threading_Lockers_ReaderWriterLocker_1" />
+        <topic id="Methods.T:W.Threading.Lockers.ReaderWriterLocker`1" project="Tungsten" file="Methods_T_W_Threading_Lockers_ReaderWriterLocker_1">
+          <topic id="M:W.Threading.Lockers.ReaderWriterLocker`1.Dispose" project="Tungsten" file="M_W_Threading_Lockers_ReaderWriterLocker_1_Dispose" />
+          <topic id="Overload:W.Threading.Lockers.ReaderWriterLocker`1.InLock" project="Tungsten" file="Overload_W_Threading_Lockers_ReaderWriterLocker_1_InLock">
+            <topic id="M:W.Threading.Lockers.ReaderWriterLocker`1.InLock(W.Threading.Lockers.LockTypeEnum,System.Action{`0})" project="Tungsten" file="M_W_Threading_Lockers_ReaderWriterLocker_1_InLock" />
+            <topic id="M:W.Threading.Lockers.ReaderWriterLocker`1.InLock(W.Threading.Lockers.LockTypeEnum,System.Func{`0,`0})" project="Tungsten" file="M_W_Threading_Lockers_ReaderWriterLocker_1_InLock_1" />
+          </topic>
+          <topic id="Overload:W.Threading.Lockers.ReaderWriterLocker`1.InLockAsync" project="Tungsten" file="Overload_W_Threading_Lockers_ReaderWriterLocker_1_InLockAsync">
+            <topic id="M:W.Threading.Lockers.ReaderWriterLocker`1.InLockAsync(W.Threading.Lockers.LockTypeEnum,System.Action{`0})" project="Tungsten" file="M_W_Threading_Lockers_ReaderWriterLocker_1_InLockAsync" />
+            <topic id="M:W.Threading.Lockers.ReaderWriterLocker`1.InLockAsync(W.Threading.Lockers.LockTypeEnum,System.Func{`0,`0})" project="Tungsten" file="M_W_Threading_Lockers_ReaderWriterLocker_1_InLockAsync_1" />
+          </topic>
+        </topic>
+        <topic id="Fields.T:W.Threading.Lockers.ReaderWriterLocker`1" project="Tungsten" file="Fields_T_W_Threading_Lockers_ReaderWriterLocker_1" />
+      </topic>
+      <topic id="T:W.Threading.Lockers.SemaphoreSlimLocker" project="Tungsten" file="T_W_Threading_Lockers_SemaphoreSlimLocker">
+        <topic id="Overload:W.Threading.Lockers.SemaphoreSlimLocker.#ctor" project="Tungsten" file="Overload_W_Threading_Lockers_SemaphoreSlimLocker__ctor">
+          <topic id="M:W.Threading.Lockers.SemaphoreSlimLocker.#ctor" project="Tungsten" file="M_W_Threading_Lockers_SemaphoreSlimLocker__ctor" />
+          <topic id="M:W.Threading.Lockers.SemaphoreSlimLocker.#ctor(System.Int32)" project="Tungsten" file="M_W_Threading_Lockers_SemaphoreSlimLocker__ctor_1" />
+          <topic id="M:W.Threading.Lockers.SemaphoreSlimLocker.#ctor(System.Int32,System.Int32)" project="Tungsten" file="M_W_Threading_Lockers_SemaphoreSlimLocker__ctor_2" />
+        </topic>
+        <topic id="Properties.T:W.Threading.Lockers.SemaphoreSlimLocker" project="Tungsten" file="Properties_T_W_Threading_Lockers_SemaphoreSlimLocker">
+          <topic id="P:W.Threading.Lockers.SemaphoreSlimLocker.Locker" project="Tungsten" file="P_W_Threading_Lockers_SemaphoreSlimLocker_Locker" />
+        </topic>
+        <topic id="Methods.T:W.Threading.Lockers.SemaphoreSlimLocker" project="Tungsten" file="Methods_T_W_Threading_Lockers_SemaphoreSlimLocker">
+          <topic id="M:W.Threading.Lockers.SemaphoreSlimLocker.Dispose" project="Tungsten" file="M_W_Threading_Lockers_SemaphoreSlimLocker_Dispose" />
+          <topic id="Overload:W.Threading.Lockers.SemaphoreSlimLocker.InLock" project="Tungsten" file="Overload_W_Threading_Lockers_SemaphoreSlimLocker_InLock">
+            <topic id="M:W.Threading.Lockers.SemaphoreSlimLocker.InLock(System.Action)" project="Tungsten" file="M_W_Threading_Lockers_SemaphoreSlimLocker_InLock" />
+            <topic id="M:W.Threading.Lockers.SemaphoreSlimLocker.InLock``1(System.Func{``0})" project="Tungsten" file="M_W_Threading_Lockers_SemaphoreSlimLocker_InLock__1" />
+          </topic>
+          <topic id="Overload:W.Threading.Lockers.SemaphoreSlimLocker.InLockAsync" project="Tungsten" file="Overload_W_Threading_Lockers_SemaphoreSlimLocker_InLockAsync">
+            <topic id="M:W.Threading.Lockers.SemaphoreSlimLocker.InLockAsync(System.Action)" project="Tungsten" file="M_W_Threading_Lockers_SemaphoreSlimLocker_InLockAsync" />
+            <topic id="M:W.Threading.Lockers.SemaphoreSlimLocker.InLockAsync``1(System.Func{``0})" project="Tungsten" file="M_W_Threading_Lockers_SemaphoreSlimLocker_InLockAsync__1" />
+          </topic>
+        </topic>
+      </topic>
+      <topic id="T:W.Threading.Lockers.SemaphoreSlimLocker`1" project="Tungsten" file="T_W_Threading_Lockers_SemaphoreSlimLocker_1">
+        <topic id="M:W.Threading.Lockers.SemaphoreSlimLocker`1.#ctor" project="Tungsten" file="M_W_Threading_Lockers_SemaphoreSlimLocker_1__ctor" />
+        <topic id="Properties.T:W.Threading.Lockers.SemaphoreSlimLocker`1" project="Tungsten" file="Properties_T_W_Threading_Lockers_SemaphoreSlimLocker_1" />
+        <topic id="Methods.T:W.Threading.Lockers.SemaphoreSlimLocker`1" project="Tungsten" file="Methods_T_W_Threading_Lockers_SemaphoreSlimLocker_1" />
+        <topic id="Fields.T:W.Threading.Lockers.SemaphoreSlimLocker`1" project="Tungsten" file="Fields_T_W_Threading_Lockers_SemaphoreSlimLocker_1" />
+      </topic>
+      <topic id="T:W.Threading.Lockers.SpinLocker" project="Tungsten" file="T_W_Threading_Lockers_SpinLocker">
+        <topic id="M:W.Threading.Lockers.SpinLocker.#ctor" project="Tungsten" file="M_W_Threading_Lockers_SpinLocker__ctor" />
+        <topic id="Properties.T:W.Threading.Lockers.SpinLocker" project="Tungsten" file="Properties_T_W_Threading_Lockers_SpinLocker">
+          <topic id="P:W.Threading.Lockers.SpinLocker.Locker" project="Tungsten" file="P_W_Threading_Lockers_SpinLocker_Locker" />
+        </topic>
+        <topic id="Methods.T:W.Threading.Lockers.SpinLocker" project="Tungsten" file="Methods_T_W_Threading_Lockers_SpinLocker">
+          <topic id="Overload:W.Threading.Lockers.SpinLocker.InLock" project="Tungsten" file="Overload_W_Threading_Lockers_SpinLocker_InLock">
+            <topic id="M:W.Threading.Lockers.SpinLocker.InLock(System.Action)" project="Tungsten" file="M_W_Threading_Lockers_SpinLocker_InLock" />
+            <topic id="M:W.Threading.Lockers.SpinLocker.InLock``1(System.Func{``0})" project="Tungsten" file="M_W_Threading_Lockers_SpinLocker_InLock__1" />
+          </topic>
+          <topic id="Overload:W.Threading.Lockers.SpinLocker.InLockAsync" project="Tungsten" file="Overload_W_Threading_Lockers_SpinLocker_InLockAsync">
+            <topic id="M:W.Threading.Lockers.SpinLocker.InLockAsync(System.Action)" project="Tungsten" file="M_W_Threading_Lockers_SpinLocker_InLockAsync" />
+            <topic id="M:W.Threading.Lockers.SpinLocker.InLockAsync``1(System.Func{``0})" project="Tungsten" file="M_W_Threading_Lockers_SpinLocker_InLockAsync__1" />
+          </topic>
+        </topic>
+      </topic>
+      <topic id="T:W.Threading.Lockers.SpinLocker`1" project="Tungsten" file="T_W_Threading_Lockers_SpinLocker_1">
+        <topic id="M:W.Threading.Lockers.SpinLocker`1.#ctor" project="Tungsten" file="M_W_Threading_Lockers_SpinLocker_1__ctor" />
+        <topic id="Properties.T:W.Threading.Lockers.SpinLocker`1" project="Tungsten" file="Properties_T_W_Threading_Lockers_SpinLocker_1" />
+        <topic id="Methods.T:W.Threading.Lockers.SpinLocker`1" project="Tungsten" file="Methods_T_W_Threading_Lockers_SpinLocker_1" />
+        <topic id="Fields.T:W.Threading.Lockers.SpinLocker`1" project="Tungsten" file="Fields_T_W_Threading_Lockers_SpinLocker_1" />
+      </topic>
+      <topic id="T:W.Threading.Lockers.StateAssignmentDelegate`1" project="Tungsten" file="T_W_Threading_Lockers_StateAssignmentDelegate_1" />
+      <topic id="T:W.Threading.Lockers.StateLocker`2" project="Tungsten" file="T_W_Threading_Lockers_StateLocker_2">
+        <topic id="M:W.Threading.Lockers.StateLocker`2.#ctor" project="Tungsten" file="M_W_Threading_Lockers_StateLocker_2__ctor" />
+        <topic id="Properties.T:W.Threading.Lockers.StateLocker`2" project="Tungsten" file="Properties_T_W_Threading_Lockers_StateLocker_2">
+          <topic id="P:W.Threading.Lockers.StateLocker`2.Locker" project="Tungsten" file="P_W_Threading_Lockers_StateLocker_2_Locker" />
+        </topic>
+        <topic id="Methods.T:W.Threading.Lockers.StateLocker`2" project="Tungsten" file="Methods_T_W_Threading_Lockers_StateLocker_2">
+          <topic id="Overload:W.Threading.Lockers.StateLocker`2.InLock" project="Tungsten" file="Overload_W_Threading_Lockers_StateLocker_2_InLock">
+            <topic id="M:W.Threading.Lockers.StateLocker`2.InLock(System.Action)" project="Tungsten" file="M_W_Threading_Lockers_StateLocker_2_InLock" />
+            <topic id="M:W.Threading.Lockers.StateLocker`2.InLock(System.Action{`1})" project="Tungsten" file="M_W_Threading_Lockers_StateLocker_2_InLock_1" />
+            <topic id="M:W.Threading.Lockers.StateLocker`2.InLock``1(System.Func{``0})" project="Tungsten" file="M_W_Threading_Lockers_StateLocker_2_InLock__1" />
+            <topic id="M:W.Threading.Lockers.StateLocker`2.InLock(System.Func{`1,`1})" project="Tungsten" file="M_W_Threading_Lockers_StateLocker_2_InLock_2" />
+          </topic>
+          <topic id="Overload:W.Threading.Lockers.StateLocker`2.InLockAsync" project="Tungsten" file="Overload_W_Threading_Lockers_StateLocker_2_InLockAsync">
+            <topic id="M:W.Threading.Lockers.StateLocker`2.InLockAsync(System.Action)" project="Tungsten" file="M_W_Threading_Lockers_StateLocker_2_InLockAsync" />
+            <topic id="M:W.Threading.Lockers.StateLocker`2.InLockAsync(System.Action{`1})" project="Tungsten" file="M_W_Threading_Lockers_StateLocker_2_InLockAsync_1" />
+            <topic id="M:W.Threading.Lockers.StateLocker`2.InLockAsync``1(System.Func{``0})" project="Tungsten" file="M_W_Threading_Lockers_StateLocker_2_InLockAsync__1" />
+            <topic id="M:W.Threading.Lockers.StateLocker`2.InLockAsync(System.Func{`1,`1})" project="Tungsten" file="M_W_Threading_Lockers_StateLocker_2_InLockAsync_2" />
+          </topic>
+        </topic>
+        <topic id="Fields.T:W.Threading.Lockers.StateLocker`2" project="Tungsten" file="Fields_T_W_Threading_Lockers_StateLocker_2">
+          <topic id="F:W.Threading.Lockers.StateLocker`2.State" project="Tungsten" file="F_W_Threading_Lockers_StateLocker_2_State" />
+        </topic>
+      </topic>
+    </topic>
+    <topic id="N:W.Threading.ThreadExtensions" project="_Namespaces" file="N_W_Threading_ThreadExtensions">
+      <topic id="T:W.Threading.ThreadExtensions.ThreadExtensions" project="Tungsten" file="T_W_Threading_ThreadExtensions_ThreadExtensions" />
     </topic>
   </topic>
 </topics>

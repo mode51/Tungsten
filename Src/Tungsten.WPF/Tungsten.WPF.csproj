@@ -48,6 +48,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tungsten, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Tungsten.2.0.0\lib\net45\Tungsten.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -78,15 +81,10 @@
     <Compile Include="PageFramework.cs" />
     <Compile Include="PageWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Tungsten.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Tungsten\Tungsten.csproj">
-      <Project>{46040e3b-ae52-42f9-9c1b-8566fc6765c5}</Project>
-      <Name>Tungsten</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

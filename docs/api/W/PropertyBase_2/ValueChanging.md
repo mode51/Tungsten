@@ -9,11 +9,11 @@ Syntax
 ------
 
 ```csharp
-public event PropertyBase<TOwner, TValue>.PropertyValueChangingDelegate ValueChanging
+public event PropertyValueChangingDelegate<TOwner, TValue> ValueChanging
 ```
 
 #### Value
-Type: [W.PropertyBase&lt;TOwner, TValue>.PropertyValueChangingDelegate][2]
+Type: [W.PropertyValueChangingDelegate][2]&lt;[TOwner][3], [TValue][3]>
 
 See Also
 --------
@@ -23,5 +23,5 @@ See Also
 [W Namespace][1]  
 
 [1]: ../README.md
-[2]: ../PropertyBase_2_PropertyValueChangingDelegate/README.md
+[2]: ../PropertyValueChangingDelegate_2/README.md
 [3]: README.md
