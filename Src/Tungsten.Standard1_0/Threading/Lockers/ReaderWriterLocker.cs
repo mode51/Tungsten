@@ -21,7 +21,7 @@ namespace W.Threading.Lockers
     }
 
     /// <summary>
-    /// Uses ReaderWriterLockSlim to provide thread-safety
+    /// Uses ReaderWriterLockSlim to provide resource locking
     /// </summary>
     /// <remarks>Can be overridden to provide additional functionality</remarks>
     public partial class ReaderWriterLocker : IDisposable

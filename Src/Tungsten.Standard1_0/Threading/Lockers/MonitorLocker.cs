@@ -8,7 +8,7 @@ using W.LockExtensions;
 namespace W.Threading.Lockers
 {
     /// <summary>
-    /// Uses Monitor to provide thread-safety
+    /// Uses Monitor to provide resource locking
     /// </summary>
     /// <remarks>Can be overridden to provide additional functionality</remarks>
     public class MonitorLocker : ILocker<object>

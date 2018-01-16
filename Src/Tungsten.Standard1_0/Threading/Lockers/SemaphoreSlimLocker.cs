@@ -8,7 +8,7 @@ using W.LockExtensions;
 namespace W.Threading.Lockers
 {
     /// <summary>
-    /// Uses SemaphoreSlim to provide locking
+    /// Uses SemaphoreSlim to provide resource locking
     /// </summary>
     public class SemaphoreSlimLocker : ILocker<SemaphoreSlim>, IDisposable
     {

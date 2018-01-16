@@ -7,7 +7,7 @@ using W.LockExtensions;
 namespace W.Threading.Lockers
 {
     /// <summary>
-    /// Uses SpinLock to provide thread-safety
+    /// Uses SpinLock to provide resource locking
     /// </summary>
     /// <remarks>Can be overridden to provide additional functionality</remarks>
     public class SpinLocker : ILocker<SpinLock>
