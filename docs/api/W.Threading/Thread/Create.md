@@ -1,6 +1,8 @@
 Thread.Create Method (Action&lt;CancellationToken>)
 ===================================================
-   Starts a new thread
+   
+[Missing &lt;summary> documentation for "M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationToken})"]
+
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -18,11 +20,15 @@ public static Thread Create(
 
 ##### *action*
 Type: [System.Action][2]&lt;[CancellationToken][3]>  
-Action to call on a thread
+
+[Missing &lt;param name="action"/> documentation for "M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationToken})"]
+
 
 #### Return Value
 Type: [Thread][4]  
-A new Thread
+
+[Missing &lt;returns> documentation for "M:W.Threading.Thread.Create(System.Action{System.Threading.CancellationToken})"]
+
 
 See Also
 --------

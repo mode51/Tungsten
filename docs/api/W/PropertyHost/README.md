@@ -27,9 +27,9 @@ The **PropertyHost** type exposes the following members.
 Constructors
 ------------
 
-                 | Name              | Description                                                         
----------------- | ----------------- | ------------------------------------------------------------------- 
-![Public method] | [PropertyHost][4] | Calls PropertyHostMethods.InitializeProperties so you don't have to 
+                 | Name              | Description                                                            
+---------------- | ----------------- | ---------------------------------------------------------------------- 
+![Public method] | [PropertyHost][4] | Calls PropertyHostExtensions.InitializeProperties so you don't have to 
 
 
 Properties

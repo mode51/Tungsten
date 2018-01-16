@@ -1,6 +1,6 @@
 LockableSlim&lt;TValue> Constructor
 ===================================
-   Constructor which initializes Value with the default of TValue
+   Constructs a new LockableSlim with a default initial value
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

@@ -1,6 +1,6 @@
-PropertyBase&lt;TOwner, TValue>.OnValueChanged Field
-====================================================
-   Callback type for use in the constructor (if one wants to avoid using the event)
+PropertyBase&lt;TOwner, TValue>.OnValueChanged Method
+=====================================================
+   Calls RaiseValueChanged to raise the ValueChanged event
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -9,11 +9,27 @@ Syntax
 ------
 
 ```csharp
-protected OnValueChangedDelegate<TOwner, TValue> OnValueChanged
+protected override void OnValueChanged(
+	Object sender,
+	TValue oldValue,
+	TValue newValue
+)
 ```
 
-#### Field Value
-Type: [OnValueChangedDelegate][2]&lt;[TOwner][3], [TValue][3]>
+#### Parameters
+
+##### *sender*
+Type: [System.Object][2]  
+The property owner
+
+##### *oldValue*
+Type: [TValue][3]  
+The previous value
+
+##### *newValue*
+Type: [TValue][3]  
+The current value
+
 
 See Also
 --------
@@ -23,5 +39,5 @@ See Also
 [W Namespace][1]  
 
 [1]: ../README.md
-[2]: ../OnValueChangedDelegate_2/README.md
+[2]: http://msdn.microsoft.com/en-us/library/e5kfa45b
 [3]: README.md

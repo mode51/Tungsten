@@ -1,7 +1,7 @@
 ActionQueue&lt;T> Class
 =======================
    
-Allows the programmer to enqueue items for processing on a separate thread. The ActionQueue will process items sequentially whenever an item is added.
+Allows the programmer to enqueue items for processing on a separate thread. The ActionQueue will process items sequentially when an item is added.
 
 
 

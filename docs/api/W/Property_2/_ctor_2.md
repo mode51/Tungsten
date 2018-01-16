@@ -1,5 +1,5 @@
-Property&lt;TOwner, TValue> Constructor (TOwner, TValue)
-========================================================
+Property&lt;TOwner, TValue> Constructor (TOwner)
+================================================
    Constructs a new Property
 
   **Namespace:**  [W][1]  
@@ -10,8 +10,7 @@ Syntax
 
 ```csharp
 public Property(
-	TOwner owner,
-	TValue defaultValue
+	TOwner owner
 )
 ```
 
@@ -20,10 +19,6 @@ public Property(
 ##### *owner*
 Type: [TOwner][2]  
 The owner of the property
-
-##### *defaultValue*
-Type: [TValue][2]  
-The default and initial value of the property
 
 
 See Also

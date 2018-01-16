@@ -1,6 +1,8 @@
 Thread.Join Method
 ==================
-   Block the calling thread until this thread object has completed
+   
+[Missing &lt;summary> documentation for "M:W.Threading.Thread.Join"]
+
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)

@@ -22,6 +22,7 @@ Member name   | Value | Description
 **Sleep**     | 1     | Medium CPU usage. Uses Thread.Sleep or Task.Delay to block the current thread.                                                                
 **SpinWait1** | 2     | Low CPU usage. Should be faster on multi-core/cpu machines as the load will be divided among cores/cpus. Slowest on single-core/cpu machines. 
 **Yield**     | 3     | Only available for .Net Framework; uses Thread.Yield instead of Thread.Sleep.                                                                 
+**SpinUntil** | 4     |                                                                                                                                               
 
 
 See Also

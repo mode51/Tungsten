@@ -1,6 +1,8 @@
 Thread.Join Method (Int32)
 ==========================
-   Block the calling thread until this thread object has completed or until the timeout has occurred
+   
+[Missing &lt;summary> documentation for "M:W.Threading.Thread.Join(System.Int32)"]
+
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -18,11 +20,15 @@ public bool Join(
 
 ##### *msTimeout*
 Type: [System.Int32][2]  
-The number of milliseconds to wait, for the thread Action to complete, before timing out
+
+[Missing &lt;param name="msTimeout"/> documentation for "M:W.Threading.Thread.Join(System.Int32)"]
+
 
 #### Return Value
 Type: [Boolean][3]  
-True if the thread Action completed within the specified timeout, otherwise False
+
+[Missing &lt;returns> documentation for "M:W.Threading.Thread.Join(System.Int32)"]
+
 
 See Also
 --------

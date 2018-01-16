@@ -1,6 +1,6 @@
 Thread Constructor (Action&lt;CancellationToken>)
 =================================================
-   Constructs a new Thread
+   Constructs a new ThreadSlim using an Action&lt;CancellationToken> as the thread method
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -18,7 +18,7 @@ public Thread(
 
 ##### *action*
 Type: [System.Action][2]&lt;[CancellationToken][3]>  
-The action to call on a thread
+The action to run on a separate thread
 
 
 See Also

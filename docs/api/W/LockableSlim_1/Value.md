@@ -1,8 +1,6 @@
 LockableSlim&lt;TValue>.Value Property
 ======================================
-   
-Provides automatic locking during read/writes
-
+   Get or Set the value
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -14,8 +12,9 @@ Syntax
 public TValue Value { get; set; }
 ```
 
-#### Property Value
-Type: [TValue][2]
+#### Return Value
+Type: [TValue][2]  
+The current value
 
 See Also
 --------

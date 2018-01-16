@@ -1,6 +1,6 @@
 PropertyBase&lt;TOwner, TValue>.LoadValue Method
 ================================================
-   Loads Value without raising events or calling the OnValueChanged callback
+   Sets Value without raising notification events
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -18,12 +18,10 @@ public void LoadValue(
 
 ##### *value*
 Type: [TValue][2]  
-The new value
+
+[Missing &lt;param name="value"/> documentation for "M:W.PropertyBase`2.LoadValue(`1)"]
 
 
-Remarks
--------
-Calling LoadValue sets IsDirty to false
 
 See Also
 --------

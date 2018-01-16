@@ -1,6 +1,8 @@
-Thread.Create&lt;TParameterType> Method (Action&lt;TParameterType, CancellationToken>)
-======================================================================================
-   Creates and starts a new thread
+Thread.Create&lt;TType> Method (Action&lt;CancellationToken, TType>)
+====================================================================
+   
+[Missing &lt;summary> documentation for "M:W.Threading.Thread.Create``1(System.Action{System.Threading.CancellationToken,``0})"]
+
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -9,8 +11,8 @@ Syntax
 ------
 
 ```csharp
-public static Thread<TParameterType> Create<TParameterType>(
-	Action<TParameterType, CancellationToken> action
+public static Thread<TType> Create<TType>(
+	Action<CancellationToken, TType> action
 )
 
 ```
@@ -18,17 +20,23 @@ public static Thread<TParameterType> Create<TParameterType>(
 #### Parameters
 
 ##### *action*
-Type: [System.Action][2]&lt;**TParameterType**, [CancellationToken][3]>  
-Action to call on a thread
+Type: [System.Action][2]&lt;[CancellationToken][3], **TType**>  
+
+[Missing &lt;param name="action"/> documentation for "M:W.Threading.Thread.Create``1(System.Action{System.Threading.CancellationToken,``0})"]
+
 
 #### Type Parameters
 
-##### *TParameterType*
-The argument Type to be passed into the thread action
+##### *TType*
+
+[Missing &lt;typeparam name="TType"/> documentation for "M:W.Threading.Thread.Create``1(System.Action{System.Threading.CancellationToken,``0})"]
+
 
 #### Return Value
-Type: [Thread][4]&lt;**TParameterType**>  
-A new Thread
+Type: [Thread][4]&lt;**TType**>  
+
+[Missing &lt;returns> documentation for "M:W.Threading.Thread.Create``1(System.Action{System.Threading.CancellationToken,``0})"]
+
 
 See Also
 --------

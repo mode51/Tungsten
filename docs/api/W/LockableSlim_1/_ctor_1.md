@@ -1,6 +1,6 @@
 LockableSlim&lt;TValue> Constructor (TValue)
 ============================================
-   Constructor which initializes Value with the specified value
+   Constructs a new LockableSlim assigning an initial value
 
   **Namespace:**  [W][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -18,7 +18,7 @@ public LockableSlim(
 
 ##### *initialValue*
 Type: [TValue][2]  
-The initial value for Value
+The initial value to assign
 
 
 See Also

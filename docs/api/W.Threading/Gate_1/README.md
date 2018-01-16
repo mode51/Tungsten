@@ -1,6 +1,9 @@
 Gate&lt;TParameterType> Class
 =============================
-   A thread Gate which supports passing in a typed parameter
+   
+
+**Note: This API is now obsolete.**
+A thread Gate which supports passing in a typed parameter
 
 
 Inheritance Hierarchy
@@ -16,6 +19,7 @@ Syntax
 ------
 
 ```csharp
+[ObsoleteAttribute("Gate is incorrectly implemented and will be removed at a later date.  Please use ThreadMethod instead.")]
 public class Gate<TParameterType> : Gate
 
 ```

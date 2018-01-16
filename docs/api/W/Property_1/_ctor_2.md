@@ -1,8 +1,8 @@
-Property&lt;TValue> Constructor (TValue, OnValueChangedDelegate&lt;Property&lt;TValue>, TValue>)
-================================================================================================
-   Constructs a new Property
+Property&lt;TValue> Constructor (TValue)
+========================================
+   Initializes a new instance of the [Property&lt;TValue>][1] class
 
-  **Namespace:**  [W][1]  
+  **Namespace:**  [W][2]  
   **Assembly:**  Tungsten (in Tungsten.dll)
 
 Syntax
@@ -10,29 +10,25 @@ Syntax
 
 ```csharp
 public Property(
-	TValue defaultValue,
-	OnValueChangedDelegate<Property<TValue>, TValue> onValueChanged
+	TValue defaultValue
 )
 ```
 
 #### Parameters
 
 ##### *defaultValue*
-Type: [TValue][2]  
-The default and initial value of the property value
+Type: [TValue][1]  
 
-##### *onValueChanged*
-Type: [W.OnValueChangedDelegate][3]&lt;[Property][2]&lt;[TValue][2]>, [TValue][2]>  
-A callback for when the property value changes
+[Missing &lt;param name="defaultValue"/> documentation for "M:W.Property`1.#ctor(`0)"]
+
 
 
 See Also
 --------
 
 #### Reference
-[Property&lt;TValue> Class][2]  
-[W Namespace][1]  
+[Property&lt;TValue> Class][1]  
+[W Namespace][2]  
 
-[1]: ../README.md
-[2]: README.md
-[3]: ../OnValueChangedDelegate_2/README.md
+[1]: README.md
+[2]: ../README.md

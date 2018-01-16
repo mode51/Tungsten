@@ -1,6 +1,9 @@
 Gate Class
 ==========
-   A thread Gate is a background thread which is initially closed. When a Gate is opened, the Action runs until completion. The Gate can be opened (Run) any number of times.
+   
+
+**Note: This API is now obsolete.**
+A thread Gate is a background thread which is initially closed. When a Gate is opened, the Action runs until completion. The Gate can be opened (Run) any number of times.
 
 
 Inheritance Hierarchy
@@ -16,6 +19,7 @@ Syntax
 ------
 
 ```csharp
+[ObsoleteAttribute("Gate is incorrectly implemented and will be removed at a later date.  Please use ThreadMethod instead.")]
 public class Gate : IDisposable
 ```
 

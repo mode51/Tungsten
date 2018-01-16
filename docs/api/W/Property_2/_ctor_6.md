@@ -1,5 +1,5 @@
-Property&lt;TOwner, TValue> Constructor (TValue, OnValueChangedDelegate&lt;TOwner, TValue>)
-===========================================================================================
+Property&lt;TOwner, TValue> Constructor (TValue)
+================================================
    Constructs a new Property
 
   **Namespace:**  [W][1]  
@@ -10,8 +10,7 @@ Syntax
 
 ```csharp
 public Property(
-	TValue defaultValue,
-	OnValueChangedDelegate<TOwner, TValue> onValueChanged = null
+	TValue defaultValue
 )
 ```
 
@@ -20,10 +19,6 @@ public Property(
 ##### *defaultValue*
 Type: [TValue][2]  
 The default and initial value of the property
-
-##### *onValueChanged* (Optional)
-Type: [W.OnValueChangedDelegate][3]&lt;[TOwner][2], [TValue][2]>  
-A callback for when the property value changes
 
 
 See Also
@@ -35,4 +30,3 @@ See Also
 
 [1]: ../README.md
 [2]: README.md
-[3]: ../OnValueChangedDelegate_2/README.md

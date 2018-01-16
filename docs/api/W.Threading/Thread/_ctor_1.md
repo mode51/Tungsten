@@ -1,6 +1,6 @@
-Thread Constructor (Action&lt;CancellationToken>, Boolean)
-==========================================================
-   Constructs a new Thread
+Thread Constructor (ThreadDelegate)
+===================================
+   Constructs a new ThreadSlim using a ThreadDelegate as the thread method
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -10,31 +10,24 @@ Syntax
 
 ```csharp
 public Thread(
-	Action<CancellationToken> action,
-	bool autoStart
+	ThreadDelegate delegate
 )
 ```
 
 #### Parameters
 
-##### *action*
-Type: [System.Action][2]&lt;[CancellationToken][3]>  
-The action to call on a thread
-
-##### *autoStart*
-Type: [System.Boolean][4]  
-If True, the thread will immediately start. Otherwise Start will have to be called.
+##### *delegate*
+Type: [W.Threading.ThreadDelegate][2]  
+The ThreadDelegate to run on a separate thread
 
 
 See Also
 --------
 
 #### Reference
-[Thread Class][5]  
+[Thread Class][3]  
 [W.Threading Namespace][1]  
 
 [1]: ../README.md
-[2]: http://msdn.microsoft.com/en-us/library/018hxwa8
-[3]: http://msdn.microsoft.com/en-us/library/dd384802
-[4]: http://msdn.microsoft.com/en-us/library/a28wyd50
-[5]: README.md
+[2]: ../ThreadDelegate/README.md
+[3]: README.md

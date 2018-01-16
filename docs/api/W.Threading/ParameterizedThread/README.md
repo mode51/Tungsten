@@ -46,23 +46,23 @@ Properties
 Methods
 -------
 
-                                 | Name                         | Description                                                                                                                        
--------------------------------- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- 
-![Public method]![Static member] | [Create][11]                 | Starts a new ParameterizedThread                                                                                                   
-![Public method]                 | [Dispose][12]                | This code added to correctly implement the disposable pattern. (Inherited from [Disposable][2].)                                   
-![Public method]                 | [Equals][13]                 | (Inherited from [Object][1].)                                                                                                      
-![Protected method]              | [Finalize][14]               | Override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources. (Inherited from [Disposable][2].) 
-![Public method]                 | [GetHashCode][15]            | (Inherited from [Object][1].)                                                                                                      
-![Public method]                 | [GetType][16]                | (Inherited from [Object][1].)                                                                                                      
-![Public method]                 | [Join()][17]                 | Block the calling thread until this thread object has completed                                                                    
-![Public method]                 | [Join(Int32)][18]            | Block the calling thread until this thread object has completed or until the timeout has occurred                                  
-![Protected method]              | [MemberwiseClone][19]        | (Inherited from [Object][1].)                                                                                                      
-![Protected method]              | [OnDispose][20]              | Dispose the thread and free resources (Overrides [Disposable.OnDispose()][21].)                                                    
-![Protected method]              | [OnDisposeUnmanaged][22]     | Override to release unmanaged objects (Inherited from [Disposable][2].)                                                            
-![Public method]                 | [Start(Object[])][23]        | Start the thread                                                                                                                   
-![Public method]                 | [Start(Int32, Object[])][24] | Start the thread with a CancellationToken which will timeout in the specified milliseconds                                         
-![Public method]                 | [Stop][25]                   | Stop the thread. This calls Cancel on the CancellationToken                                                                        
-![Public method]                 | [ToString][26]               | (Inherited from [Object][1].)                                                                                                      
+                                 | Name                         | Description                                                                                       
+-------------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------- 
+![Public method]![Static member] | [Create][11]                 | Starts a new ParameterizedThread                                                                  
+![Public method]                 | [Dispose][12]                | This code added to correctly implement the disposable pattern. (Inherited from [Disposable][2].)  
+![Public method]                 | [Equals][13]                 | (Inherited from [Object][1].)                                                                     
+![Protected method]              | [Finalize][14]               | (Inherited from [Object][1].)                                                                     
+![Public method]                 | [GetHashCode][15]            | (Inherited from [Object][1].)                                                                     
+![Public method]                 | [GetType][16]                | (Inherited from [Object][1].)                                                                     
+![Public method]                 | [Join()][17]                 | Block the calling thread until this thread object has completed                                   
+![Public method]                 | [Join(Int32)][18]            | Block the calling thread until this thread object has completed or until the timeout has occurred 
+![Protected method]              | [MemberwiseClone][19]        | (Inherited from [Object][1].)                                                                     
+![Protected method]              | [OnDispose][20]              | Dispose the thread and free resources (Overrides [Disposable.OnDispose()][21].)                   
+![Protected method]              | [OnDisposeUnmanaged][22]     | Override to release unmanaged objects (Inherited from [Disposable][2].)                           
+![Public method]                 | [Start(Object[])][23]        | Start the thread                                                                                  
+![Public method]                 | [Start(Int32, Object[])][24] | Start the thread with a CancellationToken which will timeout in the specified milliseconds        
+![Public method]                 | [Stop][25]                   | Stop the thread. This calls Cancel on the CancellationToken                                       
+![Public method]                 | [ToString][26]               | (Inherited from [Object][1].)                                                                     
 
 
 Fields
@@ -93,7 +93,7 @@ See Also
 [11]: Create.md
 [12]: ../../W/Disposable/Dispose.md
 [13]: http://msdn.microsoft.com/en-us/library/bsc2ak47
-[14]: ../../W/Disposable/Finalize.md
+[14]: http://msdn.microsoft.com/en-us/library/4k87zsw7
 [15]: http://msdn.microsoft.com/en-us/library/zdee4b3y
 [16]: http://msdn.microsoft.com/en-us/library/dfwy45w9
 [17]: Join.md

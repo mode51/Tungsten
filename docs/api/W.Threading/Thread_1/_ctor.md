@@ -1,6 +1,6 @@
-Thread&lt;TParameterType> Constructor (Action&lt;TParameterType, CancellationToken>)
-====================================================================================
-   Constructs a new Thread which can accept a parameter
+Thread&lt;TType> Constructor
+============================
+   Constructs a new Thread which can accept a single, typed, paramter
 
   **Namespace:**  [W.Threading][1]  
   **Assembly:**  Tungsten (in Tungsten.dll)
@@ -10,29 +10,25 @@ Syntax
 
 ```csharp
 public Thread(
-	Action<TParameterType, CancellationToken> action
+	Action<CancellationToken, TType> action
 )
 ```
 
 #### Parameters
 
 ##### *action*
-Type: [System.Action][2]&lt;[TParameterType][3], [CancellationToken][4]>  
-The CancellationToken which can be used to cancel the thread
+Type: [System.Action][2]&lt;[CancellationToken][3], [TType][4]>  
+The action to run on a separate thread
 
-
-Remarks
--------
-Calling this constructor will automatically start the thread
 
 See Also
 --------
 
 #### Reference
-[Thread&lt;TParameterType> Class][3]  
+[Thread&lt;TType> Class][4]  
 [W.Threading Namespace][1]  
 
 [1]: ../README.md
 [2]: http://msdn.microsoft.com/en-us/library/bb549311
-[3]: README.md
-[4]: http://msdn.microsoft.com/en-us/library/dd384802
+[3]: http://msdn.microsoft.com/en-us/library/dd384802
+[4]: README.md
