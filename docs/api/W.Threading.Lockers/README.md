@@ -8,13 +8,13 @@ Classes
 
                 | Class                                | Description                                                                                                        
 --------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------ 
-![Public class] | [MonitorLocker][1]                   | Uses Monitor to provide thread-safety                                                                              
+![Public class] | [MonitorLocker][1]                   | Uses Monitor to provide resource locking                                                                           
 ![Public class] | [MonitorLocker&lt;TState>][2]        | Extends MonitorLocker with an internal state variable                                                              
-![Public class] | [ReaderWriterLocker][3]              | Uses ReaderWriterLockSlim to provide thread-safety                                                                 
+![Public class] | [ReaderWriterLocker][3]              | Uses ReaderWriterLockSlim to provide resource locking                                                              
 ![Public class] | [ReaderWriterLocker&lt;TState>][4]   | Extends ReaderWriterLocker with an internal state variable                                                         
-![Public class] | [SemaphoreSlimLocker][5]             | Uses SemaphoreSlim to provide locking                                                                              
+![Public class] | [SemaphoreSlimLocker][5]             | Uses SemaphoreSlim to provide resource locking                                                                     
 ![Public class] | [SemaphoreSlimLocker&lt;TState>][6]  | Extends SemaphoreSlimLocker with an internal state variable                                                        
-![Public class] | [SpinLocker][7]                      | Uses SpinLock to provide thread-safety                                                                             
+![Public class] | [SpinLocker][7]                      | Uses SpinLock to provide resource locking                                                                          
 ![Public class] | [SpinLocker&lt;TState>][8]           | Extends SpinLocker with an internal state variable                                                                 
 ![Public class] | [StateLocker&lt;TLocker, TState>][9] | Extends a locker (SpinLocker, MonitorLocker, ReaderWriterLocker, SemaphoreSlimLocker) with an internal state value 
 

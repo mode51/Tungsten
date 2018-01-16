@@ -1,6 +1,6 @@
 MonitorLocker Class
 ===================
-   Uses Monitor to provide thread-safety
+   Uses Monitor to provide resource locking
 
 
 Inheritance Hierarchy

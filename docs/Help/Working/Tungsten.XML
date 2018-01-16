@@ -1019,7 +1019,7 @@
     </member>
     <member name="T:W.Threading.Lockers.MonitorLocker">
       <summary>
-            Uses Monitor to provide thread-safety
+            Uses Monitor to provide resource locking
             </summary>
       <remarks>Can be overridden to provide additional functionality</remarks>
     </member>
@@ -1080,7 +1080,7 @@
     </member>
     <member name="T:W.Threading.Lockers.ReaderWriterLocker">
       <summary>
-            Uses ReaderWriterLockSlim to provide thread-safety
+            Uses ReaderWriterLockSlim to provide resource locking
             </summary>
       <remarks>Can be overridden to provide additional functionality</remarks>
     </member>
@@ -1194,7 +1194,7 @@
     </member>
     <member name="T:W.Threading.Lockers.SemaphoreSlimLocker">
       <summary>
-            Uses SemaphoreSlim to provide locking
+            Uses SemaphoreSlim to provide resource locking
             </summary>
     </member>
     <member name="P:W.Threading.Lockers.SemaphoreSlimLocker.Locker">
@@ -1262,7 +1262,7 @@
     </member>
     <member name="T:W.Threading.Lockers.SpinLocker">
       <summary>
-            Uses SpinLock to provide thread-safety
+            Uses SpinLock to provide resource locking
             </summary>
       <remarks>Can be overridden to provide additional functionality</remarks>
     </member>

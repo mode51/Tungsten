@@ -1,6 +1,6 @@
 ReaderWriterLocker Class
 ========================
-   Uses ReaderWriterLockSlim to provide thread-safety
+   Uses ReaderWriterLockSlim to provide resource locking
 
 
 Inheritance Hierarchy

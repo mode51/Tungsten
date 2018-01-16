@@ -1,6 +1,6 @@
 SpinLocker Class
 ================
-   Uses SpinLock to provide thread-safety
+   Uses SpinLock to provide resource locking
 
 
 Inheritance Hierarchy

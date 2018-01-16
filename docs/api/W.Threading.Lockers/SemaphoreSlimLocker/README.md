@@ -1,6 +1,6 @@
 SemaphoreSlimLocker Class
 =========================
-   Uses SemaphoreSlim to provide locking
+   Uses SemaphoreSlim to provide resource locking
 
 
 Inheritance Hierarchy
