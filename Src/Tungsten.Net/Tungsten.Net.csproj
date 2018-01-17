@@ -67,6 +67,9 @@
     <Compile Include="..\Tungsten.Net.Standard\Alpha\Secure\SecureClientServer.cs">
       <Link>Alpha\Secure\SecureClientServer.cs</Link>
     </Compile>
+    <Compile Include="..\Tungsten.Net.Standard\Alpha\Secure\SecureHost.cs">
+      <Link>Alpha\Secure\SecureHost.cs</Link>
+    </Compile>
     <Compile Include="..\Tungsten.Net.Standard\Alpha\Secure\SecureSocketBase.cs">
       <Link>Alpha\Secure\SecureSocketBase.cs</Link>
     </Compile>
