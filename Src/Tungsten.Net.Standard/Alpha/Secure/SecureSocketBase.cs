@@ -94,7 +94,8 @@ namespace W.Net.Alpha
         /// <summary>
         /// True if the socket is currently connected, otherwise False
         /// </summary>
-        public bool IsConnected => Socket.Socket.Connected;
+        public bool IsConnected => Socket?.Socket.Connected ?? false;
+
         private bool Secure()
         {
             var result = Encryption.ExchangeKeys((myPublicKey) =>
@@ -190,12 +191,9 @@ namespace W.Net.Alpha
         /// <summary>
         /// Initialize the underlying socket
         /// </summary>
-        protected virtual void Connect(Socket socket = null)
+        protected virtual void InitializeConnection()
         {
             Encryption = new AssymetricEncryption(KeySize);
-            Socket = Activator.CreateInstance<TSocket>();
-            if (socket != null)
-                Socket.InitializeConnection(socket); //clients call this upon Connect, servers need to assign it here
             Socket.UseCompression = false; //you can't compress encrypted data
             Socket.Connected += s => Secure();
             Socket.Disconnected += s => OnDisconnect();
