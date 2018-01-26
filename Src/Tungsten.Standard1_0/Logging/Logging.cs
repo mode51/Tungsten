@@ -12,6 +12,9 @@ namespace W.Logging
     /// </summary>
     public static partial class Log
     {
+#if NET45
+        private static W.Interprocess.CopyDataLogger copyDataLogger = new W.Interprocess.CopyDataLogger(true);
+#endif
         /// <summary>
         /// Configure this Action to log messages the way you like to
         /// </summary>

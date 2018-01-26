@@ -55,7 +55,7 @@ namespace W.IO.Pipes
         /// <param name="serverName">The name of the server hosting the named pipe</param>
         /// <param name="pipeName">The name of the named pipe</param>
         /// <param name="addTimestamp">If true, the message will be prefixed with a timestamp</param>
-        public PipeLogger(string serverName, string pipeName, bool addTimestamp = true) : base(pipeName, addTimestamp)
+        public PipeLogger(string serverName, string pipeName, bool addTimestamp = true) : base("PipeLogger", addTimestamp)
         {
             Task.Run(() =>
             {

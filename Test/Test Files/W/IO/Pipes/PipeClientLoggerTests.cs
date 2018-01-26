@@ -79,19 +79,19 @@ namespace W.Tests
         }
 
         [TestMethod]
-        public void LogOnce()
+        public void Pipe_LogOnce()
         {
             LogMessages(1);
             //Client.Pipe.Stream.WaitForPipeDrain();
         }
         [TestMethod]
-        public void Log10()
+        public void Pipe_Log10()
         {
             LogMessages(10);
             //Client.Pipe.Stream.WaitForPipeDrain();
         }
         [TestMethod]
-        public void Log100()
+        public void Pipe_Log100()
         {
             LogMessages(100);
             //Client.Pipe.Stream.WaitForPipeDrain();

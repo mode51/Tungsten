@@ -434,7 +434,7 @@ namespace W.Interprocess
         /// </summary>
         /// <param name="name">A custom name to identify this logger</param>
         /// <param name="addTimestamp">If True, the log message will be prefixed with a timestamp</param>
-        public CopyDataLogger(string name, bool addTimestamp) : base(name, addTimestamp)
+        public CopyDataLogger(bool addTimestamp) : base("CopyDataLogger", addTimestamp)
         {
             _cd = new CopyData(windowText => windowText == "ConsoleLogger", true);
         }

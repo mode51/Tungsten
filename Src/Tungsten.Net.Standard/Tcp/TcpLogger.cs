@@ -27,7 +27,7 @@ namespace W.Net
                 });
                 base.OnDispose();
             }
-            public TcpLogger(IPEndPoint ep, bool addTimestamp) : base("InsecureNetLogger", addTimestamp)
+            public TcpLogger(IPEndPoint ep, bool addTimestamp) : base("TcpLogger", addTimestamp)
             {
                 Task.Run(() =>
                 {
