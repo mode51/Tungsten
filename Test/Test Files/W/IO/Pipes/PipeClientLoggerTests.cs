@@ -19,7 +19,7 @@ namespace W.Tests
         private ManualResetEventSlim _mreContinue = new ManualResetEventSlim(false);
         protected string PipeName = "PipeClientLogger_Tests_" + new Random().Next(int.MaxValue).ToString();// Guid.NewGuid().ToString();
         private W.IO.Pipes.PipeHost Host { get; set; }
-        private W.IO.Pipes.PipeClientLogger Client { get; set; }
+        private W.IO.Pipes.PipeLogger Client { get; set; }
 
         private void LogMessages(int count)
         {
@@ -64,7 +64,7 @@ namespace W.Tests
             Host.Start(PipeName, 20, false);
             Console.WriteLine("Host Started");
 
-            Client = new W.IO.Pipes.PipeClientLogger(PipeName, true);
+            Client = new W.IO.Pipes.PipeLogger(PipeName, true);
             Console.WriteLine("Logging Client Created");
         }
         [TestCleanup]
@@ -82,19 +82,19 @@ namespace W.Tests
         public void LogOnce()
         {
             LogMessages(1);
-            Client.Pipe.Stream.WaitForPipeDrain();
+            //Client.Pipe.Stream.WaitForPipeDrain();
         }
         [TestMethod]
         public void Log10()
         {
             LogMessages(10);
-            Client.Pipe.Stream.WaitForPipeDrain();
+            //Client.Pipe.Stream.WaitForPipeDrain();
         }
         [TestMethod]
         public void Log100()
         {
             LogMessages(100);
-            Client.Pipe.Stream.WaitForPipeDrain();
+            //Client.Pipe.Stream.WaitForPipeDrain();
         }
     }
 }

@@ -49,6 +49,9 @@
     <Compile Include="..\Tungsten.Standard1_0\CallResult.cs">
       <Link>CallResult.cs</Link>
     </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\CopyData.cs">
+      <Link>CopyData.cs</Link>
+    </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Disposable.cs">
       <Link>Disposable.cs</Link>
     </Compile>
@@ -60,6 +63,9 @@
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Encryption\MD5.cs">
       <Link>Encryption\MD5.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\Encryption\PasswordHash.cs">
+      <Link>Encryption\PasswordHash.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Encryption\PublicPrivateKeyPair.cs">
       <Link>Encryption\PublicPrivateKeyPair.cs</Link>
@@ -102,6 +108,9 @@
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\ExtensionMethods\ThreadExtensions.cs">
       <Link>ExtensionMethods\ThreadExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.Standard1_0\FindWindow.cs">
+      <Link>FindWindow.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.Standard1_0\Lockable\Lockable.cs">
       <Link>Lockable\Lockable.cs</Link>

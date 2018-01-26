@@ -40,7 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="LiteDB, Version=3.1.0.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
-      <HintPath>..\packages\LiteDB.3.1.0\lib\net35\LiteDB.dll</HintPath>
+      <HintPath>..\packages\LiteDB.3.1.1\lib\net35\LiteDB.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MSTest.TestFramework.1.2.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
@@ -108,6 +108,12 @@
     </Compile>
     <Compile Include="..\Test Files\W\Net\TestNet.cs">
       <Link>W\Net\TestNet.cs</Link>
+    </Compile>
+    <Compile Include="..\Test Files\W\Net\TestSecureTcp.cs">
+      <Link>W\Net\TestSecureTcp.cs</Link>
+    </Compile>
+    <Compile Include="..\Test Files\W\Net\TestUdp.cs">
+      <Link>W\Net\TestUdp.cs</Link>
     </Compile>
     <Compile Include="..\Test Files\W\PropertyHostMethodsTests.cs">
       <Link>W\PropertyHostMethodsTests.cs</Link>

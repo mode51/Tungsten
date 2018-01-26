@@ -74,12 +74,12 @@ namespace W.Threading.Lockers
         /// <param name="func">The function to run</param>
         public TState InLock(Func<TState, TState> func)
         {
-            return Locker.InLock(() => func.Invoke(State));
+            return Locker.InLock(() => { State = func.Invoke(State); return State; });
         }
         /// <summary>
         /// Asynchronously performs an action from within a lock, passing in the current state
         /// </summary>
-        /// <param name="func">The action to run</param>
+        /// <param name="action">The action to run</param>
         public async Task InLockAsync(Action<TState> action)
         {
             await Locker.InLockAsync(() => action.Invoke(State));
@@ -90,7 +90,8 @@ namespace W.Threading.Lockers
         /// <param name="func">The function to run</param>
         public async Task<TState> InLockAsync(Func<TState, TState> func)
         {
-            return await Locker.InLockAsync(() => func.Invoke(State));
+
+            return await Locker.InLockAsync(() => { State = func.Invoke(State); return State; });
         }
         #endregion
     }

@@ -43,6 +43,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net", "Net", "{7949A7C6-C816-4CD2-A303-CCF16C06AD32}"
 	ProjectSection(SolutionItems) = preProject
 		Test Files\W\Net\TestNet.cs = Test Files\W\Net\TestNet.cs
+		Test Files\W\Net\TestSecureNet.cs = Test Files\W\Net\TestSecureNet.cs
+		Test Files\W\Net\TestUdp.cs = Test Files\W\Net\TestUdp.cs
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LiteDb", "LiteDb", "{509C7A56-C0CE-46A2-8ADE-5E046517C5AB}"

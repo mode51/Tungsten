@@ -20,6 +20,8 @@
     <Compile Include="..\Test Files\W\LockableSlimTests.cs" Link="W\LockableSlimTests.cs" />
     <Compile Include="..\Test Files\W\LockableTests.cs" Link="W\LockableTests.cs" />
     <Compile Include="..\Test Files\W\Net\TestNet.cs" Link="W\Net\TestNet.cs" />
+    <Compile Include="..\Test Files\W\Net\TestSecureTcp.cs" Link="W\Net\TestSecureTcp.cs" />
+    <Compile Include="..\Test Files\W\Net\TestUdp.cs" Link="W\Net\TestUdp.cs" />
     <Compile Include="..\Test Files\W\PropertyHostMethodsTests.cs" Link="W\PropertyHostMethodsTests.cs" />
     <Compile Include="..\Test Files\W\PropertyHostTests.cs" Link="W\PropertyHostTests.cs" />
     <Compile Include="..\Test Files\W\PropertyTests.cs" Link="W\PropertyTests.cs" />

@@ -26,96 +26,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Archive\ClientSlim.cs" />
-    <Compile Remove="Archive\Historical\ClientSlim.cs" />
-    <Compile Remove="Archive\Historical\Clients\Client.cs" />
-    <Compile Remove="Archive\Historical\Clients\SecureClient.cs" />
-    <Compile Remove="Archive\Historical\Clients\SecureStringClient.cs" />
-    <Compile Remove="Archive\Historical\Clients\StringClient.cs" />
-    <Compile Remove="Archive\FormattedClient.cs" />
-    <Compile Remove="Archive\GenericClient.cs" />
-    <Compile Remove="Archive\GenericServer.cs" />
-    <Compile Remove="Archive\Historical\FormattedClient.cs" />
-    <Compile Remove="Archive\Historical\GenericClient.cs" />
-    <Compile Remove="Archive\Historical\GenericServer.cs" />
-    <Compile Remove="Archive\Historical\ISecureSocket.cs" />
-    <Compile Remove="Archive\Historical\SecureStringClient.cs" />
-    <Compile Remove="Archive\Historical\SecureStringServer.cs" />
-    <Compile Remove="Archive\Historical\Server.cs" />
-    <Compile Remove="Archive\Historical\ServerSlim.cs" />
-    <Compile Remove="Archive\Historical\StringClient.cs" />
-    <Compile Remove="Archive\Historical\StringServer.cs" />
-    <Compile Remove="Archive\ISecureSocket.cs" />
-    <Compile Remove="Archive\ISocket.cs" />
-    <Compile Remove="Archive\SecureStringClient.cs" />
-    <Compile Remove="Archive\SecureStringServer.cs" />
-    <Compile Remove="Archive\Server.cs" />
-    <Compile Remove="Archive\ServerSlim.cs" />
-    <Compile Remove="Archive\Historical\Servers\SecureServer.cs" />
-    <Compile Remove="Archive\Historical\Servers\SecureStringServer.cs" />
-    <Compile Remove="Archive\Historical\Servers\Server.cs" />
-    <Compile Remove="Archive\Historical\Servers\StringServer.cs" />
-    <Compile Remove="Archive\StringClient.cs" />
-    <Compile Remove="Archive\StringServer.cs" />
-    <Compile Remove="Archive\v1.2.5.3\Clients\Client.cs" />
-    <Compile Remove="Archive\v1.2.5.3\Clients\SecureClient.cs" />
-    <Compile Remove="Archive\v1.2.5.3\SampleUse.cs" />
     <Compile Remove="GenericClient.cs" />
     <Compile Remove="GenericServer.cs" />
-    <Compile Remove="Archive\v1.2.5.3\Helpers\TcpClientReader.cs" />
-    <Compile Remove="Archive\v1.2.5.3\Helpers\TcpClientWriter.cs" />
-    <Compile Remove="Archive\v1.2.5.3\Helpers\TcpHelpers.cs" />
     <Compile Remove="SampleUse.cs" />
     <Compile Remove="SecureStringClient.cs" />
     <Compile Remove="SecureStringServer.cs" />
-    <Compile Remove="Archive\v1.2.5.3\Servers\SecureServer.cs" />
-    <Compile Remove="Archive\v1.2.5.3\Servers\Server.cs" />
-    <Compile Remove="Archive\v1.2.5.3\Servers\Server2.cs" />
-    <Compile Remove="Archive\v1.2.5.3\Sockets\FormattedClient.cs" />
-    <Compile Remove="Archive\v1.2.5.3\Sockets\IDataSocket.cs" />
-    <Compile Remove="Archive\v1.2.5.3\Sockets\IMessageSocket.cs" />
-    <Compile Remove="Archive\v1.2.5.3\Sockets\ISecureSocket.cs" />
-    <Compile Remove="Archive\v1.2.5.3\Sockets\ISocket.cs" />
-    <Compile Remove="Archive\v1.2.5.3\Sockets\Server.cs" />
-    <Compile Remove="Archive\v1.2.5.3\Sockets\Socket.cs" />
-    <Compile Remove="Archive\v1.2.5.3\Sockets\SocketData.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Archive\Historical\Clients\Client.cs" />
-    <None Include="Archive\Historical\Clients\SecureClient.cs" />
-    <None Include="Archive\Historical\Clients\SecureStringClient.cs" />
-    <None Include="Archive\Historical\Clients\StringClient.cs" />
-    <None Include="Archive\Historical\GenericClient.cs" />
-    <None Include="Archive\Historical\GenericServer.cs" />
-    <None Include="Archive\Historical\ISecureSocket.cs" />
-    <None Include="Archive\Historical\ClientSlim.cs" />
-    <None Include="Archive\Historical\ServerSlim.cs" />
-    <None Include="Archive\v1.2.5.3\Clients\Client.cs" />
-    <None Include="Archive\v1.2.5.3\Clients\SecureClient.cs" />
-    <None Include="Archive\v1.2.5.3\Helpers\TcpClientReader.cs" />
-    <None Include="Archive\v1.2.5.3\Helpers\TcpClientWriter.cs" />
-    <None Include="Archive\v1.2.5.3\Helpers\TcpHelpers.cs" />
-    <None Include="Archive\v1.2.5.3\Servers\SecureServer.cs" />
-    <None Include="Archive\v1.2.5.3\Servers\Server.cs" />
-    <None Include="Archive\v1.2.5.3\Servers\Server2.cs" />
-    <None Include="Archive\v1.2.5.3\Sockets\IDataSocket.cs" />
-    <None Include="Archive\v1.2.5.3\Sockets\IMessageSocket.cs" />
-    <None Include="Archive\v1.2.5.3\Sockets\ISecureSocket.cs" />
-    <None Include="Archive\v1.2.5.3\Sockets\ISocket.cs" />
-    <None Include="Archive\Historical\SecureStringClient.cs" />
-    <None Include="Archive\Historical\Servers\SecureServer.cs" />
-    <None Include="Archive\Historical\Servers\SecureStringServer.cs" />
-    <None Include="Archive\Historical\Servers\Server.cs" />
-    <None Include="Archive\Historical\Servers\StringServer.cs" />
-    <None Include="Archive\Historical\StringClient.cs" />
-    <None Include="Archive\Historical\StringServer.cs" />
-    <None Include="Archive\Historical\SecureStringServer.cs" />
-    <None Include="Archive\Historical\FormattedClient.cs" />
-    <None Include="Archive\Historical\Server.cs" />
-    <None Include="Archive\v1.2.5.3\Sockets\Socket.cs" />
-    <None Include="Archive\v1.2.5.3\Sockets\SocketData.cs" />
-    <None Include="Archive\v1.2.5.3\SampleUse.cs" />
+    <None Include="ExtensionMethods.cs" />
+    <None Include="SerializationMethods.cs" />
   </ItemGroup>
 
   <ItemGroup>

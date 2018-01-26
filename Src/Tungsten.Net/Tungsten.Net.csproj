@@ -7,7 +7,7 @@
     <ProjectGuid>{F2FE9090-34C9-4F7E-A932-7F3CF8D00567}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tungsten.Net</RootNamespace>
+    <RootNamespace>W.Net</RootNamespace>
     <AssemblyName>Tungsten.Net</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -48,94 +48,69 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="Tungsten, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Tungsten.2.0.0\lib\net45\Tungsten.dll</HintPath>
+      <HintPath>..\..\..\..\TestApps\W.Net.Test\packages\Tungsten.2.0.0\lib\net45\Tungsten.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Tungsten.Net.Standard\Alpha\Client.cs">
-      <Link>Alpha\Client.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\ExtensionMethods.cs">
+      <Link>ExtensionMethods.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Alpha\ClientLogger.cs">
-      <Link>Alpha\ClientLogger.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\SerializationMethods.cs">
+      <Link>SerializationMethods.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Alpha\Host.cs">
-      <Link>Alpha\Host.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\SocketExtensions.cs">
+      <Link>SocketExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Alpha\HostBase.cs">
-      <Link>Alpha\HostBase.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\Tcp\Generic\SecureTcpClient.cs">
+      <Link>Tcp\Generic\SecureTcpClient.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Alpha\Secure\SecureClientServer.cs">
-      <Link>Alpha\Secure\SecureClientServer.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\Tcp\Generic\SecureTcpHost.cs">
+      <Link>Tcp\Generic\SecureTcpHost.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Alpha\Secure\SecureHost.cs">
-      <Link>Alpha\Secure\SecureHost.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\Tcp\Generic\TcpClient.cs">
+      <Link>Tcp\Generic\TcpClient.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Alpha\Secure\SecureSocketBase.cs">
-      <Link>Alpha\Secure\SecureSocketBase.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\Tcp\Generic\TcpHost.cs">
+      <Link>Tcp\Generic\TcpHost.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Alpha\Server.cs">
-      <Link>Alpha\Server.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\Tcp\IClient.cs">
+      <Link>Tcp\IClient.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Alpha\SocketBase.cs">
-      <Link>Alpha\SocketBase.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\Tcp\IInitialize.cs">
+      <Link>Tcp\IInitialize.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Alpha\WakeOnLan.cs">
-      <Link>Alpha\WakeOnLan.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\Tcp\SecureTcpClient.cs">
+      <Link>Tcp\SecureTcpClient.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Clients\Client.cs">
-      <Link>Clients\Client.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\Tcp\SecureTcpHost.cs">
+      <Link>Tcp\SecureTcpHost.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Clients\ClientBase.SocketTransceiverSlim.cs">
-      <Link>Clients\ClientBase.SocketTransceiverSlim.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\Tcp\SecureTcpLogger.cs">
+      <Link>Tcp\SecureTcpLogger.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Clients\SecureClient.cs">
-      <Link>Clients\SecureClient.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\Tcp\TcpClient.cs">
+      <Link>Tcp\TcpClient.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Code\CPUProfileEnum.cs">
-      <Link>Code\CPUProfileEnum.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\Tcp\TcpHost.cs">
+      <Link>Tcp\TcpHost.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Code\Debug.cs">
-      <Link>Code\Debug.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\Tcp\TcpLogger.cs">
+      <Link>Tcp\TcpLogger.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Code\NetExtensions.cs">
-      <Link>Code\NetExtensions.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\Udp\Generic\UdpPeer.cs">
+      <Link>Udp\Generic\UdpPeer.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Code\SerializationMethods.cs">
-      <Link>Code\SerializationMethods.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\Udp\Udp.cs">
+      <Link>Udp\Udp.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Code\SocketExtensions.cs">
-      <Link>Code\SocketExtensions.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\Udp\UdpLogger.cs">
+      <Link>Udp\UdpLogger.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Code\ThreadMethods.cs">
-      <Link>Code\ThreadMethods.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\Udp\UdpPeer.cs">
+      <Link>Udp\UdpPeer.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Interfaces\ITcpClient.cs">
-      <Link>Interfaces\ITcpClient.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Interfaces\ITcpServer.cs">
-      <Link>Interfaces\ITcpServer.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Logging\SecureStringClientLogger.cs">
-      <Link>Logging\SecureStringClientLogger.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Logging\StringClientLogger.cs">
-      <Link>Logging\StringClientLogger.cs</Link>
-    </Compile>
-    <None Include="Archive\Historical\GenericClient.cs" />
-    <None Include="Archive\Historical\GenericServer.cs" />
-    <None Include="Archive\Historical\Helpers\TcpClientReader.cs" />
-    <None Include="Archive\Historical\Helpers\TcpClientWriter.cs" />
-    <None Include="Archive\Historical\Helpers\TcpHelpers.cs" />
-    <None Include="Archive\Historical\SecureStringClient.cs" />
-    <None Include="Archive\Historical\SecureStringServer.cs" />
-    <None Include="Archive\Historical\Sockets\FormattedSocket.cs" />
-    <None Include="Archive\Historical\Sockets\SecureServer.cs" />
-    <None Include="Archive\Historical\Sockets\Server.cs" />
-    <None Include="Archive\Historical\Sockets\Socket.cs" />
-    <None Include="Archive\Historical\StringClient.cs" />
-    <None Include="Archive\Historical\StringServer.cs" />
-    <Compile Include="..\Tungsten.Net.Standard\Servers\Server.cs">
-      <Link>Servers\Server.cs</Link>
+    <Compile Include="..\Tungsten.Net.Standard\WakeOnLan.cs">
+      <Link>WakeOnLan.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

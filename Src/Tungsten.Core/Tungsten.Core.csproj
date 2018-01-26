@@ -29,10 +29,12 @@
     <Compile Include="..\Tungsten.Standard1_0\ActionQueue.cs" Link="ActionQueue.cs" />
     <Compile Include="..\Tungsten.Standard1_0\ArrayMethods.cs" Link="ArrayMethods.cs" />
     <Compile Include="..\Tungsten.Standard1_0\CallResult.cs" Link="CallResult.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\CopyData.cs" Link="CopyData.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Disposable.cs" Link="Disposable.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Disposer.cs" Link="Disposer.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Encryption\AssymetricEncryption.cs" Link="Encryption\AssymetricEncryption.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Encryption\MD5.cs" Link="Encryption\MD5.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\Encryption\PasswordHash.cs" Link="Encryption\PasswordHash.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Encryption\PublicPrivateKeyPair.cs" Link="Encryption\PublicPrivateKeyPair.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Encryption\RSA.cs" Link="Encryption\RSA.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Encryption\RSAMethods.cs" Link="Encryption\RSAMethods.cs" />
@@ -47,6 +49,7 @@
     <Compile Include="..\Tungsten.Standard1_0\ExtensionMethods\PropertyHostExtensions.cs" Link="ExtensionMethods\PropertyHostExtensions.cs" />
     <Compile Include="..\Tungsten.Standard1_0\ExtensionMethods\StringExtensions.cs" Link="ExtensionMethods\StringExtensions.cs" />
     <Compile Include="..\Tungsten.Standard1_0\ExtensionMethods\ThreadExtensions.cs" Link="ExtensionMethods\ThreadExtensions.cs" />
+    <Compile Include="..\Tungsten.Standard1_0\FindWindow.cs" Link="FindWindow.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Lockable\Lockable.cs" Link="Lockable\Lockable.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Lockable\LockableSlim.cs" Link="Lockable\LockableSlim.cs" />
     <Compile Include="..\Tungsten.Standard1_0\Logging\CustomLogger.cs" Link="Logging\CustomLogger.cs" />

@@ -141,6 +141,21 @@ namespace W.AsExtensions
                 return stream.ToArray().AsString();
             }
         }
+#if NET45
+        /// <summary>
+        /// Uses binary serialization to serialize an object to an array of bytes
+        /// </summary>
+        /// <typeparam name="T">The object Type</typeparam>
+        /// <param name="item">The object to serialize</param>
+        /// <returns>An array of bytes containing the serialized object</returns>
+        public static byte[] AsBytes<T>(this T item)
+        {
+            var stream = new MemoryStream();
+            var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter(null, new System.Runtime.Serialization.StreamingContext(System.Runtime.Serialization.StreamingContextStates.Clone));
+            formatter.Serialize(stream, item);
+            return stream.GetBuffer();
+        }
+#endif
 
 #if NET45 || NETSTANDARD1_3 || WINDOWS_PORTABLE || NETCOREAPP1_0 || WINDOWS_UWP
         /// <summary>

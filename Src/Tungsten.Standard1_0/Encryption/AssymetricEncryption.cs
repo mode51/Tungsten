@@ -12,6 +12,7 @@ namespace W.Encryption
     /// </summary>
     public class AssymetricEncryption
     {
+        private int _keySize;
         private W.Encryption.PublicPrivateKeyPair _keys;
 
         /// <summary>
@@ -21,6 +22,10 @@ namespace W.Encryption
         /// <returns>Return the remote public key</returns>
         public delegate RSAParameters? ExchangeKeysDelegate(RSAParameters localPublicKey);
 
+        /// <summary>
+        /// The KeySize the object was created with
+        /// </summary>
+        public int CurrentKeySize => _keySize;
         /// <summary>
         /// The local public key
         /// </summary>
@@ -95,7 +100,8 @@ namespace W.Encryption
         /// <param name="keySize">The encryption key size</param>
         public AssymetricEncryption(int keySize = 2048)
         {
-            _keys = W.Encryption.RSAMethods.CreateKeyPair(keySize);
+            _keySize = keySize;
+            _keys = W.Encryption.RSAMethods.CreateKeyPair(_keySize);
         }
     }
 }

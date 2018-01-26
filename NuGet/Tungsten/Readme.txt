@@ -1,6 +1,9 @@
 ﻿Tungsten is a C# library to make application development easier.  See the wiki @ https://github.com/mode51/Tungsten/wiki for details, examples and use.
 
 ? v2.0.0
+Changed W.EventTemplate so the sender is included in the type arguments (breaks existing code)
+Added W.Interprocess (for NET45 only)
+Added W.Windows (for NET45 only)
 Added W.Threading.Lockers.SemaphoreSlimLocker<TState>
 Added W.Threading.Lockers.MonitorLocker<TState>
 Added W.Threading.Lockers.SpinLocker<TState>

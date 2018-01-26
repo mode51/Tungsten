@@ -96,6 +96,22 @@ namespace W.FromExtensions
             }
             return result;
         }
+
+#if NET45
+        /// <summary>
+        /// Uses binary serialization to deserialize an array of bytes into an object
+        /// </summary>
+        /// <typeparam name="T">The object Type</typeparam>
+        /// <param name="bytes">The bytes containing a serialized object</param>
+        /// <returns>The deserialized object</returns>
+        public static T FromBytes<T>(this byte[] bytes)
+        {
+            var stream = new System.IO.MemoryStream(bytes);
+            var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter(null, new System.Runtime.Serialization.StreamingContext(System.Runtime.Serialization.StreamingContextStates.Clone));
+            return (T)formatter.Deserialize(stream);
+        }
+#endif
+
 #if NET45 || NETSTANDARD1_3 || WINDOWS_PORTABLE || NETCOREAPP1_0 || WINDOWS_UWP
         /// <summary>
         /// Decompresses the byte array using System.IO.Compression.DeflateStream

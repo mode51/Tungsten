@@ -66,11 +66,11 @@
     <Compile Include="..\Tungsten.IO.Pipes.Standard\IO\Pipes\PipeClientExtensions.cs">
       <Link>IO\Pipes\PipeClientExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\Tungsten.IO.Pipes.Standard\IO\Pipes\PipeClientLogger.cs">
-      <Link>IO\Pipes\PipeClientLogger.cs</Link>
-    </Compile>
     <Compile Include="..\Tungsten.IO.Pipes.Standard\IO\Pipes\PipeHost.cs">
       <Link>IO\Pipes\PipeHost.cs</Link>
+    </Compile>
+    <Compile Include="..\Tungsten.IO.Pipes.Standard\IO\Pipes\PipeLogger.cs">
+      <Link>IO\Pipes\PipeLogger.cs</Link>
     </Compile>
     <Compile Include="..\Tungsten.IO.Pipes.Standard\IO\Pipes\PipeResult.cs">
       <Link>IO\Pipes\PipeResult.cs</Link>
