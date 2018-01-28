@@ -123,7 +123,7 @@ namespace W.Tests
             var numberOfMessagesToSend = 10;
             var mreQuit = new System.Threading.ManualResetEventSlim(false);
 
-            IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 2213);
+            IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 2213);
             using (var server = new Tcp.TcpHost())
             {
                 server.BytesReceived.OnRaised += (h, s, b) =>
@@ -133,11 +133,11 @@ namespace W.Tests
                     if (received == numberOfMessagesToSend)
                         mreQuit.Set();
                 };
-                server.Listen(ipEndPoint, 20);
+                server.Listen(serverEndPoint, 20);
                 Console.WriteLine("Server Started");
 
                 //To verify this method, an external server must be listening
-                using (var logger = new Tcp.TcpLogger(ipEndPoint, true))
+                using (var logger = new Tcp.TcpLogger(serverEndPoint, true))
                 {
                     var r = new Random();
                     for (int t = 1; t <= numberOfMessagesToSend; t++)

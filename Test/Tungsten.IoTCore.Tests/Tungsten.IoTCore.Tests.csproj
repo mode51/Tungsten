@@ -41,7 +41,7 @@
     <PackageReference Include="System.IO.Pipes" Version="4.3.0" />
     <PackageReference Include="Tungsten" Version="2.0.0" />
     <PackageReference Include="Tungsten.IO.Pipes" Version="2.0.0" />
-    <PackageReference Include="Tungsten.LiteDb" Version="1.2.4" />
+    <PackageReference Include="Tungsten.LiteDb" Version="2.0.0" />
     <PackageReference Include="Tungsten.Net" Version="2.0.0" />
   </ItemGroup>
 
