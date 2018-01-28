@@ -12,7 +12,7 @@
     <PackageTags>Tungsten Tungsten.IO.Pipes Pipe NamedPipe W C# library</PackageTags>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <FileVersion>2.0.0.0</FileVersion>
-    <Version>2.0</Version>
+    <Version>2.0.0.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
     <PackageReleaseNotes></PackageReleaseNotes>

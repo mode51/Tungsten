@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.5</TargetFramework>
+    <TargetFramework>netstandard1.3</TargetFramework>
     <RootNamespace>W.Net.RPC</RootNamespace>
     <Authors>Jordan Duerksen</Authors>
     <Company />
     <Description>Tungsten.Net.RPC is a socket library which allows clients to execute functionality (with or without return values) on a server (the server must be a Tungsten.Net.RPC server). Tungsten.Net.RPC uses two-way encryption via public/private key pairs to secure the transmission.  The client calls methods on the server via the MakeRPCCall method.  The server implements RPC methods by using the RPCMethod attribute (or added manually).</Description>
     <Copyright>Copyright @ 2017 Jordan Duerksen</Copyright>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
-    <Version>2.0.0</Version>
+    <Version>2.0.0.0</Version>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <FileVersion>2.0.0.0</FileVersion>
     <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
@@ -52,13 +52,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="System.Reflection" Version="4.3.0" />
     <PackageReference Include="System.Reflection.Extensions" Version="4.3.0" />
     <PackageReference Include="System.Reflection.Primitives" Version="4.3.0" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.3.0" />
     <PackageReference Include="Tungsten" Version="2.0.0" />
-    <PackageReference Include="Tungsten.Net" Version="1.3.0" />
+    <PackageReference Include="Tungsten.Net" Version="2.0.0" />
   </ItemGroup>
 
 </Project>

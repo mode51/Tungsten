@@ -23,7 +23,7 @@
       <group targetFramework=".NETStandard1.4">
         <dependency id="LiteDB" version="3.1.1" exclude="Build,Analyzers" />
         <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
-        <dependency id="Tungsten" version="1.2.4" exclude="Build,Analyzers" />
+        <dependency id="Tungsten" version="2.0.0" exclude="Build,Analyzers" />
       </group>
     </dependencies>
   </metadata>

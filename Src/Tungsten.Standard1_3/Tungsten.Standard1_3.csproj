@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
     <PackageId>Tungsten.Standard1_3</PackageId>
-    <Version>2.0.0</Version>
+    <Version>2.0.0.0</Version>
     <Authors>Jordan Duerksen</Authors>
     <Company>Jordan Duerksen</Company>
     <Product>Tungsten</Product>

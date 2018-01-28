@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Sockets;
+using W.AsExtensions;
 
 namespace W.Net.SocketExtensions
 {
@@ -204,6 +205,25 @@ namespace W.Net.SocketExtensions
         {
             socket.SendMessage(ref bytes);
             return socket.WaitForResponse(out response, msTimeout);
+        }
+        /// <summary>
+        /// Sends a message over the socket and waits, for the given amount of time (in milliseconds), for a response.
+        /// </summary>
+        /// <param name="socket">The socket on which to send data</param>
+        /// <param name="message">The message</param>
+        /// <param name="response">The response, if one is received</param>
+        /// <param name="msTimeout">The timeout, in milliseconds, to wait for a response</param>
+        /// <returns>True if a response was received, otherwise False</returns>
+        public static bool SendAndWaitForResponse<TMessage>(this Socket socket, ref TMessage message, out TMessage response, int msTimeout = -1)
+        {
+            response = default(TMessage);
+            var bytes = SerializationMethods.Serialize(message).AsBytes();
+            socket.SendMessage(ref bytes);
+            byte[] responseBytes;
+            var result = socket.WaitForResponse(out responseBytes, msTimeout);
+            if (result)
+                response = SerializationMethods.Deserialize<TMessage>(ref responseBytes);
+            return result;
         }
     }
 }

@@ -15,7 +15,7 @@
     <RootNamespace>Tungsten</RootNamespace>
     <AssemblyName>Tungsten</AssemblyName>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
-    <Version>2.0.0</Version>
+    <Version>2.0.0.0</Version>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <FileVersion>2.0.0.0</FileVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>

@@ -12,18 +12,12 @@ namespace W.Net.RPC
     /// </summary>
     public class Server : IDisposable
     {
-        private W.Net.Server<W.Net.SecureClient<Message>> _host;
-        private ManualResetEventSlim _mreIsListening;
+        private W.Net.Tcp.Generic.SecureTcpHost<Message> _host;
 
         /// <summary>
         /// Exposes the dictionary of methods.  Custom, non-attributed methods may be added to this dictionary.
         /// </summary>
         public MethodDictionary Methods = new MethodDictionary();
-        ///// <summary>
-        ///// Multi-cast delegate will be called with the appropriate value whenever the server successfully starts or stops listening.
-        ///// </summary>
-        ///// <remarks>The value will be True if the server is listening, otherwise False</remarks>
-        //public Action<bool> IsListeningChanged { get; set; }
 
         private bool OnMessageReceived(ref Message message)
         {
@@ -42,79 +36,43 @@ namespace W.Net.RPC
         }
 
         /// <summary>
-        /// Blocks the calling thread until the server starts or fails to start within the allotted timeout period.
-        /// </summary>
-        /// <param name="msTimeout">The number of milliseconds to wait before a timeout occurs.</param>
-        /// <returns>True if the server starts within the specified timeout period, otherwise False.</returns>
-        public bool WaitForIsListening(int msTimeout = 10000)
-        {
-            //return TimeoutFunc<bool>.Create(msTimeout, ct => 
-            //{
-            //    var result = false;
-            //    while (!ct.IsCancellationRequested)
-            //    {
-            //        if (_mreIsListening != null)
-            //        {
-            //            result = _mreIsListening.WaitOne(1);
-            //            if (result)
-            //                break;
-            //        }
-            //        System.Threading.Thread.Sleep(1);
-            //    }
-            //    return result;
-            //}).Start();
-            return _mreIsListening?.Wait(msTimeout) ?? false;
-        }
-        /// <summary>
         /// Starts listening for client connections on the specified network interface and port
         /// </summary>
         /// <param name="ep">The IPEndpoint on which to bind and listen for clients</param>
         public void Start(IPEndPoint ep)
         {
             Stop();
-            _mreIsListening = new ManualResetEventSlim(false);
-            _host = new Server<SecureClient<Message>>();
+            _host = new Tcp.Generic.SecureTcpHost<Message>(2048);
             //_host.IsListeningChanged += (isListening) => { IsListeningChanged?.Invoke(isListening); _mreIsListening?.Set(); };
-            _host.ClientConnected += (client) =>
+            _host.MessageReceived.OnRaised += (h, s, message) =>
             {
-                //Log.i("Client Connected: {0}", client.Name);
-                client.Disconnected += (c, remoteEndPoint, exception) =>
+                try
                 {
-                    //var name = (c as GenericClient<Message>)?.Socket.Name ?? "Unknown";
-                    Log.i($"Client Disconnected: {remoteEndPoint.ToString()}");
-                };
-                client.MessageReceived += (c, message) =>
-                {
+                    //call the appropriate RPC method
+                    OnMessageReceived(ref message);
                     try
                     {
-                        //call the appropriate RPC method
-                        OnMessageReceived(ref message);
-                        try
-                        {
-                            //send the result back to the client
-                            c.As<SecureClient<Message>>().Send(ref message);
-                        }
-                        catch (Exception e)
-                        {
-                            Log.e(e);
-                        }
+                        //send the result back to the client
+                        s.Write(message);
                     }
                     catch (Exception e)
                     {
                         Log.e(e);
                     }
-                };
+                }
+                catch (Exception e)
+                {
+                    Log.e(e);
+                }
             };
-            _host.Start(ep);
+            _host.Listen(ep, 20);
         }
         /// <summary>
         /// Stops listening for client connections
         /// </summary>
         public void Stop()
         {
-            _mreIsListening?.Dispose();
-            _mreIsListening = null;
-            _host?.Stop();
+            _host?.Dispose();
             _host = null;
         }
 

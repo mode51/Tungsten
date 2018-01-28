@@ -7,6 +7,7 @@ using W;
 using W.AsExtensions;
 using W.Logging;
 using W.Net;
+using W.Net.SocketExtensions;
 
 namespace W.Net.RPC
 {
@@ -73,7 +74,7 @@ namespace W.Net.RPC
     /// </remarks>
     public class Client : IDisposable
     {
-        private SecureClient<Message> _client = new SecureClient<Message>();
+        private Tcp.Generic.SecureTcpClient<Message> _client;// = new Tcp.Generic.SecureTcpClient<Message>(2048);
 
         /// <summary>
         /// The IPEndPoint of the server (The server must be a valid instance of W.Net.RPC.Server)
@@ -88,7 +89,7 @@ namespace W.Net.RPC
         private CallResult<Message> MakeTheCallAndWait(string methodName, params object[] args)
         {
             var result = new CallResult<Message>();
-            if (_client == null || (!_client?.IsConnected ?? false))
+            if (_client == null || (!_client?.Socket.Connected ?? false))
                 throw new IOException("Socket is not connected");
 
             var msg = new Message();
@@ -102,7 +103,7 @@ namespace W.Net.RPC
             Log.i("W.Net.RPC: Attempting to call {0} with {1} parameters", methodName, args?.Length);
             try
             {
-                if (_client.SendAndWaitForResponse(ref msg, out Message response, CallTimeout))
+                if (_client.Socket.SendAndWaitForResponse(ref msg, out Message response, CallTimeout))
                 {
                     result.Result = response;
                     result.Success = true;
@@ -187,23 +188,37 @@ namespace W.Net.RPC
         public RPCResponse<TResponseType> Call<TResponseType>(string methodName, params object[] args)
         {
             var response = new RPCResponse<TResponseType>() { Method = methodName };
+            
             //make sure we make the call on the right server
-            if (_client.IsConnected && (_client.RemoteEndPoint?.ToString() != RemoteEndPoint?.ToString()))
-                _client.Disconnect();
-            //make sure we're connected
-            if (!_client.IsConnected)
+            if ((_client?.Socket.Connected ?? false) && (_client.Socket.RemoteEndPoint?.ToString() != RemoteEndPoint?.ToString()))
             {
-                if (RemoteEndPoint == null)
+                _client.Dispose();
+                _client = null;
+            }
+
+            try
+            {
+                //make sure we're connected
+                if (!_client?.Socket.Connected ?? true)
                 {
-                    response.Exception = "Server IPEndPoint has not been specified";
-                    return response;
-                }
-                if (!_client.Connect(RemoteEndPoint))
-                {
-                    response.Exception = "Failed to connect to the server";
-                    return response;
+                    if (RemoteEndPoint == null)
+                    {
+                        response.Exception = "Server IPEndPoint has not been specified";
+                        return response;
+                    }
+                    _client.Connect(RemoteEndPoint);
+                    {
+                        response.Exception = "Failed to connect to the server";
+                        return response;
+                    }
                 }
             }
+            catch (Exception e)
+            {
+                response.Exception = e.Message;
+                return response;
+            }
+
             var result = MakeTheCallAndWait(methodName, args);
             response.Method = methodName;
             response.Success = result.Success;
@@ -225,7 +240,7 @@ namespace W.Net.RPC
         /// </summary>
         public void Dispose()
         {
-            _client?.Disconnect();
+            _client?.Dispose();
             _client = null;
         }
         /// <summary>

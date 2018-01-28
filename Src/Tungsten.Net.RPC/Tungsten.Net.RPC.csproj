@@ -50,8 +50,8 @@
     <Reference Include="Tungsten, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Tungsten.2.0.0\lib\net45\Tungsten.dll</HintPath>
     </Reference>
-    <Reference Include="Tungsten.Net, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Tungsten.Net.1.3.0\lib\net45\Tungsten.Net.dll</HintPath>
+    <Reference Include="Tungsten.Net, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Tungsten.Net.2.0.0\lib\net45\Tungsten.Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +76,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
