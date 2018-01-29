@@ -112,5 +112,20 @@ namespace W.Tests
                 await proc.StartAsync("Jordan", 24, "Duerksen", 0.5, new Customer() { First = "Jordan", Last = "Duerksen" });
             }
         }
+        [TestMethod]
+        public void ThreadMethod_Cancel()
+        {
+            var proc = ThreadMethod.Create(() =>
+            {
+                while(true)
+                {
+                    W.Threading.Thread.Sleep(W.Threading.CPUProfileEnum.Sleep);
+                }
+            });
+            proc.Start();
+            System.Threading.Thread.Sleep(10);
+            proc.Dispose();
+            Assert.IsTrue(proc.IsComplete);
+        }
     }
 }
