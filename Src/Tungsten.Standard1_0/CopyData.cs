@@ -318,6 +318,7 @@ namespace W.Interprocess
         /// <param name="onError">Called if an error occurs</param>
         public static void Send(IntPtr hSourceWnd, byte[] message, Predicate<string> filter, Action<System.ComponentModel.Win32Exception> onError = null)
         {
+            Enable(hSourceWnd);
             //find receivers
             foreach (var hTargetWnd in Windows.FindWindow.Find(filter, false))
                 Send(hSourceWnd, message, hTargetWnd, onError);
@@ -331,6 +332,7 @@ namespace W.Interprocess
         /// <param name="onError">Called if an error occurs</param>
         public static void Send(IntPtr hSourceWnd, byte[] message, IntPtr hTargetWnd, Action<System.ComponentModel.Win32Exception> onError = null)
         {
+            Enable(hSourceWnd);
             var result = Send(hSourceWnd, message, hTargetWnd);
             if (result != null)
                 onError?.Invoke(result);
@@ -348,6 +350,7 @@ namespace W.Interprocess
             if (hTargetWnd == IntPtr.Zero)
                 return result;
 
+            Enable(hSourceWnd);
             using (var wrapper = new CopyDataStruct(message))
             {
                 var cds = wrapper.GetCopyDataStruct();
