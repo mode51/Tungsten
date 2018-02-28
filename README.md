@@ -18,6 +18,7 @@ The help files are built with [Sandcastle Help File Builder](https://github.com/
 | Tungsten.Threading | Provides a Thread.Sleep method and ThreadMethod which makes creating a background thread (long running task) easy |  |
 | Tungsten.Threading.Lockers | Provides classes which support resource locking (MonitorLocker, ReaderWriterLocker, SemaphoreLocker and SpinLocker) |
 
+<sub>
 | Package | net20 | net35 | net45 | net461 | netstandard1.0 | netstandard1.3 | netstandard1.4 | netstandard1.5 |
 |---------|-------|-------|-------|--------|----------------|----------------|----------------|----------------|
 | Tungsten.ArrayMethods | | | * | | * | | | | |
@@ -33,6 +34,7 @@ The help files are built with [Sandcastle Help File Builder](https://github.com/
 | Tungsten.Property | | | * | | * | | | |
 | Tungsten.Threading | | | * | | * | | | |
 | Tungsten.Threading.Lockers | | | * | | * | | | |
+</sub>
 
 ## Projects not included in the Tungsten.Suite NuGet package
 | Package | Description |
@@ -42,12 +44,14 @@ The help files are built with [Sandcastle Help File Builder](https://github.com/
 | Tungsten.Firewall | Wraps NetFwTypeLib to add and remove Windows firewall rules |
 | Tungsten.InterProcess | InterProcess communication via the WM_COPYDATA message |
 
+<sub>
 | Package | net20 | net35 | net45 | net461 | netstandard1.0 | netstandard1.3 | netstandard1.4 | netstandard1.5 |
 |---------|-------|-------|-------|--------|----------------|----------------|----------------|----------------|
 | Tungsten.AppBar | * | * | * |  |  |  |  |  |
 | Tungsten.Domains | * | * | * |  |  |  |  |  |
 | Tungsten.Firewall | * | * | * |  |  |  |  |  |
 | Tungsten.InterProcess | * | * | * |  |  |  |  |  |
+</sub>
   
 ## Conceptual projects which may go away
 | Package | Description | net20 | net35 | net45 | net461 | netstandard1.0 | netstandard1.3 | netstandard1.4 | netstandard1.5 |
