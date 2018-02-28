@@ -31,16 +31,32 @@ The help files are built with [Sandcastle Help File Builder](https://github.com/
 * Extension methods for quick conversions (As<T>, AsBase64, AsBytes, AsCompressed, AsString)
 
 ### Tungsten.Console (net45, netstandard1.3)
+* Provides several string extension methods to send strings to the console
+
 ### Tungsten.Encryption (net45, netstandard1.3)
+* Provides several utility classes for RSA encryption and MD5 password hashes
+
 ### Tungsten.From (net45, netstandard1.3)
+* Complements Tungsten.As by providing FromBase64 and FromCompressed
 
 ### Tungsten.IO.Pipes (net45, netstandard1.4)
+* Client and server named pipes
 
 ### Tungsten.Net (net45, netstandard1.5
 * Client/server tcp/udp socket library, supports Generics, unsecured or with RSA encryption
+
+## The following projects are separate projects and are not included in the Tungsten.Suite NuGet package
+### Tungsten.AppBar (net45)
+* Converts a Winforms form to an AppBar
 
 ### Tungsten.Domains (net45)
 * Easily implement reloadable AppDomains in your application
 
 ### Tungsten.Firewall (net45)
 * Wraps NetFwTypeLib to add and remove Windows firewall rules
+
+### Tungsten.InterProcess (net45)
+* InterProcess communication via the WM_COPYDATA message
+
+### Tungsten.Theater (net45, net461,netstandard1.3)
+* Provides an asynchronous execution pipeline (this project is conceptual and may go away)
