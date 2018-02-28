@@ -49,14 +49,17 @@ The help files are built with [Sandcastle Help File Builder](https://github.com/
 ### Tungsten.AppBar (net45)
 * Converts a Winforms form to an AppBar
 
-### Tungsten.Domains (net45)
+### Tungsten.Domains (net20, net35, net45)
 * Easily implement reloadable AppDomains in your application
 
-### Tungsten.Firewall (net45)
+### Tungsten.Firewall (net20, net35, net45)
 * Wraps NetFwTypeLib to add and remove Windows firewall rules
 
-### Tungsten.InterProcess (net45)
+### Tungsten.InterProcess (net20, net35, net45)
 * InterProcess communication via the WM_COPYDATA message
 
-### Tungsten.Theater (net45, net461,netstandard1.3)
-* Provides an asynchronous execution pipeline (this project is conceptual and may go away)
+## The following projects are conceptual and may go away
+### Tungsten.LiteDb (net45, netstandard1.4)
+* Provides LiteDB based CRUD for your POCO classes
+### Tungsten.Theater (net45, net461, netstandard1.3)
+* Provides an asynchronous execution pipeline
