@@ -6,9 +6,9 @@ The help files are built with [Sandcastle Help File Builder](https://github.com/
 |---------|-------------|-------|-------|-------|--------|----------------|----------------|----------------|----------------|
 | Tungsten.ArrayMethods | Provides additional functionality for arrays (Peek, Take, Trim, Append, Insert) |  |  | * |  | * |  |  |  |
 | Tungsten.As | A class which can be used as a return value to specify a success/fail, an exception if on ocurred, and a result |  |  | * |  |  | * |  |  |
-| Tungsten.CallResult | A class which can be used as a return value to specify a success/fail, an exception if on ocurred, and a result |  |  | * |  | netstandard1.0 |  |  |  |
+| Tungsten.CallResult | A class which can be used as a return value to specify a success/fail, an exception if on ocurred, and a result |  |  | * |  | * |  |  |  |
 | Tungsten.Console | Provides several string extension methods to send strings to the console |  |  | * |  |  | * |  |  |
-| Tungsten.EventTemplate | A class which makes exposing and raising an event somewhat easier |  |  | * |  | * | netstandard1.3 |  |  |
+| Tungsten.EventTemplate | A class which makes exposing and raising an event somewhat easier |  |  | * |  | * |  |  |  |
 | Tungsten.Encryption | Provides several utility classes for RSA encryption and MD5 password hashes |  |  | * |  |  | * |  |  |
 | Tungsten.From | Complements Tungsten.As by providing FromBase64 and FromCompressed |  |  | * |  |  | * |  |  |
 | Tungsten.Lockable | A class which supports thread-safe access to an underlying value |  |  | * |  | * |  |  |  |
