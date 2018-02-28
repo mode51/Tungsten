@@ -2,6 +2,8 @@
 
 The help files are built with [Sandcastle Help File Builder](https://github.com/EWSoftware/SHFB)
 
+<sub>
+  
 | Package | Description | net20 | net35 | net45 | net461 | netstandard1.0 | netstandard1.3 | netstandard1.4 | netstandard1.5 |
 |---------|-------------|-------|-------|-------|--------|----------------|----------------|----------------|----------------|
 | Tungsten.ArrayMethods | Provides additional functionality for arrays (Peek, Take, Trim, Append, Insert) |  |  | * |  | * |  |  |  |
@@ -31,3 +33,5 @@ The help files are built with [Sandcastle Help File Builder](https://github.com/
 |---------|-------------|-------|-------|-------|--------|----------------|----------------|----------------|----------------|
 | Tungsten.LiteDb | Provides LiteDB based CRUD for your POCO classes |  |  | * |  |  |  | * |  |
 | Tungsten.Theater | Provides an asynchronous execution pipeline |  |  | * | * |  | * |  |  |
+
+</sub>
