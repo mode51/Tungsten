@@ -39,6 +39,8 @@ The help files are built with [Sandcastle Help File Builder](https://github.com/
 
 </sub>
 
+___
+
 ## Projects not included in the Tungsten.Suite NuGet package
 | Package | Description |
 |---------|-------------|
@@ -58,7 +60,9 @@ The help files are built with [Sandcastle Help File Builder](https://github.com/
 | Tungsten.InterProcess | * | * | * |  |  |  |  |  |
 
 </sub>
- 
+
+___
+
 ## Conceptual projects which may go away
 | Package | Description |
 |---------|-------------|
