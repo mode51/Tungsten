@@ -58,10 +58,10 @@ The help files are built with [Sandcastle Help File Builder](https://github.com/
 </sub>
  
 ## Conceptual projects which may go away
-| Package | Description | net20 | net35 | net45 | net461 | netstandard1.0 | netstandard1.3 | netstandard1.4 | netstandard1.5 |
-|---------|-------------|-------|-------|-------|--------|----------------|----------------|----------------|----------------|
-| Tungsten.LiteDb | Provides LiteDB based CRUD for your POCO classes |  |  | * |  |  |  | * |  |
-| Tungsten.Theater | Provides an asynchronous execution pipeline |  |  | * | * |  | * |  |  |
+| Package | Description |
+|---------|-------------|
+| Tungsten.LiteDb | Provides LiteDB based CRUD for your POCO classes |
+| Tungsten.Theater | Provides an asynchronous execution pipeline |
 
 <sub>
 
