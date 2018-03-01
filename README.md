@@ -25,19 +25,19 @@ In itself, Tungsten.Suite is not an actual code project.  Instead it is a single
 
 | Project | net20 | net35 | net45 | net461 | netstandard1.0 | netstandard1.3 | netstandard1.4 | netstandard1.5 |
 |---------|-------|-------|-------|--------|----------------|----------------|----------------|----------------|
-| Tungsten.ArrayMethods | | | * | | * | | | | |
-| Tungsten.As | | | * | | | * | | |
-| Tungsten.CallResult | | | * | | * | | | |
-| Tungsten.Console | | | * | | | * | | |
-| Tungsten.EventTemplate | | | * | | * | | | |
-| Tungsten.Encryption | | | * | | | * | | |
-| Tungsten.From | | | * | | | * | | |
-| Tungsten.IO.Pipes | | | * | | | | * | |
-| Tungsten.Lockable | | | * | | * | | | |
-| Tungsten.Logging | | | * | | * | | | |
-| Tungsten.Property | | | * | | * | | | |
-| Tungsten.Threading | | | * | | * | | | |
-| Tungsten.Threading.Lockers | | | * | | * | | | |
+| Tungsten.ArrayMethods | | | :heavy_check_mark: | | :heavy_check_mark: | | | | |
+| Tungsten.As | | | :heavy_check_mark: | | | :heavy_check_mark: | | |
+| Tungsten.CallResult | | | :heavy_check_mark: | | :heavy_check_mark: | | | |
+| Tungsten.Console | | | :heavy_check_mark: | | | :heavy_check_mark: | | |
+| Tungsten.EventTemplate | | | :heavy_check_mark: | | :heavy_check_mark: | | | |
+| Tungsten.Encryption | | | :heavy_check_mark: | | | :heavy_check_mark: | | |
+| Tungsten.From | | | :heavy_check_mark: | | | :heavy_check_mark: | | |
+| Tungsten.IO.Pipes | | | :heavy_check_mark: | | | | :heavy_check_mark: | |
+| Tungsten.Lockable | | | :heavy_check_mark: | | :heavy_check_mark: | | | |
+| Tungsten.Logging | | | :heavy_check_mark: | | :heavy_check_mark: | | | |
+| Tungsten.Property | | | :heavy_check_mark: | | :heavy_check_mark: | | | |
+| Tungsten.Threading | | | :heavy_check_mark: | | :heavy_check_mark: | | | |
+| Tungsten.Threading.Lockers | | | :heavy_check_mark: | | :heavy_check_mark: | | | |
 
 </sub>
 
@@ -56,10 +56,10 @@ ___
 
 | Project | net20 | net35 | net45 | net461 | netstandard1.0 | netstandard1.3 | netstandard1.4 | netstandard1.5 |
 |---------|-------|-------|-------|--------|----------------|----------------|----------------|----------------|
-| Tungsten.AppBar | * | * | * |  |  |  |  |  |
-| Tungsten.Domains | * | * | * |  |  |  |  |  |
-| Tungsten.Firewall | * | * | * |  |  |  |  |  |
-| Tungsten.InterProcess | * | * | * |  |  |  |  |  |
+| Tungsten.AppBar | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |  |  |  |  |
+| Tungsten.Domains | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |  |  |  |  |
+| Tungsten.Firewall | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |  |  |  |  |
+| Tungsten.InterProcess | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |  |  |  |  |
 
 </sub>
 
@@ -76,7 +76,9 @@ ___
 
 | Package | net20 | net35 | net45 | net461 | netstandard1.0 | netstandard1.3 | netstandard1.4 | netstandard1.5 |
 |---------|-------|-------|-------|--------|----------------|----------------|----------------|----------------|
-| Tungsten.LiteDb |||*||||*||
-| Tungsten.Theater |||*|*||*|||
+| Tungsten.LiteDb |||:heavy_check_mark:||||:heavy_check_mark:||
+| Tungsten.Theater |||:heavy_check_mark:|:heavy_check_mark:||:heavy_check_mark:|||
 
 </sub>
+
+<!-- <p style="font-family:Segoe UI Symbol;font-size:14"></p> -->
