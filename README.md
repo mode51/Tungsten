@@ -16,7 +16,7 @@ In itself, Tungsten.Suite is not an actual code project.  Instead it is a single
 | Tungsten.From              | Complements Tungsten.As by providing FromBase64 and FromCompressed |
 | Tungsten.IO.Pipes          | Client and server named pipes                                |
 | Tungsten.Lockable          | A class which supports thread-safe access to an underlying value |
-| Tungsten.Logging           | Provides basic support for logging.  Handle the W.Logging.Log.LogTheMessage event to provide additional logging options.  W.Logging.LogMessageHistory class can be instantiated to maintain an in-memory history of messages. |
+| Tungsten.Logging           | Provides basic support for logging.  Handle the W.Logging.Log.LogTheMessage event to provide additional logging functionality.  W.Logging.LogMessageHistory class can be instantiated to maintain an in-memory history of log messages. |
 | Tungsten.Property          | A class which implements IPropertyChangedNotifier.  PropertySlim is a lightweight version of Property and can be used in simpler scenarios (where ownership isn't necessary). |
 | Tungsten.Threading         | Provides a Thread.Sleep method and ThreadMethod which makes creating a background thread (long running task) easy |
 | Tungsten.Threading.Lockers | Provides classes which support resource locking (MonitorLocker, ReaderWriterLocker, SemaphoreLocker and SpinLocker) |
