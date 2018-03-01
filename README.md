@@ -5,7 +5,6 @@ The help files are built with [Sandcastle Help File Builder](https://github.com/
 In itself, Tungsten.Suite is not an actual code project.  Instead it is a single nuspec file which contains references to NuGet packages from most of the Tungsten projects.
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 | Project                    | Description                                                  |
 | -------------------------- | ------------------------------------------------------------ |
 | Tungsten.ArrayMethods      | Provides additional functionality for arrays (Peek, Take, Trim, Append, Insert) |
@@ -40,8 +39,6 @@ In itself, Tungsten.Suite is not an actual code project.  Instead it is a single
 | Tungsten.Threading         |       |       | :heavy_check_mark: |        | :heavy_check_mark: |                    |                    |                |
 | Tungsten.Threading.Lockers |       |       | :heavy_check_mark: |        | :heavy_check_mark: |                    |                    |                |
 =======
-=======
->>>>>>> 86eb1ac20ca10ff505ffd844abf6a520d800a489
 | Project | Description |
 |---------|-------------|
 | Tungsten.ArrayMethods | Provides additional functionality for arrays (Peek, Take, Trim, Append, Insert)
@@ -76,9 +73,6 @@ In itself, Tungsten.Suite is not an actual code project.  Instead it is a single
 | Tungsten.Property | | | :heavy_check_mark: | | :heavy_check_mark: | | | |
 | Tungsten.Threading | | | :heavy_check_mark: | | :heavy_check_mark: | | | |
 | Tungsten.Threading.Lockers | | | :heavy_check_mark: | | :heavy_check_mark: | | | |
-<<<<<<< HEAD
->>>>>>> 86eb1ac20ca10ff505ffd844abf6a520d800a489
-=======
 >>>>>>> 86eb1ac20ca10ff505ffd844abf6a520d800a489
 
 </sub>
@@ -87,7 +81,6 @@ ___
 
 ## Projects not included in the Tungsten.Suite NuGet package
 <<<<<<< HEAD
-<<<<<<< HEAD
 | Project               | Description                                                 |
 | --------------------- | ----------------------------------------------------------- |
 | Tungsten.AppBar       | Converts a Winforms form to an AppBar                       |
@@ -95,23 +88,17 @@ ___
 | Tungsten.Firewall     | Wraps NetFwTypeLib to add and remove Windows firewall rules |
 | Tungsten.InterProcess | InterProcess communication via the WM_COPYDATA message      |
 =======
-=======
->>>>>>> 86eb1ac20ca10ff505ffd844abf6a520d800a489
 | Project | Description |
 |---------|-------------|
 | Tungsten.AppBar | Converts a Winforms form to an AppBar |
 | Tungsten.Domains | Easily implement reloadable AppDomains in your application |
 | Tungsten.Firewall | Wraps NetFwTypeLib to add and remove Windows firewall rules |
 | Tungsten.InterProcess | InterProcess communication via the WM_COPYDATA message |
-<<<<<<< HEAD
->>>>>>> 86eb1ac20ca10ff505ffd844abf6a520d800a489
-=======
 >>>>>>> 86eb1ac20ca10ff505ffd844abf6a520d800a489
 
 #### Framework Compatability
 <sub>
 
-<<<<<<< HEAD
 <<<<<<< HEAD
 | Project               |       net20        |       net35        |       net45        | net461 | netstandard1.0 | netstandard1.3 | netstandard1.4 | netstandard1.5 |
 | --------------------- | :----------------: | :----------------: | :----------------: | :----: | :------------: | :------------: | :------------: | :------------: |
@@ -120,17 +107,12 @@ ___
 | Tungsten.Firewall     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |        |                |                |                |                |
 | Tungsten.InterProcess | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |        |                |                |                |                |
 =======
-=======
->>>>>>> 86eb1ac20ca10ff505ffd844abf6a520d800a489
 | Project | net20 | net35 | net45 | net461 | netstandard1.0 | netstandard1.3 | netstandard1.4 | netstandard1.5 |
 |---------|-------|-------|-------|--------|----------------|----------------|----------------|----------------|
 | Tungsten.AppBar | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |  |  |  |  |
 | Tungsten.Domains | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |  |  |  |  |
 | Tungsten.Firewall | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |  |  |  |  |
 | Tungsten.InterProcess | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |  |  |  |  |
-<<<<<<< HEAD
->>>>>>> 86eb1ac20ca10ff505ffd844abf6a520d800a489
-=======
 >>>>>>> 86eb1ac20ca10ff505ffd844abf6a520d800a489
 
 </sub>
@@ -139,27 +121,20 @@ ___
 
 ## Concept projects
 <<<<<<< HEAD
-<<<<<<< HEAD
 | Project          | Description                                      |
 | ---------------- | ------------------------------------------------ |
 | Tungsten.LiteDb  | Provides LiteDB based CRUD for your POCO classes |
 | Tungsten.Theater | Provides an asynchronous execution pipeline      |
 =======
-=======
->>>>>>> 86eb1ac20ca10ff505ffd844abf6a520d800a489
 | Project | Description |
 |---------|-------------|
 | Tungsten.LiteDb | Provides LiteDB based CRUD for your POCO classes |
 | Tungsten.Theater | Provides an asynchronous execution pipeline |
-<<<<<<< HEAD
->>>>>>> 86eb1ac20ca10ff505ffd844abf6a520d800a489
-=======
 >>>>>>> 86eb1ac20ca10ff505ffd844abf6a520d800a489
 
 #### Framework Compatability
 <sub>
 
-<<<<<<< HEAD
 <<<<<<< HEAD
 | Package          | net20 | net35 |       net45        |       net461       | netstandard1.0 |   netstandard1.3   |   netstandard1.4   | netstandard1.5 |
 | ---------------- | :---: | :---: | :----------------: | :----------------: | :------------: | :----------------: | :----------------: | :------------: |
@@ -170,8 +145,6 @@ ___
 
 <!-- <p style="font-family:Segoe UI Symbol;font-size:14"></p> -->
 =======
-=======
->>>>>>> 86eb1ac20ca10ff505ffd844abf6a520d800a489
 | Package | net20 | net35 | net45 | net461 | netstandard1.0 | netstandard1.3 | netstandard1.4 | netstandard1.5 |
 |---------|-------|-------|-------|--------|----------------|----------------|----------------|----------------|
 | Tungsten.LiteDb |||:heavy_check_mark:||||:heavy_check_mark:||
@@ -180,7 +153,4 @@ ___
 </sub>
 
 <!-- <p style="font-family:Segoe UI Symbol;font-size:14"></p> -->
-<<<<<<< HEAD
->>>>>>> 86eb1ac20ca10ff505ffd844abf6a520d800a489
-=======
 >>>>>>> 86eb1ac20ca10ff505ffd844abf6a520d800a489
