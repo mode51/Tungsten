@@ -1,5 +1,6 @@
-### Tungsten.Suite is currently under development.  This page is likely to undergo regular changes.
-### Note: NuGet packages have not been published yet
+### Notes:
+* #### Tungsten.Suite is currently under development.  This page is likely to undergo regular changes.
+* #### NuGet packages have not been published yet
 ___
 
 The help files are built with [Sandcastle Help File Builder](https://github.com/EWSoftware/SHFB)
