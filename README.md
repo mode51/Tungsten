@@ -65,7 +65,7 @@ ___
 
 ___
 
-## Concept projects which may go away
+## Concept projects
 | Project | Description |
 |---------|-------------|
 | Tungsten.LiteDb | Provides LiteDB based CRUD for your POCO classes |
