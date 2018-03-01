@@ -4,7 +4,7 @@ The help files are built with [Sandcastle Help File Builder](https://github.com/
 
 In itself, Tungsten.Suite is not an actual code project.  Instead it is a single nuspec file which contains references to NuGet packages from most of the Tungsten projects.
 
-### Projects in Tungsten.Suite
+#### Projects in Tungsten.Suite
 | Project                    | Description                                                  |
 | -------------------------- | ------------------------------------------------------------ |
 | Tungsten.ArrayMethods      | Provides additional functionality for arrays (Peek, Take, Trim, Append, Insert) |
@@ -21,7 +21,7 @@ In itself, Tungsten.Suite is not an actual code project.  Instead it is a single
 | Tungsten.Threading         | Provides a Thread.Sleep method and ThreadMethod which makes creating a background thread (long running task) easy |
 | Tungsten.Threading.Lockers | Provides classes which support resource locking (MonitorLocker, ReaderWriterLocker, SemaphoreLocker and SpinLocker) |
 
-### Projects not included in the Tungsten.Suite NuGet package
+#### Projects not included in the Tungsten.Suite NuGet package
 | Project               | Description                                                 |
 | --------------------- | ----------------------------------------------------------- |
 | Tungsten.AppBar       | Converts a Winforms form to an AppBar                       |
@@ -29,12 +29,13 @@ In itself, Tungsten.Suite is not an actual code project.  Instead it is a single
 | Tungsten.Firewall     | Wraps NetFwTypeLib to add and remove Windows firewall rules |
 | Tungsten.InterProcess | InterProcess communication via the WM_COPYDATA message      |
 
-### Concept projects
+#### Concept projects
 | Project          | Description                                      |
 | ---------------- | ------------------------------------------------ |
 | Tungsten.LiteDb  | Provides LiteDB based CRUD for your POCO classes |
 | Tungsten.Theater | Provides an asynchronous execution pipeline      |
 
+___
 #### Framework Compatibility
 <sub>
 
