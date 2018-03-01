@@ -20,9 +20,8 @@ In itself, Tungsten.Suite is not an actual code project.  Instead it is a single
 | Tungsten.Threading         | Provides a Thread.Sleep method and ThreadMethod which makes creating a background thread (long running task) easy |
 | Tungsten.Threading.Lockers | Provides classes which support resource locking (MonitorLocker, ReaderWriterLocker, SemaphoreLocker and SpinLocker) |
 
-<sub>
-
 #### Framework Compatibility
+<sub>
 
 | Project                    | net20 | net35 |       net45        | net461 |   netstandard1.0   |   netstandard1.3   |   netstandard1.4   | netstandard1.5 |
 | -------------------------- | :---: | :---: | :----------------: | :----: | :----------------: | :----------------: | :----------------: | :------------: |
