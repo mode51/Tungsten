@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="2edcc137-c17f-4353-b9e8-d5961d5c2059" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>Version 2.0.0 was released on 2/28/2018
+			</para>
+		</introduction>
+
+		<section>
+			<title>Changes in This Release</title>
+			<content>
+
+				<list class="bullet">
+					<listItem>
+						<para>Initial release of the refactored Tungsten libraries</para>
+					</listItem>
+        </list>
+
+			</content>
+		</section>
+
+		<relatedTopics>
+			<link xlink:href="2eb8daee-e6cd-4245-88cd-757cfb829486" />
+		</relatedTopics>
+
+	</developerConceptualDocument>
+</topic>

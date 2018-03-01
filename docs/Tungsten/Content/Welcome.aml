@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<topic id="e72a91fa-c46d-4bc1-8bdb-333eeaef9c7d" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>Tungsten.Suite is a refactoring of the original Tungsten.X libraries.  Tungsten is now a suite of NuGet packages which can be referenced individually or as a whole by referencing Tungsten.Suite.</para>
+		</introduction>
+
+		<section>
+			<!--<title>Tungsten.Suite</title>-->
+			<content>
+				<para>These are the NuGet packages referenced by Tungsten.Suite</para>
+
+				<list class="bullet">
+          <listItem>
+            <para>Tungsten.ArrayMethods</para>
+          </listItem>
+          <listItem>
+            <para>Tungsten.As</para>
+          </listItem>
+          <listItem>
+            <para>Tungsten.CallResult</para>
+          </listItem>
+          <listItem>
+            <para>Tungsten.Console</para>
+          </listItem>
+          <listItem>
+            <para>Tungsten.EventTemplate</para>
+          </listItem>
+          <listItem>
+            <para>Tungsten.Encryption</para>
+          </listItem>
+          <listItem>
+            <para>Tungsten.From</para>
+          </listItem>
+          <listItem>
+            <para>Tungsten.IO.Pipes</para>
+          </listItem>
+          <listItem>
+            <para>Tungsten.Lockable</para>
+          </listItem>
+          <listItem>
+            <para>Tungsten.Logging</para>
+          </listItem>
+          <listItem>
+            <para>Tungsten.Property</para>
+          </listItem>
+          <listItem>
+            <para>Tungsten.Threading</para>
+          </listItem>
+          <listItem>
+            <para>Tungsten.Threading.Lockers</para>
+          </listItem>
+        </list>
+
+        <para>These projects have NuGet packages, but are not included in Tungsten.Suite because they only support the .Net Framework</para>
+          <list class="bullet">
+            <listItem>
+              <para>Tungsten.AppBar</para>
+            </listItem>
+            <listItem>
+              <para>Tungsten.Domains</para>
+            </listItem>
+            <listItem>
+              <para>Tungsten.Firewall</para>
+            </listItem>
+            <listItem>
+              <para>Tungsten.InterProcess</para>
+            </listItem>
+            <listItem>
+              <para>Tungsten.Theater</para>
+            </listItem>
+          </list>
+
+        <para>The following are concepts and may or may not be continued</para>
+        <list class="bullet">
+          <listItem>
+            <para>Tungsten.LiteDb</para>
+          </listItem>
+          <listItem>
+            <para>Tungsten.Theater</para>
+          </listItem>
+        </list>
+
+      </content>
+		</section>
+
+		<relatedTopics>
+			<link xlink:href="2eb8daee-e6cd-4245-88cd-757cfb829486" />
+		</relatedTopics>
+	</developerConceptualDocument>
+</topic>

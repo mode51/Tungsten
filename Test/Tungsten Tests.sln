@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tungsten.IoTCore.Tests", "Tungsten.IoTCore.Tests\Tungsten.IoTCore.Tests.csproj", "{45363161-8324-4847-AD97-1BDAF212234D}"
 EndProject
@@ -18,19 +18,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "W", "W", "{666A9D7F-6144-45
 		Test Files\W\ArrayMethodsTests.cs = Test Files\W\ArrayMethodsTests.cs
 		Test Files\W\AsExtensionsTests.cs = Test Files\W\AsExtensionsTests.cs
 		Test Files\W\CallResultTests.cs = Test Files\W\CallResultTests.cs
-		Test Files\W\ExtensionMethodsTests.cs = Test Files\W\ExtensionMethodsTests.cs
-		Test Files\W\GateTests.cs = Test Files\W\GateTests.cs
-		Test Files\W\IntravertedLockableTests.cs = Test Files\W\IntravertedLockableTests.cs
 		Test Files\W\LockableSlimTests.cs = Test Files\W\LockableSlimTests.cs
 		Test Files\W\LockableTests.cs = Test Files\W\LockableTests.cs
 		Test Files\W\PropertyHostMethodsTests.cs = Test Files\W\PropertyHostMethodsTests.cs
 		Test Files\W\PropertyHostTests.cs = Test Files\W\PropertyHostTests.cs
 		Test Files\W\PropertyTests.cs = Test Files\W\PropertyTests.cs
 		Test Files\W\RSATests.cs = Test Files\W\RSATests.cs
-		Test Files\W\ThreadExtensionsTests.cs = Test Files\W\ThreadExtensionsTests.cs
 		Test Files\W\ThreadMethodTests.cs = Test Files\W\ThreadMethodTests.cs
-		Test Files\W\ThreadSlimTests.cs = Test Files\W\ThreadSlimTests.cs
-		Test Files\W\ThreadTests.cs = Test Files\W\ThreadTests.cs
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IO", "IO", "{1B2050CD-F601-4D8C-B4AC-C5BABF6F69E4}"

@@ -316,6 +316,16 @@ namespace W.Domains
             return result;
         }
 
+#if NET20
+        /// <summary>
+        /// Executes an action in the context of the hosted AppDomain
+        /// </summary>
+        /// <param name="del">The delegate to be called in the context of the hosted AppDomain</param>
+        public void DoCallback(CrossAppDomainDelegate del)
+        {
+            _domain.DoCallBack(del);
+        }
+#else
         /// <summary>
         /// Executes an action in the context of the hosted AppDomain
         /// </summary>
@@ -324,7 +334,7 @@ namespace W.Domains
         {
             _domain.DoCallBack(new CrossAppDomainDelegate(action));
         }
-
+#endif
         /// <summary>
         /// Sets the value of the specified application domain property
         /// </summary>

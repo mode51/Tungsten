@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using W.AsExtensions;
 using W;
 using W.Net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -24,16 +23,16 @@ namespace W.Tests
         public void CreateSecureTcpClient()
         {
             var client = new Tcp.Generic.SecureTcpClient<SecureMessage>(2048);
-            client.Connected.OnRaised += c => { };
-            client.Disconnected.OnRaised += c => { };
-            client.MessageReceived.OnRaised += (c, m) => { };
+            client.Connected += c => { };
+            client.Disconnected += c => { };
+            client.MessageReceived += (c, m) => { };
             client.Dispose();
         }
         [TestMethod]
         public void CreateGenericSecureTcpHost()
         {
             var server = new Tcp.Generic.SecureTcpHost<SecureMessage>(2048);
-            server.MessageReceived.OnRaised += (h, s, m) => { };
+            server.MessageReceived += (h, s, m) => { };
             server.Dispose();
         }
         [TestMethod]
@@ -44,7 +43,7 @@ namespace W.Tests
             var latin = System.IO.File.ReadAllText(@"C:\Source\Repos\Tungsten\Test\Test Files\4500_Latin_Words.txt");
             using (var host = new Tcp.Generic.SecureTcpHost<SecureMessage>(2048))
             {
-                host.MessageReceived.OnRaised += (h, s, message) =>
+                host.MessageReceived += (h, s, message) =>
                 {
                     Console.WriteLine($"Server Echoing {message.Message.Length} bytes");
                     //echo
@@ -55,7 +54,7 @@ namespace W.Tests
 
                 using (var client = new Tcp.Generic.SecureTcpClient<SecureMessage>(2048))
                 {
-                    client.MessageReceived.OnRaised += (c, message) =>
+                    client.MessageReceived += (c, message) =>
                     {
                         Console.WriteLine("Client Received {0} bytes", message.Message.Length);
                         Assert.IsTrue(message.Message == latin);

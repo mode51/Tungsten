@@ -4,8 +4,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO.Pipes;
 using System.Threading.Tasks;
 using W.IO.Pipes;
-using W.AsExtensions;
-using W.FromExtensions;
 
 namespace W.Tests
 {

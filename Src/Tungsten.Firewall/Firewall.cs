@@ -1,6 +1,6 @@
-﻿using System;
+﻿#if NET20 || NET45
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using NetFwTypeLib;
 
@@ -121,3 +121,4 @@ namespace W.Firewall
         }
     }
 }
+#endif

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using W.PropertyHostExtensions;
+using W;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace W.Tests

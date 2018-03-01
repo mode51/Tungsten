@@ -4,7 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
+#if !NET20
 using System.Linq;
+#endif
 using System.Reflection;
 
 namespace W.Domains
@@ -60,7 +62,17 @@ namespace W.Domains
 
         private Type FindType(string typeName)
         {
+#if NET20
+            foreach(var asm in Assemblies)
+            {
+                var t = asm.GetType(typeName);
+                if (t != null)
+                    return t;
+            }
+            return null;
+#else
             return Assemblies.Select(asm => asm.GetType(typeName)).FirstOrDefault(t => t != null);
+#endif
         }
 
         /// <summary>

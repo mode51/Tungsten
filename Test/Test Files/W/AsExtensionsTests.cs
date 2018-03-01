@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using W;
-using W.AsExtensions;
-using W.FromExtensions;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

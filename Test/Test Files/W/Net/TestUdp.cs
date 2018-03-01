@@ -6,7 +6,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using W.Net;
-using W.AsExtensions;
 
 namespace W.Tests
 {

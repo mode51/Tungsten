@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <!-- The configuration and platform will be used to determine which assemblies to include from solution and
+				 project documentation sources -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>e647ece3-3e33-40f3-8085-cf51580efc18</ProjectGuid>
+    <SHFBSchemaVersion>2017.9.26.0</SHFBSchemaVersion>
+    <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual Studio adds them anyway -->
+    <AssemblyName>Tungsten</AssemblyName>
+    <RootNamespace>Tungsten</RootNamespace>
+    <Name>Tungsten</Name>
+    <!-- SHFB properties -->
+    <FrameworkVersion>.NET Framework 4.5</FrameworkVersion>
+    <OutputPath>.\Help\</OutputPath>
+    <HtmlHelpName>Tungsten</HtmlHelpName>
+    <Language>en-US</Language>
+    <TransformComponentArguments>
+      <Argument Key="logoFile" Value="Tungsten.png" />
+      <Argument Key="logoHeight" Value="" />
+      <Argument Key="logoWidth" Value="" />
+      <Argument Key="logoAltText" Value="" />
+      <Argument Key="logoPlacement" Value="left" />
+      <Argument Key="logoAlignment" Value="left" />
+      <Argument Key="maxVersionParts" Value="" />
+      <Argument Key="defaultLanguage" Value="cs" />
+      <Argument Key="includeEnumValues" Value="true" />
+      <Argument Key="baseSourceCodeUrl" Value="" />
+      <Argument Key="requestExampleUrl" Value="" />
+    </TransformComponentArguments>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.AppBar\Tungsten.AppBar.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.ArrayMethods\Tungsten.ArrayMethods.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.As\Tungsten.As.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.CallResult\Tungsten.CallResult.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.Console\Tungsten.Console.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.Domains\Tungsten.Domains.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.Encryption\Tungsten.Encryption.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.EventTemplate\Tungsten.EventTemplate.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.Firewall\Tungsten.Firewall.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.From\Tungsten.From.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.InterProcess\Tungsten.InterProcess.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.IO.Pipes\Tungsten.IO.Pipes.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.LiteDb\Tungsten.LiteDb.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.Lockable\Tungsten.Lockable.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.Logging\Tungsten.Logging.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.Net\Tungsten.Net.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.Property\Tungsten.Property.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.Theater\Tungsten.Theater.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.Threading\Tungsten.Threading.csproj" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.Threading.Lockers\Tungsten.Threading.Lockers.csproj" />
+    </DocumentationSources>
+    <HelpFileFormat>HtmlHelp1</HelpFileFormat>
+    <SyntaxFilters>C#</SyntaxFilters>
+    <PresentationStyle>VS2013</PresentationStyle>
+    <CleanIntermediates>True</CleanIntermediates>
+    <KeepLogFile>True</KeepLogFile>
+    <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
+    <IndentHtml>True</IndentHtml>
+    <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
+    <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
+    <HelpTitle>Tungsten</HelpTitle>
+    <HelpFileVersion>2.0.0</HelpFileVersion>
+    <RootNamespaceContainer>False</RootNamespaceContainer>
+    <NamespaceGrouping>False</NamespaceGrouping>
+    <MaximumGroupParts>2</MaximumGroupParts>
+    <Preliminary>False</Preliminary>
+    <CopyrightText>Copyright %40 2018 Jordan Duerksen</CopyrightText>
+    <SdkLinkTarget>Blank</SdkLinkTarget>
+    <HtmlSdkLinkType>Msdn</HtmlSdkLinkType>
+    <BinaryTOC>True</BinaryTOC>
+    <IncludeFavorites>False</IncludeFavorites>
+    <WebsiteSdkLinkType>Msdn</WebsiteSdkLinkType>
+    <AppendMarkdownFileExtensionsToUrls>True</AppendMarkdownFileExtensionsToUrls>
+    <CatalogProductId>VS</CatalogProductId>
+    <CatalogVersion>100</CatalogVersion>
+    <VendorName>Jordan Duerksen</VendorName>
+    <ProductTitle>Tungsten</ProductTitle>
+    <TocOrder>-1</TocOrder>
+    <TocParentId>-1</TocParentId>
+    <TocParentVersion>100</TocParentVersion>
+    <TopicVersion>100</TopicVersion>
+    <MSHelpViewerSdkLinkType>Msdn</MSHelpViewerSdkLinkType>
+  </PropertyGroup>
+  <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
+			 the build.  The others are optional common platform types that may appear. -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Content" />
+    <Folder Include="Content\VersionHistory" />
+    <Folder Include="icons" />
+    <Folder Include="media" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\VersionHistory\v2.0.0.aml" />
+    <None Include="Content\VersionHistory\VersionHistory.aml" />
+    <None Include="Content\Welcome.aml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ContentLayout Include="ContentLayout.content" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons\Tungsten.png">
+      <ImageId>Tungsten</ImageId>
+      <AlternateText>Tungsten</AlternateText>
+    </Content>
+  </ItemGroup>
+  <!-- Import the SHFB build targets -->
+  <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" />
+  <!-- The pre-build and post-build event properties must appear *after* the targets file import in order to be
+			 evaluated correctly. -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+</Project>

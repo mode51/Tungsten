@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using W;
 
 namespace W.Tests
 {
@@ -16,7 +17,7 @@ namespace W.Tests
         //    this.output = output;
         //}
 
-        public class Person : PropertyHost
+        public class Person : W.PropertyHost
         {
             public Property<Person, string> Last { get; } = new Property<Person, string>();
             public Property<Person, string> First { get; } = new Property<Person, string>();

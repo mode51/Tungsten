@@ -5,8 +5,6 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using LiteDB;
-using W.AsExtensions;
-using W.Logging;
 
 namespace W.LiteDb
 {
@@ -52,12 +50,16 @@ namespace W.LiteDb
             catch (LiteException e)
             {
                 result.Exception = e;
-                Log.e(new Exception(string.Format("LiteException: ErrorCode={0}, Message={1}", e.ErrorCode, e.Message), e));
+                //Log.e(new Exception(string.Format("LiteException: ErrorCode={0}, Message={1}", e.ErrorCode, e.Message), e));
+                System.Diagnostics.Debug.WriteLine(e.ToString());
+                System.Diagnostics.Debugger.Break();
             }
             catch (Exception e)
             {
                 result.Exception = e;
-                Log.e(new Exception(string.Format("Caller:{0}, Line:{1}, File:{2}", callerMemberName, callerLineNumber, callerFilePath), e));
+                //Log.e(new Exception(string.Format("Caller:{0}, Line:{1}, File:{2}", callerMemberName, callerLineNumber, callerFilePath), e));
+                System.Diagnostics.Debug.WriteLine(e.ToString());
+                System.Diagnostics.Debugger.Break();
             }
             return result;
         }
@@ -93,61 +95,69 @@ namespace W.LiteDb
             catch (LiteException e)
             {
                 result.Exception = e;
-                Log.e(new Exception(string.Format("LiteException: ErrorCode={0}, Message={1}", e.ErrorCode, e.Message), e));
+                //Log.e(new Exception(string.Format("LiteException: ErrorCode={0}, Message={1}", e.ErrorCode, e.Message), e));
+                System.Diagnostics.Debug.WriteLine(e.ToString());
+                System.Diagnostics.Debugger.Break();
             }
             catch (Exception e)
             {
                 result.Exception = e;
-                Log.e(new Exception(string.Format("Caller:{0}, Line:{1}, File:{2}", callerMemberName, callerLineNumber, callerFilePath), e));
+                //Log.e(new Exception(string.Format("Caller:{0}, Line:{1}, File:{2}", callerMemberName, callerLineNumber, callerFilePath), e));
+                System.Diagnostics.Debug.WriteLine(e.ToString());
+                System.Diagnostics.Debugger.Break();
             }
             return result;
         }
-        /// <summary>
-        /// Wraps a database operation in a try/catch block and transaction
-        /// </summary>
-        /// <typeparam name="T">The Type which determines the database collection name</typeparam>
-        /// <typeparam name="U">The type of result expected from the operation</typeparam>
-        /// <param name="path">The database path and filename</param>
-        /// <param name="f">The operation to invoke</param>
-        /// <returns>A CallResult with the result of the oepration</returns>
-#pragma warning disable CS1573
-        public static CallResult<U> LiteDbAction<T, U>(string path, Func<LiteDatabase, LiteTransaction, LiteCollection<T>, U> f, [CallerMemberName] string callerMemberName = "", [CallerFilePath] string callerFilePath = "", [CallerLineNumber] int callerLineNumber = 0) where T : new()
-#pragma warning restore CS1573
-        {
-            //return LiteDbAction<T, U>(path, (database, collection) =>
-            //{
-            //    using (var transaction = database.BeginTrans())
-            //    {
-            //        return f.Invoke(database, transaction, collection);
-            //    }
-            //}, callerMemberName, callerFilePath, callerLineNumber);
-            var result = new CallResult<U>();
-            try
-            {
-                if (f == null)
-                    throw new ArgumentNullException("LiteDbAction: Parameter 'f' cannot be null");
-                using (var db = new LiteDB.LiteDatabase(path))
-                {
-                    var collection = GetCollection<T>(db);
-                    using (var transaction = db.BeginTrans())
-                    {
-                        result.Result = f.Invoke(db, transaction, collection);
-                        result.Success = true;
-                    }
-                }
-            }
-            catch (LiteException e)
-            {
-                result.Exception = e;
-                Log.e(new Exception(string.Format("LiteException: ErrorCode={0}, Message={1}", e.ErrorCode, e.Message), e));
-            }
-            catch (Exception e)
-            {
-                result.Exception = e;
-                Log.e(new Exception(string.Format("Caller:{0}, Line:{1}, File:{2}", callerMemberName, callerLineNumber, callerFilePath), e));
-            }
-            return result;
-        }
+//        /// <summary>
+//        /// Wraps a database operation in a try/catch block and transaction
+//        /// </summary>
+//        /// <typeparam name="T">The Type which determines the database collection name</typeparam>
+//        /// <typeparam name="U">The type of result expected from the operation</typeparam>
+//        /// <param name="path">The database path and filename</param>
+//        /// <param name="f">The operation to invoke</param>
+//        /// <returns>A CallResult with the result of the oepration</returns>
+//#pragma warning disable CS1573
+//        public static CallResult<U> LiteDbAction<T, U>(string path, Func<LiteDatabase, LiteTransaction, LiteCollection<T>, U> f, [CallerMemberName] string callerMemberName = "", [CallerFilePath] string callerFilePath = "", [CallerLineNumber] int callerLineNumber = 0) where T : new()
+//#pragma warning restore CS1573
+//        {
+//            //return LiteDbAction<T, U>(path, (database, collection) =>
+//            //{
+//            //    using (var transaction = database.BeginTrans())
+//            //    {
+//            //        return f.Invoke(database, transaction, collection);
+//            //    }
+//            //}, callerMemberName, callerFilePath, callerLineNumber);
+//            var result = new CallResult<U>();
+//            try
+//            {
+//                if (f == null)
+//                    throw new ArgumentNullException("LiteDbAction: Parameter 'f' cannot be null");
+//                using (var db = new LiteDB.LiteDatabase(path))
+//                {
+//                    var collection = GetCollection<T>(db);
+//                    using (var transaction = db.BeginTrans())
+//                    {
+//                        result.Result = f.Invoke(db, transaction, collection);
+//                        result.Success = true;
+//                    }
+//                }
+//            }
+//            catch (LiteException e)
+//            {
+//                result.Exception = e;
+//                //Log.e(new Exception(string.Format("LiteException: ErrorCode={0}, Message={1}", e.ErrorCode, e.Message), e));
+//                System.Diagnostics.Debug.WriteLine(e.ToString());
+//                System.Diagnostics.Debugger.Break();
+//            }
+//            catch (Exception e)
+//            {
+//                result.Exception = e;
+//                //Log.e(new Exception(string.Format("Caller:{0}, Line:{1}, File:{2}", callerMemberName, callerLineNumber, callerFilePath), e));
+//                System.Diagnostics.Debug.WriteLine(e.ToString());
+//                System.Diagnostics.Debugger.Break();
+//            }
+//            return result;
+//        }
 
         /// <summary>
         /// Creates a new index on the specified field
@@ -359,7 +369,7 @@ namespace W.LiteDb
         /// <returns>A list of the saved items. Each items' id field will have a new, non-zero value.</returns>
         public static CallResult<List<T>> Save<T>(string path, List<T> items) where T : class, ILiteDbItem, new()
         {
-            return LiteDbAction<T, List<T>>(path, (database, transaction, collection) =>
+            return LiteDbAction<T, List<T>>(path, (database, collection) =>
             {
                 foreach (var item in items)
                 {
@@ -371,11 +381,11 @@ namespace W.LiteDb
                     else
                     {
                         var result = collection.Update(item);
-                        if (!result)
-                            Log.e("Failed to update item");
+                        //if (!result)
+                        //    Log.e("Failed to update item");
                     }
                 }
-                transaction.Commit();
+                //transaction.Commit();
                 return items;
             });
         }
@@ -466,7 +476,9 @@ namespace W.LiteDb
             catch (Exception e)
             {
                 result.Exception = e;
-                Log.e(e);
+                System.Diagnostics.Debug.WriteLine(e.ToString());
+                System.Diagnostics.Debugger.Break();
+                //Log.e(e);
             }
             return result;
         }
@@ -478,7 +490,7 @@ namespace W.LiteDb
         /// <param name="id">The unique id for the data</param>
         /// <param name="data">The byte data to save</param>
         /// <returns>True if the data is saved, otherwise False</returns>
-        public static CallResult Upload(this string path, string id, byte[] data)
+        public static CallResult Upload(string path, string id, byte[] data)
         {
             var result = new CallResult();
             try
@@ -496,7 +508,9 @@ namespace W.LiteDb
             catch (Exception e)
             {
                 result.Exception = e;
-                Log.e(e);
+                //Log.e(e);
+                System.Diagnostics.Debug.WriteLine(e.ToString());
+                System.Diagnostics.Debugger.Break();
             }
             return result;
         }
@@ -507,7 +521,7 @@ namespace W.LiteDb
         /// <param name="id">The unique id for the filename.  Can be the path and filename, or some other unique value.</param>
         /// <param name="filename">The path and name of the file to save</param>
         /// <returns>True if the data is saved, otherwise False</returns>
-        public static CallResult Upload(this string path, string id, string filename)
+        public static CallResult Upload(string path, string id, string filename)
         {
             var result = new CallResult();
             using (var db = new LiteDB.LiteDatabase(path))
@@ -520,7 +534,9 @@ namespace W.LiteDb
                 catch (Exception e)
                 {
                     result.Exception = e;
-                    Log.e(e);
+                    //Log.e(e);
+                    System.Diagnostics.Debug.WriteLine(e.ToString());
+                    System.Diagnostics.Debugger.Break();
                 }
             }
             return result;
@@ -531,7 +547,7 @@ namespace W.LiteDb
         /// <param name="path">The database path and filename</param>
         /// <param name="id">The unique id used to identify the data</param>
         /// <returns>The data if found, otherwise null</returns>
-        public static CallResult<byte[]> Download(this string path, string id)
+        public static CallResult<byte[]> Download(string path, string id)
         {
             var result = new CallResult<byte[]>();
             try
@@ -551,7 +567,9 @@ namespace W.LiteDb
             catch (Exception e)
             {
                 result.Exception = e;
-                Log.e(e);
+                //Log.e(e);
+                System.Diagnostics.Debug.WriteLine(e.ToString());
+                System.Diagnostics.Debugger.Break();
             }
             return result;
         }
@@ -563,7 +581,7 @@ namespace W.LiteDb
         /// <param name="outputFilename">The path and filename to use when saving the file</param>
         /// <param name="overwrite">If true, any existing file will be overwritten</param>
         /// <returns>True if the file was retrieved and written to the file system.  Otherwise False.</returns>
-        public static CallResult Download(this string path, string id, string outputFilename, bool overwrite = true)
+        public static CallResult Download(string path, string id, string outputFilename, bool overwrite = true)
         {
             var result = new CallResult();
             try
@@ -578,7 +596,9 @@ namespace W.LiteDb
             catch (Exception e)
             {
                 result.Exception = e;
-                Log.e(e);
+                //Log.e(e);
+                System.Diagnostics.Debug.WriteLine(e.ToString());
+                System.Diagnostics.Debugger.Break();
             }
             return result;
         }
@@ -593,7 +613,7 @@ namespace W.LiteDb
         /// <param name="url"></param>
         /// <param name="bitmap">The Bitmap to save</param>
         /// <returns></returns>
-        public static CallResult<System.Drawing.Bitmap> SaveBitmap(this string path, string url, System.Drawing.Bitmap bitmap)
+        public static CallResult<System.Drawing.Bitmap> SaveBitmap(string path, string url, System.Drawing.Bitmap bitmap)
         {
             var result = new CallResult<System.Drawing.Bitmap>(false, bitmap);
 
@@ -611,7 +631,9 @@ namespace W.LiteDb
             catch (Exception e)
             {
                 result.Exception = e;
-                Log.e(e);
+                //Log.e(e);
+                System.Diagnostics.Debug.WriteLine(e.ToString());
+                System.Diagnostics.Debugger.Break();
             }
             return result;
         }
@@ -620,7 +642,7 @@ namespace W.LiteDb
         /// </summary>
         /// <param name="path">The databse path and filename</param>
         /// <param name="id">The unique id identifying the bitmap</param>
-        public static CallResult DownloadAndSaveBitmap(this string path, string id)
+        public static CallResult DownloadAndSaveBitmap(string path, string id)
         {
             var result = new CallResult();
             try
@@ -638,7 +660,9 @@ namespace W.LiteDb
             catch (Exception e)
             {
                 result.Exception = e;
-                Log.e(e);
+                //Log.e(e);
+                System.Diagnostics.Debug.WriteLine(e.ToString());
+                System.Diagnostics.Debugger.Break();
             }
             return result;
         }
@@ -648,7 +672,7 @@ namespace W.LiteDb
         /// <param name="path">The database path and filename</param>
         /// <param name="id">The unique id identifying the bitmap</param>
         /// <returns></returns>
-        public static CallResult<System.Drawing.Bitmap> LoadBitmap(this string path, string id)
+        public static CallResult<System.Drawing.Bitmap> LoadBitmap(string path, string id)
         {
             var result = new CallResult<System.Drawing.Bitmap>();
             try
@@ -665,7 +689,9 @@ namespace W.LiteDb
             catch (Exception e)
             {
                 result.Exception = e;
-                Log.e(e);
+                //Log.e(e);
+                System.Diagnostics.Debug.WriteLine(e.ToString());
+                System.Diagnostics.Debugger.Break();
             }
             return result;
         }
@@ -674,7 +700,7 @@ namespace W.LiteDb
         /// </summary>
         /// <param name="path">The database path and filename</param>
         /// <param name="id">The unique id identifying the bitmap</param>
-        public static CallResult DeleteBitmap(this string path, string id)
+        public static CallResult DeleteBitmap(string path, string id)
         {
             var result = new CallResult();
             try
@@ -688,7 +714,9 @@ namespace W.LiteDb
             catch (Exception e)
             {
                 result.Exception = e;
-                Log.e(e);
+                //Log.e(e);
+                System.Diagnostics.Debug.WriteLine(e.ToString());
+                System.Diagnostics.Debugger.Break();
             }
             return result;
         }

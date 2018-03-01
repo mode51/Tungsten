@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using W;
 using W.Threading;
@@ -27,12 +28,12 @@ namespace W.Tests
                 return Last + ", " + First;
             }
         }
-        private void Method1()
+        private void Method1(CancellationToken token)
         {
             Console.WriteLine("Inside Method1");
             Console.WriteLine("Leaving Method1");
         }
-        private void Method2(params object[] args)
+        private void Method2(CancellationToken token, params object[] args)
         {
             Console.WriteLine("Inside Method2(" + string.Join(", ", args) + ")");
             Console.WriteLine("Leaving Method2");
@@ -43,7 +44,7 @@ namespace W.Tests
         [TestMethod]
         public void ThreadMethod_Create()
         {
-            var proc = ThreadMethod.Create(Method1);
+            var proc = W.Threading.ThreadMethod.Create(Method1);
             {
 
                 Assert.IsTrue(proc != null);
@@ -53,7 +54,7 @@ namespace W.Tests
         [TestMethod]
         public void ThreadMethod_Create2()
         {
-            var proc = ThreadMethod.Create(Method2);
+            var proc = W.Threading.ThreadMethod.Create(Method2);
             {
                 Assert.IsTrue(proc != null);
                 Assert.IsTrue(!proc.IsComplete);
@@ -62,62 +63,42 @@ namespace W.Tests
         [TestMethod]
         public void ThreadMethod_Run()
         {
-            var proc = ThreadMethod.Create(Method2);
+            var proc = W.Threading.ThreadMethod.Create(Method2);
             {
-                proc.RunSynchronously();
-                Assert.IsTrue(proc.IsComplete);
-            }
-        }
-        [TestMethod]
-        public async Task ThreadMethod_RunAsync()
-        {
-            var proc = ThreadMethod.Create(Method2);
-            {
-                await proc.StartAsync();
+                proc.Start();
+                //proc.Wait();
+                W.Threading.Thread.Sleep(W.Threading.CPUProfileEnum.SpinWait1);
                 Assert.IsTrue(proc.IsComplete);
             }
         }
         [TestMethod]
         public void ThreadMethod_RunWithParameters()
         {
-            var proc = ThreadMethod.Create(Method2);
+            var proc = W.Threading.ThreadMethod.Create(Method2);
             {
-                proc.RunSynchronously(24);
-                Assert.IsTrue(proc.IsComplete);
-            }
-        }
-        [TestMethod]
-        public async Task ThreadMethod_RunAsyncWithParameters()
-        {
-            var proc = ThreadMethod.Create(Method2);
-            {
-                await proc.StartAsync(24);
+                proc.Start(24);
+                //proc.Wait();
+                W.Threading.Thread.Sleep(W.Threading.CPUProfileEnum.SpinWait1);
                 Assert.IsTrue(proc.IsComplete);
             }
         }
         [TestMethod]
         public void ThreadMethod_RunWithManyParameters()
         {
-            var proc = ThreadMethod.Create(Method2);
+            var proc = W.Threading.ThreadMethod.Create(Method2);
             {
-                proc.RunSynchronously("Jordan", 24, "Duerksen", 0.5, new Customer() { First = "Jordan", Last = "Duerksen" });
+                proc.Start("Jordan", 24, "Duerksen", 0.5, new Customer() { First = "Jordan", Last = "Duerksen" });
+                //proc.Wait();
+                W.Threading.Thread.Sleep(W.Threading.CPUProfileEnum.SpinWait1);
                 Assert.IsTrue(proc.IsComplete);
-            }
-        }
-        [TestMethod]
-        public async Task ThreadMethod_RunAsyncWithManyParameters()
-        {
-            var proc = ThreadMethod.Create(Method2);
-            {
-                await proc.StartAsync("Jordan", 24, "Duerksen", 0.5, new Customer() { First = "Jordan", Last = "Duerksen" });
             }
         }
         [TestMethod]
         public void ThreadMethod_Cancel()
         {
-            var proc = ThreadMethod.Create(() =>
+            var proc = W.Threading.ThreadMethod.Create(token =>
             {
-                while(true)
+                while(!token.IsCancellationRequested)
                 {
                     W.Threading.Thread.Sleep(W.Threading.CPUProfileEnum.Sleep);
                 }

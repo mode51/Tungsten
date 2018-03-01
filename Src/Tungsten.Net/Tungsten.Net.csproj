@@ -1,125 +1,65 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F2FE9090-34C9-4F7E-A932-7F3CF8D00567}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>W.Net</RootNamespace>
+    <TargetFrameworks>net45;netstandard1.5</TargetFrameworks>
+    <Version>2.0.0</Version>
+    <Authors>Jordan Duerksen</Authors>
+    <Company />
+    <Product>Tungsten.Net</Product>
+    <Copyright>Copyright @ 2017 Jordan Duerksen</Copyright>
+    <Description>Tungsten.Net.Standard makes it easy to add tcp sockets to your application. Client and server classes are provided, with and without assymetric encryption.  Note that the secure classes always use RSA for encryption; no symmetric session key is exchanged.  For larger data sets, this can make the secure classes noticably slower and will use more CPU time.</Description>
+    <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</PackageIconUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
+    <PackageTags>Tungsten.Net.Standard Tungsten.Net Tungsten W W.Net C# library tcp sockets client server</PackageTags>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PostBuildEvent></PostBuildEvent>
     <AssemblyName>Tungsten.Net</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-    <AssemblyVersion>1.2.5.2</AssemblyVersion>
+    <RootNamespace>W.Net</RootNamespace>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;NET45</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard1.5\Tungsten.Net.XML</DocumentationFile>
+    <DefineConstants>TRACE;RELEASE;NETSTANDARD1_5</DefineConstants>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;NET45</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Tungsten.Net.xml</DocumentationFile>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>Tungsten.ico</ApplicationIcon>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD1_5</DefineConstants>
   </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Tungsten, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\TestApps\W.Net.Test\packages\Tungsten.2.0.0\lib\net45\Tungsten.dll</HintPath>
-    </Reference>
+    <Compile Remove="GenericClient.cs" />
+    <Compile Remove="GenericServer.cs" />
+    <Compile Remove="SampleUse.cs" />
+    <Compile Remove="SecureStringClient.cs" />
+    <Compile Remove="SecureStringServer.cs" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="..\Tungsten.Net.Standard\ExtensionMethods.cs">
-      <Link>ExtensionMethods.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\SerializationMethods.cs">
-      <Link>SerializationMethods.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\SocketExtensions.cs">
-      <Link>SocketExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Tcp\Generic\SecureTcpClient.cs">
-      <Link>Tcp\Generic\SecureTcpClient.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Tcp\Generic\SecureTcpHost.cs">
-      <Link>Tcp\Generic\SecureTcpHost.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Tcp\Generic\TcpClient.cs">
-      <Link>Tcp\Generic\TcpClient.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Tcp\Generic\TcpHost.cs">
-      <Link>Tcp\Generic\TcpHost.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Tcp\IClient.cs">
-      <Link>Tcp\IClient.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Tcp\IInitialize.cs">
-      <Link>Tcp\IInitialize.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Tcp\SecureTcpClient.cs">
-      <Link>Tcp\SecureTcpClient.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Tcp\SecureTcpHost.cs">
-      <Link>Tcp\SecureTcpHost.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Tcp\SecureTcpLogger.cs">
-      <Link>Tcp\SecureTcpLogger.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Tcp\TcpClient.cs">
-      <Link>Tcp\TcpClient.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Tcp\TcpHost.cs">
-      <Link>Tcp\TcpHost.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Tcp\TcpLogger.cs">
-      <Link>Tcp\TcpLogger.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Udp\Generic\UdpPeer.cs">
-      <Link>Udp\Generic\UdpPeer.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Udp\Udp.cs">
-      <Link>Udp\Udp.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Udp\UdpLogger.cs">
-      <Link>Udp\UdpLogger.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\Udp\UdpPeer.cs">
-      <Link>Udp\UdpPeer.cs</Link>
-    </Compile>
-    <Compile Include="..\Tungsten.Net.Standard\WakeOnLan.cs">
-      <Link>WakeOnLan.cs</Link>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="ExtensionMethods.cs" />
+    <None Include="SerializationMethods.cs" />
   </ItemGroup>
+
   <ItemGroup>
-    <Content Include="Tungsten.ico" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Tungsten.As" Version="2.0.0" />
+    <PackageReference Include="Tungsten.Encryption" Version="2.0.0" />
+    <PackageReference Include="Tungsten.From" Version="2.0.0" />
+    <PackageReference Include="Tungsten.Threading" Version="2.0.0" />
+    <PackageReference Include="Tungsten.Threading.Lockers" Version="2.0.0" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="Tungsten.Net.nuspec" />
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.5'">
+    <PackageReference Include="System.Reflection" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.Extensions" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.4.0" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>
