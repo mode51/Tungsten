@@ -36,7 +36,6 @@ In itself, Tungsten.Suite is not an actual code project.  Instead it is a single
 | Project          | Description                                      |
 | ---------------- | ------------------------------------------------ |
 | Tungsten.LiteDb  | Provides LiteDB based CRUD for your POCO classes |
-| Tungsten.Theater | Provides an asynchronous execution pipeline      |
 
 ___
 #### Framework Compatibility
@@ -68,7 +67,6 @@ ___
 | Project          | net20 | net35 |       net45        |       net461       | netstandard1.0 |   netstandard1.3   |   netstandard1.4   | netstandard1.5 |
 | ---------------- | :---: | :---: | :----------------: | :----------------: | :------------: | :----------------: | :----------------: | :------------: |
 | Tungsten.LiteDb  |       |       | :heavy_check_mark: |                    |                |                    | :heavy_check_mark: |                |
-| Tungsten.Theater |       |       | :heavy_check_mark: | :heavy_check_mark: |                | :heavy_check_mark: |                    |                |
 
 </sub>
 
