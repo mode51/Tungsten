@@ -15,8 +15,8 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Version>2.0.0.0</Version>
     <Product>Tungsten.LiteDb</Product>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
-    <FileVersion>2.0.0.0</FileVersion>
+    <AssemblyVersion>2.0.0.6</AssemblyVersion>
+    <FileVersion>2.0.0.6</FileVersion>
     <AssemblyName>Tungsten.LiteDb</AssemblyName>
     <PackageId>Tungsten.LiteDb</PackageId>
     <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>

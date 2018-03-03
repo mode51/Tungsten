@@ -14,6 +14,8 @@
     <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</PackageIconUrl>
     <PackageTags>Tungsten.InterProcess Tungsten InterProcess W C# library</PackageTags>
+    <AssemblyVersion>2.0.0.7</AssemblyVersion>
+    <FileVersion>2.0.0.7</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net20|AnyCPU'">

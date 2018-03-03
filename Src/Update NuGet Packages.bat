@@ -23,9 +23,7 @@ copy "Tungsten.LiteDb\bin\Release\*.nupkg" ..\NuGet\
 copy "Tungsten.Net\bin\Release\*.nupkg" ..\NuGet\
 
 @echo .Net Framework
-copy "Tungsten.AppBar\bin\Release\*.nupkg" ..\NuGet\
 copy "Tungsten.Domains\bin\Release\*.nupkg" ..\NuGet\
 copy "Tungsten.Firewall\bin\Release\*.nupkg" ..\NuGet\
 copy "Tungsten.InterProcess\bin\Release\*.nupkg" ..\NuGet\
-copy "Tungsten.Theater\bin\Release\*.nupkg" ..\NuGet\
 pause

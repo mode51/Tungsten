@@ -7,14 +7,14 @@
     <Company />
     <Product>Tungsten.Net</Product>
     <Copyright>Copyright @ 2017 Jordan Duerksen</Copyright>
-    <Description>Tungsten.Net.Standard makes it easy to add tcp sockets to your application. Client and server classes are provided, with and without assymetric encryption.  Note that the secure classes always use RSA for encryption; no symmetric session key is exchanged.  For larger data sets, this can make the secure classes noticably slower and will use more CPU time.</Description>
+    <Description>Tungsten.Net makes it easy to add tcp sockets to your application. Client and server classes are provided, with and without assymetric encryption.  Note that the secure classes always use RSA for encryption; no symmetric session key is exchanged.  For larger data sets, this can make the secure classes noticably slower and will use more CPU time.</Description>
     <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</PackageIconUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
-    <PackageTags>Tungsten.Net.Standard Tungsten.Net Tungsten W W.Net C# library tcp sockets client server</PackageTags>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
-    <FileVersion>2.0.0.0</FileVersion>
+    <PackageTags>Tungsten.Net Tungsten W W.Net C# library tcp sockets client server</PackageTags>
+    <AssemblyVersion>2.0.0.6</AssemblyVersion>
+    <FileVersion>2.0.0.4</FileVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PostBuildEvent></PostBuildEvent>
     <AssemblyName>Tungsten.Net</AssemblyName>

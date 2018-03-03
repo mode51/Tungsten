@@ -160,6 +160,9 @@
     <Reference Include="Tungsten.Property, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.Suite.2.0.0\lib\net45\Tungsten.Property.dll</HintPath>
     </Reference>
+    <Reference Include="Tungsten.Reflection, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tungsten.Reflection.2.0.0\lib\net45\Tungsten.Reflection.dll</HintPath>
+    </Reference>
     <Reference Include="Tungsten.Threading, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.Suite.2.0.0\lib\net45\Tungsten.Threading.dll</HintPath>
     </Reference>
@@ -215,6 +218,9 @@
     </Compile>
     <Compile Include="..\Test Files\W\PropertyTests.cs">
       <Link>W\PropertyTests.cs</Link>
+    </Compile>
+    <Compile Include="..\Test Files\W\ReflectionTests.cs">
+      <Link>W\ReflectionTests.cs</Link>
     </Compile>
     <Compile Include="..\Test Files\W\RSATests.cs">
       <Link>W\RSATests.cs</Link>

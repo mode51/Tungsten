@@ -22,7 +22,6 @@ namespace W
         //[System.Runtime.CompilerServices.MethodImpl(MethodImplOptions.AggressiveInlining)]
         ////[System.Diagnostics.DebuggerStepThrough]
 
-
         /// <summary>
         /// Use Generic syntax for the <bold>as</bold> operator.
         /// </summary>

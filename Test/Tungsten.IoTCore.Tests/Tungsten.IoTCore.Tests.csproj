@@ -22,6 +22,7 @@
     <Compile Include="..\Test Files\W\PropertyHostMethodsTests.cs" Link="W\PropertyHostMethodsTests.cs" />
     <Compile Include="..\Test Files\W\PropertyHostTests.cs" Link="W\PropertyHostTests.cs" />
     <Compile Include="..\Test Files\W\PropertyTests.cs" Link="W\PropertyTests.cs" />
+    <Compile Include="..\Test Files\W\ReflectionTests.cs" Link="W\ReflectionTests.cs" />
     <Compile Include="..\Test Files\W\RSATests.cs" Link="W\RSATests.cs" />
     <Compile Include="..\Test Files\W\ThreadMethodTests.cs" Link="W\ThreadMethodTests.cs" />
   </ItemGroup>
