@@ -31,7 +31,6 @@
       <Argument Key="requestExampleUrl" Value="" />
     </TransformComponentArguments>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.AppBar\Tungsten.AppBar.csproj" />
       <DocumentationSource sourceFile="..\..\Src\Tungsten.ArrayMethods\Tungsten.ArrayMethods.csproj" />
       <DocumentationSource sourceFile="..\..\Src\Tungsten.As\Tungsten.As.csproj" />
       <DocumentationSource sourceFile="..\..\Src\Tungsten.CallResult\Tungsten.CallResult.csproj" />
@@ -48,7 +47,6 @@
       <DocumentationSource sourceFile="..\..\Src\Tungsten.Logging\Tungsten.Logging.csproj" />
       <DocumentationSource sourceFile="..\..\Src\Tungsten.Net\Tungsten.Net.csproj" />
       <DocumentationSource sourceFile="..\..\Src\Tungsten.Property\Tungsten.Property.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.Theater\Tungsten.Theater.csproj" />
       <DocumentationSource sourceFile="..\..\Src\Tungsten.Threading\Tungsten.Threading.csproj" />
       <DocumentationSource sourceFile="..\..\Src\Tungsten.Threading.Lockers\Tungsten.Threading.Lockers.csproj" />
     </DocumentationSources>

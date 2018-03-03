@@ -54,9 +54,9 @@
 
         <para>These projects have NuGet packages, but are not included in Tungsten.Suite because they only support the .Net Framework</para>
           <list class="bullet">
-            <listItem>
+            <!--<listItem>
               <para>Tungsten.AppBar</para>
-            </listItem>
+            </listItem>-->
             <listItem>
               <para>Tungsten.Domains</para>
             </listItem>
@@ -66,9 +66,9 @@
             <listItem>
               <para>Tungsten.InterProcess</para>
             </listItem>
-            <listItem>
+            <!--<listItem>
               <para>Tungsten.Theater</para>
-            </listItem>
+            </listItem>-->
           </list>
 
         <para>The following are concepts and may or may not be continued</para>
@@ -76,9 +76,9 @@
           <listItem>
             <para>Tungsten.LiteDb</para>
           </listItem>
-          <listItem>
+          <!--<listItem>
             <para>Tungsten.Theater</para>
-          </listItem>
+          </listItem>-->
         </list>
 
       </content>
