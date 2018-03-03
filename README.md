@@ -27,7 +27,6 @@ In itself, Tungsten.Suite is not an actual code project.  Instead it is a single
 #### Projects not included in the Tungsten.Suite NuGet package
 | Project               | Description                                                 |
 | --------------------- | ----------------------------------------------------------- |
-| Tungsten.AppBar       | Converts a Winforms form to an AppBar                       |
 | Tungsten.Domains      | Easily implement reloadable AppDomains in your application  |
 | Tungsten.Firewall     | Wraps NetFwTypeLib to add and remove Windows firewall rules |
 | Tungsten.InterProcess | InterProcess communication via the WM_COPYDATA message      |
@@ -59,7 +58,6 @@ ___
 
 | Project               |       net20        |       net35        |       net45        | net461 | netstandard1.0 | netstandard1.3 | netstandard1.4 | netstandard1.5 |
 | --------------------- | :----------------: | :----------------: | :----------------: | :----: | :------------: | :------------: | :------------: | :------------: |
-| Tungsten.AppBar       | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |        |                |                |                |                |
 | Tungsten.Domains      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |        |                |                |                |                |
 | Tungsten.Firewall     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |        |                |                |                |                |
 | Tungsten.InterProcess | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |        |                |                |                |                |
