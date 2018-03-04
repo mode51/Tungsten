@@ -58,8 +58,8 @@ ___
 | Tungsten.Threading         |       |       | :heavy_check_mark: |        | :heavy_check_mark: |                    |                    |                |                    |
 | Tungsten.Threading.Lockers |       |       | :heavy_check_mark: |        | :heavy_check_mark: |                    |                    |                |                    |
 
-<a name="rpcNote">1. </a>Due to limitations with System.Reflection, W.Net.RPC.Server is only available in net45 and NetStandard2.0
-
+<a name="rpcNote">1. </a>Due to limitations with System.Reflection, W.Net.RPC.Server is only available in net45 and netstandard2.0
+<br>
 
 | Project               |       net20        |       net35        |       net45        | net461 | netstandard1.0 | netstandard1.3 | netstandard1.4 | netstandard1.5 | netstandard2.0 |
 | --------------------- | :----------------: | :----------------: | :----------------: | :----: | :------------: | :------------: | :------------: | :------------: | :------------: |
