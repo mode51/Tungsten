@@ -53,12 +53,13 @@ ___
 | Tungsten.IO.Pipes          |       |       | :heavy_check_mark: |        |                    |                    | :heavy_check_mark: |                |                    |
 | Tungsten.Lockable          |       |       | :heavy_check_mark: |        | :heavy_check_mark: |                    |                    |                |                    |
 | Tungsten.Logging           |       |       | :heavy_check_mark: |        | :heavy_check_mark: |                    |                    |                |                    |
-| Tungsten.Net               |       |       | :heavy_check_mark: |        |                    | :heavy_check_mark: |                    |                | :heavy_check_mark: [<sup>1</sup>](#rpcNote) |
+| Tungsten.Net               |       |       | :heavy_check_mark: |        |                    | :heavy_check_mark: |                    |                | :heavy_check_mark: [<sup>1</sup>](#rpcNote1) [<sup>2</sup>](#rpcNote2) |
 | Tungsten.Property          |       |       | :heavy_check_mark: |        | :heavy_check_mark: |                    |                    |                |                    |
 | Tungsten.Threading         |       |       | :heavy_check_mark: |        | :heavy_check_mark: |                    |                    |                |                    |
 | Tungsten.Threading.Lockers |       |       | :heavy_check_mark: |        | :heavy_check_mark: |                    |                    |                |                    |
 
-<a name="rpcNote">1. </a>Due to limitations with System.Reflection, W.Net.RPC.Server is only available in net45 and netstandard2.0
+<p><a name="rpcNote1"></a>1. Due to limitations with System.Reflection, W.Net.RPC.Server is only available in net45 and netstandard2.0</p>
+<p><a name="rpcNote2"></a>2. Due to the way Newtonsoft.Json deserializes integers, do NOT use int (Int32) in your api's as parameters or return types. Use long instead.</p>
 <br>
 
 | Project               |       net20        |       net35        |       net45        | net461 | netstandard1.0 | netstandard1.3 | netstandard1.4 | netstandard1.5 | netstandard2.0 |
