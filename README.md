@@ -1,7 +1,6 @@
  ### Notes:
 * #### Tungsten.Suite is currently under development.  This page is likely to undergo regular changes.
 * #### All NuGet packages, except Tungsten.Net and Tungsten.Suite, have been published
-* #### Concept projects do not have NuGet packages
 ___
 
 The help files are built with [Sandcastle Help File Builder](https://github.com/EWSoftware/SHFB)
@@ -64,8 +63,5 @@ ___
 | Tungsten.Firewall     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |        |                |                |                |                |                |
 | Tungsten.InterProcess | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |        |                |                |                |                |                |
 
-| Project          | net20 | net35 |       net45        |       net461       | netstandard1.0 |   netstandard1.3   |   netstandard1.4   | netstandard1.5 | netstandard2.0 |
-| ---------------- | :---: | :---: | :----------------: | :----------------: | :------------: | :----------------: | :----------------: | :------------: | :------------: |
-| Tungsten.LiteDb  |       |       | :heavy_check_mark: |                    |                |                    | :heavy_check_mark: |                |                |
 
 </sub>
