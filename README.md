@@ -33,11 +33,6 @@ In itself, Tungsten.Suite is not an actual code project.  Instead it is a single
 | Tungsten.Firewall     | Wraps NetFwTypeLib to add and remove Windows firewall rules |
 | Tungsten.InterProcess | InterProcess communication via the WM_COPYDATA message      |
 
-#### Concept projects
-| Project          | Description                                      |
-| ---------------- | ------------------------------------------------ |
-| Tungsten.LiteDb  | Provides LiteDB based CRUD for your POCO classes |
-
 ___
 #### Framework Compatibility
 <sub>
