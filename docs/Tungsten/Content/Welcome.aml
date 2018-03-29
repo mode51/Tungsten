@@ -42,6 +42,9 @@
             <para>Tungsten.Logging</para>
           </listItem>
           <listItem>
+            <para>Tungsten.Net</para>
+          </listItem>
+          <listItem>
             <para>Tungsten.Property</para>
           </listItem>
           <listItem>
@@ -70,16 +73,6 @@
               <para>Tungsten.Theater</para>
             </listItem>-->
           </list>
-
-        <para>The following are concepts and may or may not be continued</para>
-        <list class="bullet">
-          <listItem>
-            <para>Tungsten.LiteDb</para>
-          </listItem>
-          <!--<listItem>
-            <para>Tungsten.Theater</para>
-          </listItem>-->
-        </list>
 
       </content>
 		</section>

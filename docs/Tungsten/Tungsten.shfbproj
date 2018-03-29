@@ -31,25 +31,40 @@
       <Argument Key="requestExampleUrl" Value="" />
     </TransformComponentArguments>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.ArrayMethods\Tungsten.ArrayMethods.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.As\Tungsten.As.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.CallResult\Tungsten.CallResult.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.Console\Tungsten.Console.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.Domains\Tungsten.Domains.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.Encryption\Tungsten.Encryption.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.EventTemplate\Tungsten.EventTemplate.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.Firewall\Tungsten.Firewall.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.From\Tungsten.From.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.InterProcess\Tungsten.InterProcess.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.IO.Pipes\Tungsten.IO.Pipes.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.LiteDb\Tungsten.LiteDb.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.Lockable\Tungsten.Lockable.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.Logging\Tungsten.Logging.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.Net\Tungsten.Net.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.Property\Tungsten.Property.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.Threading\Tungsten.Threading.csproj" />
-      <DocumentationSource sourceFile="..\..\Src\Tungsten.Threading.Lockers\Tungsten.Threading.Lockers.csproj" />
-    </DocumentationSources>
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.ArrayMethods\bin\Release\net45\Tungsten.ArrayMethods.xml" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.ArrayMethods\bin\Release\net45\Tungsten.ArrayMethods.dll" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.As\bin\Release\net45\Tungsten.As.xml" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.As\bin\Release\net45\Tungsten.As.dll" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.CallResult\bin\Release\net45\Tungsten.CallResult.xml" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.CallResult\bin\Release\net45\Tungsten.CallResult.dll" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Console\bin\Release\net45\Tungsten.Console.xml" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Console\bin\Release\net45\Tungsten.Console.dll" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Domains\bin\Release\net45\Tungsten.Domains.xml" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Domains\bin\Release\net45\Tungsten.Domains.dll" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Encryption\bin\Release\net45\Tungsten.Encryption.xml" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Encryption\bin\Release\net45\Tungsten.Encryption.dll" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.EventTemplate\bin\Release\net45\Tungsten.EventTemplate.xml" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.EventTemplate\bin\Release\net45\Tungsten.EventTemplate.dll" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Firewall\bin\Release\net45\Tungsten.Firewall.xml" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Firewall\bin\Release\net45\Tungsten.Firewall.dll" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.From\bin\Release\net45\Tungsten.From.xml" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.From\bin\Release\net45\Tungsten.From.dll" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.InterProcess\bin\Release\net45\Tungsten.InterProcess.xml" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.InterProcess\bin\Release\net45\Tungsten.InterProcess.dll" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.IO.Pipes\bin\Release\net45\Tungsten.IO.Pipes.xml" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.IO.Pipes\bin\Release\net45\Tungsten.IO.Pipes.dll" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Lockable\bin\Release\net45\Tungsten.Lockable.xml" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Lockable\bin\Release\net45\Tungsten.Lockable.dll" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Logging\bin\Release\net45\Tungsten.Logging.xml" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Logging\bin\Release\net45\Tungsten.Logging.dll" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Net\bin\Release\net45\Tungsten.Net.xml" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Net\bin\Release\net45\Tungsten.Net.dll" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Property\bin\Release\net45\Tungsten.Property.xml" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Property\bin\Release\net45\Tungsten.Property.dll" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Threading\bin\Release\net45\Tungsten.Threading.xml" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Threading\bin\Release\net45\Tungsten.Threading.dll" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Threading.Lockers\bin\Release\net45\Tungsten.Threading.Lockers.xml" />
+<DocumentationSource sourceFile="..\..\Src\Tungsten.Threading.Lockers\bin\Release\net45\Tungsten.Threading.Lockers.dll" /></DocumentationSources>
     <HelpFileFormat>HtmlHelp1</HelpFileFormat>
     <SyntaxFilters>C#</SyntaxFilters>
     <PresentationStyle>VS2013</PresentationStyle>
@@ -107,6 +122,7 @@
     <Folder Include="media" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="XML File.xml" />
     <None Include="Content\VersionHistory\v2.0.0.aml" />
     <None Include="Content\VersionHistory\VersionHistory.aml" />
     <None Include="Content\Welcome.aml" />
