@@ -16,7 +16,8 @@ namespace W
         /// </summary>
         protected virtual TValue GetValue()
         {
-            return InLock(() => State);
+            return GetState();
+            //return InLock(LockTypeEnum.Read, state => { return state; });
         }
         /// <summary>
         /// Sets the underlying value
@@ -24,7 +25,8 @@ namespace W
         /// <param name="value">The new value</param>
         protected virtual void SetValue(TValue value)
         {
-            InLock(() => State = value);
+            base.SetState(value);
+            //InLock(() => { return value; });
         }
 
         /// <summary>
@@ -51,6 +53,12 @@ namespace W
         /// Constructs a new LockableSlim assigning an initial value
         /// </summary>
         /// <param name="initialValue">The initial value to assign</param>
-        public LockableSlim(TValue initialValue) { State = initialValue; }
+        public LockableSlim(TValue initialValue) : base(System.Threading.LockRecursionPolicy.SupportsRecursion) { State = initialValue; }
+        ///// <summary>
+        ///// Constructs a new LockableSlim assigning an initial value
+        ///// </summary>
+        ///// <param name="initialValue">The initial value to assign</param>
+        ///// <param name="supportsRecursion">The desired LockRecusionPolicy</param>
+        //public LockableSlim(TValue initialValue, System.Threading.LockRecursionPolicy supportsRecursion) : base(supportsRecursion) { _value = initialValue; }
     }
 }

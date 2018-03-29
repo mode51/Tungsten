@@ -55,10 +55,11 @@ namespace W.Net
                     {
                         if (_host.Pending())
                         {
-#if NET45
-                            var socket = _host.AcceptSocket();
-#elif NETSTANDARD1_3 || NETSTANDARD1_5
-                            var socket = _host.AcceptSocketAsync().Result;
+                            System.Net.Sockets.Socket socket = null;
+#if NET45 || NETSTANDARD2_0
+                            socket = _host.AcceptSocket();
+#elif NETSTANDARD1_3
+                            socket = _host.AcceptSocketAsync().Result;
 #endif
                             var server = OnCreateServer(socket);
 

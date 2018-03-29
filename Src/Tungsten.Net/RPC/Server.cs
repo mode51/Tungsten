@@ -3,20 +3,23 @@ using System.Net;
 using System.Threading;
 using W.Net;
 
+#if !NETSTANDARD1_3 // NET45 || NETSTANDARD2_0
 namespace W.Net.RPC
 {
     /// <summary>
-    /// Supports remote instances of Tungsten.Net.RPC.Client to call local methods.
+    /// Allows remote instances of Tungsten.Net.RPC.Client to call local methods.
     /// </summary>
+    /// <remarks>Note: Due to the way Newtonsoft.Json deserializes integers, do NOT use int (Int32) in your api's as parameters or return types; use longs instead.</remarks>
     public class Server : IDisposable
     {
         private Tcp.Generic.SecureTcpHost<RPCMessage> _host;
+        private int _keySize;
         private MethodDictionary _methods = new MethodDictionary();
 
         /// <summary>
         /// Exposes the dictionary of methods.  Custom, non-attributed methods may be added to this dictionary.
         /// </summary>
-        private System.Collections.Generic.Dictionary<string, System.Reflection.MethodInfo> Methods { get => _methods.Methods; }
+        public MethodDictionary API { get => _methods; }
 
         private bool OnMessageReceived(ref RPCMessage message)
         {
@@ -38,12 +41,18 @@ namespace W.Net.RPC
         /// Starts listening for client connections on the specified network interface and port
         /// </summary>
         /// <param name="ep">The IPEndpoint on which to bind and listen for clients</param>
-        public void Start(IPEndPoint ep)
+        /// <param name="rpcAssembly">The root assembly in which to scan for RPC methods</param>
+        /// <param name="scanReferences">If True, referenced assemblies will also be scanned for RPC methods</param>
+        public void Start(IPEndPoint ep, System.Reflection.Assembly rpcAssembly, bool scanReferences = false)
         {
             Stop();
-            _methods.Refresh();
-            _host = new Tcp.Generic.SecureTcpHost<RPCMessage>(2048);
+            _methods.Refresh(rpcAssembly, scanReferences);
+            _host = new Tcp.Generic.SecureTcpHost<RPCMessage>(_keySize);
             //_host.IsListeningChanged += (isListening) => { IsListeningChanged?.Invoke(isListening); _mreIsListening?.Set(); };
+            //_host.BytesReceived += (h, s, bytes) =>
+            //{
+            //    System.Diagnostics.Debug.WriteLine($"Server Received {bytes.Length} bytes");
+            //};
             _host.MessageReceived += (h, s, message) =>
             {
                 try
@@ -83,9 +92,11 @@ namespace W.Net.RPC
         /// <summary>
         /// Initializes the Tungsten.Net.RPC.Server and loads the RPC methods
         /// </summary>
+        /// <param name="encryptionKeySize">The encryption key size (typically 2048 or 4096; 384 to 16384 in increments of 8)</param>
         /// <remarks>The client must be declared with the same value.</remarks>
-        public Server()
+        public Server(int encryptionKeySize)
         {
+            _keySize = encryptionKeySize;
         }
         /// <summary>
         /// Calls Dispose and deconstructs the Tungsten.Net.RPC.Server
@@ -93,7 +104,9 @@ namespace W.Net.RPC
         ~Server()
         {
             Dispose();
+
         }
+
         /// <summary>
         /// Disposes the Tungsten.Net.RPC.Server and releases resources
         /// </summary>
@@ -104,3 +117,4 @@ namespace W.Net.RPC
         }
     }
 }
+#endif

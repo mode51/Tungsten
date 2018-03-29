@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/mode51/Tungsten</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Tungsten.Suite is a nuspec only package.  It aggregates the most common Tungsten packages into one.</description>
+    <description>Tungsten.Suite is a nuspec only package.  It aggregates the most Tungsten packages available for each framework into one package.</description>
     <summary></summary>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2018 Jordan Duerksen</copyright>
@@ -26,23 +26,23 @@
         <dependency id="Tungsten.EventTemplate" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.From" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.IO.Pipes" version="2.0.0" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Lockable" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Lockable" version="2.0.1" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Logging" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Net" version="2.0.0" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Property" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Property" version="2.0.1" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Threading" version="2.0.0" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Threading.Lockers" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Threading.Lockers" version="2.0.1" exclude="Build,Analyzers" />
       </group>
       <group targetFramework=".NETStandard1.0">
         <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
         <dependency id="Tungsten.ArrayMethods" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.CallResult" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.EventTemplate" version="2.0.0" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Lockable" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Lockable" version="2.0.1" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Logging" version="2.0.0" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Property" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Property" version="2.0.1" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Threading" version="2.0.0" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Threading.Lockers" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Threading.Lockers" version="2.0.1" exclude="Build,Analyzers" />
       </group>
       <group targetFramework=".NETStandard1.3">
         <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
@@ -51,16 +51,17 @@
         <dependency id="Tungsten.ArrayMethods" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.CallResult" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.EventTemplate" version="2.0.0" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Lockable" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Lockable" version="2.0.1" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Logging" version="2.0.0" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Property" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Property" version="2.0.1" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Threading" version="2.0.0" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Threading.Lockers" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Threading.Lockers" version="2.0.1" exclude="Build,Analyzers" />
 
         <dependency id="Tungsten.As" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Console" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Encryption" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.From" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Net" version="2.0.0" exclude="Build,Analyzers" />
       </group>
       <group targetFramework=".NETStandard1.4">
         <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
@@ -70,20 +71,19 @@
         <dependency id="Tungsten.ArrayMethods" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.CallResult" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.EventTemplate" version="2.0.0" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Lockable" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Lockable" version="2.0.1" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Logging" version="2.0.0" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Property" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Property" version="2.0.1" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Threading" version="2.0.0" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Threading.Lockers" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Threading.Lockers" version="2.0.1" exclude="Build,Analyzers" />
 
         <dependency id="Tungsten.As" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Console" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Encryption" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.From" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Net" version="2.0.0" exclude="Build,Analyzers" />
 
         <dependency id="Tungsten.IO.Pipes" version="2.0.0" exclude="Build,Analyzers" />
-        <!--<dependency id="LiteDB" version="3.1.1" exclude="Build,Analyzers" />-->
-        <!--<dependency id="Tungsten.LiteDb" version="2.0.0" exclude="Build,Analyzers" />-->
       </group>
       <group targetFramework=".NETStandard1.5">
         <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
@@ -93,21 +93,63 @@
         <dependency id="Tungsten.ArrayMethods" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.CallResult" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.EventTemplate" version="2.0.0" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Lockable" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Lockable" version="2.0.1" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Logging" version="2.0.0" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Property" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Property" version="2.0.1" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Threading" version="2.0.0" exclude="Build,Analyzers" />
-        <dependency id="Tungsten.Threading.Lockers" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Threading.Lockers" version="2.0.1" exclude="Build,Analyzers" />
 
         <dependency id="Tungsten.As" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Console" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Encryption" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.From" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Net" version="2.0.0" exclude="Build,Analyzers" />
 
         <dependency id="Tungsten.IO.Pipes" version="2.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard1.6">
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="9.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.IO.Compression" version="4.3.0" exclude="Build,Analyzers" />
+
+        <dependency id="Tungsten.ArrayMethods" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.CallResult" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.EventTemplate" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Lockable" version="2.0.1" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Logging" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Property" version="2.0.1" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Threading" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Threading.Lockers" version="2.0.1" exclude="Build,Analyzers" />
+
+        <dependency id="Tungsten.As" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Console" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Encryption" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.From" version="2.0.0" exclude="Build,Analyzers" />
         <dependency id="Tungsten.Net" version="2.0.0" exclude="Build,Analyzers" />
-        <!--<dependency id="LiteDB" version="3.1.1" exclude="Build,Analyzers" />-->
-        <!--<dependency id="Tungsten.LiteDb" version="2.0.0" exclude="Build,Analyzers" />-->
+
+        <dependency id="Tungsten.IO.Pipes" version="2.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="9.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.IO.Compression" version="4.3.0" exclude="Build,Analyzers" />
+
+        <dependency id="Tungsten.ArrayMethods" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.CallResult" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.EventTemplate" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Lockable" version="2.0.1" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Logging" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Property" version="2.0.1" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Threading" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Threading.Lockers" version="2.0.1" exclude="Build,Analyzers" />
+
+        <dependency id="Tungsten.As" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Console" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Encryption" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.From" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Tungsten.Net" version="2.0.0" exclude="Build,Analyzers" />
+
+        <dependency id="Tungsten.IO.Pipes" version="2.0.0" exclude="Build,Analyzers" />
       </group>
     </dependencies>
   </metadata>
@@ -117,75 +159,191 @@
 
     <file src="..\..\Src\Tungsten.ArrayMethods\bin\Release\net45\Tungsten.ArrayMethods.dll" target="lib\net45" />
     <file src="..\..\Src\Tungsten.ArrayMethods\bin\Release\net45\Tungsten.ArrayMethods.xml" target="lib\net45" />
-    <file src="..\..\Src\Tungsten.ArrayMethods\bin\Release\netstandard1.0\Tungsten.ArrayMethods.dll" target="lib\netstandard1.0" />
-    <file src="..\..\Src\Tungsten.ArrayMethods\bin\Release\netstandard1.0\Tungsten.ArrayMethods.xml" target="lib\netstandard1.0" />
-
     <file src="..\..\Src\Tungsten.CallResult\bin\Release\net45\Tungsten.CallResult.dll" target="lib\net45" />
     <file src="..\..\Src\Tungsten.CallResult\bin\Release\net45\Tungsten.CallResult.xml" target="lib\net45" />
-    <file src="..\..\Src\Tungsten.CallResult\bin\Release\netstandard1.0\Tungsten.CallResult.dll" target="lib\netstandard1.0" />
-    <file src="..\..\Src\Tungsten.CallResult\bin\Release\netstandard1.0\Tungsten.CallResult.xml" target="lib\netstandard1.0" />
-
     <file src="..\..\Src\Tungsten.EventTemplate\bin\Release\net45\Tungsten.EventTemplate.dll" target="lib\net45" />
     <file src="..\..\Src\Tungsten.EventTemplate\bin\Release\net45\Tungsten.EventTemplate.xml" target="lib\net45" />
-    <file src="..\..\Src\Tungsten.EventTemplate\bin\Release\netstandard1.0\Tungsten.EventTemplate.dll" target="lib\netstandard1.0" />
-    <file src="..\..\Src\Tungsten.EventTemplate\bin\Release\netstandard1.0\Tungsten.EventTemplate.xml" target="lib\netstandard1.0" />
-
     <file src="..\..\Src\Tungsten.Lockable\bin\Release\net45\Tungsten.Lockable.dll" target="lib\net45" />
     <file src="..\..\Src\Tungsten.Lockable\bin\Release\net45\Tungsten.Lockable.xml" target="lib\net45" />
-    <file src="..\..\Src\Tungsten.Lockable\bin\Release\netstandard1.0\Tungsten.Lockable.dll" target="lib\netstandard1.0" />
-    <file src="..\..\Src\Tungsten.Lockable\bin\Release\netstandard1.0\Tungsten.Lockable.xml" target="lib\netstandard1.0" />
-
     <file src="..\..\Src\Tungsten.Logging\bin\Release\net45\Tungsten.Logging.dll" target="lib\net45" />
     <file src="..\..\Src\Tungsten.Logging\bin\Release\net45\Tungsten.Logging.xml" target="lib\net45" />
-    <file src="..\..\Src\Tungsten.Logging\bin\Release\netstandard1.0\Tungsten.Logging.dll" target="lib\netstandard1.0" />
-    <file src="..\..\Src\Tungsten.Logging\bin\Release\netstandard1.0\Tungsten.Logging.xml" target="lib\netstandard1.0" />
-
     <file src="..\..\Src\Tungsten.Property\bin\Release\net45\Tungsten.Property.dll" target="lib\net45" />
     <file src="..\..\Src\Tungsten.Property\bin\Release\net45\Tungsten.Property.xml" target="lib\net45" />
-    <file src="..\..\Src\Tungsten.Property\bin\Release\netstandard1.0\Tungsten.Property.dll" target="lib\netstandard1.0" />
-    <file src="..\..\Src\Tungsten.Property\bin\Release\netstandard1.0\Tungsten.Property.xml" target="lib\netstandard1.0" />
-
     <file src="..\..\Src\Tungsten.Threading\bin\Release\net45\Tungsten.Threading.dll" target="lib\net45" />
     <file src="..\..\Src\Tungsten.Threading\bin\Release\net45\Tungsten.Threading.xml" target="lib\net45" />
-    <file src="..\..\Src\Tungsten.Threading\bin\Release\netstandard1.0\Tungsten.Threading.dll" target="lib\netstandard1.0" />
-    <file src="..\..\Src\Tungsten.Threading\bin\Release\netstandard1.0\Tungsten.Threading.xml" target="lib\netstandard1.0" />
-
     <file src="..\..\Src\Tungsten.Threading.Lockers\bin\Release\net45\Tungsten.Threading.Lockers.dll" target="lib\net45" />
     <file src="..\..\Src\Tungsten.Threading.Lockers\bin\Release\net45\Tungsten.Threading.Lockers.xml" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.As\bin\Release\net45\Tungsten.As.dll" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.As\bin\Release\net45\Tungsten.As.xml" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.Console\bin\Release\net45\Tungsten.Console.dll" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.Console\bin\Release\net45\Tungsten.Console.xml" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.Encryption\bin\Release\net45\Tungsten.Encryption.dll" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.Encryption\bin\Release\net45\Tungsten.Encryption.xml" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.From\bin\Release\net45\Tungsten.From.dll" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.From\bin\Release\net45\Tungsten.From.xml" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.IO.Pipes\bin\Release\net45\Tungsten.IO.Pipes.dll" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.IO.Pipes\bin\Release\net45\Tungsten.IO.Pipes.xml" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.Net\bin\Release\net45\Tungsten.Net.dll" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.Net\bin\Release\net45\Tungsten.Net.xml" target="lib\net45" />
+
+    <file src="..\..\Src\Tungsten.ArrayMethods\bin\Release\netstandard1.0\Tungsten.ArrayMethods.dll" target="lib\netstandard1.0" />
+    <file src="..\..\Src\Tungsten.ArrayMethods\bin\Release\netstandard1.0\Tungsten.ArrayMethods.xml" target="lib\netstandard1.0" />
+    <file src="..\..\Src\Tungsten.CallResult\bin\Release\netstandard1.0\Tungsten.CallResult.dll" target="lib\netstandard1.0" />
+    <file src="..\..\Src\Tungsten.CallResult\bin\Release\netstandard1.0\Tungsten.CallResult.xml" target="lib\netstandard1.0" />
+    <file src="..\..\Src\Tungsten.EventTemplate\bin\Release\netstandard1.0\Tungsten.EventTemplate.dll" target="lib\netstandard1.0" />
+    <file src="..\..\Src\Tungsten.EventTemplate\bin\Release\netstandard1.0\Tungsten.EventTemplate.xml" target="lib\netstandard1.0" />
+    <file src="..\..\Src\Tungsten.Lockable\bin\Release\netstandard1.0\Tungsten.Lockable.dll" target="lib\netstandard1.0" />
+    <file src="..\..\Src\Tungsten.Lockable\bin\Release\netstandard1.0\Tungsten.Lockable.xml" target="lib\netstandard1.0" />
+    <file src="..\..\Src\Tungsten.Logging\bin\Release\netstandard1.0\Tungsten.Logging.dll" target="lib\netstandard1.0" />
+    <file src="..\..\Src\Tungsten.Logging\bin\Release\netstandard1.0\Tungsten.Logging.xml" target="lib\netstandard1.0" />
+    <file src="..\..\Src\Tungsten.Property\bin\Release\netstandard1.0\Tungsten.Property.dll" target="lib\netstandard1.0" />
+    <file src="..\..\Src\Tungsten.Property\bin\Release\netstandard1.0\Tungsten.Property.xml" target="lib\netstandard1.0" />
+    <file src="..\..\Src\Tungsten.Threading\bin\Release\netstandard1.0\Tungsten.Threading.dll" target="lib\netstandard1.0" />
+    <file src="..\..\Src\Tungsten.Threading\bin\Release\netstandard1.0\Tungsten.Threading.xml" target="lib\netstandard1.0" />
     <file src="..\..\Src\Tungsten.Threading.Lockers\bin\Release\netstandard1.0\Tungsten.Threading.Lockers.dll" target="lib\netstandard1.0" />
     <file src="..\..\Src\Tungsten.Threading.Lockers\bin\Release\netstandard1.0\Tungsten.Threading.Lockers.xml" target="lib\netstandard1.0" />
 
-    <file src="..\..\Src\Tungsten.As\bin\Release\net45\Tungsten.As.dll" target="lib\net45" />
-    <file src="..\..\Src\Tungsten.As\bin\Release\net45\Tungsten.As.xml" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.ArrayMethods\bin\Release\netstandard1.0\Tungsten.ArrayMethods.dll" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.ArrayMethods\bin\Release\netstandard1.0\Tungsten.ArrayMethods.xml" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.CallResult\bin\Release\netstandard1.0\Tungsten.CallResult.dll" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.CallResult\bin\Release\netstandard1.0\Tungsten.CallResult.xml" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.EventTemplate\bin\Release\netstandard1.0\Tungsten.EventTemplate.dll" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.EventTemplate\bin\Release\netstandard1.0\Tungsten.EventTemplate.xml" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.Lockable\bin\Release\netstandard1.0\Tungsten.Lockable.dll" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.Lockable\bin\Release\netstandard1.0\Tungsten.Lockable.xml" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.Logging\bin\Release\netstandard1.0\Tungsten.Logging.dll" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.Logging\bin\Release\netstandard1.0\Tungsten.Logging.xml" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.Net\bin\Release\netstandard1.3\Tungsten.Net.dll" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.Net\bin\Release\netstandard1.3\Tungsten.Net.xml" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.Property\bin\Release\netstandard1.0\Tungsten.Property.dll" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.Property\bin\Release\netstandard1.0\Tungsten.Property.xml" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.Threading\bin\Release\netstandard1.0\Tungsten.Threading.dll" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.Threading\bin\Release\netstandard1.0\Tungsten.Threading.xml" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.Threading.Lockers\bin\Release\netstandard1.0\Tungsten.Threading.Lockers.dll" target="lib\netstandard1.3" />
+    <file src="..\..\Src\Tungsten.Threading.Lockers\bin\Release\netstandard1.0\Tungsten.Threading.Lockers.xml" target="lib\netstandard1.3" />
     <file src="..\..\Src\Tungsten.As\bin\Release\netstandard1.3\Tungsten.As.dll" target="lib\netstandard1.3" />
     <file src="..\..\Src\Tungsten.As\bin\Release\netstandard1.3\Tungsten.As.xml" target="lib\netstandard1.3" />
-
-    <file src="..\..\Src\Tungsten.Console\bin\Release\net45\Tungsten.Console.dll" target="lib\net45" />
-    <file src="..\..\Src\Tungsten.Console\bin\Release\net45\Tungsten.Console.xml" target="lib\net45" />
     <file src="..\..\Src\Tungsten.Console\bin\Release\netstandard1.3\Tungsten.Console.dll" target="lib\netstandard1.3" />
     <file src="..\..\Src\Tungsten.Console\bin\Release\netstandard1.3\Tungsten.Console.xml" target="lib\netstandard1.3" />
-
-    <file src="..\..\Src\Tungsten.Encryption\bin\Release\net45\Tungsten.Encryption.dll" target="lib\net45" />
-    <file src="..\..\Src\Tungsten.Encryption\bin\Release\net45\Tungsten.Encryption.xml" target="lib\net45" />
     <file src="..\..\Src\Tungsten.Encryption\bin\Release\netstandard1.3\Tungsten.Encryption.dll" target="lib\netstandard1.3" />
     <file src="..\..\Src\Tungsten.Encryption\bin\Release\netstandard1.3\Tungsten.Encryption.xml" target="lib\netstandard1.3" />
-
-    <file src="..\..\Src\Tungsten.From\bin\Release\net45\Tungsten.From.dll" target="lib\net45" />
-    <file src="..\..\Src\Tungsten.From\bin\Release\net45\Tungsten.From.xml" target="lib\net45" />
     <file src="..\..\Src\Tungsten.From\bin\Release\netstandard1.3\Tungsten.From.dll" target="lib\netstandard1.3" />
     <file src="..\..\Src\Tungsten.From\bin\Release\netstandard1.3\Tungsten.From.xml" target="lib\netstandard1.3" />
 
-    <file src="..\..\Src\Tungsten.IO.Pipes\bin\Release\net45\Tungsten.IO.Pipes.dll" target="lib\net45" />
-    <file src="..\..\Src\Tungsten.IO.Pipes\bin\Release\net45\Tungsten.IO.Pipes.xml" target="lib\net45" />
+    <file src="..\..\Src\Tungsten.ArrayMethods\bin\Release\netstandard1.0\Tungsten.ArrayMethods.dll" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.ArrayMethods\bin\Release\netstandard1.0\Tungsten.ArrayMethods.xml" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.CallResult\bin\Release\netstandard1.0\Tungsten.CallResult.dll" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.CallResult\bin\Release\netstandard1.0\Tungsten.CallResult.xml" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.EventTemplate\bin\Release\netstandard1.0\Tungsten.EventTemplate.dll" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.EventTemplate\bin\Release\netstandard1.0\Tungsten.EventTemplate.xml" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Lockable\bin\Release\netstandard1.0\Tungsten.Lockable.dll" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Lockable\bin\Release\netstandard1.0\Tungsten.Lockable.xml" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Logging\bin\Release\netstandard1.0\Tungsten.Logging.dll" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Logging\bin\Release\netstandard1.0\Tungsten.Logging.xml" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Net\bin\Release\netstandard1.3\Tungsten.Net.dll" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Net\bin\Release\netstandard1.3\Tungsten.Net.xml" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Property\bin\Release\netstandard1.0\Tungsten.Property.dll" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Property\bin\Release\netstandard1.0\Tungsten.Property.xml" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Threading\bin\Release\netstandard1.0\Tungsten.Threading.dll" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Threading\bin\Release\netstandard1.0\Tungsten.Threading.xml" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Threading.Lockers\bin\Release\netstandard1.0\Tungsten.Threading.Lockers.dll" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Threading.Lockers\bin\Release\netstandard1.0\Tungsten.Threading.Lockers.xml" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.As\bin\Release\netstandard1.3\Tungsten.As.dll" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.As\bin\Release\netstandard1.3\Tungsten.As.xml" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Console\bin\Release\netstandard1.3\Tungsten.Console.dll" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Console\bin\Release\netstandard1.3\Tungsten.Console.xml" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Encryption\bin\Release\netstandard1.3\Tungsten.Encryption.dll" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.Encryption\bin\Release\netstandard1.3\Tungsten.Encryption.xml" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.From\bin\Release\netstandard1.3\Tungsten.From.dll" target="lib\netstandard1.4" />
+    <file src="..\..\Src\Tungsten.From\bin\Release\netstandard1.3\Tungsten.From.xml" target="lib\netstandard1.4" />
     <file src="..\..\Src\Tungsten.IO.Pipes\bin\Release\netstandard1.4\Tungsten.IO.Pipes.dll" target="lib\netstandard1.4" />
     <file src="..\..\Src\Tungsten.IO.Pipes\bin\Release\netstandard1.4\Tungsten.IO.Pipes.xml" target="lib\netstandard1.4" />
 
-    <!--<file src="..\..\Src\Tungsten.LiteDb.Standard\bin\Release\netstandard1.4\Tungsten.LiteDb.dll" target="lib\netstandard1.4" />
-    <file src="..\..\Src\Tungsten.LiteDb.Standard\bin\Release\netstandard1.4\Tungsten.LiteDb.xml" target="lib\netstandard1.4" />-->
+    <file src="..\..\Src\Tungsten.ArrayMethods\bin\Release\netstandard1.0\Tungsten.ArrayMethods.dll" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.ArrayMethods\bin\Release\netstandard1.0\Tungsten.ArrayMethods.xml" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.CallResult\bin\Release\netstandard1.0\Tungsten.CallResult.dll" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.CallResult\bin\Release\netstandard1.0\Tungsten.CallResult.xml" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.EventTemplate\bin\Release\netstandard1.0\Tungsten.EventTemplate.dll" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.EventTemplate\bin\Release\netstandard1.0\Tungsten.EventTemplate.xml" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Lockable\bin\Release\netstandard1.0\Tungsten.Lockable.dll" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Lockable\bin\Release\netstandard1.0\Tungsten.Lockable.xml" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Net\bin\Release\netstandard1.3\Tungsten.Net.dll" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Net\bin\Release\netstandard1.3\Tungsten.Net.xml" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Logging\bin\Release\netstandard1.0\Tungsten.Logging.dll" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Logging\bin\Release\netstandard1.0\Tungsten.Logging.xml" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Property\bin\Release\netstandard1.0\Tungsten.Property.dll" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Property\bin\Release\netstandard1.0\Tungsten.Property.xml" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Threading\bin\Release\netstandard1.0\Tungsten.Threading.dll" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Threading\bin\Release\netstandard1.0\Tungsten.Threading.xml" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Threading.Lockers\bin\Release\netstandard1.0\Tungsten.Threading.Lockers.dll" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Threading.Lockers\bin\Release\netstandard1.0\Tungsten.Threading.Lockers.xml" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.As\bin\Release\netstandard1.3\Tungsten.As.dll" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.As\bin\Release\netstandard1.3\Tungsten.As.xml" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Console\bin\Release\netstandard1.3\Tungsten.Console.dll" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Console\bin\Release\netstandard1.3\Tungsten.Console.xml" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Encryption\bin\Release\netstandard1.3\Tungsten.Encryption.dll" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.Encryption\bin\Release\netstandard1.3\Tungsten.Encryption.xml" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.From\bin\Release\netstandard1.3\Tungsten.From.dll" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.From\bin\Release\netstandard1.3\Tungsten.From.xml" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.IO.Pipes\bin\Release\netstandard1.4\Tungsten.IO.Pipes.dll" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.IO.Pipes\bin\Release\netstandard1.4\Tungsten.IO.Pipes.xml" target="lib\netstandard1.5" />
 
-    <file src="..\..\Src\Tungsten.Net\bin\Release\net45\Tungsten.Net.dll" target="lib\net45" />
-    <file src="..\..\Src\Tungsten.Net\bin\Release\net45\Tungsten.Net.xml" target="lib\net45" />
-    <file src="..\..\Src\Tungsten.Net\bin\Release\netstandard1.5\Tungsten.Net.dll" target="lib\netstandard1.5" />
-    <file src="..\..\Src\Tungsten.Net\bin\Release\netstandard1.5\Tungsten.Net.xml" target="lib\netstandard1.5" />
+    <file src="..\..\Src\Tungsten.ArrayMethods\bin\Release\netstandard1.0\Tungsten.ArrayMethods.dll" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.ArrayMethods\bin\Release\netstandard1.0\Tungsten.ArrayMethods.xml" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.CallResult\bin\Release\netstandard1.0\Tungsten.CallResult.dll" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.CallResult\bin\Release\netstandard1.0\Tungsten.CallResult.xml" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.EventTemplate\bin\Release\netstandard1.0\Tungsten.EventTemplate.dll" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.EventTemplate\bin\Release\netstandard1.0\Tungsten.EventTemplate.xml" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.Lockable\bin\Release\netstandard1.0\Tungsten.Lockable.dll" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.Lockable\bin\Release\netstandard1.0\Tungsten.Lockable.xml" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.Logging\bin\Release\netstandard1.0\Tungsten.Logging.dll" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.Logging\bin\Release\netstandard1.0\Tungsten.Logging.xml" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.Net\bin\Release\netstandard1.3\Tungsten.Net.dll" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.Net\bin\Release\netstandard1.3\Tungsten.Net.xml" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.Property\bin\Release\netstandard1.0\Tungsten.Property.dll" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.Property\bin\Release\netstandard1.0\Tungsten.Property.xml" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.Threading\bin\Release\netstandard1.0\Tungsten.Threading.dll" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.Threading\bin\Release\netstandard1.0\Tungsten.Threading.xml" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.Threading.Lockers\bin\Release\netstandard1.0\Tungsten.Threading.Lockers.dll" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.Threading.Lockers\bin\Release\netstandard1.0\Tungsten.Threading.Lockers.xml" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.As\bin\Release\netstandard1.3\Tungsten.As.dll" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.As\bin\Release\netstandard1.3\Tungsten.As.xml" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.Console\bin\Release\netstandard1.3\Tungsten.Console.dll" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.Console\bin\Release\netstandard1.3\Tungsten.Console.xml" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.Encryption\bin\Release\netstandard1.3\Tungsten.Encryption.dll" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.Encryption\bin\Release\netstandard1.3\Tungsten.Encryption.xml" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.From\bin\Release\netstandard1.3\Tungsten.From.dll" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.From\bin\Release\netstandard1.3\Tungsten.From.xml" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.IO.Pipes\bin\Release\netstandard1.4\Tungsten.IO.Pipes.dll" target="lib\netstandard1.6" />
+    <file src="..\..\Src\Tungsten.IO.Pipes\bin\Release\netstandard1.4\Tungsten.IO.Pipes.xml" target="lib\netstandard1.6" />
+
+    <file src="..\..\Src\Tungsten.ArrayMethods\bin\Release\netstandard1.0\Tungsten.ArrayMethods.dll" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.ArrayMethods\bin\Release\netstandard1.0\Tungsten.ArrayMethods.xml" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.CallResult\bin\Release\netstandard1.0\Tungsten.CallResult.dll" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.CallResult\bin\Release\netstandard1.0\Tungsten.CallResult.xml" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.EventTemplate\bin\Release\netstandard1.0\Tungsten.EventTemplate.dll" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.EventTemplate\bin\Release\netstandard1.0\Tungsten.EventTemplate.xml" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.Lockable\bin\Release\netstandard1.0\Tungsten.Lockable.dll" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.Lockable\bin\Release\netstandard1.0\Tungsten.Lockable.xml" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.Logging\bin\Release\netstandard1.0\Tungsten.Logging.dll" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.Logging\bin\Release\netstandard1.0\Tungsten.Logging.xml" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.Net\bin\Release\netstandard2.0\Tungsten.Net.dll" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.Net\bin\Release\netstandard2.0\Tungsten.Net.xml" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.Property\bin\Release\netstandard1.0\Tungsten.Property.dll" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.Property\bin\Release\netstandard1.0\Tungsten.Property.xml" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.Threading\bin\Release\netstandard1.0\Tungsten.Threading.dll" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.Threading\bin\Release\netstandard1.0\Tungsten.Threading.xml" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.Threading.Lockers\bin\Release\netstandard1.0\Tungsten.Threading.Lockers.dll" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.Threading.Lockers\bin\Release\netstandard1.0\Tungsten.Threading.Lockers.xml" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.As\bin\Release\netstandard1.3\Tungsten.As.dll" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.As\bin\Release\netstandard1.3\Tungsten.As.xml" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.Console\bin\Release\netstandard1.3\Tungsten.Console.dll" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.Console\bin\Release\netstandard1.3\Tungsten.Console.xml" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.Encryption\bin\Release\netstandard1.3\Tungsten.Encryption.dll" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.Encryption\bin\Release\netstandard1.3\Tungsten.Encryption.xml" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.From\bin\Release\netstandard1.3\Tungsten.From.dll" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.From\bin\Release\netstandard1.3\Tungsten.From.xml" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.IO.Pipes\bin\Release\netstandard1.4\Tungsten.IO.Pipes.dll" target="lib\netstandard2.0" />
+    <file src="..\..\Src\Tungsten.IO.Pipes\bin\Release\netstandard1.4\Tungsten.IO.Pipes.xml" target="lib\netstandard2.0" />
   </files>
 </package>

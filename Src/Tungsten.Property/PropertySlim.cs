@@ -70,6 +70,15 @@ namespace W
         }
     }
 
+    //add initialValue and Action<object, TValue, TValue> onValueChanged (called in OnValueChanged) overloads
+    public abstract partial class PropertySlim<TValue>
+    {
+        public PropertySlim() : this(null) { }
+        public PropertySlim(TValue initialValue) : this(initialValue, null) { }
+        public PropertySlim(Action<object, TValue, TValue> onValueChanged) : this(default(TValue), onValueChanged) { }
+        public PropertySlim(TValue initialValue, Action<object, TValue, TValue> onValueChanged) : base(initialValue, onValueChanged) { }
+    }
+
     //root implementation
     public abstract partial class PropertySlim<TValue> : Lockable<TValue>
     {
@@ -82,7 +91,7 @@ namespace W
         /// <param name="propertyName">The name of the caller (the property being set)</param>
         protected override void SetValue(TValue value)
         {
-            InLock(oldValue =>
+            InLock(Threading.Lockers.LockTypeEnum.Write, oldValue =>
             {
                 var shouldSet = !EqualityComparer<TValue>.Default.Equals(oldValue, value);
                 if (shouldSet)
@@ -94,14 +103,5 @@ namespace W
                 }
             });
         }
-    }
-
-    //add initialValue and Action<object, TValue, TValue> onValueChanged (called in OnValueChanged) overloads
-    public abstract partial class PropertySlim<TValue>
-    {
-        public PropertySlim() : this(null) { }
-        public PropertySlim(TValue initialValue) : this(initialValue, null) { }
-        public PropertySlim(Action<object, TValue, TValue> onValueChanged) : this(default(TValue), onValueChanged) { }
-        public PropertySlim(TValue initialValue, Action<object, TValue, TValue> onValueChanged) : base(initialValue, onValueChanged) { }
     }
 }

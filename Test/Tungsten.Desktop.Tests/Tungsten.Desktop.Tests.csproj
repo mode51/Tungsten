@@ -121,7 +121,7 @@
     <Reference Include="Tungsten.ArrayMethods, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.Suite.2.0.0\lib\net45\Tungsten.ArrayMethods.dll</HintPath>
     </Reference>
-    <Reference Include="Tungsten.As, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Tungsten.As, Version=2.0.0.23, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.As.2.0.0\lib\net45\Tungsten.As.dll</HintPath>
     </Reference>
     <Reference Include="Tungsten.CallResult, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -133,14 +133,14 @@
     <Reference Include="Tungsten.Domains, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.Domains.2.0.0\lib\net45\Tungsten.Domains.dll</HintPath>
     </Reference>
-    <Reference Include="Tungsten.Encryption, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Tungsten.Encryption, Version=2.0.0.25, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.Encryption.2.0.0\lib\net45\Tungsten.Encryption.dll</HintPath>
     </Reference>
     <Reference Include="Tungsten.EventTemplate, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.Suite.2.0.0\lib\net45\Tungsten.EventTemplate.dll</HintPath>
     </Reference>
-    <Reference Include="Tungsten.From, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Tungsten.Suite.2.0.0\lib\net45\Tungsten.From.dll</HintPath>
+    <Reference Include="Tungsten.From, Version=2.0.0.21, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tungsten.From.2.0.0\lib\net45\Tungsten.From.dll</HintPath>
     </Reference>
     <Reference Include="Tungsten.IO.Pipes, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.Suite.2.0.0\lib\net45\Tungsten.IO.Pipes.dll</HintPath>
@@ -148,26 +148,26 @@
     <Reference Include="Tungsten.LiteDb, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.LiteDb.2.0.0\lib\netstandard1.4\Tungsten.LiteDb.dll</HintPath>
     </Reference>
-    <Reference Include="Tungsten.Lockable, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Tungsten.Suite.2.0.0\lib\net45\Tungsten.Lockable.dll</HintPath>
+    <Reference Include="Tungsten.Lockable, Version=2.0.1.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tungsten.Lockable.2.0.1\lib\net45\Tungsten.Lockable.dll</HintPath>
     </Reference>
-    <Reference Include="Tungsten.Logging, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Tungsten.Suite.2.0.0\lib\net45\Tungsten.Logging.dll</HintPath>
+    <Reference Include="Tungsten.Logging, Version=2.0.0.25, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tungsten.Logging.2.0.0\lib\net45\Tungsten.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="Tungsten.Net, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Tungsten.Suite.2.0.0\lib\net45\Tungsten.Net.dll</HintPath>
+    <Reference Include="Tungsten.Net, Version=2.0.0.111, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tungsten.Net.2.0.0\lib\net45\Tungsten.Net.exe</HintPath>
     </Reference>
-    <Reference Include="Tungsten.Property, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Tungsten.Suite.2.0.0\lib\net45\Tungsten.Property.dll</HintPath>
+    <Reference Include="Tungsten.Property, Version=2.0.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tungsten.Property.2.0.1\lib\net45\Tungsten.Property.dll</HintPath>
     </Reference>
     <Reference Include="Tungsten.Reflection, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.Reflection.2.0.0\lib\net45\Tungsten.Reflection.dll</HintPath>
     </Reference>
-    <Reference Include="Tungsten.Threading, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Tungsten.Suite.2.0.0\lib\net45\Tungsten.Threading.dll</HintPath>
+    <Reference Include="Tungsten.Threading, Version=2.0.0.24, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tungsten.Threading.2.0.0\lib\net45\Tungsten.Threading.dll</HintPath>
     </Reference>
-    <Reference Include="Tungsten.Threading.Lockers, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Tungsten.Suite.2.0.0\lib\net45\Tungsten.Threading.Lockers.dll</HintPath>
+    <Reference Include="Tungsten.Threading.Lockers, Version=2.0.1.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tungsten.Threading.Lockers.2.0.1\lib\net45\Tungsten.Threading.Lockers.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -192,9 +192,6 @@
     <Compile Include="..\Test Files\W\IO\Pipes\TestPipes.cs">
       <Link>W\IO\Pipes\TestPipes.cs</Link>
     </Compile>
-    <Compile Include="..\Test Files\W\LiteDb\LiteDbTests.cs">
-      <Link>W\LiteDb\LiteDbTests.cs</Link>
-    </Compile>
     <Compile Include="..\Test Files\W\LockableSlimTests.cs">
       <Link>W\LockableSlimTests.cs</Link>
     </Compile>
@@ -203,6 +200,9 @@
     </Compile>
     <Compile Include="..\Test Files\W\Net\TestNet.cs">
       <Link>W\Net\TestNet.cs</Link>
+    </Compile>
+    <Compile Include="..\Test Files\W\Net\TestRPC.cs">
+      <Link>W\Net\TestRPC.cs</Link>
     </Compile>
     <Compile Include="..\Test Files\W\Net\TestSecureTcp.cs">
       <Link>W\Net\TestSecureTcp.cs</Link>
@@ -218,9 +218,6 @@
     </Compile>
     <Compile Include="..\Test Files\W\PropertyTests.cs">
       <Link>W\PropertyTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Test Files\W\ReflectionTests.cs">
-      <Link>W\ReflectionTests.cs</Link>
     </Compile>
     <Compile Include="..\Test Files\W\RSATests.cs">
       <Link>W\RSATests.cs</Link>

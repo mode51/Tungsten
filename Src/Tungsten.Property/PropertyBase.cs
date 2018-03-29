@@ -40,7 +40,7 @@ namespace W
         /// <param name="raise">If True, raise OnPropertyChanged event and call the OnValueChanged callback</param>
         public void ResetToDefaultValue(bool raise)
         {
-            InLock(oldValue =>
+            InLock(Threading.Lockers.LockTypeEnum.Write, oldValue =>
             {
                 var shouldSet = !EqualityComparer<TValue>.Default.Equals(oldValue, DefaultValue);
                 if (shouldSet)
@@ -100,7 +100,7 @@ namespace W
         /// </summary>
         public void LoadValue(TValue value)
         {
-            InLock(() =>
+            InLock(Threading.Lockers.LockTypeEnum.Write, state =>
             {
                 State = value;
                 IsDirty = false;

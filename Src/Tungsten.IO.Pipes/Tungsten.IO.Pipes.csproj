@@ -10,8 +10,8 @@
     <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
     <PackageIconUrl>https://github.com/mode51/Tungsten/blob/master/Tungsten/Tungsten.ico</PackageIconUrl>
     <PackageTags>Tungsten.IO.Pipes Tungsten Pipe NamedPipe W C# library</PackageTags>
-    <AssemblyVersion>2.0.0.4</AssemblyVersion>
-    <FileVersion>2.0.0.6</FileVersion>
+    <AssemblyVersion>2.0.0.23</AssemblyVersion>
+    <FileVersion>2.0.0.25</FileVersion>
     <Version>2.0.0.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>

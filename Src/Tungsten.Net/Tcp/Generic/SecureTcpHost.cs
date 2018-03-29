@@ -14,13 +14,19 @@ namespace W.Net
 
                 protected override void OnBytesReceived(IClient client, byte[] bytes)
                 {
+                    //bytes should already be decrypted
                     base.OnBytesReceived(client, bytes);
                     var message = SerializationMethods.Deserialize<TMessage>(ref bytes);
                     MessageReceived?.Invoke(this, (SecureTcpClient<TMessage>)client, message);
                 }
                 public SecureTcpHost(int keySize)
                 {
-                    OnCreateServer = s => { var server = new SecureTcpClient<TMessage>(keySize); server.As<IInitialize>().Initialize(s, keySize); return server; };
+                    OnCreateServer = s => 
+                    {
+                        var server = new SecureTcpClient<TMessage>(keySize);
+                        server.As<IInitialize>().Initialize(s, keySize);
+                        return server;
+                    };
                 }
             }
         }

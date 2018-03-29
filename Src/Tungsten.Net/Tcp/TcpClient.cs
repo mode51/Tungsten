@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using W.Threading;
+using W.Logging;
 
 namespace W.Net
 {
@@ -204,6 +205,8 @@ namespace W.Net
                     _thread = ThreadMethod.Create(ThreadProc);
                     _thread.Start();
                 }
+                else
+                    Log.w("Socket Initialization Failed");
                 return result;
             }
         }

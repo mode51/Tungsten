@@ -77,7 +77,7 @@ namespace W
         /// <param name="newValue">The new value</param>
         protected override void SetValue(TValue newValue)
         {
-            InLock(oldValue => 
+            InLock(Threading.Lockers.LockTypeEnum.Write, oldValue => 
             {
                 State = newValue;
                 OnValueChanged(this, oldValue, newValue);
@@ -89,7 +89,7 @@ namespace W
         /// </summary>
         public new void Dispose()
         {
-            _isDisposed.InLock(oldValue =>
+            _isDisposed.InLock(Threading.Lockers.LockTypeEnum.Write, oldValue =>
             {
                 //if (!oldValue)
                 _mreChanged.Dispose();

@@ -7,7 +7,12 @@ namespace W.Net
         {
             public SecureTcpHost(int keySize)
             {
-                OnCreateServer = s => { var server = new SecureTcpClient(keySize); server.As<IInitialize>().Initialize(s, keySize); return server; };
+                OnCreateServer = s => 
+                {
+                    var server = new SecureTcpClient(keySize);
+                    server.As<IInitialize>().Initialize(s, keySize);
+                    return server;
+                };
             }
         }
     }

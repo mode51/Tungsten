@@ -45,9 +45,9 @@ namespace W.Net
             {
                 _disposer.Dispose(() =>
                 {
-#if NET45
+#if NET45 || NETSTANDARD2_0
                     _server.Close();
-#elif NETSTANDARD1_3 || NETSTANDARD1_5
+#elif NETSTANDARD1_3
                     _server.Dispose(); //will raise an exception in the thread method, thus terminating the thread
 #endif
                     _thread.Dispose();

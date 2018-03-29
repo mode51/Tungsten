@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using W;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+#if NET45
 using W.Reflection;
+#endif
 
 namespace W.Tests
 {
@@ -39,8 +41,12 @@ namespace W.Tests
         [TestMethod]
         public void GetAttributes()
         {
+#if NET45
             var customer = new Customer();
-            var ca = customer.get
+            var ca = customer.GetAttribute<CustomerAttribute>();
+            customer.Name = ca.Name;
+            customer.Age = ca.Value;
+#endif
         }
         [TestMethod]
         public void GetFields()

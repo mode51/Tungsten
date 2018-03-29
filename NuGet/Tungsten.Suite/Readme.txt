@@ -29,17 +29,19 @@ Tungsten.Property
 Tungsten.Threading
 Tungsten.Threading.Lockers
 
-NetStandard 1.3 (1.0 + the following)
+NetStandard 1.3 (everything in netstandard 1.0 + the following)
 Tungsten.As
 Tungsten.Console
 Tungsten.Encryption
 Tungsten.From
+Tungsten.Net
 
-NetStandard 1.4 (1.3 + the following)
+NetStandard 1.4 (everything in netstandard 1.3 + the following)
 Tungsten.IO.Pipes
 
-NetStandard 1.5 (1.4 + the following)
-Tungsten.Net
+NetStandard 1.5 (everything in netstandard 1.4)
+NetStandard 1.6 (everything in netstandard 1.4)
+NetStandard 2.0 (everything in netstandard 1.4 + W.Net.RPC Server)
 
 Thanks for using Tungsten.Suite,
 

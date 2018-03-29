@@ -11,9 +11,11 @@ namespace W.Net
         public class SecureTcpClient : TcpClient
         {
             private int _keySize;
+            private bool _isInitialized = false;
             public event Action<SecureTcpClient> SecureFailed;// { get; private set; } = new EventTemplate<SecureTcpClient>();
 
             protected AssymetricEncryption Encryption { get; private set; }
+            protected bool IsSecure => Encryption?.RemotePublicKey != null;
 
             protected override void OnSend(ref byte[] bytes)
             {
@@ -29,10 +31,10 @@ namespace W.Net
             }
             protected override bool OnInitialize(params object[] args)
             {
-                base.OnInitialize(args);
+                bool result = base.OnInitialize(args);
 
-                Encryption = new AssymetricEncryption((int)args[1]);
-                var result = Encryption.ExchangeKeys(myPublicKey =>
+                //Encryption = new AssymetricEncryption((int)args[1]);
+                result = Encryption.ExchangeKeys(myPublicKey =>
                 {
                     RSAParameters? remotePublicKey = null;
                     byte[] response;
@@ -42,6 +44,8 @@ namespace W.Net
 
                     if (remotePublicKey == null)
                         SecureFailed?.Invoke(this);
+                    else
+                        _isInitialized = true;
                     return remotePublicKey;
                 });
                 return result;
@@ -53,6 +57,7 @@ namespace W.Net
             public SecureTcpClient(int keySize)
             {
                 _keySize = keySize;
+                Encryption = new AssymetricEncryption(_keySize); //create the RSA keys here
             }
         }
     }

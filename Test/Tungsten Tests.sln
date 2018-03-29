@@ -38,13 +38,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net", "Net", "{7949A7C6-C816-4CD2-A303-CCF16C06AD32}"
 	ProjectSection(SolutionItems) = preProject
 		Test Files\W\Net\TestNet.cs = Test Files\W\Net\TestNet.cs
+		Test Files\W\Net\TestRPC.cs = Test Files\W\Net\TestRPC.cs
 		Test Files\W\Net\TestSecureNet.cs = Test Files\W\Net\TestSecureNet.cs
 		Test Files\W\Net\TestUdp.cs = Test Files\W\Net\TestUdp.cs
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LiteDb", "LiteDb", "{509C7A56-C0CE-46A2-8ADE-5E046517C5AB}"
-	ProjectSection(SolutionItems) = preProject
-		Test Files\W\LiteDb\LiteDbTests.cs = Test Files\W\LiteDb\LiteDbTests.cs
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pipes", "Pipes", "{FBC9331C-AE9D-4C2A-A017-6F4259247DAA}"
@@ -80,7 +76,6 @@ Global
 		{1B2050CD-F601-4D8C-B4AC-C5BABF6F69E4} = {666A9D7F-6144-459B-8B1A-EA7A05346FCB}
 		{1B09A8C4-BBDF-4F9D-8D9C-1E9E92711689} = {666A9D7F-6144-459B-8B1A-EA7A05346FCB}
 		{7949A7C6-C816-4CD2-A303-CCF16C06AD32} = {666A9D7F-6144-459B-8B1A-EA7A05346FCB}
-		{509C7A56-C0CE-46A2-8ADE-5E046517C5AB} = {666A9D7F-6144-459B-8B1A-EA7A05346FCB}
 		{FBC9331C-AE9D-4C2A-A017-6F4259247DAA} = {1B2050CD-F601-4D8C-B4AC-C5BABF6F69E4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

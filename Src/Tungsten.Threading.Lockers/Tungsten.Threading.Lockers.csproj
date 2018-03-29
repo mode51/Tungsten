@@ -15,11 +15,11 @@
     <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</PackageIconUrl>
     <RepositoryType></RepositoryType>
     <PackageTags>Tungsten.Threading.Lockers Tungsten W C# library</PackageTags>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
     <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
-    <AssemblyVersion>2.0.0.6</AssemblyVersion>
-    <FileVersion>2.0.0.4</FileVersion>
+    <AssemblyVersion>2.0.1.4</AssemblyVersion>
+    <FileVersion>2.0.1.4</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

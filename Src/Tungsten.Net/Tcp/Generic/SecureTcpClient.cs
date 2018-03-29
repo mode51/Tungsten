@@ -17,7 +17,9 @@ namespace W.Net
                 }
                 public void Write(TMessage message)
                 {
-                    base.Write(SerializationMethods.Serialize(message).AsBytes());
+                    var bytes = SerializationMethods.Serialize(message).AsBytes();
+                    //base.OnSend(ref bytes);
+                    Write(bytes);
                 }
                 public SecureTcpClient(int keySize) : base(keySize) { }
             }

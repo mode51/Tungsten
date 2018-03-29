@@ -1,5 +1,6 @@
 ﻿using System;
 
+#if !NETSTANDARD1_3 // NET45 || NETSTANDARD2_0
 namespace W.Net.RPC
 {
     /// <summary>
@@ -10,3 +11,4 @@ namespace W.Net.RPC
     {
     }
 }
+#endif

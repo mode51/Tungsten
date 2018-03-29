@@ -64,7 +64,7 @@ namespace W.Encryption
                 bytes = message.AsBytes();
                 result = true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 System.Diagnostics.Debugger.Break();
             }
@@ -84,8 +84,9 @@ namespace W.Encryption
                 bytes = message.AsBytes();
                 result = true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                //Log.e(e);
                 System.Diagnostics.Debugger.Break();
             }
             return result;

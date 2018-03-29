@@ -71,6 +71,7 @@ namespace W.Net.RPC
     public class Client : IDisposable
     {
         private Tcp.Generic.SecureTcpClient<RPCMessage> _client;// = new Tcp.Generic.SecureTcpClient<Message>(2048);
+        private int _keySize;
 
         /// <summary>
         /// The IPEndPoint of the server (The server must be a valid instance of W.Net.RPC.Server)
@@ -93,25 +94,53 @@ namespace W.Net.RPC
                 rpcMessage.Parameters.AddRange(args);
             if (rpcMessage.Id == Guid.Empty)
                 rpcMessage.Id = Guid.NewGuid();
-            rpcMessage.ExpireDateTime = DateTime.Now.AddMilliseconds(10000); //10 second expiration
+            //rpcMessage.ExpireDateTime = DateTime.Now.AddMilliseconds(30000); //10 second expiration
 
             //Log.i("W.Net.RPC: Attempting to call {0} with {1} parameters", methodName, args?.Length);
             try
             {
-                if (_client.Socket.SendAndWaitForResponse(ref rpcMessage, out RPCMessage response, CallTimeout))
+                //can't use the SocketExtensions because they don't go go through encryption
+                _client.MessageReceived += _client_MessageReceived;
+                _response = null;
+                _client.Write(rpcMessage);
+                _mreResponseReceived.Reset();
+                if (_mreResponseReceived.Wait(CallTimeout))
                 {
-                    rpcMessage.Response = response;
+                    rpcMessage.Exception = _response.Exception;
+                    rpcMessage.Response = _response.Response;
                     result = true;
                 }
                 else
+                {
                     exception = new Exception("Call timed out");
+                }
+
+                //if (_client.Socket.SendAndWaitForResponse(ref rpcMessage, out RPCMessage response, CallTimeout))
+                //{
+                //    rpcMessage.Response = response;
+                //    result = true;
+                //}
+                //else
+                //    exception = new Exception("Call timed out");
             }
             catch (Exception e)
             {
                 exception = e;
             }
+            finally
+            {
+                _client.MessageReceived -= _client_MessageReceived;
+            }
             return result;
         }
+        private ManualResetEventSlim _mreResponseReceived = new ManualResetEventSlim(false);
+        private RPCMessage _response;
+        private void _client_MessageReceived(Tcp.Generic.SecureTcpClient<RPCMessage> client, RPCMessage response)
+        {
+            _response = response;
+            _mreResponseReceived.Set();
+        }
+
         private void GetResult<TResponseType>(ref RPCResponse<TResponseType> result, object response, string exception)
         {
             try
@@ -127,7 +156,8 @@ namespace W.Net.RPC
                 else if (response is Int64 && typeof(TResponseType) == typeof(Int32))
                     result.Response = (TResponseType)Convert.ChangeType(response, typeof(TResponseType));
 
-                result.Exception = exception;
+                if (string.IsNullOrEmpty(result.Exception))
+                    result.Exception = exception;
             }
             catch (Exception e)
             {
@@ -194,14 +224,17 @@ namespace W.Net.RPC
             try
             {
                 //make sure we're connected
-                if (!_client?.Socket.Connected ?? true)
+                if (!_client?.Socket?.Connected ?? true)
                 {
                     if (RemoteEndPoint == null)
                     {
                         response.Exception = "Server IPEndPoint has not been specified";
                         return response;
                     }
+                    if (_client == null)
+                        _client = new Tcp.Generic.SecureTcpClient<RPCMessage>(_keySize);
                     _client.Connect(RemoteEndPoint);
+                    if (!_client.Socket?.Connected ?? true)
                     {
                         response.Exception = "Failed to connect to the server";
                         return response;
@@ -242,15 +275,21 @@ namespace W.Net.RPC
         /// <summary>
         /// Constructs a new Client
         /// </summary>
-        public Client()
+        /// <param name="encryptionKeySize">The encryption key size (typically 2048 or 4096; 384 to 16384 in increments of 8)</param>
+        public Client(int encryptionKeySize)
         {
+            _keySize = encryptionKeySize;
             CallTimeout = -1;
         }
         /// <summary>
         /// Constructs a new Client, initialized with the specified values
         /// </summary>
-        public Client(IPEndPoint remoteEndPoint, int msCallTimeout = -1)
+        /// <param name="remoteEndPoint">The server's IP address and port</param>
+        /// <param name="encryptionKeySize">The encryption key size (typically 2048 or 4096; 384 to 16384 in increments of 8)</param>
+        /// <param name="msCallTimeout">The maximum number of milliseconds to wait for a call to complete</param>
+        public Client(IPEndPoint remoteEndPoint, int encryptionKeySize, int msCallTimeout = -1)
         {
+            _keySize = encryptionKeySize;
             RemoteEndPoint = remoteEndPoint;
             CallTimeout = msCallTimeout;
         }
