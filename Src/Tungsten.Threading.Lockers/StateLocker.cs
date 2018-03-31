@@ -11,7 +11,7 @@ namespace W.Threading.Lockers
     /// <typeparam name="TLocker">The Type of Locker to extend</typeparam>
     /// <typeparam name="TState">The Type of the internal state value</typeparam>
     /// <remarks>This class adds the state functionality by wrapping the TLocker and re-implementing the ILocker interface</remarks>
-    public class StateLocker<TLocker, TState> : IStateLocker<TLocker, TState> where TLocker : ILocker, new()
+    public abstract class StateLocker<TLocker, TState> : IStateLocker<TLocker, TState> where TLocker : ILocker, new()
     {
         /// <summary>
         /// The internal state
