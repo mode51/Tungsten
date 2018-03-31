@@ -373,7 +373,7 @@ namespace W.IO.Pipes
                     Helpers.DisconnectAndDispose(Stream);
                 });
                 RaiseDisconnected(); //causes a recursive call to Dispose
-                StreamLock.Dispose();
+                StreamLock?.Dispose();
                 StreamLock = null;
             });
         }

@@ -24,7 +24,7 @@ namespace W.IO.Pipes
             }
             catch (ObjectDisposedException) //disconnected
             {
-                pipe.Disconnect();
+                pipe?.Disconnect();
                 mre?.Set();
             }
             catch
@@ -63,7 +63,7 @@ namespace W.IO.Pipes
 #endif
             catch (ObjectDisposedException) //disconnected
             {
-                pipe.Disconnect();
+                pipe?.Disconnect();
                 mre?.Set();
             }
             catch
@@ -92,7 +92,7 @@ namespace W.IO.Pipes
             }
             catch (ObjectDisposedException) //disconnected
             {
-                pipe.Disconnect();
+                pipe?.Disconnect();
                 mre?.Set();
             }
             catch
@@ -122,7 +122,7 @@ namespace W.IO.Pipes
             }
             catch (ObjectDisposedException) //disconnected
             {
-                pipe.Disconnect();
+                pipe?.Disconnect();
                 mre?.Set();
             }
             catch
@@ -154,7 +154,7 @@ namespace W.IO.Pipes
             }
             catch (ObjectDisposedException) //disconnected
             {
-                pipe.Disconnect();
+                pipe?.Disconnect();
                 mre?.Set();
             }
             catch
@@ -183,7 +183,7 @@ namespace W.IO.Pipes
             }
             catch (ObjectDisposedException) //disconnected
             {
-                pipe.Disconnect();
+                pipe?.Disconnect();
                 mre?.Set();
             }
             catch

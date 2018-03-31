@@ -147,6 +147,7 @@ namespace W.IO.Pipes
 #endif
                 stream?.Dispose();
             }
+            catch (ObjectDisposedException) { }
             catch { }
         }
         /// <summary>
@@ -164,6 +165,7 @@ namespace W.IO.Pipes
 #endif
                 stream?.Dispose();
             }
+            catch (ObjectDisposedException) { }
             catch { }
         }
         /// <summary>

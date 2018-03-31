@@ -27,6 +27,10 @@ namespace W.IO.Pipes
                         BytesReceived?.Invoke(this, bytes);
                 }
             }
+            catch (ObjectDisposedException)
+            {
+                //ignore
+            }
 #if NET45
             catch (System.Threading.ThreadAbortException)
             {
@@ -51,8 +55,9 @@ namespace W.IO.Pipes
         /// <param name="pipeName">The name of the pipe to create.  The name must follow typical Named Pipe naming rules.</param>
         /// <param name="maxConnections">The maximum number of connections.  This is often limited by your platform.</param>
         /// <param name="useCompression">If True, data will be compressed before sending and decompressed upon reception</param>
+        /// <param name="onConnected">Action to call after a client has connected to the server</param>
         /// <returns>A CallResult instance containing success or failure of the call, an exception if one occurred and the resulting PipeServer.  Note that if the call fails, the Result member will be null.</returns>
-        public static CallResult<PipeServer> CreateServer(string pipeName, int maxConnections, bool useCompression)
+        public static CallResult<PipeServer> CreateServer(string pipeName, int maxConnections, bool useCompression, Action<PipeServer> onConnected = null)
         {
             var result = new CallResult<PipeServer>();
             Helpers.CreateServer(pipeName, maxConnections, s =>
@@ -61,6 +66,7 @@ namespace W.IO.Pipes
             }, s =>
             {
                 result.Result.Listen();
+                onConnected?.Invoke(result.Result);
             });
             return result;
         }
@@ -90,6 +96,10 @@ namespace W.IO.Pipes
                         MessageReceived?.Invoke(this, bytes);
                 }
             }
+            catch (ObjectDisposedException)
+            {
+                //ignore
+            }
             finally
             {
                 RaiseDisconnected();
@@ -109,8 +119,9 @@ namespace W.IO.Pipes
         /// <param name="pipeName">The name of the pipe to create.  The name must follow typical Named Pipe naming rules.</param>
         /// <param name="maxConnections">The maximum number of connections.  This is often limited by your platform.</param>
         /// <param name="useCompression">If True, data will be compressed before sending and decompressed upon reception</param>
+        /// <param name="onConnected">Action to call after a client has connected to the server</param>
         /// <returns>A CallResult containing success or failure of the call, an exception if one occurred and the resulting PipeServer.  Note that if the call fails, the Result member will be null.</returns>
-        public static CallResult<PipeServer<TType>> CreateServer(string pipeName, int maxConnections, bool useCompression)
+        public static CallResult<PipeServer<TType>> CreateServer(string pipeName, int maxConnections, bool useCompression, Action<PipeServer<TType>> onConnected = null)
         {
             var result = new CallResult<PipeServer<TType>>();
             Helpers.CreateServer(pipeName, maxConnections, s =>
@@ -119,6 +130,7 @@ namespace W.IO.Pipes
             }, s =>
             {
                 result.Result.Listen();
+                onConnected?.Invoke(result.Result);
             });
             return result;
         }

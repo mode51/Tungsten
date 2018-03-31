@@ -4,8 +4,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.Threading.Tasks;
 using W.Threading;
 using W.Logging;
+using W;
 
 namespace W.Net
 {
@@ -180,6 +182,58 @@ namespace W.Net
             }
 
             public void Write(byte[] bytes) { OnSend(ref bytes); }
+
+            //private class CRequest : IDisposable
+            //{
+            //    private ManualResetEventSlim _mre = new ManualResetEventSlim(false);
+            //    private object _locker = new object();
+            //    private TcpClient _client;
+            //    private byte[] _response = null;
+
+            //    public bool TimedOut { get; private set; } = false;
+
+            //    public async Task<byte[]> RequestAsync(byte[] bytes, int msTimeout)
+            //    {
+            //        return await Task.Run(() =>
+            //        {
+            //            try
+            //            {
+            //                _client.BytesReceived += _client_BytesReceived;
+            //                _client.Write(bytes);
+            //                TimedOut = !_mre.Wait(msTimeout);
+            //            }
+            //            catch
+            //            {
+            //            }
+            //            finally
+            //            {
+            //                _client.BytesReceived -= _client_BytesReceived;
+            //            }
+            //            return _response;
+            //        });
+            //    }
+
+            //    private void _client_BytesReceived(IClient client, byte[] response)
+            //    {
+            //        lock (_locker)
+            //        {
+            //            _response = response;
+            //            _mre?.Set();
+            //        }
+            //    }
+            //    public void Dispose()
+            //    {
+            //        lock (_locker)
+            //        {
+            //            _mre?.Dispose();
+            //            _mre = null;
+            //        }
+            //    }
+            //    public CRequest(TcpClient client)
+            //    {
+            //        _client = client;
+            //    }
+            //}
             public void Connect(IPEndPoint ep)
             {
                 OnConnect(ep);
@@ -191,8 +245,8 @@ namespace W.Net
             public virtual void Dispose()
             {
                 Disconnect(true, true); //may already be disconnected, but make sure
-                //Log.i(IsServerSide ? "Server" : "Client" + " Disposed");
-                //_socketLocker = null;
+                                        //Log.i(IsServerSide ? "Server" : "Client" + " Disposed");
+                                        //_socketLocker = null;
             }
 
             bool IInitialize.Initialize(params object[] args)

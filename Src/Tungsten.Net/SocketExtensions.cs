@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Net.Sockets;
 
+//3.30.2018 - these need to be internal because they extend Socket, not W.Net.TcpClient/Host, etc (and therefore cause concurrency blocks)
+//          - and there's really no need to make them public
+
 namespace W.Net
 {
     /// <summary>
     /// Helper methods for System.Net.Sockets.Socket
     /// </summary>
-    public static class SocketExtensions
+    internal static class SocketExtensions
     {
         /// <summary>
         /// Closes the socket and disposes it
@@ -18,8 +21,8 @@ namespace W.Net
             {
                 socket?.Shutdown(SocketShutdown.Both);
 #if NET45
-            if (socket?.Connected ?? false)
-                socket?.Disconnect(true);
+                if (socket?.Connected ?? false)
+                    socket?.Disconnect(true);
 #endif
                 socket?.Dispose();
             }
@@ -356,13 +359,13 @@ namespace W.Net
             return true;
         }
     }
-    public enum HeaderTypeEnum : Int32
+    internal enum HeaderTypeEnum : Int32
     {
         Disconnect = 0,
         KeepAlive = 1,
         Data = 2
     }
-    public static class SocketExtensions2
+    internal static class SocketExtensions2
     {
         /// <summary>
         /// Read and Int32 value from the socket

@@ -9,6 +9,7 @@ namespace W.IO.Pipes
     /// </summary>
     public class PipeHost : IDisposable
     {
+        private bool _raiseEvents = true;
         private object _serversLock = new object();
         private List<PipeServer> _servers = new List<PipeServer>();
         private LockableSlim<bool> _okToListen = new LockableSlim<bool>(true);
@@ -31,13 +32,14 @@ namespace W.IO.Pipes
 
         private PipeServer AddAServer(string pipeName, int maxConnections, bool useCompression)
         {
-            var result = PipeServer.CreateServer(pipeName, maxConnections, useCompression);
+            var result = PipeServer.CreateServer(pipeName, maxConnections, useCompression, s => { if (_raiseEvents) Connected?.Invoke(s); });
             lock (_serversLock)
                 _servers.Add(result.Result);
-            Connected?.Invoke(result.Result);
+            //Connected?.Invoke(result.Result);
             result.Result.BytesReceived += (s, bytes) =>
             {
-                BytesReceived?.Invoke(s, bytes);
+                if (_raiseEvents)
+                    BytesReceived?.Invoke(s, bytes);
             };
             result.Result.Disconnected += Handle_Disconnected;
             return result.Result;
@@ -73,6 +75,7 @@ namespace W.IO.Pipes
         /// <param name="useCompression">If True, data will be compressed before sending and decompressed upon reception</param>
         public void Start(string pipeName, int maxConnections, bool useCompression)
         {
+            _raiseEvents = true;
             _pipeName = pipeName;
             _maxConnections = maxConnections;
             _useCompression = useCompression;
@@ -101,12 +104,18 @@ namespace W.IO.Pipes
         public void Stop()
         {
             _okToListen.Value = false;
+            _raiseEvents = false;
             lock (_serversLock)
             {
                 //Close each server and remove it
                 for (int t = _servers.Count - 1; t >= 0; t--)
                 {
-                    RemoveServer(_servers[t]);
+                    //connect and immediately disconnect a client to each waiting server stream (disconnecting will automatically remove it)
+                    using (var npcs = new System.IO.Pipes.NamedPipeClientStream(_pipeName))
+                    {
+                        npcs.Connect();
+                    }
+                    //RemoveServer(_servers[t]);
                 }
             }
             _okToListen.Value = true;
@@ -126,6 +135,7 @@ namespace W.IO.Pipes
     /// </summary>
     public class PipeHost<TType> : IDisposable where TType : class
     {
+        private bool _raiseEvents = true;
         private object _serversLock = new object();
         private List<PipeServer<TType>> _servers = new List<PipeServer<TType>>();
         private LockableSlim<bool> _okToListen = new LockableSlim<bool>(true);
@@ -154,7 +164,7 @@ namespace W.IO.Pipes
         }
         private PipeServer<TType> AddAServer(string pipeName, int maxConnections, bool useCompression)
         {
-            var result = PipeServer<TType>.CreateServer(pipeName, maxConnections, useCompression);
+            var result = PipeServer<TType>.CreateServer(pipeName, maxConnections, useCompression, s => { if (_raiseEvents) Connected?.Invoke(s); });
             lock (_serversLock)
                 _servers.Add(result.Result);
             //Connected?.Invoke(result.Result);
@@ -179,7 +189,8 @@ namespace W.IO.Pipes
             }
             lock (_serversLock)
                 _servers.Remove(server);
-            Disconnected?.Invoke(server);
+            if (_raiseEvents)
+                Disconnected?.Invoke(server);
         }
 
         /// <summary>
@@ -190,6 +201,7 @@ namespace W.IO.Pipes
         /// <param name="useCompression">If True, data will be compressed before sending and decompressed upon reception</param>
         public void Start(string pipeName, int maxConnections, bool useCompression)
         {
+            _raiseEvents = true;
             _useCompression = useCompression;
             //add the servers and have each one start listening
             for (int t = 0; t < maxConnections; t++)
@@ -216,6 +228,7 @@ namespace W.IO.Pipes
         public void Stop()
         {
             _okToListen.Value = false;
+            _raiseEvents = false;
             lock (_serversLock)
             {
                 //Close each server and remove it
