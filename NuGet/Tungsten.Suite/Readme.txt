@@ -1,4 +1,4 @@
-﻿Tungsten.Suite is a nuspec only package.  It aggregates the most common Tungsten packages into one.
+﻿Tungsten.Suite is a nuspec only package.  It aggregates the most Tungsten packages available for each framework into one package.
 
 v2.0.0
 Initial Release
