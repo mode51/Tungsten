@@ -1,11 +1,11 @@
  ### Notes:
-* #### Tungsten.Suite is currently under development.  This page is likely to undergo regular changes.
-* #### All NuGet packages, except Tungsten.Net and Tungsten.Suite, have been published
+* #### The first release of Tungsten.Suite (version 2.0 of the Tungsten library) is complete
+* #### All NuGet packages have been published
 ___
 
 The help files are built with [Sandcastle Help File Builder](https://github.com/EWSoftware/SHFB)
 
-In itself, Tungsten.Suite is not an actual code project.  Instead it is a single nuspec file which contains references to NuGet packages from most of the Tungsten projects.
+Tungsten.Suite is not an actual code project.  Instead, it is a single nuspec file which contains references to each of the Tungsten NuGet packages according to their target framework. It's the easy way to reference all the Tungsten packages at once.  Of course, you can always reference each package individually as desired.
 
 #### Projects in Tungsten.Suite
 | Project                    | Description                                                  |
