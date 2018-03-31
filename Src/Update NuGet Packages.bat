@@ -38,14 +38,15 @@
 @replace "Tungsten.From\bin\Release\*.nupkg" "..\NuGet" /A
 @replace "Tungsten.From\bin\Release\*.nupkg" "..\NuGet" /U
 
+@replace ".\Tungsten.Net\bin\Release\*.nupkg" "..\NuGet" /a
+@replace ".\Tungsten.Net\bin\Release\*.nupkg" "..\NuGet" /u
+
 
 @echo NetStandard 1.4 + net45
 @replace "Tungsten.IO.Pipes\bin\Release\*.nupkg" "..\NuGet" /A
 @replace "Tungsten.IO.Pipes\bin\Release\*.nupkg" "..\NuGet" /U
 
 @echo NetStandard 1.5 + net45
-@replace ".\Tungsten.Net\bin\Release\*.nupkg" "..\NuGet" /a
-@replace ".\Tungsten.Net\bin\Release\*.nupkg" "..\NuGet" /u
 
 
 @echo .Net Framework

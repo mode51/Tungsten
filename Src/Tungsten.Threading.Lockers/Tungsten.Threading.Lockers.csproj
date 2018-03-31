@@ -18,8 +18,8 @@
     <Version>2.0.1</Version>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
     <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
-    <AssemblyVersion>2.0.1.9</AssemblyVersion>
-    <FileVersion>2.0.1.9</FileVersion>
+    <AssemblyVersion>2.0.1.10</AssemblyVersion>
+    <FileVersion>2.0.1.10</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

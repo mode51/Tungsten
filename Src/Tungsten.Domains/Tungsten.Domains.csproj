@@ -15,8 +15,8 @@
     <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</PackageIconUrl>
     <PackageTags>Tungsten.Domains Tungsten Domains AppDomain W C# library</PackageTags>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
-    <AssemblyVersion>2.0.0.23</AssemblyVersion>
-    <FileVersion>2.0.0.25</FileVersion>
+    <AssemblyVersion>2.0.0.24</AssemblyVersion>
+    <FileVersion>2.0.0.26</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net20|AnyCPU'">
