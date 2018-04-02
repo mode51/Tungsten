@@ -14,8 +14,8 @@
     <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
     <PackageTags>Tungsten.Net Tungsten W W.Net C# library tcp sockets client server</PackageTags>
-    <AssemblyVersion>2.0.0.159</AssemblyVersion>
-    <FileVersion>2.0.0.159</FileVersion>
+    <AssemblyVersion>2.0.0.161</AssemblyVersion>
+    <FileVersion>2.0.0.161</FileVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PostBuildEvent></PostBuildEvent>
     <AssemblyName>Tungsten.Net</AssemblyName>

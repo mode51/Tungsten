@@ -12,7 +12,7 @@ namespace W.Tests
         [TestMethod]
         public void PeekStart()
         {
-            var result = ArrayMethods.Peek(complete, 0, 5);
+            var result = ArrayMethods.PeekStart(complete, 5);
             for(int t=0; t<result.Length; t++)
                 Assert.IsTrue(result[t] == complete[t]);
         }

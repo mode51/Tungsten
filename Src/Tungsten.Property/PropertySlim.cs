@@ -8,7 +8,11 @@ using System.Threading;
 namespace W
 {
     //Add INotifyPropertyChanging (shell only when not supported by the platform)
-    public abstract partial class PropertySlim<TValue>
+    /// <summary>
+    /// PropertySlim extends W.Lockable by adding support for INotifyPropertyChanged
+    /// </summary>
+    /// <typeparam name="TValue">The Type of Value</typeparam>
+    public partial class PropertySlim<TValue>
 #if !WINDOWS_PORTABLE && !NETCOREAPP1_0 && !NETSTANDARD1_0 && !NETSTANDARD1_1 && !NETSTANDARD1_2
         : INotifyPropertyChanging
 #endif
@@ -44,7 +48,7 @@ namespace W
     }
 
     //add INotifyPropertyChanged support
-    public abstract partial class PropertySlim<TValue> : INotifyPropertyChanged
+    public partial class PropertySlim<TValue> : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
@@ -71,16 +75,32 @@ namespace W
     }
 
     //add initialValue and Action<object, TValue, TValue> onValueChanged (called in OnValueChanged) overloads
-    public abstract partial class PropertySlim<TValue>
+    public partial class PropertySlim<TValue>
     {
+        /// <summary>
+        /// Construct a new PropertySlim with a default initial value
+        /// </summary>
         public PropertySlim() : this(null) { }
+        /// <summary>
+        /// Concstruct a new PropertySlim
+        /// </summary>
+        /// <param name="initialValue">The initial value</param>
         public PropertySlim(TValue initialValue) : this(initialValue, null) { }
+        /// <summary>
+        /// Concstruct a new PropertySlim
+        /// </summary>
+        /// <param name="onValueChanged">Called when the value is changed</param>
         public PropertySlim(Action<object, TValue, TValue> onValueChanged) : this(default(TValue), onValueChanged) { }
+        /// <summary>
+        /// Concstruct a new PropertySlim
+        /// </summary>
+        /// <param name="initialValue">The initial value</param>
+        /// <param name="onValueChanged">Called when the value is changed</param>
         public PropertySlim(TValue initialValue, Action<object, TValue, TValue> onValueChanged) : base(initialValue, onValueChanged) { }
     }
 
     //root implementation
-    public abstract partial class PropertySlim<TValue> : Lockable<TValue>
+    public partial class PropertySlim<TValue> : Lockable<TValue>
     {
         /// <summary>
         /// <para>
