@@ -11,7 +11,7 @@ Tungsten.Suite is not an actual code project.  Instead, it is a single nuspec fi
 | Project                    | Description                                                  |
 | -------------------------- | ------------------------------------------------------------ |
 | Tungsten.ArrayMethods      | Provides additional functionality for arrays (Peek, Take, Trim, Append, Insert) |
-| Tungsten.As                | A class which can be used as a return value to specify a success/fail, an exception if on occurred, and a result |
+| Tungsten.As                | Several conversion extension methods AsBytes, AsString, AsCompressed, AsBase64 |
 | Tungsten.CallResult        | A class which can be used as a return value to specify a success/fail, an exception if on occurred, and a result |
 | Tungsten.Console           | Provides several string extension methods to send strings to the console |
 | Tungsten.EventTemplate     | A class which makes exposing and raising an event somewhat easier |
