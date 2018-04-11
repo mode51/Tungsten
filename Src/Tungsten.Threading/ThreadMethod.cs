@@ -16,8 +16,9 @@ namespace W.Threading
         private CancellationTokenSource _ctsCancel = null;
         private ThreadMethodDelegate _action = null;
         private object _runLock = new object();
-        private ManualResetEventSlim _mreIsComplete = new ManualResetEventSlim(false);
         private volatile bool _isStarted = false;
+        private volatile bool _isComplete = false;
+        private object _stateChangeLock = new object();
         private object[] _args = null;
         //private volatile bool _isDisposed = false;
         //private Lockers.MonitorLocker _locker = new Lockers.MonitorLocker();
@@ -26,20 +27,25 @@ namespace W.Threading
         {
             try
             {
-                _isStarted = true;
-                _action.Invoke(_ctsCancel.Token, _args);
+                if (_action != null)
+                    _action(_ctsCancel.Token, _args);
             }
             finally
             {
-                _mreIsComplete.Set();
-                _isStarted = false;
+                lock (_stateChangeLock)
+                {
+                    IsStarted = false;
+                    IsComplete = true;
+                }
             }
         }
         private void Initialize()
         {
-            _mreIsComplete.Reset();
             _ctsForceCancel = new CancellationTokenSource();
             _ctsCancel = new CancellationTokenSource();
+//#if NET45
+//            _runTask?.Dispose();
+//#endif
             _runTask = new Task(RunTheMethod, _ctsForceCancel.Token, TaskCreationOptions.LongRunning);
         }
     }
@@ -59,30 +65,45 @@ namespace W.Threading
         /// <summary>
         /// True if the thread  is running or has completed
         /// </summary>
-        public bool IsStarted => _isStarted;
+        private bool IsStarted { get { lock (_stateChangeLock) return _isStarted; } set { lock (_stateChangeLock) _isStarted = value; } }
         /// <summary>
         /// True if the thread is currently running and not complete, otherwise False
         /// </summary>
-        public bool IsRunning // => _isStarted && !_mreIsComplete.IsSet;
-        {
-            get
-            {
-                try { return _isStarted && !_mreIsComplete.IsSet; }
-                catch { return false; }
-            }
-        }
+        private bool IsRunning { get { lock (_stateChangeLock) return _isStarted && !_isComplete; } }
         /// <summary>
         /// True if the thread has completed, otherwise False
         /// </summary>
-        public bool IsComplete
-        {
-            get
-            {
-                try { return _mreIsComplete.IsSet; }
-                catch { return true; }
-            }
-        }
+        public bool IsComplete { get { lock (_stateChangeLock) return _isComplete; } private set { lock (_stateChangeLock) _isComplete = value; } }
 
+        /// <summary>
+        /// Waits a specified number of milliseconds for the thread to complete
+        /// </summary>
+        /// <param name="msTimeout">The number of milliseconds to wait for the thread to complete.  A value of -1 indicates an infinite wait period.</param>
+        /// <returns>True if the thread completes within the timeout period, otherwise False</returns>
+        public bool Wait(int msTimeout = -1)
+        {
+            return System.Threading.SpinWait.SpinUntil(() => IsComplete == true, msTimeout);
+            //if (msTimeout == -1)
+            //{
+            //    while(!_isComplete)
+            //        W.Threading.Thread.Sleep(1);
+            //}
+            //else
+            //{
+            //    var sw = System.Diagnostics.Stopwatch.StartNew();
+            //    while (true)
+            //    {
+            //        sw.Stop();
+            //        if (_isComplete)
+            //            break;
+            //        if (sw.ElapsedMilliseconds > msTimeout)
+            //            return false;
+            //        sw.Start();
+            //        W.Threading.Thread.Sleep(1);
+            //    }
+            //}
+            //return _isComplete;
+        }
         /// <summary>
         /// Starts the thread
         /// </summary>
@@ -91,7 +112,21 @@ namespace W.Threading
         /// Starts the thread
         /// </summary>
         /// <param name="args">The arguments to pass into the thread procedure</param>
-        public void Start(params object[] args) { lock (_runLock) { _args = args; if (_isStarted) return; Initialize(); _runTask.Start(); } }
+        public void Start(params object[] args)
+        {
+            lock (_runLock)
+            {
+                if (IsRunning)
+                    return;
+                _runTask?.Wait(_ctsCancel.Token);
+                _args = args;
+                Initialize();
+
+                IsComplete = false;
+                _runTask.Start();
+                IsStarted = true;
+            }
+        }
         /// <summary>
         /// Signals the thread method via the CancellationToken to stop running and waits for it to complete
         /// </summary>
@@ -102,12 +137,9 @@ namespace W.Threading
         public void Dispose()
         {
             _ctsCancel?.Cancel();
-            if (!_mreIsComplete.Wait(1000))
+            if (!System.Threading.SpinWait.SpinUntil(() => IsComplete == true, 1000))
                 _ctsForceCancel?.Cancel();
-            //if (!_mreIsComplete.Wait(1000))
-            //    Log.w("ThreadMethod.Dispose: Unable to stop the thread");
             _ctsCancel?.Dispose();
-            _mreIsComplete.Dispose();
         }
         /// <summary>
         /// Constructs a new ThreadMethod
