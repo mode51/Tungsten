@@ -12,6 +12,12 @@ namespace W.Threading.Lockers
     public class Disposer
     {
         private SpinLocker<bool> _locker = new SpinLocker<bool>();
+        private volatile bool _isDisposing = false;
+
+        /// <summary>
+        /// True if the Disposer is in the process of disposing, otherwise False
+        /// </summary>
+        public bool IsDisposing { get { return _isDisposing; } }
 
         /// <summary>
         /// True if Cleanup has been called and completed, otherwise False
@@ -34,10 +40,12 @@ namespace W.Threading.Lockers
         {
             _locker.InLock(isDisposed =>
             {
-                if (!isDisposed)
+                if (!isDisposed && !_isDisposing)
                 {
+                    _isDisposing = true;
                     cleanupAction.Invoke();
                     GC.SuppressFinalize(objToSupressFinalize);
+                    _isDisposing = false;
                 }
                 return true;
             });

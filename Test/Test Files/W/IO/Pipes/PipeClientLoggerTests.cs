@@ -96,7 +96,7 @@ namespace W.Tests
             Log.LogTheMessage += message => { System.Diagnostics.Debug.WriteLine(message); };
             var mreContinue = new ManualResetEventSlim(false);
             var pipeLoggerName = PipeName;
-            void ReceiveBytes(PipeServer server, byte[] bytes)
+            void MessageReceived(PipeHost<byte[]> host, Pipe server, byte[] bytes)
             {
                 Console.WriteLine("Received bytes: " + bytes.AsString());
                 mreContinue.Set();
@@ -117,11 +117,11 @@ namespace W.Tests
             pipeLoggerName = PipeName;
             using (var host = new PipeHost())
             {
-                host.BytesReceived += ReceiveBytes;
+                host.MessageReceived += MessageReceived;
 
                 Assert.IsNotNull(host);
                 Console.WriteLine("Host Created");
-                host.Start(pipeLoggerName, 20, false);
+                host.Start(pipeLoggerName, 20);
                 Console.WriteLine("Host Started");
 
                 W.Logging.Log.LogTheMessage += LogTheMessage;
@@ -137,7 +137,7 @@ namespace W.Tests
             Log.LogTheMessage += message => { System.Diagnostics.Debug.WriteLine(message); };
             var mreContinue = new ManualResetEventSlim(false);
             var pipeLoggerName = PipeName;
-            void ReceiveBytes(PipeServer server, byte[] bytes)
+            void ReceiveBytes(PipeHost<byte[]> host, Pipe server, byte[] bytes)
             {
                 Console.WriteLine("Received bytes: " + bytes.AsString());
                 mreContinue.Set();
@@ -158,10 +158,10 @@ namespace W.Tests
             pipeLoggerName = PipeName;
             using (var host = new PipeHost())
             {
-                host.BytesReceived += ReceiveBytes;
+                host.MessageReceived += ReceiveBytes;
                 Assert.IsNotNull(host);
                 Console.WriteLine("Host Created");
-                host.Start(pipeLoggerName, 20, false);
+                host.Start(pipeLoggerName, 20);
                 Console.WriteLine("Host Started");
 
                 W.Logging.Log.LogTheMessage += LogTheMessage;
@@ -176,8 +176,8 @@ namespace W.Tests
         {
             Log.LogTheMessage += message => { System.Diagnostics.Debug.WriteLine(message); };
             var mreContinue = new ManualResetEventSlim(false);
-            var pipeLoggerName = PipeName;
-            void ReceiveBytes(PipeServer server, byte[] bytes)
+            var pipeLoggerName = PipeName + "A";
+            void ReceiveBytes(PipeHost<byte[]> host, Pipe server, byte[] bytes)
             {
                 Console.WriteLine("Received bytes: " + bytes.AsString());
                 mreContinue.Set();
@@ -201,13 +201,13 @@ namespace W.Tests
                     Assert.IsTrue(success, $"Failed on {t}");
                 }
             }
-            pipeLoggerName = PipeName;
+            pipeLoggerName = PipeName + "A";
             using (var host = new PipeHost())
             {
-                host.BytesReceived += ReceiveBytes;
+                host.MessageReceived += ReceiveBytes;
                 Assert.IsNotNull(host);
                 Console.WriteLine("Host Created");
-                host.Start(pipeLoggerName, 20, false);
+                host.Start(pipeLoggerName, 20);
                 Console.WriteLine("Host Started");
 
                 W.Logging.Log.LogTheMessage += LogTheMessage;

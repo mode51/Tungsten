@@ -27,7 +27,7 @@ namespace W.IO.Pipes
         }
         public async Task CreateClient()
         {
-            var client = PipeClient.Create(".", "PipeName", 5000)?.Result;
+            var client = PipeClient.CreateClient(".", "PipeName", 5000)?.Result;
             if (client != null)
             {
                 //make a request
@@ -54,7 +54,7 @@ namespace W.IO.Pipes
         public void CreateClientTyped()
         {
             //NOTE:  The server must be of type EasyPipeHost<Message>
-            var client = PipeClient.Create(".", "PipeName", 5000)?.Result;
+            var client = PipeClient.CreateClient(".", "PipeName", 5000)?.Result;
             if (client != null)
             {
                 //make a request

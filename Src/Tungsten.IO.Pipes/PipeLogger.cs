@@ -14,36 +14,49 @@ namespace W.IO.Pipes
     {
         private static string _serverName = string.Empty;
         private static string _pipeName = string.Empty;
+        private static W.Lockable<PipeClient> _pipeClient = new Lockable<PipeClient>();
+
         /// <summary>
         /// The named pipe client used to send log messages
         /// </summary>
-        public static PipeClient PipeClient { get; set; }
+        public static PipeClient PipeClient => _pipeClient.Value;
         private static PipeClient GetInstance(string serverName, string pipeName, bool addTimestamp = true)
         {
             try
             {
-                if (PipeClient != null && (serverName != _serverName || _pipeName != pipeName))
+                _pipeClient.InLock(Threading.Lockers.LockTypeEnum.Write, client => 
                 {
-                    PipeClient?.Dispose();
-                    PipeClient = null;
-                }
-                if (PipeClient != null && !PipeClient.Stream.IsConnected)
-                {
-                    PipeClient.Dispose();
-                    PipeClient = null;
-                }
-                if (PipeClient == null)
-                {
-                    _serverName = serverName;
-                    _pipeName = pipeName;
-                    PipeClient = PipeClient.Create(serverName, pipeName, 5000).Result ?? null;
-                }
+                    if (client != null && (serverName != _serverName || _pipeName != pipeName))
+                    {
+                        client.Dispose();
+                        client = null;
+                    }
+                    if (client != null && (client.Stream?.IsConnected == false))
+                    {
+                        client?.Dispose();
+                        client = null;
+                    }
+                    if (client == null)
+                    {
+                        _serverName = serverName;
+                        _pipeName = pipeName;
+                        client = new PipeClient();
+                        client.Connect(serverName, pipeName, System.Security.Principal.TokenImpersonationLevel.Impersonation, 1000);
+                        _pipeClient.SetState(client);
+                    }
+                });
             }
             catch (Exception e)
             {
                 Log.e(e);
-                PipeClient = null;
+                _pipeClient.Value?.Dispose();
+                _pipeClient.Value = null;
             }
+#if NET45
+            AppDomain.CurrentDomain.DomainUnload += (o, e) => { _pipeClient?.Value?.Dispose(); _pipeClient?.Dispose(); _pipeClient = null; };
+#elif NETSTANDARD1_4
+            //AppDomain.CurrentDomain.DomainUnload += (o, e) => { _pipeClient?.Value?.Dispose(); _pipeClient?.Dispose(); _pipeClient = null; };
+#endif
             return PipeClient;
         }
 
@@ -60,8 +73,8 @@ namespace W.IO.Pipes
             {
                 try
                 {
-                    instance?.PostAsync(message.AsBytes(), false).Wait();
-                    //PipeClient.PostAsync(server, pipeName, message.AsBytes(), false, 100).Wait();
+                    //instance?.WriteAsync(message.AsBytes()).Wait();
+                    instance?.Write(message.AsBytes());
                 }
                 catch { }
             }

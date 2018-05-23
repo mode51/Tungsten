@@ -34,61 +34,219 @@ namespace W.Tests
     [TestClass]
     public class TestPipes
     {
-        private PipeHost _host;
-        private bool _useCompression = false;
+        private static object _consoleLock = new object();
         private string pipeName = Helpers.GetPipeName();
 
-        [TestInitialize]
-        public void Initialize()
+        private static void WriteLine(string format, params object[] args)
         {
-            _host = new PipeHost();
-            _host.Connected += s =>
-            {
-                Console.WriteLine("Client connected");
-                //s.Post("I see you".AsBytes(), _useCompression);
-            };
-            _host.Disconnected += s =>
-            {
-                Console.WriteLine("Client disconnected");
-            };
-            _host.BytesReceived += (s, bytes) =>
-            {
-                //do something with the data
-                Console.WriteLine($"Server Received {bytes.AsString()}");
-                //then respond
-                s.PostAsync("ExitNow".AsBytes(), _useCompression).Wait();
-            };
-            _host.Start(pipeName, 1, _useCompression);
+            lock (_consoleLock)
+                Console.WriteLine(format, args);
         }
-        [TestCleanup]
-        public void Cleanup()
-        {
-            _host.Dispose();
-            Console.WriteLine("Host terminated");
-        }
+        //private void RunInServer(string pipeName, Action action)
+        //{
+        //    using (var server = new PipeServer())
+        //    {
+        //        server.Disconnected += (s, e) =>
+        //        {
+        //            WriteLine("Client disconnected from server");
+        //        };
+        //        server.MessageReceived += (s, bytes) =>
+        //        {
+        //            //do something with the data
+        //            WriteLine($"Server Received {bytes.AsString()}");
+        //            //then respond
+        //            s.WriteAsync("ExitNow".AsBytes()).Wait();
+        //        };
+        //        if (server.WaitForConnection(pipeName, 1))
+        //        {
+        //            server.Listen();
+
+        //            try
+        //            {
+        //                action?.Invoke();
+        //            }
+        //            catch (Exception e)
+        //            {
+        //                System.Diagnostics.Debugger.Break();
+        //            }
+        //        }
+        //    }
+        //}
+        //private void RunInHost(string pipeName, Action action)
+        //{
+        //    using (var _host = new PipeHost())
+        //    {
+        //        _host.MessageReceived += (h, s, bytes) =>
+        //        {
+        //            //do something with the data
+        //            WriteLine($"Server Received {bytes.AsString()}");
+        //            //then respond
+        //            s.WriteAsync("ExitNow".AsBytes()).Wait();
+        //        };
+        //        _host.Start(pipeName, 1);
+
+        //        try
+        //        {
+        //            action?.Invoke();
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            System.Diagnostics.Debugger.Break();
+        //        }
+        //    }
+        //}
 
         [TestMethod]
-        public async Task SingleRequest()
+        public void SingleRequest()
         {
-            using (var client = PipeClient.Create(".", pipeName, 5000).Result)
+            var pipe = pipeName + "1";
+            using (var _host = new PipeHost())
             {
-                //make a request
-                var response = await client.RequestAsync("Retrieve user data".AsBytes(), _useCompression, 5000);
-                //do something with the response
-                Console.WriteLine($"Client Received: {response?.AsString() ?? "null"}");
+                _host.MessageReceived += (h, s, bytes) =>
+                {
+                    //do something with the data
+                    WriteLine($"Server Received {bytes.AsString()}");
+                    //then respond
+                    s.WriteAsync("ExitNow".AsBytes()).Wait();
+                };
+                _host.Start(pipe, 1);
+
+                try
+                {
+                    using (var client = new PipeClient())
+                    {
+                        if (client.Connect(".", pipe, System.Security.Principal.TokenImpersonationLevel.Impersonation, 5000))
+                        {
+                            //make a request
+                            //var response = await client.RequestAsync("Retrieve user data".AsBytes(), _useCompression, 5000);
+                            client.WriteAsync("Retrieve user data".AsBytes()).Wait();
+                            var response = client.ReadAsync().Result;
+                            //do something with the response
+                            WriteLine($"Client Received: {response?.AsString() ?? "null"}");
+                        }
+                        else
+                            WriteLine("Unable to connect to the pipe host");
+                    }
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debugger.Break();
+                }
             }
         }
         [TestMethod]
-        public async Task MultipleRequests()
+        public async Task SingleRequestAsync()
         {
-            using (var client = PipeClient.Create(".", pipeName, 5000).Result)
+            var pipe = pipeName + "1";
+            using (var _host = new PipeHost())
             {
-                for (int t = 0; t < 100; t++)
+                _host.MessageReceived += (h, s, bytes) =>
                 {
-                    //make a request
-                    var response = await client.RequestAsync($"{t}. Retrieve user data".AsBytes(), _useCompression, 5000);
-                    //do something with the response
-                    Console.WriteLine($"Client Received: {response?.AsString() ?? "null"}");
+                    //do something with the data
+                    WriteLine($"Server Received {bytes.AsString()}");
+                    //then respond
+                    s.WriteAsync("ExitNow".AsBytes()).Wait();
+                };
+                _host.Start(pipe, 1);
+
+                try
+                {
+                    using (var client = new PipeClient())
+                    {
+                        if (!client.Connect(".", pipe, System.Security.Principal.TokenImpersonationLevel.Impersonation, 5000))
+                            WriteLine("Unable to connect to the pipe host");
+                        else
+                        {
+                            //make a request
+                            await client.WriteAsync("Retrieve user data".AsBytes());
+                            var response = await client.ReadAsync();
+                            //do something with the response
+                            WriteLine($"Client Received: {response?.AsString() ?? "null"}");
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debugger.Break();
+                }
+            }
+        }
+        [TestMethod]
+        public void MultipleRequests()
+        {
+            var pipe = pipeName + "2";
+            using (var _host = new PipeHost())
+            {
+                _host.MessageReceived += (h, s, bytes) =>
+                {
+                    //do something with the data
+                    WriteLine($"Server Received {bytes.AsString()}");
+                    //then respond
+                    s.WriteAsync("ExitNow".AsBytes()).Wait();
+                };
+                _host.Start(pipe, 1);
+                try
+                {
+                    using (var client = new PipeClient())
+                    {
+                        if (!client.Connect(".", pipe, System.Security.Principal.TokenImpersonationLevel.Impersonation, 5000))
+                            WriteLine("Unable to connect to the pipe host");
+                        else
+                        {
+                            for (int t = 0; t < 100; t++)
+                            {
+                                //make a request
+                                client.WriteAsync($"{t}. Retrieve user data".AsBytes()).Wait();
+                                var response = client.ReadAsync().Result;
+                                //do something with the response
+                                WriteLine($"Client Received: {response?.AsString() ?? "null"}");
+                            }
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debugger.Break();
+                }
+            }
+        }
+        [TestMethod]
+        public void MultipleRequestsAsync()
+        {
+            var pipe = pipeName + "2";
+            using (var _host = new PipeHost())
+            {
+                _host.MessageReceived += (h, s, bytes) =>
+                {
+                    //do something with the data
+                    WriteLine($"Server Received {bytes.AsString()}");
+                    //then respond
+                    s.WriteAsync("ExitNow".AsBytes()).Wait();
+                };
+                _host.Start(pipe, 1);
+
+                try
+                {
+                    using (var client = new PipeClient())
+                    {
+                        if (!client.Connect(".", pipe, System.Security.Principal.TokenImpersonationLevel.Impersonation, 5000))
+                            WriteLine("Unable to connect to the pipe host");
+                        else
+                        {
+                            for (int t = 0; t < 100; t++)
+                            {
+                                //make a request
+                                client.WriteAsync($"{t}. Retrieve user data".AsBytes()).Wait();
+                                var response = client.ReadAsync().Result;
+                                //do something with the response
+                                WriteLine($"Client Received: {response?.AsString() ?? "null"}");
+                            }
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debugger.Break();
                 }
             }
         }
@@ -123,23 +281,14 @@ namespace W.Tests
         public void Initialize()
         {
             _host = new PipeHost();
-            _host.Connected += s =>
-            {
-                Console.WriteLine("Client connected");
-                //s.Post("I see you".AsBytes(), _useCompression);
-            };
-            _host.Disconnected += s =>
-            {
-                Console.WriteLine("Client disconnected");
-            };
-            _host.BytesReceived += (s, bytes) =>
+            _host.MessageReceived += (h, s, bytes) =>
             {
                 //do something with the data
                 Console.WriteLine($"Server Received {bytes.AsString()}");
                 //then respond
-                s.PostAsync("ExitNow".AsBytes(), _useCompression).Wait();
+                s.WriteAsync("ExitNow".AsBytes()).Wait();
             };
-            _host.Start(pipeName, 1, _useCompression);
+            _host.Start(pipeName, 1);
         }
         [TestCleanup]
         public void Cleanup()
@@ -151,25 +300,37 @@ namespace W.Tests
         [TestMethod]
         public async Task SingleRequest()
         {
-            using (var client = PipeClient.Create(".", pipeName, 5000).Result)
+            using (var client = new PipeClient())
             {
-                //make a request
-                var response = await client.RequestAsync("Retrieve user data".AsBytes(), _useCompression, 5000);
-                //do something with the response
-                Console.WriteLine($"{response?.AsString() ?? "null"}");
+                if (!client.Connect(".", pipeName, System.Security.Principal.TokenImpersonationLevel.Impersonation, 5000))
+                    Console.WriteLine("Failed to connect to the server");
+                else
+                {
+                    //make a request
+                    await client.WriteAsync("Retrieve user data".AsBytes());
+                    var response = await client.ReadAsync();
+                    //do something with the response
+                    Console.WriteLine($"{response?.AsString() ?? "null"}");
+                }
             }
         }
         [TestMethod]
         public async Task MultipleRequests()
         {
-            using (var client = PipeClient.Create(".", pipeName, 5000).Result)
+            using (var client = new PipeClient())
             {
-                for (int t = 0; t < 100; t++)
+                if (!client.Connect(".", pipeName, System.Security.Principal.TokenImpersonationLevel.Impersonation, 5000))
+                    Console.WriteLine("Failed to connect to the server");
+                else
                 {
-                    //make a request
-                    var response = await client.RequestAsync($"{t}. Retrieve user data".AsBytes(), _useCompression, 5000);
-                    //do something with the response
-                    Console.WriteLine($"{response?.AsString() ?? "null"}");
+                    for (int t = 0; t < 100; t++)
+                    {
+                        //make a request
+                        await client.WriteAsync($"{t}. Retrieve user data".AsBytes());
+                        var response = await client.ReadAsync();
+                        //do something with the response
+                        Console.WriteLine($"{response?.AsString() ?? "null"}");
+                    }
                 }
             }
         }
@@ -195,7 +356,7 @@ namespace W.Tests
     [TestClass]
     public class TestPipesTyped
     {
-        private PipeHost<Message> _host;
+        private W.IO.Pipes.PipeHost<Message> _host;
         private bool _useCompression = false;
         private string pipeName = Helpers.GetPipeName();
 
@@ -203,24 +364,15 @@ namespace W.Tests
         public void Initialize()
         {
             _host = new PipeHost<Message>();
-            _host.Connected += s =>
-            {
-                Console.WriteLine("Client connected");
-                //s.PostAsync(new Message() { Information = "I see you" }, _useCompression).Wait();
-            };
-            _host.Disconnected += s =>
-            {
-                Console.WriteLine("Client disconnected");
-            };
-            _host.MessageReceived += (s, message) =>
+            _host.MessageReceived += (h, s, message) =>
             {
                 //do something with the data
                 Console.WriteLine($"Received {message.ToString()}");
                 message = new Message() { Information = "ExitNow" };
                 //then respond
-                s.PostAsync(message, _useCompression).Wait();
+                s.WriteAsync(message).Wait();
             };
-            _host.Start(pipeName, 1, _useCompression);
+            _host.Start(pipeName, 1);
         }
         [TestCleanup]
         public void Cleanup()
@@ -233,26 +385,38 @@ namespace W.Tests
         public async Task TypedSingleRequest()
         {
             //NOTE:  The server must be of type PipeHost<Message>
-            using (var client = PipeClient.Create(".", pipeName, 5000).Result)
+            using (var client = new PipeClient<Message>())
             {
-                //make a request
-                var response = await client.RequestAsync<Message>(new Message() { Information = "Blah blah blah" }, _useCompression, 5000);
-                //do something with the response
-                Console.WriteLine($"{response?.Timestamp} - {response?.Information ?? "null"}");
+                if (!client.Connect(".", pipeName, System.Security.Principal.TokenImpersonationLevel.Impersonation, 5000))
+                    Console.WriteLine("Failed to connect to the server");
+                else
+                {
+                    //make a request
+                    await client.WriteAsync(new Message() { Information = "Blah blah blah" });
+                    var response = await client.ReadAsync();
+                    //do something with the response
+                    Console.WriteLine($"{response?.Timestamp} - {response?.Information ?? "null"}");
+                }
             }
         }
         [TestMethod]
         public async Task TypedMultipleRequests()
         {
             //NOTE:  The server must be of type PipeHost<Message>
-            using (var client = PipeClient.Create(".", pipeName, 5000).Result)
+            using (var client = new PipeClient<Message>())
             {
-                for (int t = 0; t < 100; t++)
+                if (!client.Connect(".", pipeName, System.Security.Principal.TokenImpersonationLevel.Impersonation, 5000))
+                    Console.WriteLine("Failed to connect to the server");
+                else
                 {
-                    //make a request
-                    var response = await client.RequestAsync<Message>(new Message() { Information = $"{t}. Blah blah blah" }, _useCompression, 5000);
-                    //do something with the response
-                    Console.WriteLine($"{response?.Timestamp} - {response?.Information ?? "null"}");
+                    for (int t = 0; t < 100; t++)
+                    {
+                        //make a request
+                        await client.WriteAsync<Message>(new Message() { Information = $"{t}. Blah blah blah" });
+                        var response = await client.ReadAsync<Message>();
+                        //do something with the response
+                        Console.WriteLine($"{response?.Timestamp} - {response?.Information ?? "null"}");
+                    }
                 }
             }
         }
@@ -278,64 +442,92 @@ namespace W.Tests
     [TestClass]
     public class TestPipesTyped_Compressed
     {
-        private PipeHost<Message> _host;
-        private bool _useCompression = true;
+        //private PipeHost<Message> _host;
         private string pipeName = Helpers.GetPipeName();
 
-        [TestInitialize]
-        public void Initialize()
-        {
-            _host = new PipeHost<Message>();
-            _host.Connected += s =>
-            {
-                Console.WriteLine("Client connected");
-                //s.PostAsync(new Message() { Information = "I see you" }, _useCompression).Wait();
-            };
-            _host.Disconnected += s =>
-            {
-                Console.WriteLine("Client disconnected");
-            };
-            _host.MessageReceived += (s, message) =>
-            {
-                //do something with the data
-                Console.WriteLine($"Received {message.ToString()}");
-                message = new Message() { Information = "ExitNow" };
-                //then respond
-                s.PostAsync(message, _useCompression).Wait();
-            };
-            _host.Start(pipeName, 1, _useCompression);
-        }
-        [TestCleanup]
-        public void Cleanup()
-        {
-            _host.Dispose();
-            Console.WriteLine("Host terminated");
-        }
+        //[TestInitialize]
+        //public void Initialize()
+        //{
+        //    _host = new PipeHost<Message>();
+        //    _host.MessageReceived += (h, s, message) =>
+        //    {
+        //        //do something with the data
+        //        Console.WriteLine($"Received {message.ToString()}");
+        //        message = new Message() { Information = "ExitNow" };
+        //        //then respond
+        //        s.WriteAsync(message).Wait();
+        //    };
+        //    _host.Start(pipeName, 1);
+        //}
+        //[TestCleanup]
+        //public void Cleanup()
+        //{
+        //    _host.Dispose();
+        //    Console.WriteLine("Host terminated");
+        //}
 
         [TestMethod]
         public async Task TypedSingleRequest()
         {
-            //NOTE:  The server must be of type PipeHost<Message>
-            using (var client = PipeClient.Create(".", pipeName, 5000).Result)
+            using (var host = new W.IO.Pipes.PipeHost<Message>())
             {
-                //make a request
-                var response = await client.RequestAsync<Message>(new Message() { Information = "Blah blah blah" }, _useCompression, 5000);
-                //do something with the response
-                Console.WriteLine($"{response?.Timestamp} - {response?.Information ?? "null"}");
+                host.MessageReceived += (h, s, message) =>
+                {
+                    //do something with the data
+                    Console.WriteLine($"Received {message.ToString()}");
+                    message = new Message() { Information = "ExitNow" };
+                    //then respond
+                    s.Write(message);
+                };
+                host.Start(pipeName, 1);
+
+                //NOTE:  The server must be of type PipeHost<Message>
+                using (var client = new W.IO.Pipes.PipeClient<Message>())
+                {
+                    if (!client.Connect(".", pipeName, System.Security.Principal.TokenImpersonationLevel.Impersonation, 5000))
+                        Console.WriteLine("Failed to connect to the server");
+                    else
+                    {
+                        //make a request
+                        client.Write(new Message() { Information = "Blah blah blah" });
+                        var response = client.Read<Message>();
+                        //do something with the response
+                        Console.WriteLine($"{response?.Timestamp} - {response?.Information ?? "null"}");
+                    }
+                }
             }
         }
         [TestMethod]
         public async Task TypedMultipleRequests()
         {
-            //NOTE:  The server must be of type PipeHost<Message>
-            using (var client = PipeClient.Create(".", pipeName, 5000).Result)
+            using (var host = new W.IO.Pipes.PipeHost<Message>())
             {
-                for (int t = 0; t < 100; t++)
+                host.MessageReceived += (h, s, message) =>
                 {
-                    //make a request
-                    var response = await client.RequestAsync<Message>(new Message() { Information = $"{t}. Blah blah blah" }, _useCompression, 5000);
-                    //do something with the response
-                    Console.WriteLine($"{response?.Timestamp} - {response?.Information ?? "null"}");
+                    //do something with the data
+                    Console.WriteLine($"Received {message.ToString()}");
+                    message = new Message() { Information = "ExitNow" };
+                    //then respond
+                    s.WriteAsync(message).Wait();
+                };
+                host.Start(pipeName, 1);
+
+                //NOTE:  The server must be of type PipeHost<Message>
+                using (var client = new W.IO.Pipes.PipeClient<Message>())
+                {
+                    if (!client.Connect(".", pipeName, System.Security.Principal.TokenImpersonationLevel.Impersonation, 5000))
+                        Console.WriteLine("Failed to connect to the server");
+                    else
+                    {
+                        for (int t = 0; t < 100; t++)
+                        {
+                            //make a request
+                            await client.WriteAsync<Message>(new Message() { Information = $"{t}. Blah blah blah" });
+                            var response = await client.ReadAsync<Message>();
+                            //do something with the response
+                            Console.WriteLine($"{response?.Timestamp} - {response?.Information ?? "null"}");
+                        }
+                    }
                 }
             }
         }
@@ -361,108 +553,186 @@ namespace W.Tests
     [TestClass]
     public class TestPipes_Concurrently
     {
-        private PipeHost _host;
+        //private PipeHost _host;
         private int _numberOfServers = 10;
-        private bool _useCompression = false;
         private string _pipeName = Helpers.GetPipeName();
         private string _latin = Helpers.GetLatinText();
 
-        [TestInitialize]
-        public void Initialize()
-        {
-            _host = new PipeHost();
-            _host.Connected += s =>
-            {
-                Console.WriteLine("Client connected");
-            };
-            _host.Disconnected += s =>
-            {
-                Console.WriteLine("Client disconnected");
-            };
-            _host.BytesReceived += (s, bytes) =>
-            {
-                //do something with the data
-                Console.WriteLine($"Server Received {bytes.AsString()}");
-                //send response
-                if (bytes.Length == 9 && bytes.AsString() == "get Latin")
-                    s.PostAsync(_latin.AsBytes(), _useCompression).Wait();
-                else //echo
-                {
-                    s.PostAsync(bytes, _useCompression).Wait();
-                }
-            };
-            _host.Start(_pipeName, _numberOfServers, _useCompression);
-        }
-        [TestCleanup]
-        public void Cleanup()
-        {
-            _host.Dispose();
-            Console.WriteLine("Host terminated");
-        }
+        //[TestInitialize]
+        //public void Initialize()
+        //{
+        //    _host = new PipeHost();
+        //    _host.MessageReceived += (h, s, bytes) =>
+        //    {
+        //        //do something with the data
+        //        Console.WriteLine($"Server Received {bytes.AsString()}");
+        //        //send response
+        //        if (bytes.Length == 9 && bytes.AsString() == "get Latin")
+        //            s.WriteAsync(_latin.AsBytes()).Wait();
+        //        else //echo
+        //        {
+        //            s.WriteAsync(bytes).Wait();
+        //        }
+        //    };
+        //    _host.Start(_pipeName, _numberOfServers);
+        //}
+        //[TestCleanup]
+        //public void Cleanup()
+        //{
+        //    _host.Dispose();
+        //    Console.WriteLine("Host terminated");
+        //}
 
         [TestMethod]
         public async Task SingleRequest()
         {
-            using (var client = PipeClient.Create(".", _pipeName, 5000).Result)
+            using (var host = new PipeHost())
             {
-                //make a request
-                var response = await client.RequestAsync("get Latin".AsBytes(), _useCompression, 5000);
-                //do something with the response
-                Console.WriteLine($"Received {response?.Length} bytes");
-                Assert.IsNotNull(response);
-                Assert.AreEqual(response.Length, _latin.Length);
+                host.MessageReceived += (h, s, bytes) =>
+                {
+                    //do something with the data
+                    Console.WriteLine($"Server Received {bytes.AsString()}");
+                    //send response
+                    if (bytes.Length == 9 && bytes.AsString() == "get Latin")
+                        s.WriteAsync(_latin.AsBytes()).Wait();
+                    else //echo
+                    {
+                        s.WriteAsync(bytes).Wait();
+                    }
+                };
+                host.Start(_pipeName, _numberOfServers);
+                using (var client = new PipeClient())
+                {
+                    if (!client.Connect(".", _pipeName, System.Security.Principal.TokenImpersonationLevel.Impersonation, 5000))
+                        Console.WriteLine("Failed to connect to the server");
+                    else
+                    {
+                        //make a request
+                        await client.WriteAsync("get Latin".AsBytes());
+                        var response = await client.ReadAsync();
+                        //do something with the response
+                        Console.WriteLine($"Received {response?.Length} bytes");
+                        Assert.IsNotNull(response);
+                        Assert.AreEqual(response.Length, _latin.Length);
+                    }
+                }
             }
         }
         [TestMethod]
         public async Task MultipleRequests()
         {
-            using (var client = PipeClient.Create(".", _pipeName, 5000).Result)
+            using (var host = new PipeHost())
             {
-                for (int t = 1; t <= 100; t++)
+                host.MessageReceived += (h, s, bytes) =>
                 {
-                    //make a request
-                    var response = await client.RequestAsync($"{t}. Echo this".AsBytes(), _useCompression, 5000);
-                    //do something with the response
-                    Assert.IsNotNull(response);
-                    Console.WriteLine($"{response?.AsString() ?? "null"}");
+                    //do something with the data
+                    Console.WriteLine($"Server Received {bytes.AsString()}");
+                    //send response
+                    if (bytes.Length == 9 && bytes.AsString() == "get Latin")
+                        s.WriteAsync(_latin.AsBytes()).Wait();
+                    else //echo
+                    {
+                        s.WriteAsync(bytes).Wait();
+                    }
+                };
+                host.Start(_pipeName, _numberOfServers);
+                using (var client = new PipeClient())
+                {
+                    if (!client.Connect(".", _pipeName, System.Security.Principal.TokenImpersonationLevel.Impersonation, 5000))
+                        Console.WriteLine("Failed to connect to the server");
+                    else
+                    {
+                        for (int t = 1; t <= 100; t++)
+                        {
+                            //make a request
+                            await client.WriteAsync($"{t}. Echo this".AsBytes());
+                            var response = await client.ReadAsync();
+                            //do something with the response
+                            Assert.IsNotNull(response);
+                            Console.WriteLine($"{response?.AsString() ?? "null"}");
+                        }
+                    }
                 }
             }
         }
 
         [TestMethod]
-        public async Task ConcurrentClients()
+        public void ConcurrentClients()
         {
-            var clients = new List<PipeClient>();
-            var numClients = _numberOfServers;
-            //create the clients
-            for (int t = 0; t < numClients; t++)
+            using (var host = new PipeHost())
             {
-                var newClient = PipeClient.Create(".", _pipeName, 5000).Result;
-                clients.Add(newClient);
+                host.MessageReceived += (h, s, bytes) =>
+                {
+                    //do something with the data
+                    Console.WriteLine($"Server Received {bytes.AsString()}");
+                    //send response
+                    if (bytes.Length == 9 && bytes.AsString() == "get Latin")
+                        s.WriteAsync(_latin.AsBytes()).Wait();
+                    else //echo
+                    {
+                        s.WriteAsync(bytes).Wait();
+                    }
+                };
+                host.Start(_pipeName, _numberOfServers);
+
+                var clients = new List<PipeClient>();
+                var numClients = _numberOfServers;
+                //create the clients
+                for (int t = 0; t < numClients; t++)
+                {
+                    var newClient = new PipeClient();
+                    if (newClient.Connect(".", _pipeName, System.Security.Principal.TokenImpersonationLevel.Impersonation, 5000))
+                        clients.Add(newClient);
+                }
+                Console.WriteLine($"Latin.Length = {_latin.AsBytes().Length}");
+                //send the latin text each
+                for (int t = 0; t < clients.Count; t++)
+                {
+                    //var response = clients[t].RequestAsync(_latin.AsBytes(), _useCompression, 3000).Result;
+                    //clients[t].WriteAsync(_latin.AsBytes()).Wait();
+                    clients[t].WriteAsync(_latin.AsBytes()).Wait();
+                    var response = clients[t].ReadAsync().Result;
+                    Assert.IsNotNull(response);
+                    Assert.IsTrue(response.Length == _latin.Length, $"{t}. Length mismatch: {response.Length} vs {_latin.Length}");
+                }
+                for (int t = 0; t < numClients; t++)
+                    clients[t].Dispose();
             }
-            //send the latin text each
-            for (int t = 0; t < clients.Count; t++)
-            {
-                //var response = clients[t].RequestAsync(_latin.AsBytes(), _useCompression, 3000).Result;
-                var response = await clients[t].RequestAsync(_latin.AsBytes(), _useCompression, 3000);
-                Assert.IsNotNull(response);
-                Assert.IsTrue(response.Length == _latin.Length, $"{t}. Length mismatch: {response.Length} vs {_latin.Length}");
-            }
-            for (int t = 0; t < numClients; t++)
-                clients[t].Dispose();
         }
 
         [TestMethod]
         public async Task SequentialClients()
         {
-            var numClients = _numberOfServers * 2;
-            for (int t = 0; t < numClients; t++)
+            using (var host = new PipeHost())
             {
-                using (var client = PipeClient.Create(".", _pipeName, 1000).Result)
+                host.MessageReceived += (h, s, bytes) =>
                 {
-                    var response = await client.RequestAsync(_latin.AsBytes(), _useCompression, 5000);
-                    Assert.IsNotNull(response);
-                    Assert.IsTrue(response.Length == _latin.Length, $"Length mismatch. {response.Length} vs {_latin.Length}");
+                    //do something with the data
+                    Console.WriteLine($"Server Received {bytes.AsString()}");
+                    //send response
+                    if (bytes.Length == 9 && bytes.AsString() == "get Latin")
+                        s.WriteAsync(_latin.AsBytes()).Wait();
+                    else //echo
+                    {
+                        s.WriteAsync(bytes).Wait();
+                    }
+                };
+                host.Start(_pipeName, _numberOfServers);
+                var numClients = _numberOfServers * 2;
+                for (int t = 0; t < numClients; t++)
+                {
+                    using (var client = new PipeClient())
+                    {
+                        if (!client.Connect(".", _pipeName, System.Security.Principal.TokenImpersonationLevel.Impersonation, 1000))
+                            Console.WriteLine("Failed to connect to the server");
+                        else
+                        {
+                            await client.WriteAsync(_latin.AsBytes());
+                            var response = await client.ReadAsync();
+                            Assert.IsNotNull(response);
+                            Assert.IsTrue(response.Length == _latin.Length, $"Length mismatch. {response.Length} vs {_latin.Length}");
+                        }
+                    }
                 }
             }
         }

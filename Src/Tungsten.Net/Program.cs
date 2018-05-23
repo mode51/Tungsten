@@ -7,7 +7,7 @@ using W.Threading;
 
 namespace W.Net
 {
-#if DEBUG
+#if DEBUG && !NETSTANDARD1_3
     internal class TcpMessage
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();

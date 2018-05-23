@@ -18,7 +18,8 @@ namespace W.Tests
         //{
         //    this.output = output;
         //}
-
+        private static object _locker = new object();
+        private int _counter = 0;
         private class Customer
         {
             public string First { get; set; }
@@ -30,15 +31,31 @@ namespace W.Tests
         }
         private void Method1(CancellationToken token)
         {
-            Console.WriteLine("Inside Method1");
-            Console.WriteLine("Leaving Method1");
+            Output("Inside Method1");
+            Output("Leaving Method1");
         }
         private void Method2(CancellationToken token, params object[] args)
         {
-            Console.WriteLine("Inside Method2(" + string.Join(", ", args) + ")");
-            Console.WriteLine("Leaving Method2");
+            if (args?.Length > 0)
+                Output("Inside Method2(" + string.Join(", ", args) + ")");
+            else
+                Output("Inside Method2");
+            Output("Leaving Method2");
+            _counter += 1;
             //for (int t = 0; t < args.Length; t++)
             //    Console.WriteLine("Parameter = " + args[t].ToString());
+        }
+        private static void Output(string format, params object[] args)
+        {
+            try
+            {
+                //lock (outputLock)
+                    Console.WriteLine(format, args);
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debugger.Break();
+            }
         }
 
         [TestMethod]
@@ -46,7 +63,6 @@ namespace W.Tests
         {
             var proc = W.Threading.ThreadMethod.Create(Method1);
             {
-
                 Assert.IsTrue(proc != null);
                 Assert.IsTrue(!proc.IsComplete);
             }
@@ -70,6 +86,24 @@ namespace W.Tests
                 W.Threading.Thread.Sleep(W.Threading.CPUProfileEnum.SpinWait1);
                 Assert.IsTrue(proc.IsComplete);
             }
+        }
+        [TestMethod]
+        public void ThreadMethod_RunManyTimes()
+        {
+            var iterations = 1000;
+            var proc = W.Threading.ThreadMethod.Create(Method2);
+            Assert.IsTrue(!proc.IsComplete);
+            _counter = 0;
+            for (int t = 1; t <= iterations; t++)
+            {
+                proc.Start(t);
+                Assert.IsTrue(proc.Wait(1000), $"Iteration #{t} failed to complete");
+                //proc.Wait();
+                //W.Threading.Thread.Sleep(W.Threading.CPUProfileEnum.Sleep);
+                Assert.IsTrue(proc.IsComplete, $"Exception at iteration #{t}");
+                Assert.IsTrue(_counter == t, $"_counter != t, _counter/t == {_counter}/{t}");
+            }
+            Assert.IsTrue(_counter == iterations, $"_counter != iterations, _counter == {_counter}");
         }
         [TestMethod]
         public void ThreadMethod_RunWithParameters()
@@ -98,7 +132,7 @@ namespace W.Tests
         {
             var proc = W.Threading.ThreadMethod.Create(token =>
             {
-                while(!token.IsCancellationRequested)
+                while (!token.IsCancellationRequested)
                 {
                     W.Threading.Thread.Sleep(W.Threading.CPUProfileEnum.Sleep);
                 }

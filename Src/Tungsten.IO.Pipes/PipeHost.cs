@@ -1,251 +1,144 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace W.IO.Pipes
 {
     /// <summary>
-    /// Hosts multiple PipeServers to support concurrent client connections
+    /// Hosts a number of PipeServers.  This class sends and receives byte arrays.
     /// </summary>
-    public class PipeHost : IDisposable
-    {
-        private bool _raiseEvents = true;
-        private object _serversLock = new object();
-        private List<PipeServer> _servers = new List<PipeServer>();
-        private LockableSlim<bool> _okToListen = new LockableSlim<bool>(true);
-        private string _pipeName = "";
-        private int _maxConnections = 0;
-        private bool _useCompression = false;
-
-        /// <summary>
-        /// Raised when a PipeClient has connected to a PipeServer
-        /// </summary>
-        public event Action<PipeServer> Connected;
-        /// <summary>
-        /// Raised when a PipeClient has disconnected from it's PipeServer
-        /// </summary>
-        public event Action<PipeServer> Disconnected;
-        /// <summary>
-        /// Raised when a PipeServer has received a message from a PipeClient
-        /// </summary>
-        public event Action<PipeServer, byte[]> BytesReceived;
-
-        private PipeServer AddAServer(string pipeName, int maxConnections, bool useCompression)
-        {
-            var result = PipeServer.CreateServer(pipeName, maxConnections, useCompression, s => { if (_raiseEvents) Connected?.Invoke(s); });
-            lock (_serversLock)
-                _servers.Add(result.Result);
-            //Connected?.Invoke(result.Result);
-            result.Result.BytesReceived += (s, bytes) =>
-            {
-                if (_raiseEvents)
-                    BytesReceived?.Invoke(s, bytes);
-            };
-            result.Result.Disconnected += Handle_Disconnected;
-            return result.Result;
-        }
-        private void Handle_Disconnected(PipeClient server)
-        {
-            RemoveServer((PipeServer)server);
-            if (_okToListen.Value)
-                AddAServer(_pipeName, _maxConnections, _useCompression);
-        }
-        private void RemoveServer(PipeServer server)
-        {
-            try
-            {
-                server.Disconnected -= Handle_Disconnected; //to disable a recursive call to Dispose
-                server.Dispose();
-            }
-            catch (Exception e)
-            {
-                System.Diagnostics.Debugger.Break();
-                System.Diagnostics.Debug.WriteLine(e.ToString());
-            }
-            lock (_serversLock)
-                _servers.Remove(server);
-            //Disconnected?.Invoke(server);
-        }
-
-        /// <summary>
-        /// Starts the specified number of servers
-        /// </summary>
-        /// <param name="pipeName">The name of the pipe</param>
-        /// <param name="maxConnections">The maximum number of concurrent client connections</param>
-        /// <param name="useCompression">If True, data will be compressed before sending and decompressed upon reception</param>
-        public void Start(string pipeName, int maxConnections, bool useCompression)
-        {
-            _raiseEvents = true;
-            _pipeName = pipeName;
-            _maxConnections = maxConnections;
-            _useCompression = useCompression;
-            //add the servers and have each one start listening
-            for (int t = 0; t < maxConnections; t++)
-            {
-                AddAServer(pipeName, maxConnections, useCompression);
-            }
-        }
-        /// <summary>
-        /// Asynchronously starts the specified number of servers
-        /// </summary>
-        /// <param name="pipeName">The name of the pipe</param>
-        /// <param name="maxConnections">The maximum number of concurrent client connections</param>
-        /// <param name="useCompression">If True, data will be compressed before sending and decompressed upon reception</param>
-        public async Task StartAsync(string pipeName, int maxConnections, bool useCompression)
-        {
-            await Task.Run(() =>
-            {
-                Start(pipeName, maxConnections, _useCompression);
-            });
-        }
-        /// <summary>
-        /// Disconnects all clients and stops all the servers
-        /// </summary>
-        public void Stop()
-        {
-            _okToListen.Value = false;
-            _raiseEvents = false;
-            lock (_serversLock)
-            {
-                //Close each server and remove it
-                for (int t = _servers.Count - 1; t >= 0; t--)
-                {
-                    //connect and immediately disconnect a client to each waiting server stream (disconnecting will automatically remove it)
-                    using (var npcs = new System.IO.Pipes.NamedPipeClientStream(_pipeName))
-                    {
-                        npcs.Connect();
-                    }
-                    //RemoveServer(_servers[t]);
-                }
-            }
-            _okToListen.Value = true;
-        }
-        /// <summary>
-        /// Disposes the PipeHost and releases resources
-        /// </summary>
-        public void Dispose()
-        {
-            Stop();
-            _okToListen.Value = false;
-        }
-    }
+    public class PipeHost : PipeHost<byte[]> { }
 
     /// <summary>
-    /// Hosts multiple PipeServers to support concurrent client connections
+    /// The generic version of PipeHost.  This class expects all messages to be of the specified type.
     /// </summary>
-    public class PipeHost<TType> : IDisposable where TType : class
+    /// <typeparam name="TMessage">The message type to send and receive</typeparam>
+    public class PipeHost<TMessage> : IDisposable //where TServer : PipeServer<TMessage>, new()
     {
-        private bool _raiseEvents = true;
-        private object _serversLock = new object();
-        private List<PipeServer<TType>> _servers = new List<PipeServer<TType>>();
-        private LockableSlim<bool> _okToListen = new LockableSlim<bool>(true);
+        private class PipeContainer
+        {
+            public PipeServer<TMessage> Server { get; set; }
+            public Exception e { get; set; }
+        }
+        private W.Lockable<List<PipeContainer>> _servers = new W.Lockable<List<PipeContainer>>(new List<PipeContainer>());
+        private volatile bool _isStarted = false;
         private string _pipeName = "";
         private int _maxConnections = 0;
-        private bool _useCompression = false;
 
         /// <summary>
-        /// Raised when a PipeClient has connected to a PipeServer
+        /// Raised when a pipe server has received data from a client
         /// </summary>
-        public event Action<PipeServer<TType>> Connected;
+        public event Action<PipeHost<TMessage>, Pipe<TMessage>, TMessage> MessageReceived;
         /// <summary>
-        /// Raised when a PipeClient has disconnected from it's PipeServer
+        /// Creates the NamedPipeServerStream and intiates waiting for a client connection
         /// </summary>
-        public event Action<PipeServer<TType>> Disconnected;
-        /// <summary>
-        /// Raised when a PipeServer has received a message from a PipeClient
-        /// </summary>
-        public event Action<PipeServer<TType>, TType> MessageReceived;
-
-        private void Handle_Disconnected(PipeClient server)
+        /// <returns></returns>
+        private bool AddServer()
         {
-            RemoveServer((PipeServer<TType>)server);
-            if (_okToListen.Value)
-                AddAServer(_pipeName, _maxConnections, _useCompression);
-        }
-        private PipeServer<TType> AddAServer(string pipeName, int maxConnections, bool useCompression)
-        {
-            var result = PipeServer<TType>.CreateServer(pipeName, maxConnections, useCompression, s => { if (_raiseEvents) Connected?.Invoke(s); });
-            lock (_serversLock)
-                _servers.Add(result.Result);
-            //Connected?.Invoke(result.Result);
-            result.Result.MessageReceived += (s, message) =>
+            var newServer = new PipeServer<TMessage>();
+            newServer.MessageReceived += (p, m) => { MessageReceived?.Invoke(this, p, m); };
+            newServer.Disconnected += Server_Disconnected;
+            newServer.Connected += s =>
             {
-                MessageReceived?.Invoke(s, message);
+                s.Listen();
+                //_servers.InLock(W.Threading.Lockers.LockTypeEnum.Read, async list =>
+                //{
+                //var container = list.FirstOrDefault(pc => pc.Server == s);
+                //if (container != null)
+                //{
+                //    container.Server.Listen();
+                //}
+                //});
             };
-            result.Result.Disconnected += Handle_Disconnected;
-            return result.Result;
-        }
-        private void RemoveServer(PipeServer<TType> server)
-        {
-            try
+            _servers.InLock(W.Threading.Lockers.LockTypeEnum.Write, list =>
             {
-                server.Disconnected -= Handle_Disconnected;
-                server.Dispose();
-            }
-            catch (Exception e)
+                list.Add(new PipeContainer() { Server = newServer });
+            });
+            newServer.StartException += (s, e) =>
             {
-                System.Diagnostics.Debugger.Break();
-                System.Diagnostics.Debug.WriteLine(e.ToString());
-            }
-            lock (_serversLock)
-                _servers.Remove(server);
-            if (_raiseEvents)
-                Disconnected?.Invoke(server);
-        }
+                _servers.InLock(W.Threading.Lockers.LockTypeEnum.Write, list =>
+                {
+                    var container = list.FirstOrDefault(pc => pc.Server == newServer);
+                    if (container != null) //remove the container in the StartAsync task continuation below
+                        container.e = e;
+                });
+            };
 
-        /// <summary>
-        /// Starts the specified number of servers
-        /// </summary>
-        /// <param name="pipeName">The name of the pipe</param>
-        /// <param name="maxConnections">The maximum number of concurrent client connections</param>
-        /// <param name="useCompression">If True, data will be compressed before sending and decompressed upon reception</param>
-        public void Start(string pipeName, int maxConnections, bool useCompression)
-        {
-            _raiseEvents = true;
-            _useCompression = useCompression;
-            //add the servers and have each one start listening
-            for (int t = 0; t < maxConnections; t++)
+            //if successfull, StartAsync calls the newServer.Connected event before returning
+            //if unsuccessfull, find the container and remove it, raise the exception if one was captured
+            if (newServer.WaitForConnection(_pipeName, -1 /*_maxConnections*/ ) == false)
             {
-                AddAServer(pipeName, maxConnections, useCompression);
+                newServer.Dispose();
+                _servers.InLock(W.Threading.Lockers.LockTypeEnum.Write, list =>
+                {
+                    list.RemoveAll(c => c.Server == newServer);
+                });
+                return false;
             }
+            return true;
+        }
+        private void Server_Disconnected(Pipe server, Exception e)
+        {
+            if (server == null)
+                return;
+            _servers.InLock(W.Threading.Lockers.LockTypeEnum.Write, list =>
+            {
+                var container = list.FirstOrDefault(pc => pc.Server == server);
+                if (container != null)
+                {
+                    list.Remove(container);
+                    container.Server.Dispose();
+                }
+            });
+            if (_isStarted)
+                AddServer();
         }
         /// <summary>
-        /// Asynchronously starts the specified number of servers
+        /// Creates the specified number of pipe servers and starts listening for clients
         /// </summary>
         /// <param name="pipeName">The name of the pipe</param>
-        /// <param name="maxConnections">The maximum number of concurrent client connections</param>
-        /// <param name="useCompression">If True, data will be compressed before sending and decompressed upon reception</param>
-        public async Task StartAsync(string pipeName, int maxConnections, bool useCompression)
+        /// <param name="maxConnections">The maximum number of pipe servers to create.</param>
+        /// <returns></returns>
+        /// <remarks>Because PipeHost creates a PipeServer for each possible connection, this value cannot be negative.  This breaks the standard paradigm for pipes.  If this does not work for you, use PipeServer instead.</remarks>
+        public uint Start(string pipeName, int maxConnections)
         {
-            await Task.Run(() =>
+            if (_isStarted)
+                return (uint)_servers.Value.Count;
+            _pipeName = pipeName;
+            _maxConnections = maxConnections;
+            _isStarted = true;
+            while (_servers.Value.Count < maxConnections && AddServer()) ;
+            return (uint)_servers.Value.Count;
+        }
+        /// <summary>
+        /// Disconnects and disposes all of the pipe servers
+        /// </summary>
+        /// <param name="waitForCleanup"></param>
+        public void Stop()
+        {
+            _isStarted = false;
+            _servers.InLock(W.Threading.Lockers.LockTypeEnum.Write, list =>
             {
-                Start(pipeName, maxConnections, _useCompression);
+                var tasks = new List<Task>();
+                foreach (var item in list)
+                {
+                    tasks.Add(Task.Run(() =>
+                    {
+                        item.Server.StopListening();
+                        item.Server.Dispose();
+                    }));
+                }
+                Task.WaitAll(tasks.ToArray());
+                list.Clear();
             });
         }
         /// <summary>
-        /// Disconnects all clients and stops all the servers
-        /// </summary>
-        public void Stop()
-        {
-            _okToListen.Value = false;
-            _raiseEvents = false;
-            lock (_serversLock)
-            {
-                //Close each server and remove it
-                for (int t = _servers.Count - 1; t >= 0; t--)
-                {
-                    RemoveServer(_servers[t]);
-                }
-            }
-            _okToListen.Value = true;
-        }
-        /// <summary>
-        /// Disposes the PipeHost and releases resources
+        /// Stops the host and releases resources
         /// </summary>
         public void Dispose()
         {
             Stop();
-            _okToListen.Value = false;
         }
     }
 }

@@ -25,7 +25,7 @@ namespace W
         public TOwner Owner
         {
             get { return _owner.Value; }
-            set { _owner.Value = value; }
+            protected set { _owner.Value = value; }
         }
         #endregion
 
