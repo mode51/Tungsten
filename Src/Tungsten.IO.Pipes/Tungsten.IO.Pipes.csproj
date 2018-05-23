@@ -72,10 +72,7 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
-    <PackageReference Include="Tungsten.ArrayMethods" Version="2.0.0" />
     <PackageReference Include="Tungsten.As" Version="2.0.0" />
-    <PackageReference Include="Tungsten.CallResult" Version="2.0.0" />
-    <PackageReference Include="Tungsten.From" Version="2.0.0" />
     <PackageReference Include="Tungsten.Lockable" Version="2.0.1" />
     <PackageReference Include="Tungsten.Logging" Version="2.0.0" />
     <PackageReference Include="Tungsten.Threading.Lockers" Version="2.0.1" />
