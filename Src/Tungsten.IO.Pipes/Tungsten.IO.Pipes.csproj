@@ -11,12 +11,12 @@
     <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
     <PackageIconUrl>https://github.com/mode51/Tungsten/blob/master/Tungsten/Tungsten.ico</PackageIconUrl>
     <PackageTags>Tungsten.IO.Pipes Tungsten Pipe NamedPipe W C# library</PackageTags>
-    <AssemblyVersion>2.0.1.0</AssemblyVersion>
-    <FileVersion>2.0.1.0</FileVersion>
+    <AssemblyVersion>2.0.1.1</AssemblyVersion>
+    <FileVersion>2.0.1.1</FileVersion>
     <Version>2.0.1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
-    <PackageReleaseNotes>I yield.  Pipes just can't be forced to do what they weren't designed to do.  W.IO.Pipes has been refactored to be like traffic on a one-way bridge.  Use PipeClient and PipeHost in most scenarios.  There is a PipeServer which can be used for single instance servers (or if you want to write your own host).</PackageReleaseNotes>
+    <PackageReleaseNotes>I yield.  Pipes just can't be forced to do what they weren't designed to do.  W.IO.Pipes has been refactored to be like traffic on a one-lane bridge.  Use PipeClient and PipeHost in most scenarios.  There is a PipeServer which can be used for single instance servers (or if you want to write your own host).</PackageReleaseNotes>
     <PostBuildEvent></PostBuildEvent>
     <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
     <PackageId>Tungsten.IO.Pipes</PackageId>
