@@ -54,8 +54,6 @@
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
@@ -144,8 +142,8 @@
     <Reference Include="Tungsten.From, Version=2.0.0.36, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.From.2.0.0\lib\net45\Tungsten.From.dll</HintPath>
     </Reference>
-    <Reference Include="Tungsten.IO.Pipes, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Tungsten.IO.Pipes.2.0.1\lib\net45\Tungsten.IO.Pipes.dll</HintPath>
+    <Reference Include="Tungsten.IO.Pipes, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tungsten.IO.Pipes.2.0.2\lib\net45\Tungsten.IO.Pipes.dll</HintPath>
     </Reference>
     <Reference Include="Tungsten.LiteDb, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.LiteDb.2.0.0\lib\netstandard1.4\Tungsten.LiteDb.dll</HintPath>
@@ -168,7 +166,6 @@
     <Reference Include="Tungsten.Threading.Lockers, Version=2.0.1.21, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.Threading.Lockers.2.0.1\lib\net45\Tungsten.Threading.Lockers.dll</HintPath>
     </Reference>
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Test Files\TestAnything.cs">

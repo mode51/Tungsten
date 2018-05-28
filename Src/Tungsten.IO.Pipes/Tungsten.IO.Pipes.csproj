@@ -60,12 +60,6 @@
     <Compile Remove="Archive\Pipes_2_0_0\Program.cs" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="WindowsBase" />
-  </ItemGroup>
-
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.4'">
     <PackageReference Include="System.IO.Pipes" Version="4.3.0" />
   </ItemGroup>

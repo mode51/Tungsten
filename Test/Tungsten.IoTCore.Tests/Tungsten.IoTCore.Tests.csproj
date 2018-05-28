@@ -43,7 +43,7 @@
     <PackageReference Include="Tungsten.Encryption" Version="2.0.0" />
     <PackageReference Include="Tungsten.EventTemplate" Version="2.0.0" />
     <PackageReference Include="Tungsten.From" Version="2.0.0" />
-    <PackageReference Include="Tungsten.IO.Pipes" Version="2.0.1" />
+    <PackageReference Include="Tungsten.IO.Pipes" Version="2.0.2" />
     <PackageReference Include="Tungsten.LiteDb" Version="2.0.0" />
     <PackageReference Include="Tungsten.Lockable" Version="2.0.1" />
     <PackageReference Include="Tungsten.Logging" Version="2.0.0" />
