@@ -10,9 +10,9 @@
     <Product>Tungsten.Logging</Product>
     <Description>Tungsten.Logging provides basic support for logging.  Handle the W.Logging.Log.LogTheMessage event to provide additional logging options.  W.Logging.LogMessageHistory class can be instantiated to maintain an in-memory history of messages.</Description>
     <Copyright>Copyright @ 2018 Jordan Duerksen</Copyright>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/v2-dev/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/v2-dev/Tungsten.ico</PackageIconUrl>
     <RepositoryType></RepositoryType>
     <PackageTags>Tungsten.Logging Tungsten W Logging C# library</PackageTags>
     <Version>2.0.0</Version>

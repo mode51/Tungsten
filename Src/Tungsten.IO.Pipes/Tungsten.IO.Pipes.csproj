@@ -9,16 +9,16 @@
     <Description>Named pipe wrappers to simplify named-pipe use in your application.  PipeClient for clients and PipeServer for single-instance servers.  As pipes must have a server for each connected client, PipeHost will host multple PipeServers with the same pipe name.</Description>
     <Copyright>Copyright @ 2017 Jordan Duerksen</Copyright>
     <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
-    <PackageIconUrl>https://github.com/mode51/Tungsten/blob/master/Tungsten/Tungsten.ico</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/v2-dev/Tungsten.ico</PackageIconUrl>
     <PackageTags>Tungsten.IO.Pipes Tungsten Pipe NamedPipe W C# library</PackageTags>
-    <AssemblyVersion>2.0.1.1</AssemblyVersion>
-    <FileVersion>2.0.1.1</FileVersion>
-    <Version>2.0.1</Version>
+    <AssemblyVersion>2.0.2.0</AssemblyVersion>
+    <FileVersion>2.0.2.0</FileVersion>
+    <Version>2.0.2</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
     <PackageReleaseNotes>I yield.  Pipes just can't be forced to do what they weren't designed to do.  W.IO.Pipes has been refactored to be like traffic on a one-lane bridge.  Use PipeClient and PipeHost in most scenarios.  There is a PipeServer which can be used for single instance servers (or if you want to write your own host).</PackageReleaseNotes>
     <PostBuildEvent></PostBuildEvent>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/v2-dev/LICENSE</PackageLicenseUrl>
     <PackageId>Tungsten.IO.Pipes</PackageId>
     <Product>Tungsten.IO.Pipes</Product>
     <AssemblyName>Tungsten.IO.Pipes</AssemblyName>

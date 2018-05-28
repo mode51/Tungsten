@@ -10,9 +10,9 @@
     <Product>Tungsten.CallResult</Product>
     <Description>Tungsten.CallResult is a class which can be used as a return value to specify a success/fail, an exception if on ocurred, and a result</Description>
     <Copyright>Copyright @ 2018 Jordan Duerksen</Copyright>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/v2-dev/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/v2-dev/Tungsten.ico</PackageIconUrl>
     <RepositoryType></RepositoryType>
     <PackageTags>Tungsten.CallResult Tungsten W C# library</PackageTags>
     <Version>2.0.0</Version>

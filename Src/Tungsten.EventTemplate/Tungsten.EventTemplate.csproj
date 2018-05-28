@@ -10,9 +10,9 @@
     <Product>Tungsten.EventTemplate</Product>
     <Description>Tungsten.EventTemplate is a class which makes exposing and raising an event somewhat easier</Description>
     <Copyright>Copyright @ 2018 Jordan Duerksen</Copyright>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/v2-dev/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/v2-dev/Tungsten.ico</PackageIconUrl>
     <RepositoryType></RepositoryType>
     <PackageTags>Tungsten.EventTemplate Tungsten W C# library</PackageTags>
     <Version>2.0.0</Version>

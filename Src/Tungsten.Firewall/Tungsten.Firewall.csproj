@@ -9,13 +9,14 @@
     <Version>2.0.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright>Copyright @ 2018 Jordan Duerksen</Copyright>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/v2-dev/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/master/Src/Tungsten/Tungsten.ico</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/v2-dev/Tungsten.ico</PackageIconUrl>
     <PackageTags>Tungsten.Firewall Tungsten Firewall W C# library</PackageTags>
     <AssemblyVersion>2.0.0.35</AssemblyVersion>
     <FileVersion>2.0.0.33</FileVersion>
+    <ApplicationIcon>Tungsten.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net20|AnyCPU'">
