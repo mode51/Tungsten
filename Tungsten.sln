@@ -13,6 +13,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BA374E8B-412E-43E6-B2F9-391FA59A68A1}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		Src\Tungsten.ArrayMethods\Tungsten.ico = Src\Tungsten.ArrayMethods\Tungsten.ico
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "W.Suite", "W.Suite", "{9B5483DB-83E5-449D-98F0-55260C956789}"
@@ -523,12 +524,12 @@ Global
 		{5C8CEF66-02EF-4E9B-8B2B-A86105BF7766} = {BD8E3A77-1CC9-41DB-9569-31EA41DDF2C8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6BA36790-23C3-49B0-896D-8712E2FEE3EF}
-		BuildVersion_BuildVersioningStyle = None.None.None.Increment
-		BuildVersion_UpdateAssemblyVersion = True
-		BuildVersion_UpdateFileVersion = True
-		BuildVersion_StartDate = 2000/1/1
 		BuildVersion_ConfigurationName = Release
+		BuildVersion_StartDate = 2000/1/1
+		BuildVersion_UpdateFileVersion = True
+		BuildVersion_UpdateAssemblyVersion = True
+		BuildVersion_BuildVersioningStyle = None.None.None.Increment
+		SolutionGuid = {6BA36790-23C3-49B0-896D-8712E2FEE3EF}
 	EndGlobalSection
 	GlobalSection(NDepend) = preSolution
 		Project = ".\Tungsten1.ndproj"
