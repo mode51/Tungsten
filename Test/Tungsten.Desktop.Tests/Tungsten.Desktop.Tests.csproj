@@ -133,8 +133,8 @@
     <Reference Include="Tungsten.Domains, Version=2.0.0.31, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.Domains.2.0.0\lib\net45\Tungsten.Domains.dll</HintPath>
     </Reference>
-    <Reference Include="Tungsten.Encryption, Version=2.0.0.29, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Tungsten.Suite.2.0.0\lib\net45\Tungsten.Encryption.dll</HintPath>
+    <Reference Include="Tungsten.Encryption, Version=2.0.1.36, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tungsten.Encryption.2.0.1\lib\net45\Tungsten.Encryption.dll</HintPath>
     </Reference>
     <Reference Include="Tungsten.EventTemplate, Version=2.0.0.30, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.Suite.2.0.0\lib\net45\Tungsten.EventTemplate.dll</HintPath>
