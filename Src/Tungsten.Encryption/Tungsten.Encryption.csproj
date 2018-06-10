@@ -19,7 +19,7 @@
     <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
     <AssemblyVersion>2.0.1.0</AssemblyVersion>
     <FileVersion>2.0.1.0</FileVersion>
-    <PackageReleaseNotes>Encryption exceptions are now logged</PackageReleaseNotes>
+    <PackageReleaseNotes>Added RSAMethods.EncryptToBytes and RSAMethods.DecryptToBytes</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
