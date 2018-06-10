@@ -56,7 +56,7 @@ namespace W.Net
                         if (_host.Pending())
                         {
                             System.Net.Sockets.Socket socket = null;
-#if NET45 || NETSTANDARD2_0
+#if NET45 || NETSTANDARD2_0 || NETCOREAPP2_0
                             socket = _host.AcceptSocket();
 #elif NETSTANDARD1_3
                             socket = _host.AcceptSocketAsync().Result;

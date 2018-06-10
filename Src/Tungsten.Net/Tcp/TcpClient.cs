@@ -109,7 +109,12 @@ namespace W.Net
             protected virtual void OnSend(ref byte[] bytes)
             {
                 lock (_keepAliveLock)
-                    _swKeepAlive.Restart();
+                {
+                    if (_swKeepAlive == null)
+                        _swKeepAlive = System.Diagnostics.Stopwatch.StartNew();
+                    else
+                        _swKeepAlive.Restart();
+                }
                 if (_socketLocker == null)
                     return;
                 _socketLocker?.Lock();

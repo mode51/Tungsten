@@ -255,8 +255,9 @@ namespace W.Net
             {
                 System.Diagnostics.Debugger.Break();
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                System.Diagnostics.Debug.WriteLine(e.ToString());
                 System.Diagnostics.Debugger.Break();
             }
             response = null;

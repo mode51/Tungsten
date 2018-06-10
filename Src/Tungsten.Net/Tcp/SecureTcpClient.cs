@@ -19,14 +19,20 @@ namespace W.Net
 
             protected override void OnSend(ref byte[] bytes)
             {
+                var temp = (byte[])bytes.Clone();
                 if (Encryption.RemotePublicKey != null)
                     Encryption.Encrypt(ref bytes);
+                if (Encryption.RemotePublicKey == null)
+                    System.Diagnostics.Debugger.Break();
                 base.OnSend(ref bytes);
             }
             protected override void OnReceived(ref byte[] bytes)
             {
+                var temp = (byte[])bytes.Clone();
                 if (Encryption.RemotePublicKey != null)
                     Encryption.Decrypt(ref bytes);
+                if (Encryption.RemotePublicKey == null)
+                    System.Diagnostics.Debugger.Break();
                 base.OnReceived(ref bytes);
             }
             protected override bool OnInitialize(params object[] args)
@@ -39,7 +45,7 @@ namespace W.Net
                     RSAParameters? remotePublicKey = null;
                     byte[] response;
                     var bytes = SerializationMethods.Serialize(myPublicKey).AsBytes();
-                    if (Socket.SendAndWaitForResponse(ref bytes, out response, 5000))
+                    if (Socket.SendAndWaitForResponse(ref bytes, out response, 60000))
                         remotePublicKey = SerializationMethods.Deserialize<RSAParameters>(ref response);
 
                     if (remotePublicKey == null)
