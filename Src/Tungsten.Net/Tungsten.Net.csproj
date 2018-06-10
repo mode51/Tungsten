@@ -23,7 +23,7 @@
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
     <OutputType>Library</OutputType>
     <StartupObject />
-    <PackageReleaseNotes>Increased the timeout period for securing network connections from 5 seconds to 60 seconds.</PackageReleaseNotes>
+    <PackageReleaseNotes>Increased the timeout period for securing network connections from 5 seconds to 60 seconds.  Fixed a bug with RPC Server where api names weren't being properly assigned.  Updated Tungsten.Encryption reference to v2.0.1.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
