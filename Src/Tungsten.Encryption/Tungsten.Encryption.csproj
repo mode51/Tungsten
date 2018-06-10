@@ -15,10 +15,11 @@
     <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/v2-dev/Tungsten.ico</PackageIconUrl>
     <RepositoryType></RepositoryType>
     <PackageTags>Tungsten.Encryption Tungsten W C# library</PackageTags>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
-    <AssemblyVersion>2.0.0.36</AssemblyVersion>
-    <FileVersion>2.0.0.34</FileVersion>
+    <AssemblyVersion>2.0.1.0</AssemblyVersion>
+    <FileVersion>2.0.1.0</FileVersion>
+    <PackageReleaseNotes>Encryption exceptions are now logged</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

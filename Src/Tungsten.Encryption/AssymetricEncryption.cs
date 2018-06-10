@@ -60,12 +60,14 @@ namespace W.Encryption
                 throw new InvalidOperationException("Nothing can be encrypted when the RemotePublicKey is null");
             try
             {
-                var message = RSAMethods.Encrypt(bytes.AsString(), (System.Security.Cryptography.RSAParameters)RemotePublicKey); //msg should be base64 encoded (by a previous Encrypt call) going into _rsa.Decrypt
-                bytes = message.AsBytes();
+                //var message = RSAMethods.Encrypt(bytes.AsString(), (System.Security.Cryptography.RSAParameters)RemotePublicKey); //msg should be base64 encoded (by a previous Encrypt call) going into _rsa.Decrypt
+                //bytes = message.AsBytes();
+                bytes = RSAMethods.EncryptToBytes(bytes, (System.Security.Cryptography.RSAParameters)RemotePublicKey);
                 result = true;
             }
             catch (Exception e)
             {
+                Logging.Log(e.ToString());
                 System.Diagnostics.Debugger.Break();
             }
             return result;
@@ -80,13 +82,16 @@ namespace W.Encryption
             var result = false;
             try
             {
-                var message = RSAMethods.Decrypt(bytes.AsString(), _rsa.PrivateKey); //msg should be base64 encoded (by a previous Encrypt call) going into _rsa.Decrypt
-                bytes = message.AsBytes();
+                //var message = RSAMethods.Decrypt(bytes.AsString(), _rsa.PrivateKey); //msg should be base64 encoded (by a previous Encrypt call) going into _rsa.Decrypt
+                //bytes = message.AsBytes();
+                var resultBytes = RSAMethods.DecryptToBytes(bytes, _rsa.PrivateKey);
+                bytes = resultBytes;
                 result = true;
             }
             catch (Exception e)
             {
                 //Log.e(e);
+                Logging.Log(e.ToString());
                 System.Diagnostics.Debugger.Break();
             }
             return result;

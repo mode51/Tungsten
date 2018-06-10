@@ -111,12 +111,11 @@ namespace W.Encryption
             using (var rsa = System.Security.Cryptography.RSA.Create())
             {
                 rsa.ImportParameters(publicKey);
-
                 byte[] bytes = text.AsBytes();
-                int maxLength = ((rsa.KeySize / 8) % 3 != 0) ? (((rsa.KeySize / 8) / 3) * 4) + 4 : ((rsa.KeySize / 8) / 3) * 4;
+                int maxLength = (rsa.KeySize / 8) - 42 ;// ((rsa.KeySize / 8) % 3 != 0) ? (((rsa.KeySize / 8) / 3) * 4) + 4 : ((rsa.KeySize / 8) / 3) * 4;
                 int dataLength = bytes.Length;
                 int iterations = dataLength / maxLength;
-                StringBuilder stringBuilder = new StringBuilder();
+                var stringBuilder = new StringBuilder();
                 for (int i = 0; i <= iterations; i++)
                 {
                     byte[] tempBytes = new byte[(dataLength - maxLength * i > maxLength) ? maxLength : dataLength - maxLength * i];
@@ -131,11 +130,48 @@ namespace W.Encryption
                     // Why convert to base 64?
                     // Because it is the largest power-of-two base printable using only 
                     // ASCII characters
-                    stringBuilder.Append(Convert.ToBase64String(encryptedBytes));
+                    var base64String = Convert.ToBase64String(encryptedBytes);
+                    stringBuilder.Append(base64String);
                 }
                 return stringBuilder.ToString();
             }
 #endif
+        }
+        public static byte[] EncryptToBytes(byte[] bytes, RSAParameters publicKey)
+        {
+            byte[] result = new byte[0];
+            using (var rsa = System.Security.Cryptography.RSA.Create())
+            {
+                rsa.ImportParameters(publicKey);
+                //byte[] bytes = text.AsBytes();
+                int maxLength = (rsa.KeySize / 8) - 42;// ((rsa.KeySize / 8) % 3 != 0) ? (((rsa.KeySize / 8) / 3) * 4) + 4 : ((rsa.KeySize / 8) / 3) * 4;
+                int dataLength = bytes.Length;
+                int iterations = dataLength / maxLength;
+                var stringBuilder = new StringBuilder();
+                for (int i = 0; i <= iterations; i++)
+                {
+                    byte[] tempBytes = new byte[(dataLength - maxLength * i > maxLength) ? maxLength : dataLength - maxLength * i];
+                    Buffer.BlockCopy(bytes, maxLength * i, tempBytes, 0, tempBytes.Length);
+#if NET45
+                    byte[] encryptedBytes = rsa.EncryptValue(tempBytes);
+#else
+                    byte[] encryptedBytes = rsa.Encrypt(tempBytes, RSAEncryptionPadding.Pkcs1); //8.29.2017 - seems we can only use Pkcs1, probably because it's multi-platform
+#endif
+                    // Be aware the RSACryptoServiceProvider reverses the order of 
+                    // encrypted bytes. It does this after encryption and before 
+                    // decryption. If you do not require compatibility with Microsoft 
+                    // Cryptographic API (CAPI) and/or other vendors. Comment out the 
+                    // next line and the corresponding one in the DecryptString function.
+                    //Array.Reverse(encryptedBytes);
+                    // Why convert to base 64?
+                    // Because it is the largest power-of-two base printable using only 
+                    // ASCII characters
+                    var len = result.Length;
+                    Array.Resize(ref result, len + encryptedBytes.Length);
+                    Buffer.BlockCopy(encryptedBytes, 0, result, len, encryptedBytes.Length);
+                }
+            }
+            return result;
         }
         /// <summary>
         /// Decrypts a string which was previously encrypted with the Encrypt method
@@ -168,12 +204,14 @@ namespace W.Encryption
             using (var rsa = System.Security.Cryptography.RSA.Create())
             {
                 rsa.ImportParameters(privateKey);
-                int base64BlockSize = ((rsa.KeySize / 8) % 3 != 0) ? (((rsa.KeySize / 8) / 3) * 4) + 4 : ((rsa.KeySize / 8) / 3) * 4;
+                int base64BlockSize = (rsa.KeySize / 8) - 42;// ((rsa.KeySize / 8) % 3 != 0) ? (((rsa.KeySize / 8) / 3) * 4) + 4 : ((rsa.KeySize / 8) / 3) * 4;
                 int iterations = text.Length / base64BlockSize;
                 var fullBytes = new byte[0];
+
                 for (int i = 0; i < iterations; i++)
                 {
-                    byte[] encryptedBytes = Convert.FromBase64String(text.Substring(base64BlockSize * i, base64BlockSize));
+                    var subString = text.Substring(base64BlockSize * i, base64BlockSize);
+                    byte[] encryptedBytes = Convert.FromBase64String(subString);
                     // Be aware the RSACryptoServiceProvider reverses the order of 
                     // encrypted bytes after encryption and before decryption.
                     // If you do not require compatibility with Microsoft Cryptographic 
@@ -190,6 +228,41 @@ namespace W.Encryption
                 return fullBytes.AsString();
             }
 #endif
+        }
+        public static byte[] DecryptToBytes(byte[] bytes, RSAParameters privateKey)
+        {
+            using (var rsa = System.Security.Cryptography.RSA.Create())
+            {
+                rsa.ImportParameters(privateKey);
+                int blockSize = rsa.KeySize / 8;
+                //int base64BlockSize = (rsa.KeySize / 8) - 42;// ((rsa.KeySize / 8) % 3 != 0) ? (((rsa.KeySize / 8) / 3) * 4) + 4 : ((rsa.KeySize / 8) / 3) * 4;
+                //int iterations = bytes.Length / base64BlockSize;
+                int iterations = bytes.Length / blockSize;
+                var fullBytes = new byte[0];
+
+                for (int i = 0; i < iterations; i++)
+                {
+                    byte[] encryptedBytes = new byte[blockSize];
+                    Array.Copy(bytes, blockSize * i, encryptedBytes, 0, blockSize);
+                    // Be aware the RSACryptoServiceProvider reverses the order of 
+                    // encrypted bytes after encryption and before decryption.
+                    // If you do not require compatibility with Microsoft Cryptographic 
+                    // API (CAPI) and/or other vendors.
+                    // Comment out the next line and the corresponding one in the 
+                    // EncryptString function.
+                    //Array.Reverse(encryptedBytes);
+#if NET45
+                    var decryptedBytes = rsa.DecryptValue(encryptedBytes);
+#else
+                    var decryptedBytes = rsa.Decrypt(encryptedBytes, RSAEncryptionPadding.Pkcs1); //8.29.2017 - seems we can only use Pkcs1, probably because it's multi-platform
+#endif
+                    var len = fullBytes.Length;
+                    Array.Resize(ref fullBytes, len + decryptedBytes.Length);
+                    Array.Copy(decryptedBytes, 0, fullBytes, len, decryptedBytes.Length);
+                    //arrayList.AddRange(bytes);
+                }
+                return fullBytes;
+            }
         }
 
         /// <summary>
@@ -231,6 +304,24 @@ namespace W.Encryption
                 return Decrypt(text, privateKey);
             });
 #endif
+        }
+    }
+    internal static class Logging
+    {
+        public static System.Net.IPEndPoint LOCALUDPLOGCONSOLE = new System.Net.IPEndPoint(System.Net.IPAddress.Parse("127.0.0.1"), 2114);
+        public static async void Log(string message)
+        {
+            try
+            {
+                //using (var client = new System.Net.Sockets.UdpClient("127.0.0.1", 2114))
+                using (var client = new System.Net.Sockets.UdpClient())
+                {
+                    var bytes = message.AsBytes();
+                    await client.SendAsync(bytes, bytes.Length, LOCALUDPLOGCONSOLE);
+                }
+            }
+            finally { }
+
         }
     }
 }
