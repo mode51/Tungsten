@@ -30,7 +30,7 @@ namespace W.Net.RPC
                         {
                             if (a2 is RPCMethodAttribute)
                             {
-                                var key = type.Namespace + "." + type.Name + "." + mi.Name;
+                                var key = type.FullName.Replace("+", ".") + "." + mi.Name;// type.Namespace + "." + type.DeclaringType.Name + "." + type.Name + "." + mi.Name;
                                 if (!Methods.ContainsKey(key))
                                     Methods.Add(key, mi);
                             }
