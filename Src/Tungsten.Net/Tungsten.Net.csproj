@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net45;netstandard1.3;netstandard2.0</TargetFrameworks>
     <!--<TargetFramework>net45</TargetFramework>-->
-    <Version>2.0.1</Version>
+    <Version>2.0.2</Version>
     <Authors>Jordan Duerksen</Authors>
     <Company />
     <Product>Tungsten.Net</Product>
@@ -14,8 +14,8 @@
     <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/v2-dev/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
     <PackageTags>Tungsten.Net Tungsten W W.Net C# library tcp sockets client server</PackageTags>
-    <AssemblyVersion>2.0.1.0</AssemblyVersion>
-    <FileVersion>2.0.1.0</FileVersion>
+    <AssemblyVersion>2.0.2.0</AssemblyVersion>
+    <FileVersion>2.0.2.0</FileVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PostBuildEvent></PostBuildEvent>
     <AssemblyName>Tungsten.Net</AssemblyName>
@@ -23,7 +23,7 @@
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
     <OutputType>Library</OutputType>
     <StartupObject />
-    <PackageReleaseNotes>Increased the timeout period for securing network connections from 5 seconds to 60 seconds.  Fixed a bug with RPC Server where api names weren't being properly assigned.  Updated Tungsten.Encryption reference to v2.0.1.</PackageReleaseNotes>
+    <PackageReleaseNotes>Updated Tungsten.Encryption reference to v2.0.2.  Had to upgrade Newtonsoft.Json minimum version to 10.0.1.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
@@ -50,9 +50,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
     <PackageReference Include="Tungsten.As" Version="2.0.0" />
-    <PackageReference Include="Tungsten.Encryption" Version="2.0.1" />
+    <PackageReference Include="Tungsten.Encryption" Version="2.0.2" />
     <PackageReference Include="Tungsten.From" Version="2.0.0" />
     <PackageReference Include="Tungsten.Logging" Version="2.0.0" />
     <PackageReference Include="Tungsten.Threading" Version="2.0.0" />
