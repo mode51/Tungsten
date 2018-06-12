@@ -38,32 +38,58 @@ namespace W.Encryption
             }
         }
 
+        ///// <summary>
+        ///// Encrypts a string
+        ///// </summary>
+        ///// <param name="text">The string to be encrypted</param>
+        ///// <returns>A string containing the encrypted text</returns>
+        //public string Encrypt(string text) { return Encrypt(text, PublicKey); }
+        ///// <summary>
+        ///// Encrypts a string
+        ///// </summary>
+        ///// <param name="text">The text to encrypt</param>
+        ///// <param name="publicKey">The public key used to encrypt the text</param>
+        ///// <returns>A string containing the encrypted text</returns>
+        //public string Encrypt(string text, RSAParameters publicKey) { return RSAMethods.Encrypt(text, publicKey); }
+        ///// <summary>
+        ///// Decrypts a string (previously encrypted with the Encrypt method)
+        ///// </summary>
+        ///// <param name="text">The encrypted string</param>
+        ///// <returns>A string containing the decrypted value</returns>
+        //public string Decrypt(string text) { return Decrypt(text, PrivateKey); }
+        ///// <summary>
+        ///// Decrypts a string (previously encrypted with the Encrypt method)
+        ///// </summary>
+        ///// <param name="text">The encrypted string</param>
+        ///// <param name="privateKey">The private key used to decrypt the string</param>
+        ///// <returns>A string containing the decrypted value</returns>
+        //public string Decrypt(string text, RSAParameters privateKey) { return RSAMethods.Decrypt(text, PrivateKey); }
         /// <summary>
-        /// Encrypts a string
+        /// Encrypts a byte[]
         /// </summary>
-        /// <param name="text">The string to be encrypted</param>
-        /// <returns>A string containing the encrypted text</returns>
-        public string Encrypt(string text) { return Encrypt(text, PublicKey); }
+        /// <param name="bytes">The byte[] to be encrypted</param>
+        /// <returns>A byte[] containing the encrypted bytes</returns>
+        public byte[] Encrypt(byte[] bytes) { return Encrypt(bytes, PublicKey); }
         /// <summary>
-        /// Encrypts a string
+        /// Encrypts a byte[]
         /// </summary>
-        /// <param name="text">The text to encrypt</param>
-        /// <param name="publicKey">The public key used to encrypt the text</param>
-        /// <returns>A string containing the encrypted text</returns>
-        public string Encrypt(string text, RSAParameters publicKey) { return RSAMethods.Encrypt(text, publicKey); }
+        /// <param name="bytes">The bytes to encrypt</param>
+        /// <param name="publicKey">The public key used to encrypt the bytes</param>
+        /// <returns>A byte[] containing the encrypted bytes</returns>
+        public byte[] Encrypt(byte[] bytes, RSAParameters publicKey) { return RSAMethods.Encrypt(bytes, publicKey); }
         /// <summary>
-        /// Decrypts a string (previously encrypted with the Encrypt method)
+        /// Decrypts a byte[] (previously encrypted with the Encrypt method)
         /// </summary>
-        /// <param name="text">The encrypted string</param>
-        /// <returns>A string containing the decrypted value</returns>
-        public string Decrypt(string text) { return Decrypt(text, PrivateKey); }
+        /// <param name="bytes">The encrypted byte[]</param>
+        /// <returns>A byte[] containing the decrypted value</returns>
+        public byte[] Decrypt(byte[] bytes) { return Decrypt(bytes, PrivateKey); }
         /// <summary>
-        /// Decrypts a string (previously encrypted with the Encrypt method)
+        /// Decrypts a byte[] (previously encrypted with the Encrypt method)
         /// </summary>
-        /// <param name="text">The encrypted string</param>
-        /// <param name="privateKey">The private key used to decrypt the string</param>
-        /// <returns>A string containing the decrypted value</returns>
-        public string Decrypt(string text, RSAParameters privateKey) { return RSAMethods.Decrypt(text, PrivateKey); }
+        /// <param name="bytes">The encrypted byte[]</param>
+        /// <param name="privateKey">The private key used to decrypt the byte[]</param>
+        /// <returns>A byte[] containing the decrypted value</returns>
+        public byte[] Decrypt(byte[] bytes, RSAParameters privateKey) { return RSAMethods.Decrypt(bytes, PrivateKey); }
 
         /// <summary>
         /// Disposes the instance and releases resources

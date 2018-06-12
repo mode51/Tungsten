@@ -62,7 +62,7 @@ namespace W.Encryption
             {
                 //var message = RSAMethods.Encrypt(bytes.AsString(), (System.Security.Cryptography.RSAParameters)RemotePublicKey); //msg should be base64 encoded (by a previous Encrypt call) going into _rsa.Decrypt
                 //bytes = message.AsBytes();
-                bytes = RSAMethods.EncryptToBytes(bytes, (System.Security.Cryptography.RSAParameters)RemotePublicKey);
+                bytes = RSAMethods.Encrypt(bytes, (System.Security.Cryptography.RSAParameters)RemotePublicKey);
                 result = true;
             }
             catch (Exception e)
@@ -84,7 +84,7 @@ namespace W.Encryption
             {
                 //var message = RSAMethods.Decrypt(bytes.AsString(), _rsa.PrivateKey); //msg should be base64 encoded (by a previous Encrypt call) going into _rsa.Decrypt
                 //bytes = message.AsBytes();
-                var resultBytes = RSAMethods.DecryptToBytes(bytes, _rsa.PrivateKey);
+                var resultBytes = RSAMethods.Decrypt(bytes, _rsa.PrivateKey);
                 bytes = resultBytes;
                 result = true;
             }
