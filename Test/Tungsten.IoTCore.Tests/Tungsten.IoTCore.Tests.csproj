@@ -37,14 +37,14 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.3.2" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
     <PackageReference Include="Tungsten.ArrayMethods" Version="2.0.0" />
-    <PackageReference Include="Tungsten.As" Version="2.0.0" />
+    <PackageReference Include="Tungsten.As" Version="2.0.1" />
     <PackageReference Include="Tungsten.CallResult" Version="2.0.0" />
     <PackageReference Include="Tungsten.Console" Version="2.0.0" />
     <PackageReference Include="Tungsten.Domains" Version="2.0.0" />
     <PackageReference Include="Tungsten.Encryption" Version="2.0.2" />
     <PackageReference Include="Tungsten.EventTemplate" Version="2.0.0" />
-    <PackageReference Include="Tungsten.From" Version="2.0.0" />
-    <PackageReference Include="Tungsten.IO.Pipes" Version="2.0.2" />
+    <PackageReference Include="Tungsten.From" Version="2.0.1" />
+    <PackageReference Include="Tungsten.IO.Pipes" Version="2.0.3" />
     <PackageReference Include="Tungsten.LiteDb" Version="2.0.0" />
     <PackageReference Include="Tungsten.Lockable" Version="2.0.1" />
     <PackageReference Include="Tungsten.Logging" Version="2.0.0" />

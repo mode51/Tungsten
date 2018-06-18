@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 using W;
+using W.Encryption;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace W.Tests
@@ -15,6 +16,18 @@ namespace W.Tests
         private static int keySize = 2048;
         private static string valueString = "Jordan                                                                                                            Duerksen";
         private static byte[] valueBytes = valueString.AsBytes();// "Jordan                                                                                                            Duerksen".AsBytes();
+
+        [TestMethod]
+        public void Sample_Test()
+        {
+            var message = "This is a test message";
+            var bytes = message.AsBytes();
+            RSAMethods.CreateKeyPair(1024, out RSAParameters privateKey, out RSAParameters publicKey);
+            var cipher = RSAMethods.Encrypt(bytes, publicKey);
+            var deciphered = RSAMethods.Decrypt(cipher, privateKey);
+            Console.WriteLine($"Cipher = {cipher.AsBase64()}");
+            Console.WriteLine($"Deciphered = {deciphered.AsString()}");
+        }
 
         [TestMethod]
         public void RSA_EncryptAndDecrypt()

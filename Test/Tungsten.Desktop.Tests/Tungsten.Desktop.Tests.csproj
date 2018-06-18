@@ -121,8 +121,8 @@
     <Reference Include="Tungsten.ArrayMethods, Version=2.0.0.34, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.ArrayMethods.2.0.0\lib\net45\Tungsten.ArrayMethods.dll</HintPath>
     </Reference>
-    <Reference Include="Tungsten.As, Version=2.0.0.39, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Tungsten.As.2.0.0\lib\net45\Tungsten.As.dll</HintPath>
+    <Reference Include="Tungsten.As, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tungsten.As.2.0.1\lib\net45\Tungsten.As.dll</HintPath>
     </Reference>
     <Reference Include="Tungsten.CallResult, Version=2.0.0.39, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.CallResult.2.0.0\lib\net45\Tungsten.CallResult.dll</HintPath>
@@ -139,11 +139,11 @@
     <Reference Include="Tungsten.EventTemplate, Version=2.0.0.30, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.Suite.2.0.0\lib\net45\Tungsten.EventTemplate.dll</HintPath>
     </Reference>
-    <Reference Include="Tungsten.From, Version=2.0.0.36, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Tungsten.From.2.0.0\lib\net45\Tungsten.From.dll</HintPath>
+    <Reference Include="Tungsten.From, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tungsten.From.2.0.1\lib\net45\Tungsten.From.dll</HintPath>
     </Reference>
-    <Reference Include="Tungsten.IO.Pipes, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Tungsten.IO.Pipes.2.0.2\lib\net45\Tungsten.IO.Pipes.dll</HintPath>
+    <Reference Include="Tungsten.IO.Pipes, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tungsten.IO.Pipes.2.0.3\lib\net45\Tungsten.IO.Pipes.dll</HintPath>
     </Reference>
     <Reference Include="Tungsten.LiteDb, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tungsten.LiteDb.2.0.0\lib\netstandard1.4\Tungsten.LiteDb.dll</HintPath>
