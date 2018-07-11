@@ -253,5 +253,34 @@ namespace W.Tests
             someInt.Value = 5;
             Assert.IsTrue(someInt.IsDirty);
         }
+
+        [TestMethod]
+        public void Property_ImplicityConvertToValue()
+        {
+            var p = new Property<int>(20);
+            int i = p;
+            Assert.IsTrue(i == 20, "i did not receive the correct value");
+        }
+        [TestMethod]
+        public void Property_ImplicityConvertToProperty()
+        {
+            int i = 20;
+            Property<int> p = i;
+            Assert.IsTrue(p.Value == 20, "p.Value did not receive the correct value");
+        }
+        [TestMethod]
+        public void PropertySlim_ImplicityConvertToValue()
+        {
+            var p = new PropertySlim<int>(20);
+            int i = p;
+            Assert.IsTrue(i == 20, "i did not receive the correct value");
+        }
+        [TestMethod]
+        public void PropertySlim_ImplicityConvertToPropertySlim()
+        {
+            int i = 20;
+            PropertySlim<int> p = i;
+            Assert.IsTrue(p.Value == 20, "p.Value did not receive the correct value");
+        }
     }
 }

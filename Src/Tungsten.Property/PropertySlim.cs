@@ -99,6 +99,27 @@ namespace W
         public PropertySlim(TValue initialValue, Action<object, TValue, TValue> onValueChanged) : base(initialValue, onValueChanged) { }
     }
 
+    // implicit conversions
+    public partial class PropertySlim<TValue>
+    {
+        /// <summary>
+        /// Implicit conversion from PropertySlim&lt;TValue&gt; to TValue
+        /// </summary>
+        /// <param name="property">The PropertySlim&lt;TValue&gt; from which to obtain the value</param>
+        public static implicit operator TValue(PropertySlim<TValue> property)
+        {
+            return property.Value;
+        }
+        /// <summary>
+        /// Implicit conversion from TValue to PropertySlim&lt;TValue&gt;
+        /// </summary>
+        /// <param name="value">The value from which to create a new PropertySlim&lt;TValue&gt;</param>
+        public static implicit operator PropertySlim<TValue>(TValue value)
+        {
+            return new PropertySlim<TValue>(value);
+        }
+    }
+
     //root implementation
     public partial class PropertySlim<TValue> : Lockable<TValue>
     {

@@ -29,7 +29,7 @@ namespace W
         /// <typeparam name="TType">The type to convert the item reference to.</typeparam>
         /// <param name="this">The item to convert to type TType</param>
         /// <returns>Null if @this cannot be referenced as TType.  Otherwise, the item as TType</returns>
-        /// <example><code>expression as type</code> becomes <code>expression&lt;type&gt;()</code></example>
+        /// <example><code>expression as type</code> becomes <code>expression.As&lt;type&gt;()</code></example>
         public static TType As<TType>(this object @this) where TType : class
         {
             return @this as TType;
