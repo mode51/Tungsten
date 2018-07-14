@@ -73,9 +73,9 @@ namespace W.Firewall
                 inboundRule.Action = NET_FW_ACTION_.NET_FW_ACTION_ALLOW;
             else
                 inboundRule.Action = NET_FW_ACTION_.NET_FW_ACTION_BLOCK;
-            //Using protocol TCP
-            inboundRule.Protocol = 6; // TCP
-                                      //Port 81
+            //specify protocol
+            inboundRule.Protocol = protocol; // 6=TCP
+            //specify ports
             inboundRule.LocalPorts = localPorts;
             //Name of rule
             inboundRule.Name = ruleName;
