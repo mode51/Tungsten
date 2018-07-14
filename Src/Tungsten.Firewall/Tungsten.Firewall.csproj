@@ -6,7 +6,7 @@
     <Description>Tungsten.Firewall is a minimal library, using NetFwTypeLib, to add and remove Windows firewall rules</Description>
     <Company>Jordan Duerksen</Company>
     <Authors>Jordan Duerksen</Authors>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright>Copyright @ 2018 Jordan Duerksen</Copyright>
     <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/v2-dev/LICENSE</PackageLicenseUrl>
@@ -14,9 +14,10 @@
     <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/v2-dev/Tungsten.ico</PackageIconUrl>
     <PackageTags>Tungsten.Firewall Tungsten Firewall W C# library</PackageTags>
-    <AssemblyVersion>2.0.0.35</AssemblyVersion>
-    <FileVersion>2.0.0.33</FileVersion>
+    <AssemblyVersion>2.0.1.0</AssemblyVersion>
+    <FileVersion>2.0.1.0</FileVersion>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
+    <PackageReleaseNotes>inbound protocol now reflects the value passed in (it was hard-coded at TCP)</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net20|AnyCPU'">

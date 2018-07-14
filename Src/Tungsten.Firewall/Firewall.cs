@@ -74,15 +74,16 @@ namespace W.Firewall
             // Let's create a new rule
             INetFwRule2 inboundRule = (INetFwRule2)Activator.CreateInstance(Type.GetTypeFromProgID("HNetCfg.FWRule"));
             inboundRule.Enabled = true;
-            //Allow through firewall
-
+            
+            //firewall rule
             if (action == EFirewallRuleAction.Allowed)
                 inboundRule.Action = NET_FW_ACTION_.NET_FW_ACTION_ALLOW;
             else
                 inboundRule.Action = NET_FW_ACTION_.NET_FW_ACTION_BLOCK;
-            //Using protocol TCP
+
+            //specify protocol
             inboundRule.Protocol = (int) protocol; 
-                                      
+            //specify ports
             inboundRule.LocalPorts = localPorts;
             //Name of rule
             inboundRule.Name = ruleName;
