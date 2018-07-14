@@ -11,41 +11,26 @@ namespace W.Firewall
     /// </summary>
     public static class Rules
     {
-        /// <summary>
-        /// Firewall Protocols
-        /// </summary>
         public enum EFirewallProtocols
         {
-            /// <summary>
-            /// Any
-            /// </summary>
             Any = NET_FW_IP_PROTOCOL_.NET_FW_IP_PROTOCOL_ANY,
-            /// <summary>
-            /// Tcp
-            /// </summary>
             Tcp = NET_FW_IP_PROTOCOL_.NET_FW_IP_PROTOCOL_TCP,
-            /// <summary>
-            /// Udp
-            /// </summary>
             Udp = NET_FW_IP_PROTOCOL_.NET_FW_IP_PROTOCOL_UDP
         }
+
         /// <summary>
         /// Firewall rule actions
         /// </summary>
         public enum EFirewallRuleAction
         {
             /// <summary>
-            /// Allow
+            /// Allow communications
             /// </summary>
-            Allowed = NET_FW_ACTION_.NET_FW_ACTION_ALLOW,
+            Allowed = 1,//NET_FW_ACTION_.NET_FW_ACTION_ALLOW,
             /// <summary>
-            /// Block
+            /// Block communications
             /// </summary>
-            Block = NET_FW_ACTION_.NET_FW_ACTION_BLOCK,
-            /// <summary>
-            /// Max
-            /// </summary>
-            Max = NET_FW_ACTION_.NET_FW_ACTION_MAX
+            Block = 2 //NET_FW_ACTION_.NET_FW_ACTION_BLOCK
         }
         /// <summary>
         /// The firewall profile type
@@ -69,7 +54,6 @@ namespace W.Firewall
             /// </summary>
             All = NET_FW_PROFILE_TYPE2_.NET_FW_PROFILE2_ALL
         }
-
         /// <summary>
         /// Adds a rule to the firewall
         /// </summary>
@@ -90,11 +74,15 @@ namespace W.Firewall
             // Let's create a new rule
             INetFwRule2 inboundRule = (INetFwRule2)Activator.CreateInstance(Type.GetTypeFromProgID("HNetCfg.FWRule"));
             inboundRule.Enabled = true;
-
+            
             //firewall rule
-            inboundRule.Action = (NET_FW_ACTION_)action;
+            if (action == EFirewallRuleAction.Allowed)
+                inboundRule.Action = NET_FW_ACTION_.NET_FW_ACTION_ALLOW;
+            else
+                inboundRule.Action = NET_FW_ACTION_.NET_FW_ACTION_BLOCK;
+
             //specify protocol
-            inboundRule.Protocol = (int)protocol;
+            inboundRule.Protocol = (int) protocol; 
             //specify ports
             inboundRule.LocalPorts = localPorts;
             //Name of rule
