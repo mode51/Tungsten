@@ -12,18 +12,40 @@ namespace W.Firewall
     public static class Rules
     {
         /// <summary>
+        /// Firewall Protocols
+        /// </summary>
+        public enum EFirewallProtocols
+        {
+            /// <summary>
+            /// Any
+            /// </summary>
+            Any = NET_FW_IP_PROTOCOL_.NET_FW_IP_PROTOCOL_ANY,
+            /// <summary>
+            /// Tcp
+            /// </summary>
+            Tcp = NET_FW_IP_PROTOCOL_.NET_FW_IP_PROTOCOL_TCP,
+            /// <summary>
+            /// Udp
+            /// </summary>
+            Udp = NET_FW_IP_PROTOCOL_.NET_FW_IP_PROTOCOL_UDP
+        }
+        /// <summary>
         /// Firewall rule actions
         /// </summary>
         public enum EFirewallRuleAction
         {
             /// <summary>
-            /// Allow communications
+            /// Allow
             /// </summary>
-            Allowed = 1,//NET_FW_ACTION_.NET_FW_ACTION_ALLOW,
+            Allowed = NET_FW_ACTION_.NET_FW_ACTION_ALLOW,
             /// <summary>
-            /// Block communications
+            /// Block
             /// </summary>
-            Block = 2 //NET_FW_ACTION_.NET_FW_ACTION_BLOCK
+            Block = NET_FW_ACTION_.NET_FW_ACTION_BLOCK,
+            /// <summary>
+            /// Max
+            /// </summary>
+            Max = NET_FW_ACTION_.NET_FW_ACTION_MAX
         }
         /// <summary>
         /// The firewall profile type
@@ -47,6 +69,7 @@ namespace W.Firewall
             /// </summary>
             All = NET_FW_PROFILE_TYPE2_.NET_FW_PROFILE2_ALL
         }
+
         /// <summary>
         /// Adds a rule to the firewall
         /// </summary>
@@ -56,7 +79,7 @@ namespace W.Firewall
         /// <param name="localPorts">The desired rule port</param>
         /// <param name="action">The desired rule action, to allow or block communications</param>
         /// <param name="profiles">The desired rule profile</param>
-        public static void Add(string ruleName, string ruleGroup, int protocol = 6, string localPorts = "80", EFirewallRuleAction action = EFirewallRuleAction.Allowed, EFirewallProfiles profiles = EFirewallProfiles.All)
+        public static void Add(string ruleName, string ruleGroup, EFirewallProtocols protocol = EFirewallProtocols.Tcp, string localPorts = "80", EFirewallRuleAction action = EFirewallRuleAction.Allowed, EFirewallProfiles profiles = EFirewallProfiles.All)
         {
             if (Exists(ruleName))
                 return;
@@ -67,14 +90,11 @@ namespace W.Firewall
             // Let's create a new rule
             INetFwRule2 inboundRule = (INetFwRule2)Activator.CreateInstance(Type.GetTypeFromProgID("HNetCfg.FWRule"));
             inboundRule.Enabled = true;
-            //Allow through firewall
 
-            if (action == EFirewallRuleAction.Allowed)
-                inboundRule.Action = NET_FW_ACTION_.NET_FW_ACTION_ALLOW;
-            else
-                inboundRule.Action = NET_FW_ACTION_.NET_FW_ACTION_BLOCK;
+            //firewall rule
+            inboundRule.Action = (NET_FW_ACTION_)action;
             //specify protocol
-            inboundRule.Protocol = protocol; // 6=TCP
+            inboundRule.Protocol = (int)protocol;
             //specify ports
             inboundRule.LocalPorts = localPorts;
             //Name of rule
