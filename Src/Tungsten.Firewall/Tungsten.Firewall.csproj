@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net20;net35;net45</TargetFrameworks>
     <RootNamespace>W.Firewall</RootNamespace>
-    <Description>Tungsten.Firewall is a minimal library, using NetFwTypeLib, to add and remove Windows firewall rules</Description>
+    <Description>Tungsten.Firewall is a minimal library, using NetFwTypeLib, to add and remove Windows firewall rules.  Note that your application will need administrative rights to add/remove firewall rules.</Description>
     <Company>Jordan Duerksen</Company>
     <Authors>Jordan Duerksen</Authors>
     <Version>2.0.2</Version>
@@ -17,7 +17,7 @@
     <AssemblyVersion>2.0.2.0</AssemblyVersion>
     <FileVersion>2.0.2.0</FileVersion>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
-    <PackageReleaseNotes>Added a Rules.Add overload which supports the EFirewallProtocol enum</PackageReleaseNotes>
+    <PackageReleaseNotes>Added a Rules.Add overload which supports all the parameters for creating a firewall rule</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net20|AnyCPU'">
