@@ -11,6 +11,13 @@ namespace W.Firewall
     /// </summary>
     public static class Rules
     {
+        public enum EFirewallProtocols
+        {
+            Any = NET_FW_IP_PROTOCOL_.NET_FW_IP_PROTOCOL_ANY,
+            Tcp = NET_FW_IP_PROTOCOL_.NET_FW_IP_PROTOCOL_TCP,
+            Udp = NET_FW_IP_PROTOCOL_.NET_FW_IP_PROTOCOL_UDP
+        }
+
         /// <summary>
         /// Firewall rule actions
         /// </summary>
@@ -56,7 +63,7 @@ namespace W.Firewall
         /// <param name="localPorts">The desired rule port</param>
         /// <param name="action">The desired rule action, to allow or block communications</param>
         /// <param name="profiles">The desired rule profile</param>
-        public static void Add(string ruleName, string ruleGroup, int protocol = 6, string localPorts = "80", EFirewallRuleAction action = EFirewallRuleAction.Allowed, EFirewallProfiles profiles = EFirewallProfiles.All)
+        public static void Add(string ruleName, string ruleGroup, EFirewallProtocols protocol = EFirewallProtocols.Tcp, string localPorts = "80", EFirewallRuleAction action = EFirewallRuleAction.Allowed, EFirewallProfiles profiles = EFirewallProfiles.All)
         {
             if (Exists(ruleName))
                 return;
@@ -67,14 +74,15 @@ namespace W.Firewall
             // Let's create a new rule
             INetFwRule2 inboundRule = (INetFwRule2)Activator.CreateInstance(Type.GetTypeFromProgID("HNetCfg.FWRule"));
             inboundRule.Enabled = true;
-            //Allow through firewall
-
+            
+            //firewall rule
             if (action == EFirewallRuleAction.Allowed)
                 inboundRule.Action = NET_FW_ACTION_.NET_FW_ACTION_ALLOW;
             else
                 inboundRule.Action = NET_FW_ACTION_.NET_FW_ACTION_BLOCK;
+
             //specify protocol
-            inboundRule.Protocol = protocol; // 6=TCP
+            inboundRule.Protocol = (int) protocol; 
             //specify ports
             inboundRule.LocalPorts = localPorts;
             //Name of rule
