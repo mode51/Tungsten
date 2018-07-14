@@ -79,7 +79,21 @@ namespace W.Firewall
         /// <param name="localPorts">The desired rule port</param>
         /// <param name="action">The desired rule action, to allow or block communications</param>
         /// <param name="profiles">The desired rule profile</param>
+        /// <remarks>Protocol values can be looked up at: https://en.wikipedia.org/wiki/List_of_IP_protocol_numbers </remarks>
         public static void Add(string ruleName, string ruleGroup, EFirewallProtocol protocol = EFirewallProtocol.Tcp, string localPorts = "80", EFirewallRuleAction action = EFirewallRuleAction.Allowed, EFirewallProfiles profiles = EFirewallProfiles.All)
+        {
+            Add(ruleName, ruleGroup, (int)protocol, localPorts, action, profiles);
+        }
+        /// <summary>
+        /// Adds a rule to the firewall
+        /// </summary>
+        /// <param name="ruleName">The name of the rule to add</param>
+        /// <param name="ruleGroup">The group under which the rule is added</param>
+        /// <param name="protocol">The desired rule protocol</param>
+        /// <param name="localPorts">The desired rule port</param>
+        /// <param name="action">The desired rule action, to allow or block communications</param>
+        /// <param name="profiles">The desired rule profile</param>
+        public static void Add(string ruleName, string ruleGroup, int protocol = 6, string localPorts = "80", EFirewallRuleAction action = EFirewallRuleAction.Allowed, EFirewallProfiles profiles = EFirewallProfiles.All)
         {
             if (Exists(ruleName))
                 return;
