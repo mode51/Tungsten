@@ -14,7 +14,7 @@ namespace W.Firewall
         /// <summary>
         /// Firewall protocols
         /// </summary>
-        public enum EFirewallProtocols
+        public enum EFirewallProtocol
         {
             /// <summary>
             /// Any
@@ -79,7 +79,7 @@ namespace W.Firewall
         /// <param name="localPorts">The desired rule port</param>
         /// <param name="action">The desired rule action, to allow or block communications</param>
         /// <param name="profiles">The desired rule profile</param>
-        public static void Add(string ruleName, string ruleGroup, EFirewallProtocols protocol = EFirewallProtocols.Tcp, string localPorts = "80", EFirewallRuleAction action = EFirewallRuleAction.Allowed, EFirewallProfiles profiles = EFirewallProfiles.All)
+        public static void Add(string ruleName, string ruleGroup, EFirewallProtocol protocol = EFirewallProtocol.Tcp, string localPorts = "80", EFirewallRuleAction action = EFirewallRuleAction.Allowed, EFirewallProfiles profiles = EFirewallProfiles.All)
         {
             if (Exists(ruleName))
                 return;
