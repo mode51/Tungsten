@@ -17,7 +17,7 @@
     <AssemblyVersion>2.0.2.0</AssemblyVersion>
     <FileVersion>2.0.2.0</FileVersion>
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
-    <PackageReleaseNotes>Added the EFirewallProtocol enum and updated the Rules.Add method to use it instead of an int</PackageReleaseNotes>
+    <PackageReleaseNotes>Added a Rules.Add overload which supports the EFirewallProtocol enum</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net20|AnyCPU'">
