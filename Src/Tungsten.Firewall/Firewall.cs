@@ -231,7 +231,7 @@ namespace W.Firewall
                 return true;
             }
             return false;
-        }
+        } 
     }
 }
 #endif
