@@ -40,5 +40,16 @@ namespace W.Tests
                 Assert.IsTrue(value.Value == t);
             }
         }
+        [TestMethod]
+        public void Lockable_LoadValue()
+        {
+            var value = new Lockable<int>(3);
+            value.ValueChanged += (p, oldValue, newValue) =>
+            {
+                Assert.Fail("ValueChanged should not have been raised");
+            };
+            value.LoadValue(100);
+            Assert.IsTrue(value.Value == 100);
+        }
     }
 }
