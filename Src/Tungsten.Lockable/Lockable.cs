@@ -79,8 +79,21 @@ namespace W
         {
             InLock(Threading.Lockers.LockTypeEnum.Write, oldValue => 
             {
-                State = newValue;
+                State = newValue; //manually set this here, as a call to SetState would use InLock recursively
                 OnValueChanged(this, oldValue, newValue);
+            });
+        }
+        /// <summary>
+        /// Sets the value without raising the ValueChanged event or notifying waiters
+        /// </summary>
+        /// <param name="newValue">The new value</param>
+        public virtual void LoadValue(TValue newValue)
+        {
+            InLock(Threading.Lockers.LockTypeEnum.Write, oldValue =>
+            {
+                var shouldSet = !System.Collections.Generic.EqualityComparer<TValue>.Default.Equals(oldValue, newValue);
+                if (shouldSet)
+                    State = newValue;
             });
         }
 
