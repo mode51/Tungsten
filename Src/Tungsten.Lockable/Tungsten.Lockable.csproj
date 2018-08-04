@@ -15,10 +15,11 @@
     <PackageIconUrl>https://raw.githubusercontent.com/mode51/Tungsten/v2-dev/Tungsten.ico</PackageIconUrl>
     <RepositoryType></RepositoryType>
     <PackageTags>Tungsten.Lockable Tungsten W C# library</PackageTags>
-    <Version>2.0.1</Version>
+    <Version>2.0.2</Version>
     <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
-    <AssemblyVersion>2.0.1.19</AssemblyVersion>
-    <FileVersion>2.0.1.19</FileVersion>
+    <AssemblyVersion>2.0.2.0</AssemblyVersion>
+    <FileVersion>2.0.2.0</FileVersion>
+    <PackageReleaseNotes>Added Lockable.LoadValue which sets the State without raising the ValueChanged event</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
