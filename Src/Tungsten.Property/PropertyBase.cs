@@ -98,20 +98,6 @@ namespace W
             base.OnValueChanged(Owner, oldValue, newValue);
         }
 
-        ///// <summary>
-        ///// Sets Value without raising notification events
-        ///// </summary>
-        //public override void LoadValue(TValue value)
-        //{
-        //    //enter recursive write lock
-        //    InLock(Threading.Lockers.LockTypeEnum.Write, state =>
-        //    {   
-        //        base.LoadValue(value);
-        //        //IsDirty = false;
-        //        //InformWaiters();
-        //    });
-        //}
-
         /// <summary>
         /// Construct a new PropertyBase
         /// </summary>
