@@ -8,7 +8,14 @@ namespace W
     /// <typeparam name="TValue">The type of the property value</typeparam>
     public partial class Property<TValue> : PropertyBase<Property<TValue>, TValue>
     {
+        /// <summary>
+        /// Construct a new Property
+        /// </summary>
         public Property() : this(default(TValue)) { }
+        /// <summary>
+        /// Construct a new Property
+        /// </summary>
+        /// <param name="defaultValue">The default and initial value</param>
         public Property(TValue defaultValue) : base(null, defaultValue)
         {
             Owner = this;
@@ -18,7 +25,16 @@ namespace W
     //add initialValue and Action<object, TValue, TValue> onValueChanged (called in OnValueChanged) overloads
     public partial class Property<TValue>
     {
+        /// <summary>
+        /// Construct a new Property
+        /// </summary>
+        /// <param name="onValueChanged">Called whenever the value changes</param>
         public Property(Action<object, TValue, TValue> onValueChanged) : base(null, default(TValue), onValueChanged) { }
+        /// <summary>
+        /// Construct a new Property
+        /// </summary>
+        /// <param name="defaultValue">The default and initial value</param>
+        /// <param name="onValueChanged">Called whenever the value changes</param>
         public Property(TValue defaultValue, Action<object, TValue, TValue> onValueChanged) : base(null, defaultValue, onValueChanged) { }
     }
     // implicit conversions
@@ -80,9 +96,29 @@ namespace W
     //add initialValue and Action<object, TValue, TValue> onValueChanged (called in OnValueChanged) overloads
     public partial class Property<TOwner, TValue>
     {
+        /// <summary>
+        /// Constructs a new Property with the specified parameter(s)
+        /// </summary>
+        /// <param name="onValueChanged">Called when the value has changed</param>
         public Property(Action<object, TValue, TValue> onValueChanged) : this(default(TOwner), default(TValue), onValueChanged) { }
+        /// <summary>
+        /// Constructs a new Property with the specified parameter(s)
+        /// </summary>
+        /// <param name="owner">The owner of the property</param>
+        /// <param name="onValueChanged">Called when the value has changed</param>
         public Property(TOwner owner, Action<object, TValue, TValue> onValueChanged) : this(owner, default(TValue), onValueChanged) { }
-        public Property(TValue defaultValue, Action<object, TValue, TValue> onValueChanged) : this(default(TOwner), default(TValue), onValueChanged) { }
+        /// <summary>
+        /// Constructs a new Property with the specified parameter(s)
+        /// </summary>
+        /// <param name="defaultValue">The default and initial value</param>
+        /// <param name="onValueChanged">Called when the value has changed</param>
+        public Property(TValue defaultValue, Action<object, TValue, TValue> onValueChanged) : this(default(TOwner), defaultValue, onValueChanged) { }
+        /// <summary>
+        /// Constructs a new Property with the specified parameter(s)
+        /// </summary>
+        /// <param name="owner">The owner of the property</param>
+        /// <param name="defaultValue">The default and initial value</param>
+        /// <param name="onValueChanged">Called when the value has changed</param>
         public Property(TOwner owner, TValue defaultValue, Action<object, TValue, TValue> onValueChanged) : base(owner, defaultValue, onValueChanged) { }
     }
     // implicit conversions
