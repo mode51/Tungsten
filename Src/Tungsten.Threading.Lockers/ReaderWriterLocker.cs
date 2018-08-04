@@ -301,7 +301,7 @@ namespace W.Threading.Lockers
         }
 
         /// <summary>
-        /// Sets the internal state from within a ReaderWriterLockSlim
+        /// Sets the internal state from within a ReaderWriterLockSlim.  This is performed in a write lock.
         /// </summary>
         /// <param name="newState">The new value</param>
         public void SetState(TState newState)
@@ -309,7 +309,7 @@ namespace W.Threading.Lockers
             Locker.InLock(LockTypeEnum.Write, () => { State = newState; });
         }
         /// <summary>
-        /// Retrieves the internal state from within a ReaderWriterLockSlim
+        /// Retrieves the internal state from within a ReaderWriterLockSlim.  This is performed in a read lock.
         /// </summary>
         /// <returns>The current state</returns>
         public TState GetState()
