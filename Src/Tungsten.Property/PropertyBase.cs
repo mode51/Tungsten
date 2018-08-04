@@ -83,6 +83,9 @@ namespace W
             //overridden so that we can specify the new Owner
             RaiseOnPropertyChanged(Owner, propertyName);
             IsDirty = true;
+            var ph = Owner as PropertyHost;
+            if (ph != null)
+                ph.IsDirtyFlag.Value = true;
         }
         /// <summary>
         /// Calls RaiseValueChanged to raise the ValueChanged event
@@ -95,31 +98,56 @@ namespace W
             base.OnValueChanged(Owner, oldValue, newValue);
         }
 
-        /// <summary>
-        /// Sets Value without raising notification events
-        /// </summary>
-        public void LoadValue(TValue value)
-        {
-            InLock(Threading.Lockers.LockTypeEnum.Write, state =>
-            {
-                State = value;
-                IsDirty = false;
-                InformWaiters();
-            });
-        }
+        ///// <summary>
+        ///// Sets Value without raising notification events
+        ///// </summary>
+        //public override void LoadValue(TValue value)
+        //{
+        //    //enter recursive write lock
+        //    InLock(Threading.Lockers.LockTypeEnum.Write, state =>
+        //    {   
+        //        base.LoadValue(value);
+        //        //IsDirty = false;
+        //        //InformWaiters();
+        //    });
+        //}
 
-        public PropertyBase() : this(default(TOwner), default(TValue), null) { }
-        public PropertyBase(TOwner owner) : this(owner, default(TValue), null) { }
-        public PropertyBase(TValue defaultValue) : this(default(TOwner), default(TValue), null) { }
-        public PropertyBase(TOwner owner, TValue defaultValue) : this(owner, defaultValue, null) { }
+        /// <summary>
+        /// Construct a new PropertyBase
+        /// </summary>
+        protected PropertyBase() : this(default(TOwner), default(TValue), null) { }
+        /// <summary>
+        /// Construct a new PropertyBase
+        /// </summary>
+        protected PropertyBase(TOwner owner) : this(owner, default(TValue), null) { }
+        /// <summary>
+        /// Construct a new PropertyBase
+        /// </summary>
+        protected PropertyBase(TValue defaultValue) : this(default(TOwner), default(TValue), null) { }
+        /// <summary>
+        /// Construct a new PropertyBase
+        /// </summary>
+        protected PropertyBase(TOwner owner, TValue defaultValue) : this(owner, defaultValue, null) { }
     }
     //add initialValue and Action<object, TValue, TValue> onValueChanged (called in OnValueChanged) overloads
     public partial class PropertyBase<TOwner, TValue>
     {
-        public PropertyBase(Action<object, TValue, TValue> onValueChanged) : this(default(TOwner), default(TValue), onValueChanged) { }
-        public PropertyBase(TOwner owner, Action<object, TValue, TValue> onValueChanged) : this(owner, default(TValue), onValueChanged) { }
-        public PropertyBase(TValue defaultValue, Action<object, TValue, TValue> onValueChanged) : this(default(TOwner), default(TValue), onValueChanged) { }
-        public PropertyBase(TOwner owner, TValue defaultValue, Action<object, TValue, TValue> onValueChanged) : base(defaultValue, onValueChanged)
+        /// <summary>
+        /// Construct a new PropertyBase
+        /// </summary>
+        protected PropertyBase(Action<object, TValue, TValue> onValueChanged) : this(default(TOwner), default(TValue), onValueChanged) { }
+        /// <summary>
+        /// Construct a new PropertyBase
+        /// </summary>
+        protected PropertyBase(TOwner owner, Action<object, TValue, TValue> onValueChanged) : this(owner, default(TValue), onValueChanged) { }
+        /// <summary>
+        /// Construct a new PropertyBase
+        /// </summary>
+        protected PropertyBase(TValue defaultValue, Action<object, TValue, TValue> onValueChanged) : this(default(TOwner), default(TValue), onValueChanged) { }
+        /// <summary>
+        /// Construct a new PropertyBase
+        /// </summary>
+        protected PropertyBase(TOwner owner, TValue defaultValue, Action<object, TValue, TValue> onValueChanged) : base(defaultValue, onValueChanged)
         {
             Owner = owner;
             DefaultValue = defaultValue;
