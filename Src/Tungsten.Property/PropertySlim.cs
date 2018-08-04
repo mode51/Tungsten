@@ -125,11 +125,10 @@ namespace W
     {
         /// <summary>
         /// <para>
-        /// Calls OnPropertyChanged on assignment
+        /// Calls OnPropertyChanged on assignment.  This is perfomred in a write lock.
         /// </para>
         /// </summary>
         /// <param name="value">The new value</param>
-        /// <param name="propertyName">The name of the caller (the property being set)</param>
         protected override void SetValue(TValue value)
         {
             InLock(Threading.Lockers.LockTypeEnum.Write, oldValue =>
