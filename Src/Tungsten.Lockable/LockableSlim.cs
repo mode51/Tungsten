@@ -12,7 +12,7 @@ namespace W
     public class LockableSlim<TValue> : ReaderWriterLocker<TValue>
     {
         /// <summary>
-        /// Gets the underlying value
+        /// Gets the underlying value.  This is performed in a read lock.
         /// </summary>
         protected virtual TValue GetValue()
         {
@@ -20,7 +20,7 @@ namespace W
             //return InLock(LockTypeEnum.Read, state => { return state; });
         }
         /// <summary>
-        /// Sets the underlying value
+        /// Sets the underlying value.  This is performed in a write lock.
         /// </summary>
         /// <param name="value">The new value</param>
         protected virtual void SetValue(TValue value)
@@ -30,7 +30,7 @@ namespace W
         }
 
         /// <summary>
-        /// Get or Set the value
+        /// Get or Set the value.  This is performed in a read lock or write lock (respectively).
         /// </summary>
         /// <returns>The current value</returns>
         public TValue Value
