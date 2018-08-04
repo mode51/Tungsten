@@ -8,6 +8,7 @@
     /// </summary>
     public class PropertyHost
     {
+        private W.Threading.Lockers.MonitorLocker _locker = new Threading.Lockers.MonitorLocker();
         /// <summary>
         /// Finds all Properties and checks their IsDirty flag
         /// </summary>
@@ -15,11 +16,21 @@
         public bool IsDirty { get { return PropertyHostExtensions.IsDirty(this); } }
 
         /// <summary>
+        /// Set by child Property members when they become dirty
+        /// </summary>
+        /// <returns>True if any Property's IsDirty flag is true. Otherwise false.</returns>
+        public PropertySlim<bool> IsDirtyFlag { get; } = new PropertySlim<bool>();
+
+        /// <summary>
         /// Uses reflection to find all Properties and mark them as clean (call Property.MarkAsClean())
         /// </summary>
         public void MarkAsClean()
         {
-            PropertyHostExtensions.MarkAsClean(this);
+            _locker.InLock(() =>
+            {
+                PropertyHostExtensions.MarkAsClean(this);
+                IsDirtyFlag.Value = false;
+            });
         }
 
         /// <summary>
