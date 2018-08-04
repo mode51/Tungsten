@@ -21,6 +21,13 @@ namespace W.Tests
         {
             public Property<Person, string> Last { get; } = new Property<Person, string>();
             public Property<Person, string> First { get; } = new Property<Person, string>();
+            public Person() : this("", "") { }
+            public Person(string last) : this(last, "") { }
+            public Person(string last, string first) : base()
+            {
+                Last.LoadValue(last);
+                First.LoadValue(first);
+            }
         }
 
         [TestMethod]
@@ -53,6 +60,16 @@ namespace W.Tests
 
             p.MarkAsClean();
             Assert.IsFalse(p.IsDirty);
+        }
+        [TestMethod]
+        public void PropertyHost_IsDirtyFlag()
+        {
+            var p = new Person("Duerk", "");
+            p.Last.Value = "Duerksen";
+            Assert.IsTrue(p.IsDirty, "IsDirty should be true");
+            Assert.IsTrue(p.IsDirtyFlag.Value, "IsDirtyFlag.Value should be true");
+            p.MarkAsClean();
+            Assert.IsFalse(p.IsDirtyFlag.Value, "IsDirtyFlag.Value should be false");
         }
     }
 }
