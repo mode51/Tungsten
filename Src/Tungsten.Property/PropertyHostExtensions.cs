@@ -11,35 +11,35 @@ namespace W
     public static class PropertyHostExtensions
     {
         //1.20.2017 - removed Parallel implementations because this causes cross-thread exceptions on UI objects
-        private static IOwnedProperty GetProperty(FieldInfo fieldInfo, object owner)
+        private static TInterface GetProperty<TInterface>(FieldInfo fieldInfo, object owner)
 
         {
             if (fieldInfo?.FieldType.GetTypeInfo().IsClass ?? false)
             {
                 var value = fieldInfo.GetValue(owner);
-                var property = value as IOwnedProperty;
-                return property;
+                if (value is TInterface)
+                    return (TInterface)value;
             }
-            return null;
+            return default(TInterface);
         }
-        private static IOwnedProperty GetProperty(PropertyInfo propertyInfo, object owner)
+        private static TInterface GetProperty<TInterface>(PropertyInfo propertyInfo, object owner)
         {
             if (propertyInfo?.PropertyType.GetTypeInfo().IsClass ?? false)
             {
                 var value = propertyInfo.GetValue(owner);
-                var property = value as IOwnedProperty;
-                return property;
+                if (value is TInterface)
+                    return (TInterface)value;
             }
-            return null;
+            return default(TInterface);
         }
         private static void SetOwner(FieldInfo fi, object owner)
         {
-            var property = GetProperty(fi, owner);
+            var property = GetProperty<IOwnedProperty>(fi, owner);
             property?.SetOwner(owner);
         }
         private static void SetOwner(PropertyInfo pi, object owner)
         {
-            var property = GetProperty(pi, owner);
+            var property = GetProperty<IOwnedProperty>(pi, owner);
             property?.SetOwner(owner);
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace W
                 var fieldInfos = @this.GetType().GetTypeInfo().DeclaredFields;//.GetFields(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
                 foreach (var fieldInfo in fieldInfos)
                 {
-                    var property = GetProperty(fieldInfo, @this) as IProperty;
+                    var property = GetProperty<IProperty>(fieldInfo, @this);
                     if (property?.IsDirty ?? false)
                     {
                         result.Value = true;
@@ -91,7 +91,7 @@ namespace W
                 var propertyInfos = @this.GetType().GetTypeInfo().DeclaredProperties;//.GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
                 foreach (var propertyInfo in propertyInfos)
                 {
-                    var property = GetProperty(propertyInfo, @this) as IProperty;
+                    var property = GetProperty<IProperty>(propertyInfo, @this);
                     if (property?.IsDirty ?? false)
                     {
                         result.Value = true;
@@ -112,14 +112,14 @@ namespace W
             var fieldInfos = @this.GetType().GetTypeInfo().DeclaredFields;//.GetFields(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
             foreach (var fieldInfo in fieldInfos)
             {
-                var property = GetProperty(fieldInfo, @this) as IProperty;
+                var property = GetProperty<IProperty>(fieldInfo, @this);
                 if (property != null)
                     property.IsDirty = false;
             }
             var propertyInfos = @this.GetType().GetTypeInfo().DeclaredProperties;//.GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
             foreach (var propertyInfo in propertyInfos)
             {
-                var property = GetProperty(propertyInfo, @this) as IProperty;
+                var property = GetProperty<IProperty>(propertyInfo, @this);
                 if (property != null)
                     property.IsDirty = false;
             }
