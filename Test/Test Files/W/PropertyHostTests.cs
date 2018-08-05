@@ -71,5 +71,16 @@ namespace W.Tests
             p.MarkAsClean();
             Assert.IsFalse(p.IsDirtyFlag.Value, "IsDirtyFlag.Value should be false");
         }
+        [TestMethod]
+        public void PropertyHost_ForcePropertyChanged()
+        {
+            var p = new Person("Duerk", "");
+            p.Last.PropertyChanged += (o, property) =>
+            {
+                Assert.IsTrue(property.PropertyName == "Value");
+            };
+            p.Last.LoadValue("Duerksen");
+            p.ForcePropertyChanged();
+        }
     }
 }
