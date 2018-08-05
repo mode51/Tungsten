@@ -21,5 +21,11 @@ namespace W
         /// True if the property's value has changed since initialization or since the last call to MarkAsClean
         /// </summary>
         bool IsDirty { get; set; }
+
+        /// <summary>
+        /// Forces the property to raise the PropertyChanged event
+        /// </summary>
+        /// <param name="propertyName"></param>
+        void ForcePropertyChanged(string propertyName);
     }
 }

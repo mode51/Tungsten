@@ -61,5 +61,13 @@ namespace W
         {
             PropertyChanged?.Invoke(sender, new PropertyChangedEventArgs(propertyName));
         }
+        /// <summary>
+        /// Raises the PropertyChanged event regardless of whether the value has changed or not
+        /// </summary>
+        /// <param name="propertyName">The name of the property</param>
+        public virtual void ForcePropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            RaiseOnPropertyChanged(this, propertyName);
+        }
     }
 }

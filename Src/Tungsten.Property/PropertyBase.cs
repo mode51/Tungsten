@@ -99,6 +99,15 @@ namespace W
         }
 
         /// <summary>
+        /// Raises the PropertyChanged event regardless of whether the value has changed or not
+        /// </summary>
+        /// <param name="propertyName">The name of the property</param>
+        public override void ForcePropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            RaiseOnPropertyChanged(Owner, propertyName);
+        }
+
+        /// <summary>
         /// Construct a new PropertyBase
         /// </summary>
         protected PropertyBase() : this(default(TOwner), default(TValue), null) { }

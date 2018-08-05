@@ -32,6 +32,13 @@
                 IsDirtyFlag.Value = false;
             });
         }
+        /// <summary>
+        /// Raises the PropertyChanged event, for each Property, regardless of whether the value has changed or not
+        /// </summary>
+        public void ForcePropertyChanged()
+        {
+            PropertyHostExtensions.ForcePropertyChanged(this);
+        }
 
         /// <summary>
         /// Calls PropertyHostExtensions.InitializeProperties so you don't have to

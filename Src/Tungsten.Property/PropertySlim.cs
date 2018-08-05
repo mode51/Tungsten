@@ -50,6 +50,9 @@ namespace W
     //add INotifyPropertyChanged support
     public partial class PropertySlim<TValue> : INotifyPropertyChanged
     {
+        /// <summary>
+        /// INotifyPropertyChanged event
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// <para>
@@ -68,7 +71,16 @@ namespace W
         /// </para>
         /// </summary>
         /// <param name="propertyName">The name of the caller (the property which changed)</param>
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = "Value")
+        {
+            RaiseOnPropertyChanged(this, propertyName);
+        }
+
+        /// <summary>
+        /// Raises the PropertyChanged event regardless of whether the value has changed or not
+        /// </summary>
+        /// <param name="propertyName">The name of the property</param>
+        public virtual void ForcePropertyChanged([CallerMemberName] string propertyName = "Value")
         {
             RaiseOnPropertyChanged(this, propertyName);
         }

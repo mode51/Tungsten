@@ -124,5 +124,25 @@ namespace W
                     property.IsDirty = false;
             }
         }
+        /// <summary>
+        /// Raises the PropertyChanged event regardless of whether the value has changed or not
+        /// </summary>
+        public static void ForcePropertyChanged(this object @this)
+        {
+            var fieldInfos = @this.GetType().GetTypeInfo().DeclaredFields;//.GetFields(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
+            foreach (var fieldInfo in fieldInfos)
+            {
+                var property = GetProperty<IProperty>(fieldInfo, @this);
+                if (property != null)
+                    property.ForcePropertyChanged("Value");
+            }
+            var propertyInfos = @this.GetType().GetTypeInfo().DeclaredProperties;//.GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList();
+            foreach (var propertyInfo in propertyInfos)
+            {
+                var property = GetProperty<IProperty>(propertyInfo, @this);
+                if (property != null)
+                    property.ForcePropertyChanged("Value");
+            }
+        }
     }
 }
