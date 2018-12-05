@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net45;netstandard1.3;netstandard2.0</TargetFrameworks>
     <!--<TargetFramework>net45</TargetFramework>-->
-    <Version>2.0.2</Version>
+    <Version>2.0.3</Version>
     <Authors>Jordan Duerksen</Authors>
     <Company />
     <Product>Tungsten.Net</Product>
@@ -14,8 +14,8 @@
     <PackageLicenseUrl>https://raw.githubusercontent.com/mode51/Tungsten/v2-dev/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
     <PackageTags>Tungsten.Net Tungsten W W.Net C# library tcp sockets client server</PackageTags>
-    <AssemblyVersion>2.0.2.0</AssemblyVersion>
-    <FileVersion>2.0.2.0</FileVersion>
+    <AssemblyVersion>2.0.3.0</AssemblyVersion>
+    <FileVersion>2.0.3.0</FileVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PostBuildEvent></PostBuildEvent>
     <AssemblyName>Tungsten.Net</AssemblyName>
@@ -23,7 +23,7 @@
     <ApplicationIcon>Tungsten.ico</ApplicationIcon>
     <OutputType>Library</OutputType>
     <StartupObject />
-    <PackageReleaseNotes>Updated Tungsten.Encryption reference to v2.0.2.  Had to upgrade Newtonsoft.Json minimum version to 10.0.1.</PackageReleaseNotes>
+    <PackageReleaseNotes>Added additional constructors to W.Net.Udp.UdpPeer and exposed the internal UdpClient being used.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
