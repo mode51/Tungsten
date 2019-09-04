@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net45;netstandard1.4</TargetFrameworks>
+    <TargetFrameworks>netstandard1.4;net45</TargetFrameworks>
     <!--<TargetFramework>net45</TargetFramework>-->
     <RootNamespace>W.IO.Pipes</RootNamespace>
     <Authors>Jordan Duerksen</Authors>
@@ -27,17 +27,6 @@
     <StartupObject />
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard1.4\Tungsten.IO.Pipes.Standard.xml</DocumentationFile>
-    <DefineConstants>TRACE;NETSTANDARD1_4;NET45;DEBUG</DefineConstants>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.4\Tungsten.IO.Pipes.xml</DocumentationFile>
-    <DefineConstants>TRACE;RELEASE;NETSTANDARD1_4</DefineConstants>
-  </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="Archive\Pipes_1_2_7\EPipeDirection.cs" />
