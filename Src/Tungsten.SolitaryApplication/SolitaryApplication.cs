@@ -93,7 +93,11 @@ namespace W
                     return new SolitaryApplication(singleInstance, applicationName);
                 else
                 {
+#if NETSTANDARD2_0 || NET45
                     singleInstance.Dispose();
+#else
+                    singleInstance.Close();
+#endif
                     //tell the other instance to activate
                     if (activateExistingInstance)
                     {
@@ -103,7 +107,11 @@ namespace W
             }
             catch (System.Threading.AbandonedMutexException x)
             {
+#if NETSTANDARD2_0 || NET45
                 singleInstance.Dispose();
+#else
+                singleInstance.Close();
+#endif
             }
             return null;
         }
