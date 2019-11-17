@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2036
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{FEFB48AC-2D7D-4F83-A464-C05E299E8D0C}"
 EndProject
@@ -69,6 +69,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tungsten.Domains", "Src\Tungsten.Domains\Tungsten.Domains.csproj", "{6BFB99CF-7044-423A-B10A-66376B22813F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tungsten.InterProcess", "Src\Tungsten.InterProcess\Tungsten.InterProcess.csproj", "{5C8CEF66-02EF-4E9B-8B2B-A86105BF7766}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.0", "2.0", "{F5A17B61-6E3C-4477-B693-D37EBD8B9458}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tungsten.SolitaryApplication", "Src\Tungsten.SolitaryApplication\Tungsten.SolitaryApplication.csproj", "{93D31547-B45F-40D9-94EB-94A01A75D811}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -494,6 +498,30 @@ Global
 		{5C8CEF66-02EF-4E9B-8B2B-A86105BF7766}.Release|x64.Build.0 = Release|Any CPU
 		{5C8CEF66-02EF-4E9B-8B2B-A86105BF7766}.Release|x86.ActiveCfg = Release|Any CPU
 		{5C8CEF66-02EF-4E9B-8B2B-A86105BF7766}.Release|x86.Build.0 = Release|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Debug|ARM.Build.0 = Debug|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Debug|x64.Build.0 = Debug|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Debug|x86.Build.0 = Debug|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Release|ARM.ActiveCfg = Release|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Release|ARM.Build.0 = Release|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Release|iPhone.Build.0 = Release|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Release|x64.ActiveCfg = Release|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Release|x64.Build.0 = Release|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Release|x86.ActiveCfg = Release|Any CPU
+		{93D31547-B45F-40D9-94EB-94A01A75D811}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -522,14 +550,16 @@ Global
 		{CA3018F3-228E-4DDA-A902-F4C89D005501} = {DDDD7A60-22EE-4CBA-B303-56FF3180F7B6}
 		{6BFB99CF-7044-423A-B10A-66376B22813F} = {BD8E3A77-1CC9-41DB-9569-31EA41DDF2C8}
 		{5C8CEF66-02EF-4E9B-8B2B-A86105BF7766} = {BD8E3A77-1CC9-41DB-9569-31EA41DDF2C8}
+		{F5A17B61-6E3C-4477-B693-D37EBD8B9458} = {9B5483DB-83E5-449D-98F0-55260C956789}
+		{93D31547-B45F-40D9-94EB-94A01A75D811} = {F5A17B61-6E3C-4477-B693-D37EBD8B9458}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		BuildVersion_ConfigurationName = Release
-		BuildVersion_StartDate = 2000/1/1
-		BuildVersion_UpdateFileVersion = True
-		BuildVersion_UpdateAssemblyVersion = True
-		BuildVersion_BuildVersioningStyle = None.None.None.Increment
 		SolutionGuid = {6BA36790-23C3-49B0-896D-8712E2FEE3EF}
+		BuildVersion_BuildVersioningStyle = None.None.None.Increment
+		BuildVersion_UpdateAssemblyVersion = True
+		BuildVersion_UpdateFileVersion = True
+		BuildVersion_StartDate = 2000/1/1
+		BuildVersion_ConfigurationName = Release
 	EndGlobalSection
 	GlobalSection(NDepend) = preSolution
 		Project = ".\Tungsten1.ndproj"

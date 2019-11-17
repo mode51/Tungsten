@@ -48,6 +48,10 @@
 
 @echo NetStandard 1.5 + net45
 
+@echo NetStandard 2.0 + net45
+@replace "Tungsten.SolitaryApplication\bin\Release\*.nupkg" "..\NuGet" /A
+@replace "Tungsten.SolitaryApplication\bin\Release\*.nupkg" "..\NuGet" /U
+
 
 @echo .Net Framework
 @replace "Tungsten.Domains\bin\Release\*.nupkg" "..\NuGet" /A
