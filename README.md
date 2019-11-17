@@ -32,6 +32,7 @@ Tungsten.Suite is not an actual code project.  Instead, it is a single nuspec fi
 | Tungsten.Domains      | W.Domains | Easily implement reloadable AppDomains in your application  |
 | Tungsten.Firewall     | W.Firewall | Wraps NetFwTypeLib to add and remove Windows firewall rules |
 | Tungsten.InterProcess | W.InterProcess | InterProcess communication via the WM_COPYDATA message      |
+| Tungsten.SolitaryApplication | W | A helper class which makes it easy to disallow concurrent application instances |
 
 ___
 #### Framework Compatibility
@@ -63,6 +64,7 @@ ___
 | Tungsten.Domains      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |        |                |                |                |                |                |
 | Tungsten.Firewall     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |        |                |                |                |                |                |
 | Tungsten.InterProcess | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |        |                |                |                |                |                |
+| Tungsten.SolitaryApplication | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |        |                |                |                |                | :heavy_check_mark: |
 
 
 </sub>
