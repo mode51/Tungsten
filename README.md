@@ -1,4 +1,5 @@
  ### Notes:
+* #### 11/16/2019 - Added Tungsten.SolitaryApplication
 * #### The first release of Tungsten.Suite (version 2.0 of the Tungsten library) is complete
 * #### All NuGet packages have been published
 ___
