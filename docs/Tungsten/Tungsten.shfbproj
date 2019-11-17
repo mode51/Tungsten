@@ -65,6 +65,8 @@
       <DocumentationSource sourceFile="..\..\Src\Tungsten.Threading\bin\Release\net45\Tungsten.Threading.dll" />
       <DocumentationSource sourceFile="..\..\Src\Tungsten.Threading.Lockers\bin\Release\net45\Tungsten.Threading.Lockers.xml" />
       <DocumentationSource sourceFile="..\..\Src\Tungsten.Threading.Lockers\bin\Release\net45\Tungsten.Threading.Lockers.dll" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.SolitaryApplication\bin\Release\netstandard2.0\Tungsten.SolitaryApplication.dll" />
+      <DocumentationSource sourceFile="..\..\Src\Tungsten.SolitaryApplication\bin\Release\netstandard2.0\Tungsten.SolitaryApplication.xml" />
     </DocumentationSources>
     <HelpFileFormat>HtmlHelp1</HelpFileFormat>
     <SyntaxFilters>C#</SyntaxFilters>
@@ -102,8 +104,9 @@
     <RootNamespaceTitle>Tungsten Suite</RootNamespaceTitle>
     <NamespaceSummaries>
       <NamespaceSummaryItem name="W.InterProcess" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="W.IO.Pipes" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="W.Logging" isDocumented="True" xmlns="" /></NamespaceSummaries>
+      <NamespaceSummaryItem name="W.IO.Pipes" isDocumented="True" xmlns="" />
+      <NamespaceSummaryItem name="W.Logging" isDocumented="True" xmlns="" />
+    </NamespaceSummaries>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->
