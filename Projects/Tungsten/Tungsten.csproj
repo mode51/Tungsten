@@ -15,7 +15,7 @@
     <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>Tungsten W Library C# CSharp</PackageTags>
-    <PackageReleaseNotes>Due to the advances with Visual Studio and to make coding easier, all of the Tungsten projects have been re-integrated into a single project (and NuGet package).</PackageReleaseNotes>
+    <PackageReleaseNotes>Due to the advances with Visual Studio and to make coding easier, all of the Tungsten projects have been re-integrated into a single project (and NuGet package).  Also removed support for .Net Framework 2.0 and 3.5.</PackageReleaseNotes>
     <AssemblyVersion>3.0.0.0</AssemblyVersion>
     <FileVersion>3.0.0.0</FileVersion>
     <Version>3.0.0</Version>
