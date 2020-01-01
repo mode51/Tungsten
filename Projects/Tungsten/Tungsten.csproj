@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.0;netstandard1.3;netstandard1.4;netstandard2.0;net45</TargetFrameworks>
+    <RootNamespace>W</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Jordan Duerksen</Authors>
+    <Company>Jordan Duerksen</Company>
+    <Description>Tungsten library</Description>
+    <Copyright>Copyright @ 2017-2020 Jordan Duerksen</Copyright>
+    <PackageLicenseFile>License.txt</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/mode51/Tungsten</PackageProjectUrl>
+    <PackageIcon>Tungsten.ico</PackageIcon>
+    <PackageIconUrl />
+    <RepositoryUrl>https://github.com/mode51/Tungsten</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>Tungsten W Library C# CSharp</PackageTags>
+    <PackageReleaseNotes>Initial single-package release</PackageReleaseNotes>
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>
+    <FileVersion>3.0.0.0</FileVersion>
+    <Version>3.0.0</Version>
+    <ApplicationIcon />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\License.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\Tungsten.ico">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <Import Condition="'$(TargetFramework)' == 'netstandard1.0' OR '$(TargetFramework)' == 'netstandard1.3' OR '$(TargetFramework)' == 'netstandard1.4' OR '$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'net45'" Project="..\..\Source\Tungsten NetStandard 1.0\Tungsten NetStandard 1.0.projitems" Label="Shared" />
+  <Import Condition="'$(TargetFramework)' == 'netstandard1.3' OR '$(TargetFramework)' == 'netstandard1.4' OR '$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'net45'" Project="..\..\Source\Tungsten NetStandard 1.3\Tungsten NetStandard 1.3.projitems" Label="Shared" />
+  <Import Condition="'$(TargetFramework)' == 'netstandard1.4' OR '$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'net45'" Project="..\..\Source\Tungsten NetStandard 1.4\Tungsten NetStandard 1.4.projitems" Label="Shared" />
+  <Import Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'net45'" Project="..\..\Source\Tungsten NetStandard 2.0\Tungsten NetStandard 2.0.projitems" Label="Shared" />
+  <Import Condition="'$(TargetFramework)' == 'net45'" Project="..\..\Source\Tungsten .Net 4.5\Tungsten .Net 4.5.projitems" Label="Shared" />
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.3' OR '$(TargetFramework)' == 'netstandard1.4' OR '$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'net45'">
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.4' OR '$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.IO.Pipes" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
+    <COMReference Include="NetFwTypeLib">
+      <Guid>{58FBCF7C-E7A9-467C-80B3-FC65E8FCCA08}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+</Project>

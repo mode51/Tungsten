@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>1dc9fd9f-5b88-43cc-b4c5-55e1be1101e9</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Tungsten_NetStandard_1.4</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)W.IO.Pipes\Helpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.IO.Pipes\Pipe.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.IO.Pipes\PipeClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.IO.Pipes\PipeHost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.IO.Pipes\PipeLogger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.IO.Pipes\PipeReadWriteExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.IO.Pipes\PipeServer.cs" />
+  </ItemGroup>
+</Project>

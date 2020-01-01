@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>b3c7d3cb-f708-469d-9d44-3c961725762d</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Tungsten_NetStandard_1.3</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AsExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FromExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Encryption\AssymetricEncryption.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Encryption\MD5.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Encryption\PasswordHash.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Encryption\RSA.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Encryption\RSAMethods.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\ExtensionMethods.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\RPC\Attributes\RPCClassAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\RPC\Attributes\RPCMethodAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\RPC\Client.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\RPC\RPCMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\SerializationMethods.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\SocketExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Tcp\Generic\SecureTcpClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Tcp\Generic\SecureTcpHost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Tcp\Generic\TcpClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Tcp\Generic\TcpHost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Tcp\IClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Tcp\IInitialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Tcp\SecureTcpClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Tcp\SecureTcpHost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Tcp\SecureTcpLogger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Tcp\TcpClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Tcp\TcpHost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Tcp\TcpLogger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Udp\Generic\UdpPeer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Udp\Udp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Udp\UdpLogger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Udp\UdpPeer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\WakeOnLAN.cs" />
+  </ItemGroup>
+</Project>

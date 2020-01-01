@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>e6267674-4327-4f27-ad7e-82ad7efe5e9c</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Tungsten_NetStandard_1.0</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ArrayMethods.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CallResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventTemplate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Lockable\Lockable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Lockable\LockableSlim.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Logging\Log.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Logging\Log.MessageHistory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Logging\Log.PropertyChangedNotifier.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Property\IOwnedProperty.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Property\IProperty.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Property\Property.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Property\PropertyBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Property\PropertyChangedNotifier.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Property\PropertyHost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Property\PropertyHostExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Property\PropertyHostNotifier.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Property\PropertySlim.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Threading.Lockers\Disposer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Threading.Lockers\ILocker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Threading.Lockers\IStateLocker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Threading.Lockers\LockExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Threading.Lockers\MonitorLocker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Threading.Lockers\ReaderWriterLocker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Threading.Lockers\SemaphoreSlimLocker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Threading.Lockers\SpinLocker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Threading.Lockers\StateLocker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Threading\CPUProfileEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Threading\Thread.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Threading\ThreadMethod.cs" />
+  </ItemGroup>
+</Project>

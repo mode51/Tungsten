@@ -1,15 +1,13 @@
  ### Notes:
-* #### 11/16/2019 - Added Tungsten.SolitaryApplication
-* #### The first release of Tungsten.Suite (version 2.0 of the Tungsten library) is complete
-* #### All NuGet packages have been published
+* #### 1/1/2020 - Initial checkin for v3.0.0
+* #### The first release of Tungsten as a single package(version 3.0 of the Tungsten library)
+* #### Tungsten NuGet package has been published
 ___
 
 The help files are built with [Sandcastle Help File Builder](https://github.com/EWSoftware/SHFB)
 
-Tungsten.Suite is not an actual code project.  Instead, it is a single nuspec file which contains references to each of the Tungsten NuGet packages according to their target framework. It's the easy way to reference all the Tungsten packages at once.  Of course, you can always reference each package individually as desired.
-
-#### Projects in Tungsten.Suite
-| Project                    | Namespace | Description                                                  |
+#### Key elements in Tungsten.Suite
+| Namespace                  | Namespace | Description                                                  |
 | -------------------------- | --------- | ------------------------------------------------------------ |
 | Tungsten.ArrayMethods      | W | Provides additional functionality for arrays (Peek, Take, Trim, Append, Insert) |
 | Tungsten.As                | W | Several conversion extension methods AsBytes, AsString, AsCompressed, AsBase64 |

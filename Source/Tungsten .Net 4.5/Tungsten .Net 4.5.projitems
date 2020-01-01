@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>6f4b8895-b139-4484-95b7-3517f487e521</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Tungsten_.Net_4.5</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)W.Data.Sql\Attributes\Attributes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Data.Sql\Attributes\ColumnAttribute.ByFields.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Data.Sql\Attributes\ColumnAttribute.ByProperties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Data.Sql\Attributes\NamedColumnAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Data.Sql\Attributes\TableAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Data.Sql\Database.ByFields.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Data.Sql\Database.ByProperties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Data.Sql\Database.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Data.Sql\Row.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Data.Sql\TableMethods.ByFields.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Data.Sql\TableMethods.ByProperties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Data.Sql\Undoable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Domains\AssemblyLoader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Domains\DomainLoader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Firewall\Firewall.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.InterProcess\CopyData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.InterProcess\FindWindow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Reflection\BinaryClone.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Reflection\Reflection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Reflection\ShallowCopy.cs" />
+  </ItemGroup>
+</Project>
