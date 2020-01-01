@@ -4,10 +4,8 @@
 * #### Tungsten NuGet package has been published
 ___
 
-The help files are built with [Sandcastle Help File Builder](https://github.com/EWSoftware/SHFB)
-
-#### Key functionality in Tungsten.Suite
-| Functionality | Description                                                  |
+#### Key features in Tungsten.Suite
+|    Feature    | Description                                                  |
 | ------------- | ------------------------------------------------------------ |
 | W.ArrayMethods | Provides additional functionality for arrays (Peek, Take, Trim, Append, Insert) |
 | W.As | Several conversion extension methods AsBytes, AsString, AsCompressed, AsBase64 |
@@ -31,7 +29,7 @@ ___
 #### Framework Compatibility
 <sub>
 
-|       Namespace       |       net45        |   netstandard1.0   |   netstandard1.3   |   netstandard1.4   |   netstandard2.0   |
+|        Feature        |       net45        |   netstandard1.0   |   netstandard1.3   |   netstandard1.4   |   netstandard2.0   |
 | --------------------- | :----------------: | :----------------: | :----------------: | :----------------: | :----------------: |
 | W.ArrayMethods        | :heavy_check_mark: | :heavy_check_mark: |                    |                    | :heavy_check_mark: |
 | W.As                  | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
