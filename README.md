@@ -1,6 +1,6 @@
  ### Notes:
 * #### 1/1/2020 - Initial checkin for v3.0.0
-* #### The first release of Tungsten as a single package(version 3.0 of the Tungsten library)
+* #### The first commit of Tungsten as a single package(version 3.0 of the Tungsten library)
 * #### Tungsten NuGet package has been published
 ___
 
