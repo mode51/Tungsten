@@ -10,7 +10,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)SolitaryApplication.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)W.Net.RPC\MethodDictionary.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)W.Net.RPC\Server.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\RPC\MethodDictionary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\RPC\Server.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Discovery\DiscoveryBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Discovery\DiscoveryClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Discovery\DiscoveryHost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\Discovery\DiscoveryInformation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)W.Net\RPC\" />
   </ItemGroup>
 </Project>
