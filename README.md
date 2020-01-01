@@ -31,23 +31,23 @@ ___
 
 |        Feature        |       net45        |   netstandard1.0   |   netstandard1.3   |   netstandard1.4   |   netstandard2.0   |
 | --------------------- | :----------------: | :----------------: | :----------------: | :----------------: | :----------------: |
-| W.ArrayMethods        | :heavy_check_mark: | :heavy_check_mark: |                    |                    | :heavy_check_mark: |
-| W.As                  | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
-| W.CallResult          | :heavy_check_mark: | :heavy_check_mark: |                    |                    | :heavy_check_mark: |
+| W.ArrayMethods        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| W.As                  | :heavy_check_mark: |                    | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| W.CallResult          | :heavy_check_mark: | :heavy_check_mark: |                    | :heavy_check_mark: | :heavy_check_mark: |
 | W.Domains             | :heavy_check_mark: |                    |                    |                    |                    |
-| W.EventTemplate       | :heavy_check_mark: | :heavy_check_mark: |                    |                    | :heavy_check_mark: |
-| W.Encryption          | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
+| W.EventTemplate       | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| W.Encryption          | :heavy_check_mark: |                    | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | W.Firewall            | :heavy_check_mark: |                    |                    |                    |                    |
-| W.From                | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
+| W.From                | :heavy_check_mark: |                    | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | W.IO.Pipes            | :heavy_check_mark: |                    |                    | :heavy_check_mark: | :heavy_check_mark: |
 | W.InterProcess        | :heavy_check_mark: |                    |                    |                    |                    |
-| W.Lockable            | :heavy_check_mark: | :heavy_check_mark: |                    |                    | :heavy_check_mark: |
-| W.Logging             | :heavy_check_mark: | :heavy_check_mark: |                    |                    | :heavy_check_mark: |
+| W.Lockable            | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| W.Logging             | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | W.Net                 | :heavy_check_mark: |                    | :heavy_check_mark: [<sup>1</sup>](#rpcNote1) [<sup>2</sup>](#rpcNote2) |                    | :heavy_check_mark: [<sup>1</sup>](#rpcNote1) [<sup>2</sup>](#rpcNote2) |
-| W.Property            | :heavy_check_mark: | :heavy_check_mark: |                    |                    | :heavy_check_mark: |
-| W.SolitaryApplication | :heavy_check_mark: | :heavy_check_mark: |                    |                    |                    | 
-| W.Threading           | :heavy_check_mark: | :heavy_check_mark: |                    |                    | :heavy_check_mark: |
-| W.Threading.Lockers   | :heavy_check_mark: | :heavy_check_mark: |                    |                    | :heavy_check_mark: |
+| W.Property            | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| W.SolitaryApplication | :heavy_check_mark: | :heavy_check_mark: |                    |                    | :heavy_check_mark: | 
+| W.Threading           | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| W.Threading.Lockers   | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 
 <p><a name="rpcNote1"></a>1. Due to limitations with System.Reflection, W.Net.RPC.Server is only available in net45 and netstandard2.0</p>
 <p><a name="rpcNote2"></a>2. Due to the way Newtonsoft.Json deserializes integers, do NOT use int (Int32) in your api's as parameters or return types. Use long instead.</p>
