@@ -45,7 +45,7 @@ namespace W.Net.RPC
         public void Start(IPEndPoint ep, System.Reflection.Assembly rpcAssembly, bool scanReferences = false)
         {
             Stop();
-            _methods.Refresh(rpcAssembly, scanReferences);
+            _methods.Refresh(scanReferences, rpcAssembly);
             _host = new Tcp.Generic.SecureTcpHost<RPCMessage>(_keySize);
             //_host.IsListeningChanged += (isListening) => { IsListeningChanged?.Invoke(isListening); _mreIsListening?.Set(); };
             //_host.BytesReceived += (h, s, bytes) =>

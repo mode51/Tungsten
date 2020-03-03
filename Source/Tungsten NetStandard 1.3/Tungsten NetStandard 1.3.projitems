@@ -21,6 +21,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)W.Net\RPC\Attributes\RPCMethodAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)W.Net\RPC\Client.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)W.Net\RPC\RPCMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)W.Net\RPC\RPCResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)W.Net\SerializationMethods.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)W.Net\SocketExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)W.Net\Tcp\Generic\SecureTcpClient.cs" />

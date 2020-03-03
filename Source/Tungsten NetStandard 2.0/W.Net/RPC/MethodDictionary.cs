@@ -46,10 +46,19 @@ namespace W.Net.RPC
         /// <param name="asm"></param>
         private void FindAllRPCMethods(Assembly asm)
         {
-            foreach (var t in asm.GetExportedTypes())
+            Type type = null;
+            try
             {
-                Log.v($"Scanning Type: {t.Name}");
-                FindAllRPCMethods(t);
+                foreach (var t in asm.GetTypes().Where(a => !a.IsNotPublic))
+                {
+                    type = t;
+                    Log.v($"Scanning Type: {t.FullName}");
+                    FindAllRPCMethods(t);
+                }
+            }
+            catch (Exception e)
+            {
+                Log.e($"Type={type?.FullName}: {e}");
             }
         }
         private void FindAssemblies(Assembly rootAssembly, bool recurse)
@@ -60,15 +69,19 @@ namespace W.Net.RPC
             var assemblies = rootAssembly.GetReferencedAssemblies();
             foreach (var asmName in assemblies)
             {
-                var assemblyName = asmName.Name;
+                var assemblyName = asmName.Name.ToLower();
+                if (assemblyName == "system")
+                    continue;
                 //ignore System.X assemblies
-                if (assemblyName.StartsWith("System."))
+                if (assemblyName.StartsWith("system."))
                     continue;
                 //ignore Microsoft.X assemblies
-                if (assemblyName.StartsWith("Microsoft."))
+                if (assemblyName.StartsWith("microsoft."))
                     continue;
                 //ignore Microsoft.X assemblies
-                if (assemblyName.StartsWith("Windows."))
+                if (assemblyName.StartsWith("windows."))
+                    continue;
+                if (assemblyName.StartsWith("netstandard."))
                     continue;
                 //ignore nunitassemblies
                 if (assemblyName.StartsWith("nunit.framework"))
@@ -142,7 +155,7 @@ namespace W.Net.RPC
                             if (parameters.Length != args.Length)
                             {
                                 //if the last parameter is an array and the arguments outnumber the parameters, then convert the extra arguments into an array
-                                if (args.Length > parameters.Length && parameters.Length > 0 && parameters[parameters.Length-1].ParameterType.IsArray)
+                                if (args.Length > parameters.Length && parameters.Length > 0 && parameters[parameters.Length - 1].ParameterType.IsArray)
                                 {
                                     var paramsArgs = new List<object>();
                                     //move the extra parameters into a new parameter array
@@ -151,7 +164,7 @@ namespace W.Net.RPC
                                         paramsArgs.Add(args[t]);
 
                                     var newArgs = new List<object>();
-                                    for (int t = 0; t<lastParameterIndex; t++) //add args prior to the last one (because the last one is the params array)
+                                    for (int t = 0; t < lastParameterIndex; t++) //add args prior to the last one (because the last one is the params array)
                                         newArgs.Add(args[t]);
                                     newArgs.Add(paramsArgs.ToArray());
                                     args = newArgs.ToArray();
@@ -203,21 +216,73 @@ namespace W.Net.RPC
             return success;
         }
 
+        ///// <summary>
+        ///// Scans an assembly, which contains the specified CLR Type, for RPC methods (static methods with the RPCMethod attribute in classes with the RPCClass attribute)
+        ///// </summary>
+        ///// <remarks>Any methods previously added manually will have to be re-added</remarks>
+        ///// <typeparam name="T">The CLR Type</typeparam>
+        ///// <param name="recurse">If True, referenced assemblies will also be scanned</param>
+        //public void Refresh<T>(bool recurse)
+        //{
+        //    var rootAssembly = Assembly.GetAssembly(typeof(T));
+        //    if (rootAssembly == null)
+        //    {
+        //        Log.v($"Root assembly was null");
+        //        throw new ArgumentNullException(nameof(rootAssembly), "The supplied assembly cannot be null");
+        //    }
+        //    Methods.Clear();
+        //    FindAssemblies(rootAssembly, recurse);
+        //    Log.v($"Found {Methods.Count} RPC Methods");
+        //}
+
         /// <summary>
-        /// Scans the server process for RPC methods (static methods with the RPCMethod attribute in classes with the RPCClass attribute)
+        /// Scans an assembly for RPC methods (static methods with the RPCMethod attribute in classes with the RPCClass attribute)
+        /// </summary>
+        /// <remarks>Any methods previously added manually will have to be re-added</remarks>
+        /// <param name="recurse">If True, referenced assemblies will also be scanned</param>
+        public void Refresh(bool recurse)
+        {
+            Refresh(recurse, new Assembly[] { });
+        }
+        /// <summary>
+        /// Scans an assembly for RPC methods (static methods with the RPCMethod attribute in classes with the RPCClass attribute)
+        /// </summary>
+        /// <remarks>Any methods previously added manually will have to be re-added</remarks>
+        /// <param name="recurse">If True, referenced assemblies will also be scanned</param>
+        /// <param name="types">The CLR Types used to determine which Assemblies to scan</param>
+        public void Refresh(bool recurse, params Type[] types)
+        {
+            if (types != null)
+            {
+                Methods.Clear();
+                foreach (var type in types)
+                {
+                    var rootAssembly = Assembly.GetAssembly(type);
+                    if (rootAssembly == null)
+                    {
+                        Log.v($"Root assembly was null");
+                        throw new ArgumentNullException(nameof(rootAssembly), "The supplied assembly cannot be null");
+                    }
+                    FindAssemblies(rootAssembly, recurse);
+                }
+            }
+            Log.v($"Found {Methods.Count} RPC Methods");
+        }
+        /// <summary>
+        /// Scans an assembly for RPC methods (static methods with the RPCMethod attribute in classes with the RPCClass attribute)
         /// </summary>
         /// <remarks>Any methods previously added manually will have to be re-added</remarks>
         /// <param name="rootAssembly">The Assembly to scan for RPC methods</param>
         /// <param name="recurse">If True, referenced assemblies will also be scanned</param>
-        public void Refresh(Assembly rootAssembly, bool recurse)
+        public void Refresh(bool recurse, params Assembly[] assemblies)
         {
-            if (rootAssembly == null)
-            {
-                Log.v($"Root assembly was null");
-                throw new ArgumentNullException(nameof(rootAssembly), "The supplied assembly cannot be null");
-            }
+            if (assemblies == null)
+                assemblies = new Assembly[] { Assembly.GetEntryAssembly() };
             Methods.Clear();
-            FindAssemblies(rootAssembly, recurse);
+            foreach (var asm in assemblies)
+            {
+                FindAssemblies(asm, recurse);
+            }
             Log.v($"Found {Methods.Count} RPC Methods");
         }
     }
