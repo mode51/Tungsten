@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Threading;
 using W.Net;
 
@@ -40,12 +43,27 @@ namespace W.Net.RPC
         /// Starts listening for client connections on the specified network interface and port
         /// </summary>
         /// <param name="ep">The IPEndpoint on which to bind and listen for clients</param>
+        /// <param name="scanReferences">If True, referenced assemblies will also be scanned for RPC methods</param>
+        /// <param name="types">The CLR Types for which to scan</param>
+        public void Start(IPEndPoint ep, bool scanReferences, params Type[] types)
+        {
+            var assemblies = new List<Assembly>();
+            foreach(var type in types)
+            {
+                assemblies.Add(Assembly.GetAssembly(type));
+            }
+            Start(ep, scanReferences, assemblies.ToArray());
+        }
+        /// <summary>
+        /// Starts listening for client connections on the specified network interface and port
+        /// </summary>
+        /// <param name="ep">The IPEndpoint on which to bind and listen for clients</param>
         /// <param name="rpcAssembly">The root assembly in which to scan for RPC methods</param>
         /// <param name="scanReferences">If True, referenced assemblies will also be scanned for RPC methods</param>
-        public void Start(IPEndPoint ep, System.Reflection.Assembly rpcAssembly, bool scanReferences = false)
+        public void Start(IPEndPoint ep, bool scanReferences, params System.Reflection.Assembly[] assemblies)
         {
             Stop();
-            _methods.Refresh(scanReferences, rpcAssembly);
+            _methods.Refresh(scanReferences, new string[] { "LiteDB" }, assemblies);
             _host = new Tcp.Generic.SecureTcpHost<RPCMessage>(_keySize);
             //_host.IsListeningChanged += (isListening) => { IsListeningChanged?.Invoke(isListening); _mreIsListening?.Set(); };
             //_host.BytesReceived += (h, s, bytes) =>

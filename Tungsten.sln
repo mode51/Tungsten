@@ -29,6 +29,7 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Source\Tungsten NetStandard 1.4\Tungsten NetStandard 1.4.projitems*{1dc9fd9f-5b88-43cc-b4c5-55e1be1101e9}*SharedItemsImports = 13
+		Source\Tungsten NetStandard 1.0\Tungsten NetStandard 1.0.projitems*{2e114d6b-132c-4a2b-8914-53c69dcaec38}*SharedItemsImports = 5
 		Source\Tungsten NetStandard 2.0\Tungsten NetStandard 2.0.projitems*{69296229-1d1a-4d47-8905-5d7f73025bd8}*SharedItemsImports = 13
 		Source\Tungsten .Net 4.5\Tungsten .Net 4.5.projitems*{6f4b8895-b139-4484-95b7-3517f487e521}*SharedItemsImports = 13
 		Source\Tungsten NetStandard 1.3\Tungsten NetStandard 1.3.projitems*{b3c7d3cb-f708-469d-9d44-3c961725762d}*SharedItemsImports = 13
@@ -86,12 +87,12 @@ Global
 		{6F4B8895-B139-4484-95B7-3517F487E521} = {3A8EA241-C808-41F6-BE1F-4E358DEBA220}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6BA36790-23C3-49B0-896D-8712E2FEE3EF}
-		BuildVersion_BuildVersioningStyle = None.None.None.Increment
-		BuildVersion_UpdateAssemblyVersion = True
-		BuildVersion_UpdateFileVersion = True
-		BuildVersion_StartDate = 2000/1/1
 		BuildVersion_ConfigurationName = Release
+		BuildVersion_StartDate = 2000/1/1
+		BuildVersion_UpdateFileVersion = True
+		BuildVersion_UpdateAssemblyVersion = True
+		BuildVersion_BuildVersioningStyle = None.None.None.Increment
+		SolutionGuid = {6BA36790-23C3-49B0-896D-8712E2FEE3EF}
 	EndGlobalSection
 	GlobalSection(NDepend) = preSolution
 		Project = ".\Tungsten1.ndproj"

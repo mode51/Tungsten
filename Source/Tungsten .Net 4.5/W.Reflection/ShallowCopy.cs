@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 //using System.Threading.Tasks;
 using System.Reflection;
-using Tungsten.Reflection;
+using W.Reflection;
 
-namespace Tungsten.Reflection
+namespace W.Reflection
 {
     /// <summary>
     /// Provides methods to copy fields and properties from one CLR object to another

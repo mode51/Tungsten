@@ -61,7 +61,7 @@ namespace W.Net.RPC
                 Log.e($"Type={type?.FullName}: {e}");
             }
         }
-        private void FindAssemblies(Assembly rootAssembly, bool recurse)
+        private void FindAssemblies(Assembly rootAssembly, bool recurse, string[] excludedAssemblies)
         {
             FindAllRPCMethods(rootAssembly);
             if (!recurse)
@@ -70,6 +70,8 @@ namespace W.Net.RPC
             foreach (var asmName in assemblies)
             {
                 var assemblyName = asmName.Name.ToLower();
+                if (assemblyName == "mscorlib")
+                    continue;
                 if (assemblyName == "system")
                     continue;
                 //ignore System.X assemblies
@@ -86,13 +88,15 @@ namespace W.Net.RPC
                 //ignore nunitassemblies
                 if (assemblyName.StartsWith("nunit.framework"))
                     continue;
+                if (excludedAssemblies?.FirstOrDefault(a => a.ToLower() == assemblyName) != null)
+                    continue;
                 try
                 {
                     Log.v($"Scanning Assembly: {assemblyName}");
                     //var asm = System.Reflection.Assembly.Load(asmName);
                     var asm = Assembly.ReflectionOnlyLoad(asmName.FullName);
                     Log.v($"Loaded Assembly: {assemblyName}");
-                    FindAssemblies(asm, recurse);
+                    FindAssemblies(asm, recurse, excludedAssemblies);
                 }
                 finally //ignore assembly load failures
                 {
@@ -242,7 +246,7 @@ namespace W.Net.RPC
         /// <param name="recurse">If True, referenced assemblies will also be scanned</param>
         public void Refresh(bool recurse)
         {
-            Refresh(recurse, new Assembly[] { });
+            Refresh(recurse, null, new Assembly[] { });
         }
         /// <summary>
         /// Scans an assembly for RPC methods (static methods with the RPCMethod attribute in classes with the RPCClass attribute)
@@ -250,7 +254,7 @@ namespace W.Net.RPC
         /// <remarks>Any methods previously added manually will have to be re-added</remarks>
         /// <param name="recurse">If True, referenced assemblies will also be scanned</param>
         /// <param name="types">The CLR Types used to determine which Assemblies to scan</param>
-        public void Refresh(bool recurse, params Type[] types)
+        public void Refresh(bool recurse, string[] excludedAssemblies, params Type[] types)
         {
             if (types != null)
             {
@@ -263,7 +267,7 @@ namespace W.Net.RPC
                         Log.v($"Root assembly was null");
                         throw new ArgumentNullException(nameof(rootAssembly), "The supplied assembly cannot be null");
                     }
-                    FindAssemblies(rootAssembly, recurse);
+                    FindAssemblies(rootAssembly, recurse, excludedAssemblies);
                 }
             }
             Log.v($"Found {Methods.Count} RPC Methods");
@@ -274,14 +278,14 @@ namespace W.Net.RPC
         /// <remarks>Any methods previously added manually will have to be re-added</remarks>
         /// <param name="rootAssembly">The Assembly to scan for RPC methods</param>
         /// <param name="recurse">If True, referenced assemblies will also be scanned</param>
-        public void Refresh(bool recurse, params Assembly[] assemblies)
+        public void Refresh(bool recurse, string[] excludedAssemblies, params Assembly[] assemblies)
         {
-            if (assemblies == null)
+            if (assemblies?.Length == 0)
                 assemblies = new Assembly[] { Assembly.GetEntryAssembly() };
             Methods.Clear();
             foreach (var asm in assemblies)
             {
-                FindAssemblies(asm, recurse);
+                FindAssemblies(asm, recurse, excludedAssemblies);
             }
             Log.v($"Found {Methods.Count} RPC Methods");
         }

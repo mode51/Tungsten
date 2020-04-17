@@ -8,7 +8,7 @@ using System.Text;
 //using System.Threading.Tasks;
 using System.Reflection;
 
-namespace Tungsten.Reflection
+namespace W.Reflection
 {
     /// <summary>
     /// Methods for retrieving or enumerating the properties of a CLR object

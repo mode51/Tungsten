@@ -7,7 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 //using System.Threading.Tasks;
 
-namespace Tungsten.Reflection
+namespace W.Reflection
 {
     /// <summary>
     /// Provides a binary clone function
