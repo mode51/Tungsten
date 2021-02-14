@@ -146,6 +146,11 @@ namespace W
         {
             return new MemoryStream(@this.AsBytes());
         }
+
+        public static string AsJson<T>(this T @this)
+        {
+            return Newtonsoft.Json.JsonConvert.SerializeObject(@this);
+        }
         
         /// <summary>
         /// Compresses the byte array using System.IO.Compression.DeflateStream

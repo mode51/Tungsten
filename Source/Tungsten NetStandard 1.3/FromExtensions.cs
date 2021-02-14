@@ -74,6 +74,10 @@ namespace W
             return Convert.FromBase64String(@this.AsString(encoding)).AsString(encoding);
         }
 
+        public static T FromJson<T>(this string @this) where T : new()
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(@this);
+        }
         /// <summary>
         /// Decompresses the byte array using System.IO.Compression.DeflateStream
         /// </summary>

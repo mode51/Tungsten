@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="SharedProjectFile_SccProperties">
+    <SharedProjectFile_ProjectGuid>{6158fb64-4155-4a7d-9b78-94ab5eb54b8f}</SharedProjectFile_ProjectGuid>
+    <SharedProjectFile_SccProjectName>SAK</SharedProjectFile_SccProjectName>
+    <SharedProjectFile_SccAuxPath>SAK</SharedProjectFile_SccAuxPath>
+    <SharedProjectFile_SccLocalPath>SAK</SharedProjectFile_SccLocalPath>
+    <SharedProjectFile_SccProvider>SAK</SharedProjectFile_SccProvider>
+  </PropertyGroup>
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
@@ -11,6 +18,8 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ArrayMethods.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CallResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Disposable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DisposableSlim.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventTemplate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)W.Lockable\Lockable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)W.Lockable\LockableSlim.cs" />
