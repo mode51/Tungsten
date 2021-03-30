@@ -18,16 +18,23 @@ namespace W.Threading.Lockers
         /// <summary>
         /// Locks the resource
         /// </summary>
-        public void Lock(ref bool lockTaken)
+        /// <param name="msTimeout">Number of milliseconds to wait to acquire the lock.  Use -1 to wait indefinitely.</param>
+        /// <returns>True of the lock was acquired, otherwise False</returns>
+        public bool Lock(int msTimeout = -1)
         {
-            Locker.TryEnter(ref lockTaken);
+            bool lockTaken = false;
+            Locker.TryEnter(msTimeout, ref lockTaken);
+            return lockTaken;
         }
         /// <summary>
         /// Unlocks the resource
         /// </summary>
         public void Unlock(bool useMemberBarrier = false)
         {
-            Locker.Exit(useMemberBarrier);
+            if (useMemberBarrier)
+                Locker.Exit(useMemberBarrier);
+            else
+                Locker.Exit();
         }
 
         /// <summary>

@@ -15,6 +15,7 @@ namespace W.Net
     {
         public class TcpClient : IInitialize, IClient
         {
+            private Guid _id = Guid.NewGuid();
             private ThreadMethod _thread;
             private volatile bool _exitNow = false;
             private object _keepAliveLock = new object();
@@ -22,6 +23,7 @@ namespace W.Net
             private System.Diagnostics.Stopwatch _swDisconnect;
             private W.Threading.Lockers.MonitorLocker _socketLocker = new W.Threading.Lockers.MonitorLocker();
 
+            public Guid Id { get { return _id; } }
             public Socket Socket { get; private set; }
             public bool IsServerSide { get; set; } = false;
 

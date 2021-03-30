@@ -8,6 +8,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		License.txt = License.txt
 		README.md = README.md
 		Tungsten.ico = Tungsten.ico
+		Tungsten16x16.jpg = Tungsten16x16.jpg
+		Tungsten32x32.jpg = Tungsten32x32.jpg
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{DAA8A986-E16B-462B-AB37-2996D3F45626}"
@@ -87,12 +89,12 @@ Global
 		{6F4B8895-B139-4484-95B7-3517F487E521} = {3A8EA241-C808-41F6-BE1F-4E358DEBA220}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		BuildVersion_ConfigurationName = Release
-		BuildVersion_StartDate = 2000/1/1
-		BuildVersion_UpdateFileVersion = True
-		BuildVersion_UpdateAssemblyVersion = True
-		BuildVersion_BuildVersioningStyle = None.None.None.Increment
 		SolutionGuid = {6BA36790-23C3-49B0-896D-8712E2FEE3EF}
+		BuildVersion_BuildVersioningStyle = None.None.None.Increment
+		BuildVersion_UpdateAssemblyVersion = True
+		BuildVersion_UpdateFileVersion = True
+		BuildVersion_StartDate = 2000/1/1
+		BuildVersion_ConfigurationName = Release
 	EndGlobalSection
 	GlobalSection(NDepend) = preSolution
 		Project = ".\Tungsten1.ndproj"

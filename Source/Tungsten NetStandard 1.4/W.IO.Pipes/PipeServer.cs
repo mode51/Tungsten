@@ -16,7 +16,7 @@ namespace W.IO.Pipes
     public class PipeServer<TMessage> : Pipe<TMessage>
     {
         private static volatile int _serverCount = 0;
-        private volatile bool _waitingForConnection = false;
+        //private volatile bool _waitingForConnection = false;
         private volatile bool _isDisposed = false;
         private volatile bool _isDisposing = false;
         private System.Threading.CancellationTokenSource _ctsDispose = new System.Threading.CancellationTokenSource();
@@ -69,11 +69,11 @@ namespace W.IO.Pipes
                                 return false;
                             try
                             {
-                                _waitingForConnection = true;
+                                //_waitingForConnection = true;
                                 Helpers.WaitForClientToConnectAsync((NamedPipeServerStream)Stream, _ctsDispose.Token, () => 
                                 {
                                     Connected?.Invoke(this);
-                                    _waitingForConnection = false;
+                                    //_waitingForConnection = false;
                                     _connectedToClient = true;
                                     UpdateServerCount(1);
                                 }).ConfigureAwait(false);

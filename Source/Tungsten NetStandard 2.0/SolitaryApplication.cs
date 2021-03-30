@@ -59,7 +59,7 @@ namespace W
                     if (result)
                         _singleInstance.ReleaseMutex();
                 }
-                catch (System.Threading.AbandonedMutexException x)
+                catch (System.Threading.AbandonedMutexException)
                 {
                     result = true;
                 }
@@ -105,7 +105,7 @@ namespace W
                     }
                 }
             }
-            catch (System.Threading.AbandonedMutexException x)
+            catch (System.Threading.AbandonedMutexException)
             {
 #if NETSTANDARD2_0 || NET45
                 singleInstance.Dispose();

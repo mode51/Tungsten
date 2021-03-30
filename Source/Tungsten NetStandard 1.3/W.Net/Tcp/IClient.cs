@@ -8,6 +8,7 @@ namespace W.Net
     {
         public interface IClient : IDisposable
         {
+            Guid Id { get; }
             Socket Socket { get; }
             event Action<IClient, byte[]> BytesReceived;
             event Action<IClient> Disconnected;

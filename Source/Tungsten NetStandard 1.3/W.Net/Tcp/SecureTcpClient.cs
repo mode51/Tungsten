@@ -11,7 +11,7 @@ namespace W.Net
         public class SecureTcpClient : TcpClient
         {
             private int _keySize;
-            private bool _isInitialized = false;
+            //private bool _isInitialized = false;
             public event Action<SecureTcpClient> SecureFailed;// { get; private set; } = new EventTemplate<SecureTcpClient>();
 
             protected AssymetricEncryption Encryption { get; private set; }
@@ -50,8 +50,8 @@ namespace W.Net
 
                     if (remotePublicKey == null)
                         SecureFailed?.Invoke(this);
-                    else
-                        _isInitialized = true;
+                    //else
+                    //    _isInitialized = true;
                     return remotePublicKey;
                 });
                 return result;
