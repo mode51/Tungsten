@@ -20,7 +20,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)W.Data.Sql\Row.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)W.Data.Sql\TableMethods.ByFields.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)W.Data.Sql\TableMethods.ByProperties.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)W.Data.Sql\Undoable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)W.Domains\AssemblyLoader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)W.Domains\DomainLoader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)W.Firewall\Firewall.cs" />

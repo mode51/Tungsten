@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)SolitaryApplication.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Undoable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)W.Net\RPC\MethodDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)W.Net\RPC\Server.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)W.Net\Discovery\DiscoveryBase.cs" />

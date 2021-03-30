@@ -4,9 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-//using System.Threading.Tasks;
 
-namespace W.Data.Sql
+namespace W
 {
     [Serializable()]
     public class Undoable<T> : IDisposable
