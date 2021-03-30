@@ -1,5 +1,5 @@
  ### Notes:
-*#### 3/30/2021 - Small changes to W.Net.Tcp to expose connections and to W.Threading.Lockers.SpinLocker
+* #### 3/30/2021 - Small changes to W.Net.Tcp to expose connections and to W.Threading.Lockers.SpinLocker
 * #### 1/1/2020 - Initial checkin for v3.0.0
 * #### The first commit of Tungsten as a single package(version 3.0 of the Tungsten library)
 * #### Tungsten NuGet package has NOT been published
