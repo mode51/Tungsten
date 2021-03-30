@@ -456,7 +456,7 @@ namespace W.InterProcess
     /// </example>
     public static class CopyDataLogger
     {
-        private static bool _exception = false;
+        //private static bool _exception = false;
         private static CopyData _cd = null;
         private static CopyData GetCopyDataInstance(string windowCaption)
         {
@@ -467,7 +467,7 @@ namespace W.InterProcess
             }
             catch 
             {
-                _exception = true;
+                //_exception = true;
             }
             finally { }
             return _cd;

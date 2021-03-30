@@ -94,9 +94,9 @@ namespace W.Data.Sql
                 SetPropertyValue(destination, property.Name, property.GetValue(source, null));
             }
         }
-        private static T CloneProperties<T>(T source, BindingFlags flags = BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
+        private static U CloneProperties<U>(U source, BindingFlags flags = BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
         {
-            var result = Activator.CreateInstance<T>();
+            var result = Activator.CreateInstance<U>();
             CopyProperties(result, source, flags);
             return result;
         }

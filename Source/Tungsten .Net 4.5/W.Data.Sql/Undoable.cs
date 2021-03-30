@@ -16,14 +16,14 @@ namespace W.Data.Sql
         public bool _isDisposed { get; set; } = false;
         public object _disposeLock { get; private set; } = new object();
 
-        private static T Clone<T>(T source)
+        private static U Clone<U>(U source)
         {
-            T result = default(T);
+            U result = default(U);
             var ms = new MemoryStream();
             var bf = new BinaryFormatter(null, new StreamingContext(StreamingContextStates.Clone));
             bf.Serialize(ms, source);
             ms.Seek(0, SeekOrigin.Begin);
-            result = (T)bf.Deserialize(ms);
+            result = (U)bf.Deserialize(ms);
             ms.Close();
             return result;
         }

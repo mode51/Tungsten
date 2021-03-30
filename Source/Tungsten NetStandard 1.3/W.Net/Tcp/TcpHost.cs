@@ -13,12 +13,25 @@ namespace W.Net
             private TcpListener _host;
             private W.Threading.ThreadMethod _thread;
             private volatile bool _exitNow = false;
-            private System.Collections.Concurrent.ConcurrentDictionary<IClient, IClient> _servers = new System.Collections.Concurrent.ConcurrentDictionary<IClient, IClient>();
             //private W.Threading.Lockers.MonitorLocker _serversLocker = new W.Threading.Lockers.MonitorLocker();
             //private List<IClient> _servers = new List<IClient>();
 
+            public System.Collections.Concurrent.ConcurrentDictionary<string, IClient> Servers { get; } = new System.Collections.Concurrent.ConcurrentDictionary<string, IClient>();
+
             public event Action<TcpHost, IClient, byte[]> BytesReceived;// { get; private set; } = new EventTemplate<TcpHost, IClient, byte[]>();
             public bool IsListening => _host != null;
+            //public List<IClient> Servers
+            //{
+            //    get
+            //    {
+            //        var result = new List<IClient>();
+            //        foreach (var server in Servers.Values)
+            //            result.Add(server);
+            //        return result;
+            //    }
+            //}
+            public event Action<TcpHost, IClient> ClientConnected;
+            public event Action<TcpHost, IClient> ClientDisconnected;
 
             protected virtual Func<Socket, IClient> OnCreateServer { get; set; } = s => { var server = new TcpClient() { IsServerSide = true }; server.As<IInitialize>().Initialize(s); return server; };
 
@@ -32,14 +45,29 @@ namespace W.Net
                 {
                     System.Diagnostics.Debug.WriteLine("Host removing disconnected server");
                     //System.Diagnostics.Debugger.Break();
-                    if (_servers.TryRemove(server, out IClient value))
+
+                    while (!Servers.TryRemove(server.Id.ToString(), out IClient value))
+                        W.Threading.Thread.Sleep(W.Threading.CPUProfileEnum.SpinWait1);
+                    try
                     {
-                        value.Dispose();
+                        ClientDisconnected?.Invoke(this, server);
                     }
+                    finally
+                    {
+                        server.Dispose();
+                    }
+
+                    //if (_servers.TryRemove(server.Id.ToString(), out IClient value))
                     //{
-                    //    server.Dispose();
-                    //    _servers.Remove(server);
-                    //});
+                    //    try
+                    //    {
+                    //        ClientDisconnected?.Invoke(this, server);
+                    //    }
+                    //    finally
+                    //    {
+                    //        server.Dispose();
+                    //    }
+                    //}
                 }
                 catch (Exception e)
                 {
@@ -67,9 +95,16 @@ namespace W.Net
                             server.BytesReceived += BytesReceived_OnRaised;
                             //_serversLocker.InLock(() =>
                             {
-                                while (!_servers.TryAdd(server, server))
+                                while (!Servers.TryAdd(server.Id.ToString(), server))
                                     W.Threading.Thread.Sleep(W.Threading.CPUProfileEnum.SpinWait1);
-                                System.Diagnostics.Debug.WriteLine("Host adding connected server");
+                                try
+                                {
+                                    ClientConnected?.Invoke(this, server);
+                                }
+                                finally
+                                {
+                                    System.Diagnostics.Debug.WriteLine("Host adding connected server");
+                                }
                                 //foreach (var s in _servers)
                                 //{
                                 //    if (!s.Value.Socket.IsConnected())
@@ -115,12 +150,12 @@ namespace W.Net
                 //don't mess with _servers until the thread completes
                 //_serversLocker.InLock(() =>
                 {
-                    foreach (var server in _servers)
+                    foreach (var server in Servers)
                     {
                         server.Value.Disconnected -= OnServerDisconnected; //remove this so we don't receive it
                         server.Value.Dispose();
                     }
-                    _servers.Clear();
+                    Servers.Clear();
                 }//);
             }
         }
