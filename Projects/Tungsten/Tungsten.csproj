@@ -47,7 +47,7 @@
   <Import Condition="'$(TargetFramework)' == 'net45'" Project="..\..\Source\Tungsten .Net 4.5\Tungsten .Net 4.5.projitems" Label="Shared" />
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.3' OR '$(TargetFramework)' == 'netstandard1.4' OR '$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'net45'">
-    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.4' OR '$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="System.IO.Pipes" Version="4.3.0" />
